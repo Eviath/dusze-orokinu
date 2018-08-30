@@ -1,0 +1,145 @@
+// Place all the styles related to the Sojusz controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// BIG FONTS
+$def-h1: 6rem;
+$def-h2: 4rem;
+$def-h3: 1rem;
+
+// MEDIA QUARRIES BREAKPOINTS
+$ex-sm-width: 479px;
+$sm-width: 767px;
+$md-width: 991px;
+$lg-width: 1200px;
+
+
+// MEDIA QUARRIES MIXINS
+// Extra small devices (phones, less than 479px)
+
+
+// Small devices (tablets, 479px t)
+@mixin sm-d {
+  @media (min-width: #{$ex-sm-width}) and (max-width: #{$sm-width}) {
+    @content;
+  }
+}
+@mixin md-d {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width})  {
+    @content;
+  }
+}
+@mixin lg-d {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width})  {
+    @content;
+  }
+}
+@mixin ex-lg-d {
+  @media screen and (min-width: #{$lg-width})  {
+    @content;
+  }
+}
+
+// H1 Font - Media Quarry MIXIN
+@mixin h1-font-mediaQ {
+  @include sm-d {
+  font-size: 4rem;
+  }
+  @include md-d {
+  font-size: 6rem;
+  }
+  @include lg-d {
+  font-size: 8rem;
+  }
+  @include ex-lg-d {
+  font-size: 10rem;
+  }
+}
+
+
+
+
+// PARALLAX SCROLLING
+.parallax {
+    /* The image used */
+    background-image: url("poe.jpg");
+
+    height:100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+// Sojusz index.html
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.position-ref {
+   position: relative;
+}
+
+//  HEADER WRAPPER
+div.header-wrapper {
+  width: 100%;
+  background-color: #171718;
+
+}
+
+// HEADER BODY
+div.header-body {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    letter-spacing: .1rem;
+
+
+  h1 {
+  @include h1-font-mediaQ;
+  color:#d41144;
+  font-weight: 700;
+  }
+
+  h2 {
+    font-size: $def-h2;
+    color: #ececec;
+  }
+
+  h3 {
+    font-size: $def-h3;
+    font-weight: 400;
+    color: #9a9a9a;
+  }
+
+}
+
+
+// Content model index.html
+.content-model {
+    background-color: transparent;
+}
+
+.content-body {
+  background-color: transparent;
+  width:100%;
+}
+
+.content-title {
+  text-align: center;
+}
+
+.content-title h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff;
+}

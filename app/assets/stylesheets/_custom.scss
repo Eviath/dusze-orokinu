@@ -1,0 +1,70 @@
+// overwrite for bootstrp default styles
+
+
+body,
+html {
+
+  color: #636b6f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  margin: 0;
+}
+
+
+
+// Navbar background coolor
+.bg-back {
+    background-color: #171718;
+}
+
+// dropdown-Navbar background coolor
+.dropdown-menu {
+  background-color: #171718;
+}
+
+// dropdown-Navbar link color
+.dropdown-item {
+    color: #fff;
+}
+
+// uppercase transform for navbar links
+.nav-link, .dropdown-item {
+text-transform: uppercase;
+}
+
+// Dusze Orokinu logo
+.brand-logo {
+  width:40px;
+  height:auto;
+}
+
+// Navbar brand font color
+.navbar-dark .navbar-brand {
+  color: #9a9a9a;
+}
+
+
+
+// Pages content
+.page-wrapper {
+  width:100%;
+  padding: 50px 0px 50px 0px;
+}
+
+.page-header h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 4em;
+}
+
+
+
+// alerts
+
+.alert {
+
+  width:100%;
+margin-bottom: 0px;
+
+}
