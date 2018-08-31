@@ -1,0 +1,28 @@
+
+
+<div class="page-wrapper">
+
+
+
+<div class="page-header">
+
+<% provide(:title, "Zapomniałem/am hasła") %>
+<h1>Zapomniałem/am hasła</h1>
+</div>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-6 fp-col">
+    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.submit "Wyślij", class: "btn btn-do" %>
+    <% end %>
+  </div>
+</div>
+
+
+</div>
+</div>

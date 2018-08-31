@@ -2,6 +2,10 @@
 Rails.application.routes.draw do
 
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'sessions/new'
 
   get '/sojusz',  to: 'sojusz#index'
@@ -23,12 +27,13 @@ Rails.application.routes.draw do
   get 'kontakt/formularz'
 
     get  '/rejestracja',  to: 'users#new'
-    post '/rejestracja',  to: 'users#create'
+  
       get    '/login',   to: 'sessions#new'
       post   '/login',   to: 'sessions#create'
       delete '/logout',  to: 'sessions#destroy'
         resources :users
         resources :account_activations, only: [:edit]
+        resources :password_resets,     only: [:new, :create, :edit, :update]
 
   get  '/panel',  to: 'users#panel'
 end

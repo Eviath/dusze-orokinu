@@ -1,0 +1,34 @@
+
+<div class="page-wrapper">
+
+
+
+<div class="page-header">
+<% provide(:title, 'Reset Hasła') %>
+<h1>Reset hasła</h1>
+</div>
+
+<div class="container">
+
+
+
+<div class="row">
+  <div class="col-md-6 fp-col">
+    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= hidden_field_tag :email, @user.email %>
+
+      <%= f.label :password, "Hasło" %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Potwierdź Hasło" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Zaktualizuj hasło", class: "btn btn-do" %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+</div>
