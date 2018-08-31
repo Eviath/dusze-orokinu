@@ -18,3 +18,11 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+
+
+$(document).click(function(e) {
+	if (!$(e.target).is('.navbar')) {
+    	$('.collapse').collapse('hide');
+    }
+});

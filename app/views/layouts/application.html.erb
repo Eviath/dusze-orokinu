@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,600" rel="stylesheet" type="text/css">
-
+      <link href="https://fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet">
 
   </head>
 
@@ -18,5 +18,6 @@
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
     <%= yield %>
+    <%= render "layouts/footbar" %>
   </body>
 </html>

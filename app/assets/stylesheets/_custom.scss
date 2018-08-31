@@ -4,33 +4,98 @@
 body,
 html {
 
-  color: #636b6f;
-  font-family: 'Raleway', sans-serif;
+  color: #343434;
+  font-family: 'Marcellus SC', serif;
   font-weight: 400;
-  height: 100vh;
+  height: 100%;
   margin: 0;
+}
+
+a {
+  color: #d41144;
 }
 
 
 
+  .navbar-dark .navbar-nav .nav-link:hover,   .navbar-darkt .navbar-nav .nav-link:focus {
+  }
+
+  .navbar-dark .navbar-brand {
+  color:rgb(232, 232, 232) ;
+  }
+
+  .navbar-dark .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+
+    color: #d41144;
+  }
+
+  .navbar-dark .navbar-nav .show > .nav-link,   .navbar-dark .navbar-nav .active > .nav-link,   .navbar-dark .navbar-nav .nav-link.show,   .navbar-dark .navbar-nav .nav-link.active {
+
+    color: #d41144;
+  }
+
+
+.navbar {
+  z-index: 99999;
+  padding: 20px;
+  background-color: #0e0e0e;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+      -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      letter-spacing: -0.5px;
+      font-size: 16px;
+
+      &:hover {
+        color: #4aa6cd;
+      }
+}
+
+a.sign-in {
+
+
+  &:before {
+    font-family: "FontAwesome";
+    @extend .fa-user-plus;
+    padding-right: 0.5em;
+  }
+}
+
+a.log-in {
+
+
+  &:before {
+    font-family: "FontAwesome";
+    @extend .fa-sign-in;
+    padding-right: 0.5em;
+  }
+}
 // Navbar background coolor
 .bg-back {
-    background-color: #171718;
+
 }
 
 // dropdown-Navbar background coolor
 .dropdown-menu {
-  background-color: #171718;
+  background-color: #0e0e0e;
 }
 
 // dropdown-Navbar link color
 .dropdown-item {
     color: #fff;
+      font-size: 16px;
 }
+
+.dropdown-toggle::after {
+vertical-align: 0.15em;
+}
+
 
 // uppercase transform for navbar links
 .nav-link, .dropdown-item {
-text-transform: uppercase;
+
 }
 
 // Dusze Orokinu logo
@@ -41,7 +106,12 @@ text-transform: uppercase;
 
 // Navbar brand font color
 .navbar-dark .navbar-brand {
-  color: #9a9a9a;
+  color: #d41144;
+
+  &:hover {
+
+    color: #4aa6cd;
+  }
 }
 
 
@@ -50,12 +120,14 @@ text-transform: uppercase;
 .page-wrapper {
   width:100%;
   padding: 50px 0px 50px 0px;
+  z-index: 9;
 }
 
 .page-header h1 {
   text-align: center;
   font-weight: 700;
   font-size: 4em;
+    z-index: 9;
 }
 
 
@@ -66,5 +138,68 @@ text-transform: uppercase;
 
   width:100%;
 margin-bottom: 0px;
+
+}
+
+
+
+// buttons
+
+.button-about {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.btn-do  {
+  color: #fff;
+background-color:#d41144;
+}
+
+a.btn-do-bordered {
+  position: relative;
+      display: inline-block;
+      padding: 14px 36px;
+      font-family: "Marcellus SC",serif;
+      font-size: .9rem;
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border-color:#ffff;
+      color: #ffff;
+      background-color: #0b0b0b;
+      border: none;
+      border-radius: 2px;
+      -webkit-transition: .2s box-shadow,.2s background-color,.2s color,.2s transform;
+      -o-transition: .2s box-shadow,.2s background-color,.2s color,.2s transform;
+      transition: .2s box-shadow,.2s background-color,.2s color,.2s transform;
+
+  &::before {
+        border-color:#ffff;
+  content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 2px;
+    -webkit-transition: .3s background-color,.3s border-color;
+    -o-transition: .3s background-color,.3s border-color;
+    transition: .3s background-color,.3s border-color;
+    z-index: 1;
+}
+
+
+&:hover {
+color:#d41144;
+}
 
 }

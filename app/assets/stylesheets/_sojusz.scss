@@ -43,16 +43,16 @@ $lg-width: 1200px;
 // H1 Font - Media Quarry MIXIN
 @mixin h1-font-mediaQ {
   @include sm-d {
-  font-size: 4rem;
+  font-size: 2rem;
   }
   @include md-d {
-  font-size: 6rem;
+  font-size: 3rem;
   }
   @include lg-d {
-  font-size: 8rem;
+  font-size: 4rem;
   }
   @include ex-lg-d {
-  font-size: 10rem;
+  font-size: 5rem;
   }
 }
 
@@ -91,15 +91,49 @@ $lg-width: 1200px;
 
 //  HEADER WRAPPER
 div.header-wrapper {
-  width: 100%;
-  background-color: #171718;
 
+
+}
+
+
+.header-wrapper {
+margin: 0 auto;
+flex-direction: column;
+color: #fff;
+width:100%;
+position: relative;
+height:100%;
+background-color: #0e0e0e;
+opacity: .9999;
+}
+
+// header image
+.header-image {
+position: absolute;
+width:100%;
+height: 100%;
+  background-repeat: no-repeat;
+background-size: cover;
+background-position: bottom;
+opacity: 0.5;
+ background-image: url("/assets/nidus-black.png");
+
+}
+
+.header-body-wrapper {
+height:100%;
+display: flex;
+    width: 100%;
+  background-color: #0e0e0e;
 }
 
 // HEADER BODY
 div.header-body {
+  z-index: 9999;
+  flex-grow: 1;
+  align-self: center;
     text-align: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Marcellus SC', serif;
     font-weight: 100;
     letter-spacing: .1rem;
 
@@ -123,6 +157,13 @@ div.header-body {
 
 }
 
+// content
+
+.content-wrapper {
+  color: #ffff;
+  background-color: #0e0e0e;
+  padding: 150px 0px 150px 0px;
+}
 
 // Content model index.html
 .content-model {
@@ -142,4 +183,83 @@ div.header-body {
   font-weight: 700;
   font-size: 3rem;
   color: #fff;
+}
+
+
+// about-us-text
+
+.about-us-text {
+
+  h1, p {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    color: #d41144;
+  }
+}
+
+.tag{
+
+  padding-top: 100px;
+
+&-header {
+  text-align: center;
+  color: #d41144;
+}
+
+&-text {
+  text-align: center;
+}
+}
+
+// REGULAMIN
+
+.content-regulamin {
+
+}
+
+
+.regulamin-header {
+text-align: center;
+ h1 {
+   font-size: 3em;
+color: #fff;
+ }
+ h2 {
+   font-size: 2em;
+     color: #d41144;
+ }
+}
+
+.regulamin-tekst {
+  padding-top: 50px;
+text-align: justify;
+}
+
+.reg-cont {
+  padding-bottom: 100px;
+}
+
+.reg-box {
+  padding: 50px;
+}
+
+.reg-row {
+
+
+}
+
+.col {
+
+
+
+  &-bright {
+    background-color: rgb(8, 8, 8);
+  }
+
+  &-dark {
+    background-color: rgb(4, 4, 4);
+  }
 }

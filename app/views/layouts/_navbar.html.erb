@@ -1,13 +1,15 @@
 
-<div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-back p-4">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-back">
+
+      <nav class="navbar navbar-dark navbar-expand-md bg-faded ">
+          <%= active_link_to "Dusze Orokinu",sojusz_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
+            <li class="nav-item">
+
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sojusz
@@ -79,23 +81,13 @@
             <% else %>
 
             <li class="nav-item">
-              <%= active_link_to "Rejestracja",rejestracja_path, class: "nav-link" %>
+              <%= active_link_to "Rejestracja",rejestracja_path, class: "nav-link sign-in" %>
             </li>
             <li class="nav-item">
-              <%= active_link_to "Logowanie",login_path, class: "nav-link" %>
+              <%= active_link_to "Logowanie",login_path, class: "nav-link log-in" %>
             </li>
 
             <% end %>
          </ul>
         </div>
       </nav>
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-back d-flex">
-    <div class="p-2"><img src="../assets/duszki.png" class="brand-logo d-inline-block align-top"><%= active_link_to "Dusze Orokinu",sojusz_path, class: "navbar-brand" %></div>
-<div class="ml-auto p-2">    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button></div>
-
-  </nav>
-</div>

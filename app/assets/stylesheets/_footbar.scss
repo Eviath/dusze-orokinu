@@ -1,0 +1,47 @@
+.footbar {
+  position: relative;
+margin:0;
+  width:100%;
+  background-color: #090909;
+
+}
+
+.footbar-content {
+    padding: 50px;
+}
+
+nav.foo-nav li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.foo-nav {
+  h1 {
+
+    color: #d41144;
+
+  }
+
+  a {
+
+  transition: 0.25s;
+    color:#494949;
+    &:hover {
+      text-decoration: none;
+      color: #d41144;
+      transition: 0.25s;
+    }
+  }
+
+}
+
+
+.stopka {
+  padding: 10px;
+}
+.stopka h4 {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+
+}

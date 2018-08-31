@@ -1,4 +1,13 @@
-<div class="page-wrapper">
+
+
+<div class="login-page-header">
+
+  <div class="login-page-bg">
+</div>
+
+<div class="login-page-wrapper">
+
+<div class="login-page-content">
 
 <div class="page-header">
 <% provide(:title, "Logowanie") %>
@@ -13,22 +22,25 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "Hasło" %>
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
       <%= f.check_box :remember_me %>
-      <span>Remember me on this computer</span>
+      <span>Zapamiętaj mnie.</span>
       <% end %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "Zaloguj", class: "btn btn-do" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", rejestracja_path %></p>
+    <p>Nie masz konta? <%= link_to "Zarejestruj się!", rejestracja_path %></p>
   </div>
 </div>
 </div>
 
+</div>
 
-<!-- page wrapper end -->
+</div>
+
+
 </div>
