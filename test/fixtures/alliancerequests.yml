@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyString
+  lider_nickname: MyString
+  clan_name: MyString
+  clan_members: 1
+  clan_tier: MyString
+  clan_about: MyText
+  user: one
+
+two:
+  nickname: MyString
+  lider_nickname: MyString
+  clan_name: MyString
+  clan_members: 1
+  clan_tier: MyString
+  clan_about: MyText
+  user: two
+
+
+most_recent:
+  nickname: "Evid"
+  created_at: <%= Time.zone.now %>

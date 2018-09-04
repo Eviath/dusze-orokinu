@@ -1,0 +1,33 @@
+<% provide(:title, 'Klan') %>
+
+<% if @user.alliancerequest %>
+
+<h2> Stworzyłeś już podanie do sojuszu!</h2>
+
+<% else %>
+
+<div class="clan_show_content">
+
+
+<div class="container">
+
+<h2> Prowadzisz klan w Warframe i chcesz dołączyć do naszego sojuszu? Skorzystaj z formularza!</h2>
+
+
+      <span><%= link_to "Stwórz podanie do sojuszu", new_clan_path %>
+
+</div>
+
+</div>
+<% end %>
+
+
+
+<div class="col-md-8">
+  <% if @user.alliancerequest %>
+    <h3>Alliance Request</h3>
+    <ol class="alliancerequest">
+      <%= render @alliancerequest %>
+    </ol>
+  <% end %>
+</div>

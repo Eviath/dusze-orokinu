@@ -1,0 +1,35 @@
+// Place all the styles related to the Alliancerequests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.clan_content-wrapper {
+margin-top: 50px;
+border: 2px solid black;
+  padding: 50px 0px 50px 0px;
+
+
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+
+  }
+}
+
+
+.alliancerequest_form {
+padding: 50px 0px 50px 0px;
+
+
+
+}
+
+
+.alliancerequest_regulamin {
+padding-bottom: 50px;
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}

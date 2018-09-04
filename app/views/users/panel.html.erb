@@ -1,3 +1,20 @@
 <% provide(:title, 'Panel') %>
 
-#panel
+<% if logged_in? %>
+
+<div class="container">
+
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+
+
+
+
+</div>
+
+
+
+
+
+<% end %>

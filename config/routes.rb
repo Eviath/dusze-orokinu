@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'sojusz/aktualnosci'
   get 'sojusz/informacje'
 
-  get '/klany',  to: 'klany#index'
+  get '/clans',  to: 'clans#index'
 
   get 'warframe/poe'
   get 'warframe/newsy'
@@ -27,13 +27,18 @@ Rails.application.routes.draw do
   get 'kontakt/formularz'
 
     get  '/rejestracja',  to: 'users#new'
-  
+
       get    '/login',   to: 'sessions#new'
       post   '/login',   to: 'sessions#create'
       delete '/logout',  to: 'sessions#destroy'
         resources :users
         resources :account_activations, only: [:edit]
         resources :password_resets,     only: [:new, :create, :edit, :update]
+        resources :alliancerequests,          only: [:create, :destroy]
+        resources :clans, only: [:show, :new]
 
   get  '/panel',  to: 'users#panel'
+  get  '/clans/dashboard',  to: 'clans#dashboard'
+
+
 end

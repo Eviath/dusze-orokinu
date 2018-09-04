@@ -1,0 +1,43 @@
+
+
+  <div class="col-md-6">
+      <div class="alliancerequest_form">
+
+<div class="alliancerequest_regulamin">
+          <h1>Zanim złożysz podanie do sojuszu zapoznaj się z naszym regulaminem!</h1>
+          <span><%= link_to "Regulamin Sojuszu", sojusz_regulamin_path %></span>
+</div>
+
+<h2>Stwórz podanie do sojuszu</h2>
+<%= form_for(@alliancerequest) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :nickname, "Nick składajacego podanie"  %>
+      <%= f.text_field :nickname, class: 'form-control' %>
+
+      <%= f.label :lider_nickname, "Nick założyciela klanu"  %>
+      <%= f.text_field :lider_nickname, class: 'form-control' %>
+
+      <%= f.label :clan_name, "Nazwa klanu"  %>
+      <%= f.text_field :clan_name, class: 'form-control' %>
+
+      <%= f.label :clan_tier, "Tier klanu"  %>
+      <%= f.text_field :clan_tier, class: 'form-control' %>
+
+      <%= f.label :clan_members, "Aktualna liczba członków klanu"  %>
+      <%= f.text_field :clan_members, class: 'form-control' %>
+
+
+      <%= f.label :clan_about, "Krótki opis klanu"  %>
+      <%= f.text_area :clan_about, class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" %>
+
+
+
+
+
+
+  <%= f.submit "Zapisz", class: "btn btn-do" %>
+<% end %>
+
+</div>
+</div>

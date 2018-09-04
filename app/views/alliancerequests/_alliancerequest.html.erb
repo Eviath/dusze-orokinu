@@ -1,0 +1,53 @@
+<li id="alliancerequest-<%= alliancerequest.id %>">
+  <%= link_to gravatar_for(alliancerequest.user, size: 50), alliancerequest.user %>
+  <span class="user"><%= link_to alliancerequest.user.name, alliancerequest.user %></span>
+
+  <div class="clan_content-wrapper">
+
+<div class="container">
+
+
+
+<div class="nickname">
+  <h1>Nick gracza składającego podanie:</h1>
+<p><%= alliancerequest.nickname %></p>
+</div>
+
+<div class="lider_nickname">
+  <h1>Nick założyciela klanu:</h1>
+<p><%= alliancerequest.lider_nickname %></p>
+</div>
+
+<div class="clan_name">
+  <h1>Nazwa klanu:</h1>
+<p><%= alliancerequest.clan_name %></p>
+</div>
+
+<div class="clan_tier">
+  <h1>Tier klanu:</h1>
+  <p><%= alliancerequest.clan_tier %></p>
+</div>
+
+<div class="clan_members">
+  <h1>Aktualna liczba członków klanu:</h1>
+<p><%= alliancerequest.clan_members %></p>
+</div>
+
+<div class="clan_about">
+  <h1>Opis klanu:</h1>
+<p><%= alliancerequest.clan_about %></p>
+</div>
+
+
+</div>
+
+  </div>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(alliancerequest.created_at) %> ago.
+    <% if current_user?(alliancerequest.user) %>
+      <%= link_to "delete", alliancerequest, method: :delete,
+                                       data: { confirm: "Jesteś pewny?" } %>
+    <% end %>
+  </span>
+</li>

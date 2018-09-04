@@ -16,7 +16,7 @@ User.create!(name:  "Evid",
              activated: true,
              activated_at: Time.zone.now)
 
-99.times do |n|
+15.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@rails.org"
   password = "password"
@@ -27,3 +27,16 @@ User.create!(name:  "Evid",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+
+  users = User.order(:created_at).take(5)
+  1.times do
+    clan_about = "Fajny klan."
+    clan_members = 80
+    clan_tier  = "Storm"
+    clan_name = "Klan"
+    lider_nickname  = Faker::Name.name
+    nickname  = Faker::Name.name
+    users.each { |user| user.create_alliancerequest(nickname: nickname, lider_nickname: lider_nickname, clan_name: clan_name, clan_tier: clan_tier, clan_about: clan_about, clan_members: clan_members ) }
+
+  end

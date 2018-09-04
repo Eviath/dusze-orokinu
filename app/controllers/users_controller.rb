@@ -8,10 +8,14 @@ class UsersController < ApplicationController
   @users = User. where(activated: true) . paginate(page: params[:page] )
 end
 
+
+
     def show
     @user = User. find(params[:id] )
     redirect_to root_url and return unless true
   end
+
+
 
   def new
     @user = User.new
@@ -57,22 +61,13 @@ end
 
     # Before filters
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Zaloguj się aby mieć dostęp do tej części strony."
-        redirect_to login_url
-      end
-    end
-
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
 
-    # Confirms the admin user.
+    # Confirms an admin user.
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
