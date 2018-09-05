@@ -149,9 +149,22 @@ margin-bottom: 0px;
 
 }
 
+.modal {
+  top: 100px;
+}
 
 
 // buttons
+
+.btn-danger {
+    color: #fff;
+    background-color: #d41144;
+    border-color: #d41144;
+    &:hover {
+      background-color: #d41144;
+      border-color: #d41144;
+    }
+}
 
 .btn-small {
   font-size: 0.75em;

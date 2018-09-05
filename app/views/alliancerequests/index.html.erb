@@ -24,7 +24,7 @@
 
     <% if current_user.admin? && !current_user?(@user) %>
     | <%= link_to "Usuń", alliancerequest, method: :delete,
-                                  data: { confirm: "You sure?" }, class: "btn btn-do-bordered-small" %>
+                                  data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" %>
     <% end %>
 </p>
 

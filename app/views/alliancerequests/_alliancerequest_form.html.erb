@@ -1,11 +1,12 @@
 
 
-  <div class="col-md-6">
+  <div class="col-md-6 mx-auto">
       <div class="alliancerequest_form">
 
-<div class="alliancerequest_regulamin">
-          <h1>Zanim złożysz podanie do sojuszu zapoznaj się z naszym regulaminem!</h1>
-          <span><%= link_to "Regulamin Sojuszu", sojusz_regulamin_path %></span>
+<div class="alliancerequest_regulamin text-center">
+          <h1>Zanim złożysz podanie zapoznaj się z regulaminem!</h1>
+          <p>Składając podanie, akceptujesz regulamin sojuszu.</p>
+          <span><%= link_to "Regulamin Sojuszu", sojusz_regulamin_path, class: "btn btn-do-bordered" %></span>
 </div>
 
 <h2>Stwórz podanie do sojuszu</h2>

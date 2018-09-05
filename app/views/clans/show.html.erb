@@ -9,9 +9,9 @@
 <div class="col-md-8">
   <% if @user.alliancerequest %>
     <h3>Podanie do sojuszu</h3>
-    <ul class="alliancerequest">
+    <div class="alliancerequest">
       <%= render @alliancerequest %>
-    </ul>
+    </div>
   <% end %>
 </div>
   </div>
@@ -24,10 +24,29 @@
 
 <div class="container">
 
-<h2> Prowadzisz klan w Warframe i chcesz dołączyć do naszego sojuszu? Skorzystaj z formularza!</h2>
 
 
-      <span><%= link_to "Stwórz podanie do sojuszu", new_clan_path %>
+  <div class="clan_show_join">
+
+<h1> Prowadzisz klan i chcesz dołączyć do naszego sojuszu?</h1>
+<h2>Skorzystaj z formularza!</h2>
+
+<div class="alliancerequest-button">
+      <span><%= link_to "Stwórz podanie do sojuszu", new_clan_path, class: "btn btn-do-bordered" %>
+</div>
+
+  </div>
+
+  <div class="clan_show_join">
+
+<h1>Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!</h1>
+<h2>Znajdź klan dla siebie!</h2>
+<div class="alliancerequest-button">
+      <span><%= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-bordered" %>
+</div>
+
+  </div>
+
 
 </div>
 

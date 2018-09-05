@@ -22,6 +22,8 @@ gem "font-awesome-rails"
 # JQuery
 gem 'jquery-rails'
 
+gem 'data-confirm-modal'
+
 #sprockets
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 

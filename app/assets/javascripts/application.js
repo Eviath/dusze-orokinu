@@ -18,11 +18,18 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
+//= require data-confirm-modal
 
 
 $(document).click(function(e) {
 	if (!$(e.target).is('.navbar')) {
     	$('.collapse').collapse('hide');
     }
+});
+
+
+dataConfirmModal.setDefaults({
+  title: 'Potwierdź akcję',
+  commit: 'Potwierdź',
+  cancel: 'Anuluj'
 });
