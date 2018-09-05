@@ -1,0 +1,35 @@
+<div class="alliancerequest-index">
+
+
+<div class="container">
+
+<div class="row">
+
+
+
+<% @alliancerequests.each do |alliancerequest| %>
+  <div class="col-md-4 alliancerequest-col">
+
+
+
+
+      <h1><%= link_to alliancerequest.user.name, alliancerequest.user %></h1>
+
+    <h2>Nick gracza: <span><%= alliancerequest.nickname %></span></h2>
+    <h2>Nick lidera: <span><%= alliancerequest.lider_nickname %></span></h2>
+    <h2>Nazwa klanu: <span><%= alliancerequest.clan_name %></span></h2>
+
+
+  <p>   <%= link_to truncate('Zobacz'), alliancerequest, class: "btn btn-do-bordered-small" %>
+
+    <% if current_user.admin? && !current_user?(@user) %>
+    | <%= link_to "Usuń", alliancerequest, method: :delete,
+                                  data: { confirm: "You sure?" }, class: "btn btn-do-bordered-small" %>
+    <% end %>
+</p>
+
+    </div>
+<% end %>
+</div>
+</div>
+</div>

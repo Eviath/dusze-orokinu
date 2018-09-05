@@ -1,4 +1,4 @@
-<li id="alliancerequest-<%= alliancerequest.id %>">
+<div id="alliancerequest-<%= alliancerequest.id %>">
   <%= link_to gravatar_for(alliancerequest.user, size: 50), alliancerequest.user %>
   <span class="user"><%= link_to alliancerequest.user.name, alliancerequest.user %></span>
 
@@ -45,9 +45,9 @@
 
   <span class="timestamp">
     Posted <%= time_ago_in_words(alliancerequest.created_at) %> ago.
-    <% if current_user?(alliancerequest.user) %>
+    <% if current_user?(@user) || current_user.admin?   %>
       <%= link_to "delete", alliancerequest, method: :delete,
                                        data: { confirm: "Jesteś pewny?" } %>
     <% end %>
   </span>
-</li>
+</div>

@@ -1,7 +1,18 @@
 class AlliancerequestsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:index, :create, :destroy]
   before_action :correct_user,   only: :destroy
+  before_action :admin_user,   only: [:index, :destroy]
 
+
+  def index
+
+       @alliancerequests = Alliancerequest.all
+
+  end
+
+def show
+  @alliancerequest = Alliancerequest.find(params[:id])
+end
 
   def create
   @alliancerequest = current_user.build_alliancerequest(alliancerequest_params)
@@ -14,7 +25,7 @@ class AlliancerequestsController < ApplicationController
 end
 
 def destroy
-  @alliancerequest.destroy
+  Alliancerequest.find(params[:id]).destroy
   flash[:success] = "Podanie do sojuszu usunięte."
   redirect_to request.referrer || root_url
 end
@@ -27,7 +38,11 @@ private
 
   def correct_user
      @alliancerequest = current_user.alliancerequest
-     redirect_to root_url if @alliancerequest.nil?
+      redirect_to(root_url) unless current_user?(@user) || current_user.admin?
+   end
+
+   def admin_user
+     redirect_to(root_url) unless current_user.admin?
    end
 
 end

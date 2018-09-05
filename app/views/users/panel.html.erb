@@ -8,13 +8,11 @@
         <%= render 'shared/user_info' %>
       </section>
 
-
-
+<% if current_user.admin? %>
+      <span><%= link_to "Lista podań do sojuszu", alliancerequests_path %></span>
+<% end %>
 
 </div>
-
-
-
 
 
 <% end %>

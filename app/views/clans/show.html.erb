@@ -2,7 +2,20 @@
 
 <% if @user.alliancerequest %>
 
-<h2> Stworzyłeś już podanie do sojuszu!</h2>
+<div class="clan_show_content">
+  <div class="container">
+
+
+<div class="col-md-8">
+  <% if @user.alliancerequest %>
+    <h3>Podanie do sojuszu</h3>
+    <ul class="alliancerequest">
+      <%= render @alliancerequest %>
+    </ul>
+  <% end %>
+</div>
+  </div>
+</div>
 
 <% else %>
 
@@ -20,14 +33,3 @@
 
 </div>
 <% end %>
-
-
-
-<div class="col-md-8">
-  <% if @user.alliancerequest %>
-    <h3>Alliance Request</h3>
-    <ol class="alliancerequest">
-      <%= render @alliancerequest %>
-    </ol>
-  <% end %>
-</div>

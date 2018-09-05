@@ -13,7 +13,12 @@ html {
 
 a {
   color: #d41144;
+  &:hover{
+    color: #9c032b;
+    text-decoration: underline;
+  }
 }
+
 
 
 .user_info {
@@ -148,6 +153,18 @@ margin-bottom: 0px;
 
 // buttons
 
+.btn-small {
+  font-size: 0.75em;
+}
+
+a.btn.btn-do {
+
+  &:hover{
+    text-decoration: none;
+    color:#fff;
+  }
+}
+
 .button-about {
   padding-top: 50px;
   text-align: center;
@@ -162,6 +179,55 @@ a.btn-do-bordered {
   position: relative;
       display: inline-block;
       padding: 14px 36px;
+      font-family: "Marcellus SC",serif;
+      font-size: .9rem;
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border-color:#ffff;
+      color: #ffff;
+      background-color: #0b0b0b;
+      border: none;
+      border-radius: 2px;
+      -webkit-transition: .2s box-shadow,.2s background-color,.2s color,.2s transform;
+      -o-transition: .2s box-shadow,.2s background-color,.2s color,.2s transform;
+      transition: .2s box-shadow,.2s background-color,.2s color,.2s transform;
+
+  &::before {
+        border-color:#ffff;
+  content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 2px;
+    -webkit-transition: .3s background-color,.3s border-color;
+    -o-transition: .3s background-color,.3s border-color;
+    transition: .3s background-color,.3s border-color;
+    z-index: 1;
+}
+
+
+&:hover {
+color:#d41144;
+}
+
+}
+
+a.btn-do-bordered-small {
+  position: relative;
+      display: inline-block;
+      padding: 10px 22px;
       font-family: "Marcellus SC",serif;
       font-size: .9rem;
       font-weight: 400;
