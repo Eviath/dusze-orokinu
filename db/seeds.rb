@@ -13,8 +13,18 @@ User.create!(name:  "Evid",
              password:              "foobar",
              password_confirmation: "foobar",
              admin:     true,
+             lider:     true,
              activated: true,
              activated_at: Time.zone.now)
+
+
+User.create!(name:  "test",
+             email: "test@rails.org",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             activated: true,
+             activated_at: Time.zone.now)
+
 
 15.times do |n|
   name  = Faker::Name.name

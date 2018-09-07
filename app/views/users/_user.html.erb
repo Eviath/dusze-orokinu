@@ -1,8 +1,38 @@
 <li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-  | <%= link_to "delete", user, method: :delete,
-                                data: { confirm: "You sure?" } %>
-<% end %>
+  <div class="container">
+
+    <div class="row">
+      <div class="user-image">
+        <%= gravatar_for user, size: 50 %>
+      </div>
+
+      <div class="user-profile">
+
+        <%= link_to user.name, user %>
+
+        <div class="ranks">
+          <% if user.admin? %>
+            <p>
+              <button class="btn btn-do-profile disabled">
+                <span>Administrator</span></button>
+            <% end %>
+
+            <% if user.lider? %>
+              <button class="btn btn-profile disabled">
+                <span>Lider Klanu</span></button>
+            <% end %>
+          </p>
+        </div>
+
+      </div>
+
+
+        <% if current_user.admin? || current_user?(user) %>
+          <div class="options">
+          <%= button_to "Usuń użytkownika", user, method: :delete, data: { confirm: "Jesteś pewny, że chcesz usunąć tego użytkownika?" }, class: 'btn btn-do-profile-opt ' %>
+  </div>
+        <% end %>
+
+    </div>
+  </div>
 </li>

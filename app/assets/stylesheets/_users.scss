@@ -32,7 +32,13 @@ PANEL
 ********
 */
 
+.panel-administracja {
+  padding: 0px 0px 50px 0px;
+}
+
 .options-panel {
+
+  padding: 100px 0px 100px 0px;
   h2 {
     text-align: center;
   }
@@ -130,8 +136,65 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid rgb(80, 80, 80);
+
   }
+  p {
+    padding:0;
+    margin: 0;
+    font-size: 12px;
+  }
+}
+.user-profile {
+  min-width: 200px;
+}
+
+.options {
+  margin-left:20px;
+  border-left: solid $pinky 1px;
+padding: 12px 0px 0px 12px;
+}
+
+.btn-do-profile-opt {
+  background-color:#d41144;
+  padding: 0px 5px;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.65;
+
+    &:hover{
+      box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+    }
+}
+
+.btn-do-profile  {
+  color: #fff;
+background-color:#d41144;
+padding: 0px 5px;
+  font-size: 14px;
+
+
+&:hover {
+
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+}
+
+&:focus {
+  box-shadow: none;
+}
+}
+
+.btn-profile {
+  padding: 0px 5px;
+  font-size: 14px;
+  &:hover {
+
+      box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
 }
 
 .users-container {

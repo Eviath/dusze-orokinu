@@ -6,23 +6,10 @@ class ClansController < ApplicationController
 def index
 end
 
-def dasboard
-
-end
-
-
 def show
-
   @user = current_user
   @alliancerequest = @user.alliancerequest
 end
-
-
-  def new
-    @user = current_user
-          @alliancerequest = current_user.build_alliancerequest if logged_in?
-          @alliancerequest = @user.alliancerequest
-     end
 
 
 

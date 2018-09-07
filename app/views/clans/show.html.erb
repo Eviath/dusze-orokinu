@@ -1,54 +1,76 @@
 <% provide(:title, 'Klan') %>
 
-<% if @user.alliancerequest %>
-
 <div class="clan_show_content">
-  <div class="container">
-
-
-<div class="col-md-8">
-  <% if @user.alliancerequest %>
-    <h3>Podanie do sojuszu</h3>
-    <div class="alliancerequest">
-      <%= render @alliancerequest %>
-    </div>
-  <% end %>
-</div>
-  </div>
-</div>
-
-<% else %>
-
-<div class="clan_show_content">
-
 
 <div class="container">
 
 
 
-  <div class="clan_show_join">
 
-<h1> Prowadzisz klan i chcesz dołączyć do naszego sojuszu?</h1>
-<h2>Skorzystaj z formularza!</h2>
 
-<div class="alliancerequest-button">
-      <span><%= link_to "Stwórz podanie do sojuszu", new_clan_path, class: "btn btn-do-bordered" %>
-</div>
 
-  </div>
+
+<% if current_user.lider? %>
 
   <div class="clan_show_join">
 
-<h1>Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!</h1>
-<h2>Znajdź klan dla siebie!</h2>
-<div class="alliancerequest-button">
-      <span><%= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-bordered" %>
-</div>
+  <h1>Podanie do sojuszu zostało przyjęte! Jesteś liderem klanu. Możesz teraz przejść do stworzenia ogłoszenia swojego klanu!</h1>
+  <h2>Stwórz ogłoszenie</h2>
+  <div class="alliancerequest-button">
+      <span><%= link_to "Stwórz ogłoszenie klanu", alliancerequests_path, class: "btn btn-do-bordered" %>
+  </div>
+  </div>
+
+  <% else %>
+
+
+  <% if @user.alliancerequest %>
+
+  <div class="clan_show_join">
+  <h1>Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.</h1>
+  <h2>Zobacz swoje zgłoszenie do sojuszu.</h2>
+  <div class="alliancerequest-button">
+      <span><%= link_to "Sprawdź odanie do sojuszu", podanie_path, class: "btn btn-do-bordered" %>
+  </div>
+  </div>
+
+  <% else %>
+
+
+  <div class="clan_show_join">
+
+  <h1>Nie złożyłeś jeszcze podania do sojuszu! Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu.</h1>
+  <h2>Przejdź do zakładki sojusz.</h2>
+  <div class="alliancerequest-button">
+      <span><%= link_to "Podanie do sojuszu", podanie_path, class: "btn btn-do-bordered" %>
+  </div>
 
   </div>
 
 
-</div>
+  <div class="clan_show_join">
+
+  <h1>Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!</h1>
+  <h2>Znajdź klan dla siebie!</h2>
+  <div class="alliancerequest-button">
+      <span><%= link_to "Lista klanów w sojuszu", alliancerequests_path, class: "btn btn-do-bordered" %>
+  </div>
+
+  </div>
+
+    <% end %>
+
+
+
+
+  <% end %>
+
+
+
+
+
+
+
 
 </div>
-<% end %>
+</div>

@@ -15,9 +15,9 @@
 
 <div class="row">
   <% if current_user.admin? %>
-      <div class="col-md-6 mx-auto">
+      <div class="col-md-6 mx-auto panel-administracja">
         <h2> Administracja </h2>
-        <span><%= link_to "Lista podań do sojuszu", alliancerequests_path %></span>
+        <span><%= link_to "Lista podań do sojuszu", alliancerequests_path, class: 'btn btn-do'%></span>
             </div>
   <% end %>
 </div>
@@ -27,16 +27,24 @@
 
 
     <div class="col-md-4">
-      <h2> PANEL </h2>
+      <h2> Panel </h2>
+      <ul>
+        <li><a href="#">TestLink</a></li>
+          <li><a href="#">TestLink</a></li>
+            <li><a href="#">TestLink</a></li>
+              <li><a href="#">TestLink</a></li>
+                <li><a href="#">TestLink</a></li>
+                  <li><a href="#">TestLink</a></li>
+      </ul>
     </div>
 
 
     <div class="col-md-4">
-      <h2> PANEL </h2>
+      <h2> Panel  </h2>
     </div>
 
     <div class="col-md-4">
-      <h2> PANEL </h2>
+      <h2> Panel  </h2>
     </div>
 
 

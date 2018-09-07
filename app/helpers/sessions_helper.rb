@@ -2,12 +2,17 @@ module SessionsHelper
 
   # Logs in the given user.
   def log_in(user)
-      flash[:notice] = "Witaj! %{@current_user.name}"
     session[:user_id] = user.id
   end
 
   def user_name
   @current_user.name
+  end
+
+  
+
+  def lider_klanu?
+    @current_user.lider?
   end
 
   # Remembers a user in a persistent session.

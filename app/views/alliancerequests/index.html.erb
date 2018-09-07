@@ -5,7 +5,7 @@
 
 <div class="row">
 
-
+  <% if @alliancerequests.any? %>
 
 <% @alliancerequests.each do |alliancerequest| %>
   <div class="col-md-4 alliancerequest-col">
@@ -22,7 +22,7 @@
 
   <p>   <%= link_to truncate('Zobacz'), alliancerequest, class: "btn btn-do-bordered-small" %>
 
-    <% if current_user.admin? && !current_user?(@user) %>
+    <% if current_user.admin? || current_user?(@user) %>
     | <%= link_to "Usuń", alliancerequest, method: :delete,
                                   data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" %>
     <% end %>
@@ -30,6 +30,21 @@
 
     </div>
 <% end %>
+
+
+<% else %>
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+<h4> Nie ma żadnych podań do sojuszu!</h4>
+      </div>
+  </div>
+</div>
+
+
+<% end %>
+
+
 </div>
 </div>
 </div>

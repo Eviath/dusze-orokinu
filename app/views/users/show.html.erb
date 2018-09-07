@@ -10,6 +10,12 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <% if @user.admin? %>
+        <h5>Administrator</h5>
+        <% end %>
+        <% if @user.lider? %>
+        <h5>Lider Klanu</h5>
+        <% end %>
       </h1>
     </section>
   </div>

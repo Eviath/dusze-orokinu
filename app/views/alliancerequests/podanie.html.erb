@@ -1,0 +1,46 @@
+
+<% provide(:title, 'Create') %>
+
+<% if @user.alliancerequest %>
+
+<div class="clan_show_content">
+  <div class="container">
+
+
+<div class="col-md-8">
+  <% if @user.alliancerequest %>
+    <h3>Podanie do sojuszu</h3>
+    <div class="alliancerequest">
+      <%= render @alliancerequest %>
+    </div>
+  <% end %>
+</div>
+  </div>
+</div>
+
+<% else %>
+
+<div class="clan_show_content">
+
+
+<div class="container">
+
+
+
+  <div class="clan_show_join">
+
+<h1> Prowadzisz klan i chcesz dołączyć do naszego sojuszu?</h1>
+<h2>Skorzystaj z formularza!</h2>
+
+<div class="alliancerequest-button">
+      <span><%= link_to "Stwórz podanie do sojuszu", new_alliancerequest_path, class: "btn btn-do-bordered" %>
+</div>
+
+  </div>
+
+
+
+</div>
+
+</div>
+<% end %>
