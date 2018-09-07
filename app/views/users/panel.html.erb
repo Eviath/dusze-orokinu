@@ -8,9 +8,41 @@
         <%= render 'shared/user_info' %>
       </section>
 
-<% if current_user.admin? %>
-      <span><%= link_to "Lista podań do sojuszu", alliancerequests_path %></span>
-<% end %>
+
+
+<div class="options-panel">
+
+
+<div class="row">
+  <% if current_user.admin? %>
+      <div class="col-md-6 mx-auto">
+        <h2> Administracja </h2>
+        <span><%= link_to "Lista podań do sojuszu", alliancerequests_path %></span>
+            </div>
+  <% end %>
+</div>
+
+  <div class="row">
+
+
+
+    <div class="col-md-4">
+      <h2> PANEL </h2>
+    </div>
+
+
+    <div class="col-md-4">
+      <h2> PANEL </h2>
+    </div>
+
+    <div class="col-md-4">
+      <h2> PANEL </h2>
+    </div>
+
+
+  </div>
+</div>
+
 
 </div>
 

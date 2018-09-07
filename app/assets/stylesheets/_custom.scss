@@ -132,7 +132,31 @@ vertical-align: 0.15em;
   }
 }
 
+.dropdown-menu {
+  padding: 0px;
+}
 
+
+.dropdown-item {
+  background-color: none;
+  padding: 15px 15px;
+  font-size: 14px;
+
+  &.active, &:focus {
+    background-color: $pinky;
+  }
+}
+
+.dropdown-menu.fade {
+   display: block;
+   opacity: 0;
+   pointer-events: none;
+}
+
+.show > .dropdown-menu.fade {
+   pointer-events: auto;
+   opacity: 1;
+}
 
 // Pages content
 .page-wrapper {
