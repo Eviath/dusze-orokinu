@@ -1,0 +1,55 @@
+<div id="clan-<%= clan.id %>">
+  <%= link_to gravatar_for(clan.user, size: 50), clan.user %>
+  <span class="user"><%= link_to clan.user.name, clan.user %></span>
+
+  <div class="clan_content-wrapper">
+
+<div class="container">
+
+
+
+<div class="clan-name">
+  <h1>Nazwa klanu</h1>
+<p><%= clan.name %></p>
+</div>
+
+<div class="clan-leader">
+  <h1>Nick założyciela klanu:</h1>
+<p><%= clan.leader %></p>
+</div>
+
+<div class="clan-about">
+  <h1>Opis klanu:</h1>
+<p><%= clan.about %></p>
+</div>
+
+<div class="clan-tier">
+  <h1>Tier klanu:</h1>
+  <p><%= clan.tier %></p>
+</div>
+
+<div class="clan-members">
+  <h1>Aktualna liczba członków klanu:</h1>
+<p><%= clan.members %></p>
+</div>
+
+<div class="clan-logo">
+  <h1>Aktualna liczba członków klanu:</h1>
+<p><%= clan.logo %></p>
+</div>
+
+
+
+
+</div>
+
+  </div>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(clan.created_at) %> ago.
+    <% if current_user.admin? || current_user?(@user) %>
+      <%= link_to "delete", clan, method: :delete,
+                                       data: { confirm: "Jesteś pewny?" } %>
+    <% end %>
+  </span>
+</div>

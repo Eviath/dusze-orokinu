@@ -1,0 +1,35 @@
+
+
+
+      <div class="clan_form">
+
+
+
+
+<%= form_for(@clan) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name, "Nazwa klanu"  %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :leader, "Nick założyciela klanu"  %>
+      <%= f.text_field :leader, class: 'form-control' %>
+
+      <%= f.label :logo, "Logo klanu"  %>
+      <%= f.text_field :logo, class: 'form-control' %>
+
+      <%= f.label :tier, "Tier klanu"  %>
+      <%= f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) %>
+
+      <%= f.label :members, "Aktualna liczba członków klanu"  %>
+      <%= f.text_field :members, :class => 'form-control'  %>
+
+      <%= f.label :about, "Krótki opis klanu"  %>
+      <%= f.text_area :about, class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" %>
+
+
+
+  <%= f.submit "Zapisz", class: "btn btn-do" %>
+<% end %>
+
+</div>

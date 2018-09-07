@@ -35,11 +35,11 @@ Rails.application.routes.draw do
         resources :account_activations, only: [:edit]
         resources :password_resets,     only: [:new, :create, :edit, :update]
         resources :alliancerequests, only: [:index, :podanie, :show, :new, :create, :destroy]
-        resources :clans, only: [:show, :new]
+        resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
 
   get  '/panel',  to: 'users#panel'
-  get  '/klan',  to: 'clans#show'
-    get  '/podanie', to:'alliancerequests#podanie'
+  get  '/klan',  to: 'clans#panel'
+  get  '/podanie', to:'alliancerequests#podanie'
 
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180907122636) do
+ActiveRecord::Schema.define(version: 20180907175022) do
 
   create_table "alliancerequests", force: :cascade do |t|
     t.string "nickname"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20180907122636) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_alliancerequests_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_alliancerequests_on_user_id"
+  end
+
+  create_table "clans", force: :cascade do |t|
+    t.string "leader"
+    t.string "name"
+    t.text "about"
+    t.integer "members"
+    t.string "tier"
+    t.string "logo"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_clans_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_clans_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

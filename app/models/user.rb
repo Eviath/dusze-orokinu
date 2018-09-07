@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one :clan, dependent: :destroy
   has_one :alliancerequest, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email

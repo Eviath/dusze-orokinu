@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leader: MyString
+  name: MyString
+  about: MyText
+  members: 1
+  tier: MyString
+  logo: MyString
+  user: one
+
+two:
+  leader: MyString
+  name: MyString
+  about: MyText
+  members: 1
+  tier: MyString
+  logo: MyString
+  user: two
