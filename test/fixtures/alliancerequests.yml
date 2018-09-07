@@ -8,6 +8,8 @@ one:
   clan_tier: MyString
   clan_about: MyText
   user: one
+  discord_check: true
+  rule_check: true
 
 two:
   nickname: MyString
@@ -17,6 +19,8 @@ two:
   clan_tier: MyString
   clan_about: MyText
   user: two
+  discord_check: true
+  rule_check: true
 
 
 most_recent:

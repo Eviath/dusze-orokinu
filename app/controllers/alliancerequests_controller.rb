@@ -33,7 +33,7 @@ end
 private
 
   def alliancerequest_params
-    params.require(:alliancerequest).permit(:nickname, :clan_about, :lider_nickname, :clan_name, :clan_tier, :clan_members)
+    params.require(:alliancerequest).permit(:nickname, :clan_about, :lider_nickname, :clan_name, :clan_tier, :clan_members, :discord_check, :rules_check)
   end
 
   def correct_user

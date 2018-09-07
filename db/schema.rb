@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180903124024) do
     t.integer "clan_members"
     t.string "clan_tier"
     t.text "clan_about"
+    t.boolean "discord_check", default: false
+    t.boolean "rules_check", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

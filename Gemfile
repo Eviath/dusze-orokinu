@@ -23,7 +23,8 @@ gem "font-awesome-rails"
 gem 'jquery-rails'
 
 gem 'data-confirm-modal'
-
+gem 'rails-i18n', '~> 5.1'
+gem "polish", ">= 0.1.0"
 #sprockets
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 

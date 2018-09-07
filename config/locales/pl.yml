@@ -1,0 +1,13 @@
+pl:
+  activerecord:
+    models:
+    attributes:
+      alliancerequest:
+        nickname: "Nick gracza składajacego podanie"
+        lider_nickname: "Nick założyciela klanu"
+        clan_name: "Nazwa klanu"
+        clan_tier: "Tier klanu"
+        clan_about: "Krótki opis klanu"
+        clan_members: "Aktualna liczba członków klanu"
+        discord_check: "Discord"
+        rules_check: "Regulamin"

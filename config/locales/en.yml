@@ -28,6 +28,29 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+activerecord:
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      not_a_number: musi być cyfrą
+      accepted: musi zostać zaakceptowany
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        one: Formularz zawiera 1 błąd
+        few: "Formularz zawiera %{count} błędy"
+        other: "Formularz zawiera %{count} błędów"
+    attributes:
+      nickname:
+        blank: "jest wymagany"
+      lider_nickname:
+        blank: "jest wymagany"
+      clan_name:
+        blank: "jest wymagana"
+      clan_tier:
+        blank: "jest wymagany"
+      clan_about:
+        blank: "jest wymagany"
+      clan_members:
+        blank: "jest wymagana"

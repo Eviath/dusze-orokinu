@@ -23,16 +23,29 @@
       <%= f.text_field :clan_name, class: 'form-control' %>
 
       <%= f.label :clan_tier, "Tier klanu"  %>
-      <%= f.text_field :clan_tier, class: 'form-control' %>
+      <%= f.select(:clan_tier, Alliancerequest::CLANTIER, {selected: @alliancerequest.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) %>
 
       <%= f.label :clan_members, "Aktualna liczba członków klanu"  %>
-      <%= f.text_field :clan_members, class: 'form-control' %>
-
+      <%= f.text_field :clan_members, :class => 'form-control'  %>
 
       <%= f.label :clan_about, "Krótki opis klanu"  %>
       <%= f.text_area :clan_about, class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" %>
 
+<div class="checkboxes">
+<div class="row">
 
+<div class="col-md-6">
+  <%= f.label :discord_check, "Discord", class: 'discord_check'  %>
+  <%= f.check_box :discord_check %>
+</div>
+
+<div class="col-md-6">
+  <%= f.label :rules_check, "Regulamin", class: 'rules_check'  %>
+  <%= f.check_box :rules_check %>
+</div>
+
+      </div>
+</div>
 
 
 

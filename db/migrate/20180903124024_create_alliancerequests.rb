@@ -7,6 +7,8 @@ class CreateAlliancerequests < ActiveRecord::Migration[5.1]
       t.integer :clan_members
       t.string :clan_tier
       t.text :clan_about
+      t.boolean :discord_check, default: false
+      t.boolean :rules_check, default: false
       t.references :user, foreign_key: true
 
       t.timestamps

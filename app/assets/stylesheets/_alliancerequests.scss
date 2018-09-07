@@ -36,7 +36,6 @@ padding: 50px 0px 50px 0px;
 
 }
 
-
 .alliancerequest_regulamin {
 padding-bottom: 50px;
   h1 {
@@ -67,10 +66,28 @@ span {
   }
 
 
+
   .alliancerequest-col {
  padding: 25px;
 
   }
 
 
+}
+
+
+// checkboxes div
+.checkboxes {
+  padding: 20px 0px 20px 0px;
+}
+
+
+label.rules_check {
+width: 100%;
+text-align: center;
+}
+
+label.discord_check  {
+width: 100% ;
+text-align: center;
 }

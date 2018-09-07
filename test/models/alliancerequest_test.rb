@@ -5,9 +5,18 @@ class AlliancerequestTest < ActiveSupport::TestCase
   def setup
      @user = users(:michael)
      @alliancerequest = @user.build_alliancerequest(nickname: "Eviath", lider_nickname: "Eviath", clan_name: "Sneaky Victors",
-       clan_members: 80, clan_tier: "Storm", clan_about: "Fajny klan.")
+       clan_members: 80, clan_tier: "Storm", clan_about: "Fajny klan.", discord_check: '', rule_check: '')
      end
 
+     test "discord check should be true" do
+       @alliancerequest.discord_check = true
+       assert_not @alliancerequest.valid?
+     end
+
+     test "discord check should be true" do
+       @alliancerequest.rule_check = true
+       assert_not @alliancerequest.valid?
+     end
 
 
    test "should be valid" do

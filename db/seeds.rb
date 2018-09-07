@@ -35,8 +35,10 @@ end
     clan_members = 80
     clan_tier  = "Storm"
     clan_name = "Klan"
+    rules_check = "Tak"
+    discord_check = "Tak"
     lider_nickname  = Faker::Name.name
     nickname  = Faker::Name.name
-    users.each { |user| user.create_alliancerequest(nickname: nickname, lider_nickname: lider_nickname, clan_name: clan_name, clan_tier: clan_tier, clan_about: clan_about, clan_members: clan_members ) }
+    users.each { |user| user.create_alliancerequest(nickname: nickname, lider_nickname: lider_nickname, clan_name: clan_name, clan_tier: clan_tier, clan_about: clan_about, clan_members: clan_members, discord_check: discord_check, rules_check: rules_check ) }
 
   end
