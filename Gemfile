@@ -45,6 +45,9 @@ gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
 
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -54,6 +57,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'fog', '1.42'
 end
 
 group :development do

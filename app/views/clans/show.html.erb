@@ -11,14 +11,14 @@
   </div>
 
   <div class="alliancerequest-button text-center">
-    <% if @clans.previous(@clan)%>
-    <%= link_to 'Poprzedni', @clans.previous(@clan), class: "btn btn-do" %>
+    <% if @clansapproved.previous(@clan)%>
+    <%= link_to 'Poprzedni', @clansapproved.previous(@clan), class: "btn btn-do" %>
     <% end %>
 
   <%= link_to "Powrót - Lista klanów", clans_path, class: "btn btn-do" %>
 
-  <% if @clans.next(@clan)%>
-  <%= link_to 'Następny', @clans.next(@clan), class: "btn btn-do" %>
+  <% if @clansapproved.next(@clan)%>
+  <%= link_to 'Następny', @clansapproved.next(@clan), class: "btn btn-do" %>
   <% end %>
 
   </div>

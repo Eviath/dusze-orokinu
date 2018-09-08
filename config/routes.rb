@@ -36,7 +36,16 @@ Rails.application.routes.draw do
         resources :password_resets,     only: [:new, :create, :edit, :update]
         resources :alliancerequests, only: [:index, :podanie, :show, :new, :create, :destroy]
         resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
-
+        resources :clans do
+            member do
+                get :decline
+            end
+        end
+        resources :clans do
+            member do
+                get :approve
+            end
+        end
   get  '/panel',  to: 'users#panel'
   get  '/klan',  to: 'clans#panel'
   get  '/podanie', to:'alliancerequests#podanie'

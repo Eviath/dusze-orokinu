@@ -25,6 +25,44 @@
 
 
 }
+
+.clan-approval-pending {
+  width:100%;
+}
+
+.clan-content {
+  padding: 10px;
+border: 1px solid $pinky;
+
+  &-image {
+    text-align: center;
+  padding-bottom: 20px;
+
+    img {
+      max-width:128px;
+      max-height: 128px;
+    }
+  }
+
+  &-text {
+    text-align: center;
+    padding-bottom: 20px;
+
+    h2 { color: $pinky; }
+    span { color: rgb(204, 204, 204); }
+
+  }
+
+  &-buttons {
+    text-align: center;
+  }
+
+}
+
+
+
+
+
 .clan_form {
 padding: 50px 0px 50px 0px;
 
@@ -33,6 +71,7 @@ padding: 50px 0px 50px 0px;
 }
 
 .clan-index {
+
 
   .col-md-8 {
     padding: 150px 0px 150px 0px;
@@ -49,8 +88,9 @@ font-weight: 700;
   }
 
   h2 {
-font-size:18px;
-font-weight: 700;
+font-size:15px;
+font-weight: 400;
+
 span {
   font-weight: 400;
 }
@@ -60,10 +100,18 @@ span {
 
   }
 
+.form-control input {
 
+}
 
   .clan-col {
+    background-color: $darky;
+    margin: 1%;
+border: 1px solid $darky;
  padding: 25px;
+ -webkit-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
+-moz-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
+box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
 
   }
 

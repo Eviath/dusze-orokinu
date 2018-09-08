@@ -16,7 +16,8 @@
       <%= f.text_field :leader, class: 'form-control' %>
 
       <%= f.label :logo, "Logo klanu"  %>
-      <%= f.text_field :logo, class: 'form-control' %>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control'   %>
+
 
       <%= f.label :tier, "Tier klanu"  %>
       <%= f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) %>

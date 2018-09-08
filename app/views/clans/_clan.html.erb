@@ -1,12 +1,12 @@
-<div id="clan-<%= clan.id %>">
-  <%= link_to gravatar_for(clan.user, size: 50), clan.user %>
-  <span class="user"><%= link_to clan.user.name, clan.user %></span>
 
   <div class="clan_content-wrapper">
 
 <div class="container">
 
-
+  <div class="clan-logo">
+    <h1>Logo klanu:</h1>
+  <p><%= image_tag clan.picture.url if clan.picture? %></p>
+  </div>
 
 <div class="clan-name">
   <h1>Nazwa klanu</h1>
@@ -33,10 +33,7 @@
 <p><%= clan.members %></p>
 </div>
 
-<div class="clan-logo">
-  <h1>Aktualna liczba członków klanu:</h1>
-<p><%= clan.logo %></p>
-</div>
+
 
 
 
@@ -52,6 +49,17 @@
       <%= link_to "delete", clan, method: :delete,
                                        data: { confirm: "Jesteś pewny?" } %>
       <%= link_to "Edytuj", edit_clan_path(clan) %>
+  <% end %>
+
+  <% if admin? %>
+
+<% if @clan.approval == true %>
+<%= link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) %>
+<% else%>
+  <%= link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) %>
+<% end %>
+
     <% end %>
+
   </span>
 </div>

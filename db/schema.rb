@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20180907175022) do
     t.text "about"
     t.integer "members"
     t.string "tier"
-    t.string "logo"
+    t.string "picture"
     t.integer "user_id"
+    t.boolean "approval", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_clans_on_user_id_and_created_at"

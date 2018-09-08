@@ -59,9 +59,9 @@ end
     about = "Fajny klan."
     members = 80
     tier  = "Storm"
-    logo = "LogoFake"
+    picture = "LogoFake"
     leader  = Faker::Name.name
     name  = Faker::Name.name
-    users.each { |user| user.create_clan(name: name, leader: leader, about: about, tier: tier, members: members, logo: logo) }
+    users.each { |user| user.create_clan(name: name, leader: leader, about: about, tier: tier, members: members, picture: picture, approval: false) }
 
   end

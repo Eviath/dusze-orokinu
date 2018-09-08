@@ -5,14 +5,35 @@ class ClansController < ApplicationController
   before_action :admin_or_author, only: [:edit, :update, :destroy]
 
 
+
   def index
+    @clansapproved = Clan.approved.newest.page(params[:page]).per_page(5)
+    @clanspending = Clan.pending.newest.page(params[:page]).per_page(5)
+
     @clans = Clan.all
   end
 
 
 
+  def approve
+      clan = Clan.find(params[:id])
+        clan.approval = !clan.approval # flop the status
+        clan.save
+      flash[:success] = "Klan został zaakceptowany"
+      redirect_to clan_path(clan)
+end
+
+def decline
+  clan = Clan.find(params[:id])
+  clan.approval = !clan.approval # flop the status
+  clan.save
+  flash[:success] = "Klan został odrzucony."
+  redirect_to clan_path(clan)
+end
+
+
   def show
-    @clans = Clan.all
+    @clansapproved = Clan.approved.newest.page(params[:page]).per_page(5)
     @clan = Clan.find(params[:id])
   end
 
@@ -32,7 +53,7 @@ class ClansController < ApplicationController
     @clan = current_user.build_clan(clan_params)
   if @clan.save
     flash[:success] = "Ogłoszenie klanu zostało zapisane!"
-    redirect_to podanie_path
+    redirect_to clans_path
   else
     render 'clans/new'
   end
@@ -62,8 +83,9 @@ class ClansController < ApplicationController
 
   private
 
+
 def clan_params
-params.require(:clan).permit(:name, :about, :leader, :logo, :tier, :members)
+params.require(:clan).permit(:name, :about, :leader, :tier, :members, :picture, :approval)
 end
 
 def load_clan
