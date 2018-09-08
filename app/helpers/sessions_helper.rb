@@ -9,7 +9,9 @@ module SessionsHelper
   @current_user.name
   end
 
-  
+  def admin?
+    current_user.try(:admin?)
+  end
 
   def lider_klanu?
     @current_user.lider?

@@ -46,10 +46,12 @@
   </div>
 
   <span class="timestamp">
-    Posted <%= time_ago_in_words(clan.created_at) %> ago.
-    <% if current_user.admin? || current_user?(@user) %>
+    <p>Ogłoszenie stworzone <%= time_ago_in_words(clan.created_at) %> temu.</p>
+    <p>Ogłoszenie zaktualizowane <%= time_ago_in_words(clan.updated_at) %> temu.</p>
+<% if current_user?(clan.user) || admin? %>
       <%= link_to "delete", clan, method: :delete,
                                        data: { confirm: "Jesteś pewny?" } %>
+      <%= link_to "Edytuj", edit_clan_path(clan) %>
     <% end %>
   </span>
 </div>

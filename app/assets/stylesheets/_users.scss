@@ -214,6 +214,10 @@ position: relative;
 height:100%;
 background-color: #0e0e0e;
 opacity: .9999;
+h3 {
+   text-align: center;
+   font-size: 1.5em;
+ }
 }
 
 .signup-page-wrapper {
@@ -230,7 +234,7 @@ height: 100%;
   background-repeat: no-repeat;
 background-size: cover;
 background-position: bottom;
-opacity: 0.4;
+opacity: 0.2;
  background-image: url("/assets/mag-black.png");
 
 }
@@ -242,6 +246,17 @@ opacity: 0.4;
 flex-grow: 1;
 align-self: center;
 
+.form-control {
+color: #fff;
+  &:focus {
+    background:transparent;
+  }
+}
+}
+
+.user-btn {
+
+  background-color: #a20743;
 }
 
 
@@ -257,6 +272,11 @@ position: relative;
 height:100%;
 background-color: #0e0e0e;
 opacity: .9999;
+
+h3 {
+   text-align: center;
+   font-size: 1.5em;
+ }
 }
 
 .login-page-wrapper {
@@ -273,7 +293,7 @@ height: 100%;
   background-repeat: no-repeat;
 background-size: cover;
 background-position: bottom;
-opacity: 0.4;
+opacity: 0.2;
  background-image: url("/assets/ember2-black.png");
 
 }
@@ -284,5 +304,12 @@ opacity: 0.4;
   z-index: 9999;
 flex-grow: 1;
 align-self: center;
+
+.form-control {
+  color: #fff;
+  &:focus {
+    background:transparent;
+  }
+}
 
 }

@@ -45,8 +45,8 @@
   </div>
 
   <span class="timestamp">
-    Posted <%= time_ago_in_words(alliancerequest.created_at) %> ago.
-    <% if current_user.admin? || current_user?(@user) %>
+    Posted <%= time_ago_in_words(alliancerequest.updated_at) %> ago.
+      <% if current_user?(@user) || admin? %>
       <%= link_to "delete", alliancerequest, method: :delete,
                                        data: { confirm: "Jesteś pewny?" } %>
     <% end %>

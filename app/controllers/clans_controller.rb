@@ -1,6 +1,6 @@
 class ClansController < ApplicationController
 
-  before_action :logged_in_user, only: [:index, :show, :update, :panel, :create, :new, :destroy]
+  before_action :logged_in_user, only: [:update, :panel, :create, :new, :destroy]
   before_action :load_clan,  only: [:edit, :update, :destroy]
   before_action :admin_or_author, only: [:edit, :update, :destroy]
 
@@ -9,7 +9,10 @@ class ClansController < ApplicationController
     @clans = Clan.all
   end
 
+
+
   def show
+    @clans = Clan.all
     @clan = Clan.find(params[:id])
   end
 
@@ -56,6 +59,7 @@ class ClansController < ApplicationController
     end
   end
 
+
   private
 
 def clan_params
@@ -65,6 +69,10 @@ end
 def load_clan
   # renders 404 on production if not found
   @clan = Clan.find(params[:id])
+end
+
+def allowed?
+administrator? || authorship?
 end
 
 def admin_or_author

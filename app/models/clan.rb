@@ -11,4 +11,16 @@ class Clan < ApplicationRecord
    validates :name, presence: true
    validates :members, presence: true
    validates :logo, presence: true
+
+
+   def self.next(clan)
+     where('id < ?', clan.id).last
+   end
+
+   def self.previous(clan)
+     where('id > ?', clan.id).first
+   end
+
+
+
 end

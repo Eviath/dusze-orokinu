@@ -22,10 +22,10 @@
 
   <p>   <%= link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small" %>
 
-    <% if current_user.admin? || current_user?(@user) %>
+  <% if current_user?(clan.user) || current_user.try(:admin?) %>
     | <%= link_to "Usuń", clan, method: :delete,
                                   data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" %>
-      <%= link_to "Edytuj", edit_clan_path(current_user.clan), class: "btn btn-do-bordered-small" %>
+      <%= link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small" %>
     <% end %>
 </p>
 
