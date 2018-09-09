@@ -32,7 +32,8 @@
 
 .clan-content {
   padding: 10px;
-border: 1px solid $pinky;
+
+  background-color: $darkbg;
 
   &-image {
     text-align: center;
@@ -45,8 +46,11 @@ border: 1px solid $pinky;
   }
 
   &-text {
+
     text-align: center;
     padding-bottom: 20px;
+
+    h1 {padding-bottom:10px;}
 
     h2 { color: $pinky; }
     span { color: rgb(204, 204, 204); }
@@ -105,10 +109,10 @@ span {
 }
 
   .clan-col {
-    background-color: $darky;
+
+    background-color:rgba(#17161a, 0.5);
     margin: 1%;
-border: 1px solid $darky;
- padding: 25px;
+ padding: 15px;
  -webkit-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
 -moz-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
 box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);

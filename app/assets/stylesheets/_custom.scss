@@ -3,12 +3,16 @@
 
 body,
 html {
-
+    background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
   color: #343434;
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
   height: 100%;
   margin: 0;
+}
+
+header {
+  transition: 1s;
 }
 
 a {
@@ -19,6 +23,9 @@ a {
   }
 }
 
+.nav-up {
+    top: -60px;
+}
 
 .form-control:focus {
 
@@ -53,7 +60,11 @@ box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);
 .navbar {
   z-index: 99999;
   padding: 20px;
-  background-color: #0e0e0e;
+ background-color: rgba(#17161a, 0.5);
+}
+
+.header-dark {
+  background-color: #17161a;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
       -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
 }
