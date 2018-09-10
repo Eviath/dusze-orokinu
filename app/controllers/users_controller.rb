@@ -4,17 +4,32 @@ class UsersController < ApplicationController
     before_action :correct_user,   only: [:edit, :update, :destroy]
 
     def index
-  @users = User. where(activated: true) . paginate(page: params[:page] )
+  @users = User.where(activated: true) . paginate(page: params[:page] )
 end
 
 
 
     def show
-    @user = User. find(params[:id] )
+    @user = User.find(params[:id] )
     redirect_to root_url and return unless true
     @alliancerequest = @user.alliancerequest
   end
 
+  def approve
+      user = User.find(params[:id])
+      user.update_attribute(:lider, true)
+      flash[:success] = "Użytkownik otrzymał rangę Lidera klanu."
+      redirect_to request.referrer
+
+end
+
+def decline
+    user = User.find(params[:id])
+    user.update_attribute(:lider, false)
+    flash[:success] = "Użytkownik został pozbawiony rangi Lidera klanu."
+    redirect_to request.referrer
+
+end
 
 
   def new
@@ -55,7 +70,7 @@ end
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation, :lider)
   end
   # Before filters
 

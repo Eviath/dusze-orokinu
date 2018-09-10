@@ -39,13 +39,23 @@ Rails.application.routes.draw do
         resources :clans do
             member do
                 get :decline
-            end
-        end
-        resources :clans do
-            member do
                 get :approve
             end
         end
+        resources :users do
+            member do
+                get :decline
+                get :approve
+            end
+        end
+        resources :alliancerequests do
+            member do
+                get :decline
+                get :approve
+                get :pend
+            end
+        end
+
   get  '/panel',  to: 'users#panel'
   get  '/klan',  to: 'clans#panel'
   get  '/podanie', to:'alliancerequests#podanie'

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180907175022) do
     t.boolean "discord_check", default: false
     t.boolean "rules_check", default: false
     t.integer "user_id"
+    t.boolean "approval"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_alliancerequests_on_user_id_and_created_at"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180907175022) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

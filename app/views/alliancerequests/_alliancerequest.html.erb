@@ -50,5 +50,20 @@
       <%= link_to "delete", alliancerequest, method: :delete,
                                        data: { confirm: "Jesteś pewny?" } %>
     <% end %>
+    <% if admin? %>
+
+  <%= link_to decline_alliancerequest_path(@user), :class => "btn btn-small" do %>
+    Decline
+  <% end %>
+
+  <%= link_to approve_alliancerequest_path(@user), :class => "btn btn-small" do %>
+    Approve
+  <% end %>
+
+  <%= link_to pend_alliancerequest_path(@user), :class => "btn btn-small" do %>
+    Pend
+  <% end %>
+
+      <% end %>
   </span>
 </div>

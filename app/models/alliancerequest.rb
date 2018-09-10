@@ -2,7 +2,11 @@ class Alliancerequest < ApplicationRecord
    CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
 
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
+  scope :approved, -> { where(:approval => true) }
+  scope :pending, -> { where(:approval => nil) }
+  scope :declined, -> { where(:approval => false) }
+
+  scope :newest, -> { order(created_at: :desc) }
 
   validates :user_id, presence: true
   validates :nickname, presence: true, length: { maximum: 50 }

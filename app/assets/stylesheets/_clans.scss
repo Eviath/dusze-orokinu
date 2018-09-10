@@ -4,7 +4,7 @@
 
 
 .clan_show_content {
-  padding: 50px 0px 50px 0px;
+  padding: 150px 0px 50px 0px;
 
   .clan_show_join {
 
@@ -13,17 +13,36 @@
     text-align: center;
 
     h1 {
-      font-size: 1.75em;
+      font-size: 3em;
+      color: $white;
     }
     h2 {
       color: $pinky;
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
   }
 
 
 
 
+}
+
+
+.clan_content-wrapper {
+  text-align: center;
+margin-top: 50px;
+  padding: 50px 0px 50px 0px;
+
+p {
+  color: rgb(217, 217, 217);
+}
+
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: $pinky;
+
+  }
 }
 
 .clan-approval-pending {
@@ -76,12 +95,16 @@ padding: 50px 0px 50px 0px;
 
 .clan-index {
 
+padding: 200px 0px 100px 0px;
 
+.no-clans-pending {
+  padding-top: 50px;
+}
   .col-md-8 {
     padding: 150px 0px 150px 0px;
   }
 
-padding: 100px 0px 100px 0px;
+
   h1 {
 font-size: 22px;
 font-weight: 700;
@@ -92,6 +115,7 @@ font-weight: 700;
   }
 
   h2 {
+    color: #d9d9d9;
 font-size:15px;
 font-weight: 400;
 
@@ -109,6 +133,12 @@ span {
 }
 
   .clan-col {
+
+    h2 {
+      color: $pinky;
+  font-size:15px;
+  font-weight: 400;
+    }
 
     background-color:rgba(#17161a, 0.5);
     margin: 1%;

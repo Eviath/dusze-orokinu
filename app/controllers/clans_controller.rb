@@ -17,9 +17,9 @@ class ClansController < ApplicationController
 
   def approve
       clan = Clan.find(params[:id])
-        clan.approval = !clan.approval # flop the status
-        clan.save
-      flash[:success] = "Klan został zaakceptowany"
+      clan.approval = !clan.approval # flop the status
+      clan.save
+      flash[:success] = "Ogłoszenie klanu zostało zaakceptowane"
       redirect_to clan_path(clan)
 end
 
@@ -27,7 +27,8 @@ def decline
   clan = Clan.find(params[:id])
   clan.approval = !clan.approval # flop the status
   clan.save
-  flash[:success] = "Klan został odrzucony."
+  flash[:success] = "Ogłoszenie klanu zostało odrzucone."
+
   redirect_to clan_path(clan)
 end
 
@@ -53,7 +54,7 @@ end
     @clan = current_user.build_clan(clan_params)
   if @clan.save
     flash[:success] = "Ogłoszenie klanu zostało zapisane!"
-    redirect_to clans_path
+    redirect_to klan_path
   else
     render 'clans/new'
   end
@@ -62,7 +63,7 @@ end
   def destroy
     @clan.destroy
     flash[:success] = "Ogłoszenie klanu zostało usunięte."
-    redirect_to clans_path || request.referrer
+    redirect_to klan_path || request.referrer
   end
 
 
@@ -74,7 +75,7 @@ end
     @clan = Clan.find(params[:id])
     if @clan.update_attributes(clan_params)
       flash[:success] = "Ogłoszenie klanu zaktualizowane!"
-      redirect_to clans_path
+      redirect_to klan_path
     else
       render 'edit'
     end

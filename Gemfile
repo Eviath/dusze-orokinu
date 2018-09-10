@@ -21,7 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
 # JQuery
 gem 'jquery-rails'
-
 gem 'data-confirm-modal'
 gem 'rails-i18n', '~> 5.1'
 gem "polish", ">= 0.1.0"
