@@ -6,14 +6,23 @@
 .clan_show_content {
   padding: 150px 0px 50px 0px;
 
-  .clan_show_join {
+  h1 {
+    color: $white;
+    font-size: 2em;
+
+    span {
+      color: $pinky;
+    }
+  }
+
+  &-wrapper {
 
   padding: 50px 0px 50px 0px;
 
     text-align: center;
 
     h1 {
-      font-size: 3em;
+      font-size: 2em;
       color: $white;
     }
     h2 {
@@ -21,9 +30,6 @@
       font-size: 1.25em;
     }
   }
-
-
-
 
 }
 
@@ -84,14 +90,46 @@ p {
 
 
 
+.clan_new_content {
+  padding: 150px 0px 150px 0px;
+
+  h1 {
+    color:$white;
+    font-size: 2em;
+    text-align: center;
+  }
+}
 
 
 .clan_form {
+
 padding: 50px 0px 50px 0px;
 
+.form-control {
+  color: $white;
+}
 
+label {
+  color:$pinky;
+}
+
+input, textarea {
+  color:$white;
+
+  &:focus, :active {
+    background-color: transparent;
+  }
 
 }
+
+}
+
+
+
+
+
+
+
 
 .clan-index {
 
@@ -112,6 +150,7 @@ font-weight: 700;
 
   h4 {
     font-size: 40px;
+    color: $white;
   }
 
   h2 {

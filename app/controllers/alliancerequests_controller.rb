@@ -30,7 +30,7 @@ class AlliancerequestsController < ApplicationController
       areq = @alliancerequest
       areq.update_attribute(:approval, true)
 
-      flash[:success] = "Klan został zaakceptowany, autor podania otrzymał rangę lidera klanu."
+      flash[:success] = "Podanie zostało zaakceptowane, autor podania otrzymał rangę lidera klanu."
       redirect_to alliancerequests_path
 end
 
@@ -40,7 +40,7 @@ def decline
     areq = @alliancerequest
     areq.update_attribute(:approval, false)
 
-    flash[:success] = "Klan został odrzucony."
+    flash[:success] = "Podanie zostało odrzucone."
     redirect_to alliancerequests_path
 
 end
@@ -55,7 +55,7 @@ def pend
     areq = @alliancerequest
     areq.update_attribute(:approval, nil)
 
-    flash[:success] = "Klan został odrzucony."
+    flash[:success] = "Podanie zostało przeniesione do oczekujących."
     redirect_to alliancerequests_path
 
 end

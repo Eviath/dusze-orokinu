@@ -5,14 +5,16 @@
 
   <% if @user.alliancerequest %>
 
-    <div class="clan_show_content">
+    <div class="alliancerequest_show_content">
       <div class="container">
 
 
 
 
-        <div class="col-md-8">
+        <div class="col-md-10 mx-auto text-center">
           <% if @user.alliancerequest.approval.nil?  %>
+
+          <div class="alliancerequest_show_content-wrapper">
 
           <h2>Podanie do sojuszu oczekuje na akceptację przez administrację sojuszu.</h2>
 
@@ -21,21 +23,32 @@
             <%= render @alliancerequest %>
           </div>
 
+        </div>
 
             <%  else  %>
 
 
                         <% if @user.alliancerequest.approval  %>
 
-                          <h1>Podanie do sojuszu zostało zaakceptowane.</h1>
-                          <h1>Otrzymałeś rangę "Lider Klanu".</h1>
-                          <h1>Możesz teraz przejść do stworzenia ogłoszenia klanu.</h1>
+                        <div class="alliancerequest_show_content-wrapper">
+
+                          <h1>Podanie do sojuszu zostało <span>zaakceptowane</span></h1>
+                          <h1>Otrzymałeś rangę <span>Lider Klanu</span></h1>
+                          <h2>Możesz teraz przejść do stworzenia ogłoszenia.</h2>
+                            <div class="alliancerequest-button">
+                          <span><%= link_to "Panel klanu", klan_path, class: "btn btn-do-bordered" %>
+                          </div>
+                        </div>
 
                         <%  else  %>
 
+                        <div class="alliancerequest_show_content-wrapper">
+
                           <h1>
-                            Podanie zostało odrzucone.
+                            Twoje podanie do sojuszu zostało odrzucone.
                           </h1>
+
+                        </div>
 
                         <%  end  %>
 
@@ -49,11 +62,11 @@
 
     <% else %>
 
-      <div class="clan_show_content">
+      <div class="alliancerequest_show_content">
 
         <div class="container">
 
-          <div class="clan_show_join">
+        <div class="alliancerequest_show_content-wrapper">
 
             <h1>
               Prowadzisz klan i chcesz dołączyć do naszego sojuszu?</h1>
