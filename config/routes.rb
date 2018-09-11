@@ -60,5 +60,8 @@ Rails.application.routes.draw do
   get  '/klan',  to: 'clans#panel'
   get  '/podanie', to:'alliancerequests#podanie'
 
-
+  get '/msg', to:'conversations#index'
+    resources :personal_messages, only: [:new, :create]
+    resources :conversations, only: [:index, :show]
+    mount ActionCable.server => '/cable'
 end

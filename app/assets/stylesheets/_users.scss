@@ -145,13 +145,18 @@ input {
   }
 }
 .user-profile {
-  min-width: 200px;
+  min-width: 250px;
 }
 
 .options {
+  display: inline-flex;
   margin-left:20px;
   border-left: solid $pinky 1px;
 padding: 12px 0px 0px 12px;
+
+input {
+  width:auto;
+}
 }
 
 .btn-do-profile-opt {

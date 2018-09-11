@@ -1,0 +1,35 @@
+
+
+<div class="page-wrapper">
+<div class="page-content">
+ 
+<div class="container">
+<div class="row">
+
+<div class="col-md-6 mx-auto conversation-body">
+
+<h1>Konwersacja <%= @conversation.with(current_user).name %></h1>
+
+<div id="conversation-main">
+  <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
+    <%= render @conversation.personal_messages %>
+  </div>
+
+  <%= form_for @personal_message do |f| %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+    <%= f.label :body, "Wiadomość" %>
+    <%= f.text_area :body, class: 'form-control' %>
+
+    <%= f.submit "Wyślij", class: "btn btn-do" %>
+  <% end %>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+</div>

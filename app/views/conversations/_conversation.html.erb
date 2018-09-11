@@ -1,0 +1,11 @@
+
+<div class="col-md-4">
+  Konwersacja z <%= online_status conversation.with(current_user) %>
+  <br>
+  <em><%= conversation.personal_messages.last.body.truncate(50) %></em>
+  <br>
+  <%= link_to 'Zobacz wiadomości', conversation_path(conversation) %>
+  <hr>
+</div>
+
+

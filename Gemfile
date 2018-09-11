@@ -46,7 +46,7 @@ gem 'bootstrap-will_paginate'
 
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
-
+gem 'redis', '~> 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

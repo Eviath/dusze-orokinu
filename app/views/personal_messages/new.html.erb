@@ -1,0 +1,28 @@
+
+
+<div class="page-wrapper">
+<div class="page-content">
+ 
+<div class="container">
+<div class="row">
+
+<div class="col-md-6 mx-auto personal_message-new">
+
+<h1>Nowa wiadomość do <span><%= @receiver.name %></span></h1>
+
+<%= form_for @personal_message do |f| %>
+  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+<div class="personal_message-new-body">
+  <%= f.label :body, "Wiadomość" %>
+  <%= f.text_area :body, class: "form-control" %>
+</div>
+   <%= f.submit "Wyślij", class: "btn btn-do" %>
+<% end %>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>

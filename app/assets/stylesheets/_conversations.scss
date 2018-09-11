@@ -1,0 +1,28 @@
+.conversations_index-row {
+padding: 50px 0px 50px 0px;
+}
+
+.conversation-body {
+    color:$white;
+}
+
+#conversation-body {
+input, textarea {
+    background: transparent;
+}
+
+
+p.darker {
+    color: $darkwhite;
+}
+}
+
+.personal_message-new {
+    color: $white;
+
+    &-body {
+        input, textarea {
+            background: transparent;
+        }
+    }
+}
