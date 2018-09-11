@@ -6,68 +6,22 @@
 
 
 
-
-
-
-
-<% if current_user.lider? %>
-
-  <div class="clan_show_join">
-
-  <h1>Podanie do sojuszu zostało przyjęte! Jesteś liderem klanu. Możesz teraz przejść do stworzenia ogłoszenia swojego klanu!</h1>
-  <h2>Stwórz ogłoszenie</h2>
-  <div class="alliancerequest-button">
-      <span><%= link_to "Stwórz ogłoszenie klanu", alliancerequests_path, class: "btn btn-do-bordered" %>
-  </div>
+  <div class="alliancerequest">
+    <%= render @clan %>
   </div>
 
-  <% else %>
-
-
-  <% if @user.alliancerequest %>
-
-  <div class="clan_show_join">
-  <h1>Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.</h1>
-  <h2>Zobacz swoje zgłoszenie do sojuszu.</h2>
-  <div class="alliancerequest-button">
-      <span><%= link_to "Sprawdź odanie do sojuszu", podanie_path, class: "btn btn-do-bordered" %>
-  </div>
-  </div>
-
-  <% else %>
-
-
-  <div class="clan_show_join">
-
-  <h1>Nie złożyłeś jeszcze podania do sojuszu! Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu.</h1>
-  <h2>Przejdź do zakładki sojusz.</h2>
-  <div class="alliancerequest-button">
-      <span><%= link_to "Podanie do sojuszu", podanie_path, class: "btn btn-do-bordered" %>
-  </div>
-
-  </div>
-
-
-  <div class="clan_show_join">
-
-  <h1>Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!</h1>
-  <h2>Znajdź klan dla siebie!</h2>
-  <div class="alliancerequest-button">
-      <span><%= link_to "Lista klanów w sojuszu", alliancerequests_path, class: "btn btn-do-bordered" %>
-  </div>
-
-  </div>
-
+  <div class="alliancerequest-button text-center">
+    <% if @clansapproved.previous(@clan)%>
+    <%= link_to 'Poprzedni', @clansapproved.previous(@clan), class: "btn btn-do" %>
     <% end %>
 
+  <%= link_to "Powrót - Lista klanów", clans_path, class: "btn btn-do" %>
 
-
-
+  <% if @clansapproved.next(@clan)%>
+  <%= link_to 'Następny', @clansapproved.next(@clan), class: "btn btn-do" %>
   <% end %>
 
-
-
-
+  </div>
 
 
 

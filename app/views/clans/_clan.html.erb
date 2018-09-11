@@ -1,0 +1,63 @@
+
+  <div class="clan_content-wrapper">
+
+<div class="container">
+
+  <div class="clan-logo">
+  <p><%= image_tag clan.picture.url if clan.picture? %></p>
+  </div>
+
+<div class="clan-name">
+  <h1>Nazwa klanu</h1>
+<p><%= clan.name %></p>
+</div>
+
+<div class="clan-leader">
+  <h1>Nick założyciela klanu:</h1>
+<p><%= clan.leader %></p>
+</div>
+
+<div class="clan-tier">
+  <h1>Tier klanu:</h1>
+  <p><%= clan.tier %></p>
+</div>
+
+<div class="clan-members">
+  <h1>Aktualna liczba członków klanu:</h1>
+<p><%= clan.members %></p>
+</div>
+
+
+<div class="clan-about">
+  <h1>Opis klanu:</h1>
+<p><%= clan.about %></p>
+</div>
+
+
+
+
+</div>
+
+  </div>
+
+  <span class="timestamp">
+    <p>Ogłoszenie stworzone <%= time_ago_in_words(clan.created_at) %> temu.</p>
+    <p>Ogłoszenie zaktualizowane <%= time_ago_in_words(clan.updated_at) %> temu.</p>
+<% if current_user?(clan.user) || admin? %>
+<%= link_to "Edytuj", edit_clan_path(clan) %>
+    |  <%= link_to "Usuń", clan, method: :delete,
+                                       data: { confirm: "Jesteś pewny?" } %>
+  <% end %>
+
+  <% if admin? %>
+
+<% if @clan.approval == true %>
+| <%= link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) %>
+<% else%>
+|  <%= link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) %>
+<% end %>
+
+    <% end %>
+
+  </span>
+</div>

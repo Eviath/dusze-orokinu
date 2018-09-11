@@ -1,4 +1,140 @@
 <% provide(:title, 'Lista klanów') %>
 
+<div class="clan-index">
 
-#listaklanów
+
+<div class="container">
+
+
+
+  <% if @clansapproved.any? %>
+
+  <div class="row">
+
+
+
+<% @clansapproved.each do |clan| %>
+
+  <div class="col-md-4 clan-col">
+
+
+
+<div class="clan-content">
+
+
+      <div class="clan-content-image"><%= image_tag clan.picture.url if clan.picture? %></div>
+
+<div class="clan-content-text">
+    <h1><span><%= clan.name %></span></h1>
+    <h2>Nick lidera: <span><%= clan.leader %></span></h2>
+    <h2>Tier klanu: <span><%= clan.tier %></span></h2>
+    <h2>Liczba klanowiczy: <span><%= clan.members %></span></h2>
+</div>
+
+
+<div class="clan-content-buttons">
+
+  <p>   <%= link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small" %>
+
+  <% if current_user?(clan.user) || current_user.try(:admin?) %>
+    | <%= link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small" %>
+    | <%= link_to "Usuń", clan, method: :delete,
+                                  data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" %>
+
+    <% end %>
+</p>
+
+</div>
+</div>
+
+    </div>
+
+
+
+<% end %>
+
+</div>
+
+<% else %>
+
+  <div class="row">
+      <div class="col-md-8 mx-auto text-center">
+<h4>Brak klanów do wyświetlenia</h4>
+      </div>
+  </div>
+
+<% end %>
+
+<% if admin? %>
+
+<% if @clanspending.any? %>
+
+<div class="clan-approval-pending">
+  <div class="row">
+    <div class="col-md-4 mx-auto text-center">
+    <h2>Klany oczekujące na akceptację</h2>
+    </div>
+  </div>
+
+
+
+<div class="row">
+<% @clanspending.each do |clan| %>
+
+
+
+  <div class="col-md-4 clan-col">
+
+
+
+<div class="clan-content">
+
+
+      <div class="clan-content-image"><%= image_tag clan.picture.url if clan.picture? %></div>
+
+<div class="clan-content-text">
+    <h2>Nazwa klanu: <span><%= clan.name %></span></h2>
+    <h2>Nick lidera: <span><%= clan.leader %></span></h2>
+    <h2>Tier klanu: <span><%= clan.tier %></span></h2>
+</div>
+
+
+<div class="clan-content-buttons">
+
+  <p>   <%= link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small" %>
+
+  <% if current_user?(clan.user) || current_user.try(:admin?) %>
+    | <%= link_to "Usuń", clan, method: :delete,
+                                  data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" %>
+      <%= link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small" %>
+
+    <% end %>
+</p>
+
+</div>
+</div>
+
+  </div>
+
+<% end %>
+
+</div>
+
+<% else %>
+<div class="row no-clans-pending">
+
+<div class="col-md-4 mx-auto text-center">
+<h2>Brak klanów oczekujących na akceptację</h2>
+</div>
+
+</div>
+
+
+</div>
+<% end %>
+<% end %>
+
+</div>
+
+</div>
+</div>

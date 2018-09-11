@@ -10,6 +10,7 @@ class CreateAlliancerequests < ActiveRecord::Migration[5.1]
       t.boolean :discord_check, default: false
       t.boolean :rules_check, default: false
       t.references :user, foreign_key: true
+      t.boolean :approval, default: nil
 
       t.timestamps
     end

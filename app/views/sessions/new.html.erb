@@ -12,6 +12,7 @@
 <div class="page-header">
 <% provide(:title, "Logowanie") %>
 <h1>Logowanie</h1>
+<h3>Zaloguj się, aby zyskać dostęp do wszystkich funkcji strony.</h3>
 </div>
 
 <div class="container form-container">
@@ -32,7 +33,7 @@
       <span>Zapamiętaj mnie.</span>
       <% end %>
 
-      <%= f.submit "Zaloguj", class: "btn btn-do" %>
+      <%= f.submit "Zaloguj", class: "btn user-btn" %>
     <% end %>
 
     <p>Nie masz konta? <%= link_to "Zarejestruj się!", rejestracja_path %></p>

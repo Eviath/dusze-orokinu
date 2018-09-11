@@ -4,24 +4,189 @@
 
 
 .clan_show_content {
-  padding: 50px 0px 50px 0px;
+  padding: 150px 0px 50px 0px;
 
-  .clan_show_join {
+  h1 {
+    color: $white;
+    font-size: 2em;
+
+    span {
+      color: $pinky;
+    }
+  }
+
+  &-wrapper {
 
   padding: 50px 0px 50px 0px;
 
     text-align: center;
 
     h1 {
-      font-size: 1.75em;
+      font-size: 2em;
+      color: $white;
     }
     h2 {
       color: $pinky;
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
   }
 
+}
 
+
+.clan_content-wrapper {
+  text-align: center;
+margin-top: 50px;
+  padding: 50px 0px 50px 0px;
+
+p {
+  color: rgb(217, 217, 217);
+}
+
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: $pinky;
+
+  }
+}
+
+.clan-approval-pending {
+  width:100%;
+}
+
+.clan-content {
+  padding: 10px;
+
+  background-color: $darkbg;
+
+  &-image {
+    text-align: center;
+  padding-bottom: 20px;
+
+    img {
+      max-width:128px;
+      max-height: 128px;
+    }
+  }
+
+  &-text {
+
+    text-align: center;
+    padding-bottom: 20px;
+
+    h1 {padding-bottom:10px;}
+
+    h2 { color: $pinky; }
+    span { color: rgb(204, 204, 204); }
+
+  }
+
+  &-buttons {
+    text-align: center;
+  }
+
+}
+
+
+
+.clan_new_content {
+  padding: 150px 0px 150px 0px;
+
+  h1 {
+    color:$white;
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+
+.clan_form {
+
+padding: 50px 0px 50px 0px;
+
+.form-control {
+  color: $white;
+}
+
+label {
+  color:$pinky;
+}
+
+input, textarea {
+  color:$white;
+
+  &:focus, :active {
+    background-color: transparent;
+  }
+
+}
+
+}
+
+
+
+
+
+
+
+
+.clan-index {
+
+padding: 200px 0px 100px 0px;
+
+.no-clans-pending {
+  padding-top: 50px;
+}
+  .col-md-8 {
+    padding: 150px 0px 150px 0px;
+  }
+
+
+  h1 {
+font-size: 22px;
+font-weight: 700;
+  }
+
+  h4 {
+    font-size: 40px;
+    color: $white;
+  }
+
+  h2 {
+    color: #d9d9d9;
+font-size:15px;
+font-weight: 400;
+
+span {
+  font-weight: 400;
+}
+  }
+
+  p {
+
+  }
+
+.form-control input {
+
+}
+
+  .clan-col {
+
+    h2 {
+      color: $pinky;
+  font-size:15px;
+  font-weight: 400;
+    }
+
+    background-color:rgba(#17161a, 0.5);
+    margin: 1%;
+ padding: 15px;
+ -webkit-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
+-moz-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
+box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
+
+  }
 
 
 }

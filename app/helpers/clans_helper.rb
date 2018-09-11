@@ -1,0 +1,4 @@
+module ClansHelper
+
+
+end

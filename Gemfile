@@ -21,7 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 gem "font-awesome-rails"
 # JQuery
 gem 'jquery-rails'
-
 gem 'data-confirm-modal'
 gem 'rails-i18n', '~> 5.1'
 gem "polish", ">= 0.1.0"
@@ -45,6 +44,9 @@ gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
 
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -54,6 +56,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'fog', '1.42'
 end
 
 group :development do

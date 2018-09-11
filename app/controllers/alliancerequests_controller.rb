@@ -6,15 +6,59 @@ class AlliancerequestsController < ApplicationController
 
   def index
 
-       @alliancerequests = Alliancerequest.all
-
+       @alliancerequestsapproved = Alliancerequest.approved.newest.page(params[:page]).per_page(5)
+       @alliancerequestspending = Alliancerequest.pending.newest.page(params[:page]).per_page(5)
+        @alliancerequestsdeclined = Alliancerequest.declined.newest.page(params[:page]).per_page(5)
   end
 
   def podanie
+
       @user = current_user
       @alliancerequest = @user.alliancerequest
+
+
   end
 
+
+  def approve
+    @alliancerequest = Alliancerequest.find(params[:id])
+      user = @user
+      auser = @alliancerequest.user
+      auser.update_attribute(:lider, true)
+
+
+      areq = @alliancerequest
+      areq.update_attribute(:approval, true)
+
+      flash[:success] = "Podanie zostało zaakceptowane, autor podania otrzymał rangę lidera klanu."
+      redirect_to alliancerequests_path
+end
+
+def decline
+  @alliancerequest = Alliancerequest.find(params[:id])
+
+    areq = @alliancerequest
+    areq.update_attribute(:approval, false)
+
+    flash[:success] = "Podanie zostało odrzucone."
+    redirect_to alliancerequests_path
+
+end
+
+def pend
+  @alliancerequest = Alliancerequest.find(params[:id])
+    user = @user
+    auser = @alliancerequest.user
+    auser.update_attribute(:lider, false)
+
+
+    areq = @alliancerequest
+    areq.update_attribute(:approval, nil)
+
+    flash[:success] = "Podanie zostało przeniesione do oczekujących."
+    redirect_to alliancerequests_path
+
+end
 
     def new
 
@@ -24,6 +68,7 @@ class AlliancerequestsController < ApplicationController
        end
 
        def show
+        @user = User.find(params[:id] )
         @alliancerequest = Alliancerequest.find(params[:id])
        end
 
@@ -47,7 +92,7 @@ end
 private
 
   def alliancerequest_params
-    params.require(:alliancerequest).permit(:nickname, :clan_about, :lider_nickname, :clan_name, :clan_tier, :clan_members, :discord_check, :rules_check)
+    params.require(:alliancerequest).permit(:nickname, :clan_about, :lider_nickname, :clan_name, :clan_tier, :clan_members, :discord_check, :rules_check, :approval)
   end
 
   def load_alliancerequest

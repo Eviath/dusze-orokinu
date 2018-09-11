@@ -3,12 +3,14 @@
 
     <div class="row">
       <div class="user-image">
-        <%= gravatar_for user, size: 50 %>
+      <%= gravatar_for user, size: 50 %>
       </div>
 
       <div class="user-profile">
 
         <%= link_to user.name, user %>
+
+    
 
         <div class="ranks">
           <% if user.admin? %>
@@ -27,7 +29,7 @@
       </div>
 
 
-        <% if current_user.admin? || current_user?(user) %>
+        <% if current_user?(user) || admin? %>
           <div class="options">
           <%= button_to "Usuń użytkownika", user, method: :delete, data: { confirm: "Jesteś pewny, że chcesz usunąć tego użytkownika?" }, class: 'btn btn-do-profile-opt ' %>
   </div>

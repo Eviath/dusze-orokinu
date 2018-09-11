@@ -23,6 +23,7 @@ User.create!(name:  "test",
              password:              "foobar",
              password_confirmation: "foobar",
              activated: true,
+             lider:     true,
              activated_at: Time.zone.now)
 
 
@@ -49,6 +50,18 @@ end
     discord_check = "Tak"
     lider_nickname  = Faker::Name.name
     nickname  = Faker::Name.name
-    users.each { |user| user.create_alliancerequest(nickname: nickname, lider_nickname: lider_nickname, clan_name: clan_name, clan_tier: clan_tier, clan_about: clan_about, clan_members: clan_members, discord_check: discord_check, rules_check: rules_check ) }
+    users.each { |user| user.create_alliancerequest(nickname: nickname, lider_nickname: lider_nickname, clan_name: clan_name, clan_tier: clan_tier, clan_about: clan_about, clan_members: clan_members, discord_check: discord_check, rules_check: rules_check, approval: nil ) }
+
+  end
+
+  users = User.order(:created_at).take(2)
+  1.times do
+    about = "Fajny klan."
+    members = 80
+    tier  = "Storm"
+    picture = "LogoFake"
+    leader  = Faker::Name.name
+    name  = Faker::Name.name
+    users.each { |user| user.create_clan(name: name, leader: leader, about: about, tier: tier, members: members, picture: picture, approval: false) }
 
   end
