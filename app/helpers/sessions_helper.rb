@@ -7,6 +7,9 @@ module SessionsHelper
        cookies.signed[:actioncable_user_id] = user.id
   end
 
+
+
+
   def user_name
   @current_user.name
   end

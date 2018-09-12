@@ -312,9 +312,22 @@ margin-bottom: 0px;
   bottom: 10px;
   width: 300px;
   padding: 10px;
-  border: 1px solid black;
-  background-color: #fff;
-  .close {cursor: pointer}
+  background-color: $darkbg;
+  -webkit-box-shadow: -14px 15px 46px -20px rgba(0,0,0,0.75);
+  -moz-box-shadow: -14px 15px 46px -20px rgba(0,0,0,0.75);
+  box-shadow: -14px 15px 46px -20px rgba(0,0,0,0.75);
+  .close {
+    color:$pinky;
+    opacity:1;
+    font-weight: 400;
+    text-shadow:none !important;
+    font-size: 16px;
+    cursor: pointer
+  }
+
+  p {
+    color:$white;
+  }
 }
 
 .online_status {

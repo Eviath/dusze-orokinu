@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180911152232) do
   create_table "conversations", force: :cascade do |t|
     t.integer "author_id"
     t.integer "receiver_id"
+    t.boolean "author_deleted", default: false
+    t.boolean "receiver_deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true

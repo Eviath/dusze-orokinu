@@ -8,12 +8,16 @@
 
 <div class="col-md-6 mx-auto conversation-body">
 
-<h1>Konwersacja <%= @conversation.with(current_user).name %></h1>
+<h1>Konwersacja z <%= @conversation.with(current_user).name %></h1>
 
 <div id="conversation-main">
+
+
   <div id="conversation-body" data-conversation-id="<%= @conversation.id %>">
-    <%= render @conversation.personal_messages %>
-  </div>
+  
+    <%= render (@conversation.personal_messages) %>
+    </div>
+
 
   <%= form_for @personal_message do |f| %>
     <%= hidden_field_tag 'conversation_id', @conversation.id %>
@@ -23,6 +27,17 @@
     <%= f.submit "Wyślij", class: "btn btn-do" %>
   <% end %>
 </div>
+
+<% if conversation.receiver_deleted == false %>
+        <% if conversation.recipient?(current_user) %>
+          <%= link_to (conversation.receiver_deleted ? "is true already" : "Usuń Receiver"), trashreceiver_conversation_path(@conversation) %>
+        <% end %>
+<% end %>
+<% if conversation.author_deleted == false %>
+        <% if conversation.author?(current_user) %>
+          <%= link_to (conversation.author_deleted ? "is true already" : "Usuń Author"), trashauthor_conversation_path(@conversation) %>
+        <% end %>
+<% end %>
 
 </div>
 

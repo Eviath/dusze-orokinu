@@ -62,6 +62,12 @@ Rails.application.routes.draw do
 
   get '/msg', to:'conversations#index'
     resources :personal_messages, only: [:new, :create]
-    resources :conversations, only: [:index, :show]
+    resources :conversations, only: [:index, :show, :destroy]
+    resources :conversations do
+        member do
+            get :trashauthor
+            get :trashreceiver
+        end
+    end
     mount ActionCable.server => '/cable'
 end
