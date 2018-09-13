@@ -3,9 +3,12 @@
 
 <div class="container">
 
+
+<div class="clan-body">
   <div class="clan-logo">
   <p><%= image_tag clan.picture.url if clan.picture? %></p>
   </div>
+
 
 <div class="clan-name">
   <h1>Nazwa klanu</h1>
@@ -27,12 +30,13 @@
 <p><%= clan.members %></p>
 </div>
 
-
-<div class="clan-about">
-  <h1>Opis klanu:</h1>
-<p><%= clan.about %></p>
 </div>
-
+<div class="alliancerequest-body-about">
+  <h1>Opis klanu:</h1>
+<div class="fr-view">
+<%= raw clan.about %>
+</div>
+</div>
 
 
 

@@ -24,6 +24,9 @@ end
   
   end
 
-
+def trix 
+  var element = document.querySelector("trix-editor")
+element.editor
+end
 
 end

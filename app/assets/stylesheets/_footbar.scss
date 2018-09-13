@@ -2,12 +2,33 @@
   position: relative;
 margin:0;
   width:100%;
-  background-color: $darkbg;
+  background: $darkt !important;
+  text-align: center;
+
+  p {
+    color: $darkwhite;
+  }
+
+  img {
+    width:20%;
+    height:auto;
+  }
 
 }
 
-.footbar-content {
-    padding: 50px;
+.footbar-body {
+  
+  padding: 50px;
+
+  h2 {
+    font-size:4em;
+color: $white;
+  }
+
+  p {
+color: $pinky;
+font-size:1.5em;
+  }
 }
 
 nav.foo-nav li {

@@ -62,7 +62,7 @@ $lg-width: 1200px;
 // PARALLAX SCROLLING
 .parallax {
     /* The image used */
-    background-image: url("poe.jpg");
+    background-color: $darkbg;
 
     height:100%;
 
@@ -72,6 +72,7 @@ $lg-width: 1200px;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 
 
@@ -113,8 +114,8 @@ width:100%;
   background-size: cover;
   background-position: top;
   opacity: 0.5;
- background-image: url("/assets/mag-blacks.png");
- background-size: 105%;
+ background-image: url("/assets/lua.jpg");
+
 }
 
 .header-body-wrapper {
@@ -137,7 +138,7 @@ div.header-body {
 
   h1 {
   @include h1-font-mediaQ;
-  color:#d41144;
+  color: $pinky;
   font-weight: 700;
   }
 
@@ -154,12 +155,23 @@ div.header-body {
 
 }
 
+.content-dusze{
+  padding-bottom: 150px;
+  width:100%;
+
+  background: $darkbg;
+}
+
+.content-onas {
+  background: $darkbg;
+}
+
 // content
 
 .content-wrapper {
   color: #ffff;
 
-  padding: 150px 0px 150px 0px;
+
 }
 
 // Content model index.html
@@ -186,6 +198,7 @@ div.header-body {
 // about-us-text
 
 .about-us-text {
+  padding: 100px 0px 100px 0px;
 
   h1, p {
     text-align: center;
@@ -193,17 +206,17 @@ div.header-body {
 
   h2 {
     text-align: center;
-    color: #d41144;
+    color: $pinky;
   }
 }
 
 .tag{
 
-  padding-top: 100px;
+ padding-top: 25px;
 
 &-header {
   text-align: center;
-  color: #d41144;
+  color: $pinky;
 }
 
 &-text {
@@ -226,7 +239,7 @@ color: #fff;
  }
  h2 {
    font-size: 2em;
-     color: #d41144;
+     color: $pinky;
  }
 }
 

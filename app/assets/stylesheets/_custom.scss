@@ -3,7 +3,7 @@
 body,
 html {
     background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
-  color: #343434;
+  color: $white;
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
   height: 100%;
@@ -16,7 +16,7 @@ header {
 }
 
 a {
-  color: #d41144;
+  color:  $pinky;
   &:hover{
     color: #9c032b;
     text-decoration: underline;
@@ -56,6 +56,25 @@ a {
 }
 
 
+.fullwd {
+width:100%;
+height: auto;
+background: $darkbg;
+}
+
+.future {
+
+  -webkit-clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+background: $gradient;
+transition: 1s;
+
+&:hover {
+  -webkit-clip-path: polygon(50% 0%, 50% 0%, 100% 15%, 100% 85%, 50% 100%, 50% 100%, 0% 85%, 0% 15%);
+  clip-path: polygon(50% 0%, 50% 0%, 100% 15%, 100% 85%, 50% 100%, 50% 100%, 0% 85%, 0% 15%);
+  transition: 1s;
+}
+}
 
 .share-ul {
   transition: 1s;
@@ -134,7 +153,7 @@ transform: translateX(15px);
 .form-control:focus {
 
 background-color: #fff;
-border-color: #a20743;
+border-color: $pinky;
 outline: 0;
 box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);
 }
@@ -152,12 +171,12 @@ box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);
 
   .navbar-dark .navbar-brand:hover, .navbar-light .navbar-brand:focus {
 
-    color: #d41144;
+    color: $pinky;
   }
 
   .navbar-dark .navbar-nav .show > .nav-link,   .navbar-dark .navbar-nav .active > .nav-link,   .navbar-dark .navbar-nav .nav-link.show,   .navbar-dark .navbar-nav .nav-link.active {
 
-    color: #d41144;
+    color: $pinky;
   }
 
 
@@ -239,7 +258,7 @@ vertical-align: 0.15em;
 
 // Navbar brand font color
 .navbar-dark .navbar-brand {
-  color: #d41144;
+  color: $pinky;
 
   &:hover {
 
@@ -280,7 +299,7 @@ vertical-align: 0.15em;
 }
 
 .content-wrapper {
-  padding: 50px 0px 50px 0px;
+ 
 }
 
 .page-header h1 {
@@ -339,14 +358,17 @@ margin-bottom: 0px;
 }
 
 // buttons
+.btn-away {
+  margin-top: 30px;
+}
 
 .btn-danger {
     color: #fff;
-    background-color: #d41144;
-    border-color: #d41144;
+    background-color: $pinky;
+    border-color: $pinky;
     &:hover {
-      background-color: #d41144;
-      border-color: #d41144;
+      background-color: $pinky;
+      border-color: $pinky;
     }
 }
 
@@ -373,7 +395,7 @@ a.btn.btn-do {
 
 .btn-do  {
   color: #fff;
-background-color:#d41144;
+background-color:$pinky !important;
 }
 
 a.btn-do-bordered {
@@ -421,7 +443,7 @@ a.btn-do-bordered {
 
 
 &:hover {
-color:#d41144;
+color:$pinky;
 }
 
 }
@@ -470,7 +492,7 @@ a.btn-do-bordered-small {
 
 
 &:hover {
-color:#d41144;
+color:$pinky;
 }
 
 }

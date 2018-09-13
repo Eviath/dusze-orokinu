@@ -33,9 +33,17 @@
 
 }
 
+.clan-body {
+  text-align: center;
+
+  &-about {
+    padding-top: 50px;
+  }
+}
+
 
 .clan_content-wrapper {
-  text-align: center;
+
 margin-top: 50px;
   padding: 50px 0px 50px 0px;
 
@@ -113,11 +121,14 @@ label {
   color:$pinky;
 }
 
-input, textarea {
-  color:$white;
+input, textarea, select,  {
+  background-color: transparent;
 
   &:focus, :active {
     background-color: transparent;
+  }
+  option {
+    color: $darkbg;
   }
 
 }

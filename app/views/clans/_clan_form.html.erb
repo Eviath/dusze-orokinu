@@ -27,13 +27,24 @@
       <%= f.label :members, "Aktualna liczba członków klanu"  %>
       <%= f.text_field :members, :class => 'form-control'  %>
 
+
       <%= f.label :about, "Krótki opis klanu"  %>
-      <%= f.text_area :about, class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" %>
+      <%= f.text_area :about, id: "wysi", class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" %>
+           
 
 
 
-  <%= f.submit "Zapisz", class: "btn btn-do" %>
+
+  <%= f.submit "Zapisz", class: "btn btn-do btn-away" %>
 <% end %>
 
       </div>
 </div>
+
+<script>
+$('#wysi').froalaEditor({
+    inlineMode: false,
+    heightMin: '200px',
+    placeholderText: 'Napisz coś o klanie.'
+  });
+</script>

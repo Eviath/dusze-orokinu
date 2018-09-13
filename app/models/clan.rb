@@ -6,7 +6,7 @@ class Clan < ApplicationRecord
     scope :newest, -> { order(created_at: :desc) }
     mount_uploader :picture, PictureUploader
    validates :user_id, presence: true
-   validates :about, presence: true, length: { maximum: 380 }
+   validates :about, presence: true
    validates :leader, presence: true
    validates :tier, presence: true
    validates :name, presence: true
