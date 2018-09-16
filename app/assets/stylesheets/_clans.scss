@@ -33,19 +33,40 @@
 
 }
 
+.clan_show_head {
+  padding: 0px 0px 50px 0px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 3em;
+  }
+
+}
+.clan_show-header{
+  padding: 45px;
+ background-color: $darkbg;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+ border-bottom: 2px solid $yell;
+
+}
+
+.clan_show-about {
+  background-color: $lightshadow;
+  padding: 40px;
+
+}
+
 .clan-body {
   text-align: center;
 
-  &-about {
-    padding-top: 50px;
-  }
+
 }
 
 
 .clan_content-wrapper {
 
-margin-top: 50px;
-  padding: 50px 0px 50px 0px;
+
 
 p {
   color: rgb(217, 217, 217);

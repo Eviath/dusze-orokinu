@@ -5,15 +5,32 @@
 
 
 <div class="clan-body">
+
+<div class="clan_show_head">
+
+<img src="/assets/all-gold.png">
+<h2><%= clan.name %></h2>
+</div>
+
+
+<div class="row clan_show-header">
+
+
+
+<div class="col-md-6">
+
   <div class="clan-logo">
   <p><%= image_tag clan.picture.url if clan.picture? %></p>
   </div>
-
-
 <div class="clan-name">
-  <h1>Nazwa klanu</h1>
-<p><%= clan.name %></p>
+<h2><%= clan.name %></h2>
 </div>
+</div>
+
+
+
+<div class="col-md-6">
+
 
 <div class="clan-leader">
   <h1>Nick założyciela klanu:</h1>
@@ -30,13 +47,28 @@
 <p><%= clan.members %></p>
 </div>
 
+
+
 </div>
-<div class="alliancerequest-body-about">
-  <h1>Opis klanu:</h1>
+
+</div>
+
+</div>
+
+
+
+
+<div class="row clan_show-about">
+
+<div class="col-md-12">
+<div class="clan-body-about">
 <div class="fr-view">
 <%= raw clan.about %>
 </div>
 </div>
+</div>
+</div>
+
 
 
 

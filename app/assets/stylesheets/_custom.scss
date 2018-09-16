@@ -2,7 +2,8 @@
 
 body,
 html {
-    background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
+  -webkit-background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
+  -moz-background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
   color: $white;
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
@@ -18,19 +19,22 @@ header {
 a {
   color:  $pinky;
   &:hover{
-    color: #9c032b;
+    color: $yell-hov;
     text-decoration: underline;
   }
 }
 
 
 
+.timestamp {
 
-.timestamp p {
+padding: 20px;
 
-  color: #d9d9d9;
+p {
+ 
+  color: $darkwhite;
 }
-
+}
 
 // navigation
 .nav-up {
@@ -199,8 +203,8 @@ box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);
       border-bottom: 1px solid rgba(255, 255, 255, 0);
 transition: 0.25s;
       &:hover {
-        color: #c8114d;
-        border-bottom: 1px solid rgb(200, 17, 77);
+        color: $pinky;
+        border-bottom: 1px solid $pinky;
         transition: 0.25s;
       }
 }
@@ -231,7 +235,8 @@ a.log-in {
 
 // dropdown-Navbar background coolor
 .dropdown-menu {
-  background-color: #0e0e0e;
+  background-color:#17161a;
+  border-bottom: 2px solid $pinky;
 }
 
 // dropdown-Navbar link color
@@ -262,7 +267,7 @@ vertical-align: 0.15em;
 
   &:hover {
 
-    color: #c8114d;
+    color: $pinky;
   }
 }
 

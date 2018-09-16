@@ -58,6 +58,16 @@ $lg-width: 1200px;
 
 
 
+.parallaxlang {
+  background-image: url("/assets/orolang-sm.png");
+
+  height:100%;
+
+  /* Create the parallax scrolling effect */
+  background-position: top;
+  background-repeat: no-repeat;
+
+}
 
 // PARALLAX SCROLLING
 .parallax {
@@ -114,7 +124,7 @@ width:100%;
   background-size: cover;
   background-position: top;
   opacity: 0.5;
- background-image: url("/assets/lua.jpg");
+ background-image: url("/assets/sac.png");
 
 }
 
@@ -163,7 +173,9 @@ div.header-body {
 }
 
 .content-onas {
-  background: $darkbg;
+z-index: 10;
+
+background: $darkbg;
 }
 
 // content

@@ -15,7 +15,7 @@
     <%= link_to 'Poprzedni', @clansapproved.previous(@clan), class: "btn btn-do" %>
     <% end %>
 
-  <%= link_to "Powrót - Lista klanów", clans_path, class: "btn btn-do" %>
+  <%= link_to "Lista Klanów", clans_path, class: "btn btn-do" %>
 
   <% if @clansapproved.next(@clan)%>
   <%= link_to 'Następny', @clansapproved.next(@clan), class: "btn btn-do" %>

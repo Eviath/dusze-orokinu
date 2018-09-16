@@ -112,6 +112,9 @@ span {
   text-align: center;
 
   &-about {
+    h1 {
+      text-align: center;
+    }
     padding-top: 50px;
   }
 }
