@@ -1,17 +1,16 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :name, "Nick"  %>
-  <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.label :email, "E-mail"  %>
-  <%= f.email_field :email, class: 'form-control' %>
+  <%= f.text_field :name, placeholder: "Nick", class: 'form-control' %>
 
-  <%= f.label :password, "Hasło"  %>
-  <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation, "Powtórz hasło"  %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
+  <%= f.email_field :email, placeholder: "Email", class: 'form-control' %>
+
+  <%= f.password_field :password, placeholder: "Hasło", class: 'form-control' %>
+
+
+  <%= f.password_field :password_confirmation, placeholder: "Powtórz hasło", class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn user-btn" %>
 <% end %>

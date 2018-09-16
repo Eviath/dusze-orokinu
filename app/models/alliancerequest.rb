@@ -1,5 +1,5 @@
 class Alliancerequest < ApplicationRecord
-   CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
+   CLANTIER = ['Ghost / Duch / 10 osób', 'Shadow / Cień / 30 osób', 'Storm / Burzy / 100 osób', 'Mountain / Góry / 300 osób', 'Moon / Księżyca / 1000 osób']
 
   belongs_to :user
   scope :approved, -> { where(:approval => true) }

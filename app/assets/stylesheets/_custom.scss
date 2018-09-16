@@ -2,8 +2,7 @@
 
 body,
 html {
-  -webkit-background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
-  -moz-background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
+    background: linear-gradient(to right,#17161a, #242124 50% ,#17161a);
   color: $white;
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
@@ -152,11 +151,17 @@ transform: translateX(15px);
 }
 
 
-
+.form-control{
+  border-radius: 0;
+    border-top:none;
+  border-left:none;
+  border-right:none;
+  border-bottom: 1px solid $yell;
+}
 
 .form-control:focus {
 
-background-color: #fff;
+
 border-color: $pinky;
 outline: 0;
 box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);

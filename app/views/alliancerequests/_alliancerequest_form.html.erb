@@ -14,19 +14,19 @@
   <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :nickname, "Nick składajacego podanie"  %>
-      <%= f.text_field :nickname, class: 'form-control' %>
+      <%= f.text_field :nickname, placeholder: "Twój Nick", class: 'form-control' %>
 
       <%= f.label :lider_nickname, "Nick założyciela klanu"  %>
-      <%= f.text_field :lider_nickname, class: 'form-control' %>
+      <%= f.text_field :lider_nickname, placeholder: "Nick Lidera Klanu", class: 'form-control' %>
 
       <%= f.label :clan_name, "Nazwa klanu"  %>
-      <%= f.text_field :clan_name, class: 'form-control' %>
+      <%= f.text_field :clan_name, placeholder: "Nazwa Klanu", class: 'form-control' %>
 
       <%= f.label :clan_tier, "Tier klanu"  %>
       <%= f.select(:clan_tier, Alliancerequest::CLANTIER, {selected: @alliancerequest.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) %>
 
       <%= f.label :clan_members, "Aktualna liczba członków klanu"  %>
-      <%= f.text_field :clan_members, :class => 'form-control'  %>
+      <%= f.text_field :clan_members, placeholder: "1-1000", :class => 'form-control'  %>
 
       <%= f.label :clan_about, "Krótki opis klanu"  %>
       <%= f.text_area :clan_about, id: "wysi", :class => 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" %>

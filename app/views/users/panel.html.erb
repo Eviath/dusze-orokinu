@@ -2,7 +2,7 @@
 
 <% if logged_in? %>
 
-<div class="content-wrapper">
+<div class="page-wrapper">
 
 
 <div class="container">
@@ -21,6 +21,7 @@
       <div class="col-md-6 mx-auto panel-administracja">
         <h2> Administracja </h2>
         <span><%= link_to "Lista podań do sojuszu", alliancerequests_path, class: 'btn btn-do'%></span>
+         <span><%= link_to "Lista użytkowników", users_path, class: 'btn btn-do'%></span>
             </div>
   <% end %>
 </div>
