@@ -2,9 +2,6 @@ class User < ApplicationRecord
   # Associations
   has_one :clan, dependent: :destroy
   has_one :alliancerequest, dependent: :destroy
-  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
-  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
-  has_many :personal_messages, dependent: :destroy
 
  # Validations
   attr_accessor :remember_token, :activation_token, :reset_token
@@ -19,10 +16,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
 
- # Methods
- def online?
-  !Redis.new.get("user_#{self.id}_online").nil?
-end
 
   # Returns the hash digest of the given string.
   def User.digest(string)
