@@ -9,8 +9,6 @@ class PersonalMessage < ApplicationRecord
     NotificationBroadcastJob.perform_later(self)
   end
 
-  
-
   def receiver
     if conversation.author == conversation.receiver || conversation.receiver == user
       conversation.author
