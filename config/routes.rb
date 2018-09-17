@@ -2,6 +2,10 @@
 Rails.application.routes.draw do
 
 
+  get 'messages/index'
+
+  get 'conversations/index'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -59,5 +63,9 @@ Rails.application.routes.draw do
   get  '/panel',  to: 'users#panel'
   get  '/klan',  to: 'clans#panel'
   get  '/podanie', to:'alliancerequests#podanie'
+  get '/msg',  to: 'conversations#index'
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
 
 end

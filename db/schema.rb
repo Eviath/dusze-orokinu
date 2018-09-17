@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180911152232) do
+ActiveRecord::Schema.define(version: 20180917233002) do
 
   create_table "alliancerequests", force: :cascade do |t|
     t.string "nickname"
@@ -45,25 +45,21 @@ ActiveRecord::Schema.define(version: 20180911152232) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "author_id"
+    t.integer "sender_id"
     t.integer "receiver_id"
-    t.boolean "author_deleted", default: false
-    t.boolean "receiver_deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
-    t.index ["author_id"], name: "index_conversations_on_author_id"
-    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
   end
 
-  create_table "personal_messages", force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "conversation_id"
     t.integer "user_id"
+    t.boolean "read", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_personal_messages_on_user_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
