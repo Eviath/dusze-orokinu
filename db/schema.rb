@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20180917233002) do
     t.integer "members"
     t.string "tier"
     t.string "picture"
+    t.string "website"
+    t.string "discord"
     t.integer "user_id"
     t.boolean "approval", default: false
     t.datetime "created_at", null: false

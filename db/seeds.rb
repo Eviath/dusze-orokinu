@@ -58,10 +58,12 @@ end
   1.times do
     about = "Fajny klan."
     members = 80
+    website = "https://eviathos.pl"
+    discord = "https://discord.gg/uJEJAes"
     tier  = "Storm"
     picture = "LogoFake"
     leader  = Faker::Name.name
     name  = Faker::Name.name
-    users.each { |user| user.create_clan(name: name, leader: leader, about: about, tier: tier, members: members, picture: picture, approval: false) }
+    users.each { |user| user.create_clan(name: name, leader: leader, about: about, tier: tier, members: members, picture: picture, website: website, discord: discord, approval: false) }
 
   end

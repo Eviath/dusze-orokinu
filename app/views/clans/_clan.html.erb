@@ -51,11 +51,29 @@
 
 </div>
 
-</div>
+
+
 
 </div>
 
 
+
+</div>
+
+<div class="row clan_show-contact">
+<div class="col-md-12 clan_show-contact-buttons">
+
+  <% if !clan.discord.empty? %>
+  <%= link_to "Discord", clan.discord, class: "btn btn-do-bordered btn-clan" %>
+  <% end %>
+
+  <% if !clan.website.empty? %>
+  <%= link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered btn-clan" %>
+  <% end %>
+
+  <%= link_to "Napisz do lidera", conversations_path(sender_id: current_user.id, receiver_id: clan.lider), method: :post, class: "btn btn-do-bordered btn-clan" %>
+</div>
+</div>
 
 
 <div class="row clan_show-about">

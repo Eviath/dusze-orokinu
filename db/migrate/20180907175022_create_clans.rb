@@ -7,6 +7,8 @@ class CreateClans < ActiveRecord::Migration[5.1]
       t.integer :members
       t.string :tier
       t.string :picture
+      t.string :website
+      t.string :discord
       t.references :user, foreign_key: true
       t.boolean :approval, default: false
 
