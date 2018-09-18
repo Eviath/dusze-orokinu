@@ -2,7 +2,7 @@ class Clan < ApplicationRecord
      CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
      scope :approved, -> { where(:approval => true) }
      scope :pending, -> { where(:approval => false) }
-  belongs_to :user
+     belongs_to :lider, :class_name => "User", :foreign_key => "user_id"
     scope :newest, -> { order(created_at: :desc) }
     mount_uploader :picture, PictureUploader
    validates :user_id, presence: true
