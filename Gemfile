@@ -28,6 +28,16 @@ gem "wysiwyg-rails"
 #sprockets
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 
+#messaging system rails
+gem 'mailboxer'
+
+# gravatar
+gem 'gravatar_image_tag'
+
+# list styling
+gem 'chosen-rails'
+
+
 # Bootstrap Framework
 gem 'bootstrap', '~> 4.1.3'
 

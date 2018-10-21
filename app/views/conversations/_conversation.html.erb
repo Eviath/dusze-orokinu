@@ -1,16 +1,22 @@
-<ul class="list-group">
+<li class="list-group-item clearfix">
+  <%= link_to conversation.subject, conversation_path(conversation) %>
 
+  <div class="btn-group-vertical pull-right">
+    <% if conversation.is_trashed?(current_user) %>
+      <%= link_to 'Restore', restore_conversation_path(conversation), class: 'btn btn-do-bordered', method: :post %>
+    <% else %>
+      <%= link_to 'Move to trash', conversation_path(conversation), class: 'btn btn-do-bordered', method: :delete,
+                  data: {confirm: 'Are you sure?'} %>
 
-  <% @conversations.each do |conversation| unless !conversation.messages.any?  %>
-   <li class="list-group-item d-flex justify-content-between align-items-center">
-
-      <%= link_to conversation.recipient(current_user).name, conversation_messages_path(conversation) %>
-      <% if !conversation.unread_message_count(current_user).zero? %>
-      <span class="badge badge-primary badge-pill"><%= conversation.unread_message_count(current_user) %></span>
+      <% if conversation.is_unread?(current_user) %>
+        <%= link_to 'Mark as read', mark_as_read_conversation_path(conversation),
+                    class: 'btn  btn-do', method: :post %>
       <% end %>
-    </li>
-  <% end %>
+    <% end %>
+  </div>
 
-  <% end %>
+  <p><%= render 'conversations/participants', conversation: conversation %></p>
 
-</ul>
+  <p><%= conversation.last_message.body %>
+    <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+</li>

@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
-
+//= require chosen-jquery
 
 //= require popper
 //= require bootstrap
@@ -51,6 +51,7 @@
 //=  require plugins/url.min.js
 //=  require plugins/video.min.js
 
+//= require messages
 
 
 $(document).click(function(e) {

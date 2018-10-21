@@ -7,6 +7,11 @@ module ApplicationHelper
     link_to(name, options, html_options, &block)
   end
 
+  def page_header(text)
+    content_for(:page_header) { text.to_s }
+  end
+
+
   def markdown(content)
 
     markdown =Redcarpet::Markdown.new(Redcarpet::Render::XHTML,:hard_wrap=>true,:filter_html=>true,:autolink=>true,:no_intra_emphasis=>true)

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # Mailboxer
+  acts_as_messageable
+
   # Associations
   has_one :clan, dependent: :destroy
   has_one :alliancerequest, dependent: :destroy
@@ -15,7 +18,10 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
-
+  # mailboxer notifications
+  def mailboxer_email(object)
+    email
+  end
 
   # Returns the hash digest of the given string.
   def User.digest(string)

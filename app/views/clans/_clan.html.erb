@@ -70,8 +70,7 @@
   <% if !clan.website.empty? %>
   <%= link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered btn-clan" %>
   <% end %>
-
-  <%= link_to "Napisz do lidera", conversations_path(sender_id: current_user.id, receiver_id: clan.lider), method: :post, class: "btn btn-do-bordered btn-clan" %>
+  <%= link_to 'Napisz do lidera', new_message_path(to: clan.lider), class: 'btn btn-do-bordered btn-clan' %>
 </div>
 </div>
 
