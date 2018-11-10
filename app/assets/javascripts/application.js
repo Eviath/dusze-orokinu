@@ -60,12 +60,21 @@ $(document).click(function(e) {
     }
 });
 
+$(document).ready(function() {
+
+    var elem = document.getElementById('messages');
+    elem.scrollTop = elem.scrollHeight;
+ 
+});
 
 dataConfirmModal.setDefaults({
   title: 'Potwierdź akcję',
   commit: 'Potwierdź',
   cancel: 'Anuluj'
 });
+
+
+
 
 
 // picture validate
@@ -80,6 +89,9 @@ $('#clan_picture').bind('change', function() {
 
 $(document).ready(function(e) {
 // navbar
+
+
+
 
 // Hide Header on on scroll down
 var didScroll;

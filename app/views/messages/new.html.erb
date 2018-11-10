@@ -1,28 +1,32 @@
 
 <div class="page-wrapper">
-<div class=" col-md-8 mx-auto">
+<div class="container">
+  
+
+<div class=" col-md-8 mx-auto conversation-index">
 
 
-<% page_header "Start Conversation" %>
+<% page_header "Rozpocznij konwersację" %>
 
 <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
-    <%= label_tag 'message[subject]', 'Subject' %>
+    <%= label_tag 'message[subject]', 'Temat' %>
     <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
   </div>
 
   <div class="form-group">
-    <%= label_tag 'message[body]', 'Message' %>
+    <%= label_tag 'message[body]', 'Wiadomość' %>
     <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
   </div>
 
 <div class="form-group">
-  <%= label_tag 'recipients', 'Choose recipients' %>
+  <%= label_tag 'recipients', 'Wybierz odbiorców' %>
   <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control chosen-it' %>
 </div>
 
-  <%= submit_tag 'Send', class: 'btn btn-primary' %>
+  <%= submit_tag 'Wyślij', class: 'btn btn-do' %>
 <% end %>
 
+</div>
 </div>
 </div>

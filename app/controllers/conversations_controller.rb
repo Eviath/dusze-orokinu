@@ -5,9 +5,9 @@ class ConversationsController < ApplicationController
     before_action :get_box, only: [:index]
   
     def index
-      if @box.eql? "inbox"
+      if @box.eql? "poczta"
         @conversations = @mailbox.inbox
-      elsif @box.eql? "sent"
+      elsif @box.eql? "wysłane"
         @conversations = @mailbox.sentbox
       else
         @conversations = @mailbox.trash
@@ -21,25 +21,25 @@ class ConversationsController < ApplicationController
   
     def mark_as_read
       @conversation.mark_as_read(current_user)
-      flash[:success] = 'The conversation was marked as read.'
+      flash[:success] = 'Konwersacja została oznaczona jako przeczytana.'
       redirect_to conversations_path
     end
   
     def reply
       current_user.reply_to_conversation(@conversation, params[:body])
-      flash[:success] = 'Reply sent'
+      flash[:success] = 'Odpowiedź została wysłana.'
       redirect_to conversation_path(@conversation)
     end
   
     def destroy
       @conversation.move_to_trash(current_user)
-      flash[:success] = 'The conversation was moved to trash.'
+      flash[:success] = 'Konwersacja została przeniesiona do kosza.'
       redirect_to conversations_path
     end
   
     def restore
       @conversation.untrash(current_user)
-      flash[:success] = 'The conversation was restored.'
+      flash[:success] = 'Konwersacja została przywrócona.'
       redirect_to conversations_path
     end
   
@@ -47,7 +47,7 @@ class ConversationsController < ApplicationController
       @mailbox.trash.each do |conversation|
         conversation.receipts_for(current_user).update_all(deleted: true)
       end
-      flash[:success] = 'Your trash was cleaned!'
+      flash[:success] = 'Kosz został wyczyszczony!'
       redirect_to conversations_path
     end
   
@@ -62,8 +62,8 @@ class ConversationsController < ApplicationController
     end
   
     def get_box
-      if params[:box].blank? or !["inbox","sent","trash"].include?(params[:box])
-        params[:box] = 'inbox'
+      if params[:box].blank? or !["poczta","wysłane","kosz"].include?(params[:box])
+        params[:box] = 'poczta'
       end
       @box = params[:box]
     end
