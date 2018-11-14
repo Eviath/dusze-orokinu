@@ -3,10 +3,10 @@ class WarframeController < ApplicationController
   def poe
   end
 
-  def newsy
+  def newsfeed
   end
 
-  def misje
+  def missions
   end
 
   def wfdrop

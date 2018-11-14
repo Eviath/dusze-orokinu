@@ -77,7 +77,7 @@ end
   @alliancerequest = current_user.build_alliancerequest(alliancerequest_params)
   if @alliancerequest.save
     flash[:success] = "Podanie do sojuszu zostało zapisane!"
-    redirect_to podanie_path
+    redirect_to request_path
   else
     render 'alliancerequests/new'
   end

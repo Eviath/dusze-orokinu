@@ -1,7 +1,7 @@
 
 
       <header class="navbar navbar-dark nav-down fixed-top navbar-expand-md bg-faded ">
-          <%= active_link_to "Dusze Orokinu",sojusz_path, class: "navbar-brand" %>
+          <%= active_link_to "Dusze Orokinu",alliance_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,12 +15,12 @@
                 Sojusz
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <%= active_link_to "O Nas",sojusz_onas_path, class: "dropdown-item" %>
-                <%= active_link_to "Regulamin",sojusz_regulamin_path, class: "dropdown-item" %>
+                <%= active_link_to "O Nas",alliance_about_path, class: "dropdown-item" %>
+                <%= active_link_to "Regulamin",alliance_rules_path, class: "dropdown-item" %>
               </div>
             </li>
             <li class="nav-item">
-            <%= active_link_to "Aktualności",sojusz_aktualnosci_path, class: "nav-link" %>
+            <%= active_link_to "Aktualności",alliance_news_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
               <%= active_link_to "Klany",clans_path, class: "nav-link" %>
@@ -31,8 +31,8 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <%= active_link_to "PoE",warframe_poe_path, class: "dropdown-item" %>
-                <%= active_link_to "Newsy",warframe_newsy_path, class: "dropdown-item" %>
-                <%= active_link_to "Misje",warframe_misje_path, class: "dropdown-item" %>
+                <%= active_link_to "Newsy",warframe_newsfeed_path, class: "dropdown-item" %>
+                <%= active_link_to "Misje",warframe_missions_path, class: "dropdown-item" %>
                 <%= active_link_to "Tabelka Dropu",warframe_wfdrop_path, class: "dropdown-item" %>
               </div>
             </li>
@@ -42,11 +42,11 @@
                 Kontakt
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <%= active_link_to "Discord",kontakt_discord_path, class: "dropdown-item" %>
+                <%= active_link_to "Discord",contact_discord_path, class: "dropdown-item" %>
               </div>
             </li>
             <li class="nav-item">
-              <%= active_link_to "Informacje",sojusz_informacje_path, class: "nav-link" %>
+              <%= active_link_to "Informacje",alliance_info_path, class: "nav-link" %>
             </li>
           </ul>
           <ul class="nav navbar-nav ml-auto">
@@ -62,8 +62,8 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                   <%= active_link_to "Dashboard",panel_path, class: "dropdown-item" %>
                   <%= active_link_to "Użytkownicy",users_path, class: "dropdown-item" %>
-                  <%= active_link_to "Klan",klan_path, class: "dropdown-item" %>
-                  <%= active_link_to "Sojusz", podanie_path, class: "dropdown-item" %>
+                  <%= active_link_to "Klan",pclan_path, class: "dropdown-item" %>
+                  <%= active_link_to "Sojusz", request_path, class: "dropdown-item" %>
                 </div>
               </li>
 
@@ -85,7 +85,7 @@
             <% else %>
 
             <li class="nav-item">
-              <%= active_link_to "Rejestracja",rejestracja_path, class: "nav-link sign-in" %>
+              <%= active_link_to "Rejestracja",register_path, class: "nav-link sign-in" %>
             </li>
             <li class="nav-item">
               <%= active_link_to "Logowanie",login_path, class: "nav-link log-in" %>

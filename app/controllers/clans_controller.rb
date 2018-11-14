@@ -54,7 +54,7 @@ end
     @clan = current_user.build_clan(clan_params)
   if @clan.save
     flash[:success] = "Ogłoszenie klanu zostało zapisane!"
-    redirect_to klan_path
+    redirect_to pclan_path
   else
     render 'clans/new'
   end
@@ -63,7 +63,7 @@ end
   def destroy
     @clan.destroy
     flash[:success] = "Ogłoszenie klanu zostało usunięte."
-    redirect_to klan_path || request.referrer
+    redirect_to pclan_path || request.referrer
   end
 
 
@@ -75,7 +75,7 @@ end
     @clan = Clan.find(params[:id])
     if @clan.update_attributes(clan_params)
       flash[:success] = "Ogłoszenie klanu zaktualizowane!"
-      redirect_to klan_path
+      redirect_to pclan_path
     else
       render 'edit'
     end

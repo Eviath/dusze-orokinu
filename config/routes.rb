@@ -12,29 +12,30 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  get '/sojusz',  to: 'sojusz#index'
-  root 'sojusz#index'
+  get '/alliance',  to: 'alliance#index'
+  root 'alliance#index'
 
-  get 'sojusz/onas'
-  get 'sojusz/regulamin'
-  get 'sojusz/aktualnosci'
-  get 'sojusz/informacje'
+  get 'alliance/about'
+  get 'alliance/rules'
+  get 'alliance/news'
+  get 'alliance/info'
 
   get '/clans',  to: 'clans#index'
 
   get 'warframe/poe'
-  get 'warframe/newsy'
-  get 'warframe/misje'
+  get 'warframe/newsfeed'
+  get 'warframe/missions'
   get 'warframe/wfdrop'
 
-  get 'kontakt/discord'
-  get 'kontakt/formularz'
+  get 'contact/discord'
+  get 'contact/contact-form'
 
-    get  '/rejestracja',  to: 'users#new'
+    get  '/register',  to: 'users#new'
 
       get    '/login',   to: 'sessions#new'
       post   '/login',   to: 'sessions#create'
       delete '/logout',  to: 'sessions#destroy'
+
         resources :users
         resources :account_activations, only: [:edit]
         resources :password_resets,     only: [:new, :create, :edit, :update]
@@ -61,8 +62,8 @@ Rails.application.routes.draw do
         end
 
   get  '/panel',  to: 'users#panel'
-  get  '/klan',  to: 'clans#panel'
-  get  '/podanie', to:'alliancerequests#podanie'
+  get  '/pclan',  to: 'clans#panel'
+  get  '/request', to:'alliancerequests#podanie'
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do
@@ -74,8 +75,6 @@ Rails.application.routes.draw do
         delete :empty_trash
       end
   end
-
-
 
   resources :messages, only: [:new, :create]
 
