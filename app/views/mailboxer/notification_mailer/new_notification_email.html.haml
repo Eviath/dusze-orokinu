@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html", 'charset': 'UTF-8', 'http-equiv': "Content-Type"}
+
+  %body
+    %h1
+      Nowe powiadomienie: 
+      = @notification.subject.html_safe? ? @notification.subject : strip_tags(@notification.subject) 
+    
+    %p  Masz nowe powiadomienie:
+
+    %blockquote
+      %p= raw @notification.body
+
+    %p
+      Odwiedź
+      = link_to root_url, root_url 
+      i przejdź do swoich powiadomień po więcej informacji.

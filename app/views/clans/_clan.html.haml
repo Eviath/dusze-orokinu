@@ -1,0 +1,79 @@
+.clan_content-wrapper
+  .container
+    .clan-body
+
+      .clan_show_head
+
+        %img{src: "/assets/all-gold.png"}
+        %h2= clan.name 
+
+
+      .row.clan_show-header
+        .col-md-6
+          .clan-logo
+            %p= image_tag clan.picture.url if clan.picture?
+
+          .clan-name
+            %h2= clan.name 
+
+
+        .col-md-6
+
+
+          .clan-leader
+            %h1 Nick założyciela klanu:
+            %p= clan.leader 
+
+
+          .clan-tier
+            %h1 Tier klanu:
+            %p= clan.tier
+
+          .clan-members
+            %h1 Aktualna liczba członków klanu:
+            %p= clan.members
+
+
+    .row.clan_show-contact
+      .col-md-12.clan_show-contact-buttons
+
+        - if !clan.discord.empty? 
+          = link_to "Discord", clan.discord, class: "btn btn-do-bordered btn-clan" 
+
+        - if !clan.website.empty? 
+          = link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered btn-clan" 
+
+        = link_to 'Napisz do lidera', new_message_path(to: clan.lider), class: 'btn btn-do-bordered btn-clan'
+
+
+    .row.clan_show-about
+
+      .col-md-12
+        .clan-body-about
+          .fr-view
+            = raw clan.about 
+
+
+%span.timestamp
+  %p 
+    Ogłoszenie stworzone
+    = time_ago_in_words(clan.created_at) 
+    temu.
+  %p 
+    Ogłoszenie zaktualizowane
+    = time_ago_in_words(clan.updated_at) 
+    temu.
+
+  - if current_user?(clan.lider) || admin? 
+    = link_to "Edytuj", edit_clan_path(clan) 
+    |
+    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" } 
+
+  - if admin? 
+    - if @clan.approval == true 
+      |
+      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) 
+    - else
+      |
+      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) 
+

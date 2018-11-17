@@ -1,0 +1,9 @@
+%h1 Dusze Orokinu
+
+%p 
+    Witamy
+    = @user.name 
+
+%p  
+    Zarejestrowałeś/aś się na stronie https://dusze-orokinu.pl, oto Twój link do aktywacji konta:
+    = link_to "Aktywuj konto", edit_account_activation_url(@user.activation_token, email: @user.email)

@@ -1,0 +1,81 @@
+.clan_form
+
+  = form_for(@clan) do |f| 
+
+    .row.clan_form-header
+      .col-md-10.d-flex.align-items-center
+        %h1
+          = yield(:header_text)  
+          ogłoszenie klanu
+
+      .col-md-2.d-flex.align-items-center
+        = f.submit "Zapisz", class: "btn btn-do clan_form-btn" 
+
+    .row.form-errors
+      .col-md-12
+        = render 'shared/error_messages', object: f.object
+  
+
+    .row.clan_form-about
+      .col-md-6
+        .form_header-tag
+          %h2
+            %img{src: "/assets/all-gold.png"} 
+            Informacje
+            %img{src: "/assets/all-gold.png"}
+ 
+
+        = f.label :name, "Nazwa klanu" 
+        = f.text_field :name, class: 'form-control' 
+
+        = f.label :leader, "Nick założyciela klanu"  
+        = f.text_field :leader, class: 'form-control' 
+
+        = f.label :tier, "Tier klanu"  
+        = f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) 
+
+        = f.label :members, "Aktualna liczba członków klanu"  
+        = f.text_field :members, :class => 'form-control'  
+
+
+        .form_header-tag 
+          %h2
+            %img{src: "/assets/all-gold.png"}
+            Logo
+            %img{src: "/assets/all-gold.png"}
+
+    
+        = f.label :logo, "Logo klanu"  
+        = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control'   
+
+        .form_header-tag
+          %h2
+            %img{src: "/assets/all-gold.png"}
+            Kontakt
+            %img{src: "/assets/all-gold.png"}
+
+ 
+        = f.label :website, "Strona internetowa klanu"  
+        = f.text_field :website, placeholder: "https://przykladowa-strona.pl (Zostaw puste jeśli nie posiada)", :class => 'form-control'  
+
+        = f.label :discord, "Discord klanu"  
+        = f.text_field :discord, placeholder: "https://discord.gg/uJEJAes  (Zostaw puste jeśli nie posiada)", :class => 'form-control'  
+  
+      .col-md-6
+        .form_header-tag 
+          %h2
+            %img{src: "/assets/all-gold.png"}
+            Opis
+            %img{src: "/assets/all-gold.png"}
+
+
+        = f.label :about, "Krótki opis klanu"  
+        = f.text_area :about, id: "wysi", class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" 
+
+
+:javascript
+  $('#wysi').froalaEditor({
+    inlineMode: false,
+    heightMin: '200px',
+    placeholderText: 'Napisz coś o klanie.'
+  });

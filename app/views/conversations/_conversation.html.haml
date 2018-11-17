@@ -1,0 +1,27 @@
+%li.list-group-item.clearfix
+
+  %span.conversation-subject
+    = link_to conversation.subject, conversation_path(conversation)
+
+  .btn-group-vertical.pull-right
+    - if conversation.is_trashed?(current_user) 
+      = link_to 'Przywróć', restore_conversation_path(conversation), class: 'btn btn-do-bordered', method: :post 
+      
+    - else 
+      = link_to 'Przenieś do kosza', conversation_path(conversation), class: 'btn btn-do-bordered', method: :delete, data: {confirm: 'Jesteś pewny?'} 
+
+    - if conversation.is_unread?(current_user) 
+      = link_to 'Oznacz jako przeczytane', mark_as_read_conversation_path(conversation), class: 'btn  btn-do', method: :post 
+
+  %p
+    = render 'conversations/participants', conversation: conversation 
+
+
+  %p
+    = conversation.last_message.body 
+    %small 
+      (
+      %span.text-muted
+        = l conversation.last_message.created_at, format: :long 
+      )
+      

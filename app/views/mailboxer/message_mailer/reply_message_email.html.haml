@@ -1,0 +1,20 @@
+!!!
+%html
+
+  %head
+    %meta{content: "text/html", 'charset': 'UTF-8', 'http-equiv': "Content-Type"}
+
+
+  %body
+    %h1 Temat odpowiedzi:
+      = @subject 
+
+    %p Otrzymałeś nową odpowiedź na wiadomość:
+
+    %blockquote
+      %p= raw @message.body 
+
+    %p
+      Odwiedź
+      = link_to root_url, root_url 
+      i przejdź do swojej skrzynki odbiorczej po więcej informacji.

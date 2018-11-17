@@ -1,0 +1,58 @@
+
+.box{:id => "alliancerequest-#{alliancerequest.id}"}
+  .user-box
+    = link_to gravatar_for(alliancerequest.user, size: 50), alliancerequest.user
+    %span.user
+      = link_to alliancerequest.user.name, alliancerequest.user 
+
+  .clan_content-wrapper
+
+    .container
+
+
+      .alliancerequest-body
+        .nickname
+          %h1 Nick gracza składającego podanie:
+          %p= alliancerequest.nickname 
+
+        .lider_nickname
+          %h1 Nick założyciela klanu:
+          %p= alliancerequest.lider_nickname 
+
+        .clan_name
+          %h1 Nazwa klanu:
+          %p= alliancerequest.clan_name 
+
+        .clan_tier
+          %h1 Tier klanu:
+          %p= alliancerequest.clan_tier 
+
+        .clan_members
+          %h1 Aktualna liczba członków klanu:
+          %p= alliancerequest.clan_members 
+
+
+      .alliancerequest-body-about
+        %h1 Opis klanu:
+        .fr-view
+          = raw alliancerequest.clan_about 
+         
+
+  %span.timestamp
+    Posted
+    = time_ago_in_words(alliancerequest.updated_at)
+    - if current_user?(@user) || admin? 
+
+      = link_to "delete", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny?" } 
+      
+    - if admin? 
+      - if alliancerequest.approval? || alliancerequest.approval.nil?
+        = link_to decline_alliancerequest_path(@user), :class => "btn btn-small" do 
+          Odrzuć
+
+      - if !alliancerequest.approval?
+        = link_to approve_alliancerequest_path(@user), :class => "btn btn-small" do 
+          Zatwiedź
+      - if !alliancerequest.approval.nil?
+        = link_to pend_alliancerequest_path(@user), :class => "btn btn-small" do 
+          Dodaj do oczekujących

@@ -1,0 +1,90 @@
+- provide(:title, 'Lista klanów') 
+
+.clan-index
+  .container
+    - if @clansapproved.any?
+      .row
+        - @clansapproved.each do |clan| 
+          .col-md-4.clan-col
+            .clan-content
+              .clan-content-image
+                = image_tag clan.picture.url if clan.picture? 
+            
+
+              .clan-content-text
+                %h1
+                  %span= clan.name 
+
+                %h2 
+                  Nick lidera: 
+                  %span= clan.leader
+
+                %h2 
+                  Tier klanu:
+                  %span= clan.tier
+
+                %h2 
+                  Liczba klanowiczy:
+                  %span= clan.members 
+        
+
+
+              .clan-content-buttons
+
+                %p
+                  = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small" 
+                  - if current_user?(clan.lider) || current_user.try(:admin?) 
+                    |
+                    = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small"
+                    |
+                    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" 
+
+
+    - else 
+      .row
+        .col-md-8.mx-auto.text-center
+          %h4 Brak klanów do wyświetlenia
+      
+
+    - if admin? 
+      - if @clanspending.any? 
+        .clan-approval-pending
+          .row
+            .col-md-4.mx-auto.text-center
+              %h2 Klany oczekujące na akceptację
+
+          .row
+            - @clanspending.each do |clan| 
+              .col-md-4.clan-col
+                .clan-content
+                  .clan-content-image
+                    = image_tag clan.picture.url if clan.picture? 
+
+                  .clan-content-text
+                    %h2 
+                      Nazwa klanu: 
+                      %span= clan.name 
+
+                    %h2 
+                      Nick lidera: 
+                      %span= clan.leader
+
+                    %h2 
+                      Tier klanu: 
+                      %span= clan.tier
+              
+
+
+                  .clan-content-buttons
+                    %p
+                      = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small"
+                      - if current_user?(clan.lider) || current_user.try(:admin?)
+                        |
+                        = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" 
+                        = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small" 
+
+
+      - else 
+        .row.no-clans-pending
+          .col-md-4.mx-auto.text-center
+          %h2 Brak klanów oczekujących na akceptację

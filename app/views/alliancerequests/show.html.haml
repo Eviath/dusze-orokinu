@@ -1,0 +1,17 @@
+= provide(:title, 'Podanie') 
+
+.page-wrapper
+  .alliancerequest-show
+    .container
+      .row
+        .col-md-6.mx-auto
+
+          %h3 Podanie do sojuszu
+          .alliancerequest
+            = render @alliancerequest 
+      
+          .alliancerequest-button.text-center
+            = link_to "Powrót - Lista podań do sojuszu", :back, class: "btn btn-do"
+  
+
+      

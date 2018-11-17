@@ -1,0 +1,59 @@
+- provide(:title, 'Klan - Panel') 
+
+.clan_show_content
+    .container
+        - if current_user.lider? 
+        
+            - if @user.clan 
+
+                .clan_show_content-wrapper
+
+                    %h1 Stworzyłeś ogłoszenie swojego klanu!
+                    %h2 Ogłoszenie pojawi się na liście klanów, gdy zostanie zaakceptowane przez administrację sojuszu.
+                    .alliancerequest-button
+                        %span= link_to "Lista klanów", clans_path, class: "btn btn-do-bordered"
+
+
+                .alliancerequest
+                    = render @clan 
+
+
+            - else 
+
+                .clan_show_content-wrapper
+
+                    %h1 Twoje podanie do sojuszu zostało przyjęte! 
+                    %h1 Nie stworzyłeś jeszcze ogłoszenia klanu!
+                    %h2 Stwórz ogłoszenie
+                    .alliancerequest-button
+                        %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-bordered" 
+                
+
+        - else 
+
+            - if @user.alliancerequest 
+
+                .clan_show_join
+                    %h1 Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.
+                    %h2 Zobacz swoje zgłoszenie do sojuszu.
+                    .alliancerequest-button
+                        %span= link_to "Sprawdź odanie do sojuszu", request_path, class: "btn btn-do-bordered" 
+                    </div>
+
+
+            - else 
+
+                .clan_show_join
+
+                    %h1 Nie złożyłeś jeszcze podania do sojuszu! Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu.
+                    %h2 Przejdź do zakładki sojusz.
+                    .alliancerequest-button
+                        %span= link_to "Podanie do sojuszu", request_path, class: "btn btn-do-bordered" 
+
+
+                .clan_show_join
+
+                    %h1 Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
+                    %h2 Znajdź klan dla siebie!
+                    .alliancerequest-button
+                        %span= link_to "Lista klanów w sojuszu", alliancerequests_path, class: "btn btn-do-bordered" 

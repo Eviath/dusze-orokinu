@@ -54,18 +54,14 @@
 //= require messages
 
 
+
+
 $(document).click(function(e) {
 	if (!$(e.target).is('.navbar')) {
     	$('.collapse').collapse('hide');
     }
 });
 
-$(document).ready(function() {
-
-    var elem = document.getElementById('messages');
-    elem.scrollTop = elem.scrollHeight;
- 
-});
 
 dataConfirmModal.setDefaults({
   title: 'Potwierdź akcję',

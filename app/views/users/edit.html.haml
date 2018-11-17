@@ -1,0 +1,20 @@
+= provide(:title, 'Edytuj profil')
+= provide(:button_text, 'Zapisz zmiany') 
+
+
+.page-wrapper
+  .page-header
+    %h1 Edytuj profil
+
+
+  .container.form-container
+    .row.justify-content-md-center
+      .form-group.col-md-6
+        = render 'form'
+        .gravatar_edit
+          = gravatar_for @user
+          %a{href: "http://gravatar.com/emails", target: "_blank"} Zmień
+
+
+
+

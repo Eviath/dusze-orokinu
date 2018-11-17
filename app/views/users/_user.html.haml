@@ -1,0 +1,31 @@
+%li
+  .container
+
+    .row
+      .user-image
+        = gravatar_for user, size: 50
+
+
+      .user-profile
+        = link_to user.name, user
+
+        .ranks
+          %p
+          - if user.admin?
+            %button.btn.btn-do-profile.disabled
+              %span Administrator
+
+          - if user.lider?
+            %button.btn.btn-profile.disabled
+              %span Lider Klanu
+  
+
+
+      .options
+        - unless current_user == user
+          %span
+            = link_to 'PW', new_message_path(to: user.id),  class: 'btn btn-do-profile-opt' 
+
+        - if current_user?(user) || admin?
+          %span
+            = button_to "Usuń użytkownika", user, method: :delete, data: { confirm: "Jesteś pewny, że chcesz usunąć tego użytkownika?" }, class: 'btn btn-do-profile-opt'

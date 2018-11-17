@@ -1,0 +1,35 @@
+- provide(:title, @user.name)
+
+
+.page-wrapper
+
+
+  .profile-container
+
+
+    .col-md-4
+      %section.user_info
+        %h1
+          = gravatar_for @user
+          = @user.name
+
+          .ranks
+            %p
+            - if @user.admin? 
+              %button.btn.btn-do-profile.disabled
+                %span Administrator
+
+            - if @user.lider? 
+              %button.btn.btn-profile.disabled
+                %span Lider Klanu
+
+
+
+    - if admin?
+
+      - if @user.lider == true
+        |
+        = link_to (@user.lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user) 
+      - else
+        |
+        = link_to (@user.lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user) 
