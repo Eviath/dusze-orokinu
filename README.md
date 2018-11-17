@@ -39,4 +39,3 @@
 - All rights reserved.
 
 
-![allinace](https://i.imgur.com/o1ZDFUy.png)
