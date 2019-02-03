@@ -1,5 +1,5 @@
 class AlliancerequestsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :load_alliancerequest,  only: :destroy
   before_action :admin_or_author, only: :destroy
   before_action :admin_user,   only: [:show, :index]
@@ -63,7 +63,7 @@ end
     def new
 
       @user = current_user
-            @alliancerequest = current_user.build_alliancerequest if logged_in?
+            @alliancerequest = current_user.build_alliancerequest if user_signed_in?
             @alliancerequest = @user.alliancerequest
        end
 

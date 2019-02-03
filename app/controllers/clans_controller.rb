@@ -1,6 +1,6 @@
 class ClansController < ApplicationController
 
-  before_action :logged_in_user, only: [:update, :panel, :create, :new, :destroy]
+  before_action :authenticate_user!, only: [:update, :panel, :create, :new, :destroy]
   before_action :load_clan,  only: [:edit, :update, :destroy]
   before_action :admin_or_author, only: [:edit, :update, :destroy]
 
@@ -39,7 +39,7 @@ end
   end
 
   def panel
-    @user = current_user
+    @user  = current_user
     @clan = @user.clan
   end
 
@@ -83,6 +83,7 @@ end
 
 
   private
+
 
 
 def clan_params

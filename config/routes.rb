@@ -2,15 +2,11 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users, :controllers => { user_registrations: 'user_registrations' }
   get 'messages/index'
 
   get 'conversations/index'
 
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
-
-  get 'sessions/new'
 
   get '/alliance',  to: 'alliance#index'
   root 'alliance#index'
@@ -30,15 +26,9 @@ Rails.application.routes.draw do
   get 'contact/discord'
   get 'contact/contact-form'
 
-    get  '/register',  to: 'users#new'
 
-      get    '/login',   to: 'sessions#new'
-      post   '/login',   to: 'sessions#create'
-      delete '/logout',  to: 'sessions#destroy'
+    resources :users
 
-        resources :users
-        resources :account_activations, only: [:edit]
-        resources :password_resets,     only: [:new, :create, :edit, :update]
         resources :alliancerequests, only: [:index, :podanie, :show, :new, :create, :destroy]
         resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
         resources :clans do

@@ -1,7 +1,7 @@
 
 .box{:id => "alliancerequest-#{alliancerequest.id}"}
   .user-box
-    = link_to gravatar_for(alliancerequest.user, size: 50), alliancerequest.user
+    = link_to alliancerequest.user
     %span.user
       = link_to alliancerequest.user.name, alliancerequest.user 
 
@@ -41,11 +41,11 @@
   %span.timestamp
     Posted
     = time_ago_in_words(alliancerequest.updated_at)
-    - if current_user?(@user) || admin? 
+    - if can? :destroy, @alliancerequest
 
       = link_to "delete", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny?" } 
       
-    - if admin? 
+    - if current_user.has_role? :admin
       - if alliancerequest.approval? || alliancerequest.approval.nil?
         = link_to decline_alliancerequest_path(@user), :class => "btn btn-small" do 
           Odrzuć

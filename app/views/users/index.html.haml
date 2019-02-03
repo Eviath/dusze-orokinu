@@ -2,6 +2,7 @@
 
 .page-wrapper
   .content-wrapper
+
     .page-header
       %h1 Użytkownicy
     .page-header
@@ -14,4 +15,3 @@
 
 
       = will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna') 
-

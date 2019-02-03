@@ -46,7 +46,7 @@
           %h4 Brak klanów do wyświetlenia
       
 
-    - if admin? 
+    - if current_user.has_role? :admin
       - if @clanspending.any? 
         .clan-approval-pending
           .row

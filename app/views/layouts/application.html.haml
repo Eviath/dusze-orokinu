@@ -19,6 +19,15 @@
     = render "layouts/navbar" 
     - flash.each do |message_type, message| 
       = content_tag(:div, message, class: "alert alert-#{message_type}")
+
+    - if notice
+      %p.alert.alert-success= notice
+
+    - if alert
+      %p.alert.alert-danger= alert
+
+
+
     = yield 
     = render "layouts/footbar" 
 

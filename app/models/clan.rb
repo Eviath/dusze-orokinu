@@ -3,6 +3,7 @@ class Clan < ApplicationRecord
      scope :approved, -> { where(:approval => true) }
      scope :pending, -> { where(:approval => false) }
      belongs_to :lider, :class_name => "User", :foreign_key => "user_id"
+     belongs_to :lider, :class_name => "Admin", :foreign_key => "admin_id"
     scope :newest, -> { order(created_at: :desc) }
     mount_uploader :picture, PictureUploader
    validates :user_id, presence: true
@@ -13,6 +14,8 @@ class Clan < ApplicationRecord
    validates :members, presence: true
    validates :picture, presence: true
    validate  :picture_size
+
+     resourcify
 
 
 

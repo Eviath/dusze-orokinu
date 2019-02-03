@@ -1,37 +1,35 @@
 - provide(:title, 'Panel') 
 
-  - if logged_in? 
-
-  .page-wrapper
+.page-wrapper
 
 
-    .container
-      %section.user_info
-        = render 'shared/user_info' 
-      .options-panel
-        .row
-          - if current_user.admin? 
-            .col-md-6.mx-auto.panel-administracja
-              %h2 Administracja
-              %span
-                = link_to "Lista podań do sojuszu", alliancerequests_path, class: 'btn btn-do'
-                = link_to "Lista użytkowników", users_path, class: 'btn btn-do'
-        .row
-          .col-md-4
-            %h2 Panel
-            %ul
-              - 7.times do
-                %li 
-                  %a{href: "#"} Panel#1-TestLink
-          .col-md-4
-            %h2 Panel
-            %ul
-              - 7.times do
-                %li 
-                  %a{href: "#"} Panel#2-TestLink
-          .col-md-4
-            %h2 Panel
-            %ul
-              - 7.times do
-                %li 
-                  %a{href: "#"} Panel#3-TestLink
+  .container
+    %section.user_info
+      = render 'shared/user_info'
+    .options-panel
+      .row
+        - if current_user.has_role? :admin
+          .col-md-6.mx-auto.panel-administracja
+            %h2 Administracja
+            %span
+              = link_to "Lista podań do sojuszu", alliancerequests_path, class: 'btn btn-do'
+              = link_to "Lista użytkowników", users_path, class: 'btn btn-do'
+      .row
+        .col-md-4
+          %h2 Panel
+          %ul
+            - 7.times do
+              %li
+                %a{href: "#"} Panel#1-TestLink
+        .col-md-4
+          %h2 Panel
+          %ul
+            - 7.times do
+              %li
+                %a{href: "#"} Panel#2-TestLink
+        .col-md-4
+          %h2 Panel
+          %ul
+            - 7.times do
+              %li
+                %a{href: "#"} Panel#3-TestLink

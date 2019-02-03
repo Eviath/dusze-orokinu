@@ -3,7 +3,7 @@
 
     .row
       .user-image
-        = gravatar_for user, size: 50
+        -#= gravatar_for user, size: 50
 
 
       .user-profile
@@ -11,7 +11,7 @@
 
         .ranks
           %p
-          - if user.admin?
+          - if user.has_role? :admin
             %button.btn.btn-do-profile.disabled
               %span Administrator
 
@@ -22,10 +22,6 @@
 
 
       .options
-        - unless current_user == user
+        - unless current_user == @user
           %span
             = link_to 'PW', new_message_path(to: user.id),  class: 'btn btn-do-profile-opt' 
-
-        - if current_user?(user) || admin?
-          %span
-            = button_to "Usuń użytkownika", user, method: :delete, data: { confirm: "Jesteś pewny, że chcesz usunąć tego użytkownika?" }, class: 'btn btn-do-profile-opt'
