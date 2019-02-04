@@ -15,14 +15,24 @@ class UsersController < ApplicationController
 
     def approve
         user = User.find(params[:id])
-        user.update_attribute(:lider, true)
+        # old wat
+        # user.update_attribute(:lider, true)
+
+        # new way
+        user.add_role :lider
         flash[:success] = "Użytkownik otrzymał rangę Lidera klanu."
         redirect_to request.referrer
     end
 
     def decline
         user = User.find(params[:id])
-        user.update_attribute(:lider, false)
+
+        # old way
+        # user.update_attribute(:lider, false)
+
+        # new way
+        user.remove_role :lider
+
         flash[:success] = "Użytkownik został pozbawiony rangi Lidera klanu."
         redirect_to request.referrer
     end

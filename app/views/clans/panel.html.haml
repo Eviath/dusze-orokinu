@@ -2,7 +2,7 @@
 
 .clan_show_content
     .container
-        - if current_user.lider? 
+        - if current_user.has_role? :lider
         
             - if @user.clan 
 
@@ -37,7 +37,7 @@
                     %h1 Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.
                     %h2 Zobacz swoje zgłoszenie do sojuszu.
                     .alliancerequest-button
-                        %span= link_to "Sprawdź odanie do sojuszu", request_path, class: "btn btn-do-bordered" 
+                        %span= link_to "Sprawdź podanie do sojuszu", request_path, class: "btn btn-do-bordered"
                     </div>
 
 

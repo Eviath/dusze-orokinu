@@ -1,0 +1,37 @@
+.login-page-header
+
+  .login-page-bg
+  .login-page-wrapper
+
+    .login-page-content
+
+      .page-header
+        - provide(:title, "Logowanie")
+        %h1 Logowanie
+        %h3 Zaloguj się, aby zyskać dostęp do wszystkich funkcji strony.
+
+
+      .container.form-container
+        .row.justify-content-md-center
+          .form-group.col-md-6
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .field
+                = f.label :email, 'E-mail'
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+
+
+              .field
+                = f.label :password, 'Hasło'
+                = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+
+
+              - if devise_mapping.rememberable?
+                .field
+                  = f.check_box :remember_me
+                  = f.label :remember_me, 'Zapamiętaj mnie'
+
+
+              .actions
+                = f.submit "Zaloguj", class: 'btn btn-do'
+
+            = render "devise/shared/links"

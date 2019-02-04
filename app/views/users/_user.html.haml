@@ -15,7 +15,7 @@
             %button.btn.btn-do-profile.disabled
               %span Administrator
 
-          - if user.lider?
+          - if user.has_role? :lider
             %button.btn.btn-profile.disabled
               %span Lider Klanu
   

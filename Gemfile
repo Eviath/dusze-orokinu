@@ -47,6 +47,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+
+gem 'rails_admin', '~> 1.3'
 # Bootstrap Framework
 gem 'bootstrap', '~> 4.1.3'
 

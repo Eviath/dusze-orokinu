@@ -32,9 +32,15 @@ class Ability
 
     if user.has_role? :admin
       can :manage, :all
+      can :access, :rails_admin   # grant access to rails_admin
+      can :read, :dashboard       # grant access to the dashboard
+
+    elsif user.has_role? :lider
+      can [:create, :update, :destroy], Clan, :user_id => user.id
     else
       can :read, :all
-      can :manage, Alliancerequest if user.has_role?(:lider, Alliancerequest)
+      can :manage, Alliancerequest if user.has_role?(:newuser, Alliancerequest)
+
     end
 
 

@@ -46,7 +46,7 @@ end
 
   def new
     @user = current_user
-    @clan = current_user.build_clan if logged_in?
+    @clan = current_user.build_clan if user_signed_in?
     @clan = @user.clan
   end
 
@@ -104,7 +104,7 @@ def admin_or_author
 end
 
 def administrator?
-  current_user.admin?
+  current_user.has_role? :admin
 end
 
 def authorship?
@@ -112,7 +112,7 @@ def authorship?
 end
 
 def admin_user
-  redirect_to(root_url) unless current_user.admin?
+  redirect_to(root_url) unless current_user.has_role? :admin
 end
 
 

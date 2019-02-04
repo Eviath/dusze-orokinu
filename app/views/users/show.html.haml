@@ -19,7 +19,7 @@
               %button.btn.btn-do-profile.disabled
                 %span Administrator
 
-            - if @user.lider? 
+            - if @user.has_role? :lider
               %button.btn.btn-profile.disabled
                 %span Lider Klanu
 
@@ -27,9 +27,9 @@
 
     - if current_user.has_role? :admin
 
-      - if @user.lider == true
+      - if is_lider
         |
-        = link_to (@user.lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user) 
+        = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
       - else
-        |
-        = link_to (@user.lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user) 
+
+        = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)

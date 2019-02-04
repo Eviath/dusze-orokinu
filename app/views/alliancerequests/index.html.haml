@@ -37,7 +37,7 @@
 
             %p
               = link_to truncate('Zobacz'), alliancerequest, class: "btn btn-do-bordered-small"
-              - if current_user?(@user) || admin? 
+              - if can? :destroy, @alliancerequest
                 |
                 = link_to "Usuń", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
 
@@ -79,7 +79,7 @@
 
             %p 
               = link_to truncate('Zobacz'), alliancerequest, class: "btn btn-do-bordered-small"
-              - if current_user?(@user) || admin? 
+              - if can? :destroy, @alliancerequest
                 |
                 = link_to "Usuń", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
 

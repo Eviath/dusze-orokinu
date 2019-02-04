@@ -24,4 +24,9 @@ def trix
 element.editor
 end
 
+
+  def is_lider
+    @user.has_role? :lider
+  end
+
 end

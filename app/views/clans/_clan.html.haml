@@ -64,12 +64,12 @@
     = time_ago_in_words(clan.updated_at) 
     temu.
 
-  - if current_user?(clan.lider) || admin? 
+  - if can? :destroy, @clan
     = link_to "Edytuj", edit_clan_path(clan) 
     |
     = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" } 
 
-  - if admin? 
+  - if current_user.has_role? :admin
     - if @clan.approval == true 
       |
       = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) 

@@ -22,9 +22,11 @@ class AlliancerequestsController < ApplicationController
 
   def approve
     @alliancerequest = Alliancerequest.find(params[:id])
+
+
       user = @user
       auser = @alliancerequest.user
-      auser.update_attribute(:lider, true)
+      auser.add_role :lider
 
 
       areq = @alliancerequest
@@ -47,9 +49,11 @@ end
 
 def pend
   @alliancerequest = Alliancerequest.find(params[:id])
-    user = @user
-    auser = @alliancerequest.user
-    auser.update_attribute(:lider, false)
+
+
+      user = @user
+      auser = @alliancerequest.user
+      auser.remove_role :lider
 
 
     areq = @alliancerequest
@@ -105,7 +109,7 @@ private
   end
 
   def administrator?
-    current_user.admin?
+    current_user.has_role? :admin
   end
 
   def authorship?
@@ -113,7 +117,7 @@ private
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_url) unless current_user.has_role? :admin
   end
 
 end

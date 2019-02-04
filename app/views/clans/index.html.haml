@@ -33,7 +33,7 @@
 
                 %p
                   = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small" 
-                  - if current_user?(clan.lider) || current_user.try(:admin?) 
+                  - if can? :destroy, @clan
                     |
                     = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small"
                     |
@@ -78,7 +78,7 @@
                   .clan-content-buttons
                     %p
                       = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small"
-                      - if current_user?(clan.lider) || current_user.try(:admin?)
+                      - if can? :destroy, @clan
                         |
                         = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small" 
                         = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small" 

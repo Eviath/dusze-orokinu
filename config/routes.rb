@@ -2,7 +2,8 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users, :controllers => { user_registrations: 'user_registrations' }
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   get 'messages/index'
 
   get 'conversations/index'
