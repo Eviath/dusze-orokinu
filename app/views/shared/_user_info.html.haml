@@ -1,5 +1,7 @@
 
 - if user_signed_in?
+  -if @user.avatar.attached?
+    = image_tag user.avatar(@user, 120)
   %h1= current_user.name
   %span= link_to "Mój profil", current_user
 

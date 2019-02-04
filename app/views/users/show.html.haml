@@ -5,31 +5,45 @@
 
 
   .profile-container
+    .container
+      .row
+
+        .col-md-8.mx-auto.text-center
+          %section
+            .user_image
+            -if @user.avatar.attached?
+              =image_tag user_avatar(@user, 120), class: 'rounded-circle'
+
+            %h1
+              = @user.name
+
+              .ranks
+                %p
+                - if @user.has_role? :admin
+                  %button.btn.btn-do-profile.disabled
+                    %span Administrator
+
+                - if @user.has_role? :lider
+                  %button.btn.btn-profile.disabled
+                    %span Lider Klanu
+
+              .user_details
+                %p
+                  Zarejestrowany od:
+                  %span= @user.created_at.strftime("%F %T")
+
+                %p
+                  Ostatnio widziany:
+                  %span= @user.last_seen.strftime("%F %T")
+
+                - if @user.last_seen > '00:15:00'
+                  %p.active
+                    (Aktywny w ciągu ostatnich 15 minut)
 
 
-    .col-md-4
-      %section.user_info
-        %h1
-          -#= gravatar_for @user
-          = @user.name
+          - if current_user.has_role? :admin
 
-          .ranks
-            %p
-            - if @user.has_role? :admin
-              %button.btn.btn-do-profile.disabled
-                %span Administrator
-
-            - if @user.has_role? :lider
-              %button.btn.btn-profile.disabled
-                %span Lider Klanu
-
-
-
-    - if current_user.has_role? :admin
-
-      - if is_lider
-        |
-        = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
-      - else
-
-        = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)
+            - if is_lider
+              = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
+            - else
+              = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)

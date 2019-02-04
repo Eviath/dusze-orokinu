@@ -16,15 +16,31 @@ padding: 50px 0px 50px 0px;
 }
 
 
-// Gravatar
-.gravatar {
-  float: left;
-  margin-right: 10px;
+.user_details {
+  padding-top: 40px;
+  p {
+    font-size: .4em;
+
+    span {
+      padding-left: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: .9em;
+      letter-spacing: .5px;
+      color: $pinky;
+    }
+
+  }
+  p.active {
+    color: $pinky !important;
+    font-size: .3em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
 }
 
-.gravatar_edit {
-  margin-top: 15px;
-}
+
+
 
 
 /*
@@ -319,4 +335,12 @@ align-self: center;
   }
 }
 
+}
+
+
+
+// AVATAR
+
+.user-avatar {
+background-size: cover;
 }

@@ -3,7 +3,8 @@
 
     .row
       .user-image
-        -#= gravatar_for user, size: 50
+      -if user.avatar.attached?
+        =image_tag user_avatar(user, 60)
 
 
       .user-profile

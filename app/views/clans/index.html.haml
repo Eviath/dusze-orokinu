@@ -45,7 +45,7 @@
         .col-md-8.mx-auto.text-center
           %h4 Brak klanów do wyświetlenia
       
-
+  -if user_signed_in?
     - if current_user.has_role? :admin
       - if @clanspending.any? 
         .clan-approval-pending

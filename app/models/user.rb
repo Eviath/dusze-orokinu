@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :lastseenable
 
   # Mailboxer
   acts_as_messageable
@@ -13,6 +13,8 @@ class User < ApplicationRecord
   # Associations
   has_one :clan, dependent: :destroy
   has_one :alliancerequest, dependent: :destroy
+
+  has_one_attached :avatar
 
 
   # mailboxer notifications

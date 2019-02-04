@@ -1,4 +1,6 @@
 
+//  font-family: 'Poppins', sans-serif;
+// font-family: 'Raleway', sans-serif;
 
 body,
 html {
@@ -171,9 +173,7 @@ outline: 0;
 box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);
 }
 
-.user_info {
-  padding-top: 50px;
-}
+
 
   .navbar-dark .navbar-nav .nav-link:hover,   .navbar-darkt .navbar-nav .nav-link:focus {
   }
@@ -334,8 +334,19 @@ margin-bottom: 0px;
 
 }
 
+
+// modal
 .modal {
   top: 100px;
+}
+
+.modal-content {
+  background-color: $darkbg;
+  color: $white;
+
+  button.close {
+    filter: invert(100%);
+  }
 }
 
 
