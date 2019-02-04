@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_144214) do
+ActiveRecord::Schema.define(version: 2019_02_04_151600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -142,6 +142,15 @@ ActiveRecord::Schema.define(version: 2019_02_04_144214) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "news", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_news_on_user_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -183,4 +192,5 @@ ActiveRecord::Schema.define(version: 2019_02_04_144214) do
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "news", "users"
 end

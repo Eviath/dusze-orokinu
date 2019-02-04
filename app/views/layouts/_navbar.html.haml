@@ -13,7 +13,7 @@
           = active_link_to "Regulamin",alliance_rules_path, class: "dropdown-item" 
 
       %li.nav-item
-        = active_link_to "Aktualności",alliance_news_path, class: "nav-link" 
+        = active_link_to "Aktualności",news_index_path, class: "nav-link"
  
       %li.nav-item
         = active_link_to "Klany",clans_path, class: "nav-link"
@@ -45,7 +45,9 @@
           %a.nav-link.dropdown-toggle{href: "#", id: "navbarDropdownMenuLink", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false"}
             Panel
 
-          .dropdown-menu.dropdown-menu-right{'aria-labelledby': "navbarDropdownMenuLink"} 
+          .dropdown-menu.dropdown-menu-right{'aria-labelledby': "navbarDropdownMenuLink"}
+            -if current_user.has_role? :admin
+              = active_link_to "Admin Panel",rails_admin_path, class: "dropdown-item"
             = active_link_to "Dashboard",panel_path, class: "dropdown-item" 
             = active_link_to "Użytkownicy",users_path, class: "dropdown-item" 
             = active_link_to "Klan",pclan_path, class: "dropdown-item" 

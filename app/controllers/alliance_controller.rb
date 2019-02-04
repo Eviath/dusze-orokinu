@@ -1,8 +1,6 @@
 class AllianceController < ApplicationController
   def index
-  end
-
-  def news
+    @news = News.limit(5).order('id desc')
   end
 
   def warframe

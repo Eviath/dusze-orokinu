@@ -32,15 +32,17 @@
                   Zarejestrowany od:
                   %span= @user.created_at.strftime("%F %T")
 
-                %p
-                  Ostatnio widziany:
-                  %span= @user.last_seen.strftime("%F %T")
+                - if !@user.last_seen.blank?
+                  %p
+                    Ostatnio widziany:
+                    %span= @user.last_seen.strftime("%F %T")
 
-                - if @user.last_seen > '00:15:00'
-                  %p.active
-                    (Aktywny w ciągu ostatnich 15 minut)
+                  - if @user.last_seen > '00:15:00'
+                    %p.active
+                      (Aktywny w ciągu ostatnich 15 minut)
 
 
+        -if user_signed_in?
           - if current_user.has_role? :admin
 
             - if is_lider

@@ -27,7 +27,47 @@
       %h3 Polski Sojusz Warframe 2018
       %img{src: "/assets/veil-white.png"} <br>
       %img{src: "/assets/warf.png"}
-     
+
+
+
+-# ///////   CAROUSEL    /////
+
+- if @news.any?
+  #carouselExampleIndicators.carousel.slide.carousel-fade{'data-ride':"carousel"}
+    %ol.carousel-indicators
+      %li{'data-target':"#carouselExampleIndicators", 'data-slide-to':"0"}.active
+      %li{'data-target':"#carouselExampleIndicators", 'data-slide-to':"1"}
+      %li{'data-target':"#carouselExampleIndicators", 'data-slide-to':"2"}
+      %li{'data-target':"#carouselExampleIndicators", 'data-slide-to':"3"}
+      %li{'data-target':"#carouselExampleIndicators", 'data-slide-to':"4"}
+
+    .carousel-inner
+      - len = @news.length
+      - @news.each_with_index do |news, index|
+        .carousel-item{class: "#{index+1 == len ? 'active' : ''}"}
+          = image_tag url_for(news.thumbnail), class: 'd-block w-100'
+          .carousel-caption.d-none.d-md-block
+            .carousel-text
+              %h5=link_to news.title, news
+              %p=truncate(news.content, length: 600)
+
+            .actions
+              =link_to 'Dowiedz się więcej', news, class: 'btn btn-do-bordered'
+
+
+
+
+    %a.carousel-control-prev{href:"#carouselExampleIndicators", role:"button", 'data-slide':"prev"}
+      %span.carousel-control-prev-icon{'aria-hidden':"true"}
+      %span.sr-only Previous
+
+    %a.carousel-control-next{href:"#carouselExampleIndicators", role:"button", 'data-slide':"next"}
+      %span.carousel-control-next-icon{'aria-hidden':"true"}
+        %span.sr-only Next
+
+
+
+-# ///////// CONTENT /////////
 
 .content-wrapper
 

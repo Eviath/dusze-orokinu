@@ -14,6 +14,23 @@ User.create!(name:  "evid",
              password_confirmation: "foobar",
              )
 
+
+user = User.find(1)
+user.add_role :admin
+
+
+15.times do |n|
+  title  = Faker::Lorem.sentence(5)
+  content = Faker::Lorem.paragraphs(3)
+  News.create!(title:  title,
+               content: content,
+               user_id:              1,
+               created_at: Time.zone.now)
+end
+
+
+
+#
 #
 # User.create!(name:  "test",
 #              email: "test@rails.org",

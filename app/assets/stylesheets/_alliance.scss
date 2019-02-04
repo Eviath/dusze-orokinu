@@ -57,6 +57,58 @@ $lg-width: 1200px;
 }
 
 
+// CAROUSEL
+.carousel-inner {
+}
+.carousel-caption {
+  background: rgba(23, 22, 26, 0.71);
+  left:0;
+  right:0;
+  width:100%;
+  display:  flex!important;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: auto;
+  height: 100%;
+  bottom: 0;
+  top: 0;
+padding: 0;
+
+
+  .actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 100px;
+  }
+
+
+.carousel-text {
+  width:80%;
+  margin: 0 auto;
+  h5 {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 900;
+    color: $yell-hov;
+  }
+}
+}
+.carousel-item {
+  background: rgba(23, 22, 26, 0.71);
+  height: 600px;
+   img {
+     min-width: 100%;
+     min-height: 100%;
+     object-fit: contain;
+     margin: auto;
+      opacity: .3;
+  }
+}
+
+
 
 .parallaxlang {
   background-image: url("/assets/orolang-sm.png");

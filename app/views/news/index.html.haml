@@ -1,0 +1,41 @@
+- provide(:title, 'Aktualności')
+
+
+.news-wrapper
+  .container
+    .page-header
+      %h2 Aktualności
+    .row
+
+
+
+
+      .card-deck
+        - @news.each do |news|
+          .col-lg-4.mt-5
+            .card
+              - if news.thumbnail.attached?
+                = image_tag url_for(news.thumbnail), class: 'card-img-top'
+              .card-body
+                %h5.card-title= link_to news.title, news
+                %p.card-text=truncate(news.content, length: 250)
+
+              .card-footer
+                %small.text-muted
+                  Dodano
+                  = time_ago_in_words(news.created_at)
+                  temu
+                %small.pull-right.text-muted
+                  Autor:
+                  =link_to news.user.name, news.user
+
+              .card-body
+                = link_to 'Zobacz', news, class: 'card-link'
+                = link_to 'Edytuj', edit_news_path(news), class: 'card-link'
+                = link_to 'Usuń', news, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link'
+
+
+
+
+
+= link_to 'New News', new_news_path

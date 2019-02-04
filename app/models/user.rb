@@ -13,6 +13,7 @@ class User < ApplicationRecord
   # Associations
   has_one :clan, dependent: :destroy
   has_one :alliancerequest, dependent: :destroy
+  has_many :news
 
   has_one_attached :avatar
 

@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
 
 
+  resources :news
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get 'messages/index'
@@ -14,8 +15,9 @@ Rails.application.routes.draw do
 
   get 'alliance/about'
   get 'alliance/rules'
-  get 'alliance/news'
   get 'alliance/info'
+
+
 
   get '/clans',  to: 'clans#index'
 
