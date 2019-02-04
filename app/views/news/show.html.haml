@@ -1,15 +1,28 @@
+
+- provide(:title, "#{@news.title}")
+
+
+
 .page-wrapper
+  .page-header
+    .container
+      .row
+        .col-md-12
+          .news-header.text-center
+            %h2= @news.title
+          -if @news.thumbnail.attached?
+            .news-thumbnail
+              = image_tag url_for(@news.thumbnail), class: 'card-img-top'
+          .news-description
+            .col-md-6
+              %p
+                Data dodania:
+                =@news.created_at.strftime('%F  %T')
+            .col-md-6
+              %p
+                Autor:
+                =link_to @news.user.name, @news.user
 
-  %p
-    %b Title:
-    = @news.title
-  %p
-    %b Content:
-    = @news.content
-  %p
-    %b User:
-    = @news.user
 
-  = link_to 'Edit', edit_news_path(@news)
-  \|
-  = link_to 'Back', news_index_path
+          .news-content
+            %article=raw @news.content

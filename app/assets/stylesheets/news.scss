@@ -56,3 +56,32 @@ p.card-text {
 
 
 // SHOW NEWS
+
+.news-thumbnail {
+  background: $darkt;
+
+}
+
+.news-header {
+  background: $darkt;
+  padding: 25px;
+}
+
+.news-description {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height:50px;
+  width:100%;
+  background: $darkt;
+  flex-direction: row;
+  p {
+margin: 0;
+    padding: 10px;
+  }
+
+}
+
+.news-content {
+  padding-top: 100px;
+}

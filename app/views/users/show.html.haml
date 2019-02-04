@@ -42,10 +42,10 @@
                       (Aktywny w ciągu ostatnich 15 minut)
 
 
-        -if user_signed_in?
-          - if current_user.has_role? :admin
+          -if user_signed_in?
+            - if current_user.has_role? :admin
 
-            - if is_lider
-              = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
-            - else
-              = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)
+              - if is_lider
+                = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
+              - else
+                = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)

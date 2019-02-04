@@ -18,7 +18,7 @@
                 = image_tag url_for(news.thumbnail), class: 'card-img-top'
               .card-body
                 %h5.card-title= link_to news.title, news
-                %p.card-text=truncate(news.content, length: 250)
+                %p.card-text=truncate(sanitize(news.content, tags: []), length: 200)
 
               .card-footer
                 %small.text-muted
