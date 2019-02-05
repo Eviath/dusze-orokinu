@@ -10,11 +10,11 @@
       <introspection-schemas>@:@</introspection-schemas>
     </data-source>
     <data-source name="Rails dusze-orokinu: test" uuid="de9790bc-98f2-4d4b-91eb-bad393b7184b">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
       <user-name>postgres</user-name>
     </data-source>
     <data-source name="Rails dusze-orokinu: production" uuid="d1e55155-28c1-4be9-8812-dfb7d36deb4f">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
       <user-name>postgres</user-name>
     </data-source>
   </component>

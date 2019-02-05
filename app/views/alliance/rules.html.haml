@@ -9,48 +9,28 @@
       .regulamin-tekst
         .container.reg-cont
           .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Wszystkie klany są równe, tj. żaden klan nie może narzucać innym swoich zasad.
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Opiekę nad sojuszem sprawuje Opiekun, Starszyzna (wybierana przez Opiekuna) i Rada Klanowa (tj. zebranie Radnych wystawionych przez klany) a ich decyzję wykonuje Leader klanu opiekującego się sojuszem (Sneaky Victors).
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Każdy Leader zobowiązany jest do wystawienia Radnych ze swojego klanu (minimum jednego). Sam Leader zaś nie ma obowiązku utrzymania statusu Radnego.
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Radni i Leader powinni reprezentować jedno zdanie jako klan podczas wprowadzania zmian.
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Skład Radnych jest ustalany przez Leadera klanu.
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Sojusz wymaga od klanów zachowania przyjaznej atmosfery.
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Problematyczne osoby będą karane zawieszeniem komunikacji aż do odniesienia skutku.
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Spory międzyklanowe będą rozwiązywane drogą dyplomatyczną.
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Od wszystkich graczy w sojuszu wymaga się ujednolicenia komunikacji - Discord w sojuszu jest obowiązkowy. (NIE zabraniamy klanom utrzymania własnych sposobów komunikacji. NIE wymagamy uczestnictwa głosowego, wymagamy bycie online na discordzie podczas gry w Warframe.)
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Klany będące w sojuszu zobowiązują się do rekrutacji jedynie osób powyżej 16 roku życia. Wyjątkiem są osoby ogarnięte lub znajome.          
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Liderzy oraz radni odpowiadają za graczy należących do ich klanów.
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Zakazuje się rozprzestrzeniania treści nielegalnych za pomocą kanałów sojuszowych.
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Rejestracja do klanów na Discordzie przeprowadzana jest przez Liderów/Rekruterów/Administrację sojuszu. W czasie rejestracji na discordzie wymagana jest obecność na grze Warframe.
-          .row
-            .col-md-8.offset-md-2.col-dark.reg-gox
-              %p Klany o długim stażu i dobrej opinii mają szansę uzyskania rangi Zaufanego Klanu. Jedyny przywilej otrzymywany w ramach rangi jest możliwością rekrutacji nowych klanów do sojuszu. Ranga udzielana jest po uzyskaniu większości pozytywnych głosów Leaderów Zaufanych Klanów i nie jest ona wyróżniona.
-          .row
-            .col-md-8.offset-md-2.col-bright.reg-gox
-              %p Klany, które utraciły członkostwo w sojuszu, mogą się ponownie o nie ubiegać. Podanie w takiej sytuacji rozpatruje Rada w ciągu 24h.
+            %ul.list-group.list-group-flush.text-center.reg-box
+              - if @rules.any?
 
+                - @rules.each do |r|
+                  %li.list-group-item.p-5.mt-5
+                    %p=r.content
+
+
+
+
+
+          %ul.nav.nav-pills.mb-3#pills-tab{role:"tablist"}
+            %li.nav-item
+              %a.nav-link.active{id:'pills-home-tab', 'data-toggle':"pill", href:"#pills-home", role:"tab", 'aria-controls':"pills-home", 'aria-selected':"true"} Umowa Międzyklanowa
+
+            %li.nav-item
+              %a.nav-link{id: 'pills-profile-tab','data-toggle':"pill", href:"#pills-profile", role:"tab", 'aria-controls':"pills-profile", 'aria-selected':"false"} Regulamin czatu
+
+
+
+
+          .tab-content#pills-tabContent
+            .tab-pane.fade.show.active{id: 'pills-home', role:"tabpanel", 'aria-labelledby':"pills-home-tab"} ...
+            .tab-pane.fade{id: 'pills-profile', role:"tabpanel", 'aria-labelledby':"pills-profile-tab"} ...
+            .tab-pane.fade{id:"pills-contact", role:"tabpanel", 'aria-labelledby':"pills-contact-tab"} ...

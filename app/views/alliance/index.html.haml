@@ -20,7 +20,7 @@
 
 
 .header-wrapper 
-  .header-image
+  .header-image.kenburns-top
   .header-body-wrapper
     .header-body
       %h1 Dusze Orokinu
@@ -76,66 +76,40 @@
       .about-us-text
         %img{src: "/assets/all-gold.png"}
         %img{src: "/assets/jedno-gold.png"}
-        %h1 Dusze Orokinu
-        %h2 Polski sojusz Warframe 2018
-        %p Naszym celem jest zjednoczenie Polskich klanów, zachęcenie do wspólnej gry i zachowania miłej atmosfery. Ideą naszego sojuszu jest stworzenie dobrze rozumiejącej się grupy ogarniętych ludzi, aby to osiągnąć każdy klan musi spełniać wymagania sojuszu takie jak minimalny wiek w klanach oraz obowiązkowy discord. Przyszłość naszego sojuszu tworzą klany, chcąc zadbać o przyszłość sojuszu musimy dbać o siebie nawzajem.
+        - if @main_about.any?
+          - @main_about.each do |about|
+            %h1=about.title
+            %h2=about.description
+            %p=about.content
 
+  - if @about_column_one.any?
+    - @about_column_one.each do |about|
+      .content-mozliwosci.parallax
+        .future
+          .container
+            .about-us-text
+              %h1=about.title
+              %h2=about.description
+              %p=about.content
 
-
-  .content-onas.parallax
-    .future
-      .container
-        .about-us-text
-          %h1 Zrzeszamy Polskie klany gry Warframe
-          %h2 W jedności siła
-          %p Naszym celem jest zjednoczenie Polskich klanów, zachęcenie do wspólnej gry i zachowania miłej atmosfery. Ideą naszego sojuszu jest stworzenie dobrze rozumiejącej się grupy ogarniętych ludzi, aby to osiągnąć każdy klan musi spełniać wymagania sojuszu takie jak minimalny wiek w klanach oraz obowiązkowy discord. Przyszłość naszego sojuszu tworzą klany, chcąc zadbać o przyszłość sojuszu musimy dbać o siebie nawzajem.
-
-  .content-future.parallax
-    .future
-      .container
-        .about-us-text
-          %h1 Budujemy przyszłość
-          %h2 Rozwijaj swój klan
-          %p Naszym celem jest zjednoczenie Polskich klanów, zachęcenie do wspólnej gry i zachowania miłej atmosfery. Ideą naszego sojuszu jest stworzenie dobrze rozumiejącej się grupy ogarniętych ludzi, aby to osiągnąć każdy klan musi spełniać wymagania sojuszu takie jak minimalny wiek w klanach oraz obowiązkowy discord. Przyszłość naszego sojuszu tworzą klany, chcąc zadbać o przyszłość sojuszu musimy dbać o siebie nawzajem.
-
-
-  .content-mozliwosci.parallax
-    .future
-      .container
-        .about-us-text
-          %h1 Stwarzamy możliwości
-          %h2 Poznaj nowe ścieżki
-          %p Naszym celem jest zjednoczenie Polskich klanów, zachęcenie do wspólnej gry i zachowania miłej atmosfery. Ideą naszego sojuszu jest stworzenie dobrze rozumiejącej się grupy ogarniętych ludzi, aby to osiągnąć każdy klan musi spełniać wymagania sojuszu takie jak minimalny wiek w klanach oraz obowiązkowy discord. Przyszłość naszego sojuszu tworzą klany, chcąc zadbać o przyszłość sojuszu musimy dbać o siebie nawzajem.
-
-
-  .content-dusze
-    .parallax1
-      .container
-        .about-us-text
-          %h1 Jesteśmy Duszami Orokinu
-        .row.tag
-          .col
-            .tag-header
-              %h2 Świetna Atmosfera
-            .tag-text
-            %p Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym.
-          .col
-            .tag-header
-              %h2 Komunikacja
-            .tag-text
-              %p Discord w naszym sojuszu jest obowiązkowy, nie zmuszamy do uczestniczenia głosowego, wymagamy bycia online na Discordzie podczas gry. Aspektem dobrego sojuszu jest komunikacja, fajnie jest sobie popisać w wolnym czasie ze znajomymi ale gdy gra się jakieś misje lub rajdy, najważniejsze jest zgranie i nie ma czasu na pisanie na czacie.
-          .col
-            .tag-header
-              %h2 Rekrutacja
-            .tag-text
-              %p Zanim postanowisz dołączyć do sojuszu, przeczytaj dokładnie regulamin międzyklanowy oraz czatu, zapoznaj się również z naszymi wymaganiami, wszystko co musisz wiedzieć zanim do nas dołączysz znajdziesz na tej stronie! :) Oferujemy również miejsce na reklamę dla klanów należących do sojuszu!
-        .button-about
-          %a.btn.btn-do-bordered{:href  => "/sojusz/onas"} Dowiedz się więcej
-    .dolacz
-      .container
-        .row
-          .col-md-8.mx-auto.text-center
-            %img{src: "/assets/warframe-gold.png"}
+  - if @main_about.any?
+    .content-dusze
+      .parallax1
+        .container
+          .row.tag
+            - @about_column_two.each do |about|
+              .col
+                .tag-header
+                  %h2=about.title
+                .tag-text
+                  %p=about.content
+          .button-about
+            %a.btn.btn-do-bordered{:href  => "/alliance/about"} Dowiedz się więcej
+      .dolacz
+        .container
+          .row
+            .col-md-8.mx-auto.text-center
+              %img{src: "/assets/warframe-gold.png"}
 
 
 

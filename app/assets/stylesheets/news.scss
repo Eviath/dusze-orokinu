@@ -19,13 +19,17 @@
 padding: 100px 0px 100px 0px;
   .container {
     max-width:90% !important;
-
+  object-fit: fill;
   }
 
 
 
 }
 
+
+img.card-img-top {
+  min-height: 295px;
+}
 
 p.card-text {
   color: $darkt;

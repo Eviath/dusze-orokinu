@@ -16,6 +16,15 @@ class Clan < ApplicationRecord
 
      resourcify
 
+     def tier_enum
+       # Do not select any value, or add any blank field. RailsAdmin will do it for you.
+       ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
+       # alternatively
+       # { green: 0, white: 1 }
+       # [ %w(Green 0), %w(White 1)]
+     end
+
+
 private
 
 

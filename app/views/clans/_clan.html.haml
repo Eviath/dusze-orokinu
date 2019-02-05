@@ -43,7 +43,7 @@
         - if !clan.website.empty? 
           = link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered btn-clan" 
 
-        = link_to 'Napisz do lidera', new_message_path(to: clan.lider), class: 'btn btn-do-bordered btn-clan'
+        = link_to 'Napisz do lidera', new_message_path(to: clan.user), class: 'btn btn-do-bordered btn-clan'
 
 
     .row.clan_show-about
