@@ -1,0 +1,25 @@
+= provide(:title, 'Kontakt')
+
+
+
+.page-header
+  .discord-page
+    .row
+      .col-md-12
+        .discord-header
+          %img{src: "/assets/discord.svg"}
+          %h2=@api_name
+          %h1
+            Użytkownicy online:
+            =@api_users.count
+
+          %h1
+            Dołącz do nas
+            =link_to @api_invite, @api_invite, target: '_blank'
+        .discord-body
+
+          -@api_users.each_with_index do |r|
+            .discord-person-col
+              .discord-person
+                =image_tag r['avatar_url'], class: 'discord-img'
+                %p=r['username']

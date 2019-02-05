@@ -4,33 +4,43 @@
   .content-wrapper
     .content-regulamin
       .regulamin-header
-        %h1 UMOWA MIĘDZYKLANOWA
+        %h1 NASZE ZASADY
         %h2 PRZECZYTAJ UWAŻNIE, ZANIM POSTANOWISZ DO NAS DOŁĄCZYĆ.
       .regulamin-tekst
         .container.reg-cont
           .row
-            %ul.list-group.list-group-flush.text-center.reg-box
-              - if @rules.any?
-
-                - @rules.each do |r|
-                  %li.list-group-item.p-5.mt-5
-                    %p=r.content
-
+            -if @principles.any?
+              %ul.w-100.justify-content-center.nav.nav-pills.mb-3#pills-tab{role:"tablist"}
+                -@principles.each do |p|
+                  %li.nav-item
+                    %a.nav-link.btn-do-bordered{class:"#{p.id == 1 ? 'active' : ''}",id:"pills-#{p.id}-tab ", 'data-toggle':"pill", href:"#pills-#{p.id}", role:"tab", 'aria-controls':"pills-#{p.id}", 'aria-selected':"true"}=p.title
 
 
 
+              .tab-content#pills-tabContent
 
-          %ul.nav.nav-pills.mb-3#pills-tab{role:"tablist"}
-            %li.nav-item
-              %a.nav-link.active{id:'pills-home-tab', 'data-toggle':"pill", href:"#pills-home", role:"tab", 'aria-controls':"pills-home", 'aria-selected':"true"} Umowa Międzyklanowa
+                -@principles.each do |p|
+                  .tab-pane.fade{class:"#{p.id == 1 ? 'show active' : ''}",id: "pills-#{p.id}", role:"tabpanel", 'aria-labelledby':"pills-#{p.id}"}
+                    %ul.list-group.list-group-flush.text-center.reg-box
 
-            %li.nav-item
-              %a.nav-link{id: 'pills-profile-tab','data-toggle':"pill", href:"#pills-profile", role:"tab", 'aria-controls':"pills-profile", 'aria-selected':"false"} Regulamin czatu
+                      -if p.rule.where(:rule_category_id => nil).any?
+
+                        -p.rule.where(:rule_category_id => nil).order(created_at: :asc).each do |r|
+                          %li.list-group-item.p-5.mt-5
+                            %p=r.content
+
+                      -else
+                        -if @rule_category.any?
+                          -@rule_category.order(created_at: :asc).each do |r|
+                            %li.list-group-item.p-5.mt-5
+                              %h2=r.name
+                              %p=r.description
+                            -r.rule.each do |rule|
+                              %li.list-group-item.p-5
+                                %p=rule.content
 
 
 
 
-          .tab-content#pills-tabContent
-            .tab-pane.fade.show.active{id: 'pills-home', role:"tabpanel", 'aria-labelledby':"pills-home-tab"} ...
-            .tab-pane.fade{id: 'pills-profile', role:"tabpanel", 'aria-labelledby':"pills-profile-tab"} ...
-            .tab-pane.fade{id:"pills-contact", role:"tabpanel", 'aria-labelledby':"pills-contact-tab"} ...
+
+

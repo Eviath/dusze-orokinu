@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_113359) do
+ActiveRecord::Schema.define(version: 2019_02_05_150218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "abouts", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.string "description"
     t.string "assignment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -160,6 +160,12 @@ ActiveRecord::Schema.define(version: 2019_02_05_113359) do
     t.index ["user_id"], name: "index_news_on_user_id"
   end
 
+  create_table "principles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -170,10 +176,23 @@ ActiveRecord::Schema.define(version: 2019_02_05_113359) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "rule_categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "rules_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rules_id"], name: "index_rule_categories_on_rules_id"
+  end
+
   create_table "rules", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "principle_id"
+    t.bigint "rule_category_id"
+    t.index ["principle_id"], name: "index_rules_on_principle_id"
+    t.index ["rule_category_id"], name: "index_rules_on_rule_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -208,4 +227,6 @@ ActiveRecord::Schema.define(version: 2019_02_05_113359) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "news", "users"
+  add_foreign_key "rules", "principles"
+  add_foreign_key "rules", "rule_categories"
 end

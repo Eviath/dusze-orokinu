@@ -35,7 +35,6 @@ column_one = 'COLUMN_ONE'
 
 
 
-
 # abouts seed
 
 
@@ -135,60 +134,251 @@ About.create!(title:  'Rekrutacja',
               created_at: Time.zone.now)
 
 
+# Principles
+# umowa miedzyklanowa
+
+Principle.create!(title: 'Umowa międzyklanowa',
+                    created_at: Time.zone.now)
+
+# regulamin klanowy
+Principle.create!(title: 'Regulamin czatu',
+                    created_at: Time.zone.now)
+
+
+# Rules Category
+RuleCategory.create!(name: 'Regulamin',
+                    created_at: Time.zone.now)
+
+RuleCategory.create!(name: 'Moderatorzy',
+                     description: 'Za utrzymanie porządku na czacie sojuszu odpowiedzialni są Opiekunowie sojuszu oraz osoby
+                                   wyznaczone przez liderów klanów zaufanych. !UWAGA!** Ważnym czynnikiem w moderacji czatu odgrywają liderzy klanów.
+                                   Do utrzymania porządku na czacie sojuszu zobowiązani są Liderzy oraz radni klanów należących do sojuszu.
+                                   Problematyczni członkowie sojuszu ignorujący moderację kierowani będą do zarządu klanu do którego należą.
+                                   - Liderzy klanów dołączając do sojuszu akceptują regulamin międzyklanowy który zobowiązuje do utrzymania porządku na
+                                   czacie sojuszu i egzekwowania kar na osobach nie przestrzegających regulaminu.',
+                     created_at: Time.zone.now)
+
+RuleCategory.create!(name: 'Handel',
+                     description: 'Handel na czacie sojuszu jest dozwolony. (W granicach zdrowego rozsądku)',
+                      created_at: Time.zone.now)
+
+
+RuleCategory.create!(name: 'Zasady',
+                     description: 'Na czacie zabronione jest:',
+                     created_at: Time.zone.now)
+
+RuleCategory.create!(name: 'Kary',
+                     description: 'Za łamanie zasad zawartych w niniejszym regulaminie Moderatorzy oraz Opiekunowie sojuszu zgodnie z zasadami wspomnianymi
+                     w "Zasady stosowania kar" uprawnieni są do egzekwowania kar na czacie sojuszu. Brak współpracy przywódctwa klanu z moderatorami/opiekunami
+                     sojuszu w sprawie podjęcia odpowiednich działań względem osób łamiących regulamin skutkować może wyrzuceniem danego klanu z sojuszu.
+                     Recydywa: Recydywa jest to powtarzające się łamanie regulaminu czatu, zostaje traktowane jako ignorowanie moderacji i podlega najwyższej karze.
+                     Kary nakładane są zgodnie z wielkością przewinienia. Wszelkie nadużycia mogą zostać zgłoszone prywatnie do administracji.',
+                     created_at: Time.zone.now)
+
+
+RuleCategory.create!(name: 'Zasady stosowania kar:',
+                     description: 'Egzekwowanie kar przez Moderację podlega zasadom opisanym poniżej:',
+                     created_at: Time.zone.now)
+
+
+
+
 # RULES
 
 Rule.create!(content:  'Wszystkie klany są równe, tj. żaden klan nie może narzucać innym swoich zasad.',
+             principle_id: 1,
               created_at: Time.zone.now)
 
 Rule.create!(content:  'Opiekę nad sojuszem sprawuje Opiekun, Starszyzna (wybierana przez Opiekuna) i Rada Klanowa
                        (tj. zebranie Radnych wystawionych przez klany) a ich decyzję wykonuje Leader klanu opiekującego się sojuszem (Sneaky Victors).',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Każdy Leader zobowiązany jest do wystawienia Radnych ze swojego klanu (minimum jednego). Sam Leader zaś nie ma obowiązku utrzymania statusu Radnego.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Radni i Leader powinni reprezentować jedno zdanie jako klan podczas wprowadzania zmian.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Skład Radnych jest ustalany przez Leadera klanu.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Sojusz wymaga od klanów zachowania przyjaznej atmosfery.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Problematyczne osoby będą karane zawieszeniem komunikacji aż do odniesienia skutku.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Spory międzyklanowe będą rozwiązywane drogą dyplomatyczną.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Od wszystkich graczy w sojuszu wymaga się ujednolicenia komunikacji - Discord w sojuszu jest obowiązkowy.
                         (NIE zabraniamy klanom utrzymania własnych sposobów komunikacji. NIE wymagamy uczestnictwa głosowego,
                         wymagamy bycie online na discordzie podczas gry w Warframe.)',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Klany będące w sojuszu zobowiązują się do rekrutacji jedynie osób powyżej 16 roku życia. Wyjątkiem są osoby ogarnięte lub znajome.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Liderzy oraz radni odpowiadają za graczy należących do ich klanów.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Zakazuje się rozprzestrzeniania treści nielegalnych za pomocą kanałów sojuszowych.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Rejestracja do klanów na Discordzie przeprowadzana jest przez Liderów/Rekruterów/Administrację sojuszu.
                         W czasie rejestracji na discordzie wymagana jest obecność na grze Warframe.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 Rule.create!(content:  'Klany o długim stażu i dobrej opinii mają szansę uzyskania rangi Zaufanego Klanu. Jedyny przywilej otrzymywany
                         w ramach rangi jest możliwością rekrutacji nowych klanów do sojuszu. Ranga udzielana jest po uzyskaniu większości
                         pozytywnych głosów Leaderów Zaufanych Klanów i nie jest ona wyróżniona.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
 
 Rule.create!(content:  'Klany, które utraciły członkostwo w sojuszu, mogą się ponownie o nie ubiegać. Podanie w takiej sytuacji rozpatruje Rada w ciągu 24h.',
+             principle_id: 1,
              created_at: Time.zone.now)
 
+
+
+
+
+# czat rules
+
+
+# category 1
+Rule.create!(content:  'Wszystkie osoby na czacie są równe, regulamin obowiązuje każdą osobę należącą do sojuszu bez względu na rangę.',
+             rule_category_id: 1,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Nieznajomość regulaminu nie zwalnia z obowiązku jego przestrzegania.',
+             rule_category_id: 1,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Administracja zastrzega sobie prawo do zmiany regulaminu. (Osoby należące do sojuszu zostaną powiadomione o wszelkich zmianach.)',
+             rule_category_id: 1,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+
+#  category 2
+Rule.create!(content:  'Moderatorzy posiadają uprawnienia do moderacji czatu oraz egzekwowania kar.',
+             rule_category_id: 2,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Moderatorzy zobowiązani są do umieszczenia informacji o podjętych działaniach w miejscu do tego przeznaczonym.',
+             rule_category_id: 2,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Moderatorzy nie mają obowiązku udzielania informacji na temat podjętych działań osobom postronnym.',
+             rule_category_id: 2,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+
+# category 3
+Rule.create!(content:  'Zabronione jest spamowanie ofertami kupna/sprzedaży/wymiany na czacie sojuszu.',
+             rule_category_id: 3,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+
+#  category 4
+Rule.create!(content:  'Spamowanie, floodowanie, trollowanie.',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Pisanie WIELKIMI literami oraz nadużywania znaków interpunkcyjnych (w szczególności "?;!;.") etc.',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Celowe wprowadzanie w błąd innych graczy (złośliwe podawanie nieprawdziwych informacji)',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Wszczynanie kłótni, prowokacje, podteksty mające w szczególności na celu poniżenie, ubliżenie, oczernienie.',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Dyskutowanie na czacie z Moderatorami na temat przyznanych kar, regulaminu i podważanie decyzji.',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Pisanie łamaną polszczyzną bądź zawierającą dużą ilość błędów ortograficznych (Nałożona może zostać minimalna kara regulaminowa tj. ostrzeżenie.)',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Zakaz wyłudzania informacji osobistych, haseł/loginów/e-maili.',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Zakaz rekrutacji osób do klanów na czacie sojuszu. (Osoba, która dobrowolnie postanowi opuścić klan na rzecz innego klanu z sojuszu powinna uprzedzić lidera/radnych klanu, w którym się znajduje o zaistniałej sytuacji.)',
+             rule_category_id: 4,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+
+# category 5
+Rule.create!(content:  'Ostrzeżenie - Może mieć formę uwagi na czacie ogólnym i/lub na prywatnym lub formalne ostrzeżenie które zostanie zapisane w miejscu do tego przeznaczonym.',
+             rule_category_id: 5,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Kick - Wyrzucenie osoby z czatu sojuszu.',
+             rule_category_id: 5,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Ban 1H - Ban na czat sojuszu, który zostaje automatycznie zdjęty po upłynięciu 1 godziny.',
+             rule_category_id: 5,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Ban 24H - Ban na czat sojuszu, który zostaje automatycznie zdjęty po upłynięciu 24 godzin.',
+             rule_category_id: 5,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+
+# category 6
+Rule.create!(content:  'Każdy Kick/Ban oraz formalne ostrzeżenia muszą zostać zgłoszone w miejscu do tego przeznaczonym.',
+             rule_category_id: 6,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Decyzja o wymiarze kary należy do moderacji - Moderator zobowiązuje się do suwerennego wyznaczania kar.',
+             rule_category_id: 6,
+             principle_id: 2,
+             created_at: Time.zone.now)
+
+Rule.create!(content:  'Wszelkie nadużycia moderacji powinny byc zgłaszane do Opiekunów sojuszu.',
+             rule_category_id: 6,
+             principle_id: 2,
+             created_at: Time.zone.now)
 
 
 

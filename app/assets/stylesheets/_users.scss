@@ -227,6 +227,11 @@ padding: 0px 5px;
 
 //SIGNUP PAGE
 
+input[type="radio"], input[type="checkbox"] {
+  width:auto;
+}
+
+
 .signup-page-header {
 margin: 0 auto;
 color: #fff;

@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   get 'warframe/missions'
   get 'warframe/wfdrop'
 
-  get 'contact/discord'
-  get 'contact/contact-form'
+  get 'contact/index'
+
 
 
     resources :users

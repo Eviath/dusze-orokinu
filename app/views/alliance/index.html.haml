@@ -45,7 +45,8 @@
       - len = @news.length
       - @news.each_with_index do |news, index|
         .carousel-item{class: "#{index+1 == len ? 'active' : ''}"}
-          = image_tag url_for(news.thumbnail), class: 'd-block w-100'
+          - if news.thumbnail.attached?
+            = image_tag url_for(news.thumbnail), class: 'd-block w-100'
           .carousel-caption.d-none.d-md-block
             .carousel-text
               %h5=link_to news.title, news

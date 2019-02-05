@@ -33,7 +33,7 @@
 
             - if @user.alliancerequest 
 
-                .clan_show_join
+                .clan_show_content-wrapper
                     %h1 Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.
                     %h2 Zobacz swoje zgłoszenie do sojuszu.
                     .alliancerequest-button
@@ -43,15 +43,15 @@
 
             - else 
 
-                .clan_show_join
+                .clan_show_content-wrapper
 
                     %h1 Nie złożyłeś jeszcze podania do sojuszu! Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu.
                     %h2 Przejdź do zakładki sojusz.
                     .alliancerequest-button
-                        %span= link_to "Podanie do sojuszu", request_path, class: "btn btn-do-bordered" 
+                        %span= link_to "Podanie do sojuszu", request_path, class: "btn btn-do-bordered"
 
 
-                .clan_show_join
+                .clan_show_content-wrapper
 
                     %h1 Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
                     %h2 Znajdź klan dla siebie!

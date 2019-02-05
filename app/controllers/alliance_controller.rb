@@ -19,7 +19,8 @@ class AllianceController < ApplicationController
   end
 
   def rules
-    @rules = Rule.all
+    @principles = Principle.all
+    @rule_category = RuleCategory.all
   end
 
   def info
