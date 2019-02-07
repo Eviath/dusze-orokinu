@@ -1,18 +1,18 @@
 - provide(:title, @user.name)
 
 
-.page-wrapper
+.user-page-wrapper
 
 
   .profile-container
     .container
       .row
 
-        .col-md-8.mx-auto.text-center
-          %section
+        .col-md-8.mx-auto.text-center.col-show-box
+          %section.show-profile-box
             .user_image
             -if @user.avatar.attached?
-              =image_tag user_avatar(@user, 120), class: 'rounded-circle'
+              =image_tag user_avatar(@user, 120), class: 'rounded-circle user-image'
 
             %h1
               = @user.name
@@ -24,7 +24,7 @@
                     %span Administrator
 
                 - if @user.has_role? :lider
-                  %button.btn.btn-profile.disabled
+                  %button.btn.btn-do-profile.disabled
                     %span Lider Klanu
 
               .user_details
@@ -37,10 +37,11 @@
                     Ostatnio widziany:
                     %span= @user.last_seen.strftime("%F %T")
 
-                  - if @user.last_seen > '00:15:00'
-                    %p.active
-                      (Aktywny w ciągu ostatnich 15 minut)
+                  %p.active
+                    (Online #{time_ago_in_words(@user.last_seen)} temu)
 
+              .message-user
+                =link_to 'Napisz', new_message_path(to: @user), class: 'btn btn-do-vitruvian'
 
           -if user_signed_in?
             - if current_user.has_role? :admin
@@ -49,3 +50,9 @@
                 = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
               - else
                 = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)
+
+
+
+          .profil-show-img
+
+            %img{src: "/assets/jedno-gold.png"}

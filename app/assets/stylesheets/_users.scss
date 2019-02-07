@@ -12,6 +12,7 @@ PROFILES
 .profile-container {
 width:100%;
 
+
 padding: 50px 0px 50px 0px;
 }
 
@@ -19,20 +20,22 @@ padding: 50px 0px 50px 0px;
 .user_details {
   padding-top: 40px;
   p {
+    color: $vitruvian;
     font-size: .4em;
 
     span {
       padding-left: 10px;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Marcellus', serif;
       font-weight: 400;
       font-size: .9em;
       letter-spacing: .5px;
-      color: $pinky;
+      color: $vitruvian;
     }
 
   }
   p.active {
-    color: $pinky !important;
+
+    color: $light-vitru;
     font-size: .3em;
     font-weight: 400;
     text-transform: uppercase;
@@ -72,38 +75,7 @@ REGISTER
 // mixins
 $gray-medium-light: #eaeaea;
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
 
-// form
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  color: #fff;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  .form-control {
-    color: $form-feedback-invalid-color;
-  }
-}
 
 .alert {
   text-align: center;
@@ -134,16 +106,7 @@ input {
   }
 }
 
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
 
-
-// signup form container
-.form-container {
-  padding: 50px 0px 50px 0px;
-}
 
 /* Users index */
 
@@ -176,140 +139,58 @@ input {
 }
 }
 
-.btn-do-profile-opt {
-  background-color:$pinky;
-  padding: 0px 5px;
-    font-size: 14px;
-    color: #fff;
-    opacity: 0.65;
-
-    &:hover{
-      box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
-    }
-}
-
-.btn-do-profile  {
-  color: #fff;
-background-color:$pinky;
-padding: 0px 5px;
-  font-size: 14px;
 
 
-&:hover {
 
-    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
-}
 
-&:focus {
-  box-shadow: none;
-}
-}
+.form-container {
+  padding: 50px 0px 0px 0px;
 
-.btn-profile {
-  padding: 0px 5px;
-  font-size: 14px;
-  &:hover {
-
-      box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  .user-actions {
+    padding-bottom: 50px;
+    text-align: center;
   }
-
-  &:focus {
-    box-shadow: none;
-  }
-
 }
+
+
 
 .users-container {
   padding: 50px 0px 50px 0px;
 }
 
 
-
-//SIGNUP PAGE
-
 input[type="radio"], input[type="checkbox"] {
   width:auto;
-}
-
-
-.signup-page-header {
-margin: 0 auto;
-color: #fff;
-width:100%;
-position: relative;
-
-height:100%;
-
-opacity: .9999;
-h3 {
-   text-align: center;
-   font-size: 1.5em;
- }
-}
-
-.signup-page-wrapper {
-  padding:100px 0px 0px 0px;
-height:100%;
-display: flex;
-    width: 100%;
-
-}
-
-.signup-page-bg {
-position: absolute;
-width:100%;
-height: 100%;
-  background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
-opacity: 0.2;
-
-
-}
-
-
-
-.signup-page-content {
-  z-index: 9999;
-flex-grow: 1;
-align-self: center;
-
-.form-control {
-color: #fff;
-  &:focus {
-    background:transparent;
-  }
-}
-}
-
-.user-btn {
-
-  background-color: $pinky;
 }
 
 
 
 // LOGIN PAGE
 
-.login-page-header {
-margin: 0 auto;
-color: #fff;
-width:100%;
-position: relative;
-
-height:100%;
-
-opacity: .9999;
-
-h3 {
-   text-align: center;
-   font-size: 1.5em;
- }
+.login-page {
+  width: 100%;
+  height: 100%;
+  .row {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
+
+.login-page-cover {
+  background:  url("/assets/operator-vit.png");
+  background-position:left;
+}
+
+.login-form-cover{
+
+display: flex;
+}
+
+
 
 .login-page-wrapper {
 height:100%;
-display: flex;
     width: 100%;
 
 }
@@ -328,12 +209,52 @@ opacity: 0.2;
 
 
 
+
+
 .login-page-content {
   z-index: 9999;
 flex-grow: 1;
 align-self: center;
 
+
+  .form-container {
+
+    .img {
+      padding-bottom: 50px;
+      img {
+        width: 30%;
+      }
+    }
+
+
+    input {
+      background-color: $darkt;
+      text-align: center;
+
+      &:focus {
+        -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191,141,67,0.28);
+        -moz-box-shadow: inset -1px -27px 103px -56px rgba(191,141,67,0.28);
+        box-shadow: inset -1px -27px 103px -56px rgba(191,141,67,0.28);
+      }
+
+    }
+
+    .btn input {
+      width: auto;
+    }
+
+    text-align: center;
+
+    .field {
+      padding: 15px;
+    }
+
+  }
+
+
+
 .form-control {
+  border-radius: 25px;
   color: #fff;
   &:focus {
     background:transparent;
@@ -343,9 +264,73 @@ align-self: center;
 }
 
 
+//SHOW
+
+// Pages content
+.user-page-wrapper {
+
+  background:  url("/assets/vitru-bg.jpg");
+  width:100%;
+  height: 100vh;
+  padding: 100px 0px 50px 0px;
+
+
+  .col-show-box {
+
+  }
+
+  .show-profile-box {
+
+    img {
+      box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+    }
+    -webkit-box-shadow: 0px 32px 131px -4px rgba(220,202,167,0.04);
+    -moz-box-shadow: 0px 32px 131px -4px rgba(220,202,167,0.04);
+    box-shadow: 0px 32px 131px -4px rgba(220,202,167,0.04);
+
+    padding: 80px;
+
+
+    border-radius: 50%;
+    background: -moz-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220,202,167,0.3)), color-stop(100%, rgba(220,202,167,0))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* ie10+ */
+    background: linear-gradient(0deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dccaa7', endColorstr='#dccaa7',GradientType=0 ); /* ie6-9 */
+    -webkit-clip-path: polygon(50% 10%, 55% 0, 70% 0, 85% 50%, 70% 100%, 30% 100%, 15% 50%, 30% 0, 45% 0);
+    clip-path: polygon(50% 10%, 55% 0, 70% 0, 85% 50%, 70% 100%, 30% 100%, 15% 50%, 30% 0, 45% 0);
+  }
+
+  .user-image{
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+
+      padding: 10px;
+      border: 2px solid $light-vitru;
+
+
+  }
+}
+
+
+.profil-show-img img {
+  padding-top: 50px;
+  width:30%;
+}
+
 
 // AVATAR
 
+
+
 .user-avatar {
 background-size: cover;
+}
+
+//devise shared
+
+
+.shared-links{
+  padding-top: 50px;
 }

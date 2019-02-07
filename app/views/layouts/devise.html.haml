@@ -3,25 +3,26 @@
 %html
   %head
     %title
-      = yield(:title) 
+      = yield(:title)
       | Dusze Orokinu
 
-    = csrf_meta_tags 
+    = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false'
 
 
-    -#  Fonts 
+    -#  Fonts
     %link{href: "https://fonts.googleapis.com/css?family=Raleway:100,300,600", rel: "stylesheet", type: "text/css"}
     %link{href: "https://fonts.googleapis.com/css?family=Marcellus+SC", rel: "stylesheet"}
     %link{href: "https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&amp;subset=latin-ext", rel: "stylesheet"}
 
-  %body
+  %body.devise-body
     = render "layouts/navbar"
     =render "layouts/sidebar"
-    - flash.each do |message_type, message| 
+    - flash.each do |message_type, message|
       = content_tag(:div, message, class: "alert slide-in-top alert-#{message_type}")
 
-
     = yield
+
+
 

@@ -1,37 +1,42 @@
-.login-page-header
-
-  .login-page-bg
-  .login-page-wrapper
-
-    .login-page-content
-
-      .page-header
-        - provide(:title, "Logowanie")
-        %h1 Logowanie
-        %h3 Zaloguj się, aby zyskać dostęp do wszystkich funkcji strony.
+- provide(:title, "Logowanie")
 
 
-      .container.form-container
-        .row.justify-content-md-center
-          .form-group.col-md-6
-            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-              .field
-                = f.label :email, 'E-mail'
-                = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+
+.login-page-wrapper
+  .login-page
+    .row
+      .col-md-6.login-page-cover
+
+      .col-md-6.login-form-cover
+
+        .login-page-content
+          .container.form-container
+            .user-actions
+              = active_link_to "Logowanie",new_user_session_path, class: "btn btn-do-bordered"
+              = active_link_to "Rejestracja",new_user_registration_path, class: "btn btn-do-bordered"
+            .img
+              %img{src: "/assets/veil-white.png"}
+            .row.justify-content-md-center
+              .form-group.col-md-6
+                = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+                  .field
+                    = f.label :email, 'E-mail'
+                    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
 
 
-              .field
-                = f.label :password, 'Hasło'
-                = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+
+                  .field
+                    = f.label :password, 'Hasło'
+                    = f.password_field :password, autocomplete: "current-password", class: 'form-control'
 
 
-              - if devise_mapping.rememberable?
-                .field
-                  = f.check_box :remember_me
-                  = f.label :remember_me, 'Zapamiętaj mnie'
+                  - if devise_mapping.rememberable?
+                    .field
+                      = f.check_box :remember_me
+                      = f.label :remember_me, 'Zapamiętaj mnie'
 
 
-              .actions
-                = f.submit "Zaloguj", class: 'btn btn-do'
+                  .actions
+                    = f.submit "Zaloguj", class: 'btn btn-do-bordered'
 
-            = render "devise/shared/links"
+                = render "devise/shared/links"

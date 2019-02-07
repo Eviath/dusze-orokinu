@@ -3,52 +3,53 @@
 
 
 
-.signup-page-header
-  .signup-page-bg
+.login-page-wrapper
+  .login-page
+    .row
+      .col-md-6.login-page-cover
 
-  .signup-page-wrapper
-    .signup-page-content
-      .page-wrapper
+      .col-md-6.login-form-cover
 
-        .page-header
-          %h1 Rejestracja
-          %h3 Zarejestruj się, aby zyskać dostęp do wszystkich funkcji strony.
+        .login-page-content
+          .container.form-container
+            .user-actions
+              = active_link_to "Logowanie",new_user_session_path, class: "btn btn-do-bordered"
+              = active_link_to "Rejestracja",new_user_registration_path, class: "btn btn-do-bordered"
+            .img
+              %img{src: "/assets/veil-white.png"}
+            .row.justify-content-md-center
+              .form-group.col-md-6
 
-        .container.form-container
-          .row.justify-content-md-center
-            .form-group.col-md-6
+                = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+                  = devise_error_messages!
 
-              = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-                = devise_error_messages!
-
-                .field
-                  = f.label :name, 'Nazwa konta'
-                  = f.text_field :name, autofocus: true, class: 'form-control'
-
-
-                .field
-                  = f.label :email, 'E-mail'
-                  = f.email_field :email, autocomplete: "email", class: 'form-control'
-
-                .field
-                  = f.label :password, 'Hasło'
-                  - if @minimum_password_length
-                    %em.small
-                      (Minimum
-                      =@minimum_password_length
-                      znaków)
+                  .field
+                    = f.label :name, 'Nazwa konta'
+                    = f.text_field :name, autofocus: true, class: 'form-control'
 
 
-                  = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+                  .field
+                    = f.label :email, 'E-mail'
+                    = f.email_field :email, autocomplete: "email", class: 'form-control'
+
+                  .field
+                    = f.label :password, 'Hasło'
+                    - if @minimum_password_length
+                      %em.small
+                        (Minimum
+                        =@minimum_password_length
+                        znaków)
 
 
-                .field
-                  = f.label :password_confirmation, 'Potwierdź hasło'
-                  = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+                    = f.password_field :password, autocomplete: "new-password", class: 'form-control'
 
 
-                .actions
-                  = f.submit "Zarejestruj", class: 'btn btn-do'
+                  .field
+                    = f.label :password_confirmation, 'Potwierdź hasło'
+                    = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
 
-              %p Masz już konto?
-              = render "devise/shared/links"
+
+                  .actions
+                    = f.submit "Zarejestruj", class: 'btn btn-do-bordered'
+
+                = render "devise/shared/links"

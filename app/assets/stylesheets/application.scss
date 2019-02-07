@@ -21,19 +21,20 @@
 // core styles
  @import "bootstrap";
 
-//  variables
- @import './variables';
+// modules
+  @import 'modules/variables';
+  @import 'modules/buttons';
 
 //  pages
- @import './users';
- @import './alliance';
- @import './footbar';
- @import './password_resets';
- @import './alliancerequests';
- @import './clans';
+  @import './users';
+  @import './alliance';
+  @import './footbar';
+  @import './password_resets';
+  @import './alliancerequests';
+  @import './clans';
   @import './news';
   @import './contact';
-@import "./warfrane";
+  @import "./warfrane";
 
 //  custom styles
  @import './custom';
