@@ -35,7 +35,6 @@ gem 'mailboxer'
 # haml syntax
 gem "haml-rails"
 
-gem 'dotiw'
 gem 'time_difference'
 
 # gravatar

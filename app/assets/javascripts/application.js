@@ -53,10 +53,33 @@
 
 //= require messages
 
+//=require "vendor/custom_scroll"
 
 
+//sidebar js
 
 
+$( document ).on('turbolinks:load', function() {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+            // hide sidebar
+            $('#sidebar').removeClass('active');
+            // hide overlay
+            $('.overlay').removeClass('active');
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            // open sidebar
+            $('#sidebar').addClass('active');
+            // fade in the overlay
+            $('.overlay').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+})
 
 
 $(document).click(function(e) {
@@ -84,7 +107,7 @@ $('#clan_picture').bind('change', function() {
   }
 });
 
-
+//
 
 $(document).ready(function(e) {
 // navbar
@@ -117,7 +140,7 @@ function hasScrolled() {
 		if ($(this).scrollTop() <= 0){
             $('header').removeClass('header-dark');
             $('.share-buttons').removeClass('anim');
-            
+
 		}
     // Make sure they scroll more than delta
     if(Math.abs(lastScrollTop - st) <= delta)
@@ -149,58 +172,57 @@ function hasScrolled() {
 
 $(document).ready(function(e) {
     // navbar
-    
+
     // Hide Header on on scroll down
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
     var navbarHeight = $('header').outerHeight();
-    
+
     $(window).scroll(function(event){
         didScroll = true;
     });
-    
+
     setInterval(function() {
         if (didScroll) {
             $('.share-buttons').addClass('anim');
             hassScrolled();
             didScroll = false;
-        
+
         }
     }, 250);
-    
-    
-    
+
+
+
     function hassScrolled() {
         var st = $(this).scrollTop();
-    
+
             if ($(this).scrollTop() <= 0){
-             
+
                 $('.share-buttons').removeClass('anim');
-                
+
             }
         // Make sure they scroll more than delta
         if(Math.abs(lastScrollTop - st) <= delta)
             return;
-    
-    
-    
-    
-    
+
+
+
+
+
         // If they scrolled down and are past the navbar, add class .nav-up.
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop && st > navbarHeight){
             // Scroll Down
-      
-      
+
+
         } else
             // Scroll Up
             if(st + $(window).height() < $(document).height()) {
                 $('.share-buttons').removeClass('anim');
-                 
+
                 }
-    
+
         lastScrollTop = st;
     }
     });
-    

@@ -1,0 +1,58 @@
+.wrapper
+  <!-- Sidebar -->
+  %nav#sidebar
+
+    #dismiss
+
+    .sidebar-header.navbar-brand
+      Dusze Orokinu
+
+
+    %ul.components
+      .profile-nav
+        - if user_signed_in?
+          %span
+            Witaj,
+            =current_user.name
+
+          - if current_user.avatar.attached?
+            %p= image_tag user_avatar(current_user, 40), class: 'rounded-circle'
+
+          %li.nav-item
+            = active_link_to "Profil", user_path(current_user), class: "nav-link"
+          %li.nav-item
+            = active_link_to "Poczta",conversations_path, class: "nav-link"
+          %li.nav-item
+            = active_link_to "Ustawienia", edit_user_registration_path, class: "nav-link"
+          %li.nav-item
+            = active_link_to "Wyloguj",destroy_user_session_path, class: "nav-link", method: :delete
+
+
+
+          .separator
+            %br
+          .management-nav
+            %span
+              Zarządzanie
+            -if current_user.has_role? :admin
+              %li.nav-item
+                = active_link_to "Admin Panel",rails_admin_path, class: "nav-link"
+            %li.nav-item
+              = active_link_to "Dashboard",panel_path, class: "nav-link"
+            %li.nav-item
+              = active_link_to "Użytkownicy",users_path, class:  "nav-link"
+            %li.nav-item
+              = active_link_to "Klan",pclan_path, class:  "nav-link"
+            %li.nav-item
+              = active_link_to "Sojusz", request_path, class:  "nav-link"
+
+        - else
+
+          %li.nav-item-sidebar
+            %span Witaj!
+            = active_link_to "Zaloguj się",new_user_session_path, class: "nav-link"
+
+    .sidebar-footer
+      %img{src: "/assets/veil-white.png"}
+
+  .overlay

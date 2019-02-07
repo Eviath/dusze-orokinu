@@ -107,9 +107,6 @@ GEM
       rails (>= 3.0.4)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    dotiw (4.0.1)
-      actionpack (>= 4)
-      i18n
     dry-inflector (0.1.2)
     erubi (1.8.0)
     erubis (2.7.0)
@@ -513,7 +510,6 @@ DEPENDENCIES
   data-confirm-modal
   devise
   devise_lastseenable
-  dotiw
   faker (= 1.7.3)
   fog (= 1.42)
   font-awesome-rails
