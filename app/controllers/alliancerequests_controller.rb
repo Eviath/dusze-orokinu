@@ -23,7 +23,7 @@ class AlliancerequestsController < ApplicationController
     @alliancerequest = Alliancerequest.find(params[:id])
     user = @user
     auser = @alliancerequest.user
-    auser.update_attribute(:lider, true)
+    auser.add_role :lider
 
 
     areq = @alliancerequest
@@ -48,7 +48,7 @@ class AlliancerequestsController < ApplicationController
     @alliancerequest = Alliancerequest.find(params[:id])
     user = @user
     auser = @alliancerequest.user
-    auser.update_attribute(:lider, false)
+    auser.remove_role :lider
 
 
     areq = @alliancerequest
@@ -105,7 +105,7 @@ class AlliancerequestsController < ApplicationController
   end
 
   def administrator?
-    current_user.admin?
+    current_user.has_role? :admin
   end
 
   def authorship?
