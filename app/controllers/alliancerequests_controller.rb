@@ -16,7 +16,6 @@ class AlliancerequestsController < ApplicationController
     @user = current_user
     @alliancerequest = @user.alliancerequest
 
-
   end
 
 
@@ -70,6 +69,7 @@ class AlliancerequestsController < ApplicationController
   def show
     @user = User.find(params[:id] )
     @alliancerequest = Alliancerequest.find(params[:id])
+
   end
 
 
@@ -113,7 +113,7 @@ class AlliancerequestsController < ApplicationController
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_url) unless current_user.has_role? :admin
   end
 
 end

@@ -57,12 +57,12 @@
         = link_to "Usuń", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny?" }, :class => "btn btn-do-bordered-small"
 
         - if alliancerequest.approval? || alliancerequest.approval.nil?
-          = link_to decline_alliancerequest_path(@user), :class => "btn btn-do-bordered-small" do
+          = link_to decline_alliancerequest_path(@user.alliancerequest), :class => "btn btn-do-bordered-small" do
             Odrzuć
 
         - if !alliancerequest.approval?
-          = link_to approve_alliancerequest_path(@user), :class => "btn btn-do-bordered-small" do
+          = link_to approve_alliancerequest_path(@user.alliancerequest), :class => "btn btn-do-bordered-small" do
             Zatwiedź
         - if !alliancerequest.approval.nil?
-          = link_to pend_alliancerequest_path(@user), :class => "btn btn-do-bordered-small" do
+          = link_to pend_alliancerequest_path(@user.alliancerequest), :class => "btn btn-do-bordered-small" do
             Dodaj do oczekujących

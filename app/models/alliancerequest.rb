@@ -18,5 +18,6 @@ class Alliancerequest < ApplicationRecord
   validates :discord_check, acceptance: true
   validates :rules_check, acceptance: true
 
+   resourcify
 
 end
