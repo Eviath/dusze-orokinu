@@ -85,10 +85,34 @@ a.nav-sidebar {
   overflow-y: scroll;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+  }
   .nav-link{
     font-family: 'Marcellus', serif;
     font-size: 15px;
     padding-left: 10px;
+    width: fit-content;
+
+
+    &.active{
+      // before element on .active link state
+      &::before{
+        transition: .3s;
+        box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+        position: absolute;
+        content: '';
+        background: #fff;
+        height: 2px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width:100%;
+      }
+    }
   }
 
 }
@@ -193,15 +217,55 @@ a.nav-sidebar {
   padding: 10px;
 }
 
+
+//sidebar links
+
 #sidebar ul li a {
   padding: 10px;
   font-size: 1.1em;
   display: block;
 }
 
-#sidebar ul li a:hover {
-  color: #7386D5;
-  background: #fff;
+
+#sidebar ul li a{
+  transition: .3s;
+  position: relative;
+  opacity: 1;
+
+  //before element
+  &::before{
+    transition: .3s;
+    position: absolute;
+    content: '';
+    background: #fff;
+    height: 2px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width:0%;
+  }
+
+
+  &:hover{
+    transition: .3s;
+    opacity: .7;
+
+    //before element extend to 100% width on hover over link
+    &::before{
+      transition: .3s;
+      box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+      position: absolute;
+      content: '';
+      background: #fff;
+      height: 2px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width:100%;
+    }
+  }
 }
 
 #sidebar ul li.active>a,

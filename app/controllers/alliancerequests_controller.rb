@@ -1,20 +1,20 @@
 class AlliancerequestsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :load_alliancerequest,  only: :destroy
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :admin_or_author, only: :destroy
   before_action :admin_user,   only: [:show, :index]
 
   def index
 
-       @alliancerequestsapproved = Alliancerequest.approved.newest.page(params[:page]).per_page(5)
-       @alliancerequestspending = Alliancerequest.pending.newest.page(params[:page]).per_page(5)
-        @alliancerequestsdeclined = Alliancerequest.declined.newest.page(params[:page]).per_page(5)
+    @alliancerequestsapproved = Alliancerequest.approved.newest.page(params[:page]).per_page(5)
+    @alliancerequestspending = Alliancerequest.pending.newest.page(params[:page]).per_page(5)
+    @alliancerequestsdeclined = Alliancerequest.declined.newest.page(params[:page]).per_page(5)
   end
 
   def podanie
 
-      @user = current_user
-      @alliancerequest = @user.alliancerequest
+    @user = current_user
+    @alliancerequest = @user.alliancerequest
 
 
   end
@@ -22,22 +22,20 @@ class AlliancerequestsController < ApplicationController
 
   def approve
     @alliancerequest = Alliancerequest.find(params[:id])
+    user = @user
+    auser = @alliancerequest.user
+    auser.update_attribute(:lider, true)
 
 
-      user = @user
-      auser = @alliancerequest.user
-      auser.add_role :lider
+    areq = @alliancerequest
+    areq.update_attribute(:approval, true)
 
+    flash[:success] = "Podanie zostało zaakceptowane, autor podania otrzymał rangę lidera klanu."
+    redirect_to alliancerequests_path
+  end
 
-      areq = @alliancerequest
-      areq.update_attribute(:approval, true)
-
-      flash[:success] = "Podanie zostało zaakceptowane, autor podania otrzymał rangę lidera klanu."
-      redirect_to alliancerequests_path
-end
-
-def decline
-  @alliancerequest = Alliancerequest.find(params[:id])
+  def decline
+    @alliancerequest = Alliancerequest.find(params[:id])
 
     areq = @alliancerequest
     areq.update_attribute(:approval, false)
@@ -45,15 +43,13 @@ def decline
     flash[:success] = "Podanie zostało odrzucone."
     redirect_to alliancerequests_path
 
-end
+  end
 
-def pend
-  @alliancerequest = Alliancerequest.find(params[:id])
-
-
-      user = @user
-      auser = @alliancerequest.user
-      auser.remove_role :lider
+  def pend
+    @alliancerequest = Alliancerequest.find(params[:id])
+    user = @user
+    auser = @alliancerequest.user
+    auser.update_attribute(:lider, false)
 
 
     areq = @alliancerequest
@@ -62,38 +58,38 @@ def pend
     flash[:success] = "Podanie zostało przeniesione do oczekujących."
     redirect_to alliancerequests_path
 
-end
+  end
 
-    def new
+  def new
 
-      @user = current_user
-            @alliancerequest = current_user.build_alliancerequest if user_signed_in?
-            @alliancerequest = @user.alliancerequest
-       end
+    @user = current_user
+    @alliancerequest = current_user.build_alliancerequest if user_signed_in?
+    @alliancerequest = @user.alliancerequest
+  end
 
-       def show
-        @user = User.find(params[:id] )
-        @alliancerequest = Alliancerequest.find(params[:id])
-       end
+  def show
+    @user = User.find(params[:id] )
+    @alliancerequest = Alliancerequest.find(params[:id])
+  end
 
 
   def create
-  @alliancerequest = current_user.build_alliancerequest(alliancerequest_params)
-  if @alliancerequest.save
-    flash[:success] = "Podanie do sojuszu zostało zapisane!"
-    redirect_to request_path
-  else
-    render 'alliancerequests/new'
+    @alliancerequest = current_user.build_alliancerequest(alliancerequest_params)
+    if @alliancerequest.save
+      flash[:success] = "Podanie do sojuszu zostało zapisane!"
+      redirect_to request_path
+    else
+      render 'alliancerequests/new'
+    end
   end
-end
 
-def destroy
-  @alliancerequest.destroy
-  flash[:success] = "Podanie do sojuszu usunięte."
-  redirect_to alliancerequests_path || request.referrer
-end
+  def destroy
+    @alliancerequest.destroy
+    flash[:success] = "Podanie do sojuszu usunięte."
+    redirect_to alliancerequests_path || request.referrer
+  end
 
-private
+  private
 
   def alliancerequest_params
     params.require(:alliancerequest).permit(:nickname, :clan_about, :lider_nickname, :clan_name, :clan_tier, :clan_members, :discord_check, :rules_check, :approval)
@@ -109,7 +105,7 @@ private
   end
 
   def administrator?
-    current_user.has_role? :admin
+    current_user.admin?
   end
 
   def authorship?
@@ -117,7 +113,7 @@ private
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.has_role? :admin
+    redirect_to(root_url) unless current_user.admin?
   end
 
 end

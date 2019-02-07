@@ -1,0 +1,243 @@
+// Place all the styles related to the Alliancerequests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body {
+
+  &.alliancerequests-body {
+  height: auto !important;
+
+  }
+
+}
+.parallax-request {
+  /* The image used */
+  background-image: url("/assets/vitruvian-bg.png");
+  height:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.alliancerequest_show_content-no {
+  padding: 0;
+
+  min-height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+
+  .container {
+    background: $darkt;
+    padding: 50px;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 2em;
+
+    span {
+      color: $pinky;
+    }
+  }
+
+  &-wrapper {
+
+    padding: 50px;
+
+    h3 {
+      font-size: 3em;
+      color: $white;
+
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: $white;
+
+      text-align: center;
+    }
+
+    h2 {
+      color: $vitruvian;
+
+      text-align: center;
+      font-size: 1.25em;
+    }
+  }
+}
+
+
+.alliancerequest_show_content {
+  padding-top: 100px;
+
+  min-height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+
+  .container {
+    background: $darkt;
+    padding: 50px;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 2em;
+
+    span {
+      color: $pinky;
+    }
+  }
+
+  &-wrapper {
+
+    padding: 50px;
+
+    h3 {
+      font-size: 3em;
+      color: $white;
+
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: $white;
+
+      text-align: center;
+    }
+
+    h2 {
+      color: $vitruvian;
+
+      text-align: center;
+      font-size: 1.25em;
+    }
+  }
+
+}
+
+.user-box {
+  display: flex;
+}
+
+
+.alliancerequest-button {
+  padding-top: 25px;
+  text-align: center;
+}
+
+
+.alliancerequest_form {
+  padding: 50px 0px 50px 0px;
+
+
+}
+
+.alliancerequest_regulamin {
+  padding-bottom: 50px;
+
+  h1 {
+
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+
+.alliancerequest-index {
+
+  .col-md-8 {
+    padding: 150px 0px 150px 0px;
+  }
+
+  padding: 100px 0px 100px 0px;
+
+  h1 {
+
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
+
+  h2 {
+    color: $white;
+    font-size: 15px;
+    font-weight: 700;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  p {
+
+  }
+
+
+  .alliancerequest-col {
+    padding: 25px;
+
+  }
+
+
+}
+
+// alliancerequest partial
+
+
+.alliancerequest{
+
+padding-top: 50px;
+
+}
+
+
+
+.alliancerequest-actions {
+text-align: center;
+  padding: 50px 0;
+}
+
+.alliancerequest-body {
+  text-align: center;
+
+  &-about {
+    h1 {
+      text-align: center;
+    }
+
+    padding-top: 50px;
+  }
+}
+
+
+// checkboxes div
+.checkboxes {
+  padding: 20px 0px 20px 0px;
+}
+
+
+label.rules_check {
+  width: 100%;
+  text-align: center;
+}
+
+label.discord_check {
+  width: 100%;
+  text-align: center;
+}

@@ -4,7 +4,7 @@
 
 
 .clan_show_content {
-  padding: 150px 0px 50px 0px;
+  padding: 150px 0 50px 0;
 
   h1 {
     color: $white;
@@ -17,7 +17,7 @@
 
   &-wrapper {
 
-  padding: 50px 0px 50px 0px;
+    padding: 50px 0 50px 0;
 
     text-align: center;
 
@@ -25,6 +25,7 @@
       font-size: 2em;
       color: $white;
     }
+
     h2 {
       color: $pinky;
       font-size: 1.25em;
@@ -34,7 +35,7 @@
 }
 
 .clan_show_head {
-  padding: 0px 0px 50px 0px;
+  padding: 0 0 50px 0;
 
   h2 {
     font-weight: 700;
@@ -43,7 +44,7 @@
 }
 
 .clan_form-btn {
-  margin:0 !important;
+  margin: 0 !important;
 }
 
 .clan_form-header {
@@ -59,15 +60,14 @@
   }
 }
 
-.clan_show-header{
+.clan_show-header {
   padding: 45px;
- background-color: $darkbg;
- border-top-left-radius: 20px;
- border-top-right-radius: 20px;
- border-bottom: 2px solid $yell;
+  background-color: $darkbg;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom: 2px solid $yell;
 
 }
-
 
 
 .clan_show-contact {
@@ -76,20 +76,20 @@
   border-bottom: 2px solid $yell;
 
   .btn-clan {
-    &:before{
+    &:before {
       color: $yell;
-    margin: 0px;
-    border-bottom: none !important;
-    border-top: none !important;
+      margin: 0;
+      border-bottom: none !important;
+      border-top: none !important;
     }
   }
 }
 
 .clan_form-errors {
-  transition:1s;
+  transition: 1s;
   padding: 45px;
- background-color: $darkbg;
- border-bottom: 2px solid $yell;
+  background-color: $darkbg;
+  border-bottom: 2px solid $yell;
 }
 
 .clan_form-about {
@@ -100,16 +100,17 @@
 .form_header-tag {
 
   display: flex;
+
   img {
     position: relative;
-    width:30%;
+    width: 30%;
     height: auto;
   }
 
   h2 {
-    text-align:center;
+    text-align: center;
     font-size: 1.5em;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0 20px 0;
   }
 }
 
@@ -130,10 +131,9 @@
 .clan_content-wrapper {
 
 
-
-p {
-  color: rgb(217, 217, 217);
-}
+  p {
+    color: rgb(217, 217, 217);
+  }
 
   h1 {
     font-size: 18px;
@@ -144,7 +144,7 @@ p {
 }
 
 .clan-approval-pending {
-  width:100%;
+  width: 100%;
 }
 
 .clan-content {
@@ -153,10 +153,10 @@ p {
 
   &-image {
     text-align: center;
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 
     img {
-      max-width:128px;
+      max-width: 128px;
       max-height: 128px;
     }
   }
@@ -166,10 +166,17 @@ p {
     text-align: center;
     padding-bottom: 20px;
 
-    h1 {padding-bottom:10px;}
+    h1 {
+      padding-bottom: 10px;
+    }
 
-    h2 { color: $pinky; }
-    span { color: rgb(204, 204, 204); }
+    h2 {
+      color: $pinky;
+    }
+
+    span {
+      color: rgb(204, 204, 204);
+    }
 
   }
 
@@ -180,12 +187,11 @@ p {
 }
 
 
-
 .clan_new_content {
-  padding: 150px 0px 150px 0px;
+  padding: 150px 0 150px 0;
 
   h1 {
-    color:$white;
+    color: $white;
     font-size: 2em;
     text-align: center;
   }
@@ -194,52 +200,51 @@ p {
 
 .clan_form {
 
-padding: 50px 0px 50px 0px;
+  padding: 50px 0 50px 0;
 
-.form-control {
-  color: $white;
-}
+  .form-control {
+    color: $white;
+  }
 
-label {
-  color:$pinky;
-}
+  label {
+    color: $pinky;
+  }
 
-input, textarea, select,  {
-  background-color: transparent;
-
-  &:focus, :active {
+  input, textarea, select {
     background-color: transparent;
-  }
-  option {
-    color: $darkbg;
+
+    &:focus, :active {
+      background-color: transparent;
+    }
+
+    option {
+      color: $darkbg;
+    }
+
   }
 
 }
-
-}
-
-
-
-
-
-
 
 
 .clan-index {
+  height: 100%;
 
-padding: 200px 0px 100px 0px;
+  background:  url("/assets/vitruvian-bg.png");
 
-.no-clans-pending {
-  padding-top: 50px;
-}
+  padding: 200px 0 100px 0;
+
+  .no-clans-pending {
+    padding-top: 50px;
+  }
+
   .col-md-8 {
-    padding: 150px 0px 150px 0px;
+    padding: 150px 0 150px 0;
   }
 
 
   h1 {
-font-size: 22px;
-font-weight: 700;
+    font-size: 22px;
+    font-weight: 700;
   }
 
   h4 {
@@ -249,36 +254,36 @@ font-weight: 700;
 
   h2 {
     color: #d9d9d9;
-font-size:15px;
-font-weight: 400;
+    font-size: 15px;
+    font-weight: 400;
 
-span {
-  font-weight: 400;
-}
+    span {
+      font-weight: 400;
+    }
   }
 
   p {
 
   }
 
-.form-control input {
+  .form-control input {
 
-}
+  }
 
   .clan-col {
 
     h2 {
       color: $pinky;
-  font-size:15px;
-  font-weight: 400;
+      font-size: 15px;
+      font-weight: 400;
     }
 
-    background-color:rgba(#17161a, 0.5);
+    background-color: rgba(#17161a, 0.5);
     margin: 1%;
- padding: 15px;
- -webkit-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
--moz-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
-box-shadow: 10px 10px 44px -14px rgba(0,0,0,0.51);
+    padding: 15px;
+    -webkit-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+    -moz-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+    box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
 
   }
 

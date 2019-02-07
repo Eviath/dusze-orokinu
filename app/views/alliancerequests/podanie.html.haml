@@ -1,44 +1,41 @@
 - provide(:title, 'Sojusz - Panel') 
 
-- if @user.alliancerequest 
-  .alliancerequest_show_content
-    .container
-      .col-md-10.mx-auto
-      -if @user.alliancerequest.approval.nil?  
+
+- if @user.alliancerequest
+  .alliancerequest_show_content.parallax-request
+    .col-md-10.mx-auto
+      -if @user.alliancerequest.approval.nil?
         .alliancerequest_show_content-wrapper
-
-          %h2 Podanie do sojuszu oczekuje na akceptację przez administrację sojuszu.
-
-          %h3 Podanie do sojuszu
+          %h3 Twoje podanie do sojuszu
           .alliancerequest
-            = render @alliancerequest 
-  
-      - else  
+            = render @alliancerequest
 
-        - if @user.alliancerequest.approval  
+      - else
+
+        - if @user.alliancerequest.approval
           .alliancerequest_show_content-wrapper
 
-            %h1 
-              Podanie do sojuszu zostało 
+            %h1
+              Podanie do sojuszu zostało
               %span zaakceptowane
-            %h1 
-              Otrzymałeś rangę 
+            %h1
+              Otrzymałeś rangę
               %span Lider Klanu
             %h2 Możesz teraz przejść do stworzenia ogłoszenia.
             .alliancerequest-button
               %span
-                = link_to "Panel klanu", pclan_path, class: "btn btn-do-bordered" 
+                = link_to "Panel klanu", pclan_path, class: "btn btn-do-bordered"
 
-        - else  
+        - else
 
           .alliancerequest_show_content-wrapper
             %h1 Twoje podanie do sojuszu zostało odrzucone.
 
 
 
-- else 
+- else
 
-  .alliancerequest_show_content
+  .alliancerequest_show_content-no.parallax-request
 
     .container
 
@@ -48,4 +45,4 @@
         %h2 Skorzystaj z formularza!
 
         .alliancerequest-button
-          %span= link_to "Stwórz podanie do sojuszu", new_alliancerequest_path, class: "btn btn-do-bordered" 
+          %span= link_to "Stwórz podanie do sojuszu", new_alliancerequest_path, class: "btn btn-do-bordered"

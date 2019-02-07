@@ -84,7 +84,13 @@ a {
 }
 
 
+.link-vitruvian {
+  color: $vitruvian;
 
+  &:hover{
+    color: $light-vitru;
+  }
+}
 
 
 

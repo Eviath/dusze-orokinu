@@ -1,58 +1,68 @@
 
 .box{:id => "alliancerequest-#{alliancerequest.id}"}
-  .user-box
-    = link_to alliancerequest.user
-    %span.user
-      = link_to alliancerequest.user.name, alliancerequest.user 
 
   .clan_content-wrapper
 
     .container
 
-
       .alliancerequest-body
+
+
+        %table.table
+          %thead
+            %tr
+
+
+
+
         .nickname
           %h1 Nick gracza składającego podanie:
-          %p= alliancerequest.nickname 
+          %p= alliancerequest.nickname
 
         .lider_nickname
           %h1 Nick założyciela klanu:
-          %p= alliancerequest.lider_nickname 
+          %p= alliancerequest.lider_nickname
 
         .clan_name
           %h1 Nazwa klanu:
-          %p= alliancerequest.clan_name 
+          %p= alliancerequest.clan_name
 
         .clan_tier
           %h1 Tier klanu:
-          %p= alliancerequest.clan_tier 
+          %p= alliancerequest.clan_tier
 
         .clan_members
           %h1 Aktualna liczba członków klanu:
-          %p= alliancerequest.clan_members 
+          %p= alliancerequest.clan_members
 
 
       .alliancerequest-body-about
         %h1 Opis klanu:
         .fr-view
-          = raw alliancerequest.clan_about 
-         
+          = raw alliancerequest.clan_about
 
-  %span.timestamp
-    Posted
-    = time_ago_in_words(alliancerequest.updated_at)
-    - if can? :destroy, @alliancerequest
 
-      = link_to "delete", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny?" } 
-      
-    - if current_user.has_role? :admin
-      - if alliancerequest.approval? || alliancerequest.approval.nil?
-        = link_to decline_alliancerequest_path(@user), :class => "btn btn-small" do 
-          Odrzuć
+      %span.timestamp
+        Podanie stworzone: #{alliancerequest.created_at.strftime('%F %T')}
+        (#{time_ago_in_words(alliancerequest.created_at)} temu)
 
-      - if !alliancerequest.approval?
-        = link_to approve_alliancerequest_path(@user), :class => "btn btn-small" do 
-          Zatwiedź
-      - if !alliancerequest.approval.nil?
-        = link_to pend_alliancerequest_path(@user), :class => "btn btn-small" do 
-          Dodaj do oczekujących
+      %span Przez użytkownika:
+      = link_to alliancerequest.user.name, alliancerequest.user
+
+
+      .alliancerequest-actions
+
+
+
+        = link_to "Usuń", alliancerequest, method: :delete, data: { confirm: "Jesteś pewny?" }, :class => "btn btn-do-bordered-small"
+
+        - if alliancerequest.approval? || alliancerequest.approval.nil?
+          = link_to decline_alliancerequest_path(@user), :class => "btn btn-do-bordered-small" do
+            Odrzuć
+
+        - if !alliancerequest.approval?
+          = link_to approve_alliancerequest_path(@user), :class => "btn btn-do-bordered-small" do
+            Zatwiedź
+        - if !alliancerequest.approval.nil?
+          = link_to pend_alliancerequest_path(@user), :class => "btn btn-do-bordered-small" do
+            Dodaj do oczekujących

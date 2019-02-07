@@ -26,15 +26,15 @@
   @import 'modules/buttons';
 
 //  pages
-  @import './users';
-  @import './alliance';
-  @import './footbar';
+  @import 'views/users';
+  @import 'views/alliance';
+  @import 'layouts/footbar';
   @import './password_resets';
-  @import './alliancerequests';
-  @import './clans';
-  @import './news';
-  @import './contact';
-  @import "./warfrane";
+  @import 'views/alliancerequests';
+  @import 'views/clans';
+  @import 'views/news';
+  @import 'views/contact';
+  @import "views/warfrane";
 
 //  custom styles
  @import './custom';
@@ -80,4 +80,4 @@
 @import 'chosen';
 
 
-@import './conversations';
+@import 'views/conversations';
