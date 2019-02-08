@@ -6,11 +6,11 @@
 
 
 
-    .alliancerequest
+    .request
       = render @clan 
 
 
-    .alliancerequest-button.text-center
+    .request-button.text-center
       - if @clansapproved.previous(@clan)
         = link_to 'Poprzedni', @clansapproved.previous(@clan), class: "btn btn-do" 
   

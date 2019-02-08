@@ -10,11 +10,11 @@
 
                     %h1 Stworzyłeś ogłoszenie swojego klanu!
                     %h2 Ogłoszenie pojawi się na liście klanów, gdy zostanie zaakceptowane przez administrację sojuszu.
-                    .alliancerequest-button
+                    .request-button
                         %span= link_to "Lista klanów", clans_path, class: "btn btn-do-bordered"
 
 
-                .alliancerequest
+                .request
                     = render @clan 
 
 
@@ -25,18 +25,18 @@
                     %h1 Twoje podanie do sojuszu zostało przyjęte! 
                     %h1 Nie stworzyłeś jeszcze ogłoszenia klanu!
                     %h2 Stwórz ogłoszenie
-                    .alliancerequest-button
+                    .request-button
                         %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-bordered" 
                 
 
         - else 
 
-            - if @user.alliancerequest 
+            - if @user.request
 
                 .clan_show_content-wrapper
                     %h1 Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.
                     %h2 Zobacz swoje zgłoszenie do sojuszu.
-                    .alliancerequest-button
+                    .request-button
                         %span= link_to "Sprawdź podanie do sojuszu", request_path, class: "btn btn-do-bordered"
                     </div>
 
@@ -47,7 +47,7 @@
 
                     %h1 Nie złożyłeś jeszcze podania do sojuszu! Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu.
                     %h2 Przejdź do zakładki sojusz.
-                    .alliancerequest-button
+                    .request-button
                         %span= link_to "Podanie do sojuszu", request_path, class: "btn btn-do-bordered"
 
 
@@ -55,5 +55,5 @@
 
                     %h1 Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
                     %h2 Znajdź klan dla siebie!
-                    .alliancerequest-button
-                        %span= link_to "Lista klanów w sojuszu", alliancerequests_path, class: "btn btn-do-bordered" 
+                    .request-button
+                        %span= link_to "Lista klanów w sojuszu", requests_path, class: "btn btn-do-bordered"

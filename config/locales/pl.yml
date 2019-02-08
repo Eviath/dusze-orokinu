@@ -2,7 +2,7 @@ pl:
   activerecord:
     models:
     attributes:
-      alliancerequest:
+      request:
         nickname: "Nick gracza składajacego podanie"
         lider_nickname: "Nick założyciela klanu"
         clan_name: "Nazwa klanu"

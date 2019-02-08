@@ -1,5 +1,0 @@
-module AlliancerequestsHelper
-
-
-
-end

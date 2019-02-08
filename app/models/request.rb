@@ -1,7 +1,6 @@
-class Alliancerequest < ApplicationRecord
+class Request < ApplicationRecord
    CLANTIER = ['Ghost / Duch / 10 osób', 'Shadow / Cień / 30 osób', 'Storm / Burzy / 100 osób', 'Mountain / Góry / 300 osób', 'Moon / Księżyca / 1000 osób']
-
-  belongs_to :user
+   belongs_to :user, :foreign_key => "user_id"
   scope :approved, -> { where(:approval => true) }
   scope :pending, -> { where(:approval => nil) }
   scope :declined, -> { where(:approval => false) }

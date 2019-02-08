@@ -1,7 +1,7 @@
 - if object.errors.any? 
   #error_explanation
     .alert.alert-danger
-      = t('errors.template.header', :model=> Alliancerequest.model_name.human, :count=> object.errors.count)
+      = t('errors.template.header', :model=> Request.model_name.human, :count=> object.errors.count)
  
     %ul
       - object.errors.full_messages.each do |msg|

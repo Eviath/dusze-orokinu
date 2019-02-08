@@ -1,14 +1,14 @@
 .col-md-6.mx-auto
-  .alliancerequest_form
+  .request_form
 
-    .alliancerequest_regulamin.text-center
+    .request_regulamin.text-center
       %h1 Zanim złożysz podanie zapoznaj się z regulaminem!
       %p Składając podanie, akceptujesz regulamin sojuszu.
       %span= link_to "Regulamin Sojuszu", alliance_rules_path, class: "btn btn-do-bordered"
  
     %h2.text-center Stwórz podanie do sojuszu
 
-    = form_for(@alliancerequest) do |f| 
+    = form_for(@request) do |f|
       = render 'shared/error_messages', object: f.object 
 
       = f.label :nickname, "Nick składajacego podanie"  
@@ -21,7 +21,7 @@
       = f.text_field :clan_name, placeholder: "Nazwa Klanu", class: 'form-control' 
 
       = f.label :clan_tier, "Tier klanu"  
-      = f.select(:clan_tier, Alliancerequest::CLANTIER, {selected: @alliancerequest.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) 
+      = f.select(:clan_tier, Request::CLANTIER, {selected: @request.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
 
       = f.label :clan_members, "Aktualna liczba członków klanu"  
       = f.text_field :clan_members, placeholder: "1-1000", :class => 'form-control'  
@@ -31,14 +31,18 @@
       .checkboxes
         .row
           .col-md-6
-            = f.label :discord_check, "Discord", class: 'discord_check'  
-            = f.check_box :discord_check 
+            .input-group.d-flex.justify-content-center.align-content-center
+              .form-check
+                = f.label :discord_check, "Discord", class: 'discord_check'
+                = f.check_box :discord_check
 
           .col-md-6
-            = f.label :rules_check, "Regulamin", class: 'rules_check'  
-            = f.check_box :rules_check 
+            .input-group.d-flex.justify-content-center.align-content-center
+              .form-check
+                = f.label :rules_check, "Regulamin", class: 'rules_check'
+                = f.check_box :rules_check
         
-      = f.submit "Zapisz", class: "btn btn-do" 
+      = f.submit "Zapisz", class: "btn btn-do-vitruvian"
 
 :javascript
   $('#wysi').froalaEditor({

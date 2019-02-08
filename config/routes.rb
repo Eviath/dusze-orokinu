@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
     resources :users
 
-        resources :alliancerequests, only: [:index, :podanie, :show, :new, :create, :destroy]
+        resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
         resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
         resources :clans do
             member do
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
                 get :approve
             end
         end
-        resources :alliancerequests do
+        resources :requests do
             member do
                 get :decline
                 get :approve
@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   get  '/panel',  to: 'users#panel'
   get  '/pclan',  to: 'clans#panel'
-  get  '/request', to:'alliancerequests#podanie'
+  get  '/request', to:'requests#podanie'
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do

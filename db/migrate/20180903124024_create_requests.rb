@@ -1,6 +1,6 @@
-class CreateAlliancerequests < ActiveRecord::Migration[5.1]
+class CreateRequests < ActiveRecord::Migration[5.1]
   def change
-    create_table :alliancerequests do |t|
+    create_table :requests do |t|
       t.string :nickname
       t.string :lider_nickname
       t.string :clan_name
@@ -14,6 +14,6 @@ class CreateAlliancerequests < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :alliancerequests, [:user_id, :created_at]
+    add_index :requests, [:user_id, :created_at]
   end
 end

@@ -45,23 +45,6 @@ ActiveRecord::Schema.define(version: 2019_02_05_150218) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "alliancerequests", force: :cascade do |t|
-    t.string "nickname"
-    t.string "lider_nickname"
-    t.string "clan_name"
-    t.integer "clan_members"
-    t.string "clan_tier"
-    t.text "clan_about"
-    t.boolean "discord_check", default: false
-    t.boolean "rules_check", default: false
-    t.bigint "user_id"
-    t.boolean "approval"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_alliancerequests_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_alliancerequests_on_user_id"
-  end
-
   create_table "clans", force: :cascade do |t|
     t.string "leader"
     t.string "name"
@@ -166,6 +149,23 @@ ActiveRecord::Schema.define(version: 2019_02_05_150218) do
     t.string "title"
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.string "nickname"
+    t.string "lider_nickname"
+    t.string "clan_name"
+    t.integer "clan_members"
+    t.string "clan_tier"
+    t.text "clan_about"
+    t.boolean "discord_check", default: false
+    t.boolean "rules_check", default: false
+    t.bigint "user_id"
+    t.boolean "approval"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_requests_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -219,7 +219,6 @@ ActiveRecord::Schema.define(version: 2019_02_05_150218) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "alliancerequests", "users"
   add_foreign_key "clans", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
@@ -227,6 +226,7 @@ ActiveRecord::Schema.define(version: 2019_02_05_150218) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "news", "users"
+  add_foreign_key "requests", "users"
   add_foreign_key "rules", "principles"
   add_foreign_key "rules", "rule_categories"
 end

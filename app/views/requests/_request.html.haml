@@ -1,0 +1,69 @@
+
+.box{:id => "request-#{request.id}"}
+
+  .clan_content-wrapper
+
+    .container
+
+      .request-body
+
+
+        %table.table
+          %thead
+            %tr
+
+
+
+
+        .nickname
+          %h1 Nick gracza składającego podanie:
+          %p= request.nickname
+
+        .lider_nickname
+          %h1 Nick założyciela klanu:
+          %p= request.lider_nickname
+
+        .clan_name
+          %h1 Nazwa klanu:
+          %p= request.clan_name
+
+        .clan_tier
+          %h1 Tier klanu:
+          %p= request.clan_tier
+
+        .clan_members
+          %h1 Aktualna liczba członków klanu:
+          %p= request.clan_members
+
+
+      .request-body-about
+        %h1 Opis klanu:
+        .fr-view
+          = raw request.clan_about
+
+
+      %span.timestamp
+        Podanie stworzone: #{request.created_at.strftime('%F %T')}
+        (#{time_ago_in_words(request.created_at)} temu)
+
+      %span Przez użytkownika:
+      = link_to request.user.name, request.user
+
+
+      .request-actions
+
+        -if can? :destroy, @request
+
+          = link_to "Usuń", request_path(request), method: :delete, data: { confirm: "Jesteś pewny?" }, :class => "btn btn-do-bordered-small"
+
+        -if can? :manage, @request
+          - if request.approval? || request.approval.nil?
+            = link_to decline_request_path(request), :class => "btn btn-do-bordered-small" do
+              Odrzuć
+
+          - if !request.approval?
+            = link_to approve_request_path(request), :class => "btn btn-do-bordered-small" do
+              Zatwiedź
+          - if !request.approval.nil?
+            = link_to pend_request_path(request), :class => "btn btn-do-bordered-small" do
+              Dodaj do oczekujących

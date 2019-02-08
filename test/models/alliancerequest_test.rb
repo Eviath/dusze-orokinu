@@ -1,66 +1,66 @@
 require 'test_helper'
 
-class AlliancerequestTest < ActiveSupport::TestCase
+class RequestTest < ActiveSupport::TestCase
 
   def setup
      @user = users(:michael)
-     @alliancerequest = @user.build_alliancerequest(nickname: "Eviath", lider_nickname: "Eviath", clan_name: "Sneaky Victors",
+     @request = @user.build_request(nickname: "Eviath", lider_nickname: "Eviath", clan_name: "Sneaky Victors",
        clan_members: 80, clan_tier: "Storm", clan_about: "Fajny klan.", discord_check: '', rule_check: '')
      end
 
      test "discord check should be true" do
-       @alliancerequest.discord_check = true
-       assert_not @alliancerequest.valid?
+       @request.discord_check = true
+       assert_not @request.valid?
      end
 
      test "discord check should be true" do
-       @alliancerequest.rule_check = true
-       assert_not @alliancerequest.valid?
+       @request.rule_check = true
+       assert_not @request.valid?
      end
 
 
    test "should be valid" do
-     assert @alliancerequest.valid?
+     assert @request.valid?
    end
 
    test "user id should be present" do
-     @alliancerequest.user_id = nil
-     assert_not @alliancerequest.valid?
+     @request.user_id = nil
+     assert_not @request.valid?
    end
 
    test "nickname should be present" do
-     @alliancerequest.nickname = nil
-     assert_not @alliancerequest.valid?
+     @request.nickname = nil
+     assert_not @request.valid?
    end
 
    test "lider nickname should be present" do
-     @alliancerequest.lider_nickname = nil
-     assert_not @alliancerequest.valid?
+     @request.lider_nickname = nil
+     assert_not @request.valid?
    end
 
    test "clan name should be present" do
-     @alliancerequest.clan_name = nil
-     assert_not @alliancerequest.valid?
+     @request.clan_name = nil
+     assert_not @request.valid?
    end
 
    test "clan members should be present" do
-     @alliancerequest.clan_members = nil
-     assert_not @alliancerequest.valid?
+     @request.clan_members = nil
+     assert_not @request.valid?
    end
 
    test "clan tier should be present" do
-     @alliancerequest.clan_tier = nil
-     assert_not @alliancerequest.valid?
+     @request.clan_tier = nil
+     assert_not @request.valid?
    end
 
    test "clan about should be present" do
-     @alliancerequest.clan_about = nil
-     assert_not @alliancerequest.valid?
+     @request.clan_about = nil
+     assert_not @request.valid?
    end
 
 
    test "order should be most recent first" do
-    assert_equal alliancerequests(:most_recent), Alliancerequest.first
+    assert_equal requests(:most_recent), Request.first
   end
 
 

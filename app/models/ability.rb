@@ -39,7 +39,8 @@ class Ability
       can [:create, :update, :destroy], Clan, :user_id => user.id
     else
       can :read, :all
-      can :manage, Alliancerequest if user.has_role?(:newuser, Alliancerequest)
+      can [:create, :destroy], Request, :user_id => user.id if user.has_role?(:newuser, Request)
+
 
     end
 

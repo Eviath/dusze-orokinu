@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   # Associations
   has_one :clan, dependent: :destroy
-  has_one :alliancerequest, dependent: :destroy
+  has_one :request, dependent: :destroy
   has_many :news
 
   has_one_attached :avatar
@@ -24,7 +24,7 @@ class User < ApplicationRecord
   end
 
   def feed
-    Alliancerequest.where("user_id = ?", id)
+    Request.where("user_id = ?", id)
   end
 
 
