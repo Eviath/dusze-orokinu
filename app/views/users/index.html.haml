@@ -1,17 +1,36 @@
 = provide(:title, 'Użytkownicy')
 
-.page-wrapper
+.index-page-wrapper.parallax-users
   .content-wrapper
-
-    .page-header
-      %h1 Użytkownicy
-    .page-header
-      = will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna')
-
-    .container.users-container
-      .row.justify-content-md-center
-        %ul.users
-          = render @users
+    .index-content
+      .row
+        .col-md-6
+          .users-container
+            .justify-content-md-center
+              %ul.users
+                %h1 Administracja
+                = render @admins
 
 
-      = will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna') 
+        .col-md-6
+          .users-container
+            .justify-content-md-center
+              %ul.users
+                %h1 Liderzy klanów
+                = render @liderzy
+
+              = will_paginate(@liderzy, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna')
+
+
+
+
+      .row
+        .col-md-12
+          .users-container
+            .justify-content-md-center
+
+              %ul.users
+                = render @users
+
+              = will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna')
+

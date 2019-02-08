@@ -42,3 +42,11 @@ pl:
           few: "jest za krótkie (minimalnie %{count} znaki)"
           other: "jest za krótkie (minimalnie %{count} znaków)"
           many: "jest za krótkie (minimalnie %{count} znaków)"
+
+  unauthorized:
+    manage:
+      all: "Nie masz dostępu do tej części strony."
+      user: "Nie masz dostępu do edycji użytkowników."
+    update:
+      project: "Nie masz dostępu do edycji."
+    read:

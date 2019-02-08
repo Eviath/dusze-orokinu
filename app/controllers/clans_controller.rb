@@ -1,10 +1,9 @@
 class ClansController < ApplicationController
-
   before_action :authenticate_user!, only: [:update, :panel, :create, :new, :destroy]
   before_action :load_clan,  only: [:edit, :update, :destroy]
   before_action :admin_or_author, only: [:edit, :update, :destroy]
 
-
+  load_and_authorize_resource
 
   def index
     @clansapproved = Clan.approved.newest.page(params[:page]).per_page(5)

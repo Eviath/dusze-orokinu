@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+body {
+
+  &.users-body {
+    height: auto !important;
+
+  }
+
+}
+
+.parallax-users {
+  /* The image used */
+  background-image: url("/assets/vitru-bg.jpg");
+  height:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 /*
 ********
 PROFILES
@@ -111,11 +134,26 @@ $gray-medium-light: #eaeaea;
 /* Users index */
 
 .users {
+
+
+
+  padding: 50px 0;
+
   list-style: none;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+
+  h1 {
+    padding-bottom: 50px;
+  }
   li {
     overflow: auto;
     padding: 10px 0;
+    width: fit-content;
 
   }
   p {
@@ -125,7 +163,7 @@ $gray-medium-light: #eaeaea;
   }
 }
 .user-profile {
-  min-width: 250px;
+  min-width: 350px;
 }
 
 .options {
@@ -155,7 +193,8 @@ input {
 
 
 .users-container {
-  padding: 50px 0px 50px 0px;
+width:auto;
+  margin: 0 auto;
 }
 
 
@@ -264,6 +303,36 @@ align-self: center;
 }
 
 
+//user index
+
+#user_index_image{
+  padding: 5px;
+  padding-right: 15px;
+}
+
+img.user_index_image{
+  box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+
+  max-height: 60px;
+  max-width: 60px ;
+
+
+}
+
+.index-page-wrapper{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+
+  .index-content {
+    padding-top: 150px;
+  }
+}
+
+
+
 //SHOW
 
 // Pages content
@@ -301,17 +370,23 @@ align-self: center;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dccaa7', endColorstr='#dccaa7',GradientType=0 ); /* ie6-9 */
     -webkit-clip-path: polygon(50% 10%, 55% 0, 70% 0, 85% 50%, 70% 100%, 30% 100%, 15% 50%, 30% 0, 45% 0);
     clip-path: polygon(50% 10%, 55% 0, 70% 0, 85% 50%, 70% 100%, 30% 100%, 15% 50%, 30% 0, 45% 0);
+
+
   }
 
   .user-image{
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
 
+      max-height: 120px;
+      max-width: 120px ;
       padding: 10px;
       border: 2px solid $light-vitru;
 
-
   }
+
+
 }
+
 
 
 .profil-show-img img {
@@ -334,3 +409,8 @@ background-size: cover;
 .shared-links{
   padding-top: 50px;
 }
+
+
+
+
+

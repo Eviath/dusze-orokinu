@@ -13,10 +13,8 @@ module ApplicationHelper
 
 
   def markdown(content)
-
     markdown =Redcarpet::Markdown.new(Redcarpet::Render::XHTML,:hard_wrap=>true,:filter_html=>true,:autolink=>true,:no_intra_emphasis=>true)
     markdown.render(content).html_safe
-  
   end
 
 def trix 
@@ -34,8 +32,9 @@ end
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!")
     else
-      gravatar_image_url(user.email, size: size)
+      "vitru-glyph.png"
     end
   end
+
 
 end

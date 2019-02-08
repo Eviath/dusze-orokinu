@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :admin_or_author, only: :destroy
   before_action :admin_user,   only: [:show, :index]
-
+  load_and_authorize_resource
   def index
 
     @requestsapproved = Request.approved.newest.page(params[:page]).per_page(5)
@@ -75,7 +75,7 @@ class RequestsController < ApplicationController
     @request = current_user.build_request(request_params)
     if @request.save
       flash[:success] = "Podanie do sojuszu zostało zapisane!"
-      redirect_to root_path
+      redirect_to '/request'
     else
       render 'requests/new'
     end
@@ -84,7 +84,7 @@ class RequestsController < ApplicationController
   def destroy
     @request.destroy
     flash[:success] = "Podanie do sojuszu usunięte."
-    redirect_to root_path
+    redirect_to '/request'
   end
 
   private

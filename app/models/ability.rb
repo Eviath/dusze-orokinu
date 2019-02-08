@@ -36,11 +36,13 @@ class Ability
       can :read, :dashboard       # grant access to the dashboard
 
     elsif user.has_role? :lider
-      can [:create, :update, :destroy], Clan, :user_id => user.id
+      can :manage, Clan, :user_id => user.id
+      can :read, :all
+      can :podanie, Request, :user_id => user.id
     else
       can :read, :all
-      can [:create, :destroy], Request, :user_id => user.id if user.has_role?(:newuser, Request)
-
+      can [:create, :destroy, :podanie, :new], Request, :user_id => user.id if user.has_role?(:newuser, Request)
+      can :panel, Clan
 
     end
 

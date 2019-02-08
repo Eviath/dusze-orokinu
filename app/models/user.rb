@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   rolify
   after_create :assign_default_role
+  # before_create :assign_avatar
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -31,6 +32,9 @@ class User < ApplicationRecord
 
   private
 
+  # def assign_avatar
+  #   self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'vitru-glyph.png')), filename: 'default-image.png', content_type: 'image/png')
+  # end
 
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?

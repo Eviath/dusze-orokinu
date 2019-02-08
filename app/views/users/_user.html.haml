@@ -2,9 +2,9 @@
   .container
 
     .row
-      .user-image
-      -if user.avatar.attached?
-        =image_tag user_avatar(user, 60)
+
+      #user_index_image
+        =image_tag user_avatar(user, 120), class: 'rounded-circle user_index_image'
 
 
       .user-profile
@@ -12,17 +12,10 @@
 
         .ranks
           %p
-          - if user.has_role? :admin
-            %button.btn.btn-do-profile.disabled
-              %span Administrator
-
-          - if user.has_role? :lider
-            %button.btn.btn-profile.disabled
-              %span Lider Klanu
-  
+            =user_ranks(user)
 
 
       .options
         - unless current_user == @user
           %span
-            = link_to 'PW', new_message_path(to: user.id),  class: 'btn btn-do-profile-opt' 
+            = link_to 'PW', new_message_path(to: user.id),  class: 'btn btn-do-profile-opt'

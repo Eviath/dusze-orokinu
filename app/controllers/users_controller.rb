@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
 
     def index
-      @users = User.all.paginate(page: params[:page], per_page: 10)
+      @users = User.without_role(:admin).without_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
+      @admins = User.with_role(:admin)
+      @liderzy = User.with_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
     end
 
     def show
