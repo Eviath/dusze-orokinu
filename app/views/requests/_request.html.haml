@@ -54,16 +54,16 @@
 
         -if can? :destroy, @request
 
-          = link_to "Usuń", request_path(request), method: :delete, data: { confirm: "Jesteś pewny?" }, :class => "btn btn-do-bordered-small"
+          = link_to "Usuń", request_path(request), method: :delete, data: { confirm: "Jesteś pewny?" }, :class => "btn btn-do-vitruvian"
 
         -if can? :manage, @request
           - if request.approval? || request.approval.nil?
-            = link_to decline_request_path(request), :class => "btn btn-do-bordered-small" do
+            = link_to decline_request_path(request), :class => "btn btn-do-vitruvian" do
               Odrzuć
 
           - if !request.approval?
-            = link_to approve_request_path(request), :class => "btn btn-do-bordered-small" do
+            = link_to approve_request_path(request), :class => "btn btn-do-vitruvian" do
               Zatwiedź
           - if !request.approval.nil?
-            = link_to pend_request_path(request), :class => "btn btn-do-bordered-small" do
+            = link_to pend_request_path(request), :class => "btn btn-do-vitruvian" do
               Dodaj do oczekujących

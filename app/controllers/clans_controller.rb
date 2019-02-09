@@ -3,11 +3,11 @@ class ClansController < ApplicationController
   before_action :load_clan,  only: [:edit, :update, :destroy]
   before_action :admin_or_author, only: [:edit, :update, :destroy]
 
-  load_and_authorize_resource
+  load_and_authorize_resource :except => [:index, :show]
 
   def index
-    @clansapproved = Clan.approved.newest.page(params[:page]).per_page(5)
-    @clanspending = Clan.pending.newest.page(params[:page]).per_page(5)
+    @clansapproved = Clan.approved.order('id ASC')
+    @clanspending = Clan.pending.newest
 
     @clans = Clan.all
   end

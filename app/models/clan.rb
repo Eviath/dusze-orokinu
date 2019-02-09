@@ -28,14 +28,6 @@ class Clan < ApplicationRecord
 private
 
 
-def self.next(clan)
-  where('id < ?', clan.id).last
-end
-
-def self.previous(clan)
-  where('id > ?', clan.id).first
-end
-
    # Validates the size of an uploaded picture.
     def picture_size
       if picture.size > 5.megabytes

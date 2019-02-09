@@ -10,24 +10,24 @@
 
     = form_for(@request) do |f|
       = render 'shared/error_messages', object: f.object 
-
-      = f.label :nickname, "Nick składajacego podanie"  
-      = f.text_field :nickname, placeholder: "Twój Nick", class: 'form-control' 
-
-      = f.label :lider_nickname, "Nick założyciela klanu"  
-      = f.text_field :lider_nickname, placeholder: "Nick Lidera Klanu", class: 'form-control' 
-
-      = f.label :clan_name, "Nazwa klanu"  
-      = f.text_field :clan_name, placeholder: "Nazwa Klanu", class: 'form-control' 
-
-      = f.label :clan_tier, "Tier klanu"  
-      = f.select(:clan_tier, Request::CLANTIER, {selected: @request.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
-
-      = f.label :clan_members, "Aktualna liczba członków klanu"  
-      = f.text_field :clan_members, placeholder: "1-1000", :class => 'form-control'  
-
-      = f.label :clan_about, "Krótki opis klanu"  
-      = f.text_area :clan_about, id: "wysi", :class => 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" 
+      .form-group
+        = f.label :nickname, "Nick składającego podanie"
+        = f.text_field :nickname, placeholder: "Twój nick", class: 'form-control'
+      .form-group
+        = f.label :lider_nickname, "Nick założyciela klanu"
+        = f.text_field :lider_nickname, placeholder: "Nick lidera Klanu", class: 'form-control'
+      .form-group
+        = f.label :clan_name, "Nazwa klanu"
+        = f.text_field :clan_name, placeholder: "Nazwa klanu", class: 'form-control'
+      .form-group
+        = f.label :clan_tier, "Tier klanu"
+        = f.select(:clan_tier, Request::CLANTIER, {selected: @request.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
+      .form-group
+        = f.label :clan_members, "Aktualna liczba członków klanu"
+        = f.text_field :clan_members, placeholder: "1-1000", :class => 'form-control'
+      .form-group
+        = f.label :clan_about, "Krótki opis klanu"
+        = f.text_area :clan_about, id: "wysi", :class => 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
       .checkboxes
         .row
           .col-md-6
@@ -41,12 +41,13 @@
               .form-check
                 = f.label :rules_check, "Regulamin", class: 'rules_check'
                 = f.check_box :rules_check
-        
-      = f.submit "Zapisz", class: "btn btn-do-vitruvian"
+
+      .actions
+        = f.submit "Zapisz", class: "btn btn-do-vitruvian"
 
 :javascript
   $('#wysi').froalaEditor({
     inlineMode: false,
     heightMin: '200px',
-    placeholderText: 'Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)'
+    placeholderText: 'Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.) Pozwól nam poznać swój klan, to nie jest opis klanu, który zobaczy ktoś poza administracją sojuszu, szczegółowy opis klanu będzie potrzebny później.'
   });

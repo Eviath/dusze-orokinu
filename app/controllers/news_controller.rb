@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_news, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource :except => [:index, :show]
   # GET /news
   # GET /news.json
   def index

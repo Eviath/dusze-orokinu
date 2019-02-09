@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+
+  &.clans-body {
+    height: auto !important;
+
+  }
+
+}
 
 .clan_show_content {
   padding: 150px 0 50px 0;
@@ -11,7 +19,7 @@
     font-size: 2em;
 
     span {
-      color: $pinky;
+      color: $vitruvian;
     }
   }
 
@@ -27,7 +35,7 @@
     }
 
     h2 {
-      color: $pinky;
+      color: $vitruvian;
       font-size: 1.25em;
     }
   }
@@ -61,8 +69,13 @@
 }
 
 .clan_show-header {
+
+  -webkit-box-shadow: 0px 0px 96px -21px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 96px -21px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 96px -21px rgba(0,0,0,0.75);
+
   padding: 45px;
-  background-color: $darkbg;
+  background-color: $darkt;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom: 2px solid $yell;
@@ -72,7 +85,7 @@
 
 .clan_show-contact {
   text-align: center;
-  background-color: $darkbg;
+  background-color: $darkt;
   border-bottom: 2px solid $yell;
 
   .btn-clan {
@@ -116,7 +129,7 @@
 
 
 .clan_show-about {
-  background-color: $lightshadow;
+  background-color: $darkt;
   padding: 40px;
 
 }
@@ -138,7 +151,7 @@
   h1 {
     font-size: 18px;
     font-weight: 700;
-    color: $pinky;
+    color: $vitruvian;
 
   }
 }
@@ -148,30 +161,101 @@
 }
 
 .clan-content {
-  padding: 10px;
-  background-color: $darkbg;
+
+
+  padding: 25px;
+  background-color: transparent;
+  overflow: hidden;
+
+  &:before {
+    transition: .4s;
+    content: '';
+    background: $darkbg;
+    opacity: 1;
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom:0;
+    margin: auto;
+    left:0;
+    width:95%;
+    height: 95%;
+
+    -webkit-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+    -moz-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+    box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+
+  }
+
+
+
+  &:hover{
+    transition: .4s;
+
+    .clan-content-image{
+      transition: .4s;
+      transform: translateY(0px);
+    }
+
+    .clan-content-buttons {
+      opacity: 1;
+      transition: .4s;
+      text-align: center;
+      transform: translateY(0px);
+    }
+
+    .clan-content-text {
+      transition: .4s;
+      transform: translateY(0px);
+      opacity:1;
+    }
+
+    &:before {
+      transition: .4s;
+      content: '';
+      background: transparent;
+      opacity: 1;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height: 100%;
+      box-shadow: 0;
+    }
+  }
+
 
   &-image {
+
+    transition: .4s;
+    transform: translateY(100px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding-bottom: 20px;
 
     img {
       max-width: 128px;
       max-height: 128px;
+      z-index: 100;
     }
   }
 
   &-text {
-
+    transition: .2s;
+    transform: translateY(150px);
     text-align: center;
     padding-bottom: 20px;
+    opacity:0;
 
     h1 {
       padding-bottom: 10px;
     }
 
     h2 {
-      color: $pinky;
+      color: $vitruvian;
     }
 
     span {
@@ -181,8 +265,18 @@
   }
 
   &-buttons {
+    transition: .2s;
+    opacity: 0;
     text-align: center;
+    transform: translateY(150px);
   }
+
+
+
+
+
+
+
 
 }
 
@@ -207,7 +301,7 @@
   }
 
   label {
-    color: $pinky;
+    color: $vitruvian;
   }
 
   input, textarea, select {
@@ -227,11 +321,12 @@
 
 
 .clan-index {
-  height: 100%;
-
-  background:  url("/assets/vitruvian-bg.png");
-
-  padding: 200px 0 100px 0;
+  min-height: 100vh;
+  display: flex;
+  padding: 150px 0;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 
   .no-clans-pending {
     padding-top: 50px;
@@ -273,14 +368,14 @@
   .clan-col {
 
     h2 {
-      color: $pinky;
+      color: $vitruvian;
       font-size: 15px;
       font-weight: 400;
     }
 
     background-color: rgba(#17161a, 0.5);
-    margin: 1%;
-    padding: 15px;
+
+
     -webkit-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
     -moz-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
     box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);

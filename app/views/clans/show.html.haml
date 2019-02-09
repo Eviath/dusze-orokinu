@@ -1,6 +1,6 @@
 - provide(:title, 'Klan')
 
-.clan_show_content
+.clan_show_content.parallax-users
 
   .container
 
@@ -11,10 +11,10 @@
 
 
     .request-button.text-center
-      - if @clansapproved.previous(@clan)
-        = link_to 'Poprzedni', @clansapproved.previous(@clan), class: "btn btn-do" 
+      - if @clan.previous
+        = link_to 'Poprzedni', @clan.previous, class: "btn btn-do-vitruvian"
   
-      = link_to "Lista Klanów", clans_path, class: "btn btn-do" 
+      = link_to "Lista Klanów", clans_path, class: "btn btn-do-vitruvian"
 
-      - if @clansapproved.next(@clan)
-        = link_to 'Następny', @clansapproved.next(@clan), class: "btn btn-do" 
+      - if @clan.next
+        = link_to 'Następny', @clan.next, class: "btn btn-do-vitruvian"

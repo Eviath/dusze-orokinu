@@ -24,7 +24,7 @@
   .header-body-wrapper
     .header-body
       %h1 Dusze Orokinu
-      %h3 Polski Sojusz Warframe 2018
+      %h3 Polski Sojusz Warframe 2019
       %img{src: "/assets/veil-white.png"} <br>
       %img{src: "/assets/warf.png"}
 
@@ -50,7 +50,8 @@
           .carousel-caption.d-none.d-md-block
             .carousel-text
               %h5=link_to news.title, news
-              %p=truncate(news.content, length: 600)
+              %img.veil{src: "/assets/veil-white.png"}
+              %p=truncate(news.content, length: 400)
 
             .actions
               =link_to 'Dowiedz się więcej', news, class: 'btn btn-do-bordered'

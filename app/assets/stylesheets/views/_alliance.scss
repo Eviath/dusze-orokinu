@@ -46,13 +46,13 @@ $lg-width: 1200px;
   font-size: 2rem;
   }
   @include md-d {
-  font-size: 3rem;
-  }
-  @include lg-d {
   font-size: 4rem;
   }
-  @include ex-lg-d {
+  @include lg-d {
   font-size: 5rem;
+  }
+  @include ex-lg-d {
+  font-size: 6rem;
   }
 }
 
@@ -86,12 +86,23 @@ padding: 0;
 
 
 .carousel-text {
+p {
+  font-weight: 400;
+  font-family: 'Marcellus', serif;
+}
+  img.veil {
+    margin: 30px 0;
+    width: 100px!important;
+    height: 50px !important;
+    opacity:1;
+  }
   width:80%;
   margin: 0 auto;
   h5 {
     text-transform: uppercase;
-    font-size: 3em;
-    font-weight: 900;
+    font-size: 2em;
+    font-weight: 400;
+    font-family: 'Marcellus', serif;
     color: $yell-hov;
   }
 }
@@ -171,8 +182,8 @@ opacity: .9999;
 
 
 .kenburns-top {
-  -webkit-animation: kenburns-top 25s ease-out infinite alternate-reverse forwards;
-  animation: kenburns-top 25s ease-out infinite alternate-reverse forwards;
+  -webkit-animation: kenburns-top 18s ease-out infinite alternate-reverse forwards;
+  animation: kenburns-top 18s ease-out infinite alternate-reverse forwards;
 }
 
 /* ----------------------------------------------
@@ -226,8 +237,8 @@ width:100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  opacity: 0.5;
- background-image: url("/assets/sac.png");
+  opacity: 0.8;
+ background-image: url("/assets/vitru-bg.jpg");
 
 }
 
@@ -246,13 +257,17 @@ div.header-body {
     text-align: center;
     font-family: 'Marcellus SC', serif;
     font-weight: 100;
-    letter-spacing: .1rem;
+
+
 
 
   h1 {
   @include h1-font-mediaQ;
-  color: $pinky;
-  font-weight: 700;
+  color: $vitruvian;
+    font-family: 'Marcellus', serif;
+  font-weight: 400;
+    letter-spacing: 2rem;
+    text-transform: uppercase;
   }
 
   h2 {
@@ -327,7 +342,7 @@ background: $darkbg;
 
   h2 {
     text-align: center;
-    color: $pinky;
+    color: $vitruvian;
   }
 }
 
@@ -337,7 +352,7 @@ background: $darkbg;
 
 &-header {
   text-align: center;
-  color: $pinky;
+  color: $vitruvian;
 }
 
 &-text {
@@ -360,7 +375,7 @@ color: #fff;
  }
  h2 {
    font-size: 2em;
-     color: $pinky;
+     color: $vitruvian;
  }
 }
 
@@ -390,7 +405,7 @@ text-align: justify;
       z-index: -2;
       transition: .3s;
       content:'';
-      background: $pinky;
+      background: $vitruvian;
       width: 100%;
       height: 2px;
       position: absolute;
@@ -406,7 +421,7 @@ text-align: justify;
       z-index: -2;
       transition: .3s;
       content:'';
-      background: $pinky;
+      background: $vitruvian;
       width: 100%;
       height: 100%;
       position: absolute;

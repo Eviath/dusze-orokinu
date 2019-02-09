@@ -18,19 +18,18 @@
           = devise_error_messages!
 
 
-          .field.p-5
-            .row
-              .col-sm-4
-                - if resource.avatar.attached?
-                  = image_tag user_avatar(resource, 120), class: 'rounded-circle user-avatar'
-
-              .col-sm-8
-                = f.label :avatar, 'Avatar'
-                = f.file_field :avatar
+          .form-group.p-2
+            .col-sm-12.text-center
+              = image_tag user_avatar(resource, 120), class: 'rounded-circle user-avatar'
 
 
+            .form-group
+              = f.label :avatar, 'Avatar'
+              = f.file_field :avatar, direct_upload: true, class: 'form-control'
 
-          .field
+
+
+          .form-group.p-2
             = f.label :email
             = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
 
@@ -41,7 +40,7 @@
                 = resource.unconfirmed_email
 
 
-          .field
+          .form-group.p-2
             = f.label :password, 'Hasło'
             - if @minimum_password_length
 
@@ -54,25 +53,25 @@
 
 
 
-          .field
+          .form-group.p-2
             = f.label :password_confirmation, 'Potwierdź hasło'
             = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: '(Pozostaw puste, jeśli nie chcesz zmieniać)'
 
-          .field
+          .form-group.p-2
             = f.label :current_password, 'Aktualne hasło'
             %i (Zatwierdź zmiany aktualnym hasłem)
 
             = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
 
 
-          .actions
-            = f.submit "Zaktualizuj", class: 'btn btn-do'
+          .actions.mt-5.text-center
+            = f.submit "Zaktualizuj", class: 'btn btn-do-vitruvian'
 
-        .account-remove.p-2.mt-5
+        .account-remove.p-2.mt-5.text-center
 
           %h3.text-center Usuń moje konto
 
           %p
             Ta akcja jest nieodwracalna, konto po usunięciu jest niemożliwe do odzyskania, jak również aplikacja do sojuszu oraz (w przypadku lidera) ogłoszenie klanu.
-            = button_to "USUŃ KONTO", registration_path(resource_name), data: { confirm: "Jesteś pewny?" }, method: :delete, class: "btn btn-do"
+            = button_to "USUŃ KONTO", registration_path(resource_name), data: { confirm: "Jesteś pewny?" }, method: :delete, class: "btn btn-do-vitruvian"
 

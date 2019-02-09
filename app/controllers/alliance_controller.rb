@@ -1,6 +1,6 @@
 class AllianceController < ApplicationController
   def index
-    @news = News.limit(5).order('id desc')
+    @news = News.limit(5).order('id asc')
 
     #   abouts
     @main_about = About.where(:assignment => 'MAIN')

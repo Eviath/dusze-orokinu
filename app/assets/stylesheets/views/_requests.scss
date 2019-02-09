@@ -46,7 +46,7 @@ body {
     font-size: 2em;
 
     span {
-      color: $pinky;
+      color: $vitruvian;
     }
   }
 
@@ -98,7 +98,7 @@ body {
     font-size: 2em;
 
     span {
-      color: $pinky;
+      color: $vitruvian;
     }
   }
 
@@ -144,6 +144,25 @@ body {
 .request_form {
   padding: 50px 0px 50px 0px;
 
+
+  .actions {
+    text-align: center;
+  }
+   option{
+    color: $darkbg !important;
+  }
+
+  .form-control:focus {
+    color: #fff;
+  }
+
+  .form-control {
+    color: #d9d9d9;
+  }
+
+  .form-group {
+    padding:10px;
+  }
 
 }
 

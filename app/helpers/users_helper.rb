@@ -2,15 +2,10 @@ module UsersHelper
 
 
 
-
   def user_ranks(user)
 
     # check if user have created clan
     check_if_clan_present = user.clan.present? ? user.clan.name : '';
-
-    # rangi
-    admin = user.has_role? :admin
-    lider = user.has_role? :lider
 
     # lider przycisk
     lider_button = link_to user.clan, class:'btn btn-do-profile' do
@@ -23,9 +18,8 @@ module UsersHelper
     # użytkownik przycisk
     user_button = content_tag(:button, content_tag(:span, "Użytkownik"), class: "btn btn-do-profile disabled")
 
-
     # if statement render buttons depending on user roles
-    if admin && lider
+    if user.has_role?(:admin) && user.has_role?(:lider)
       content_tag :div do
 
         concat admin_button
@@ -33,11 +27,11 @@ module UsersHelper
         concat lider_button
       end
 
-    elsif admin
+    elsif user.has_role?(:admin)
       content_tag(:button, content_tag(:span, "Administrator"), class: "btn btn-do-profile disabled")
 
 
-    elsif lider
+    elsif user.has_role?(:lider)
       lider_button
 
     else
@@ -46,8 +40,8 @@ module UsersHelper
     end
 
 
-  end   #end user ranks
 
+  end   #end user ranks
 
 
 

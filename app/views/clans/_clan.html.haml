@@ -38,12 +38,12 @@
       .col-md-12.clan_show-contact-buttons
 
         - if !clan.discord.empty? 
-          = link_to "Discord", clan.discord, class: "btn btn-do-bordered btn-clan" 
+          = link_to "Discord", clan.discord, class: "btn btn-do-bordered-square btn-clan"
 
         - if !clan.website.empty? 
-          = link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered btn-clan" 
+          = link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered-square btn-clan"
 
-        = link_to 'Napisz do lidera', new_message_path(to: clan.user), class: 'btn btn-do-bordered btn-clan'
+        = link_to 'Napisz do lidera', new_message_path(to: clan.user), class: 'btn btn-do-bordered-square btn-clan'
 
 
     .row.clan_show-about
@@ -64,16 +64,16 @@
     = time_ago_in_words(clan.updated_at) 
     temu.
 
-  - if can? :destroy, @clan
-    = link_to "Edytuj", edit_clan_path(clan) 
+  - if current_user && can?(:destroy, @clan)
+    = link_to "Edytuj", edit_clan_path(clan), class: 'btn btn-do-vitruvian'
     |
-    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" } 
+    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" }, class: 'btn btn-do-vitruvian'
 
-  - if current_user.has_role? :admin
-    - if @clan.approval == true 
+  - if has_role?(:admin)
+    - if @clan.approval == true
       |
-      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) 
+      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) , class: 'btn btn-do-vitruvian'
     - else
       |
-      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) 
+      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) , class: 'btn btn-do-vitruvian'
 
