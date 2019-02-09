@@ -50,17 +50,9 @@
 
 
 
-
-
-
-
-// froala editor
- @import "froala_editor.min.css";
- @import "froala_style.min.css";
-
-
-// froala editor plugins
- @import 'plugins/char_counter.min.css';
+@import "froala_editor.min";
+@import "froala_style.min";
+@import 'plugins/char_counter.min.css';
 @import 'plugins/code_view.min.css';
 @import 'plugins/colors.min.css';
 @import 'plugins/emoticons.min.css';
@@ -74,6 +66,10 @@
 @import 'plugins/special_characters.min.css';
 @import 'plugins/table.min.css';
 @import 'plugins/video.min.css';
+
+@import 'third_party/embedly.min.css';
+@import 'third_party/spell_checker.min.css';
+
 
 
 // chosen, better choose input

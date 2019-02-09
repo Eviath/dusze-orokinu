@@ -26,16 +26,13 @@
 /public/uploads
 
 
-## Environment normalization:
-/.bundle
-/vendor/bundle
+
 
 # Ignore pow environment settings
 .powenv
 
 
 # Ignore node_modules
-node_modules/
 
 
 # Ignore uploaded files in development
