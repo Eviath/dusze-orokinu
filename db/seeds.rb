@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#
+#
+# User.create!(name:  "evid",
+#              email: "evid@evid.com",
+#              password:              "foobar",
+#              password_confirmation: "foobar",
+#              )
+#
+#
+# user = User.find(1)
+# user.add_role :admin
 
 
-User.create!(name:  "evid",
-             email: "evid@evid.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             )
-
-
-user = User.find(1)
-user.add_role :admin
-
-
-# news seed
-15.times do |n|
-  title  = Faker::Lorem.sentence(5)
-  content = Faker::Lorem.paragraphs(3)
-  News.create!(title:  title,
-               content: content,
-               user_id:              1,
-               created_at: Time.zone.now)
-end
+# # news seed
+# 15.times do |n|
+#   title  = Faker::Lorem.sentence(5)
+#   content = Faker::Lorem.paragraphs(3)
+#   News.create!(title:  title,
+#                content: content,
+#                user_id:              1,
+#                created_at: Time.zone.now)
+# end
 
 main_about = 'MAIN'
 column_two = 'COLUMN_TWO'
