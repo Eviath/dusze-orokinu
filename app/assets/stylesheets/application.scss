@@ -18,6 +18,7 @@
 @import "./fontawesome/brands.scss";
 
 
+
 // core styles
  @import "bootstrap";
 
@@ -39,10 +40,6 @@
 //  custom styles
  @import './custom';
 
-
-
-
-
 //layouts
 @import "/layouts/sidebar";
 
@@ -52,3 +49,4 @@
 
 
 @import 'views/conversations';
+

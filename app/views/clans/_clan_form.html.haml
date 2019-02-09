@@ -75,12 +75,4 @@
 
 
         = f.label :about, "Krótki opis klanu"  
-        = f.text_area :about, id: "wysi", class: 'form-control', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)" 
-
-
-:javascript
-  $('#wysi').froalaEditor({
-    inlineMode: false,
-    heightMin: '200px',
-    placeholderText: 'Napisz coś o klanie.'
-  });
+        = f.text_area :about, :class => "tinymce", :rows => 40, :cols => 120, id: 'uniq-about ', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"

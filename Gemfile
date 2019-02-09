@@ -26,7 +26,7 @@ gem 'data-confirm-modal'
 gem 'rails-i18n', '~> 5.1'
 gem "polish", ">= 0.1.0"
 
-gem "wysiwyg-rails"
+gem 'tinymce-rails'
 
 #sprockets
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
@@ -52,6 +52,7 @@ gem 'devise_lastseenable'
 gem 'cancancan'
 gem 'rolify'
 
+gem 'bootsy'
 
 gem 'rails_admin', '~> 1.3'
 # Bootstrap Framework
