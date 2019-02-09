@@ -24,9 +24,9 @@
                     Dodano
                     = time_ago_in_words(news.created_at)
                     temu
-                  %small.pull-right.text-muted
+                  %small.author.pull-right.text-muted
                     Autor:
-                    =link_to news.user.name, news.user
+                    =link_to news.user.name, news.user, class:'link-vitruvian'
 
                 .card-body
                   = link_to 'Zobacz', news, class: 'card-link link-vitruvian'
@@ -40,4 +40,10 @@
             = link_to 'New News', new_news_path
 
       .col-md-4
-        %h2.text-center Twitter Feed
+        %h2.text-center
+
+
+        %a.twitter-timeline{'data-lang':"pl", 'data-theme':"light", href:"https://twitter.com/Dusze_Orokinu?ref_src=twsrc%5Etfw"} Twitter Dusze Orokinu
+
+%script{src:"https://platform.twitter.com/widgets.js", charset:"utf-8"}
+

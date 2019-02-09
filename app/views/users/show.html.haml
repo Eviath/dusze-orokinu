@@ -17,16 +17,7 @@
 
               .ranks
                 %p
-                - if @user.has_role? :admin
-                  %button.btn.btn-do-profile.disabled
-                    %span Administrator
-
-                - if @user.has_role? :lider
-                  %button.btn.btn-do-profile.disabled
-                    %span
-                      Lider klanu
-                      -if @user.clan.present?
-                        =link_to "#{@user.clan.name}", @user.clan, class:'link-vitruvian-light'
+                  =user_ranks(@user)
 
 
               .user_details

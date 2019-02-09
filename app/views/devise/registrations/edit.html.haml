@@ -28,10 +28,13 @@
               = f.file_field :avatar, direct_upload: true, class: 'form-control'
 
 
+          .form-group.p-2
+            = f.label :name, "Nazwa konta"
+            = f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control'
 
           .form-group.p-2
             = f.label :email
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+            = f.email_field :email, autocomplete: "email", class: 'form-control'
 
 
             - if devise_mapping.confirmable? && resource.pending_reconfirmation?
