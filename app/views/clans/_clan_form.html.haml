@@ -44,9 +44,14 @@
             Logo
             =image_tag('all-gold.png')
 
+        -if @clan.picture.attached?
+          =image_tag @clan.picture.variant(resize: 60)
     
-        = f.label :logo, "Logo klanu"  
-        = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'form-control'   
+        = f.label :picture, "Logo klanu"
+        = f.file_field :picture, direct_upload: true,  class: 'form-control'
+
+
+
 
         .form_header-tag
           %h2

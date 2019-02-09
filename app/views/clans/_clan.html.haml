@@ -11,11 +11,10 @@
       .row.clan_show-header
         .col-md-6
           .clan-logo
-            %p= image_tag clan.picture.url if clan.picture?
+            %p= image_tag clan.picture if clan.picture.attached?
 
           .clan-name
-            %h2= clan.name 
-
+            %h2= clan.name
 
         .col-md-6
 

@@ -1,10 +1,10 @@
 class Clan < ApplicationRecord
      CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
      scope :approved, -> { where(:approval => true) }
+     has_one_attached :picture
      scope :pending, -> { where(:approval => false) }
      belongs_to :user, :foreign_key => "user_id"
     scope :newest, -> { order(created_at: :desc) }
-    mount_uploader :picture, PictureUploader
    validates :user_id, presence: true
    validates :about, presence: true
    validates :leader, presence: true
@@ -12,7 +12,6 @@ class Clan < ApplicationRecord
    validates :name, presence: true
    validates :members, presence: true
    validates :picture, presence: true
-   validate  :picture_size
 
      resourcify
 
@@ -27,13 +26,6 @@ class Clan < ApplicationRecord
 
 private
 
-
-   # Validates the size of an uploaded picture.
-    def picture_size
-      if picture.size > 5.megabytes
-        errors.add(:picture, "Rozmiar pliku nie może przekraczać 5MB")
-      end
-    end
 
 
 end

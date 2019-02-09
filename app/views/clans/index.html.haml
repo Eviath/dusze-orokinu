@@ -8,7 +8,7 @@
           .col-md-4.clan-col
             .clan-content
               .clan-content-image
-                = image_tag clan.picture.url if clan.picture?
+                = image_tag clan.picture if clan.picture.attached?
 
 
               .clan-content-text
@@ -58,7 +58,7 @@
                 .col-md-4.clan-col
                   .clan-content
                     .clan-content-image
-                      = image_tag clan.picture.url if clan.picture?
+                      = image_tag clan.picture if clan.picture.attached?
 
                     .clan-content-text
                       %h2
