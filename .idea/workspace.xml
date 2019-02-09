@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd4cb7ed-7681-48dc-9d54-2f03c7b74819" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/helpers/roles_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/layouts/_footbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/layouts/_footbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/layouts/_sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/layouts/_sidebar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/modules/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/modules/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/views/_alliance.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/views/_alliance.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/views/_requests.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/views/_requests.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/views/_users.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/views/_users.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/views/news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/views/news.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/alliance_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/alliance_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/clans_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/clans_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/news_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/news_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/ability.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ability.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/application_record.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/application_record.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/clan.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/clan.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/alliance/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/alliance/index.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/clans/_clan.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/clans/_clan.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/clans/_clan_form.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/clans/_clan_form.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/clans/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/clans/index.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/clans/show.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/clans/show.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_footbar.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_footbar.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/news/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/news/index.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/requests/_request.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/requests/_request.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/requests/_request_form.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/requests/_request_form.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/panel.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/panel.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/warframe/newsfeed.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/warframe/newsfeed.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/warframe/wfdrop.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/warframe/wfdrop.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/alliance/info.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/alliance/info.html.haml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -52,62 +23,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
+            <state relative-caret-position="463">
+              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/clans/index.html.haml">
+        <entry file="file://$PROJECT_DIR$/app/views/alliance/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/views/_alliance.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/alliance_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            <state relative-caret-position="633">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="123" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/clans_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/clans/show.html.haml">
+        <entry file="file://$PROJECT_DIR$/app/views/alliance/info.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -172,7 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/alliancerequests/_alliancerequest_form.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/alliancerequests_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/alliancerequests/index.html.haml" />
@@ -218,11 +152,12 @@
         <option value="$PROJECT_DIR$/app/views/news/index.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/_custom.scss" />
         <option value="$PROJECT_DIR$/app/views/clans/index.html.haml" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss" />
         <option value="$PROJECT_DIR$/app/models/clan.rb" />
         <option value="$PROJECT_DIR$/app/views/clans/show.html.haml" />
         <option value="$PROJECT_DIR$/app/models/application_record.rb" />
         <option value="$PROJECT_DIR$/app/controllers/clans_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss" />
+        <option value="$PROJECT_DIR$/app/views/alliance/info.html.haml" />
       </list>
     </option>
   </component>
@@ -250,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,7 +257,7 @@
               <item name="dusze-orokinu" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="clans" type="462c0819:PsiDirectoryNode" />
+              <item name="alliance" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dusze-orokinu" type="b2602c69:ProjectViewProjectNode" />
@@ -335,7 +271,6 @@
         </subPane>
       </pane>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,16 +418,18 @@
       <workItem from="1549635917471" duration="18675000" />
       <workItem from="1549658892954" duration="7031000" />
       <workItem from="1549666379897" duration="9166000" />
+      <workItem from="1549721181477" duration="853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184143000" />
+    <option name="totallyTimeSpent" value="184996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22121535" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22334754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -645,9 +582,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/alliance/rules.html.haml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/alliance/info.html.haml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/alliance/about.html.haml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -784,13 +718,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_navbar.html.haml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/alliance/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_footbar.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -829,31 +756,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/clans/show.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clans/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="48" />
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/clans/show.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/clans_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/alliance_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -864,17 +798,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/alliance_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/views/_clans.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="463">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/clans_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/alliance/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        <state relative-caret-position="633">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="123" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/alliance/info.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="15" />
         </state>
       </provider>
     </entry>

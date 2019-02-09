@@ -177,6 +177,7 @@ body {
     right: 0;
     bottom:0;
     margin: auto;
+    border: 2px solid $dark-vitru;
     left:0;
     width:95%;
     height: 95%;
@@ -214,6 +215,7 @@ body {
       transition: .4s;
       content: '';
       background: transparent;
+      border: 2px solid transparent;
       opacity: 1;
       position: absolute;
       top:0;
