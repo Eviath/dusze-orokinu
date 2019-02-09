@@ -3,6 +3,6 @@ jQuery ->
   
   elem = document.getElementById('messages');
   if !elem
-    console.log("not on page")
+
   else
     elem.scrollTop = elem.scrollHeight
