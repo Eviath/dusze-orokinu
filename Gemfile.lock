@@ -78,9 +78,6 @@ GEM
       sassc-rails (>= 2.0.0)
     bootstrap-will_paginate (1.0.0)
       will_paginate
-    bootsy (2.4.0)
-      carrierwave (~> 1.0)
-      mini_magick (~> 4.6)
     builder (3.2.3)
     byebug (10.0.2)
     cancancan (2.3.0)
@@ -521,7 +518,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap (~> 4.2.1)
   bootstrap-will_paginate
-  bootsy
   byebug
   cancancan
   capybara (~> 2.13)
