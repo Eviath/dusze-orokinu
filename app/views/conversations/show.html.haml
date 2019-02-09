@@ -21,7 +21,9 @@
               .media.message-sender.col
                 
                 .media-left
-                  = gravatar_for message.sender, 45, message.sender.name 
+                  .user-image
+                    =image_tag user_avatar(message.sender, 45), class: 'rounded-circle conversation-user-image'
+                    =message.sender.name
 
                 .media-body
                   .media-heading
@@ -35,7 +37,9 @@
             - else 
               .media.message-receiver.col 
                 .media-left
-                  = gravatar_for message.sender, 45, message.sender.name 
+                  .user-image
+                    =image_tag user_avatar(message.sender, 45), class: 'rounded-circle conversation-user-image'
+                    =message.sender.name
 
                 .media-body
                   .media-heading
@@ -49,5 +53,5 @@
       = form_tag reply_conversation_path(@conversation), method: :post do 
         .form-group.conversation-submit-body
           = text_area_tag 'body', nil, cols: 3, class: 'form-control form-control_dark', placeholder: 'Napisz coś...', required: true 
-          = submit_tag "Wyślij wiadomość", class: 'btn btn-primary'
+          = submit_tag "Wyślij wiadomość", class: 'btn btn-do-vitruvian'
  

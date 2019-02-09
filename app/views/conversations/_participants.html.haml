@@ -1,5 +1,6 @@
 - conversation.participants.each do |participant| 
-  - unless participant == current_user 
-    = gravatar_for participant 
-    = link_to participant.name, participant 
+  - unless participant == current_user
+    .user-image
+      =image_tag user_avatar(participant, 40), class: 'rounded-circle conversation-user-image'
+      = link_to participant.name, participant
 
