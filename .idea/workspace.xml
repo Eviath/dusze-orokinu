@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd4cb7ed-7681-48dc-9d54-2f03c7b74819" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -19,38 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="414" column="25" lean-forward="true" selection-start-line="414" selection-start-column="25" selection-end-line="414" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="387" column="29" lean-forward="true" selection-start-line="387" selection-start-column="29" selection-end-line="387" selection-end-column="29" />
+            <state relative-caret-position="401">
+              <caret line="537" column="23" lean-forward="true" selection-start-line="537" selection-start-column="23" selection-end-line="537" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -67,8 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>alliancerequest</find>
-      <find>request_path</find>
       <find>link-v</find>
       <find>user-image</find>
       <find>index</find>
@@ -96,7 +67,9 @@
       <find>box-s</find>
       <find>shadow</find>
       <find>card-footer</find>
+      <find>bund</find>
       <find>bundler</find>
+      <find>bundled</find>
     </findStrings>
     <replaceStrings>
       <replace>admin</replace>
@@ -369,12 +342,12 @@
       <workItem from="1549635917471" duration="18675000" />
       <workItem from="1549658892954" duration="7031000" />
       <workItem from="1549666379897" duration="9166000" />
-      <workItem from="1549721181477" duration="6037000" />
+      <workItem from="1549721181477" duration="6847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190180000" />
+    <option name="totallyTimeSpent" value="190990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -763,24 +736,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="414" column="25" lean-forward="true" selection-start-line="414" selection-start-column="25" selection-end-line="414" selection-end-column="25" />
+        <state relative-caret-position="613">
+          <caret line="89" selection-start-line="89" selection-end-line="89" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
+        <state relative-caret-position="426">
+          <caret line="414" column="25" lean-forward="true" selection-start-line="414" selection-start-column="25" selection-end-line="414" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="387" column="29" lean-forward="true" selection-start-line="387" selection-start-column="29" selection-end-line="387" selection-end-column="29" />
+        <state relative-caret-position="401">
+          <caret line="537" column="23" lean-forward="true" selection-start-line="537" selection-start-column="23" selection-end-line="537" selection-end-column="23" />
         </state>
       </provider>
     </entry>
