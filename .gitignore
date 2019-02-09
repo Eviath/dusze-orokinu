@@ -44,3 +44,7 @@ node_modules/
 
 config/initializers/secret_token.rb
 config/master.key
+
+config/secrets.yml
+# Ignore master key for decrypting credentials and more.
+/config/master.key

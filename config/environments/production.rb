@@ -71,8 +71,8 @@ Rails.application.configure do
     :address        => 'smtp.gmail.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => 'duszkiwarframe@gmail.com',
-    :password       => 'duszki0987654321',
+    :user_name      =>  Rails.application.credentials.mail_name,
+    :password       =>  Rails.application.credentials.mail_password,
     :domain         => 'gmail.com',
     :enable_starttls_auto => true
   }
