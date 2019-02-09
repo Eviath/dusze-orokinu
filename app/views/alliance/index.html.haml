@@ -27,7 +27,7 @@
       %h3 Polski Sojusz Warframe 2019
       =image_tag('veil-white.png')
       %br
-      =image_tag('/warf.png')
+      =image_tag('warf.png')
 
 
 
@@ -52,7 +52,7 @@
           .carousel-caption.d-none.d-md-block
             .carousel-text
               %h5=link_to news.title, news
-              %img.veil{src: "/assets/veil-white.png"}
+              =image_tag 'veil-white.png', class: 'veil'
               %p=truncate(news.content, length: 400)
 
             .actions
@@ -79,7 +79,7 @@
     .container
       .about-us-text
         =image_tag('all-gold.png')
-        =image_tag('/jedno-gold.png')
+        =image_tag('jedno-gold.png')
         - if @main_about.any?
           - @main_about.each do |about|
             %h1=about.title
@@ -113,7 +113,7 @@
         .container
           .row
             .col-md-8.mx-auto.text-center
-              %img{src: "/assets/warframe-gold.png"}
+              =image_tag('warframe-gold.png')
 
 
 

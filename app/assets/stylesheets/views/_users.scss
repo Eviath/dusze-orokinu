@@ -14,7 +14,7 @@ body {
 
 .parallax-users {
   /* The image used */
-  background-image: url("/assets/vitru-bg.jpg");
+  background-image: url(asset_path('vitru-bg.jpg'));
   height:100%;
 
   /* Create the parallax scrolling effect */
@@ -217,7 +217,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .login-page-cover {
-  background:  url("/assets/operator-vit.png");
+  background:  url(asset_path('operator-vit.png'));
   background-position:left;
 }
 
@@ -338,7 +338,7 @@ img.user_index_image{
 // Pages content
 .user-page-wrapper {
 
-  background:  url("/assets/vitru-bg.jpg");
+  background:  url(asset_path('vitru-bg.jpg'));
   width:100%;
   height: 100vh;
   padding: 100px 0px 50px 0px;

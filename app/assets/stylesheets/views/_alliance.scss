@@ -122,7 +122,7 @@ p {
 
 
 .parallaxlang {
-  background-image: url("/assets/orolang-sm.png");
+  background-image: url(asset_path('orolang-sm.png'));
 
   height:100%;
 
@@ -238,7 +238,7 @@ width:100%;
   background-size: cover;
   background-position: top;
   opacity: 0.8;
- background-image: url("/assets/vitru-bg.jpg");
+ background-image: url(asset_path('vitru-bg.jpg'));
 
 }
 

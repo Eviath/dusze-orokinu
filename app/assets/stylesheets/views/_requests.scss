@@ -16,7 +16,7 @@ body {
 
 .parallax-request {
   /* The image used */
-  background-image: url("/assets/vitruvian-bg.png");
+  background-image: url(asset_path('vitruvian-bg.png'));
   height:100%;
 
   /* Create the parallax scrolling effect */

@@ -3,8 +3,8 @@
   .content-wrapper
     .container
       .about-us-text
-        %img{src: "/assets/all-gold.png"}
-        %img{src: "/assets/jedno-gold.png"}
+        =image_tag('all-gold.png')
+        =image_tag('jedno-gold.png')
         - if @main_about.any?
           - @main_about.each do |about|
             %h1=about.title
