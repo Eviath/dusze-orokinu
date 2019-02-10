@@ -118,7 +118,7 @@
               %span= request.clan_name
 
             %p
-              =request.id
+
               = link_to truncate('Zobacz'), request, class: "btn btn-do-bordered-small"
               - if can? :destroy, @request
                 |

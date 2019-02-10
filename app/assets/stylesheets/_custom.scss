@@ -1,4 +1,39 @@
 
+input[type="file"] {
+  display: none;
+}
+
+
+.custom-file-upload {
+  border: 1px solid $vitruvian-opa;
+  display: inline-block;
+  cursor: pointer;
+  height: 100%;
+  margin: 0;
+  padding: 5px;
+}
+
+.form-group {
+
+  .clan_logo{
+    text-align: center;
+    img {
+      max-height: 120px;
+      max-width: 120px;
+    }
+
+  }
+
+  .file-upload {
+    flex-direction: row;
+    align-items: center;
+    height: 38px;
+    display: flex;
+    align-content: center;
+    background: rgba(23, 22, 26, 0.5);
+    align-content: center;
+  }
+}
 
 
 /* ----------------------------------------------
@@ -92,6 +127,23 @@ input {
     }
 
 }
+
+.clan_form .form-control {
+  border:none;
+}
+
+
+select.form-control {
+  border: none;
+  background-color: rgba(23, 22, 26, 0.5) !important;
+}
+
+.clan_form select option{
+  border:none;
+  background-color: rgba(23, 22, 26, 0.9) !important;
+color: #fff;
+}
+
 
 .form-control_dark {
   background-color: $darkt;
@@ -586,6 +638,20 @@ margin-bottom: 0px;
 
 position: absolute;
 }
+
+.alert-success {
+  color: $vitruvian;
+}
+
+
+#error_explanation {
+  border: 2px solid $vitruvian;
+  padding: 50px 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: $darkt;
+}
+
 
 
 // modal

@@ -1,6 +1,6 @@
 .clan_form
 
-  = form_for(@clan) do |f| 
+  = form_for(@clan) do  |f|
 
     .row.clan_form-header
       .col-md-10.d-flex.align-items-center
@@ -17,25 +17,25 @@
   
 
     .row.clan_form-about
-      .col-md-6
+      .col-md-8.mx-auto
         .form_header-tag
           %h2
             =image_tag('all-gold.png')
             Informacje
             =image_tag('all-gold.png')
  
-
-        = f.label :name, "Nazwa klanu" 
-        = f.text_field :name, class: 'form-control' 
-
-        = f.label :leader, "Nick założyciela klanu"  
-        = f.text_field :leader, class: 'form-control' 
-
-        = f.label :tier, "Tier klanu"  
-        = f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' }) 
-
-        = f.label :members, "Aktualna liczba członków klanu"  
-        = f.text_field :members, :class => 'form-control'  
+        .form-group
+          = f.label :name, "Nazwa klanu"
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.label :leader, "Nick założyciela klanu"
+          = f.text_field :leader, class: 'form-control'
+        .form-group
+          = f.label :tier, "Tier klanu"
+          = f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
+        .form-group
+          = f.label :members, "Aktualna liczba członków klanu"
+          = f.text_field :members, :class => 'form-control'
 
 
         .form_header-tag 
@@ -43,13 +43,16 @@
             =image_tag('all-gold.png')
             Logo
             =image_tag('all-gold.png')
-
-        -if @clan.picture.attached?
-          =image_tag @clan.picture.variant(resize: 60)
-    
-        = f.label :picture, "Logo klanu"
-        = f.file_field :picture, direct_upload: true,  class: 'form-control'
-
+        .form-group
+          .clan_logo
+            - if @clan.picture.attached?
+              =image_tag @clan.picture.attachment, id:'old-logo'
+            %img{id:"output"}
+          .form-input
+            = f.label :picture, "Logo klanu"
+          .file-upload
+            = f.label :picture, "Wybierz plik", class: 'custom-file-upload'
+            = f.file_field :picture, direct_upload: true, type: 'file', class:'form-control-upload', onchange:"loadFile(event)"
 
 
 
@@ -65,8 +68,9 @@
 
         = f.label :discord, "Discord klanu"  
         = f.text_field :discord, placeholder: "https://discord.gg/uJEJAes  (Zostaw puste jeśli nie posiada)", :class => 'form-control'  
-  
-      .col-md-6
+
+    .row.clan_form-about
+      .col-md-12
         .form_header-tag 
           %h2
             =image_tag('all-gold.png')
@@ -74,8 +78,7 @@
             =image_tag('all-gold.png')
 
 
-        = f.label :about, "Krótki opis klanu"  
-        = f.text_area :about, :class => "tinymce", :rows => 40, :cols => 120, id: 'uniq-about ', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
+        = f.text_area :about, :class => "tinymce", :rows => 25, :cols => 120, id: 'uniq-about ', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
 
 
 = tinymce

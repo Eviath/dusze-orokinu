@@ -3,10 +3,27 @@
 %html
   %head
     %meta{'http-equiv': "Content-Type", 'content': "text/html", 'charset': "utf-8"}
-    %style
-      -#  Email styles need to be inline
+    :css
+      body {width:80%; margin: 0 auto; text-align: center; font-family: "Helvetica", serif  }
 
+      span {text-align: center}
+      img { width: 370px; height: 100px}
+      a {text-decoration: none; color: #b6934e}
 
 
   %body
-    = yield 
+    .mail_body
+      = yield
+
+
+    =image_tag('all-gold.png')
+
+    %h5
+      Masz pytania?
+      =link_to "Skontaktuj się z nami", contact_index_url
+
+    %p
+      Pozdrawiamy,
+      administracja sojuszu Dusze Orokinu.
+
+    %small (Wiadomość została wygenerowana automatycznie)

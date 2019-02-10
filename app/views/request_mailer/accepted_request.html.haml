@@ -1,0 +1,32 @@
+
+%html
+  %head
+    %meta{content:'text/html', charset:'UTF-8', 'http-equiv':'Content-Type'}
+    :css
+
+      img.warframe-gif { width: 370px; height: 400px}
+      h1 {font-size: 2em; text-transform: uppercase}
+      p {padding: 15px}
+
+      .col { width:40%; margin: 0 auto;}
+
+
+  %body
+    %h1 #{"Witaj,  #{@user.name}!"}
+
+    .col
+
+
+      %p
+        Mamy przyjemność poinformować, że Twoje podanie do sojuszu zostało rozstrzygnięte pozytywnie.
+        %br
+        W związku z tym, otrzymałeś/aś rangę "Lider Klanu". Dzierżysz ogromną władzę, a na twych barkach spoczywa równie ogromna odpowiedzialność.
+
+      %p
+        Następnym krokiem ku chwale, powinno być stworzenie ogłoszenia klanu! Możesz to zrobić pod tym adresem.
+        =link_to @url, @url
+
+      %p Dziękujemy za chęć budowy naszej małej społeczności razem!
+
+      =image_tag 'tenor.gif', class:'warframe-gif'
+

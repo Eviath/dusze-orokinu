@@ -1,0 +1,20 @@
+
+%html
+  %head
+    %meta{content:'text/html', charset:'UTF-8', 'http-equiv':'Content-Type'}
+    :css
+      h1 {font-size: 2em; text-transform: uppercase}
+      p {padding: 15px}
+      .col { width:40%; margin: 0 auto;}
+
+
+  %body
+    .col
+      %h1 #{"Witaj,  #{@user.name}!"}
+
+
+      %p Musimy z przykrością poinformować, że Twoje podanie do sojuszu "Dusze Orokinu", zostało odrzucone.
+
+      %p #{"Więcej informacji możesz znaleźć pod tym adresem: #{@url}"}
+
+      %p Dziękujemy za chęć udziału.

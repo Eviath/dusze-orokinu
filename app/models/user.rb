@@ -32,6 +32,10 @@ class User < ApplicationRecord
 
   private
 
+  # no confirmation needed, for development
+  def confirmation_required?
+    false
+  end
 
   # def assign_avatar
   #   self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'vitru-glyph.png')), filename: 'default-image.png', content_type: 'image/png')

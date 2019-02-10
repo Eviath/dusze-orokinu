@@ -28,17 +28,18 @@ class RequestsController < ApplicationController
 
     areq = @request
     areq.update_attribute(:approval, true)
-
-    flash[:success] = "Podanie zostało zaakceptowane, autor podania otrzymał rangę lidera klanu."
+    RequestMailer.with(user: auser).accepted_request.deliver_now
+    flash[:success] = "Podanie zostało zaakceptowane, autor podania został poinformowany o akceptacji podania wiadomością e-mail oraz otrzymał rangę lidera klanu."
     redirect_to requests_path
   end
 
   def decline
+    auser = @request.user
     @request = Request.find(params[:id])
 
     areq = @request
     areq.update_attribute(:approval, false)
-
+    RequestMailer.with(user: auser).declined_request.deliver_now
     flash[:success] = "Podanie zostało odrzucone."
     redirect_to requests_path
 
@@ -64,6 +65,7 @@ class RequestsController < ApplicationController
     @user = current_user
     @request = current_user.build_request if user_signed_in?
     @request = @user.request
+
   end
 
   def show
@@ -77,14 +79,14 @@ class RequestsController < ApplicationController
       flash[:success] = "Podanie do sojuszu zostało zapisane!"
       redirect_to '/request'
     else
-      render 'requests/new'
+      render :new
     end
   end
 
   def destroy
     @request.destroy
     flash[:success] = "Podanie do sojuszu usunięte."
-    redirect_to '/request'
+    redirect_to 'request'
   end
 
   private

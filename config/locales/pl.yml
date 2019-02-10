@@ -1,6 +1,13 @@
+
 pl:
-  activerecord:
+  devise:
+    sessions:
+      admin:
+        signed_in: "Pomyślnie zalogowano."
+  activerecord: &active_model
     models:
+      clan: "Klan"
+      request: "Podanie"
     attributes:
       request:
         nickname: "Nick gracza składajacego podanie"
@@ -11,12 +18,13 @@ pl:
         clan_members: "Aktualna liczba członków klanu"
         discord_check: "Discord"
         rules_check: "Regulamin"
+      clan:
+        leader: "Nick założyciela klanu"
+        name: "Nazwa klanu"
+        tier: "Tier klanu"
+        about: "Opis klanu"
+        members: "Aktualna liczba członków klanu"
 
-  devise:
-    sessions:
-      admin:
-        signed_in: "Pomyślnie zalogowano."
-  activerecord: &active_model
     errors:
       template:
         header:

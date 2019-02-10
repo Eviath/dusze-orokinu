@@ -23,9 +23,13 @@
 
 //=require "vendor/custom_scroll"
 
+var loadFile = function(event) {
+    var output = document.getElementById('output');
+    document.getElementById('old-logo').style.display = "none";
+    output.src = URL.createObjectURL(event.target.files[0]);
+};
 
 //sidebar js
-
 
 $( document ).on('turbolinks:load', function() {
         $("#sidebar").mCustomScrollbar({
