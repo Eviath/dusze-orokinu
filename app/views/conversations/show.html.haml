@@ -3,6 +3,7 @@
   .container
 
 
+
     - page_header "Conversation" 
 
     %p 
@@ -15,7 +16,7 @@
     
       .panel-body
         #messages.messages
-          - @conversation.receipts_for(current_user).each do |receipt| 
+          - @conversation.receipts_for(current_user).order(:created_at).each do |receipt|
             - message = receipt.message 
             - if current_user == message.sender 
               .media.message-sender.col
@@ -23,15 +24,13 @@
                 .media-left
                   .user-image
                     =image_tag user_avatar(message.sender, 45), class: 'rounded-circle conversation-user-image'
-                    =message.sender.name
+                    = link_to message.sender.name, message.sender, class: 'link-vitruvian'
 
                 .media-body
                   .media-heading
-                    %span.media-user-heading
-                    = link_to message.sender.name, message.sender 
-                    |
-                    = message.created_at.strftime("%-d %B %Y, %H:%M:%S")
-                  = message.body
+                    %span.media-user-heading=l message.created_at, format: :long
+                  %p
+                    = message.body
 
 
             - else 
@@ -39,15 +38,13 @@
                 .media-left
                   .user-image
                     =image_tag user_avatar(message.sender, 45), class: 'rounded-circle conversation-user-image'
-                    =message.sender.name
+                    = link_to message.sender.name, message.sender, class: 'link-vitruvian'
 
                 .media-body
                   .media-heading
-                    %span.media-user-heading
-                    = link_to message.sender.name, message.sender 
-                    |
-                    = message.created_at.strftime("%-d %B %Y, %H:%M:%S")
-                  = message.body
+                    %span.media-user-heading= l message.created_at, format: :long
+                  %p
+                    = message.body
  
 
       = form_tag reply_conversation_path(@conversation), method: :post do 

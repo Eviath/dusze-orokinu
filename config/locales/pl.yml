@@ -1,5 +1,9 @@
 
 pl:
+  mailboxer:
+    message_mailer:
+      subject_new: 'Otrzymałeś nową wiadomość w serwisie Dusze Orokinu %{subject}'
+      subject_reply: 'Otrzymałeś nową odpowiedź na wiadomość w serwisie Dusze Orokinu %{subject}'
   devise:
     sessions:
       admin:

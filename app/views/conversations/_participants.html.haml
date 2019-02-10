@@ -2,5 +2,5 @@
   - unless participant == current_user
     .user-image
       =image_tag user_avatar(participant, 40), class: 'rounded-circle conversation-user-image'
-      = link_to participant.name, participant
+      = link_to participant.name, participant, class: "link-vitruvian"
 

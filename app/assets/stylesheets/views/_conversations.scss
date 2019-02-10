@@ -20,6 +20,23 @@ li.list-group-item{
     }
 }
 
+.message-control{
+  color: #fff;
+}
+
+.btn-group-vertical {
+  display: flex;
+  flex-direction: row;
+align-items: flex-start;
+  justify-content: center;
+}
+.partial-user-conversation {
+
+  .conversation-body {
+    word-break: break-all;
+  }
+
+}
 
 
 ul.chosen-choices {
@@ -35,6 +52,10 @@ ul.chosen-choices {
 
 .conversation-index .form-control {
     background:$darkt;
+
+
+    color: #fff !important;
+
 }
 
 
@@ -50,14 +71,22 @@ ul.chosen-choices {
     padding: 10px;
     margin: 20px;
     border-radius: 20px;
- 
+  overflow: hidden;
+  word-break: break-all;
 }
 
 .message-sender {
   
    width:50%;
-    background-color: $darkblue !important;
+    background-color: $dark-vitru !important;
+.media-body{
+ p {
+   padding: 15px;
+ }
+  padding: 10px;
+  margin-left: 30px;
 
+}
     .media-heading {
         text-align:left;
     }
@@ -83,6 +112,7 @@ ul.chosen-choices {
 
 .messages {
 
+
     overflow: hidden;
     height: 700px;
     overflow-y: scroll;
@@ -92,4 +122,7 @@ ul.chosen-choices {
 
 .conversation-submit-body {
     padding-top: 50px;
+  textarea {color: $white}
+  textarea:focus {  color: $white;}
+
 }
