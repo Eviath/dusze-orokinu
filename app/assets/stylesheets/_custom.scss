@@ -654,6 +654,25 @@ position: absolute;
 }
 
 
+.login-page-content{
+
+  #error_explanation {
+    h2 {
+      font-size: .8rem;
+    }
+
+    li {
+      font-size: .8rem;
+    }
+
+    border: 2px solid $vitruvian;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    background-color: $darkt;
+  }
+
+}
+
 #error_explanation {
   border: 2px solid $vitruvian;
   padding: 50px 10px;
