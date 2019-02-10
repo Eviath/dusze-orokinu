@@ -2,18 +2,18 @@ pl:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: Data wysłania potwierdzenia
-        confirmation_token: Token potwierdzający
-        confirmed_at: Data potwierdzenia
-        created_at: Data utworzenia
-        current_password: Aktualne hasło
-        current_sign_in_at: Data bieżącego logowania
-        current_sign_in_ip: Bieżący adres IP
-        email: Adres e-mail
-        encrypted_password: Zaszyfrowane hasło
-        failed_attempts: Nieudanych prób
-        last_sign_in_at: Data ostatniego logowania
-        last_sign_in_ip: Ostatni adres IP
+        confirmation_sent_at: "Data wysłania potwierdzenia"
+        confirmation_token: "Token potwierdzający"
+        confirmed_at: "Data potwierdzenia"
+        created_at: "Data utworzenia"
+        current_password: "Aktualne hasło"
+        current_sign_in_at: "Data bieżącego logowania"
+        current_sign_in_ip: "Bieżący adres IP"
+        email: "Adres e-mail"
+        encrypted_password: "Zaszyfrowane hasło"
+        failed_attempts: "Nieudanych prób"
+        last_sign_in_at: "Data ostatniego logowania"
+        last_sign_in_ip: "Ostatni adres IP"
         locked_at: Data zablokowania
         password: Hasło
         password_confirmation: Potwierdzenie hasła

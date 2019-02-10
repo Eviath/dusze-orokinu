@@ -26,10 +26,6 @@ pl:
         tier: "Tier klanu"
         about: "Opis klanu"
         members: "Aktualna liczba członków klanu"
-      user:
-        password: "Hasło"
-        password_confirmation: "Potwierdzenie hasła"
-
     errors:
       template:
         header:
