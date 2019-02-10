@@ -5,16 +5,15 @@
     :css
 
       img.warframe-gif { width: 370px; height: 400px}
-      h1 {font-size: 2em; text-transform: uppercase}
+      h1 {font-size: 2em; text-transform: uppercase; padding: 15px}
       p {padding: 15px}
 
-      .col { width:40%; margin: 0 auto;}
+      .col { width:50%; margin: 0 auto;}
 
 
   %body
-    %h1 #{"Witaj,  #{@user.name}!"}
-
     .col
+      %h1 #{"Witaj,  #{@user.name}!"}
 
 
       %p
