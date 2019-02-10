@@ -132,6 +132,12 @@ input {
   border:none;
 }
 
+.request_form .form-control {
+  border:none;
+}
+.request_form label {
+  color: #b6934e;
+}
 
 select.form-control {
   border: none;
@@ -141,9 +147,13 @@ select.form-control {
 .clan_form select option{
   border:none;
   background-color: rgba(23, 22, 26, 0.9) !important;
-color: #fff;
+color: #fff !important;
 }
-
+.request_form select option{
+  border:none;
+  background-color: rgba(23, 22, 26, 0.9) !important;
+  color: #fff !important;
+}
 
 .form-control_dark {
   background-color: $darkt;

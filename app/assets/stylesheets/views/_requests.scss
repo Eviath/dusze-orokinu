@@ -26,6 +26,21 @@ body {
   background-size: cover;
 }
 
+
+
+.parallax-request-new {
+  /* The image used */
+  background-image: url(asset_path('vitru-flowers.png'));
+  height:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 .request_show_content-no {
   padding: 0;
 
@@ -142,10 +157,12 @@ body {
 
 
 .request_form {
+  width: 100%;
   padding: 50px 0px 50px 0px;
 
 
   .actions {
+    padding-top: 50px;
     text-align: center;
   }
    option{
