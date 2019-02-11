@@ -1,35 +1,36 @@
-li.list-group-item{ 
-    background: $darkbg ;
-    border-bottom: 2px solid $yellow;
+li.list-group-item {
+  background: $darkbg;
+  border-bottom: 2px solid $yellow;
 }
 
 
 .conversation-user-image {
-  width:60px;
+  width: 60px;
   height: 60px;
 }
 
 .conversations {
 
-    .active{
-        a {
-            color:$white;
-        }
-        
-        background-color: $yell !important;
+  .active {
+    a {
+      color: $white;
     }
+
+    background-color: $yell !important;
+  }
 }
 
-.message-control{
+.message-control {
   color: #fff;
 }
 
 .btn-group-vertical {
   display: flex;
   flex-direction: row;
-align-items: flex-start;
+  align-items: flex-start;
   justify-content: center;
 }
+
 .partial-user-conversation {
 
   .conversation-body {
@@ -40,89 +41,98 @@ align-items: flex-start;
 
 
 ul.chosen-choices {
-    padding: 15px 10px !important;
-    background-image:none !important;
-    background-color: $darkt !important;
-    border-top: none !important;
-    border-left:none !important;
-    border-right:none !important;
-    border-bottom: 1px solid $yell !important;
+  padding: 15px 10px !important;
+  background-image: none !important;
+  background-color: $darkt !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid $yell !important;
 }
 
 
 .conversation-index .form-control {
-    background:$darkt;
+  background: $darkt;
 
 
-    color: #fff !important;
+  color: #fff !important;
 
 }
 
 
 .conversation-subject {
-    font-size: 1.5em;
-    padding: 15px;
+  font-size: 1.5em;
+  padding: 15px;
   display: flex;
-    padding-bottom: 30px;
-    
+  padding-bottom: 30px;
+
 }
 
 .messages .media {
-    padding: 10px;
-    margin: 20px;
-    border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 20px;
   overflow: hidden;
   word-break: break-all;
 }
 
 .message-sender {
-  
-   width:50%;
-    background-color: $dark-vitru !important;
-.media-body{
- p {
-   padding: 15px;
- }
-  padding: 10px;
-  margin-left: 30px;
 
-}
-    .media-heading {
-        text-align:left;
+  width: 50%;
+  background-color: $dark-vitru !important;
+
+  .media-body {
+    p {
+      padding: 15px;
     }
+
+    padding: 10px;
+    margin-left: 30px;
+
+  }
+
+  .media-heading {
+    text-align: left;
+  }
 }
 
 .media-user-heading a {
-    font-size: 1.3em;
-    color: $yell-hov;
+  font-size: 1.3em;
+  color: $yell-hov;
 }
 
-.message-receiver  {
+.message-receiver {
 
-    flex-direction: row-reverse;
-  
-   float:right;
-   width:50%;
-    background-color: $darkwhite !important;
+  flex-direction: row-reverse;
 
-    .media-heading {
-        text-align:left;
-    }
+  float: right;
+  width: 50%;
+  background-color: $darkwhite !important;
+
+  .media-heading {
+    text-align: left;
+  }
 }
 
 .messages {
 
 
-    overflow: hidden;
-    height: 700px;
-    overflow-y: scroll;
-  
+  overflow: hidden;
+  height: 700px;
+  overflow-y: scroll;
+
 }
 
 
 .conversation-submit-body {
-    padding-top: 50px;
-  textarea {color: $white}
-  textarea:focus {  color: $white;}
+  padding-top: 50px;
+
+  textarea {
+    color: $white
+  }
+
+  textarea:focus {
+    color: $white;
+  }
 
 }

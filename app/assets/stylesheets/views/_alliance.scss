@@ -24,18 +24,21 @@ $lg-width: 1200px;
     @content;
   }
 }
+
 @mixin md-d {
-  @media (min-width: #{$sm-width}) and (max-width: #{$md-width})  {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width}) {
     @content;
   }
 }
+
 @mixin lg-d {
-  @media (min-width: #{$md-width}) and (max-width: #{$lg-width})  {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width}) {
     @content;
   }
 }
+
 @mixin ex-lg-d {
-  @media screen and (min-width: #{$lg-width})  {
+  @media screen and (min-width: #{$lg-width}) {
     @content;
   }
 }
@@ -43,16 +46,16 @@ $lg-width: 1200px;
 // H1 Font - Media Quarry MIXIN
 @mixin h1-font-mediaQ {
   @include sm-d {
-  font-size: 2rem;
+    font-size: 2rem;
   }
   @include md-d {
-  font-size: 4rem;
+    font-size: 4rem;
   }
   @include lg-d {
-  font-size: 5rem;
+    font-size: 5rem;
   }
   @include ex-lg-d {
-  font-size: 6rem;
+    font-size: 6rem;
   }
 }
 
@@ -60,12 +63,13 @@ $lg-width: 1200px;
 // CAROUSEL
 .carousel-inner {
 }
+
 .carousel-caption {
   background: rgba(23, 22, 26, 0.71);
-  left:0;
-  right:0;
-  width:100%;
-  display:  flex!important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex !important;
   justify-content: center;
   align-content: center;
   flex-direction: column;
@@ -73,7 +77,7 @@ $lg-width: 1200px;
   height: 100%;
   bottom: 0;
   top: 0;
-padding: 0;
+  padding: 0;
 
 
   .actions {
@@ -85,48 +89,52 @@ padding: 0;
   }
 
 
-.carousel-text {
-p {
-  font-weight: 400;
-  font-family: 'Marcellus', serif;
-}
-  img.veil {
-    margin: 30px 0;
-    width: 100px!important;
-    min-width:400px;
-    height: 50px !important;
-    min-height: 100%;
-    opacity:1;
-  }
-  width:80%;
-  margin: 0 auto;
-  h5 {
-    text-transform: uppercase;
-    font-size: 2em;
-    font-weight: 400;
-    font-family: 'Marcellus', serif;
-    color: $yell-hov;
-  }
-}
-}
-.carousel-item {
-  background: rgba(23, 22, 26, 0.71);
-  height: 600px;
-   img {
-     min-width: 100%;
-     min-height: 100%;
-     object-fit: contain;
-     margin: auto;
-      opacity: .3;
+  .carousel-text {
+    p {
+      font-weight: 400;
+      font-family: 'Marcellus', serif;
+    }
+
+    img.veil {
+      margin: 30px 0;
+      width: 100px !important;
+      min-width: 400px;
+      height: 50px !important;
+      min-height: 100%;
+      opacity: 1;
+    }
+
+    width: 80%;
+    margin: 0 auto;
+
+    h5 {
+      text-transform: uppercase;
+      font-size: 2em;
+      font-weight: 400;
+      font-family: 'Marcellus', serif;
+      color: $yell-hov;
+    }
   }
 }
 
+.carousel-item {
+  background: rgba(23, 22, 26, 0.71);
+  height: 600px;
+
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+    margin: auto;
+    opacity: .3;
+  }
+}
 
 
 .parallaxlang {
   background-image: url(asset_path('orolang-sm.png'));
 
-  height:100%;
+  height: 100%;
 
   /* Create the parallax scrolling effect */
   background-position: top;
@@ -136,19 +144,17 @@ p {
 
 // PARALLAX SCROLLING
 .parallax {
-    /* The image used */
-    background-color: $darkbg;
+  /* The image used */
+  background-color: $darkbg;
 
-    height:100%;
+  height: 100%;
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-
 
 
 // Sojusz index.html
@@ -161,26 +167,25 @@ p {
   display: flex;
   justify-content: center;
 }
+
 .position-ref {
-   position: relative;
+  position: relative;
 }
 
 //  HEADER WRAPPER
 
 
 .header-wrapper {
-margin: 0 auto;
-flex-direction: column;
-color: #fff;
-width:100%;
-position: relative;
-height:100%;
-background-color: #0e0e0e;
-opacity: .9999;
+  margin: 0 auto;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  background-color: #0e0e0e;
+  opacity: .9999;
   overflow: hidden;
 }
-
-
 
 
 .kenburns-top {
@@ -212,6 +217,7 @@ opacity: .9999;
     transform-origin: top;
   }
 }
+
 @keyframes kenburns-top {
   0% {
     -webkit-transform: scale(1) translateY(0);
@@ -228,24 +234,22 @@ opacity: .9999;
 }
 
 
-
-
 // header image
 .header-image {
 
-position: absolute;
-width:100%;
+  position: absolute;
+  width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   opacity: 0.8;
- background-image: url(asset_path('vitru-bg.jpg'));
+  background-image: url(asset_path('vitru-bg.jpg'));
 
 }
 
 .header-body-wrapper {
-  height:100%;
+  height: 100%;
   display: flex;
   width: 100%;
   background-color: #0e0e0e;
@@ -256,18 +260,16 @@ div.header-body {
   z-index: 9999;
   flex-grow: 1;
   align-self: center;
-    text-align: center;
-    font-family: 'Marcellus SC', serif;
-    font-weight: 100;
-
-
+  text-align: center;
+  font-family: 'Marcellus SC', serif;
+  font-weight: 100;
 
 
   h1 {
-  @include h1-font-mediaQ;
-  color: $vitruvian;
+    @include h1-font-mediaQ;
+    color: $vitruvian;
     font-family: 'Marcellus', serif;
-  font-weight: 400;
+    font-weight: 400;
     letter-spacing: 2rem;
     text-transform: uppercase;
   }
@@ -285,17 +287,17 @@ div.header-body {
 
 }
 
-.content-dusze{
+.content-dusze {
   padding-top: 100px;
   padding-bottom: 150px;
-  width:100%;
+  width: 100%;
 
   background: $darkbg;
 }
 
 .content-onas {
-z-index: 10;
-background: $darkbg;
+  z-index: 10;
+  background: $darkbg;
 }
 
 
@@ -314,12 +316,12 @@ background: $darkbg;
 
 // Content model index.html
 .content-model {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .content-body {
   background-color: transparent;
-  width:100%;
+  width: 100%;
 }
 
 .content-title {
@@ -348,18 +350,18 @@ background: $darkbg;
   }
 }
 
-.tag{
+.tag {
 
- padding-top: 25px;
+  padding-top: 25px;
 
-&-header {
-  text-align: center;
-  color: $vitruvian;
-}
+  &-header {
+    text-align: center;
+    color: $vitruvian;
+  }
 
-&-text {
-  text-align: center;
-}
+  &-text {
+    text-align: center;
+  }
 }
 
 // REGULAMIN
@@ -370,20 +372,22 @@ background: $darkbg;
 
 
 .regulamin-header {
-text-align: center;
- h1 {
-   font-size: 3em;
-color: #fff;
- }
- h2 {
-   font-size: 2em;
-     color: $vitruvian;
- }
+  text-align: center;
+
+  h1 {
+    font-size: 3em;
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: $vitruvian;
+  }
 }
 
 .regulamin-tekst {
   padding-top: 50px;
-text-align: justify;
+  text-align: justify;
 }
 
 .reg-cont {
@@ -393,45 +397,46 @@ text-align: justify;
 .reg-box {
   padding: 50px;
 
-  li.list-group-item{
-    background: $darkbg ;
+  li.list-group-item {
+    background: $darkbg;
     border: 0;
     transition: .3s;
     z-index: 5;
 
-    p{
+    p {
       z-index: 20;
     }
 
-    &::after{
+    &::after {
       z-index: -2;
       transition: .3s;
-      content:'';
+      content: '';
       background: $vitruvian;
       width: 100%;
       height: 2px;
       position: absolute;
       bottom: 0;
-      left:0;
-      right:0;
+      left: 0;
+      right: 0;
       margin: auto;
     }
 
-    &:hover{
+    &:hover {
       transition: .3s;
-    &::after{
-      z-index: -2;
-      transition: .3s;
-      content:'';
-      background: $vitruvian;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      left:0;
-      right:0;
-      margin: auto;
-    }
+
+      &::after {
+        z-index: -2;
+        transition: .3s;
+        content: '';
+        background: $vitruvian;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
   }
 

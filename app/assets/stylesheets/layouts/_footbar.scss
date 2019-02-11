@@ -1,7 +1,7 @@
-.footbar {
+ł.footbar {
   position: relative;
-margin:0;
-  width:100%;
+  margin: 0;
+  width: 100%;
   background: $darkt !important;
   text-align: center;
 
@@ -10,24 +10,24 @@ margin:0;
   }
 
   img {
-    width:20%;
-    height:auto;
+    width: 20%;
+    height: auto;
   }
 
 }
 
 .footbar-body {
-  
+
   padding: 50px;
 
   h2 {
-    font-size:4em;
-color: $white;
+    font-size: 4em;
+    color: $white;
   }
 
   p {
-color: $vitruvian;
-font-size:1.5em;
+    color: $vitruvian;
+    font-size: 1.5em;
   }
 }
 
@@ -45,8 +45,9 @@ nav.foo-nav li {
 
   a {
 
-  transition: 0.25s;
-    color:#494949;
+    transition: 0.25s;
+    color: #494949;
+
     &:hover {
       text-decoration: none;
       color: #d41144;
@@ -60,6 +61,7 @@ nav.foo-nav li {
 .stopka {
   padding: 10px;
 }
+
 .stopka h4 {
   color: #fff;
   font-size: 14px;

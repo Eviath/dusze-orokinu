@@ -1,5 +1,5 @@
 .sortie-box {
-padding-top: 50px;
+  padding-top: 50px;
 
 
   .table th {
@@ -11,12 +11,14 @@ padding-top: 50px;
   }
 
 
-  .table tr  {
+  .table tr {
     border-top: 1px solid #fff;
+
     &:first-child {
       border-top: 0;
     }
   }
+
   .sortie-variants {
     padding-top: 50px;
     text-align: left;
@@ -29,7 +31,7 @@ padding-top: 50px;
     .row {
       margin: 0;
       padding: 0;
-      width:90%;
+      width: 90%;
       margin: 0 auto;
     }
   }
@@ -38,10 +40,11 @@ padding-top: 50px;
 
 .alerts-box {
   padding-top: 100px;
+
   .row {
     margin: 0;
     padding: 0;
-    width:90%;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -50,8 +53,9 @@ padding-top: 50px;
   }
 
 
-  .table tr  {
+  .table tr {
     border-top: 1px solid #fff;
+
     &:first-child {
       border-top: 0;
     }
@@ -62,8 +66,8 @@ padding-top: 50px;
     padding-top: 50px;
 
 
-
   }
+
   .alerts-inner {
     background: $darkt !important;
 
@@ -71,7 +75,7 @@ padding-top: 50px;
 
 
   .alerts-thumb {
-    width:120px;
+    width: 120px;
     height: auto;
   }
 

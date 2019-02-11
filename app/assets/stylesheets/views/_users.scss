@@ -15,7 +15,7 @@ body {
 .parallax-users {
   /* The image used */
   background-image: url(asset_path('vitru-bg.jpg'));
-  height:100%;
+  height: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -33,15 +33,16 @@ PROFILES
 
 // Profile container
 .profile-container {
-width:100%;
+  width: 100%;
 
 
-padding: 50px 0px 50px 0px;
+  padding: 50px 0px 50px 0px;
 }
 
 
 .user_details {
   padding-top: 40px;
+
   p {
     color: $vitruvian;
     font-size: .4em;
@@ -56,6 +57,7 @@ padding: 50px 0px 50px 0px;
     }
 
   }
+
   p.active {
 
     color: $light-vitru;
@@ -64,9 +66,6 @@ padding: 50px 0px 50px 0px;
     text-transform: uppercase;
   }
 }
-
-
-
 
 
 /*
@@ -82,11 +81,11 @@ PANEL
 .options-panel {
 
   padding: 100px 0px 100px 0px;
+
   h2 {
     text-align: center;
   }
 }
-
 
 
 /*
@@ -99,30 +98,29 @@ REGISTER
 $gray-medium-light: #eaeaea;
 
 
-
 .alert {
   text-align: center;
   font-weight: 400;
 }
 
 
-.form-control  {
+.form-control {
+  background-color: transparent;
+
+  &:focus {
     background-color: transparent;
+  }
 
-    &:focus {
-      background-color: transparent;
-    }
-
-    &:active {
-      background-color: transparent;
-    }
+  &:active {
+    background-color: transparent;
+  }
 }
-
 
 
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
+
   span {
     margin-left: 20px;
     font-weight: normal;
@@ -130,11 +128,9 @@ $gray-medium-light: #eaeaea;
 }
 
 
-
 /* Users index */
 
 .users {
-
 
 
   padding: 50px 0;
@@ -150,35 +146,35 @@ $gray-medium-light: #eaeaea;
   h1 {
     padding-bottom: 50px;
   }
+
   li {
     overflow: auto;
     padding: 10px 0;
     width: fit-content;
 
   }
+
   p {
-    padding:0;
+    padding: 0;
     margin: 0;
     font-size: 12px;
   }
 }
+
 .user-profile {
   min-width: 350px;
 }
 
 .options {
   display: inline-flex;
-  margin-left:20px;
+  margin-left: 20px;
   border-left: solid $vitruvian 1px;
-padding: 12px 0px 0px 12px;
+  padding: 12px 0px 0px 12px;
 
-input {
-  width:auto;
+  input {
+    width: auto;
+  }
 }
-}
-
-
-
 
 
 .form-container {
@@ -191,17 +187,15 @@ input {
 }
 
 
-
 .users-container {
-width:auto;
+  width: auto;
   margin: 0 auto;
 }
 
 
 input[type="radio"], input[type="checkbox"] {
-  width:auto;
+  width: auto;
 }
-
 
 
 // LOGIN PAGE
@@ -209,6 +203,7 @@ input[type="radio"], input[type="checkbox"] {
 .login-page {
   width: 100%;
   height: 100%;
+
   .row {
     height: 100%;
     margin: 0;
@@ -217,49 +212,46 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .login-page-cover {
-  background:  url(asset_path('operator-vit.png'));
-  background-position:left;
+  background: url(asset_path('operator-vit.png'));
+  background-position: left;
 }
 
-.login-form-cover{
+.login-form-cover {
 
-display: flex;
+  display: flex;
 }
-
 
 
 .login-page-wrapper {
-height:100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 
 }
 
 .login-page-bg {
-position: absolute;
-width:100%;
-height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
-opacity: 0.2;
+  background-size: cover;
+  background-position: bottom;
+  opacity: 0.2;
 
 
 }
 
 
-
-
-
 .login-page-content {
   z-index: 9999;
-flex-grow: 1;
-align-self: center;
+  flex-grow: 1;
+  align-self: center;
 
 
   .form-container {
 
     .img {
       padding-bottom: 50px;
+
       img {
         width: 30%;
       }
@@ -271,9 +263,9 @@ align-self: center;
       text-align: center;
 
       &:focus {
-        -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191,141,67,0.28);
-        -moz-box-shadow: inset -1px -27px 103px -56px rgba(191,141,67,0.28);
-        box-shadow: inset -1px -27px 103px -56px rgba(191,141,67,0.28);
+        -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
+        -moz-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
+        box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
       }
 
     }
@@ -291,36 +283,36 @@ align-self: center;
   }
 
 
+  .form-control {
+    border-radius: 25px;
+    color: #fff;
 
-.form-control {
-  border-radius: 25px;
-  color: #fff;
-  &:focus {
-    background:transparent;
+    &:focus {
+      background: transparent;
+    }
   }
-}
 
 }
 
 
 //user index
 
-#user_index_image{
+#user_index_image {
   padding: 5px;
   padding-right: 15px;
 }
 
-img.user_index_image{
+img.user_index_image {
   box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
 
   max-height: 60px;
-  max-width: 60px ;
+  max-width: 60px;
 
 
 }
 
-.index-page-wrapper{
-  width:100%;
+.index-page-wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -333,14 +325,13 @@ img.user_index_image{
 }
 
 
-
 //SHOW
 
 // Pages content
 .user-page-wrapper {
 
-  background:  url(asset_path('vitru-bg.jpg'));
-  width:100%;
+  background: url(asset_path('vitru-bg.jpg'));
+  width: 100%;
   height: 100vh;
   padding: 100px 0px 50px 0px;
 
@@ -354,34 +345,35 @@ img.user_index_image{
     img {
       box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
     }
-    -webkit-box-shadow: 0px 32px 131px -4px rgba(220,202,167,0.04);
-    -moz-box-shadow: 0px 32px 131px -4px rgba(220,202,167,0.04);
-    box-shadow: 0px 32px 131px -4px rgba(220,202,167,0.04);
+
+    -webkit-box-shadow: 0px 32px 131px -4px rgba(220, 202, 167, 0.04);
+    -moz-box-shadow: 0px 32px 131px -4px rgba(220, 202, 167, 0.04);
+    box-shadow: 0px 32px 131px -4px rgba(220, 202, 167, 0.04);
 
     padding: 80px;
 
 
     border-radius: 50%;
-    background: -moz-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220,202,167,0.3)), color-stop(100%, rgba(220,202,167,0))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(90deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* ie10+ */
-    background: linear-gradient(0deg, rgba(220,202,167,0) 0%, rgba(220,202,167,0.3) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dccaa7', endColorstr='#dccaa7',GradientType=0 ); /* ie6-9 */
+    background: -moz-linear-gradient(90deg, rgba(220, 202, 167, 0) 0%, rgba(220, 202, 167, 0.3) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 202, 167, 0.3)), color-stop(100%, rgba(220, 202, 167, 0))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(90deg, rgba(220, 202, 167, 0) 0%, rgba(220, 202, 167, 0.3) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(90deg, rgba(220, 202, 167, 0) 0%, rgba(220, 202, 167, 0.3) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(90deg, rgba(220, 202, 167, 0) 0%, rgba(220, 202, 167, 0.3) 100%); /* ie10+ */
+    background: linear-gradient(0deg, rgba(220, 202, 167, 0) 0%, rgba(220, 202, 167, 0.3) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dccaa7', endColorstr='#dccaa7', GradientType=0); /* ie6-9 */
     -webkit-clip-path: polygon(50% 10%, 55% 0, 70% 0, 85% 50%, 70% 100%, 30% 100%, 15% 50%, 30% 0, 45% 0);
     clip-path: polygon(50% 10%, 55% 0, 70% 0, 85% 50%, 70% 100%, 30% 100%, 15% 50%, 30% 0, 45% 0);
 
 
   }
 
-  .user-image{
+  .user-image {
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
 
-      max-height: 120px;
-      max-width: 120px ;
-      padding: 10px;
-      border: 2px solid $light-vitru;
+    max-height: 120px;
+    max-width: 120px;
+    padding: 10px;
+    border: 2px solid $light-vitru;
 
   }
 
@@ -389,25 +381,23 @@ img.user_index_image{
 }
 
 
-
 .profil-show-img img {
   padding-top: 50px;
-  width:30%;
+  width: 30%;
 }
 
 
 // AVATAR
 
 
-
 .user-avatar {
-background-size: cover;
+  background-size: cover;
 }
 
 //devise shared
 
 
-.shared-links{
+.shared-links {
   padding-top: 50px;
 }
 

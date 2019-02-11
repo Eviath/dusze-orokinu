@@ -15,6 +15,7 @@ table.discord-table {
     align-items: center;
     justify-items: center;
   }
+
   th {
     padding: 0;
 
@@ -28,12 +29,13 @@ table.discord-table {
     padding: 0;
   }
 
-  .discord-header{
+  .discord-header {
     padding-top: 50px;
 
     img {
-      width:30%;
+      width: 30%;
     }
+
     h1 {
       font-size: 1.2em;
     }
@@ -45,14 +47,15 @@ table.discord-table {
 }
 
 .discord-person-col {
-width: 15%;
-  padding:  5px;
+  width: 15%;
+  padding: 5px;
   display: inline-block;
+
   p {
     font-family: 'Poppins', sans-serif;
     font-size: .8em;
     padding: 0;
-    padding-top:5px;
+    padding-top: 5px;
     margin: 0;
   }
 }
