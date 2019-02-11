@@ -308,6 +308,7 @@ transform: translateX(15px);
 
 
 .form-control{
+  color: $white;
   border-radius: 0;
     border-top:none;
   border-left:none;
@@ -317,7 +318,7 @@ transform: translateX(15px);
 }
 
 .form-control:focus {
-
+color: $white;
 
 border-color: $vitruvian;
 outline: 0;
