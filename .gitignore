@@ -26,6 +26,8 @@
 /public/uploads
 
 
+/config/secrets.yml
+/config/credentials.yml.enc
 
 
 # Ignore pow environment settings
