@@ -1,0 +1,21 @@
+.page-wrapper
+
+  .page-header
+    %h2 Ponów potwierdzenie konta
+
+  .container
+    .col-md-6.mx-auto.text-center
+
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+
+        .form-group
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control"
+
+
+        .actions
+          = f.submit "Wyślij potwierdzenie", class: 'btn btn-do-vitruvian'
+
+
+      = render "devise/shared/links"
