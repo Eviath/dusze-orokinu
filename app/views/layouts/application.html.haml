@@ -6,9 +6,10 @@
       = yield(:title) 
       | Dusze Orokinu
 
-    = csrf_meta_tags 
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false'
+    = javascript_pack_tag 'application'
+    = stylesheet_pack_tag 'stylesheets'
     = favicon_link_tag asset_path('favicon-32x32.png')
     = tinymce_assets
     -#  Fonts 

@@ -1,0 +1,302 @@
+// buttons
+
+.btn.btn-do-bordered.active {
+  color: $vitruvian !important;
+
+  background-color: transparent;
+}
+
+
+.btn-away {
+  margin-top: 30px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: $vitruvian;
+  border-color: $vitruvian;
+
+  &:hover {
+    background-color: $vitruvian;
+    border-color: $vitruvian;
+  }
+}
+
+.btn-small {
+  font-size: 0.75em;
+}
+
+.btn-do-profile-opt {
+  margin: 5px;
+}
+
+.btn.btn-do {
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.button-about {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.btn-do {
+  color: #fff;
+  background-color: $vitruvian !important;
+}
+
+
+.btn-do-bordered-square {
+  position: relative;
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: "Marcellus SC", serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #ffff;
+  color: #ffff;
+  background-color: transparent;
+
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border-color: #ffff;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 0px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+
+  &:hover {
+    color: $vitruvian;
+  }
+
+
+}
+
+
+.btn-do-bordered {
+  position: relative;
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: "Marcellus SC", serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #ffff;
+  color: #ffff;
+  background-color: transparent;
+
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border-color: #ffff;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 25px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+
+  &:hover {
+    color: $vitruvian;
+  }
+
+
+}
+
+.btn-do-bordered-small {
+  position: relative;
+  display: inline-block;
+  padding: 10px 22px;
+  font-family: "Marcellus SC", serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #ffff;
+  color: #ffff;
+  background-color: #17161a;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border-color: #ffff;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 2px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+
+  &:hover {
+    color: $vitruvian;
+  }
+
+}
+
+
+.btn-do-profile-opt {
+  background-color: $vitruvian;
+  padding: 0px 5px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.65;
+
+  &:hover {
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+}
+
+.btn-do-profile {
+  color: #212529;
+  background-color: $vitruvian;
+  padding: 0px 5px;
+  font-size: 14px;
+  box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  opacity: 0.65;
+
+  &:hover {
+
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-profile {
+  padding: 0px 5px;
+  font-size: 14px;
+
+  &:hover {
+
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+}
+
+
+// button vitruvian
+
+
+.btn-do-vitruvian {
+  position: relative;
+  display: inline-block;
+  padding: 10px 22px;
+  font-family: "Marcellus SC", serif;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: $light-vitru;
+  border: 1px solid $vitruvian-opa;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border: none;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    background-color: $vitruvian-opa;
+
+    border-radius: 2px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+
+  &:hover {
+    color: $vitruvian;
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+
+}

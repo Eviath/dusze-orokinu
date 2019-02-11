@@ -1,0 +1,111 @@
+// Place all the styles related to the News controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page-header {
+  text-align: center;
+  padding: 100px 0px 100px 0px;
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 4em;
+    z-index: 9;
+  }
+
+}
+
+
+.news-wrapper {
+padding: 100px 0px 100px 0px;
+  .container {
+    max-width:90% !important;
+  object-fit: fill;
+  }
+
+
+
+}
+
+
+img.card-img-top {
+  min-height: 295px;
+}
+
+p.card-text {
+  color: $darkt;
+}
+
+/* Set width to make card deck cards 100% width */
+@media (max-width: 950px) {
+
+  .card-deck-wrapper {margin-right:0;margin-left:0;}
+  .card-deck {
+    display: block;
+    width: 100%;
+    margin-bottom: .75rem;
+    table-layout: fixed;
+    border-spacing: 1.25rem 0;
+  }
+  .card-deck .card {
+    display: block;
+    margin-bottom: .75rem;
+    vertical-align: top;
+  }
+
+  .card-deck .card:not(:first-child) {
+    margin-left: 0px;
+  }
+
+}
+
+
+// SHOW NEWS
+
+.news-thumbnail {
+  background: $darkt;
+
+}
+
+.news-header {
+  background: $darkt;
+  padding: 25px;
+}
+
+.news-description {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height:50px;
+  width:100%;
+  background: $darkt;
+  flex-direction: row;
+  p {
+margin: 0;
+    padding: 10px;
+  }
+
+}
+
+.news-content {
+  padding-top: 100px;
+}
+
+
+.card-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body {
+
+
+    .author {
+      float:right !important;
+    }
+
+
+  .card-title {
+    color: $vitruvian;
+  }
+
+}

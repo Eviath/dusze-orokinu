@@ -34,6 +34,8 @@ gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 #messaging system rails
 gem 'mailboxer'
 
+gem 'webpacker', github: 'rails/webpacker'
+
 # haml syntax
 gem "haml-rails"
 
@@ -88,9 +90,6 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
-group :production do
-  gem 'fog', '1.42'
-end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
