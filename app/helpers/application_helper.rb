@@ -32,8 +32,14 @@ end
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!")
     else
-      "vitru-glyph.png"
+      asset_pack_path('media/vitru-glyph.png')
     end
+  end
+
+  def new_requests_since_last_login(user)
+    now = Time.now
+    user_last_login = user.last_sign_in_at.to_datetime
+    Request.pending.where(updated_at: (user_last_login)..now).count
   end
 
 

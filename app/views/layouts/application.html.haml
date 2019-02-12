@@ -7,11 +7,10 @@
       | Dusze Orokinu
 
     = csrf_meta_tags
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-eval': 'false'
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'stylesheets'
-    = favicon_link_tag asset_path('favicon-32x32.png')
-    = tinymce_assets
+    = favicon_link_tag asset_pack_path('media/favicon-32x32.png')
+
     -#  Fonts 
     %link{href: "https://fonts.googleapis.com/css?family=Raleway:100,300,600", rel: "stylesheet", type: "text/css"}
     %link{href: "https://fonts.googleapis.com/css?family=Marcellus+SC", rel: "stylesheet"}
