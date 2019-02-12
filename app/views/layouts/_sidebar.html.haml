@@ -16,7 +16,7 @@
               %strong=current_user.name
 
             %span.user-role
-              #{"Administrator" if current_user.has_role?(:admin)}
+              =user_role(current_user)
             %span.user-status
               %i.fa.fa-circle
               %span Online
@@ -114,40 +114,38 @@
               %a{href:"#"}
                 %i.fa.fa-book
                 %span Coming Soon
-                %span.badge.badge-pill.badge-warning Nowe
 
             %li
               %a{href:"#"}
                 %i.fa.fa-book
                 %span Coming Soon
-                %span.badge.badge-pill.badge-warning Nowe
 
             %li
               %a{href:"#"}
                 %i.fa.fa-book
                 %span Coming Soon
-                %span.badge.badge-pill.badge-warning Nowe
 
 
         %div.sidebar-footer
-          = link_to(user_path(current_user), {'data-toggle':"tooltip", 'data-placement':"top", title:"Mój profil"}) do
+          = link_to(user_path(current_user), 'data-toggle':"tooltip", 'data-placement':"top", title:"Mój profil") do
             %i.fas.fa-user
 
-          = link_to(conversations_path, {'data-toggle':"tooltip", 'data-placement':"top", title:"Poczta"}) do
+          = link_to(conversations_path, 'data-toggle':"tooltip", 'data-placement':"top", title:"Poczta") do
             %i.fa.fa-envelope
             %span.badge.badge-pill.badge-warning.notification=unread_messages_count if unread_messages_count > 0
 
-          = link_to(edit_user_registration_path, {'data-toggle':"tooltip", 'data-placement':"top", title:"Edytuj profil"}) do
+          = link_to(edit_user_registration_path, 'data-toggle':"tooltip", 'data-placement':"top", title:"Edytuj profil") do
             %i.fa.fa-cogs
 
-          = link_to(destroy_user_session_path, {'data-toggle':"tooltip", 'data-placement':"top", title:"Wyloguj", 'data-tooltip-custom-classes':"tooltip-vitruvian"}, method: :delete) do
+          = link_to(destroy_user_session_path, 'data-toggle':"tooltip", 'data-placement':"top", title:"Wyloguj", 'data-tooltip-custom-classes':"tooltip-vitruvian", method: :delete) do
             %i.fas.fa-sign-out-alt
 
 
       -else
-        %ul
-          %li
-            = active_link_to "Zaloguj się",new_user_session_path, class: "nav-link"
-
+        .sidebar-menu
+          %ul
+            %li.header-menu
+              %span Witaj na stronie Dusz Orokinu!
+              = active_link_to "Logowanie",new_user_session_path, class: "nav-link"
 
 .overlay

@@ -38,6 +38,7 @@ end
 
 
 
+
   # check for new alliance requests since last user login
   def new_requests_since_last_login(user)
     now = Time.now

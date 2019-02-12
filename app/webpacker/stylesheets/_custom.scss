@@ -13,6 +13,11 @@ body.devise-body {
   font-family: 'Marcellus SC', serif;
 }
 
+body.alliance-body {
+  font-size: 1rem;
+}
+
+
 body,
 html {
   background: url('../images/vitru-flowers.png');
@@ -21,6 +26,7 @@ html {
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
   height: 100%;
+  font-size: 1rem !important;
   margin: 0;
 }
 
@@ -148,9 +154,6 @@ a {
 input {
   font-family: 'Marcellus', serif;
 
-  background-color: $dark-vitru !important;
-
-
   &:focus {
     -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
     -moz-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
@@ -159,13 +162,6 @@ input {
 
 }
 
-
-
-// custom select inputs with class form-control
-select.form-control {
-  border: none;
-  background-color: rgba(23, 22, 26, 0.5) !important;
-}
 
 
 .form-control_dark {
@@ -460,4 +456,41 @@ form input class
   }
 }
 
+
+
+/*------scroll bar---------------------*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #525965;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525965;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #525965;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 

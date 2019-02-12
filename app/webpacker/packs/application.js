@@ -35,10 +35,17 @@ tinyMce();
 import '../javascripts/sidebar'
 
 // enable bootstrap tooltips
-$( document ).ready(function() {
+$( document ).on('turbolinks:load', function() {
     $('[data-toggle="tooltip"]').tooltip()
 });
 
+
+// navbar hide collapse
+$(document).click(function(e) {
+    if (!$(e.target).is('.navbar')) {
+        $('.collapse').collapse('hide');
+    }
+});
 
 
 // Bootstrap modal confirm setup

@@ -3,130 +3,163 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
+  &.clans-body {height: auto !important;}
+}
 
-  &.clans-body {
-    height: auto !important;
 
+.clan_form {
+
+
+  .form-control {
+    border: none;
+    background: $darkbg;
+  }
+
+  select option {
+    border: none;
+    background-color: rgba(23, 22, 26, 0.9) !important;
+    color: #fff !important;
   }
 
 }
 
 
-.clan_form .form-control {
-  border: none;
+.clan_show {
 
-    background: $darkbg !important;
-
-}
-
-.clan_form select option {
-  border: none;
-  background-color: rgba(23, 22, 26, 0.9) !important;
-  color: #fff !important;
-}
-
-
-.clan_show_content {
-  padding: 150px 0 50px 0;
-
-  h1 {
-    color: $white;
-    font-size: 2em;
-
-    span {
-      color: $vitruvian;
-    }
-  }
-
-  &-wrapper {
-
-    padding: 50px 0 50px 0;
-
-    text-align: center;
+  &_content {
+    padding: 150px 0 50px 0;
 
     h1 {
-      font-size: 2em;
       color: $white;
+      font-size: 2em;
+
+      span {color: $vitruvian;}
     }
+
+    &-wrapper {
+
+      padding: 50px 0 50px 0;
+      text-align: center;
+
+      h1 {
+        font-size: 2em;
+        color: $white;
+      }
+
+      h2 {
+        color: $vitruvian;
+        font-size: 1.25em;
+      }
+    }
+
+  }
+
+
+  &-about {
+    background-color: $darkt;
+    padding: 40px;
+  }
+
+  &_head {
+    padding: 0 0 50px 0;
 
     h2 {
-      color: $vitruvian;
-      font-size: 1.25em;
+      font-weight: 700;
+      font-size: 3em;
+    }
+  }
+
+  &-header {
+    -webkit-box-shadow: 0 0 96px -21px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 96px -21px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 96px -21px rgba(0, 0, 0, 0.75);
+
+    padding: 45px;
+    background-color: $darkt;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 2px solid $yell;
+  }
+
+
+  &-contact {
+    text-align: center;
+    background-color: $darkt;
+    border-bottom: 2px solid $yell;
+
+    .btn-clan {
+      &:before {
+        color: $yell;
+        margin: 0;
+        border-bottom: none !important;
+        border-top: none !important;
+      }
+    }
+  }
+}
+
+
+.clan_form {
+  padding: 50px 0 50px 0;
+
+
+  .form-control {
+    color: $white;
+  }
+
+  label {
+    color: $vitruvian;
+  }
+
+  input, textarea, select {
+    background-color: transparent;
+
+    &:focus, :active {
+      background-color: transparent;
+    }
+
+    option {
+      color: $darkbg;
+    }
+
+  }
+
+  &-btn {
+    margin: 0 !important;
+  }
+
+  &-header {
+    padding: 45px;
+    background-color: $darkbg;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 2px solid $yell;
+
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+
+  &-errors {
+    transition: 1s;
+    padding: 45px;
+    background-color: $darkbg;
+    border-bottom: 2px solid $yell;
+  }
+
+  &-about {
+    background-color: $lightshadow;
+    padding: 40px;
+
+    input {
+      background: $darkt;
     }
   }
 
 }
 
-.clan_show_head {
-  padding: 0 0 50px 0;
-
-  h2 {
-    font-weight: 700;
-    font-size: 3em;
-  }
-}
-
-.clan_form-btn {
-  margin: 0 !important;
-}
-
-.clan_form-header {
-
-  padding: 45px;
-  background-color: $darkbg;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom: 2px solid $yell;
-
-  h1 {
-    font-size: 1.5em;
-  }
-}
-
-.clan_show-header {
-
-  -webkit-box-shadow: 0px 0px 96px -21px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 96px -21px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 96px -21px rgba(0, 0, 0, 0.75);
-
-  padding: 45px;
-  background-color: $darkt;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom: 2px solid $yell;
-
-}
-
-
-.clan_show-contact {
-  text-align: center;
-  background-color: $darkt;
-  border-bottom: 2px solid $yell;
-
-  .btn-clan {
-    &:before {
-      color: $yell;
-      margin: 0;
-      border-bottom: none !important;
-      border-top: none !important;
-    }
-  }
-}
-
-.clan_form-errors {
-  transition: 1s;
-  padding: 45px;
-  background-color: $darkbg;
-  border-bottom: 2px solid $yell;
-}
-
-.clan_form-about {
-  background-color: $lightshadow;
-  padding: 40px;
-}
 
 .form_header-tag {
-
   display: flex;
 
   img {
@@ -143,16 +176,8 @@ body {
 }
 
 
-.clan_show-about {
-  background-color: $darkt;
-  padding: 40px;
-
-}
-
 .clan-body {
   text-align: center;
-
-
 }
 
 
@@ -176,7 +201,6 @@ body {
 }
 
 .clan-content {
-
 
   padding: 25px;
   background-color: transparent;
@@ -236,7 +260,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      box-shadow: 0;
+      box-shadow: none;
     }
   }
 
@@ -287,7 +311,6 @@ body {
     transform: translateY(150px);
   }
 
-
 }
 
 
@@ -299,34 +322,6 @@ body {
     font-size: 2em;
     text-align: center;
   }
-}
-
-
-.clan_form {
-
-  padding: 50px 0 50px 0;
-
-  .form-control {
-    color: $white;
-  }
-
-  label {
-    color: $vitruvian;
-  }
-
-  input, textarea, select {
-    background-color: transparent;
-
-    &:focus, :active {
-      background-color: transparent;
-    }
-
-    option {
-      color: $darkbg;
-    }
-
-  }
-
 }
 
 
@@ -367,28 +362,17 @@ body {
     }
   }
 
-  p {
-
-  }
-
-  .form-control input {
-
-  }
-
   .clan-col {
+    background-color: rgba(#17161a, 0.5);
+    -webkit-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+    -moz-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
+    box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
 
     h2 {
       color: $vitruvian;
       font-size: 15px;
       font-weight: 400;
     }
-
-    background-color: rgba(#17161a, 0.5);
-
-
-    -webkit-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
-    -moz-box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
-    box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
 
   }
 
