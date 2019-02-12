@@ -1,10 +1,10 @@
-- provide(:title, 'Klan - Panel') 
+- provide(:title, 'Klan - Panel')
 
 .clan_show_content
     .container
         - if current_user.has_role? :lider
-        
-            - if @user.clan 
+
+            - if @user.clan
 
                 .clan_show_content-wrapper
 
@@ -15,21 +15,21 @@
 
 
                 .request
-                    = render @clan 
+                    = render @clan
 
 
-            - else 
+            - else
 
                 .clan_show_content-wrapper
 
-                    %h1 Twoje podanie do sojuszu zostało przyjęte! 
+                    %h1 Twoje podanie do sojuszu zostało przyjęte!
                     %h1 Nie stworzyłeś jeszcze ogłoszenia klanu!
                     %h2 Stwórz ogłoszenie
                     .request-button
-                        %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-bordered" 
-                
+                        %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-bordered", data: { turbolinks: false }
 
-        - else 
+
+        - else
 
             - if @user.request
 
@@ -41,7 +41,7 @@
                     </div>
 
 
-            - else 
+            - else
 
                 .clan_show_content-wrapper
 

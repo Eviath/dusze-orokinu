@@ -1,7 +1,7 @@
 %li.list-group-item.partial-user-conversation
 
   %span.conversation-subject
-    = link_to conversation.subject, conversation_path(conversation), class:'link-vitruvian', data: { turbolinks: false }
+    = link_to conversation.subject, conversation_path(conversation), class:'link-vitruvian'
 
   .btn-group-vertical.pull-right
     - if conversation.is_trashed?(current_user) 

@@ -71,14 +71,13 @@
 
     .row.clan_form-about
       .col-md-12
-        .form_header-tag 
+        .form_header-tag
           %h2
             =image_tag(asset_pack_path('media/all-gold.png'))
             Opis
             =image_tag(asset_pack_path('media/all-gold.png'))
 
 
-        = f.text_area :about, :class => "tinymce", :rows => 25, :cols => 120, id: 'uniq-about ', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
+        = f.text_area :about, :class => "tinymce", :rows => 25, :cols => 120, id: 'tinymce', placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
 
 
-= tinymce :language => 'pl'

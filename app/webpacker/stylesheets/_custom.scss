@@ -1,5 +1,11 @@
 
 
+// disable navbar when tox-fullscreen is enabled // tinymce feature
+body.tox-fullscreen {
+  header.navbar {
+    display: none;
+  }
+}
 
 //devise body
 body.devise-body {
@@ -53,13 +59,38 @@ header {
   }
 }
 
+
 // slide top alliance index on main header animation
 .slide-in-top {
   -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+//bootstrap tooltip
+.tooltip {
+  position: fixed;
+  z-index: 9999999;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: $vitruvian;
+  border-radius: .25rem;
+}
 
+.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-top .arrow::before {
+  margin-left: -3px;
+  content: "";
+  border-width: 5px 5px 0;
+  border-top-color: $vitruvian;
+}
+
+// TINY MCE WYSIWYG EDITOR
+.tox-fullscreen .tox.tox-tinymce {
+  z-index: 9999999999999999;
+}
 
 
 // remove default file upload button from display

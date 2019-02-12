@@ -69,6 +69,9 @@
                 %ul
                   %li
                     = active_link_to "Klan",pclan_path, class:  "nav-link"
+                  -if current_user.has_role?(:lider) && !current_user.clan.present?
+                    %li
+                      = active_link_to "Stwórz ogłoszenie",new_clan_path, class:  "nav-link", data: { turbolinks: false }
 
 
 
@@ -80,13 +83,13 @@
               .sidebar-submenu
                 %ul
                   %li
-                    %a{href:"#"} Pie chart
+                    %a Coming soon
                   %li
-                    %a{href:"#"} Line chart
+                    %a Coming soon
                   %li
-                    %a{href:"#"} Line chart
+                    %a Coming soon
                   %li
-                    %a{href:"#"} Line chart
+                    %a Coming soon
 
             %li.sidebar-dropdown
               %a
@@ -96,19 +99,19 @@
               .sidebar-submenu
                 %ul
                   %li
-                    %a{href:"#"} Pie chart
+                    %a Coming soon
                   %li
-                    %a{href:"#"} Line chart
+                    %a Coming soon
                   %li
-                    %a{href:"#"} Line chart
+                    %a Coming soon
                   %li
-                    %a{href:"#"} Line chart
+                    %a Coming soon
 
 
             %li.header-menu
               %span Dodatkowe
             %li
-              %a
+              %a{href:"#"}
                 %i.fa.fa-book
                 %span Coming Soon
                 %span.badge.badge-pill.badge-warning Nowe
@@ -127,17 +130,17 @@
 
 
         %div.sidebar-footer
-          = link_to(user_path(current_user)) do
-            %i.fa.fa-users
+          = link_to(user_path(current_user), {'data-toggle':"tooltip", 'data-placement':"top", title:"Mój profil"}) do
+            %i.fas.fa-user
 
-          = link_to(conversations_path) do
+          = link_to(conversations_path, {'data-toggle':"tooltip", 'data-placement':"top", title:"Poczta"}) do
             %i.fa.fa-envelope
-            %span.badge.badge-pill.badge-warning.notification 5
+            %span.badge.badge-pill.badge-warning.notification=unread_messages_count if unread_messages_count > 0
 
-          = link_to(edit_user_registration_path) do
+          = link_to(edit_user_registration_path, {'data-toggle':"tooltip", 'data-placement':"top", title:"Edytuj profil"}) do
             %i.fa.fa-cogs
 
-          = link_to(destroy_user_session_path, method: :delete) do
+          = link_to(destroy_user_session_path, {'data-toggle':"tooltip", 'data-placement':"top", title:"Wyloguj", 'data-tooltip-custom-classes':"tooltip-vitruvian"}, method: :delete) do
             %i.fas.fa-sign-out-alt
 
 

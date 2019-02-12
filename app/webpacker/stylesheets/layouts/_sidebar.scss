@@ -87,6 +87,12 @@ body {
 
 /*----------------toggeled sidebar----------------*/
 
+.sidebar-nav-item {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
 .side-wrapper.toggled .sidebar-wrapper {
   right: 0px;
 }
@@ -97,10 +103,10 @@ body {
   }
 }
 /*----------------show sidebar button----------------*/
+
+
 #show-sidebar {
-  position: absolute;
-  right: 40px;
-  top: 10px;
+  position: relative;
   border-radius: 0 4px 4px 0px;
   width: 35px;
   transition-delay: 0.3s;

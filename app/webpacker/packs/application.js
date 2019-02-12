@@ -17,15 +17,27 @@ import 'bootstrap/dist/js/bootstrap';
 import "./stylesheets"
 //bootstrap confirm modal
 import "data-confirm-modal"
-
+//better choose form input
+import "chosen-js"
+// WYSIWYG editor for clan/request/news
+import { tinyMce} from "../javascripts/tinyMce";
 
 // fire up rails-ujs and turbolinks
 Rails.start();
 Turbolinks.start();
 
 
+
+tinyMce();
+
+
 //import custom scripts
 import '../javascripts/sidebar'
+
+// enable bootstrap tooltips
+$( document ).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+});
 
 
 
@@ -37,6 +49,22 @@ dataConfirmModal.setDefaults({
 });
 
 
+// clan logo live update on change
+const loadFile = function(event) {
+    console.log('logo change called')
+    let output = document.getElementById('output');
+    document.getElementById('old-logo').style.display = "none";
+    output.src = URL.createObjectURL(event.target.files[0]);
+};
+
+
+//chosen config
+
+$('.chosen-select').chosen({
+    no_results_text: "Nie znaleziono",
+    placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
+    width: '200px'
+});
 
 
 //shared links and navbar animation on scroll load with turbolinks
@@ -71,5 +99,13 @@ $( document ).on('turbolinks:load', function() {
 
 });
 
+
+$( document ).on('turbolinks:load', function() {
+// scroll mailboxer messages to bottom
+    const elem = document.getElementById('messages');
+    if (elem) {
+        elem.scrollTop = elem.scrollHeight
+    }
+});
 
 
