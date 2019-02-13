@@ -1,7 +1,6 @@
-
 .comment
   .list-group
-    .list-group-item.list-group-item-action.flex-column.align-items-start.w-100
+    .list-group-item.list-group-item-action.flex-column.align-items-start.w-100{id:"comment-#{ comment.id}"}
       .d-flex.w-100.justify-content-between
         %h5.mb-1=link_to(comment.user.name, comment.user)
         %small=l comment.created_at, format: :long
@@ -10,13 +9,12 @@
 
       .nested-comment
         = nested_comments comment.children
-      -if user_signed_in?
-        .actions
-          %small
-            = link_to "Odpowiedz", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment)
-          - if can?(:destroy, comment)
+        -if user_signed_in?
+          .actions
             %small
-              |
-              = link_to 'Usuń komentarz', news_comment_path(@news, comment), method: :delete,data: { confirm: 'Are you sure?' }
-
+              =link_to "Odpowiedz", new_news_comment_path(@commentable, comment, parent_id: comment.id, js: true), remote: true
+            - if can?(:destroy, comment)
+              %small
+                |
+                = link_to 'Usuń komentarz', news_comment_path(@news, comment), method: :delete,data: { confirm: 'Are you sure?' }
 

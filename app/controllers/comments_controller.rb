@@ -1,27 +1,25 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @comments = @commentable.comments
-  end
-
   def new
-    @parent_id = params.delete(:parent_id)
-    @commentable = find_commentable
-    @comment = Comment.new(:parent_id => @parent_id,
-                           :commentable_id => @commentable.id,
-                           :commentable_type => @commentable.class.to_s)
+    @commentable = News.find(params[:news_id])
+    @comment = @commentable.comments.new(:parent_id => params[:parent_id])
+
   end
 
   def create
-    @commentable = find_commentable
-    @comment = @commentable.comments.build(comment_params)
+    @commentable = News.find(params[:news_id])
+    @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    if @comment.save
-      flash[:notice] = "Komentarz został zapisany."
-      redirect_to @commentable
-    else
-      flash[:error] = "Wystąpił błąd"
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to news_url(@commentable) }
+      else
+        format.html  {
+          redirect_to news_url(@commentable)
+          flash[:success] = 'Comment must be less than 140 characters'
+        }
+      end
     end
   end
 

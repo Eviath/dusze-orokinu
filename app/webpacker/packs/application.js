@@ -26,7 +26,9 @@ import { tinyMce} from "../javascripts/tinyMce";
 Rails.start();
 Turbolinks.start();
 
+import $ from 'jquery';
 
+global.$ = jQuery;
 
 tinyMce();
 
@@ -114,5 +116,4 @@ $( document ).on('turbolinks:load', function() {
         elem.scrollTop = elem.scrollHeight
     }
 });
-
 
