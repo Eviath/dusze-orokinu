@@ -2,7 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//text area comment /_form
+// single comment div /_comment
+.comment{
+  width:100%;
+
+  // submit button comment /_form
+  .actions {
+    padding-top: 0;
+  }
+}
+
+// text area comment /_form
 .comment-form-control {
   width:100%;
   padding: 10px;

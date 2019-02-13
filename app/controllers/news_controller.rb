@@ -2,6 +2,9 @@ class NewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_news, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource :except => [:index, :show]
+
+  include Comment::Commen
+
   # GET /news
   # GET /news.json
   def index
@@ -12,9 +15,6 @@ class NewsController < ApplicationController
   # GET /news/1.json
   def show
     @news = News.find(params[:id])
-    @commentable = @news
-    @comments = @commentable.comments
-    @comment = Comment.new
   end
 
   # GET /news/new

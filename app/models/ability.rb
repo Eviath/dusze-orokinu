@@ -30,7 +30,7 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     #
     can :read, :all                 # allow everyone to read everything
-
+    can :manage, Comment, :user_id => user.id
     if user.has_role? :admin
       can :manage, :all
       can :access, :rails_admin   # grant access to rails_admin
@@ -44,6 +44,7 @@ class Ability
       can :read, :all
       can [:create, :destroy, :podanie, :new], Request, :user_id => user.id if user.has_role?(:newuser, Request)
       can :panel, Clan
+
 
     end
 

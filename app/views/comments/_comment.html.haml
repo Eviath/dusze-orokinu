@@ -1,0 +1,22 @@
+
+.comment
+  .list-group
+    .list-group-item.list-group-item-action.flex-column.align-items-start.w-100
+      .d-flex.w-100.justify-content-between
+        %h5.mb-1=link_to(comment.user.name, comment.user)
+        %small=l comment.created_at, format: :long
+
+      %p.mb-1= simple_format comment.content
+
+      .nested-comment
+        = nested_comments comment.children
+      -if user_signed_in?
+        .actions
+          %small
+            = link_to "Odpowiedz", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment)
+          - if can?(:destroy, comment)
+            %small
+              |
+              = link_to 'Usuń komentarz', news_comment_path(@news, comment), method: :delete,data: { confirm: 'Are you sure?' }
+
+

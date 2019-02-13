@@ -1,4 +1,6 @@
 = form_for [@commentable, @comment] do |f|
+
+  = f.hidden_field :parent_id
   - if @comment.errors.any?
     .error_messages
       %h2 Wystąpiły błędy

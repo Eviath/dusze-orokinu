@@ -31,6 +31,8 @@ gem "haml-rails"
 
 gem 'time_difference'
 
+gem 'ancestry'
+
 # gem devise
 gem 'devise'
 gem 'devise_lastseenable'
