@@ -19,13 +19,13 @@
             .row.justify-content-md-center
               .form-group.col-md-6
                 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-                  .field
+                  .input-group
                     = f.label :email, 'E-mail'
                     = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
 
 
 
-                  .field
+                  .input-group
                     = f.label :password, 'Hasło'
                     = f.password_field :password, autocomplete: "current-password", class: 'form-control'
 
@@ -37,6 +37,6 @@
 
 
                   .actions
-                    = f.submit "Zaloguj", class: 'btn btn-do-bordered'
+                    = f.submit "Zaloguj", class: 'btn btn-do-vitruvian'
 
                 = render "devise/shared/links"

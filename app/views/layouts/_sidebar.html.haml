@@ -37,7 +37,7 @@
                 .sidebar-submenu
                   %ul
                     %li
-                      = active_link_to "Admin Panel",rails_admin_path, class: "nav-link"
+                      = active_link_to "Admin Panel",rails_admin_path, class: "nav-link", data: { turbolinks: false }
                     %li
                       = link_to(requests_path, class: "nav-link") do
                         Podania do sojuszu

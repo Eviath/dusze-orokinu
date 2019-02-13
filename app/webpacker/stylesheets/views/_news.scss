@@ -2,9 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.page-header {
+body.news-body {
+  height: 80vh;
+
+  font-family: 'Marcellus SC', serif;
+  background: $darkbg;
+  background-image: none;
+}
+
+.news-show-header {
   text-align: center;
-  padding: 100px 0px 100px 0px;
+  z-index: 99999;
+  padding: 100px 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  left: 0;
+
   h2 {
     text-align: center;
     font-weight: 700;
@@ -13,6 +28,49 @@
   }
 
 }
+
+
+.page-header {
+  text-align: center;
+  padding: 100px 0;
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 4em;
+    z-index: 9;
+  }
+
+}
+
+.news-background {
+  position: relative;
+
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  &::after {
+    display: block;
+    position: absolute;
+
+    background-image: linear-gradient(0deg, rgba(23,22,26,1) 0%, rgba(23,22,26,1) 37%, rgba(23,22,26,0) 100%, rgba(0,0,0,0) 100%);
+    top:0;
+    height:100%;
+    width: 100%;
+    content: '';
+  }
+
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
 
 
 .news-wrapper {
@@ -61,34 +119,49 @@ p.card-text {
 
 // SHOW NEWS
 
-.news-thumbnail {
-  background: $darkt;
-
-}
-
-.news-header {
-  background: $darkt;
-  padding: 25px;
-}
-
-.news-description {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height:50px;
+.news {
   width:100%;
-  background: $darkt;
-  flex-direction: row;
-  p {
-margin: 0;
-    padding: 10px;
+  .news-box {
+    width:90%;
+    margin: 0 auto;
+    padding: 100px 0;
+
+  }
+
+
+
+  .news-header {
+    padding: 25px;
+
+  }
+
+  .news-description {
+
+    align-content: center;
+    height:50px;
+    width:100%;
+
+    p {
+      margin: 0;
+      padding: 10px;
+    }
+
   }
 
 }
 
-.news-content {
-  padding-top: 100px;
+.news-content{
+  background: $darkbg;
+  background-image: none;
+width:80%;
+  margin: 0 auto;
+  text-align: left;
+ padding: 100px 0;
 }
+
+
+
+
 
 
 .card-footer{
