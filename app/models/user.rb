@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one :clan, dependent: :destroy
   has_one :request, dependent: :destroy
   has_many :news
+  has_many :news_comments, through: :news, source: :comments
 
   has_one_attached :avatar
 

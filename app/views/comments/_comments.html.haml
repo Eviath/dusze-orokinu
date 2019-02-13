@@ -1,0 +1,16 @@
+-if @comments.any?
+  .comment
+    .list-group
+      -@comments.each do |c|
+        .list-group-item.list-group-item-action.flex-column.align-items-start
+          .d-flex.w-100.justify-content-between
+            %h5.mb-1=link_to(c.user.name, c.user)
+            %small=l c.created_at, format: :long
+
+          %p.mb-1=c.content
+          %small.link-vitruvian Odpowiedz
+          %small
+            = link_to 'Usuń komentarz', news_comment_path(@news, c), method: :delete,data: { confirm: 'Are you sure?' }
+
+
+

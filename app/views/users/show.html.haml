@@ -48,3 +48,9 @@
 
           .profil-show-img
             =image_tag(asset_pack_path('media/jedno-gold.png'))
+            -#
+            -#%h2 Komentarze
+            -#
+            -#-@news_comments.each do |c|
+            -#  =c.content
+            -#

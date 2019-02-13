@@ -27,6 +27,9 @@
                   %small.author.pull-right.text-muted
                     Autor:
                     =link_to news.user.name, news.user, class:'link-vitruvian'
+                  %small.author.pull-right.text-muted
+                    Komentarze:
+                    =news.comments.count
 
                 .card-body
                   = link_to 'Zobacz', news, class: 'card-link link-vitruvian'

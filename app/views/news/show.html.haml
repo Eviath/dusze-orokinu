@@ -20,9 +20,20 @@
                 =link_to @news.user.name, @news.user
               %p
                 Komentarze:
+                =@news.comments.count
 
 
 
 .page-news-content
   .news-content
     =raw @news.content
+
+
+
+  .news-comments
+    .news-comments-header
+      %h2 Komentarze
+    .news-comments-body
+      = render "comments/comments"
+    .news-comments-form
+      = render "comments/form"

@@ -11,6 +11,10 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
+    @news = News.find(params[:id])
+    @commentable = @news
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /news/new

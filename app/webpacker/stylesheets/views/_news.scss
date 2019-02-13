@@ -153,10 +153,23 @@ p.card-text {
 .news-content{
   background: $darkbg;
   background-image: none;
-width:80%;
+  width:80%;
   margin: 0 auto;
   text-align: left;
  padding: 100px 0;
+}
+
+.news-comments {
+  background: #17161a;
+  background-image: none;
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 100px 0;
+
+  &-form {
+    padding-top: 50px;
+  }
 }
 
 
