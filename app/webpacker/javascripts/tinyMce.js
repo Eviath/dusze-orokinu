@@ -24,7 +24,7 @@ import 'tinymce/plugins/help';
 import 'tinymce/plugins/textpattern';
 import 'tinymce/plugins/textcolor';
 import "./langs/pl";
-
+import 'tinymce/themes/silver/theme.min.js';
 
 function tinyMce() {
 
