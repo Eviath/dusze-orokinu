@@ -26,7 +26,7 @@ import 'tinymce/plugins/textpattern';
 import 'tinymce/plugins/textcolor';
 import "tinymce/skins/ui/oxide/skin.min.css";
 import "./langs/pl";
-import 'tinymce/skins/content/default/content.css';
+import 'tinymce/skins/content/default/content.min.css';
 
 function tinyMce() {
 
@@ -37,7 +37,8 @@ function tinyMce() {
         toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
         image_advtab: true,
         image_caption: true,
-        language: "pl"
+        language: "pl",
+        apiKey: fpq3g4boudiuqvu8dra70l5i53qxp7mziezlsleq72yww1ho
     });
 
 

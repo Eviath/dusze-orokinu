@@ -12,7 +12,7 @@ import Turbolinks from 'turbolinks';
 
 import 'jquery'
 import 'bootstrap/dist/js/bootstrap';
-import { tinyMce} from "../javascripts/tinyMce";
+import { tinyMce } from "../javascripts/tinyMce";
 // application stylesheets
 import "./stylesheets"
 //bootstrap confirm modal
