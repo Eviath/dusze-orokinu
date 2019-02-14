@@ -37,10 +37,10 @@
       .col-md-12.clan_show-contact-buttons
 
         - if !clan.discord.empty? 
-          = link_to "Discord", clan.discord, class: "btn btn-do-bordered-square btn-clan"
+          = link_to "Discord", clan.discord, target: '_blank', class: "btn btn-do-bordered-square btn-clan"
 
         - if !clan.website.empty? 
-          = link_to "Strona internetowa", clan.website, class: "btn btn-do-bordered-square btn-clan"
+          = link_to "Strona internetowa", clan.website, target: '_blank', class: "btn btn-do-bordered-square btn-clan"
 
         = link_to 'Napisz do lidera', new_message_path(to: clan.user), class: 'btn btn-do-bordered-square btn-clan'
 
