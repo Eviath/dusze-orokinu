@@ -81,11 +81,7 @@ $lg-width: 1200px;
 
 
   .actions {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: 100px;
+  position: relative;
   }
 
 
@@ -95,12 +91,12 @@ $lg-width: 1200px;
       font-family: 'Marcellus', serif;
     }
 
-    img.veil {
+    .veil {
       margin: 30px 0;
       width: 100px !important;
-      min-width: 400px;
       height: 50px !important;
-      min-height: 100%;
+      min-width: 300px;
+      min-height: 50px ;
       opacity: 1;
     }
 
