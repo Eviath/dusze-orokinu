@@ -519,6 +519,8 @@ GEM
     tilt (2.0.9)
     time_difference (0.7.0)
       activesupport (~> 5.1)
+    tinymce-rails (5.0.0)
+      railties (>= 3.1.1)
     trollop (2.9.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -578,6 +580,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   time_difference
+  tinymce-rails
   tzinfo-data
   web-console (>= 3.3.0)
   webpacker!

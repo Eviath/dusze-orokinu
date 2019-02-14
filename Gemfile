@@ -21,6 +21,7 @@ gem 'rails-i18n', '~> 5.1'
 
 gem "polish", ">= 0.1.0"
 
+gem 'tinymce-rails'
 
 #messaging system rails
 gem 'mailboxer'

@@ -12,8 +12,7 @@ import Turbolinks from 'turbolinks';
 
 import 'jquery'
 import 'bootstrap/dist/js/bootstrap';
-import { tinyMce } from "../javascripts/tinyMce";
-// application stylesheets
+
 import "./stylesheets"
 //bootstrap confirm modal
 import "data-confirm-modal"
@@ -36,13 +35,9 @@ import $ from 'jquery';
 
 global.$ = jQuery;
 
-tinyMce();
-
 
 //import custom scripts
 import '../javascripts/sidebar'
-
-
 
 
 // enable bootstrap tooltips
