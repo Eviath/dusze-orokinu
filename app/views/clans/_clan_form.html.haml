@@ -50,9 +50,9 @@
             %img{id:"output"}
           .form-input
             = f.label :picture, "Logo klanu"
+
           .file-upload
-            = f.label :picture, "Wybierz plik", class: 'custom-file-upload'
-            = f.file_field :picture, direct_upload: true, type: 'file', class:'form-control-upload', onchange:"loadFile(event)"
+            = f.file_field :picture, direct_upload: true, type: 'file', class:'form-control-upload'
 
 
 

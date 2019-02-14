@@ -22,6 +22,12 @@ import "chosen-js"
 // WYSIWYG editor for clan/request/news
 import { tinyMce} from "../javascripts/tinyMce";
 
+// app/javascript/packs/application.js
+import * as ActiveStorage from "activestorage";
+import "../javascripts/direct_upload.js"
+
+ActiveStorage.start();
+
 // fire up rails-ujs and turbolinks
 Rails.start();
 Turbolinks.start();
@@ -35,6 +41,9 @@ tinyMce();
 
 //import custom scripts
 import '../javascripts/sidebar'
+
+
+
 
 // enable bootstrap tooltips
 $( document ).on('turbolinks:load', function() {
@@ -58,16 +67,6 @@ dataConfirmModal.setDefaults({
 });
 
 
-// clan logo live update on change
-const loadFile = function(event) {
-    console.log('logo change called')
-    let output = document.getElementById('output');
-    document.getElementById('old-logo').style.display = "none";
-    output.src = URL.createObjectURL(event.target.files[0]);
-};
-
-
-//chosen config
 
 $('.chosen-select').chosen({
     no_results_text: "Nie znaleziono",

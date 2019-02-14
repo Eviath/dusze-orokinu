@@ -30,6 +30,10 @@ html {
   margin: 0;
 }
 
+textarea {
+  font-family: 'Marcellus', serif !important;
+}
+
 
 
 header {
@@ -96,12 +100,6 @@ header {
 // TINY MCE WYSIWYG EDITOR
 .tox-fullscreen .tox.tox-tinymce {
   z-index: 9999999999999999;
-}
-
-
-// remove default file upload button from display
-input[type="file"] {
-  display: none;
 }
 
 
