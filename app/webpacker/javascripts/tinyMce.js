@@ -1,5 +1,4 @@
 import tinymce from 'tinymce/tinymce';
-import './themes/silver/theme';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/preview';
 import 'tinymce/plugins/searchreplace';
@@ -26,8 +25,6 @@ import 'tinymce/plugins/textpattern';
 import 'tinymce/plugins/textcolor';
 import "./langs/pl";
 
-import "tinymce/skins/ui/oxide/skin.min.css";
-import "tinymce/skins/ui/oxide/content.min.css";
 
 function tinyMce() {
 
