@@ -1,3 +1,6 @@
+
+= provide(:title, 'Nowa wiadomość')
+
 .page-wrapper
   .container
 
@@ -18,6 +21,6 @@
 
         .form-group
           = label_tag 'recipients', 'Wybierz odbiorców' 
-          = select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control chosen-it'
+          = select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control chosen-select'
 
         = submit_tag 'Wyślij', class: 'btn btn-do-vitruvian'

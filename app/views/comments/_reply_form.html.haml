@@ -1,0 +1,8 @@
+
+.reply-form
+  = form_for [commentable, comment] do |f|
+    = render 'shared/error_messages', object: f.object
+    = f.text_area :content, class: "comment-form-control"
+    = f.hidden_field :parent_id
+    .actions
+      = f.submit "Wyślij", class: "btn btn-do-vitruvian"

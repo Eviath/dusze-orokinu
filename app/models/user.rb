@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :lastseenable, :confirmable
+         :recoverable, :rememberable, :validatable, :lastseenable, :confirmable, :trackable
 
   # Mailboxer
   acts_as_messageable
@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one :clan, dependent: :destroy
   has_one :request, dependent: :destroy
   has_many :news
+  has_many :news_comments, through: :news, source: :comments
 
   has_one_attached :avatar
 
@@ -31,7 +32,6 @@ class User < ApplicationRecord
 
 
   private
-
   # def assign_avatar
   #   self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'vitru-glyph.png')), filename: 'default-image.png', content_type: 'image/png')
   # end
@@ -43,10 +43,10 @@ class User < ApplicationRecord
   
   protected
 
-  # no confirmation needed, for development
-  def confirmation_required?
-    false
-  end
+  # # no confirmation needed, for development
+  # def confirmation_required?
+  #   false
+  # end
 
 
 end

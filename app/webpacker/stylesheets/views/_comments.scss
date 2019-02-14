@@ -1,0 +1,28 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// single comment div /_comment
+.comment{
+  width:100%;
+
+  // submit button comment /_form
+  .actions {
+    padding-top: 0;
+  }
+
+  p {
+    font-family: 'Marcellus', serif;
+  }
+}
+
+// text area comment /_form
+.comment-form-control {
+  width:100%;
+  padding: 10px;
+}
+
+// submit button comment /_form
+.actions {
+padding-top: 25px;
+}

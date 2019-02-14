@@ -14,6 +14,7 @@ module DuszeOrokinu
     config.time_zone = 'Warsaw'
     config.i18n.fallbacks =[:en]
     config.i18n.default_locale = :pl
+    config.autoload_paths += %W(#{config.root}/lib)
     config.i18n.fallbacks = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

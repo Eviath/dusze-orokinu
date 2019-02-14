@@ -1,7 +1,8 @@
 
 Rails.application.routes.draw do
 
-  resources :news
+  get 'comments/index'
+  get 'comments/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { confirmations: 'confirmations' }
   get 'messages/index'
@@ -31,7 +32,12 @@ Rails.application.routes.draw do
 
     resources :users
 
-        resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
+    resources :news do
+      resources :comments
+    end
+
+
+  resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
         resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
         resources :clans do
             member do

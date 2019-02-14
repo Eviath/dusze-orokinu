@@ -1,59 +1,151 @@
-.wrapper
-  <!-- Sidebar -->
-  %nav#sidebar
 
-    #dismiss
+.side-wrapper
+  %nav#sidebar.sidebar-wrapper
+    .sidebar-content
+      .sidebar-brand
+        %a Dusze Orokinu
+        #close-sidebar
+          %i.fas.fa-times
+      -if user_signed_in?
+        .sidebar-header
+          .user-pic
+            =image_tag user_avatar(current_user), class: 'img-responsive img-rounded'
 
-    .sidebar-header.navbar-brand
-      Dusze Orokinu
+          .user-info
+            %span.user-name
+              %strong=current_user.name
 
-
-    %ul.components
-      .profile-nav
-        - if user_signed_in?
-          %span
-            Witaj,
-            =current_user.name
-
-          - if current_user.avatar.attached?
-            %p= image_tag user_avatar(current_user, 40), class: 'rounded-circle'
-
-          %li.nav-item
-            = active_link_to "Profil", user_path(current_user), class: "nav-link"
-          %li.nav-item
-            = active_link_to "Poczta",conversations_path, class: "nav-link"
-          %li.nav-item
-            = active_link_to "Ustawienia", edit_user_registration_path, class: "nav-link"
-          %li.nav-item
-            = active_link_to "Wyloguj",destroy_user_session_path, class: "nav-link", method: :delete
+            %span.user-role
+              =user_role(current_user)
+            %span.user-status
+              %i.fa.fa-circle
+              %span Online
 
 
+        -#<!-- sidebar-search  -->
+        .sidebar-menu
+          %ul
+            %li.header-menu
+              %span Główne
+            -if current_user.has_role?(:admin)
+              %li.sidebar-dropdown
+                %a
+                  %i.fas.fa-unlock-alt
+                  %span Admin
+                  %span.badge.badge-pill.badge-primary= new_requests_since_last_login(current_user) if new_requests_since_last_login(current_user) > 0
 
-          .separator
-            %br
-          .management-nav
-            %span
-              Zarządzanie
-            -if current_user.has_role? :admin
-              %li.nav-item
-                = active_link_to "Admin Panel",rails_admin_path, class: "nav-link"
-              %li.nav-item
-                = active_link_to "Dashboard",panel_path, class: "nav-link"
-            %li.nav-item
-              = active_link_to "Użytkownicy",users_path, class:  "nav-link"
-            %li.nav-item
-              = active_link_to "Klan",pclan_path, class:  "nav-link"
-            %li.nav-item
-              = active_link_to "Sojusz", '/request', class:  "nav-link"
+                .sidebar-submenu
+                  %ul
+                    %li
+                      = active_link_to "Admin Panel",rails_admin_path, class: "nav-link", data: { turbolinks: false }
+                    %li
+                      = link_to(requests_path, class: "nav-link") do
+                        Podania do sojuszu
+                        %span.badge.badge-pill.badge-primary= new_requests_since_last_login(current_user) if new_requests_since_last_login(current_user) > 0
+                    %li
+                      = active_link_to "Lista klanów",clans_path, class: "nav-link"
 
-        - else
 
-          %li.nav-item-sidebar
-            %span Witaj!
-          %li.nav-item
-            = active_link_to "Zaloguj się",new_user_session_path, class: "nav-link"
+            %li.sidebar-dropdown
+              %a
+                %i.fa.fa-users
+                %span Sojusz
 
-    .sidebar-footer
-      =image_tag('veil-white.png')
+              .sidebar-submenu
+                %ul
+                  %li
+                    = active_link_to "Podanie do sojuszu", '/request', class:  "nav-link"
+                  %li
+                    = active_link_to "Użytkownicy",users_path, class:  "nav-link"
 
-  .overlay
+
+
+            %li.sidebar-dropdown
+              %a
+                %i.fas.fa-gem
+                %span Klan
+
+              .sidebar-submenu
+                %ul
+                  %li
+                    = active_link_to "Klan",pclan_path, class:  "nav-link"
+                  -if current_user.has_role?(:lider) && !current_user.clan.present?
+                    %li
+                      = active_link_to "Stwórz ogłoszenie",new_clan_path, class:  "nav-link", data: { turbolinks: false }
+
+
+
+            %li.sidebar-dropdown
+              %a
+                %i.fa.fa-book-open
+                %span Poradniki
+
+              .sidebar-submenu
+                %ul
+                  %li
+                    %a Coming soon
+                  %li
+                    %a Coming soon
+                  %li
+                    %a Coming soon
+                  %li
+                    %a Coming soon
+
+            %li.sidebar-dropdown
+              %a
+                %i.fas.fa-cubes
+                %span Buildy
+
+              .sidebar-submenu
+                %ul
+                  %li
+                    %a Coming soon
+                  %li
+                    %a Coming soon
+                  %li
+                    %a Coming soon
+                  %li
+                    %a Coming soon
+
+
+            %li.header-menu
+              %span Dodatkowe
+            %li
+              %a{href:"#"}
+                %i.fa.fa-book
+                %span Coming Soon
+
+            %li
+              %a{href:"#"}
+                %i.fa.fa-book
+                %span Coming Soon
+
+            %li
+              %a{href:"#"}
+                %i.fa.fa-book
+                %span Coming Soon
+
+
+        %div.sidebar-footer
+          = link_to(user_path(current_user), 'data-toggle':"tooltip", 'data-placement':"top", title:"Mój profil") do
+            %i.fas.fa-user
+
+          = link_to(conversations_path, 'data-toggle':"tooltip", 'data-placement':"top", title:"Poczta") do
+            %i.fa.fa-envelope
+            %span.badge.badge-pill.badge-warning.notification=unread_messages_count if unread_messages_count > 0
+
+          = link_to(edit_user_registration_path, 'data-toggle':"tooltip", 'data-placement':"top", title:"Edytuj profil") do
+            %i.fa.fa-cogs
+
+          = link_to(destroy_user_session_path, 'data-toggle':"tooltip", 'data-placement':"top", title:"Wyloguj", 'data-tooltip-custom-classes':"tooltip-vitruvian", method: :delete) do
+            %i.fas.fa-sign-out-alt
+
+
+      -else
+        .sidebar-menu
+          %ul
+            %li.header-menu
+              %span Witaj na stronie Dusz Orokinu!
+              = active_link_to "Logowanie",new_user_session_path, class: "nav-link"
+
+.overlay

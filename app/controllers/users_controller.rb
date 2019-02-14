@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id] )
       redirect_to root_url and return unless true
       @request = @user.request
+      @news_comments = @user.news_comments
     end
 
     def approve

@@ -1,7 +1,6 @@
 module UsersHelper
 
-
-
+  # user roles in buttons
   def user_ranks(user)
 
     # check if user have created clan
@@ -38,18 +37,23 @@ module UsersHelper
       user_button
 
     end
+  end
 
 
 
-  end   #end user ranks
+  # user role in simple string
+  def user_role(user)
+
+  if user.has_role?(:admin)
+    "Administrator"
+  elsif user.has_role?(:lider)
+    "Lider klanu"
+  else
+    "Użytkownik"
+  end
+
+  end
 
 
 
-
-
-
-
-
-
-# end helper
 end

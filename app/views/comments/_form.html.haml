@@ -1,0 +1,16 @@
+= form_for [@commentable, @comment] do |f|
+
+  = f.hidden_field :parent_id
+  - if @comment.errors.any?
+    .error_messages
+      %h2 Wystąpiły błędy
+      %ul
+      - @comment.errors.full_messages.each do |msg|
+        %li= msg
+
+
+  .input-group
+    = f.text_area :content, rows: 4, class:'comment-form-control', placeholder: "Skomentuj!"
+
+  .actions
+    = f.submit "Wyślij", class: 'btn btn-do-vitruvian'

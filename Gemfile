@@ -15,35 +15,23 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem "font-awesome-rails"
-# JQuery
-gem 'jquery-rails'
-gem 'data-confirm-modal'
 gem 'rails-i18n', '~> 5.1'
+
 gem "polish", ">= 0.1.0"
-
-gem 'tinymce-rails'
-
-#sprockets
-gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 
 #messaging system rails
 gem 'mailboxer'
+
+gem 'webpacker', github: 'rails/webpacker'
 
 # haml syntax
 gem "haml-rails"
 
 gem 'time_difference'
 
-# gravatar
-gem 'gravatar_image_tag'
-
-# list styling
-gem 'chosen-rails'
+gem 'ancestry'
 
 # gem devise
 gem 'devise'
@@ -52,15 +40,10 @@ gem 'devise_lastseenable'
 gem 'cancancan'
 gem 'rolify'
 
-
 gem 'rails_admin', '~> 1.3'
 # Bootstrap Framework
 gem 'bootstrap', '~> 4.2.1'
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -88,9 +71,6 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
-group :production do
-  gem 'fog', '1.42'
-end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

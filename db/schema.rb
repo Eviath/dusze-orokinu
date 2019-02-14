@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_150218) do
+ActiveRecord::Schema.define(version: 2019_02_13_191719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,20 @@ ActiveRecord::Schema.define(version: 2019_02_05_150218) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_clans_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_clans_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.string "commentable_type"
+    t.bigint "commentable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_comments_on_ancestry"
+    t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -209,6 +223,11 @@ ActiveRecord::Schema.define(version: 2019_02_05_150218) do
     t.string "name"
     t.boolean "lider", default: false
     t.datetime "last_seen"
+    t.integer "sign_in_count"
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

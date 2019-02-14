@@ -1,0 +1,197 @@
+// Place all the styles related to the News controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.news-body {
+  height: 80vh;
+
+  font-family: 'Marcellus SC', serif;
+  background: $darkbg;
+  background-image: none;
+}
+
+.news-show-header {
+  text-align: center;
+  z-index: 10;
+  padding: 100px 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  left: 0;
+
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 4em;
+    z-index: 9;
+  }
+
+}
+
+
+.page-header {
+  text-align: center;
+  padding: 100px 0;
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 4em;
+    z-index: 9;
+  }
+
+}
+
+.news-background {
+  position: relative;
+
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  &::after {
+    display: block;
+    position: absolute;
+
+    background-image: linear-gradient(0deg, rgba(23,22,26,1) 0%, rgba(23,22,26,1) 37%, rgba(23,22,26,0) 100%, rgba(0,0,0,0) 100%);
+    top:0;
+    height:100%;
+    width: 100%;
+    content: '';
+  }
+
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+.news-wrapper {
+padding: 100px 0px 100px 0px;
+  .container {
+    max-width:90% !important;
+  object-fit: fill;
+  }
+
+
+
+}
+
+
+img.card-img-top {
+  min-height: 295px;
+}
+
+p.card-text {
+  color: $darkt;
+}
+
+/* Set width to make card deck cards 100% width */
+@media (max-width: 950px) {
+
+  .card-deck-wrapper {margin-right:0;margin-left:0;}
+  .card-deck {
+    display: block;
+    width: 100%;
+    margin-bottom: .75rem;
+    table-layout: fixed;
+    border-spacing: 1.25rem 0;
+  }
+  .card-deck .card {
+    display: block;
+    margin-bottom: .75rem;
+    vertical-align: top;
+  }
+
+  .card-deck .card:not(:first-child) {
+    margin-left: 0px;
+  }
+
+}
+
+
+// SHOW NEWS
+
+.news {
+  width:100%;
+  .news-box {
+    width:90%;
+    margin: 0 auto;
+    padding: 100px 0;
+
+  }
+
+
+
+  .news-header {
+    padding: 25px;
+
+  }
+
+  .news-description {
+
+    align-content: center;
+    height:50px;
+    width:100%;
+
+    p {
+      margin: 0;
+      padding: 10px;
+    }
+
+  }
+
+}
+
+.news-content{
+  background: $darkbg;
+  background-image: none;
+  width:80%;
+  margin: 0 auto;
+  text-align: left;
+ padding: 100px 0;
+}
+
+.news-comments {
+  background: #17161a;
+  background-image: none;
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 100px 0;
+
+  &-form {
+    padding-top: 50px;
+  }
+}
+
+
+
+
+
+
+.card-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body {
+
+
+    .author {
+      float:right !important;
+    }
+
+
+  .card-title {
+    color: $vitruvian;
+  }
+
+}

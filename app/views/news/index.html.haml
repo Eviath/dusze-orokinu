@@ -27,12 +27,15 @@
                   %small.author.pull-right.text-muted
                     Autor:
                     =link_to news.user.name, news.user, class:'link-vitruvian'
+                  %small.author.pull-right.text-muted
+                    Komentarze:
+                    =news.comments.count
 
                 .card-body
                   = link_to 'Zobacz', news, class: 'card-link link-vitruvian'
                   -if current_user && can?(:manage, @news)
                     = link_to 'Edytuj', edit_news_path(news), class: 'card-link'
-                    = link_to 'Usuń', news, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link'
+                    = link_to 'Usuń', news, method: :delete, data: { confirm: 'Jesteś pewny?' }, class: 'card-link'
 
 
 
