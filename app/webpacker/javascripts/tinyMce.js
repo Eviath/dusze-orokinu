@@ -25,6 +25,8 @@ import 'tinymce/plugins/textpattern';
 import 'tinymce/plugins/textcolor';
 import "./langs/pl";
 import 'tinymce/themes/silver/theme.min.js';
+import "tinymce/skins/lightgray/skin.min.css";
+
 
 function tinyMce() {
 
@@ -35,9 +37,7 @@ function tinyMce() {
         toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
         image_advtab: true,
         image_caption: true,
-        language: 'pl',
-        theme: 'silver',
-        skin: 'oxide',
+        language: 'pl'
     });
 
 
