@@ -43,7 +43,10 @@
 
     .form-group
       = f.label :clan_about, "Krótki opis klanu"
-      = f.text_area :clan_about, :class => "tinymce", :rows => 20, :cols => 60, id: 'tinymce '
+      = f.text_area :clan_about, :class => "tinymce", :rows => 20, :cols => 60, id: 'tinymce'
 
       .actions
         = f.submit "Zapisz", class: "btn btn-do-vitruvian"
+
+
+= tinymce :language => 'pl'
