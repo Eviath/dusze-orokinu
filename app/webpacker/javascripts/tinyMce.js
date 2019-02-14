@@ -42,7 +42,6 @@ function tinyMce() {
         language: 'pl',
         theme: 'silver',
         skin: 'oxide',
-        apiKey: 'fpq3g4boudiuqvu8dra70l5i53qxp7mziezlsleq72yww1ho'
     });
 
 
