@@ -73,7 +73,9 @@ ul.chosen-choices {
   margin: 20px;
   border-radius: 20px;
   overflow: hidden;
+  display: flex;
   word-break: break-all;
+  flex-direction: column;
 }
 
 .message-sender {
@@ -83,16 +85,24 @@ ul.chosen-choices {
 
   .media-body {
     p {
+      font-family: 'Marcellus', serif;
       padding: 15px;
     }
 
     padding: 10px;
-    margin-left: 30px;
 
   }
 
   .media-heading {
     text-align: left;
+  }
+
+  .media-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
   }
 }
 
@@ -111,6 +121,24 @@ ul.chosen-choices {
 
   .media-heading {
     text-align: left;
+  }
+
+  .media-body {
+    p {
+      font-family: 'Marcellus', serif;
+      padding: 15px;
+    }
+
+    padding: 10px;
+
+  }
+
+  .media-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
   }
 }
 
