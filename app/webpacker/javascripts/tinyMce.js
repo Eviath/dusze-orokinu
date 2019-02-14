@@ -13,7 +13,6 @@ function tinyMce() {
         plugins: [
             'table', 'lists'
         ],
-        skin: false
     });
 }
 // if you're using a language file, you can place its content here
