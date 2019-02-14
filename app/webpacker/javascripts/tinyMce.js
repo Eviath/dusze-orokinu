@@ -25,8 +25,9 @@ import 'tinymce/plugins/help';
 import 'tinymce/plugins/textpattern';
 import 'tinymce/plugins/textcolor';
 import "tinymce/skins/ui/oxide/skin.min.css";
-import "./tinymce/langs/pl";
+import "./langs/pl";
 import 'tinymce/skins/content/default/content.css';
+
 function tinyMce() {
 
 
