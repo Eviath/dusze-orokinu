@@ -42,7 +42,13 @@ end
   # check for new alliance requests since last user login
   def new_requests_since_last_login(user)
     now = Time.now
+
+    if !user.last_sign_in_at.blank?
     user_last_login = user.last_sign_in_at.to_datetime
+    else
+    user_last_login = Time.now.to_datetime
+    end
+
     Request.pending.where(updated_at: (user_last_login)..now).count
   end
 
