@@ -24,11 +24,10 @@ import 'tinymce/plugins/imagetools';
 import 'tinymce/plugins/help';
 import 'tinymce/plugins/textpattern';
 import 'tinymce/plugins/textcolor';
-import "./skins/ui/oxide/skin.min.css";
 import "./langs/pl";
-import './skins/content/default/content.min.css';
 
-
+import "tinymce/skins/ui/oxide/skin.min.css";
+import "tinymce/skins/ui/oxide/content.min.css";
 
 function tinyMce() {
 
