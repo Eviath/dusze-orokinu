@@ -12,7 +12,7 @@ import Turbolinks from 'turbolinks';
 
 import 'jquery'
 import 'bootstrap/dist/js/bootstrap';
-
+import { tinyMce} from "../javascripts/tinyMce";
 // application stylesheets
 import "./stylesheets"
 //bootstrap confirm modal
@@ -20,7 +20,7 @@ import "data-confirm-modal"
 //better choose form input
 import "chosen-js"
 // WYSIWYG editor for clan/request/news
-import { tinyMce} from "../javascripts/tinyMce";
+
 
 // app/javascript/packs/application.js
 import * as ActiveStorage from "activestorage";
