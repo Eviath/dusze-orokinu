@@ -12,8 +12,12 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "rails-ujs": "^5.2.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "tinymce": "^5.0.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "warframe-worldstate-data": "^0.1.28",
+    "warframe-worldstate-parser": "^2.1.29"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.14"

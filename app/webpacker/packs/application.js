@@ -36,7 +36,8 @@ Turbolinks.start();
 
 //import custom scripts
 import '../javascripts/sidebar'
-import '../javascripts/warframe'
+
+require('../javascripts/warframe')
 
 // close alert toast
 function closeToast() {

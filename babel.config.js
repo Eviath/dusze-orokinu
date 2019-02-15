@@ -60,11 +60,17 @@ module.exports = function(api) {
         }
       ],
       [
+          require('@babel/plugin-transform-modules-commonjs').default,
+        {
+          allowTopLevelThis: true
+        }
+      ],
+      [
         require('@babel/plugin-transform-regenerator').default,
         {
           async: false
         }
-      ]
+      ],
     ].filter(Boolean)
   }
 }
