@@ -63,15 +63,15 @@
     temu.
 
   - if current_user && can?(:destroy, @clan)
-    = link_to "Edytuj", edit_clan_path(clan), class: 'btn btn-do-vitruvian', data: { turbolinks: false }
+    = link_to "Edytuj", edit_clan_path(clan), class: 'btn btn-do-vitru', data: { turbolinks: false }
     |
-    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" }, class: 'btn btn-do-vitruvian'
+    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" }, class: 'btn btn-do-vitru'
 
   - if has_role?(:admin)
     - if @clan.approval == true
       |
-      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) , class: 'btn btn-do-vitruvian'
+      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) , class: 'btn btn-do-vitru'
     - else
       |
-      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) , class: 'btn btn-do-vitruvian'
+      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) , class: 'btn btn-do-vitru'
 

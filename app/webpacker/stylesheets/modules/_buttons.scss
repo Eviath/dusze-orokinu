@@ -1,7 +1,7 @@
 // buttons
 
 .btn.btn-do-bordered.active {
-  color: $vitruvian !important;
+  color: $vitru !important;
 
   background-color: transparent;
 }
@@ -13,12 +13,12 @@
 
 .btn-danger {
   color: #fff;
-  background-color: $vitruvian;
-  border-color: $vitruvian;
+  background-color: $vitru;
+  border-color: $vitru;
 
   &:hover {
-    background-color: $vitruvian;
-    border-color: $vitruvian;
+    background-color: $vitru;
+    border-color: $vitru;
   }
 }
 
@@ -45,7 +45,7 @@
 
 .btn-do {
   color: #fff;
-  background-color: $vitruvian !important;
+  background-color: $vitru !important;
 }
 
 
@@ -94,7 +94,7 @@
 
 
   &:hover {
-    color: $vitruvian;
+    color: $vitru;
   }
 
 
@@ -146,7 +146,7 @@
 
 
   &:hover {
-    color: $vitruvian;
+    color: $vitru;
   }
 
 
@@ -196,14 +196,14 @@
 
 
   &:hover {
-    color: $vitruvian;
+    color: $vitru;
   }
 
 }
 
 
 .btn-do-profile-opt {
-  background-color: $vitruvian;
+  background-color: $vitru;
   padding: 0px 5px;
   font-size: 14px;
   color: #fff;
@@ -216,7 +216,7 @@
 
 .btn-do-profile {
   color: #212529;
-  background-color: $vitruvian;
+  background-color: $vitru;
   padding: 0px 5px;
   font-size: 14px;
   box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
@@ -249,9 +249,10 @@
 
 
 // button vitruvian
+// button vitru
 
 
-.btn-do-vitruvian {
+.btn-do-vitru {
   position: relative;
   display: inline-block;
   padding: 10px 22px;
@@ -268,8 +269,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: $light-vitru;
-  border: 1px solid $vitruvian-opa;
+  color: $vitru-light;
+  border: 1px solid $vitru-opa;
   border-radius: 2px;
   -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
   -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
@@ -284,7 +285,7 @@
     right: 2px;
     bottom: 2px;
     left: 2px;
-    background-color: $vitruvian-opa;
+    background-color: $vitru-opa;
 
     border-radius: 2px;
     -webkit-transition: .3s background-color, .3s border-color;
@@ -295,7 +296,7 @@
 
 
   &:hover {
-    color: $vitruvian;
+    color: $vitru;
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
   }
 
@@ -328,7 +329,7 @@
   -ms-user-select: none;
   user-select: none;
   color: #6c757d;
-  border: 1px solid $trans-vitru;
+  border: 1px solid $vitru-trans-bg;
   border-radius: 2px;
   transition: .3s;
   &::before {
@@ -341,7 +342,7 @@
     right: 2px;
     bottom: 2px;
     left: 2px;
-    background-color: $trans-vitru;
+    background-color: $vitru-trans-bg;
     border-radius: 2px;
     z-index: 1;
   }
@@ -349,13 +350,13 @@
 
   &:hover {
     transition: .3s;
-    color: $vitruvian;
+    color: $vitru;
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
     &::before{
       transition: .3s;
       top: 4px;
       background: transparent;
-      border: 1px $trans-vitru;
+      border: 1px $vitru-trans-bg;
       right: 4px;
       bottom: 4px;
       left: 4px;

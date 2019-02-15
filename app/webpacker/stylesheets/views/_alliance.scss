@@ -263,7 +263,7 @@ div.header-body {
 
   h1 {
     @include h1-font-mediaQ;
-    color: $vitruvian;
+    color: $vitru;
     font-family: 'Marcellus', serif;
     font-weight: 400;
     letter-spacing: 2rem;
@@ -340,7 +340,7 @@ div.header-body {
 
   h2 {
     text-align: center;
-    color: $vitruvian;
+    color: $vitru;
   }
 }
 
@@ -350,7 +350,7 @@ div.header-body {
 
   &-header {
     text-align: center;
-    color: $vitruvian;
+    color: $vitru;
   }
 
   &-text {
@@ -375,7 +375,7 @@ div.header-body {
 
   h2 {
     font-size: 2em;
-    color: $vitruvian;
+    color: $vitru;
   }
 }
 
@@ -405,7 +405,7 @@ div.header-body {
       z-index: -2;
       transition: .3s;
       content: '';
-      background: $vitruvian;
+      background: $vitru;
       width: 100%;
       height: 2px;
       position: absolute;
@@ -422,7 +422,7 @@ div.header-body {
         z-index: -2;
         transition: .3s;
         content: '';
-        background: $vitruvian;
+        background: $vitru;
         width: 100%;
         height: 100%;
         position: absolute;

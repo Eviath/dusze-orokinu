@@ -44,7 +44,7 @@ PROFILES
   padding-top: 40px;
 
   p {
-    color: $vitruvian;
+    color: $vitru;
     font-size: .4em;
 
     span {
@@ -53,14 +53,14 @@ PROFILES
       font-weight: 400;
       font-size: .9em;
       letter-spacing: .5px;
-      color: $vitruvian;
+      color: $vitru;
     }
 
   }
 
   p.active {
 
-    color: $light-vitru;
+    color: $vitru-light;
     font-size: .3em;
     font-weight: 400;
     text-transform: uppercase;
@@ -168,7 +168,7 @@ $gray-medium-light: #eaeaea;
 .options {
   display: inline-flex;
   margin-left: 20px;
-  border-left: solid $vitruvian 1px;
+  border-left: solid $vitru 1px;
   padding: 12px 0px 0px 12px;
 
   input {
@@ -272,7 +272,7 @@ input[type="radio"], input[type="checkbox"] {
       font-size: .8rem;
     }
 
-    border: 2px solid $vitruvian;
+    border: 2px solid $vitru;
     padding: 10px 10px;
     margin-bottom: 20px;
     background-color: $darkt;
@@ -311,10 +311,10 @@ input[type="radio"], input[type="checkbox"] {
       margin: 0 auto;
       transition: .2s;
       width: 100%;
-      background-color: $dark-vitru;
+      background-color: $vitru-dark;
 
       &:focus {
-        border-bottom: 5px solid $vitruvian;
+        border-bottom: 5px solid $vitru;
         transition: .2s;
 
         -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48);
@@ -413,7 +413,7 @@ img.user_index_image {
     max-height: 120px;
     max-width: 120px;
     padding: 10px;
-    border: 2px solid $light-vitru;
+    border: 2px solid $vitru-light;
 
   }
 

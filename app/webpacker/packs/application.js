@@ -7,46 +7,43 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+// core
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
-
 import 'jquery'
 import 'bootstrap/dist/js/bootstrap';
 
+// app stylesheets
 import "./stylesheets"
 //bootstrap confirm modal
 import "data-confirm-modal"
 //better choose form input
 import "chosen-js"
-// WYSIWYG editor for clan/request/news
-
-
-// app/javascript/packs/application.js
+// rails active storage
 import * as ActiveStorage from "activestorage";
+//direct upload
 import "../javascripts/direct_upload.js"
 
-ActiveStorage.start();
+// set jquery as global for unobtrusive rails javascript
+import $ from 'jquery';
+global.$ = jQuery;
 
-// fire up rails-ujs and turbolinks
+// fire up
+ActiveStorage.start();
 Rails.start();
 Turbolinks.start();
-
-import $ from 'jquery';
-
-global.$ = jQuery;
 
 
 //import custom scripts
 import '../javascripts/sidebar'
+import '../javascripts/warframe'
 
-
+// close alert toast
 function closeToast() {
-
     $('#toast').hide();
-
 }
-
 window.closeToast = closeToast;
+
 
 // enable bootstrap tooltips
 $(document).on('turbolinks:load', function () {
