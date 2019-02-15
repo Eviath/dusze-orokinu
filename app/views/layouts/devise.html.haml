@@ -20,7 +20,15 @@
     = render "layouts/navbar"
     =render "layouts/sidebar"
     - flash.each do |message_type, message|
-      = content_tag(:div, message, class: "alert slide-in-top alert-#{message_type}")
+      .div{role:"alert", 'aria-live':"assertive", 'aria-atomic':"true", 'data-autohide':"false", class: "toast slide-in-top alert-#{message_type}", id:"toast"}
+        .toast-header
+          %strong.mr-auto Dusze Orokinu
+          %button.ml-2.mb-1.close{type:"button",  'data-dismiss':"toast", 'aria-label':"Close", id:'close-alert', onclick:"closeToast()"}
+            %span{'aria-hidden':"true"}
+              %i.fas.fa-times
+        .toast-body
+          =message
+
 
     = yield
 

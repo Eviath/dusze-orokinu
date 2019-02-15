@@ -10,6 +10,11 @@ body.news-body {
   background-image: none;
 }
 
+
+.page-news-content{
+  background: $darkbg;
+}
+
 .news-show-header {
   text-align: center;
   z-index: 10;
@@ -157,12 +162,17 @@ p.card-text {
   margin: 0 auto;
   text-align: left;
  padding: 100px 0;
+
 }
 
 .news-comments {
-  background: #17161a;
-  background-image: none;
-  width: 50%;
+  // top box shadow
+  -webkit-box-shadow: 0px 6px 49px 6px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 6px 49px 6px rgba(0,0,0,0.25);
+  box-shadow: 0px 6px 49px 6px rgba(0,0,0,0.25);
+
+  background: $darkbg;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
   padding: 100px 0;
@@ -170,19 +180,36 @@ p.card-text {
   &-form {
     padding-top: 50px;
   }
+
+  &-box {
+    width:80%;
+    margin: 0 auto;
+    padding: 25px;
+  }
+}
+
+
+.card {
+  border: 5px solid $trans-vitru;
+  background: transparent;
+  border-bottom: 10px solid $trans-vitru;
 }
 
 
 
-
-
-
 .card-footer{
+  background: $trans-vitru;
   display: flex;
   justify-content: space-between;
 }
 
 .card-body {
+
+  background: $darkbg;
+
+  p {
+    color: $white;
+  }
 
 
     .author {
@@ -195,3 +222,5 @@ p.card-text {
   }
 
 }
+
+

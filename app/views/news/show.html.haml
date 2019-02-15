@@ -29,22 +29,22 @@
     =raw @news.content
 
 
-
   .news-comments
-    .news-comments-header
-      %h2 Komentarze
+    .news-comments-box
+      .news-comments-header
+        %h2 Komentarze
 
-    .news-comments-body
-      -if !nested_comments(@comments).blank?
-        = nested_comments(@comments)
-      -else
-        Nikt jeszcze nie skomentował! Bądź pierwszy.
+      .news-comments-body
+        -if !nested_comments(@comments).blank?
+          = nested_comments(@comments)
+        -else
+          Nikt jeszcze nie skomentował! Bądź pierwszy.
 
-    .news-comments-form
-      -if user_signed_in?
-        = render "comments/form"
-      -else
-        %h2 Zaloguj się aby dodawać komentarze!
+      .news-comments-form
+        -if user_signed_in?
+          = render "comments/form"
+        -else
+          %h2 Tylko zalogowani użytkownicy mogą komentować.
 
 
 

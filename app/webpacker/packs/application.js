@@ -40,14 +40,22 @@ global.$ = jQuery;
 import '../javascripts/sidebar'
 
 
+function closeToast() {
+
+    $('#toast').hide();
+
+}
+
+window.closeToast = closeToast;
+
 // enable bootstrap tooltips
-$( document ).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
     $('[data-toggle="tooltip"]').tooltip()
 });
 
 
 // navbar hide collapse
-$(document).click(function(e) {
+$(document).click(function (e) {
     if (!$(e.target).is('.navbar')) {
         $('.collapse').collapse('hide');
     }
@@ -62,7 +70,6 @@ dataConfirmModal.setDefaults({
 });
 
 
-
 $('.chosen-select').chosen({
     no_results_text: "Nie znaleziono",
     placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
@@ -71,11 +78,11 @@ $('.chosen-select').chosen({
 
 
 //shared links and navbar animation on scroll load with turbolinks
-$( document ).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
 
     let c, currentScrollTop = 0,
         navbar = $('header');
-        const social = $('.share-buttons');
+    const social = $('.share-buttons');
 
     $(window).scroll(function () {
         const a = $(window).scrollTop();
@@ -103,7 +110,7 @@ $( document ).on('turbolinks:load', function() {
 });
 
 
-$( document ).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
 // scroll mailboxer messages to bottom
     const elem = document.getElementById('messages');
     if (elem) {
