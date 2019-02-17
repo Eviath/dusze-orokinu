@@ -2,26 +2,63 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom'
 
-import {  Alerts  } from "./components/warframe_alerts";
+import { Alerts } from "./components/warframe_alerts";
+import { Sortie } from "./components/warframe_sortie";
+import { VoidTrader } from "./components/warframe_baro";
+import { WarframeCetus } from "./components/warframe_cetus";
 
-export class WarframeApi extends React.Component{
+export class WarframeMissions extends React.Component{
   render(){
     return(
-        <Alerts />
-
+        <div className='warframe-missions'>
+          <Sortie />
+          <Alerts />
+        </div>
   );
   }
 }
 
+export class Cetus extends React.Component{
+    render(){
+        return(
+            <div className='warframe-news'>
+                <WarframeCetus />
+            </div>
+        );
+    }
+}
 
-
+export class News extends React.Component{
+    render(){
+        return(
+            <div className='warframe-news'>
+                <VoidTrader />
+            </div>
+        );
+    }
+}
 
 document.addEventListener('turbolinks:load', () => {
   ReactDOM.render(
-    <WarframeApi/>,
-    document.getElementById('alerts'),
-  )
-})
+    <WarframeMissions/>,
+    document.getElementById('warframe-missions'),
+  );
+});
+
+document.addEventListener('turbolinks:load', () => {
+    ReactDOM.render(
+        <Cetus/>,
+        document.getElementById('warframe-poe'),
+    );
+});
+
+
+document.addEventListener('turbolinks:load', () => {
+    ReactDOM.render(
+        <News/>,
+        document.getElementById('warframe-news'),
+    );
+});

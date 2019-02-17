@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
-const API = 'https://api.warframestat.us/pc';
+const API = 'https://api.warframestat.us/pc/alerts';
 
 export class Alerts extends Component {
 
@@ -30,7 +30,7 @@ export class Alerts extends Component {
                     throw new Error('Something went wrong ...');
                 }
             })
-            .then(data => this.setState({ alerts: data.alerts, isLoading: false  }))
+            .then(data => this.setState({ alerts: data, isLoading: false  }))
             .catch(error => this.setState({ error, isLoading: false }));
     }
 
@@ -48,9 +48,9 @@ export class Alerts extends Component {
         return (
             <div className={'alerts-container'}>
                 <h2>Alarmy</h2>
-            <ul className={'alerts-list row'}>
+            <div className={'alerts-list row'}>
                 {alerts.map(alert =>
-                    <li className={'list-item col-md-3'} key={alert.id}>
+                    <div className={'list-item col-md-3'} key={alert.id}>
                         <div className={'item-body'}>
                             <p>{alert.mission.description}</p>
                             <p>{alert.mission.node}</p>
@@ -60,13 +60,15 @@ export class Alerts extends Component {
                             <p>{alert.mission.faction}</p>
                         </div>
                         <div className={'item-footer'}>
-                            {/* reward counted items */}
+                            {/* reward items */}
                             <p>{alert.mission.reward.asString}</p>
+                            {alert.mission.reward.thumbnail.length > 0 &&
                             <img src={alert.mission.reward.thumbnail} className='reward-thumbnail' alt="item-thumb"/>
+                            }
                         </div>
-                    </li>
+                    </div>
                 )}
-            </ul>
+            </div>
             </div>
         );
     }

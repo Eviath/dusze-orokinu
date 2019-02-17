@@ -1,14 +1,28 @@
 
-#alerts {
+#warframe-missions {
+  padding: 0;
+  width:90%;
+  margin: 0 auto;
+}
 
-  font-family: 'Marcellus', serif;
+.sortie-container{
 
+  .sortie-box{
+    .sortie-header{
+      text-align:center;
+    }
+  }
+}
+
+
+  // warframe alerts
   .alerts-container {
-    width:90%;
+    font-family: 'Marcellus', serif;
+    width: 90%;
     padding-top: 100px;
     margin: 0 auto;
+
     .alerts-list {
-      padding-top: 50px;
       list-style-type: none !important;
       margin: 0;
       padding: 0;
@@ -23,9 +37,10 @@
           background: $vitru-trans-bg;
         }
 
-        .item-footer{
+        .item-footer {
           padding-top: 20px;
-          .reward-thumbnail{
+
+          .reward-thumbnail {
             max-width: 120px;
             height: auto;
           }
@@ -34,6 +49,4 @@
       }
     }
   }
-}
-
 

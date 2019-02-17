@@ -2,10 +2,12 @@
   <dictionary name="Evidence-PC">
     <words>
       <w>alarmy</w>
+      <w>baro</w>
       <w>lider</w>
       <w>przycisk</w>
       <w>rangi</w>
       <w>użytkownik</w>
+      <w>warframe</w>
     </words>
   </dictionary>
 </component>
