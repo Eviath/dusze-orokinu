@@ -1,94 +1,39 @@
-.sortie-box {
-  padding-top: 50px;
 
+#alerts {
 
-  .table th {
-    min-width: 200px;
-  }
+  font-family: 'Marcellus', serif;
 
-  .table td {
-    border: none;
-  }
-
-
-  .table tr {
-    border-top: 1px solid #fff;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
-
-  .sortie-variants {
-    padding-top: 50px;
-    text-align: left;
-
-    .sortie-inner {
-      background: $darkt;
-
-    }
-
-    .row {
+  .alerts-container {
+    width:90%;
+    padding-top: 100px;
+    margin: 0 auto;
+    .alerts-list {
+      padding-top: 50px;
+      list-style-type: none !important;
       margin: 0;
       padding: 0;
-      width: 90%;
-      margin: 0 auto;
+
+
+      .list-item {
+        padding: 20px;
+
+
+        .item-body {
+          padding: 10px;
+          background: $vitru-trans-bg;
+        }
+
+        .item-footer{
+          padding-top: 20px;
+          .reward-thumbnail{
+            max-width: 120px;
+            height: auto;
+          }
+        }
+
+      }
     }
   }
 }
 
 
-.alerts-box {
-  padding-top: 100px;
-
-  .row {
-    margin: 0;
-    padding: 0;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .table td {
-    border: none;
-  }
-
-
-  .table tr {
-    border-top: 1px solid #fff;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
-
-
-  .alerts-variants {
-    padding-top: 50px;
-
-
-  }
-
-  .alerts-inner {
-    background: $darkt !important;
-
-  }
-
-
-  .alerts-thumb {
-    width: 120px;
-    height: auto;
-  }
-
-}
-
-.warframe-poe {
-  h2 {
-    font-family: 'Marcellus', serif;
-    font-size: 80px;
-    line-height: 84px;
-    font-weight: 300;
-    color: rgb(234, 234, 234);
-    margin: 0px;
-  }
-
-}
