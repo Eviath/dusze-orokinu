@@ -59,6 +59,38 @@ $lg-width: 1200px;
   }
 }
 
+// Featured -- Twitch / Discord / Clans / Alliance
+.featured-container {
+  background: $darkbg;
+  .row {
+    margin: 0;
+    padding: 0;
+
+    .featured-column {
+      margin-top: -100px;
+      transition:.3s;
+      transform: translateY(0);
+
+      &:hover{
+        transition:.3s;
+        transform: translateY(-50px);
+      }
+      height: 400px;
+      .featured-body {
+        background: $vitru-trans-bg;
+        padding: 20px;
+        width:100%;
+        height: 100%;
+      .featured-content {
+        width:100%;
+        height:100%;
+      }
+      }
+
+    }
+  }
+}
+
 
 // CAROUSEL
 .carousel-inner {
@@ -81,7 +113,7 @@ $lg-width: 1200px;
 
 
   .actions {
-  position: relative;
+    position: relative;
   }
 
 
@@ -96,7 +128,7 @@ $lg-width: 1200px;
       width: 100px !important;
       height: 50px !important;
       min-width: 300px;
-      min-height: 50px ;
+      min-height: 50px;
       opacity: 1;
     }
 
