@@ -1,0 +1,78 @@
+
+.featured-container
+  .row.text-center
+
+    .col-md-3.featured-column
+      .featured-body
+        .featured-header
+          %h2 Twitch
+          %p Zajrzyj do naszych twórców!
+          .btn-group.w-100
+            =link_to 'Twitch', '#', class: 'btn btn-vitru-t-light disabled'
+
+        .featured-content
+          %h5 Coming soon
+
+        .featured-footer
+
+    .col-md-3.featured-column
+      .featured-body
+        .featured-header
+          %h2 Discord
+          %p Pogadaj z nami!
+          .btn-group.w-100
+            =link_to 'Discord', contact_index_path, class: 'btn btn-vitru-t-light'
+
+        .featured-content
+          %h5=@api_name
+          %p
+            Użytkownicy online:
+            =@api_users.count
+
+          %p
+            Dołącz do nas
+            =link_to @api_invite, @api_invite, target: '_blank'
+
+        .featured-footer
+
+
+
+
+    .col-md-3.featured-column
+      .featured-body
+        .featured-header
+          %h2 Klany
+          %p Zajrzyj na listę.
+          .btn-group.w-100
+            =link_to 'Klany', clans_path, class: 'btn btn-vitru-t-light'
+
+        .featured-content
+          %h5 Liczba klanów w sojuszu: 15
+          %p
+            Klany zarejestrowane na stronie:
+            =@clans.count
+
+          %p Ostatnio zaktualizowany klan:
+          -if !@last_updated_clan.blank?
+            =link_to @last_updated_clan[0].name, @last_updated_clan[0], class: 'link-vitru'
+
+        .featured-footer
+
+
+    .col-md-3.featured-column
+      .featured-body
+        .featured-header
+          %h2 Sojusz
+          %p Najnowsze aktualności.
+          .btn-group.w-100
+            =link_to 'Aktualności', news_index_path, class: 'btn btn-vitru-t-light'
+
+        .featured-content
+          %h5 Najnowsza aktualność:
+          %p=link_to @newest_news[0].title, @newest_news[0] if !@newest_news.blank?
+
+          %h5 Najnowszy komentarz:
+          %p=link_to truncate(@newest_comment[0].content, length: 100), news_path(@newest_comment[0].commentable_id) if !@newest_comment.blank?
+
+        .featured-footer
+

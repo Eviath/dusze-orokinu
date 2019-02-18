@@ -12,9 +12,9 @@
 
     .request-button.text-center
       - if @clan.previous
-        = link_to 'Poprzedni', @clan.previous, class: "btn btn-do-vitruvian"
+        = link_to 'Poprzedni', @clan.previous, class: "btn btn-do-vitru"
   
-      = link_to "Lista Klanów", clans_path, class: "btn btn-do-vitruvian"
+      = link_to "Lista Klanów", clans_path, class: "btn btn-do-vitru"
 
       - if @clan.next
-        = link_to 'Następny', @clan.next, class: "btn btn-do-vitruvian"
+        = link_to 'Następny', @clan.next, class: "btn btn-do-vitru"

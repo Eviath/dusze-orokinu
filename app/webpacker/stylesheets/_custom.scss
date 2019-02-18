@@ -13,6 +13,7 @@ body.devise-body {
 
 body.alliance-body {
   font-size: 1rem;
+
 }
 
 
@@ -83,7 +84,7 @@ header {
   padding: 3px 8px;
   color: #fff;
   text-align: center;
-  background-color: $vitruvian;
+  background-color: $vitru;
   border-radius: .25rem;
 }
 
@@ -91,7 +92,7 @@ header {
   margin-left: -3px;
   content: "";
   border-width: 5px 5px 0;
-  border-top-color: $vitruvian;
+  border-top-color: $vitru;
 }
 
 // TINY MCE WYSIWYG EDITOR
@@ -102,7 +103,7 @@ header {
 
 //custom file upload button
 .custom-file-upload {
-  border: 1px solid $vitruvian-opa;
+  border: 1px solid $vitru-opa;
   display: inline-block;
   cursor: pointer;
   height: 100%;
@@ -137,7 +138,7 @@ header {
 
 // default page links
 a {
-  color: $vitruvian;
+  color: $vitru;
 
   &:hover {
     color: $yell-hov;
@@ -165,17 +166,17 @@ input {
 
 //custom link vitruvian style
 .link-vitruvian {
-  color: $vitruvian;
+  color: $vitru;
 
   &:hover {
-    color: $light-vitru;
+    color: $vitru-light;
   }
 
   &-light {
-    color: $dark-vitru;
+    color: $vitru-dark;
 
     &:hover {
-      color: $light-vitru;
+      color: $vitru-light;
     }
   }
 }
@@ -322,12 +323,12 @@ form input class
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid $vitruvian;
+  border-bottom: 1px solid $vitru;
 
   &:focus {
     color: $white;
 
-    border-color: $vitruvian;
+    border-color: $vitru;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.35);
   }
@@ -337,7 +338,7 @@ form input class
 // custom bootstrap nav-pills
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-color: transparent;
-  color: $vitruvian;
+  color: $vitru;
 }
 
 
@@ -370,8 +371,8 @@ form input class
   left: 100px;
   top: 150px;
   z-index: 9999999999;
-  background: $dark-vitru;
-  border-bottom: 5px solid $vitruvian;
+  background: $vitru-dark;
+  border-bottom: 5px solid $vitru;
   border-left:15px solid transparent;
   border-right:15px solid transparent;
   transform: skew(20deg);
@@ -382,7 +383,7 @@ form input class
 
   &-header{
     color: $white;
-    background: $dark-vitru;
+    background: $vitru-dark;
   }
 }
 
@@ -397,20 +398,20 @@ form input class
   z-index: 9999999999;
   margin-bottom: 0;
   border: none;
-  border-bottom: 2px solid $vitruvian;
+  border-bottom: 2px solid $vitru;
 
   position: absolute;
 }
 
 .alert-success {
-  color: $vitruvian;
+  color: $vitru;
 }
 
 
 // form errors
 
 #error_explanation {
-  border: 2px solid $vitruvian;
+  border: 2px solid $vitru;
   padding: 50px 10px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -431,13 +432,13 @@ form input class
   color: $white;
 
   .btn.cancel {
-    border: 1px solid $vitruvian;
-    color: $vitruvian;
+    border: 1px solid $vitru;
+    color: $vitru;
   }
 
   .btn.commit {
-    border: 1px solid $dark-vitru;
-    color: $light-vitru;
+    border: 1px solid $vitru-dark;
+    color: $vitru-light;
     background: transparent;
   }
 

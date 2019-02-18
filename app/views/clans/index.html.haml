@@ -32,12 +32,12 @@
               .clan-content-buttons
 
                 %p
-                  = link_to truncate('Zobacz'), clan, class: "btn btn-do-vitruvian"
+                  = link_to truncate('Zobacz'), clan, class: "btn btn-do-vitru"
                   - if current_user && can?(:destroy, @clan)
                     |
-                    = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-vitruvian", data: { turbolinks: false }
+                    = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-vitru", data: { turbolinks: false }
                     |
-                    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitruvian"
+                    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru"
 
 
     - else

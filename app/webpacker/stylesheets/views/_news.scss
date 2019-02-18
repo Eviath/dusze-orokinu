@@ -190,15 +190,15 @@ p.card-text {
 
 
 .card {
-  border: 5px solid $trans-vitru;
+  border: 5px solid $vitru-trans-bg;
   background: transparent;
-  border-bottom: 10px solid $trans-vitru;
+  border-bottom: 10px solid $vitru-trans-bg;
 }
 
 
 
 .card-footer{
-  background: $trans-vitru;
+  background: $vitru-trans-bg;
   display: flex;
   justify-content: space-between;
 }
@@ -218,7 +218,7 @@ p.card-text {
 
 
   .card-title {
-    color: $vitruvian;
+    color: $vitru;
   }
 
 }

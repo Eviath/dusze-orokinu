@@ -6,6 +6,30 @@ class AllianceController < ApplicationController
     @main_about = About.where(:assignment => 'MAIN')
     @about_column_two = About.where(:assignment => 'COLUMN_TWO')
     @about_column_one = About.where(:assignment => 'COLUMN_ONE')
+
+    # list all approved clans
+    @clans = Clan.approved
+
+    # show last updated clan
+    @last_updated_clan = Clan.limit(1).approved.order('updated_at DESC')
+
+    # users online on discord api
+    require 'net/http'
+    require 'json'
+    url = 'https://discordapp.com/api/guilds/144454098748571648/widget.json'
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    JSON.parse(response)
+    api = JSON.parse(response)
+
+    @api_users =  api['members']
+    @api_invite = api['instant_invite']
+    @api_name = api['name']
+
+    # newest news
+    @newest_news = News.limit(1).order('id desc')
+    # newest comment
+    @newest_comment = Comment.limit(1).order('created_at desc')
   end
 
   def about

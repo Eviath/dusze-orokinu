@@ -8,6 +8,7 @@ default: &default
   cache_path: tmp/cache/webpacker
   check_yarn_integrity: false
   webpack_compile_output: false
+  sourceType: 'unambiguous'
 
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
@@ -39,6 +40,7 @@ default: &default
     - .sass
     - .scss
     - .css
+    - .jsx
     - .module.sass
     - .module.scss
     - .module.css
@@ -71,9 +73,10 @@ development:
     quiet: false
     headers:
       'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS'
+      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
     watch_options:
       ignored: '**/node_modules/**'
-
 
 test:
   <<: *default
