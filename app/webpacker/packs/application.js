@@ -34,6 +34,9 @@ Rails.start();
 Turbolinks.start();
 
 
+
+
+
 //import custom scripts
 import '../javascripts/sidebar'
 
