@@ -34,9 +34,11 @@ Rails.start();
 Turbolinks.start();
 
 
+
+
+
 //import custom scripts
 import '../javascripts/sidebar'
-import '../javascripts/warframe'
 
 // close alert toast
 function closeToast() {

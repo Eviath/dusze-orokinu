@@ -251,7 +251,7 @@
 // button vitru
 
 
-.btn-do-vitru {
+@mixin vitruvian-button {
   position: relative;
   display: inline-block;
   padding: 10px 22px;
@@ -268,15 +268,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: $vitru-light;
-  border: 1px solid $vitru-opa;
   border-radius: 2px;
-  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
-  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
-  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
-
-  &::before {
-    border: none;
+  &::before{
     content: "";
     position: absolute;
     display: block;
@@ -284,19 +277,35 @@
     right: 2px;
     bottom: 2px;
     left: 2px;
-    background-color: $vitru-opa;
-
     border-radius: 2px;
+    z-index: 1;
+    border: none;
+  }
+  &:hover{
+    color: $vitru;
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+}
+
+
+
+
+
+.btn-do-vitru {
+
+  @include vitruvian-button;
+
+  color: $vitru-light;
+  border: 1px solid $vitru-opa;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    background-color: $vitru-opa;
     -webkit-transition: .3s background-color, .3s border-color;
     -o-transition: .3s background-color, .3s border-color;
     transition: .3s background-color, .3s border-color;
-    z-index: 1;
-  }
-
-
-  &:hover {
-    color: $vitru;
-    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
   }
 
 }
@@ -311,46 +320,19 @@
 
 
 .btn-vitru-t {
-  position: relative;
-  display: inline-block;
-  padding: 10px 22px;
-  font-family: "Marcellus SC", serif;
-  text-transform: uppercase;
-  font-size: .9rem;
-  font-weight: 400;
-  line-height: 1.2;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  @include vitruvian-button;
+
   color: #6c757d;
   border: 1px solid $vitru-trans-bg;
-  border-radius: 2px;
   transition: .3s;
   &::before {
     transition: .3s;
-    content: "";
-    position: absolute;
-    display: block;
-    top: 2px;
-    border:none;
-    right: 2px;
-    bottom: 2px;
-    left: 2px;
     background-color: $vitru-trans-bg;
-    border-radius: 2px;
-    z-index: 1;
   }
-
 
   &:hover {
     transition: .3s;
-    color: $vitru;
-    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+
     &::before{
       transition: .3s;
       top: 4px;
@@ -361,5 +343,31 @@
       left: 4px;
     }
   }
+}
 
+
+.btn-vitru-t-light {
+  @include vitruvian-button;
+
+  color: $vitru;
+  border: 1px solid $vitru-opa;
+  transition: .3s;
+  &::before {
+    transition: .3s;
+    background-color: $vitru-trans-bg;
+  }
+
+  &:hover {
+    transition: .3s;
+
+    &::before{
+      transition: .3s;
+      top: 4px;
+      background: transparent;
+      border: 1px $vitru-trans-bg;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+    }
+  }
 }
