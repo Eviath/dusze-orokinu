@@ -277,6 +277,10 @@ input {
     -o-transition: .25s;
     transition: .25s;
 
+    svg {
+      font-size: 1.1em !important;
+    }
+
     &:hover {
       -webkit-transition: 1s;
       -o-transition: 1s;
