@@ -42,23 +42,31 @@ export class News extends React.Component{
 }
 
 document.addEventListener('turbolinks:load', () => {
-  ReactDOM.render(
-    <WarframeMissions/>,
-    document.getElementById('warframe-missions'),
-  );
+    if (document.getElementById('warframe-missions')) {
+        ReactDOM.render(
+            <WarframeMissions/>,
+            document.getElementById('warframe-missions'),
+        );
+    }
 });
 
 document.addEventListener('turbolinks:load', () => {
-    ReactDOM.render(
-        <Cetus/>,
-        document.getElementById('warframe-poe'),
-    );
+    if (document.getElementById('warframe-poe')) {
+        ReactDOM.render(
+            <Cetus/>,
+            document.getElementById('warframe-poe'),
+        );
+    }
 });
 
 
 document.addEventListener('turbolinks:load', () => {
+
+    if (document.getElementById('warframe-news')) {
     ReactDOM.render(
         <News/>,
         document.getElementById('warframe-news'),
     );
+    }
+
 });

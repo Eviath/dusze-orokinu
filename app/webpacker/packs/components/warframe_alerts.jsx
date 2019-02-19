@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import axios from "axios";
 
 const API = 'https://api.warframestat.us/pc/alerts';
 
@@ -16,22 +17,25 @@ export class Alerts extends Component {
         };
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        this.setState({ isLoading: true});
+        await this.getAlerts();
+        this.timer = setInterval(()=> this.getAlerts(),  10000);
+    }
 
-
-        this.setState({ isLoading: true });
-        fetch(API)
-
-
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .then(data => this.setState({ alerts: data, isLoading: false  }))
-            .catch(error => this.setState({ error, isLoading: false }));
+    async getAlerts(){
+        try {
+            const result = await axios.get(API);
+            this.setState({
+                alerts: result.data,
+                isLoading: false
+            });
+        } catch (error) {
+            this.setState({
+                error,
+                isLoading: false
+            });
+        }
     }
 
     render() {
