@@ -194,7 +194,6 @@
     z-index: 1;
   }
 
-
   &:hover {
     color: $vitru;
   }
@@ -248,10 +247,8 @@
 }
 
 
-// button vitru
-
-
-@mixin vitruvian-button {
+// Vitruvian shared style button
+%btn-vitruvian {
   position: relative;
   display: inline-block;
   padding: 10px 22px;
@@ -269,7 +266,8 @@
   -ms-user-select: none;
   user-select: none;
   border-radius: 2px;
-  &::before{
+
+  &::before {
     content: "";
     position: absolute;
     display: block;
@@ -281,19 +279,19 @@
     z-index: 1;
     border: none;
   }
-  &:hover{
+
+  &:hover {
     color: $vitru;
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
   }
 }
 
 
-
-
-
+//  Standard button vitruvian
 .btn-do-vitru {
 
-  @include vitruvian-button;
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
 
   color: $vitru-light;
   border: 1px solid $vitru-opa;
@@ -311,20 +309,16 @@
 }
 
 
-
-
-// vitruvian transparent
-
-
-// button vitruvian
-
-
+// Transparent vitruvian button
 .btn-vitru-t {
-  @include vitruvian-button;
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
 
   color: #6c757d;
   border: 1px solid $vitru-trans-bg;
   transition: .3s;
+
   &::before {
     transition: .3s;
     background-color: $vitru-trans-bg;
@@ -333,7 +327,7 @@
   &:hover {
     transition: .3s;
 
-    &::before{
+    &::before {
       transition: .3s;
       top: 4px;
       background: transparent;
@@ -345,13 +339,15 @@
   }
 }
 
-
+// Transparent light vitruvian button
 .btn-vitru-t-light {
-  @include vitruvian-button;
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
 
   color: $vitru;
   border: 1px solid $vitru-opa;
   transition: .3s;
+
   &::before {
     transition: .3s;
     background-color: $vitru-trans-bg;
@@ -360,7 +356,7 @@
   &:hover {
     transition: .3s;
 
-    &::before{
+    &::before {
       transition: .3s;
       top: 4px;
       background: transparent;
@@ -371,3 +367,6 @@
     }
   }
 }
+
+
+
