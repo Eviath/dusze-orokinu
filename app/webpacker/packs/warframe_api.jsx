@@ -9,9 +9,6 @@ import { Alerts } from "./components/warframe_alerts";
 import { Sortie } from "./components/warframe_sortie";
 import { VoidTrader } from "./components/warframe_baro";
 import { WarframeCetus } from "./components/warframe_cetus";
-import { WarframeItems } from "./components/warframe_items";
-
-
 
 export class WarframeMissions extends React.Component{
   render(){
@@ -45,15 +42,6 @@ export class News extends React.Component{
 }
 
 
-export class Items extends React.Component{
-    render(){
-        return(
-            <div className='warframe-items'>
-                <WarframeItems />
-            </div>
-        );
-    }
-}
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -70,15 +58,6 @@ document.addEventListener('turbolinks:load', () => {
         ReactDOM.render(
             <Cetus/>,
             document.getElementById('warframe-poe'),
-        );
-    }
-});
-
-document.addEventListener('turbolinks:load', () => {
-    if (document.getElementById('warframe-items')) {
-        ReactDOM.render(
-            <Items/>,
-            document.getElementById('warframe-items'),
         );
     }
 });
