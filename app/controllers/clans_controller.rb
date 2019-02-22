@@ -86,7 +86,7 @@ end
 
 
 def clan_params
-params.require(:clan).permit(:name, :about, :leader, :tier, :members, :picture, :discord, :website, :approval)
+params.require(:clan).permit(:name, :about, :leader, :tier, :members, :picture, :discord, :website, :approval, :recruitment_status)
 end
 
 def load_clan

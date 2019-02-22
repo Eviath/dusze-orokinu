@@ -7097,6 +7097,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+warframe-items@^1.217.0:
+  version "1.217.0"
+  resolved "https://registry.yarnpkg.com/warframe-items/-/warframe-items-1.217.0.tgz#2e7321c0465ab5d6a9c871208ae0347bdb7dd968"
+  integrity sha512-MV7dU8rXTK6KNs+7RCwxEuZ9FuRuj7ypviWNA8cEg3gtYhn8EYB65EDPbR2Wmfba0aUlssMt60lI6Rxf1riPqA==
+
 warframe-worldstate-data@^0.1.15, warframe-worldstate-data@^0.1.28:
   version "0.1.28"
   resolved "https://registry.yarnpkg.com/warframe-worldstate-data/-/warframe-worldstate-data-0.1.28.tgz#ad71e1a7e00a28a0d8489d41848ce27b80e60564"

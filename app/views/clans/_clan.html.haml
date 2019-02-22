@@ -32,8 +32,12 @@
             %h1 Aktualna liczba członków klanu:
             %p= clan.members
 
-
     .row.clan_show-contact
+      .recruitment-status.text-center.w-100
+        -if clan.recruitment_status
+          %h5 Rekrutacja otwarta
+        -else
+          %h5 Rekrutacja zamknięta
       .col-md-12.clan_show-contact-buttons
 
         - if !clan.discord.empty? 
@@ -43,6 +47,7 @@
           = link_to "Strona internetowa", clan.website, target: '_blank', class: "btn btn-do-bordered-square btn-clan"
 
         = link_to 'Napisz do lidera', new_message_path(to: clan.user), class: 'btn btn-do-bordered-square btn-clan'
+
 
 
     .row.clan_show-about
