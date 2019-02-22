@@ -47,6 +47,31 @@ function closeToast() {
 window.closeToast = closeToast;
 
 
+
+// Clan recruitment check status message under checkbox field
+$(document).ready(function() {
+
+    //  on page load
+    if ($('#recruitment-check').prop('checked')) {
+        $('#recruitment-check-status').html('Klan prowadzi rekrutację.').css('color', 'green'); //checked by default
+    }else {
+        $('#recruitment-check-status').html('Klan nie prowadzi obecnie rekrutacji.').css('color', 'red'); //not checked
+        }
+
+
+    // on change
+    $('#recruitment-check').change(function() {
+        if ($(this).prop('checked')) {
+            $('#recruitment-check-status').html('Klan prowadzi rekrutację.').css('color', 'green'); //checked
+        }
+        else {
+            $('#recruitment-check-status').html('Klan nie prowadzi obecnie rekrutacji.').css('color', 'red'); //not checked
+        }
+    });
+});
+
+
+
 // enable bootstrap tooltips
 $(document).on('turbolinks:load', function () {
     $('[data-toggle="tooltip"]').tooltip()

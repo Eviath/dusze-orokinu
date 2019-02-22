@@ -140,8 +140,14 @@
 
 }
 
+
 header.navbar {
   transition: .4s;
+
+  .brand-image{
+    width:2%;
+    margin-right: 15px;
+  }
 
 
   &:after {

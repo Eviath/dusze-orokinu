@@ -86,7 +86,7 @@ body {
     background-color: $darkt;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom: 2px solid $yell;
+    border-bottom: 2px solid $vitru;
 
     .clan-logo {
       max-width: 120px;
@@ -98,11 +98,21 @@ body {
   &-contact {
     text-align: center;
     background-color: $darkt;
-    border-bottom: 2px solid $yell;
+    border-bottom: 2px solid $vitru;
+
+    .recruitment-status {
+      padding: 10px 0px;
+      border-bottom:  2px solid $vitru;
+      h5 {
+        padding: 0;
+        margin: 0;
+        color: $vitru;
+      }
+    }
 
     .btn-clan {
       &:before {
-        color: $yell;
+        color: $vitru;
         margin: 0;
         border-bottom: none !important;
         border-top: none !important;
@@ -260,6 +270,13 @@ body {
       transition: .4s;
       transform: translateY(0px);
       opacity: 1;
+
+      .clan-recruitment-open{
+        color: #5cb85c;
+      }
+      .clan-recruitment-close{
+        color: rgba(255, 0, 0, 0.55);
+      }
     }
 
     &:before {

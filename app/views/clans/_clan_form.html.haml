@@ -37,6 +37,14 @@
           = f.label :members, "Aktualna liczba członków klanu"
           = f.text_field :members, :class => 'form-control'
 
+        .form-check.text-center.box_4
+          =f.label :recruitment_status, "Status rektrutacji"
+          %p Czy klan prowadzi aktualnie rekrutację nowych członków?
+          .input_wrapper
+            =f.check_box :recruitment_status, id: 'recruitment-check', class:"switch_4"
+          %p{id: 'recruitment-check-status'}
+
+
 
         .form_header-tag 
           %h2

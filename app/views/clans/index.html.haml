@@ -27,6 +27,13 @@
                   Liczba klanowiczy:
                   %span= clan.members
 
+                -if clan.recruitment_status
+                  .clan-recruitment-open
+                    Rekrutacja otwarta
+                -else
+                  .clan-recruitment-close
+                    Rekrutacja zamknięta
+
 
 
               .clan-content-buttons
