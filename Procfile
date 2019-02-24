@@ -1,1 +1,1 @@
-web: bin/start-nginx-solo
+web: bin/start-nginx-solo bundle exec unicorn -c config/unicorn.rb --nginx-config-template config/nginx.conf.erb
