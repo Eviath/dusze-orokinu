@@ -36,7 +36,7 @@ export class WarframeCetus extends Component {
         try {
             const result = await axios({
                 method: 'get',
-                url: API,
+                url: 'https://cors-anywhere.herokuapp.com/' + API,
                 headers: {'Origin': 'https://dusze-orokinu.pl'}
             });
             const ws = new WorldState(JSON.stringify(result.data));
