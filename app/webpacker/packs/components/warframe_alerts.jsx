@@ -33,8 +33,7 @@ export class Alerts extends Component {
         try {
             const result = await axios({
                 method: 'get',
-                url: 'https://secret-ocean-49799.herokuapp.com/' + API,
-                headers: {'Origin': 'https://dusze-orokinu.pl'}
+                url: 'https://secret-ocean-49799.herokuapp.com/' + API
             });
             const ws = new WorldState(JSON.stringify(result.data));
 

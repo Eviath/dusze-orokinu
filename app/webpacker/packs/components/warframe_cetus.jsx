@@ -36,8 +36,7 @@ export class WarframeCetus extends Component {
         try {
             const result = await axios({
                 method: 'get',
-                url: 'https://secret-ocean-49799.herokuapp.com/' + API,
-                headers: {'Origin': 'https://dusze-orokinu.pl'}
+                url: 'https://secret-ocean-49799.herokuapp.com/' + API
             });
             const ws = new WorldState(JSON.stringify(result.data));
 
@@ -65,14 +64,18 @@ export class WarframeCetus extends Component {
     setCetusPresentCycle(){
         if (this.state.cetusCycle.isDay) {
             this.setState({ cetusPresentCycle: 'Jest dzień.'});
-            const x = document.getElementById('eidolons-page');
-            x.classList.add("is-day");
-            x.classList.remove("is-night")
+            if (document.getElementById('eidolons-page')) {
+                const x = document.getElementById('eidolons-page');
+                x.classList.add("is-day");
+                x.classList.remove("is-night")
+            }
         } else {
             this.setState({ cetusPresentCycle: 'Jest noc.'});
-            const x = document.getElementById('eidolons-page');
-            x.classList.add("is-night");
-            x.classList.remove("is-day");
+            if (document.getElementById('eidolons-page')) {
+                const x = document.getElementById('eidolons-page');
+                x.classList.add("is-night");
+                x.classList.remove("is-day");
+            }
         }
     }
 
