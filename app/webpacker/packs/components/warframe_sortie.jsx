@@ -49,11 +49,13 @@ export class Sortie extends Component {
         try {
             const result = await axios(API, {
                 method: 'GET',
-                mode: 'cors',
+                mode: 'no-cors',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Content-Type': 'application/json',
-                }});
+                },
+                withCredentials: true,
+                credentials: 'same-origin',});
 
             const ws = new WorldState(JSON.stringify(result.data));
             this.setState({
