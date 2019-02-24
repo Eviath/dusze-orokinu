@@ -33,7 +33,8 @@ export class Alerts extends Component {
         try {
             const result = await axios({
                 method: 'get',
-                url: 'https://secret-ocean-49799.herokuapp.com/' + API
+                url: 'https://cors-anywhere.herokuapp.com/http://content.warframe.com/dynamic/worldState.php',
+                crossDomain: true
             });
             const ws = new WorldState(JSON.stringify(result.data));
 
