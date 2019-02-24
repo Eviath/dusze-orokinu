@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import axios from 'axios';
 
-axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+
 const API = 'https://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
@@ -34,7 +34,15 @@ export class WarframeCetus extends Component {
     async getCetusCycle() {
         // fetch api
         try {
-            const result = await axios.get(API);
+            const result = await axios(API, {
+                method: 'GET',
+                mode: 'no-cors',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                },
+                withCredentials: true,
+                credentials: 'same-origin',});
             const ws = new WorldState(JSON.stringify(result.data));
 
             //set state of all alerts
