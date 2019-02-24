@@ -4,7 +4,7 @@ import 'moment-timezone';
 import axios from 'axios';
 
 
-const API = 'https://content.warframe.com/dynamic/worldState.php';
+const API = 'http://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
 // WFCD API
@@ -36,7 +36,7 @@ export class WarframeCetus extends Component {
         try {
             const result = await axios({
                 method: 'get',
-                url: 'https://cors-anywhere.herokuapp.com/' + API,
+                url: 'https://secret-ocean-49799.herokuapp.com/' + API,
                 headers: {'Origin': 'https://dusze-orokinu.pl'}
             });
             const ws = new WorldState(JSON.stringify(result.data));
