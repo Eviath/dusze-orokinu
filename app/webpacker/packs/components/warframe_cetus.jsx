@@ -3,7 +3,12 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import axios from 'axios';
 
-const API = 'https://api.warframestat.us/pc/cetusCycle';
+
+const API = 'http://content.warframe.com/dynamic/worldState.php';
+const WorldState = require('warframe-worldstate-parser');
+
+// WFCD API
+// const API = 'https://api.warframestat.us/pc/sortie';
 
 export class WarframeCetus extends Component {
 
@@ -19,36 +24,53 @@ export class WarframeCetus extends Component {
     }
 
     async componentDidMount() {
-        this.setState({ isLoading: true});
+        this.setState({isLoading: true});
         await this.getCetusCycle();
-        this.timer = setInterval(()=> this.getCetusCycle(),  10000);
-        this.setCetusPresentCycle()
+        this.timer = setInterval(() => this.getCetusCycle(), 1000);
+        this.setCetusPresentCycle();
+        this.timer = setInterval(() => this.setCetusPresentCycle(), 1000);
     }
 
-    async getCetusCycle(){
+    async getCetusCycle() {
+        // fetch api
         try {
             const result = await axios.get(API);
+            const ws = new WorldState(JSON.stringify(result.data));
+
+            //set state of all alerts
             this.setState({
-                cetusCycle: result.data,
+                cetusCycle: ws.cetusCycle,
                 isLoading: false
             });
-            } catch (error) {
-                 this.setState({
-                 error,
-                 isLoading: false
-                 });
-            }
-    }
 
-    setCetusPresentCycle(){
-        {console.log(this.state.cetusCycle.isDay)}
-        if (this.state.cetusCycle.isDay) {
-            this.setState({ cetusPresentCycle: 'Jest dzień.'});
-        } else {
-            this.setState({ cetusPresentCycle: 'Jest noc.'});
+            // set state of ETA time of every alert, refresh every second
+            // this.setState({
+            //     voidTraderStartETA: ws.voidTrader.getStartString(),
+            //     voidTraderEndETA: ws.voidTrader.getEndString()
+            // })
+
+            // in case of failed fetch, show error
+        } catch (error) {
+            this.setState({
+                error,
+                isLoading: false
+            });
         }
     }
 
+    setCetusPresentCycle(){
+        if (this.state.cetusCycle.isDay) {
+            this.setState({ cetusPresentCycle: 'Jest dzień.'});
+            const x = document.getElementById('eidolons-page');
+            x.classList.add("is-day");
+            x.classList.remove("is-night")
+        } else {
+            this.setState({ cetusPresentCycle: 'Jest noc.'});
+            const x = document.getElementById('eidolons-page');
+            x.classList.add("is-night");
+            x.classList.remove("is-day");
+        }
+    }
 
 
 
@@ -68,8 +90,8 @@ export class WarframeCetus extends Component {
                 <h2>Plains of Eidolon</h2>
                 <div className={'cetusCycle-box row'}>
                     <div className={'cetusCycle-header mx-auto mt-5'}>
-                        {cetusPresentCycle}
-                        <p>Zmiana pory <Moment locale="pl" interval={1000} to={cetusCycle.expiry}/></p>
+                        <p>{cetusPresentCycle}</p>
+                       <p>Zmiana pory za: {cetusCycle.timeLeft}</p>
                         <p>(<Moment locale='pl' format='DD-MM-YY HH:mm' date={cetusCycle.expiry}/>)</p>
                     </div>
                 </div>

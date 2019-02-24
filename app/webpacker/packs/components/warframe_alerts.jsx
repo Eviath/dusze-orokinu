@@ -3,7 +3,11 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import axios from "axios";
 
-const API = 'https://api.warframestat.us/pc/alerts';
+const API = 'http://content.warframe.com/dynamic/worldState.php';
+const WorldState = require('warframe-worldstate-parser');
+
+// WFCD API
+// const API = 'https://api.warframestat.us/pc/sortie';
 
 export class Alerts extends Component {
 
@@ -14,22 +18,29 @@ export class Alerts extends Component {
             alerts: [],
             isLoading: false,
             error: null,
+
         };
     }
 
     async componentDidMount() {
         this.setState({ isLoading: true});
         await this.getAlerts();
-        this.timer = setInterval(()=> this.getAlerts(),  10000);
+        this.timer = setInterval(()=> this.getAlerts(),  1000);
     }
 
-    async getAlerts(){
+    async getAlerts() {
+        // fetch api
         try {
             const result = await axios.get(API);
+            const ws = new WorldState(JSON.stringify(result.data));
+
+            //set state of all alerts
             this.setState({
-                alerts: result.data,
+                alerts: ws.alerts,
                 isLoading: false
             });
+
+        // in case of failed fetch, show error
         } catch (error) {
             this.setState({
                 error,
@@ -39,7 +50,7 @@ export class Alerts extends Component {
     }
 
     render() {
-        const { alerts, isLoading, error } = this.state;
+        const { alerts, isLoading, error  } = this.state;
 
         if (error) {
             return <p>{error.message}</p>;
@@ -59,7 +70,7 @@ export class Alerts extends Component {
                             <p>{alert.mission.description}</p>
                             <p>{alert.mission.node}</p>
                             <p>{alert.mission.type}</p>
-                            <p>Wygasa <Moment locale="pl" interval={30000}  to={alert.expiry}/> </p>
+                            <p>{alert.getETAString() }</p>
                             <p>(<Moment locale='pl' format='DD-MM-YY HH:mm' date={alert.expiry}/>)</p>
                             <p>{alert.mission.faction}</p>
                         </div>
