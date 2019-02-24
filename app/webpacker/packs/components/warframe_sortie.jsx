@@ -5,7 +5,7 @@ import axios from "axios";
 import {faQuestionCircle} from '@fortawesome/free-regular-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-const API = 'https://content.warframe.com/dynamic/worldState.php';
+const API = 'http://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
 // WFCD API
@@ -47,7 +47,11 @@ export class Sortie extends Component {
     async getSortieStatus() {
         // fetch api
         try {
-            const result = await axios.get(API);
+            const result = await axios({
+                method: 'get',
+                url: 'https://cors-anywhere.herokuapp.com/http://content.warframe.com/dynamic/worldState.php',
+                crossDomain: true
+            });
             const ws = new WorldState(JSON.stringify(result.data));
             this.setState({
                 sortie: ws.sortie,

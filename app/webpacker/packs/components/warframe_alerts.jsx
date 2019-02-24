@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import axios from "axios";
 
-const API = 'https://content.warframe.com/dynamic/worldState.php';
+const API = 'http://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
 // WFCD API
@@ -31,7 +31,11 @@ export class Alerts extends Component {
     async getAlerts() {
         // fetch api
         try {
-            const result = await axios.get(API);
+            const result = await axios({
+                method: 'get',
+                url: 'https://cors-anywhere.herokuapp.com/http://content.warframe.com/dynamic/worldState.php',
+                crossDomain: true
+            });
             const ws = new WorldState(JSON.stringify(result.data));
 
             //set state of all alerts
