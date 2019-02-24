@@ -47,7 +47,7 @@ export class Sortie extends Component {
     async getSortieStatus() {
         // fetch api
         try {
-            const result = await axios.get(API);
+            const result = await axios.get('https://cors-anywhere.herokuapp.com/' + API);
             const ws = new WorldState(JSON.stringify(result.data));
             this.setState({
                 sortie: ws.sortie,
