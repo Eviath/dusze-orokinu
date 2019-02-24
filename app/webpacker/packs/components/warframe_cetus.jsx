@@ -4,7 +4,7 @@ import 'moment-timezone';
 import axios from 'axios';
 
 
-const API = 'http://content.warframe.com/dynamic/worldState.php';
+const API = 'https://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
 // WFCD API
