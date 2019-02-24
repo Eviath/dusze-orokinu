@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import axios from "axios";
-axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
 const API = 'https://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
@@ -32,7 +31,6 @@ export class Alerts extends Component {
     async getAlerts() {
         // fetch api
         try {
-
             const result = await axios.get(API);
             const ws = new WorldState(JSON.stringify(result.data));
 

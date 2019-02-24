@@ -4,7 +4,7 @@ import 'moment-timezone';
 import axios from "axios";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faQuestionCircle} from "@fortawesome/free-regular-svg-icons";
-axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+
 const API = 'https://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
