@@ -1,3 +1,84 @@
+// form check field
+
+
+
+/* Switch 4 Specific Style Start */
+
+.box_4{
+  background:transparent;
+}
+
+.input_wrapper{
+  position: relative;
+}
+
+.input_wrapper input[type="checkbox"]{
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background:#17161a;
+  border-radius: 2px;
+  position: relative;
+  outline: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  &:focus {
+    background: #17161a;
+  }
+}
+
+.input_wrapper input[type="checkbox"]:after{
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #dfeaec;
+  z-index: 2;
+  border-radius: 2px;
+  transition: all .35s;
+
+}
+
+
+.input_wrapper .is_checked{
+  width: 18px;
+  left: 18%;
+  -webkit-transform: translateX(190%) translateY(-30%) scale(0);
+  transform: translateX(190%) translateY(-30%) scale(0);
+}
+
+.input_wrapper .is_unchecked{
+  width: 15px;
+  right: 10%;
+  -webkit-transform: translateX(0) translateY(-30%) scale(1);
+  transform: translateX(0) translateY(-30%) scale(1);
+}
+
+/* Checked State */
+.input_wrapper input[type="checkbox"]:checked{
+  background: $vitru;
+}
+
+.input_wrapper input[type="checkbox"]:checked:after{
+  left: calc(100% - 16px);
+}
+
+.input_wrapper input[type="checkbox"]:checked + .is_checked{
+  -webkit-transform: translateX(0) translateY(-30%) scale(1);
+  transform: translateX(0) translateY(-30%) scale(1);
+}
+
+.input_wrapper input[type="checkbox"]:checked ~ .is_unchecked{
+  -webkit-transform: translateX(-190%) translateY(-30%) scale(0);
+  transform: translateX(-190%) translateY(-30%) scale(0);
+}
+
+
 // buttons
 
 .btn.btn-do-bordered.active {

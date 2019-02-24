@@ -41,6 +41,9 @@ export class News extends React.Component{
     }
 }
 
+
+
+
 document.addEventListener('turbolinks:load', () => {
     if (document.getElementById('warframe-missions')) {
         ReactDOM.render(
@@ -58,6 +61,7 @@ document.addEventListener('turbolinks:load', () => {
         );
     }
 });
+
 
 
 document.addEventListener('turbolinks:load', () => {
