@@ -34,7 +34,11 @@ export class WarframeCetus extends Component {
     async getCetusCycle() {
         // fetch api
         try {
-            const result = await axios.get('https://cors-anywhere.herokuapp.com/' + API);
+            const result = await axios({
+                method: 'get',
+                url: API,
+                headers: {'Origin': 'https://dusze-orokinu.pl'}
+            });
             const ws = new WorldState(JSON.stringify(result.data));
 
             //set state of all alerts
