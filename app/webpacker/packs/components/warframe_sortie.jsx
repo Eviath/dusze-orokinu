@@ -4,7 +4,7 @@ import 'moment-timezone';
 import axios from "axios";
 import {faQuestionCircle} from '@fortawesome/free-regular-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-
+axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 const API = 'https://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
@@ -47,16 +47,7 @@ export class Sortie extends Component {
     async getSortieStatus() {
         // fetch api
         try {
-            const result = await axios(API, {
-                method: 'GET',
-                mode: 'no-cors',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-                withCredentials: true,
-                credentials: 'same-origin',});
-
+            const result = await axios.get(API);
             const ws = new WorldState(JSON.stringify(result.data));
             this.setState({
                 sortie: ws.sortie,

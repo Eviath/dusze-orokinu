@@ -33,15 +33,7 @@ export class VoidTrader extends Component {
     async getVoidTrader() {
         // fetch api
         try {
-            const result = await axios(API, {
-                method: 'GET',
-                mode: 'no-cors',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-                withCredentials: true,
-                credentials: 'same-origin',});
+            const result = await axios.get(API);
             const ws = new WorldState(JSON.stringify(result.data));
 
             //set state of all alerts
