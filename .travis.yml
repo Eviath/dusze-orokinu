@@ -31,7 +31,6 @@ before_script:
 
 script:
   - bundle exec rails webpacker:compile
-  - bundle exec rails spec
 
 after_success:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
