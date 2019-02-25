@@ -75,7 +75,6 @@ end
 
 
 group :production do
-  gem 'rack-cors', :require => 'rack/cors'
   gem 'unicorn'
   gem 'fog'
   gem 'fog-aws'

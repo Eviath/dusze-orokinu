@@ -17,6 +17,17 @@ install:
   - node -v
   - npm i -g yarn
   - yarn
+addons:
+  postgresql: "9.6"
+
+before_script:
+  - bin/yarn
+  - bundle exec rake db:create db:test:prepare
+  - bin/rails db:migrate RAILS_ENV=test
+
 script:
-  - bundle exec rails webpacker:compile
-  - bundle exec rake
+  - yarn test
+  - bundle exec rspec spec
+
+after_success:
+  - bundle exec rake assets:precompile
