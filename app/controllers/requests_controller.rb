@@ -40,7 +40,7 @@ class RequestsController < ApplicationController
     areq = @request
     areq.update_attribute(:approval, false)
     RequestMailer.with(user: auser).declined_request.deliver_now
-    flash[:success] = "Podanie zostało odrzucone."
+    flash[:success] = "Podanie zostało odrzucone. Autor podania został o tym poinformowany wiadomością e-mail. Jeśli użytkownik miał rangę lidera, został jej pozbawiony."
     redirect_to requests_path
 
   end
@@ -55,7 +55,7 @@ class RequestsController < ApplicationController
     areq = @request
     areq.update_attribute(:approval, nil)
 
-    flash[:success] = "Podanie zostało przeniesione do oczekujących."
+    flash[:success] = "Podanie zostało przeniesione do oczekujących. Jeśli użytkownik miał rangę lidera, został jej pozbawiony."
     redirect_to requests_path
 
   end
@@ -76,7 +76,7 @@ class RequestsController < ApplicationController
   def create
     @request = current_user.build_request(request_params)
     if @request.save
-      flash[:success] = "Podanie do sojuszu zostało zapisane!"
+      flash[:success] = "Podanie do sojuszu zostało zapisane! Otrzymasz powiadomienie e-mail jak tylko administracja sojuszu je rozpatrzy."
       RequestMailer.with(request: @request).created_request.deliver_now
       redirect_to '/request'
     else

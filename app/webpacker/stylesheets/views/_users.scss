@@ -205,6 +205,11 @@ input[type="radio"], input[type="checkbox"] {
     background-color: #141417;
     border: 0;
   }
+
+  .user-avatar {
+    max-width: 120px;
+    max-height: 120px;
+  }
 }
 
 

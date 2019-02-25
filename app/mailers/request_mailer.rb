@@ -19,7 +19,8 @@ class RequestMailer < ApplicationMailer
     @admins = @gatheradmins.collect(&:email).join(',')
     @request = params[:request]
     @url  = 'https://dusze-orokinu.pl/requests'
-    mail(to: @admins, subject: 'Dusze Orokinu - Pojawiło się nowe podanie do sojuszu klanu ')
+    mail(to: @admins, subject: 'Dusze Orokinu - Pojawiło się nowe podanie do sojuszu klanu')
   end
+
 
 end

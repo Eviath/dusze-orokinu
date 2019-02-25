@@ -8,11 +8,12 @@
 
                 .clan_show_content-wrapper
 
-                    %h1 Stworzyłeś ogłoszenie swojego klanu!
-                    %h2 Ogłoszenie pojawi się na liście klanów, gdy zostanie zaakceptowane przez administrację sojuszu.
-                    .request-button
-                        %span= link_to "Lista klanów", clans_path, class: "btn btn-do-bordered"
-
+                    .jumbotron
+                        %h1.display-4 Stworzyłeś/aś ogłoszenie swojego klanu!
+                        %hr.my-4
+                        %p Ogłoszenie pojawi się na liście klanów, gdy zostanie zaakceptowane przez administrację sojuszu.
+                        .request-button
+                            %span= link_to "Lista klanów", clans_path, class: "btn btn-do-vitru"
 
                 .request
                     = render @clan
@@ -22,11 +23,13 @@
 
                 .clan_show_content-wrapper
 
-                    %h1 Twoje podanie do sojuszu zostało przyjęte!
-                    %h1 Nie stworzyłeś jeszcze ogłoszenia klanu!
-                    %h2 Stwórz ogłoszenie
-                    .request-button
-                        %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-bordered", data: { turbolinks: false }
+                    .jumbotron
+                        %h1.display-4 #{'Witaj ' + current_user.name + '!'}
+                        %p.lead Twoje podanie do sojuszu zostało przyjęte!
+                        %hr.my-4
+                        %p Nie stworzyłeś/aś jeszcze ogłoszenia klanu, możesz to zrobić teraz, po kliknięciu w przycisk poniżej.
+                        .request-button
+                            %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-vitru ", data: { turbolinks: false }
 
 
         - else
@@ -34,26 +37,32 @@
             - if @user.request
 
                 .clan_show_content-wrapper
-                    %h1 Wygląda na to, że nie jesteś liderem! Twoje podanie do sojuszu nie zostało jeszcze rozpatrzone, lub zostało odrzucone.
-                    %h2 Zobacz swoje zgłoszenie do sojuszu.
-                    .request-button
-                        %span= link_to "Sprawdź podanie do sojuszu", '/request', class: "btn btn-do-bordered"
-                    </div>
+                    .jumbotron
+                        %h1.display-4 #{'Witaj ' + current_user.name + '!'}
+                        %p.lead Stan Twojego podania do sojuszu.
+                        %hr.my-4
+                        %p Wygląda na to, że Twoje podanie nie zostało jeszcze rozpatrzone, lub zostało odrzucone! O decyzji zostaniesz powiadomiony/a na adres e-mail podany przy rejestracji.
+                        .request-button
+                            %span= link_to "Sprawdź podanie do sojuszu", '/request', class: "btn btn-do-vitru"
 
 
             - else
 
                 .clan_show_content-wrapper
 
-                    %h1 Nie złożyłeś jeszcze podania do sojuszu! Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu.
-                    %h2 Przejdź do zakładki sojusz.
-                    .request-button
-                        %span= link_to "Podanie do sojuszu", '/request', class: "btn btn-do-bordered"
-
+                    .jumbotron
+                        %h1.display-4 Sojusz
+                        %p.lead Dołącz do sojuszu.
+                        %hr.my-4
+                        %p Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu. Formularz znajdziesz klikając przycisk poniżej.
+                        .request-button
+                            %span= link_to "Podanie do sojuszu", '/request', class: "btn btn-do-vitru"
 
                 .clan_show_content-wrapper
-
-                    %h1 Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
-                    %h2 Znajdź klan dla siebie!
-                    .request-button
-                        %span= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-bordered"
+                    .jumbotron
+                        %h1.display-4 Klan
+                        %p.lead Znajdź klan dla siebie!
+                        %hr.my-4
+                        %p Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
+                        .request-button
+                            %span= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-vitru"
