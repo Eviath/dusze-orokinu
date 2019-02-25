@@ -1,0 +1,40 @@
+%html
+    %head
+        %meta{content:'text/html', charset:'UTF-8', 'http-equiv':'Content-Type'}
+        :css
+
+        h1 {font-size: 2em; text-transform: uppercase; padding: 15px}
+        p {padding: 15px}
+
+        .col { width:80%; margin: 0 auto;}
+
+
+    %body
+        .col
+            %h1 #{"Witaj administratorze sojuszu Dusze Orokinu!"}
+
+
+            %p Pojawiło się nowe ogłoszenie klanu do rozpatrzenia.
+
+            %p
+                Nick lidera:
+                #{@clan.leader}
+            %p
+                Nazwa klanu:
+                #{@request.name}
+            %p
+                Liczba członków klanu:
+                #{@request.members}
+            %p
+                Tier klanu:
+                #{@request.tier}
+            %p
+                Opis klanu:
+                #{@request.about}
+
+
+            %p
+                Możesz sprawdzić ogłoszenia klanów klikając w ten przycisk:
+                =link_to @url, @url
+
+

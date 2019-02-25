@@ -49,10 +49,12 @@ end
     @clan = @user.clan
   end
 
+
   def create
     @clan = current_user.build_clan(clan_params)
   if @clan.save
-    flash[:success] = "Ogłoszenie klanu zostało zapisane!"
+    flash[:success] = "Ogłoszenie klanu zostało zapisane! Stworzone po raz pierwszy, musi zostać rozpatrzone przez administrację sojuszu."
+    # RequestMailer.with(clan: @clan).new_clan.deliver_now
     redirect_to pclan_path
   else
     render 'clans/new'

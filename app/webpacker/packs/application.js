@@ -144,6 +144,7 @@ $(document).on('turbolinks:load', function () {
 
 
 
+
 //moving background
 var lFollowX = 0,
     lFollowY = 0,
