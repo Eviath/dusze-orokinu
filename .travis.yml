@@ -1,0 +1,42 @@
+sudo: required
+language: ruby
+rvm:
+  - 2.6.1
+cache:
+  bundler: true
+  directories:
+    - node_modules
+  yarn: true
+
+addons:
+  postgresql: "9.6"
+
+before_install:
+  - "echo 'gem: --no-document' > ~/.gemrc"
+  - "echo '--colour' > ~/.rspec"
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - gem update --system
+  - gem install bundler
+
+install:
+  - bundle install
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn
+
+before_script:
+  - bundle exec rake db:create db:migrate RAILS_ENV=test
+
+script:
+  - bundle exec rails webpacker:compile
+
+after_success:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
