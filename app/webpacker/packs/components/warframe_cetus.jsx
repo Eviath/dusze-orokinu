@@ -4,7 +4,7 @@ import 'moment-timezone';
 import axios from 'axios';
 
 
-const API = 'https://content.warframe.com/dynamic/worldState.php';
+const API = 'http://content.warframe.com/dynamic/worldState.php';
 const WorldState = require('warframe-worldstate-parser');
 
 // WFCD API
@@ -34,7 +34,11 @@ export class WarframeCetus extends Component {
     async getCetusCycle() {
         // fetch api
         try {
-            const result = await axios.get(API);
+            const result = await axios({
+                method: 'get',
+                url: 'https://cors-anywhere.herokuapp.com/http://content.warframe.com/dynamic/worldState.php',
+                crossDomain: true
+            });
             const ws = new WorldState(JSON.stringify(result.data));
 
             //set state of all alerts
@@ -61,14 +65,18 @@ export class WarframeCetus extends Component {
     setCetusPresentCycle(){
         if (this.state.cetusCycle.isDay) {
             this.setState({ cetusPresentCycle: 'Jest dzień.'});
-            const x = document.getElementById('eidolons-page');
-            x.classList.add("is-day");
-            x.classList.remove("is-night")
+            if (document.getElementById('eidolons-page')) {
+                const x = document.getElementById('eidolons-page');
+                x.classList.add("is-day");
+                x.classList.remove("is-night")
+            }
         } else {
             this.setState({ cetusPresentCycle: 'Jest noc.'});
-            const x = document.getElementById('eidolons-page');
-            x.classList.add("is-night");
-            x.classList.remove("is-day");
+            if (document.getElementById('eidolons-page')) {
+                const x = document.getElementById('eidolons-page');
+                x.classList.add("is-night");
+                x.classList.remove("is-day");
+            }
         }
     }
 
