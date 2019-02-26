@@ -12,6 +12,7 @@
                 = render @admins
 
 
+
         .col-md-6
           .users-container
             .justify-content-md-center
@@ -21,8 +22,15 @@
 
               = will_paginate(@liderzy, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna')
 
+      -if @moderators.any?
+        .row
+          .col-md-12
+            .users-container
+              .justify-content-md-center
 
-
+                %ul.users
+                  %h1 Moderatorzy
+                  = render @moderators
 
       .row
         .col-md-12
@@ -30,6 +38,7 @@
             .justify-content-md-center
 
               %ul.users
+                %h1 Użytkownicy
                 = render @users
 
               = will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center', :previous_label => 'Poprzednia', :next_label => 'Następna')

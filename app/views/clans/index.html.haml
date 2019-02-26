@@ -40,11 +40,11 @@
 
                 %p
                   = link_to truncate('Zobacz'), clan, class: "btn btn-do-vitru"
-                  - if current_user && can?(:destroy, @clan)
+                  - if current_user && can?(:destroy, clan)
                     |
                     = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-vitru", data: { turbolinks: false }
                     |
-                    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru"
+                    = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru"
 
 
     - else
@@ -85,9 +85,9 @@
                     .clan-content-buttons
                       %p
                         = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small"
-                        - if can? :destroy, @clan
+                        - if can? :destroy, clan
                           |
-                          = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
+                          = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
                           = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small", data: { turbolinks: false }
 
 
@@ -95,3 +95,46 @@
           .row.no-clans-pending
             .col-md-4.mx-auto.text-center
               %h2 Brak klanów oczekujących na akceptację
+
+
+        - if @clansdeclined.any?
+          .clan-approval-pending
+            .row
+              .col-md-4.mx-auto.text-center
+                %h2 Klany odrzucone
+
+            .row
+              - @clansdeclined.each do |clan|
+                .col-md-4.clan-col
+                  .clan-content
+                    .clan-content-image
+                      = image_tag clan.picture if clan.picture.attached?
+
+                    .clan-content-text
+                      %h2
+                        Nazwa klanu:
+                        %span= clan.name
+
+                      %h2
+                        Nick lidera:
+                        %span= clan.leader
+
+                      %h2
+                        Tier klanu:
+                        %span= clan.tier
+
+
+
+                    .clan-content-buttons
+                      %p
+                        = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small"
+                        - if can? :destroy, clan
+                          |
+                          = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
+                          = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small", data: { turbolinks: false }
+
+
+        -else
+          .row.no-clans-pending
+            .col-md-4.mx-auto.text-center
+              %h2 Brak odrzuconych klanów.

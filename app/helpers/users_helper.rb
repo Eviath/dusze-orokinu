@@ -11,6 +11,9 @@ module UsersHelper
                       content_tag :span, "Lider klanu #{check_if_clan_present}", :class => "link-vitruvian-light"
                     end
 
+    # moderator przycisk
+    moderator_button = content_tag(:button, content_tag(:span, "Moderator"), class: "btn btn-do-profile disabled")
+
     # administrator przycisk
     admin_button = content_tag(:button, content_tag(:span, "Administrator"), class: "btn btn-do-profile disabled")
 
@@ -25,10 +28,19 @@ module UsersHelper
         concat " "
         concat lider_button
       end
+    elsif user.has_role?(:moderator) && user.has_role?(:lider)
+      content_tag :div do
+
+        concat moderator_button
+        concat " "
+        concat lider_button
+      end
 
     elsif user.has_role?(:admin)
-      content_tag(:button, content_tag(:span, "Administrator"), class: "btn btn-do-profile disabled")
+      admin_button
 
+    elsif user.has_role?(:moderator)
+      moderator_button
 
     elsif user.has_role?(:lider)
       lider_button
@@ -46,6 +58,8 @@ module UsersHelper
 
   if user.has_role?(:admin)
     "Administrator"
+  elsif user.has_role?(:moderator)
+    "Moderator"
   elsif user.has_role?(:lider)
     "Lider klanu"
   else

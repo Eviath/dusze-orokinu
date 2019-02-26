@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
 
     before_action :authenticate_user!, except: [:show]
-
+    load_and_authorize_resource :except => [:index, :show]
 
     def index
-      @users = User.without_role(:admin).without_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
+      @users = User.without_role(:admin).without_role(:lider).without_role(:moderator).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
       @admins = User.with_role(:admin)
       @liderzy = User.with_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
+      @moderators = User.with_role(:moderator)
     end
 
     def show
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
         # new way
         user.add_role :lider
         flash[:success] = "Użytkownik otrzymał rangę Lidera klanu."
-        redirect_to request.referrer
+        redirect_to request.referrer || requests_path
     end
 
     def decline
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
         user.remove_role :lider
 
         flash[:success] = "Użytkownik został pozbawiony rangi Lidera klanu."
-        redirect_to request.referrer
+        redirect_to request.referrer || requests_path
     end
 
   private

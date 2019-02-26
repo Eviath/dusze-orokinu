@@ -6,20 +6,22 @@
         - @news.errors.full_messages.each do |message|
           %li= message
 
+  .col-md-6.mx-auto
+    .field.text-center
+      = f.label :title, 'Tytuł aktualności'
+      = f.text_field :title, class:'form-control', placeholder: 'Tytuł aktualności'
+  .col-md-6.mx-auto.mt-3
+    .field.text-center
+      = f.label :thumbnail, 'Tytułowy obraz'
+      = f.file_field :thumbnail, direct_upload: true, class:'form-control'
 
-  .field
-    = f.label :title, 'Tytuł'
-    = f.text_field :title, class:'form-control'
-  .field
-    = f.label :content, "Nowy news"
+  .field.mt-5
+    = f.label :content, "Opis aktualności"
     = f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120, id: 'uniq-news ', placeholder: "News"
 
 
-  .field
-    = f.label :thumbnail, 'Tytułowy obraz'
-    = f.file_field :thumbnail, direct_upload: true, class:'form-control'
-  .actions
-    = f.submit 'Zapisz', class: 'btn btn-do'
+  .actions.text-center.mt-5
+    = f.submit 'Zapisz', class: 'btn btn-do-vitru'
 
 
 

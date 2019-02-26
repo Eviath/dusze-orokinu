@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
   helper_method :mailbox
 
-
   private
 
   def mailbox
@@ -21,6 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
 
+
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'
     redirect_back_or root_path
@@ -31,12 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    respond_to do |format|
-      format.json { head :forbidden }
-      format.html { redirect_to root_url, :alert => exception.message }
-    end
+    redirect_to main_app.root_path, alert: exception.message
   end
-
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])

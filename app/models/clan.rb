@@ -1,8 +1,9 @@
 class Clan < ApplicationRecord
      CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
      scope :approved, -> { where(:approval => true) }
+     scope :pending, -> { where(:approval => nil) }
+     scope :declined, -> { where(:approval => false) }
      has_one_attached :picture
-     scope :pending, -> { where(:approval => false) }
      belongs_to :user, :foreign_key => "user_id"
     scope :newest, -> { order(created_at: :desc) }
    #   validations
