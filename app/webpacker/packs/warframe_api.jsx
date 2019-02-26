@@ -13,9 +13,9 @@ import { WarframeCetus } from "./components/warframe_cetus";
 export class WarframeMissions extends React.Component{
   render(){
     return(
-        <div className='warframe-missions'>
+        <div className='warframe-missions row'>
           <Sortie />
-          <Alerts />
+          <Alerts/>
         </div>
   );
   }

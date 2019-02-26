@@ -1,0 +1,32 @@
+
+%html
+  %head
+    %meta{content:'text/html', charset:'UTF-8', 'http-equiv':'Content-Type'}
+    :css
+
+      h1 {font-size: 2em; text-transform: uppercase; padding: 15px}
+      p {padding: 15px}
+
+      .col { width:50%; margin: 0 auto;}
+
+
+  %body
+    .col
+      %h1 #{"Witaj!"}
+
+
+      %p Pojawiło się nowe zgłoszenie do sojuszu.
+
+      %p #{@request.nickname}
+      %p #{@request.lider_nickname}
+      %p #{@request.clan_name}
+      %p #{@request.clan_members}
+      %p #{@request.clan_tier}
+      %p #{@request.clan_about}
+
+
+      %p
+        Możesz sprawdzić podania do sojuszu pod tym adresem:
+        =link_to @url, @url
+
+

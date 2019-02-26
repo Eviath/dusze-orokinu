@@ -17,6 +17,10 @@
 @import 'modules/variables';
 @import 'modules/buttons';
 
+//mixins
+
+@import "modules/mixins";
+
 //  pages
 @import '/views/users';
 @import '/views/alliance';

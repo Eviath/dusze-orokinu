@@ -12,6 +12,12 @@ class RequestMailerPreview < ActionMailer::Preview
     RequestMailer.with(user:user).accepted_request
   end
 
+  def created_request
+    users = User.with_role(:admin)
+    usersEmail = users.collect(&:email).join(',')
+    RequestMailer.with(usersEmail:usersEmail).accepted_request
+  end
+
 
 
 end

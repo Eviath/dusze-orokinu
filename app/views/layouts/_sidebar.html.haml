@@ -53,8 +53,9 @@
 
               .sidebar-submenu
                 %ul
-                  %li
-                    = active_link_to "Podanie do sojuszu", '/request', class:  "nav-link"
+                  -if !current_user.request
+                    %li
+                      = active_link_to "Podanie do sojuszu", '/request', class:  "nav-link"
                   %li
                     = active_link_to "Użytkownicy",users_path, class:  "nav-link"
 

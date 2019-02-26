@@ -46,7 +46,7 @@ body {
   /* The image used */
   background-image: url('../images/vitru-flowers.png');
   height: 100%;
-
+  background-color: $darkbg;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -209,6 +209,10 @@ body {
 
 .request_regulamin {
   padding-bottom: 50px;
+
+  .jumbotron {
+    background: $vitru-trans-bg;
+  }
 
   h1 {
 

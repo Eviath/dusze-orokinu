@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.com/Eviath/dusze-orokinu.svg?token=zyxZxqWQUqpV3Z3nzsP8&branch=master)](https://travis-ci.com/Eviath/dusze-orokinu)
 
 # Dusze Orokinu - "Warframe" Gaming Community
 

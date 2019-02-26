@@ -131,8 +131,8 @@ export class Sortie extends Component {
         }
 
         return (
-            <div className={'sortie-container'}>
-                <h2>Sortie</h2>
+            <div className={'sortie-container col-lg-6'}>
+                <h2 className={'sortie-header'}>Sortie</h2>
 
                 <div className={'sortie-box row'}>
                     <div className={'sortie-header mx-auto mt-5 pb-5'}>
