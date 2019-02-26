@@ -150,6 +150,7 @@ $lg-width: 1200px;
         transform: translateY(10px);
 
         .featured-body {
+          border-radius: 5px;
           -webkit-box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
           -moz-box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
           box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
@@ -352,32 +353,38 @@ $lg-width: 1200px;
  */
 @-webkit-keyframes kenburns-top {
   0% {
-    -webkit-transform: scale(1) translateY(0);
-    transform: scale(1) translateY(0);
-    -webkit-transform-origin: 50% 16%;
-    transform-origin: 50% 16%;
+    -webkit-transform: scale(1) ;
+    transform: scale(1) ;
   }
   100% {
-    -webkit-transform: scale(1.25) translateY(-15px);
-    transform: scale(1.25) translateY(-15px);
-    -webkit-transform-origin: top;
-    transform-origin: top;
+    -webkit-transform: scale(1.25) ;
+    transform: scale(1.25);
   }
 }
 
 @keyframes kenburns-top {
   0% {
-    -webkit-transform: scale(1) translateY(0);
-    transform: scale(1) translateY(0);
-    -webkit-transform-origin: 50% 16%;
-    transform-origin: 50% 16%;
+    -webkit-transform: scale(1) ;
+    transform: scale(1) ;
+
   }
   100% {
-    -webkit-transform: scale(1.25) translateY(-15px);
-    transform: scale(1.25) translateY(-15px);
-    -webkit-transform-origin: top;
-    transform-origin: top;
+    -webkit-transform: scale(1.25) ;
+    transform: scale(1.25) ;
   }
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg) ; }
+  to { -moz-transform: rotate(360deg) ; }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg);  }
+  to { -webkit-transform: rotate(360deg) ; }
+}
+@keyframes spin {
+  from {transform:rotate(0deg) ;}
+  to {transform:rotate(360deg) ;}
 }
 
 
@@ -389,9 +396,21 @@ $lg-width: 1200px;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   opacity: 0.8;
   background-image: url('../images/vitru-bg.jpg');
+
+  &::after{
+    -webkit-animation: spin 10s infinite alternate-reverse ;
+    animation: spin 30s infinite alternate-reverse;
+    position: absolute;
+    background-position: center;
+    width:100%;
+    height: 100%;
+    content:'';
+    background-image: url('../images/vitru-circle-opa.png');
+
+  }
 
 }
 
@@ -597,6 +616,56 @@ div.header-body {
   &-bright {
     background-color: rgb(8, 8, 8);
   }
+
+
+}
+
+
+
+// Informacje
+.informacje-container {
+
+  .jumbotron {
+    width:80%;
+    margin: 0 auto;
+    background: $vitru-trans-bg;
+    @include container-shadow;
+
+  }
+
+}
+
+.jumbotron-content {
+  width:100%;
+  @include container-shadow;
+  background: $gradient;
+  color: $white;
+  hr {
+    border-color: rgba(204, 204, 204, 0.41);
+  }
+  i {
+    font-size: 2em;
+  }
+  h1{
+    font-size: 2em;
+  }
+  // container with contact
+  .contact {
+    text-align: center;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .credits {
+    span{
+      color: $vitru;
+    font-weight: 700;
+    }
+  }
+
 
 
 }
