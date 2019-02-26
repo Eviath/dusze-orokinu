@@ -71,6 +71,7 @@ header {
 }
 
 
+
 // slide top alliance index on main header animation
 .slide-in-top {
   -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -429,31 +430,13 @@ form input class
 
 //  custom bootstrap modal
 
-
-.modal {
-  top: 100px;
+//swall modal confirm
+.swal2-confirm {
+  border-left-color: $vitru-dark;
+  border-right-color: $vitru-dark;
+  background-color: $vitru !important;
 }
 
-.modal-content {
-
-  background-color: $darkbg;
-  color: $white;
-
-  .btn.cancel {
-    border: 1px solid $vitru;
-    color: $vitru;
-  }
-
-  .btn.commit {
-    border: 1px solid $vitru-dark;
-    color: $vitru-light;
-    background: transparent;
-  }
-
-  button.close {
-    filter: invert(100%);
-  }
-}
 
 
 /*------scroll bar---------------------*/

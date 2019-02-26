@@ -1,12 +1,12 @@
 
 Rails.application.routes.draw do
 
+
+  devise_for :users, controllers: { confirmations: 'confirmations' }
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get 'messages/index'
   get 'comments/index'
   get 'comments/new'
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: { confirmations: 'confirmations' }
-  get 'messages/index'
-
   get 'conversations/index'
 
 

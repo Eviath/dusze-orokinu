@@ -1,20 +1,25 @@
 .comment
   .list-group
-    .list-group-item.list-group-item-action.flex-column.align-items-start.w-100{id:"comment-#{ comment.id}"}
-      .d-flex.w-100.justify-content-between
-        %h5.mb-1=link_to(comment.user.name, comment.user)
-        %small=l comment.created_at, format: :long
+    .list-group-item.list-group-item-action.flex-column.align-items-start.w-100{id:"comment-#{comment.id}"}
+      .media
+        =image_tag user_avatar(comment.user, 40), class: 'rounded-circle user_comment_image'
+        .media-body
+          .d-flex.w-100.justify-content-between
+            %h5.mb-1=link_to(comment.user.name, comment.user)
+            %small=l comment.created_at, format: :long
 
-      %p.mb-1= simple_format comment.content
+          %p.mb-1= simple_format comment.content
 
-      .nested-comment
-        = nested_comments comment.children
-        -if user_signed_in?
-          .actions
-            %small
-              =link_to "Odpowiedz", new_news_comment_path(@commentable, comment, parent_id: comment.id, js: true), remote: true
-            - if can?(:destroy, comment)
+
+          .nested-comment
+            = nested_comments comment.children
+          .answer{id:"comment-answer-#{comment.id}"}
+          -if user_signed_in?
+            .actions
               %small
-                |
-                = link_to 'Usuń komentarz', news_comment_path(@news, comment), method: :delete,data: { confirm: 'Are you sure?' }
+                =link_to "Odpowiedz", new_news_comment_path(@commentable, comment, parent_id: comment.id, js: true), remote: true
+              - if can?(:destroy, comment)
+                %small
+                  |
+                  = link_to 'Usuń komentarz', news_comment_path(@news, comment), method: :delete, data: { 'confirm-swal': 'Jesteś pewny?'}
 

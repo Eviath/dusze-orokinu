@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def new
     @commentable = News.find(params[:news_id])
