@@ -65,18 +65,16 @@ export class Alerts extends Component {
         }
 
         return (
-            <div className={'alerts-container'}>
-                <h2>Alarmy</h2>
+            <div className={'alerts-container col-lg-6'}>
+                <h2 className={'alerts-header'}>Alerts</h2>
             <div className={'alerts-list row'}>
                 {alerts.map(alert =>
-                    <div className={'list-item col-md-3'} key={alert.id}>
+                    <div className={'list-item col-md-6'} key={alert.id}>
                         <div className={'item-body'}>
                             <p>{alert.mission.description}</p>
-                            <p>{alert.mission.node}</p>
-                            <p>{alert.mission.type}</p>
-                            <p>{alert.getETAString() }</p>
-                            <p>(<Moment locale='pl' format='DD-MM-YY HH:mm' date={alert.expiry}/>)</p>
-                            <p>{alert.mission.faction}</p>
+                            <p>{alert.mission.node} - {alert.mission.faction} {alert.mission.type}</p>
+                            <p className={'alert-timer'}>{alert.getETAString() }</p>
+                            <p className={'alert-timer'}> <Moment locale='pl' format='DD-MM-YY HH:mm' date={alert.expiry}/> </p>
                         </div>
                         <div className={'item-footer'}>
                             {/* reward items */}

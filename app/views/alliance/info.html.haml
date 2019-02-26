@@ -2,8 +2,58 @@
 
 .page-wrapper
   .page-header
+    .informacje-container
+      .jumbotron
+        %h1.display-4 Witaj, #{user_name}!
+        %p.lead Znajdziesz tu kilka informacji, które mogą Cię zainteresować!
+        %hr.my-4
+        %p Dowiesz się z tej części strony, kto przyczynił się do powstania tej strony, oraz jak możesz samemu przyczynić się do sprawienia, by była jeszcze lepsza.
 
-    %h1 Informacje
+
+  .jumbotron.jumbotron-fluid.jumbotron-content
+    .container
+      %h1.display-4 Wspieraj nasz rozwój
+      %p.lead Strona jest ciągle rozwijana i ulepszana, staramy się dostarczać jak najlepsze doświadczenie, ale błędy są nie do uniknięcia. Możesz zgłosić napotkane błędy, lub zaproponować nowe rozwiązania.
+      %hr.my-4
+      %p
+        Jeśli natknąłeś się na jakiś błąd, będziemy wdzięczni jeśli zgłosisz go w jeden z
+        niżej wymienionych sposobów, pomoże nam to jak najszybciej zindentyfikować przyczyny i naprawić problem.
+        Jesteśmy również otwarci na nowe pomysły i rozwiązania!
+
+      .row
+        .col-md-6.mt-5
+          .contact
+            =link_to @api_invite, target: '_blank' do
+              %i.fab.fa-discord
+            %p Discord
+            =link_to @api_invite, @api_invite
+
+
+        .col-md-6.mt-5
+          .contact
+            =mail_to 'duszkiwarframe@gmail.com' do
+              %i.fas.fa-envelope-square
+            %p Poczta
+            =mail_to 'duszkiwarframe@gmail.com'
+
+  .jumbotron.jumbotron-fluid.jumbotron-content
+    .container
+      %h1.display-4 Specjalne podziękowania
+      %p.lead Dziękujemy wszystkim osobom, które nadały sens i kierunek naszej stronie internetowej i sojuszowi.
+      %hr.my-4
+      .credits
+        %p
+          %span Ksarda
+          #{'- Twórczyni logo sojuszu "Dusze Orokinu".'}
+        %p
+          %span Nekoineshi
+          #{'- Pomysłodawca, pomoc merytoryczna.'}
+        %p
+          %span Digital Extremes
+          #{'- Producent gry "Warframe". - Za wspaniałą grę, która umożliwiła nam stworzenie tylu wspomnień i przyjaźni.'}
+
+
+
 
 = render "layouts/footbar"
 
