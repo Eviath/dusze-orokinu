@@ -250,6 +250,14 @@ input {
 
 .share-buttons {
 
+  @include sm-d {
+    display: none;
+  }
+
+  @include  md-d {
+    display: none;
+  }
+
   ul {
     list-style-type: none;
     padding-left: 15px;

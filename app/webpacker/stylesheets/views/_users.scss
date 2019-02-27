@@ -117,6 +117,18 @@ $gray-medium-light: #eaeaea;
 }
 
 
+.field {
+
+  @include md-d {
+    padding: 20px 0;
+    input[type="checkbox"] {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+}
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -180,9 +192,25 @@ $gray-medium-light: #eaeaea;
 .form-container {
   padding: 50px 0px 0px 0px;
 
+  @include sm-d {
+    label {
+      font-size: 2em;
+    }
+  }
+  @include md-d {
+    label {
+      font-size: 2em;
+    }
+  }
+
   .user-actions {
     padding-bottom: 50px;
     text-align: center;
+    @include md-d {
+      a {
+        font-size: 2em;
+      }
+    }
   }
 }
 
@@ -232,11 +260,28 @@ input[type="radio"], input[type="checkbox"] {
 .login-page-cover {
   background: url('../images/operator-vit.png');
   background-position: left;
+
+  @include sm-d {
+    display: none;
+  }
+  @include md-d {
+    display: none;
+  }
 }
 
 .login-form-cover {
 
   display: flex;
+  @include sm-d {
+    width:100%;
+    max-width: 100%;
+    flex: 100%;
+  }
+  @include md-d {
+    width:100%;
+    max-width: 100%;
+    flex: 100%;
+  }
 }
 
 
@@ -287,9 +332,22 @@ input[type="radio"], input[type="checkbox"] {
   //container holding form in users/sing_in
   .form-container {
 
+    @include md-d {
+      .form-group {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+
+
     .actions {
       // space between button and remember-me feature
       padding-top: 30px;
+      @include md-d {
+        .btn{
+          font-size:2em;
+        }
+      }
     }
 
     .input-group {
@@ -297,6 +355,11 @@ input[type="radio"], input[type="checkbox"] {
       flex-direction: column;
       // padding between input groups
       padding: 25px;
+      @include md-d {
+        em {
+          font-size: 2em;
+        }
+      }
     }
 
 
@@ -306,6 +369,9 @@ input[type="radio"], input[type="checkbox"] {
 
       img {
         width: 30%;
+        @include md-d {
+          width: 50%;
+        }
       }
     }
 
@@ -317,6 +383,12 @@ input[type="radio"], input[type="checkbox"] {
       transition: .2s;
       width: 100%;
       background-color: $vitru-dark;
+
+      @include md-d {
+        width: 100%;
+        height: 100px;
+        font-size: 2em;
+      }
 
       &:focus {
         border-bottom: 5px solid $vitru;
@@ -444,6 +516,11 @@ img.user_index_image {
 
 .shared-links {
   padding-top: 50px;
+  @include md-d {
+    a {
+      font-size: 1.5em;
+    }
+  }
 }
 
 
