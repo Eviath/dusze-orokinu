@@ -15,6 +15,7 @@ default:
     - charmap
     - hr
     - anchor
+    - pageembed
     - toc
     - insertdatetime
     - advlist
@@ -37,6 +38,7 @@ alternate:
     - preview
     - searchreplace
     - autolink
+    - pageembed
     - directionality
     - fullscreen
     - image
