@@ -10,12 +10,12 @@ default:
     - image
     - media
     - template
+    - code
     - codesample
     - table
     - charmap
     - hr
     - anchor
-    - pageembed
     - toc
     - insertdatetime
     - advlist
@@ -24,21 +24,22 @@ default:
     - imagetools
     - textpattern
     - help
-  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
+  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link code | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
+  menubar: "tools"
   spellchecker_language: 'pl'
   language: 'pl'
   browser_spellcheck: true
 
 alternate:
   selector: textarea.table-editor
-  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
+  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link code | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
   browser_spellcheck: true
+  menubar: "tools"
   plugins:
     - image
     - preview
     - searchreplace
     - autolink
-    - pageembed
     - directionality
     - fullscreen
     - image
