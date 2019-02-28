@@ -10,6 +10,7 @@ default:
     - image
     - media
     - template
+    - code
     - codesample
     - table
     - charmap
@@ -23,14 +24,14 @@ default:
     - imagetools
     - textpattern
     - help
-  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
+  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link code | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
   spellchecker_language: 'pl'
   language: 'pl'
   browser_spellcheck: true
 
 alternate:
   selector: textarea.table-editor
-  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
+  toolbar: formatselect | spellchecker | bold italic strikethrough forecolor backcolor | link code | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat
   browser_spellcheck: true
   plugins:
     - image

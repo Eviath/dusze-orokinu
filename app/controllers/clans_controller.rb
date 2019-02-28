@@ -2,12 +2,12 @@ class ClansController < ApplicationController
   before_action :authenticate_user!, only: [:update, :panel, :create, :new, :destroy]
   before_action :load_clan,  only: [:edit, :update, :destroy]
   before_action :admin_or_author, only: [:edit, :update, :destroy]
-
   load_and_authorize_resource :except => [:index, :show]
 
   def index
-    @clansapproved = Clan.approved.order('id ASC')
+    @clansapproved = Clan.approved.order('updated_at DESC')
     @clanspending = Clan.pending.newest
+    @clansdeclined = Clan.declined
 
     @clans = Clan.all
   end
@@ -105,7 +105,7 @@ def admin_or_author
 end
 
 def administrator?
-  current_user.has_role? :admin
+  user_signed_in? && current_user.has_role?(:admin)
 end
 
 def authorship?

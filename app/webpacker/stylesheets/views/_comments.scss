@@ -6,12 +6,33 @@
 .comment{
   width:100%;
 
+  textarea {
+    color: $white;
+  }
+
+
+
+  .media {
+    align-items: top;
+
+    .user_comment_image {
+      max-width: 60px;
+      margin-right: 20px;
+    }
+  }
+
+  .list-group-item {
+    border: 1px solid $vitru-opa;
+    background: transparent;
+    @include container-shadow;
+  }
   // submit button comment /_form
   .actions {
     padding-top: 0;
   }
 
   p {
+    color: $white;
     font-family: 'Marcellus', serif;
   }
 }
@@ -20,6 +41,14 @@
 .comment-form-control {
   width:100%;
   padding: 10px;
+  background: transparent;
+  border: 1px solid $vitru-dark;
+  border-bottom: 5px solid $vitru;
+  color: $white;
+}
+
+.nested-comment {
+  margin: 25px;
 }
 
 // submit button comment /_form

@@ -11,31 +11,74 @@
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 import 'jquery'
-import 'bootstrap/dist/js/bootstrap';
-
-// app stylesheets
-import "./stylesheets"
-//bootstrap confirm modal
-import "data-confirm-modal"
-//better choose form input
-import "chosen-js"
-// rails active storage
-import * as ActiveStorage from "activestorage";
-//direct upload
-import "../javascripts/direct_upload.js"
-
-// set jquery as global for unobtrusive rails javascript
 import $ from 'jquery';
 global.$ = jQuery;
+global.jQuery = $;
+import 'bootstrap/dist/js/bootstrap';
+import * as ActiveStorage from "activestorage";
+// app stylesheets
+
+import "./stylesheets"
+//bootstrap confirm modal
+// rails active storage
+//direct upload
+import "../javascripts/direct_upload.js"
+import "chosen-js"
+
+
 
 // fire up
 ActiveStorage.start();
+
+
+
+import Swal from 'sweetalert2'
+const confirmed = (element, result) => {
+    if (result.value) {
+        // User clicked confirm button
+        element.removeAttribute('data-confirm-swal');
+        element.click()
+    }
+};
+
+// Display the confirmation dialog
+const showConfirmationDialog = (element) => {
+    const message = element.getAttribute('data-confirm-swal');
+    const text = element.getAttribute('data-text');
+
+    Swal.fire({
+        title: message || 'Jesteś pewny?',
+        text: text || '',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Tak',
+        cancelButtonText: 'Anuluj',
+    }).then(result => confirmed(element, result))
+};
+
+const allowAction = (element) => {
+    if (element.getAttribute('data-confirm-swal') === null) {
+        return true
+    }
+
+    showConfirmationDialog(element);
+    return false
+};
+
+function handleConfirm(element) {
+    if (!allowAction(this)) {
+        Rails.stopEverything(element)
+    }
+}
+
+
+Rails.delegate(document, 'a[data-confirm-swal]', 'click', handleConfirm);
+
+
+
+
 Rails.start();
 Turbolinks.start();
-
-
-
-
 
 //import custom scripts
 import '../javascripts/sidebar'
@@ -45,6 +88,9 @@ function closeToast() {
     $('#toast').hide();
 }
 window.closeToast = closeToast;
+
+
+
 
 
 
@@ -87,19 +133,16 @@ $(document).click(function (e) {
 
 
 // Bootstrap modal confirm setup
-dataConfirmModal.setDefaults({
-    title: 'Potwierdź swoją akcję',
-    commit: 'Potwierdź',
-    cancel: 'Anuluj'
-});
 
 
+
+$(document).ready(function() {
 $('.chosen-select').chosen({
     no_results_text: "Nie znaleziono",
     placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
     width: '200px'
 });
-
+});
 
 //shared links and navbar animation on scroll load with turbolinks
 $(document).on('turbolinks:load', function () {

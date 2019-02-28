@@ -52,11 +52,11 @@
 
       .request-actions
 
-        -if can? :destroy, @request
+        -if can? :destroy, request
 
-          = link_to "Usuń", request_path(request), method: :delete, data: { confirm: "Jesteś pewny?" }, :class => "btn btn-do-vitru"
+          = link_to "Usuń", request_path(request), method: :delete, data: { 'confirm-swal': "Jesteś pewny?" }, :class => "btn btn-do-vitru"
 
-        -if can? :manage, @request
+        -if can? :manage, request
           - if request.approval? || request.approval.nil?
             = link_to decline_request_path(request), :class => "btn btn-do-vitru" do
               Odrzuć
