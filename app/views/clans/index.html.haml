@@ -1,11 +1,11 @@
 - provide(:title, 'Lista klanów') 
 
 .clan-index.parallax-users
-  .container.mw-100
+  .container.mw-100.clan_index_container
     - if @clansapproved.any?
       .row
         - @clansapproved.each do |clan|
-          .col-md-4.clan-col
+          .col-lg-4.clan-col
             .clan-content
               .clan-content-image
                 = image_tag clan.picture if clan.picture.attached?
@@ -57,12 +57,12 @@
         - if @clanspending.any?
           .clan-approval-pending
             .row
-              .col-md-4.mx-auto.text-center
+              .col-lg-4.mx-auto.text-center
                 %h2 Klany oczekujące na akceptację
 
             .row
               - @clanspending.each do |clan|
-                .col-md-4.clan-col
+                .col-lg-4.clan-col
                   .clan-content
                     .clan-content-image
                       = image_tag clan.picture if clan.picture.attached?
@@ -93,19 +93,19 @@
 
         - else
           .row.no-clans-pending
-            .col-md-4.mx-auto.text-center
+            .col-lg-4.mx-auto.text-center
               %h2 Brak klanów oczekujących na akceptację
 
 
         - if @clansdeclined.any?
           .clan-approval-pending
             .row
-              .col-md-4.mx-auto.text-center
+              .col-lg-4.mx-auto.text-center
                 %h2 Klany odrzucone
 
             .row
               - @clansdeclined.each do |clan|
-                .col-md-4.clan-col
+                .col-lg-4.clan-col
                   .clan-content
                     .clan-content-image
                       = image_tag clan.picture if clan.picture.attached?
@@ -136,5 +136,5 @@
 
         -else
           .row.no-clans-pending
-            .col-md-4.mx-auto.text-center
+            .col-lg-4.mx-auto.text-center
               %h2 Brak odrzuconych klanów.

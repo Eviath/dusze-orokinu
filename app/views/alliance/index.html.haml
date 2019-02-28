@@ -1,6 +1,6 @@
 = provide(:title, 'Strona Główna')
 
-.share-buttons.d-none.d-md-flex
+.share-buttons
   %ul.share-ul
     %li
       %span.share-icon
@@ -49,8 +49,9 @@
   .content-onas
     .container
       .about-us-text
-        =image_tag(asset_pack_path('media/all-gold.png'))
-        =image_tag(asset_pack_path('media/jedno-gold.png'))
+        .images
+          =image_tag(asset_pack_path('media/all-gold.png'))
+          =image_tag(asset_pack_path('media/jedno-gold.png'))
         - if @main_about.any?
           - @main_about.each do |about|
             %h1=about.title
@@ -73,7 +74,7 @@
         .container
           .row.tag
             - @about_column_two.each do |about|
-              .col
+              .col-lg-4.tag-col
                 .tag-header
                   %h2=about.title
                 .tag-text
@@ -83,7 +84,7 @@
       .dolacz
         .container
           .row
-            .col-md-8.mx-auto.text-center
+            .col-md-8.mx-auto.text-center.d-flex.justify-content-center
               =image_tag(asset_pack_path('media/warframe-gold.png'))
 
 

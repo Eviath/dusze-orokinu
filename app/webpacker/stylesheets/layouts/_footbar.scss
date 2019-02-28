@@ -5,30 +5,81 @@
   background: $darkt !important;
   text-align: center;
 
+  @include sm-d {
+    height: 100vh;
+    .footbar-content {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  @include md-d {
+  height: 100vh;
+    .footbar-content {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+
   p {
     color: $darkwhite;
+    @include sm-d  {
+      padding-bottom: 40px;
+      font-size: 2em;
+    }
+    @include md-d{
+      padding-bottom: 40px;
+      font-size: 2em;
+    }
   }
 
   img {
     width: 20%;
     height: auto;
+    @include sm-d {
+      width: 40%;
+    }
+    @include md-d {
+      width: 40%;
+    }
   }
 
 }
 
 .footbar-body {
-  text-align: center;
 
+
+
+  text-align: center;
   padding: 50px;
 
   h2 {
     font-size: 4em;
     color: $white;
+    @include sm-d {
+      font-size: 8em;
+    }
+    @include md-d {
+      font-size: 8em;
+    }
   }
 
   p {
     color: $vitru;
     font-size: 1.5em;
+    @include sm-d {
+      font-size: 2em;
+    }
+    @include md-d {
+      font-size: 2em;
+    }
   }
 }
 
@@ -61,11 +112,34 @@ nav.foo-nav li {
 
 .stopka {
   padding: 10px;
-}
+  @include sm-d {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    padding: 30px 30px 80px 30px;
+  }
+  @include md-d{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    padding: 30px 30px 80px 30px;
+  }
 
-.stopka h4 {
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
+  h4 {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+
+    @include sm-d {
+      font-size: 1.5em;
+    }
+    @include md-d {
+      font-size: 1.5em;
+    }
+  }
 
 }

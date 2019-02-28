@@ -1,6 +1,21 @@
-%header.navbar.navbar-dark.nav-down.fixed-top.navbar-expand-md.bg-faded#navbar
-  =image_tag(asset_pack_path('media/duszki.png'), class:'brand-image')
-  = active_link_to "Dusze Orokinu",alliance_path, class: "navbar-brand"
+%header.navbar.navbar-dark.nav-down.fixed-top.navbar-expand-lg.bg-faded#navbar
+  .mobile-more-navbar
+    %ul
+      -if user_signed_in?
+        %li.nav-item.sidebar-nav-item
+          %a.show-sidebar
+            %i.fas.fa-bars
+      -else
+        %li.nav-item
+          = link_to new_user_session_path, class: "nav-link" do
+            %i.fas.fa-user
+
+  = link_to alliance_path, class: "navbar-brand" do
+    =image_tag(asset_pack_path('media/duszki.png'), class:'brand-image d-inline-block align-top')
+    Dusze Orokinu
+
+
+
   %button.navbar-toggler{type: "button", 'data-toggle': "collapse", 'data-target': "#navbarNavDropdown", 'aria-controls': "navbarNavDropdown", 'aria-expanded': "false", 'aria-label': "Toggle navigation"}
     %span.navbar-toggler-icon
   .collapse.navbar-collapse#navbarNavDropdown
@@ -40,14 +55,14 @@
 
 
 
-      -if user_signed_in?
-        %li.nav-item.sidebar-nav-item
-          %a#show-sidebar
-            %i.fas.fa-bars
-      -else
-        %li.nav-item
-          = link_to new_user_session_path, class: "nav-link" do
-            %i.fas.fa-user
+        -if user_signed_in?
+          %li.nav-item.sidebar-nav-item.lg-sidebar
+            %a.show-sidebar
+              %i.fas.fa-bars
+        -else
+          %li.nav-item.lg-sidebar
+            = link_to new_user_session_path, class: "nav-link" do
+              %i.fas.fa-user
 
 
 
