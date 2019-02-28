@@ -348,8 +348,15 @@ header.navbar {
 // dropdown-Navbar link color
 .dropdown-item {
   color: #fff;
-  font-size: 16px;
 }
+
+a.dropdown-item {
+  @include md-d {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
 
 .dropdown-toggle::after {
   vertical-align: 0.15em;

@@ -31,7 +31,7 @@ $( document ).on('turbolinks:load', function() {
     });
 
     // show sidebar
-    $("#show-sidebar").click(function() {
+    $(".show-sidebar").click(function() {
         $(".side-wrapper").addClass("toggled");
         $('.overlay').addClass('active');
     });

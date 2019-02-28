@@ -34,18 +34,34 @@ PROFILES
 // Profile container
 .profile-container {
   width: 100%;
-
-
   padding: 50px 0px 50px 0px;
+
+  @include md-d {
+    height: 100vh;
+    padding: 0;
+    align-items: center;
+    display: flex;
+
+  }
 }
 
 
 .user_details {
   padding-top: 40px;
 
+  @include md-d {
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
   p {
     color: $vitru;
     font-size: .4em;
+
+    @include md-d {
+      padding: 5px;
+    }
 
     span {
       padding-left: 10px;
@@ -175,6 +191,9 @@ $gray-medium-light: #eaeaea;
 
 .user-profile {
   min-width: 350px;
+  @include md-d {
+    min-width: 150px;
+  }
 }
 
 .options {
@@ -237,6 +256,13 @@ input[type="radio"], input[type="checkbox"] {
   .user-avatar {
     max-width: 120px;
     max-height: 120px;
+  }
+  .form-group {
+    @include md-d {
+      width: 90%;
+      max-width: 90%;
+      flex: 90%;
+    }
   }
 }
 
@@ -452,12 +478,47 @@ img.user_index_image {
   height: 100vh;
   padding: 100px 0px 50px 0px;
 
+  @include md-d {
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+  }
 
+  // profile user show box 'armour style'
   .col-show-box {
+
+    @include md-d {
+      width: 100%;
+      margin: 0;
+      max-width: 100%;
+      min-width: 100%;
+      height: 40vh;
+    }
 
   }
 
   .show-profile-box {
+
+
+
+    @include md-d {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      a {
+        font-size: 2rem;
+      }
+
+    .btn-do-profile{
+      font-size: 1.2rem;
+    }
+
+      h1 {
+        font-size: 4rem;
+      }
+    }
 
     img {
       box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
@@ -492,6 +553,11 @@ img.user_index_image {
     padding: 10px;
     border: 2px solid $vitru-light;
 
+    @include md-d {
+      max-height: 180px;
+      max-width: 180px;
+    }
+
   }
 
 
@@ -501,6 +567,9 @@ img.user_index_image {
 .profil-show-img img {
   padding-top: 50px;
   width: 30%;
+  @include md-d {
+    width: 60%;
+  }
 }
 
 

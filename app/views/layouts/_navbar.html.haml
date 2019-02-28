@@ -3,7 +3,7 @@
     %ul
       -if user_signed_in?
         %li.nav-item.sidebar-nav-item
-          %a#show-sidebar
+          %a.show-sidebar
             %i.fas.fa-bars
       -else
         %li.nav-item
@@ -55,14 +55,14 @@
 
 
 
-      -if user_signed_in?
-        %li.nav-item.sidebar-nav-item
-          %a#show-sidebar
-            %i.fas.fa-bars
-      -else
-        %li.nav-item
-          = link_to new_user_session_path, class: "nav-link" do
-            %i.fas.fa-user
+        -if user_signed_in?
+          %li.nav-item.sidebar-nav-item
+            %a.show-sidebar
+              %i.fas.fa-bars
+        -else
+          %li.nav-item
+            = link_to new_user_session_path, class: "nav-link" do
+              %i.fas.fa-user
 
 
 

@@ -95,6 +95,10 @@ body {
 
 .side-wrapper.toggled .sidebar-wrapper {
   right: 0px;
+  @include md-d {
+  width:100vw;
+    right: 0px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -125,6 +129,11 @@ body {
   top: 0;
   right: -300px;
   z-index: 999;
+
+  @include md-d {
+    width: 260px;
+    right: -300px;
+  }
 }
 
 .sidebar-wrapper ul {
@@ -144,6 +153,11 @@ body {
   height: calc(100% - 30px);
   overflow-y: auto;
   position: relative;
+  @include md-d {
+    max-width: 80%;
+    margin: auto;
+    padding: 100px 0;
+  }
 }
 
 .sidebar-content.desktop {
@@ -162,17 +176,28 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   flex-grow: 1;
+  @include md-d {
+    font-size: 3em;
+    letter-spacing: 1px;
+  }
 }
 
 .sidebar-wrapper .sidebar-brand #close-sidebar {
   cursor: pointer;
   font-size: 20px;
+
+  @include md-d {
+    font-size: 3rem;
+  }
 }
 /*--------------------sidebar-header----------------------*/
 
 .sidebar-wrapper .sidebar-header {
   padding: 20px;
   overflow: hidden;
+  @include  md-d {
+    padding: 50px;
+  }
 }
 
 .sidebar-wrapper .sidebar-header .user-pic {
@@ -182,6 +207,9 @@ body {
   border-radius: 12px;
   margin-right: 15px;
   overflow: hidden;
+  @include md-d {
+    width:120px;
+  }
 }
 
 .sidebar-wrapper .sidebar-header .user-pic img {
@@ -196,21 +224,33 @@ body {
 
 .sidebar-wrapper .sidebar-header .user-info > span {
   display: block;
+  @include md-d {
+    font-size: 2rem;
+  }
 }
 
 .sidebar-wrapper .sidebar-header .user-info .user-role {
   font-size: 12px;
+  @include md-d {
+    font-size: 1.7rem;
+  }
 }
 
 .sidebar-wrapper .sidebar-header .user-info .user-status {
   font-size: 11px;
   margin-top: 4px;
+  @include md-d {
+    font-size: 1.2rem;
+  }
 }
 
 .sidebar-wrapper .sidebar-header .user-info .user-status i {
   font-size: 8px;
   margin-right: 4px;
   color: #5cb85c;
+  @include md-d {
+    font-size: 1rem;
+  }
 }
 
 /*-----------------------sidebar-search------------------------*/
@@ -225,11 +265,21 @@ body {
   padding-bottom: 10px;
 }
 
+.sidebar-wrapper .sidebar-menu .header-menu {
+  @include md-d {
+    padding: 20px 0;
+  }
+
+}
+
 .sidebar-wrapper .sidebar-menu .header-menu span {
   font-weight: bold;
   font-size: 14px;
   padding: 15px 20px 5px 20px;
   display: inline-block;
+  @include md-d {
+    font-size: 3rem;
+  }
 }
 
 .sidebar-wrapper .sidebar-menu ul li a {
@@ -238,6 +288,11 @@ body {
   text-decoration: none;
   position: relative;
   padding: 8px 30px 8px 20px;
+  @include md-d {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .sidebar-wrapper .sidebar-menu ul li a i {
@@ -248,11 +303,24 @@ body {
   line-height: 30px;
   text-align: center;
   border-radius: 4px;
+  @include md-d {
+    font-size: 1.5rem;
+    margin-right: 30px;
+  }
 }
 
 .sidebar-wrapper .sidebar-menu ul li a:hover > i::before {
   display: inline-block;
   animation: swing ease-in-out 0.5s 1 alternate;
+
+}
+
+.sidebar-wrapper .sidebar-menu .sidebar-dropdown {
+ @include md-d {
+   width: 90%;
+   margin: 0 auto;
+ }
+
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
@@ -280,6 +348,11 @@ body {
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
   padding-left: 25px;
   font-size: 13px;
+  @include md-d {
+    a{
+        font-size: 2rem;
+    }
+  }
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
@@ -294,6 +367,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   font-size: 8px;
+  @include md-d {
+    font-size: 1.2rem;
+  }
 }
 
 .sidebar-wrapper .sidebar-menu ul li a span.label,
@@ -325,6 +401,9 @@ body {
   width: 100%;
   bottom: 0;
   display: flex;
+  @include md-d {
+    bottom: 50px;
+  }
 }
 
 .sidebar-footer > a {
@@ -333,6 +412,9 @@ body {
   height: 30px;
   line-height: 30px;
   position: relative;
+  @include md-d {
+    font-size: 3em;
+  }
 }
 
 .sidebar-footer > a .notification {
