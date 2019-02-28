@@ -8,6 +8,9 @@
 // navigation
 .nav-up {
   top: -60px;
+  @include md-d {
+    top: -80px;
+  }
 }
 
 
