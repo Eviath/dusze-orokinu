@@ -466,10 +466,6 @@ div.header-body {
   font-family: 'Marcellus SC', serif;
   font-weight: 100;
 
-  img {
-    padding-top: 50px;
-  }
-
 
   h1 {
     @include h1-font-mediaQ;
@@ -486,9 +482,10 @@ div.header-body {
   }
 
   h3 {
-    font-size: $def-h3;
     font-weight: 400;
     color: #9a9a9a;
+    font-size: 2rem;
+    padding: 50px 0;
     @include sm-d {
       font-size: 3em;
       padding: 30px 0;
@@ -498,7 +495,6 @@ div.header-body {
       padding: 30px 0;
     }
   }
-
 }
 
 .content-dusze {

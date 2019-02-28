@@ -98,13 +98,16 @@
     transition: .3s;
     position: absolute;
     content: '';
-    background: #fff;
-    top: 0;
-    bottom: 0;
+    background-image: url('../images/veil-white.png') !important;
     margin: auto;
+    right: 0;
     left: 0;
+    background-size: contain;
     width: 100%;
-    height: 1px;
+    background-repeat: no-repeat;
+    bottom: -25px;
+    height: 30px;
+
   }
 }
 
@@ -132,19 +135,25 @@
   color: #fff;
   letter-spacing: -0.5px;
   position: relative;
-  transition: .3s;
+  transition: .6s;
+  min-width: 110px;
+  text-align: center;
+
 
   &:before {
     transition: .3s;
     position: absolute;
     content: '';
-    background: #fff;
-    top: 0;
-    bottom: 0;
+    background-image: url('../images/veil-white.png') !important;
     margin: auto;
+    right: 0;
     left: 0;
+    background-size: contain;
     width: 0%;
-    height: 1px;
+    background-repeat: no-repeat;
+    bottom: -25px;
+    height: 30px;
+
   }
 
   &:hover {
@@ -154,14 +163,20 @@
       transition: .3s;
       position: absolute;
       content: '';
-      background: #fff;
-      top: 0;
-      bottom: 0;
+      background-image: url('../images/veil-white.png') !important;
       margin: auto;
+      right: 0;
       left: 0;
+      background-size: contain;
       width: 100%;
-      height: 1px;
+      background-repeat: no-repeat;
+      bottom: -25px;
+      height: 30px;
+
     }
+
+
+
 
 
     transition: .3s;
