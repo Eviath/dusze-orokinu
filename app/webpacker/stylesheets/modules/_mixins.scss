@@ -12,12 +12,26 @@ $sm-width: 767px;
 $md-width: 991px;
 $lg-width: 1200px;
 
+//small devices landscape
+@mixin md-l {
+  @media (min-width: 576px) {
+    @content
+  }
+}
+
+@mixin max-md-l {
+  @media (max-width: 530px) {
+    @content
+  }
+}
+
 // Small devices (tablets, 479px t)
 @mixin sm-d {
   @media (min-width: #{$ex-sm-width}) and (max-width: #{$sm-width}) {
     @content;
   }
 }
+
 
 @mixin md-d {
   @media (min-width: #{$sm-width}) and (max-width: #{$md-width}) {

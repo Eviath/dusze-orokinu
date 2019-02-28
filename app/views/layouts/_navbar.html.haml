@@ -56,11 +56,11 @@
 
 
         -if user_signed_in?
-          %li.nav-item.sidebar-nav-item
+          %li.nav-item.sidebar-nav-item.lg-sidebar
             %a.show-sidebar
               %i.fas.fa-bars
         -else
-          %li.nav-item
+          %li.nav-item.lg-sidebar
             = link_to new_user_session_path, class: "nav-link" do
               %i.fas.fa-user
 
