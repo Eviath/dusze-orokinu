@@ -7,7 +7,7 @@
 
 // navigation
 .nav-up {
-  top: -60px;
+  top: -80px;
   @include md-d {
     top: -80px;
   }
@@ -49,37 +49,13 @@
   }
 
 
-  &:before {
-    transition: .3s;
-    position: absolute;
-    content: '';
-    background: #fff;
-
-    bottom: -5px;
-    margin: auto;
-    left: -5px;
-    right: 0;
-    width: 0%;
-    height: 1px;
-  }
-
-
   &:hover {
     transition: .3s;
     text-shadow: -2px -3px 6px $vitru !important;
 
-    &:before {
-      transition: .3s;
-      position: absolute;
-      content: '';
-      background: #fff;
-
-      bottom: 0;
-      margin: auto;
-      left: 0;
-      right: 0;
-      width: 80%;
-      height: 1px;
+    .brand-image {
+      transition: .6s;
+      filter: grayscale(100%);
     }
 
   }
@@ -95,19 +71,28 @@
 .navbar-dark .navbar-nav .nav-link.active {
 
   &:before {
-    transition: .3s;
+    transition: .5s;
     position: absolute;
     content: '';
     background-image: url('../images/veil-white.png') !important;
     margin: auto;
     right: 0;
     left: 0;
+    opacity: 1;
     background-size: contain;
     width: 100%;
     background-repeat: no-repeat;
-    bottom: -25px;
+    bottom: 5px;
     height: 30px;
 
+    @include md-d {
+      background: #fff;
+      height: 1px !important;
+      bottom: 0;
+      background-image: none;
+      background-size: initial;
+
+    }
   }
 }
 
@@ -138,6 +123,8 @@
   transition: .6s;
   min-width: 110px;
   text-align: center;
+  overflow: hidden;
+  padding: 18px 0;
 
 
   &:before {
@@ -149,10 +136,20 @@
     right: 0;
     left: 0;
     background-size: contain;
-    width: 0%;
+    width: 100%;
     background-repeat: no-repeat;
-    bottom: -25px;
+    bottom: -30px;
     height: 30px;
+    transform: rotateX(-180deg);
+    opacity: 0;
+    @include md-d {
+      background: #fff;
+      height: 1px !important;
+      bottom: 0;
+      background-image: none;
+      background-size: initial;
+
+    }
 
   }
 
@@ -160,9 +157,10 @@
 
 
     &:before {
-      transition: .3s;
+      transition: .5s;
       position: absolute;
       content: '';
+      opacity: 1;
       background-image: url('../images/veil-white.png') !important;
       margin: auto;
       right: 0;
@@ -170,9 +168,17 @@
       background-size: contain;
       width: 100%;
       background-repeat: no-repeat;
-      bottom: -25px;
+      bottom: 0px;
       height: 30px;
+      filter: grayscale(1) brightness(0.75) contrast(1.05);
+      @include md-d {
+        background: #fff;
+        height: 1px !important;
+        bottom: 0;
+        background-image: none;
+        background-size: initial;
 
+      }
     }
 
 
@@ -205,6 +211,7 @@
 
   @include md-d {
     ul.nav {
+      align-content: center;
       padding-top: 50px;
       .nav-item {
         padding: 15px;
@@ -273,6 +280,7 @@ header.navbar {
   }
 
   .brand-image{
+    transition: .7s;
     width:10%;
     margin-right: 15px;
     @include sm-d {
@@ -386,6 +394,8 @@ a.dropdown-item {
 
 }
 
+
+
 // Dusze Orokinu logo
 .brand-logo {
   width: 40px;
@@ -413,6 +423,8 @@ a.dropdown-item {
   opacity: 0;
   pointer-events: none;
 }
+
+
 
 .show > .dropdown-menu.fade {
   pointer-events: auto;
