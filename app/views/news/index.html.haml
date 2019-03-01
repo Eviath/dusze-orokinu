@@ -3,10 +3,11 @@
 
 .news-wrapper
   .container
-    .page-header
-      -if current_user && can?(:manage, News)
-        .actions
-          = link_to 'Stwórz aktualność', new_news_path, class: 'btn btn-do-vitru'
+
+    =image_tag(asset_pack_path('media/warframe-gold.png'), class: 'news-header-image')
+    -if current_user && can?(:manage, News)
+      .actions
+        = link_to 'Stwórz aktualność', new_news_path, class: 'btn btn-do-vitru'
 
 
     .row

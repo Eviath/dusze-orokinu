@@ -1,21 +1,20 @@
+
+
+
 %li
-  .container
+  .user-profile-box
+    #user_index_image
+      =image_tag user_avatar(user, 120), class: 'rounded-circle user_index_image'
 
-    .row
-
-      #user_index_image
-        =image_tag user_avatar(user, 120), class: 'rounded-circle user_index_image'
-
-
-      .user-profile
-        = link_to user.name, user
-
-        .ranks
-          %p
-            =user_ranks(user)
+    .user-profile-name
+      = link_to user.name, user
 
 
-      .options
-        - unless current_user == @user
-          %span
-            = link_to 'PW', new_message_path(to: user.id),  class: 'btn btn-do-profile-opt'
+    =user_ranks(user)
+
+
+    .options
+      - unless current_user == @user
+        %span
+          = link_to new_message_path(to: user.id),  class: 'btn btn-do-profile-opt' do
+            %i.fas.fa-comments
