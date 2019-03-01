@@ -22,14 +22,13 @@ module UsersHelper
 
     # if statement render buttons depending on user roles
     if user.has_role?(:admin) && user.has_role?(:lider)
-      content_tag :div do
-
+      content_tag(:div, class:'user-ranks') do
         concat admin_button
         concat " "
         concat lider_button
       end
     elsif user.has_role?(:moderator) && user.has_role?(:lider)
-      content_tag :div do
+      content_tag(:div, class:'user-ranks') do
 
         concat moderator_button
         concat " "
@@ -37,16 +36,24 @@ module UsersHelper
       end
 
     elsif user.has_role?(:admin)
-      admin_button
+      content_tag(:div, class:'user-ranks') do
+        admin_button
+      end
 
     elsif user.has_role?(:moderator)
-      moderator_button
+      content_tag(:div, class:'user-ranks') do
+        moderator_button
+      end
 
     elsif user.has_role?(:lider)
-      lider_button
+      content_tag(:div, class:'user-ranks') do
+        lider_button
+      end
 
     else
-      user_button
+      content_tag(:div, class:'user-ranks') do
+        user_button
+      end
 
     end
   end
