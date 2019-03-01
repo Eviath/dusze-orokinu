@@ -15,11 +15,11 @@
 
 // modules
 @import 'modules/variables';
+@import "modules/mixins";
 @import 'modules/buttons';
 
 //mixins
 
-@import "modules/mixins";
 
 //  pages
 @import '/views/users';

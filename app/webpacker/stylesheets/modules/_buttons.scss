@@ -123,6 +123,14 @@
 .button-about {
   padding-top: 50px;
   text-align: center;
+
+  @include sm-d{
+    a{font-size: 3em;}
+  }
+  @include md-d {
+    a{font-size: 3em;}
+  }
+
 }
 
 .btn-do {

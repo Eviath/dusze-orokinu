@@ -49,6 +49,11 @@ body.news-body {
 
 .news-background {
   position: relative;
+  @include md-d {
+    height: 40%;
+    background-size: contain;
+    background-position: top;
+  }
 
     height: 100%;
 

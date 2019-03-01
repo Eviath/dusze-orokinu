@@ -369,6 +369,14 @@ body {
   align-content: center;
   align-items: center;
 
+  @include md-d {
+    .clan_index_container {
+     max-width: 80% !important;
+    }
+
+  }
+
+
   .no-clans-pending {
     padding-top: 50px;
   }
