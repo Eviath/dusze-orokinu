@@ -1,0 +1,22 @@
+-if @similar_news.count > 4
+  .row
+    .col-md-6.mx-auto
+      = will_paginate(@similar_news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, href:'#' ,class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
+
+.row
+  -@similar_news.each do |news|
+    .col-lg-3
+      .card.news-show-card.mt-5
+        - if news.thumbnail.attached?
+          = image_tag url_for(news.thumbnail), class: 'card-img-top news-show-img'
+        .card-body
+          %h5.card-title=link_to news.title, news_path(news), class: 'link-vitruvian'
+          %p.card-text=truncate(sanitize(news.content, tags: []), length: 150)
+          .card-btn.text-center
+            =link_to 'Zobacz', news_path(news), class: 'btn btn-sm btn-do-vitru'
+
+
+:javascript
+  $(function(){
+    $('.pagination a').attr('data-remote', 'true')
+  });

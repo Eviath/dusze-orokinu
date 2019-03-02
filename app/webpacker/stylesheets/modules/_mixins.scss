@@ -5,3 +5,64 @@
   -moz-box-shadow: 0px 0px 36px -5px rgba(0,0,0,0.45);
   box-shadow: 0px 0px 36px -5px rgba(0,0,0,0.45);
 }
+
+// MEDIA QUARRIES BREAKPOINTS
+$ex-sm-width: 479px;
+$sm-width: 767px;
+$md-width: 991px;
+$lg-width: 1200px;
+
+//small devices landscape
+@mixin md-l {
+  @media (min-width: 576px) {
+    @content
+  }
+}
+
+@mixin max-md-l {
+  @media (max-width: 530px) {
+    @content
+  }
+}
+
+// Small devices (tablets, 479px t)
+@mixin sm-d {
+  @media (min-width: #{$ex-sm-width}) and (max-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+
+@mixin md-d {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin lg-d {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+@mixin ex-lg-d {
+  @media screen and (min-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+// H1 Font - Media Quarry MIXIN
+@mixin h1-font-mediaQ {
+  @include sm-d {
+    font-size: 6rem;
+  }
+  @include md-d {
+    font-size: 8rem;
+  }
+  @include lg-d {
+    font-size: 5rem;
+  }
+  @include ex-lg-d {
+    font-size: 6rem;
+  }
+}

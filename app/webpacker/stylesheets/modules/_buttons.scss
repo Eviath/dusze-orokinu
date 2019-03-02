@@ -114,6 +114,7 @@
 
 .btn.btn-do {
 
+
   &:hover {
     text-decoration: none;
     color: #fff;
@@ -123,6 +124,14 @@
 .button-about {
   padding-top: 50px;
   text-align: center;
+
+  @include sm-d{
+    a{font-size: 3em;}
+  }
+  @include md-d {
+    a{font-size: 3em;}
+  }
+
 }
 
 .btn-do {
@@ -203,6 +212,7 @@
   color: #ffff;
   background-color: transparent;
 
+
   border: none;
   border-radius: 2px;
   -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
@@ -230,6 +240,8 @@
   &:hover {
     color: $vitru;
   }
+
+
 
 
 }
@@ -287,11 +299,12 @@
   background-color: $vitru;
   padding: 0px 5px;
   font-size: 14px;
-  color: #fff;
+  color: $vitru-dark;
   opacity: 0.65;
 
   &:hover {
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+    color: $white;
   }
 }
 
@@ -371,6 +384,24 @@
 
 //  Standard button vitruvian
 .btn-do-vitru {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $vitru-opa;
+  }
+
+
+  &:hover{
+    &:before{
+      background-color: $vitru-trans-bg;
+    }
+  }
+
+  &.active {
+    color: $vitru;
+    &:before{
+      background-color: $vitru-trans-bg;
+    }
+  }
 
   // Extend shared vitruvian button style
   @extend %btn-vitruvian;

@@ -35,7 +35,7 @@ body {
 .clan_show {
 
   &_content {
-
+    min-height: 100vh;
     padding: 150px 0 50px 0;
 
     h1 {
@@ -97,6 +97,14 @@ body {
     .clan-logo {
       max-width: 120px;
       max-height: 120px;
+    }
+
+    .clan-logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -368,6 +376,14 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
+
+  @include md-d {
+    .clan_index_container {
+     max-width: 80% !important;
+    }
+
+  }
+
 
   .no-clans-pending {
     padding-top: 50px;

@@ -4,7 +4,9 @@
 
 body.news-body {
   height: 80vh;
-
+@include md-d {
+  height: 100%;
+}
   font-family: 'Marcellus SC', serif;
   background: $darkbg;
   background-image: none;
@@ -13,6 +15,41 @@ body.news-body {
 
 .page-news-content{
   background: $darkbg;
+}
+
+
+// News index pagination
+.news-index-pagination {
+  .page-link:focus {
+    z-index: 2;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $vitru-opa;
+  }
+
+  //disabled page item
+  .page-item.disabled .page-link {
+    background: $darkbg;
+    border-color: $vitru-dark;
+  }
+  //active page item
+  .page-item.active .page-link {
+    color: $vitru;
+    background: $vitru-dark;
+    border-color:  $vitru-trans-bg;
+  }
+
+ // normal page link
+ .page-link {
+   background: $darkbg;
+   color: $vitru;
+   border-color: $vitru-dark;
+
+   &:hover{
+     background: $vitru-dark;
+     color: $white;
+     border-color:  $vitru-opa;
+   }
+ }
 }
 
 .news-show-header {
@@ -49,6 +86,11 @@ body.news-body {
 
 .news-background {
   position: relative;
+  @include md-d {
+    height: 50%;
+    background-size: contain;
+    background-position: top;
+  }
 
     height: 100%;
 
@@ -80,6 +122,12 @@ body.news-body {
 
 .news-wrapper {
 padding: 100px 0px 100px 0px;
+
+  .news-header-image{
+    margin: 0 auto;
+    display: flex;
+  }
+
   .container {
     max-width:90% !important;
   object-fit: fill;
@@ -91,7 +139,7 @@ padding: 100px 0px 100px 0px;
 
 
 img.card-img-top {
-  min-height: 295px;
+  max-height: 295px;
 }
 
 p.card-text {
@@ -121,8 +169,47 @@ p.card-text {
 
 }
 
+//
+// EDIT NEWS
+//
+form.edit_news, .new_news {
+  .form-control {
+    background: $vitru-dark;
+  }
+}
 
+
+//
 // SHOW NEWS
+//
+.page-news-other {
+background: $darkbg;
+  .news-other-container {
+    padding: 50px 0;
+    width:90%;
+    margin: 0 auto;
+  }
+}
+
+.news-show-card {
+  .news-show-img {
+    min-height: auto;
+    -o-object-fit: cover;
+    max-height: 224px;
+    object-fit: cover;
+    max-width: 398px;
+  }
+
+  .card-body{
+    .card-title {
+      font-size: .9em;
+    }
+    .card-text {}
+    font-size: .9em;
+  }
+
+}
+
 
 .news {
   width:100%;
@@ -138,6 +225,12 @@ p.card-text {
   .news-header {
     padding: 25px;
 
+    @include md-d {
+      h2 {
+        font-size:4em;
+      }
+    }
+
   }
 
   .news-description {
@@ -149,6 +242,9 @@ p.card-text {
     p {
       margin: 0;
       padding: 10px;
+      @include md-d {
+        font-size: 2em;
+      }
     }
 
   }
@@ -156,12 +252,26 @@ p.card-text {
 }
 
 .news-content{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
   background: $darkbg;
   background-image: none;
   width:80%;
   margin: 0 auto;
   text-align: left;
  padding: 100px 0;
+  @include md-d {
+    p {
+      font-size: 3em;
+    }
+  }
 
 }
 
@@ -193,6 +303,10 @@ p.card-text {
   border: 5px solid $vitru-trans-bg;
   background: transparent;
   border-bottom: 10px solid $vitru-trans-bg;
+
+  -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+  -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+  box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
 }
 
 
