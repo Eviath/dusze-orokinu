@@ -1,6 +1,7 @@
-.row
-  .col-md-6.mx-auto
-    = will_paginate(@similar_news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, href:'#' ,class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
+-if @similar_news.count > 4
+  .row
+    .col-md-6.mx-auto
+      = will_paginate(@similar_news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, href:'#' ,class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
 
 .row
   -@similar_news.each do |news|

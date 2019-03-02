@@ -7,8 +7,9 @@
     =image_tag(asset_pack_path('media/warframe-gold.png'), class: 'news-header-image')
     .actions.text-center.mb-5
       =active_link_to 'Wszystkie', news_index_path, class:'btn btn-do-vitru'
-      -NewsCategory.all.each do |category|
-        =link_to category.name, category, class:'btn btn-do-vitru'
+      -if NewsCategory.any?
+        -NewsCategory.all.each do |category|
+          =link_to category.name, category, class:'btn btn-do-vitru'
 
     -if current_user && can?(:manage, News)
       .actions.text-center
