@@ -4,7 +4,7 @@
   .content-wrapper
     .index-content
       .row
-        .col-md-6
+        .col-xl-6
           .users-container
             .justify-content-md-center
               %ul.users
@@ -13,7 +13,7 @@
 
 
 
-        .col-md-6
+        .col-xl-6
           .users-container
             .justify-content-md-center
               %ul.users
@@ -24,7 +24,7 @@
 
       -if @moderators.any?
         .row
-          .col-md-12
+          .col-lg-6.mx-auto
             .users-container
               .justify-content-md-center
 
@@ -33,7 +33,7 @@
                   = render @moderators
 
       .row
-        .col-md-12
+        .col-lg-6.mx-auto
           .users-container
             .justify-content-md-center
 

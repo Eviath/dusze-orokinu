@@ -295,11 +295,12 @@
   background-color: $vitru;
   padding: 0px 5px;
   font-size: 14px;
-  color: #fff;
+  color: $vitru-dark;
   opacity: 0.65;
 
   &:hover {
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+    color: $white;
   }
 }
 

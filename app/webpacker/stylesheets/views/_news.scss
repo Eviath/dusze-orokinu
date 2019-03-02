@@ -4,7 +4,9 @@
 
 body.news-body {
   height: 80vh;
-
+@include md-d {
+  height: 100%;
+}
   font-family: 'Marcellus SC', serif;
   background: $darkbg;
   background-image: none;
@@ -14,6 +16,7 @@ body.news-body {
 .page-news-content{
   background: $darkbg;
 }
+
 
 .news-show-header {
   text-align: center;
@@ -50,7 +53,7 @@ body.news-body {
 .news-background {
   position: relative;
   @include md-d {
-    height: 40%;
+    height: 50%;
     background-size: contain;
     background-position: top;
   }
@@ -85,6 +88,12 @@ body.news-body {
 
 .news-wrapper {
 padding: 100px 0px 100px 0px;
+
+  .news-header-image{
+    margin: 0 auto;
+    display: flex;
+  }
+
   .container {
     max-width:90% !important;
   object-fit: fill;
@@ -143,6 +152,12 @@ p.card-text {
   .news-header {
     padding: 25px;
 
+    @include md-d {
+      h2 {
+        font-size:4em;
+      }
+    }
+
   }
 
   .news-description {
@@ -154,6 +169,9 @@ p.card-text {
     p {
       margin: 0;
       padding: 10px;
+      @include md-d {
+        font-size: 2em;
+      }
     }
 
   }
@@ -167,6 +185,11 @@ p.card-text {
   margin: 0 auto;
   text-align: left;
  padding: 100px 0;
+  @include md-d {
+    p {
+      font-size: 3em;
+    }
+  }
 
 }
 
@@ -198,6 +221,10 @@ p.card-text {
   border: 5px solid $vitru-trans-bg;
   background: transparent;
   border-bottom: 10px solid $vitru-trans-bg;
+
+  -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+  -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+  box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
 }
 
 
