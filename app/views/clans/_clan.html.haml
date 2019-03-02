@@ -11,11 +11,7 @@
       .row.clan_show-header
         .col-md-6
           .clan-logo-container
-            %p= image_tag clan.picture, class: 'clan-logo' if clan.picture.attached?
-
-          .clan-name
-            %h2= clan.name
-
+            = image_tag clan.picture, class: 'clan-logo' if clan.picture.attached?
         .col-md-6
 
 
