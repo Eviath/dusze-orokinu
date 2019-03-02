@@ -133,7 +133,7 @@ padding: 100px 0px 100px 0px;
 
 
 img.card-img-top {
-  min-height: 295px;
+  max-height: 295px;
 }
 
 p.card-text {
@@ -187,8 +187,11 @@ background: $darkbg;
 
 .news-show-card {
   .news-show-img {
-    max-height: 195px !important;
     min-height: auto;
+    -o-object-fit: cover;
+    max-height: 224px;
+    object-fit: cover;
+    max-width: 398px;
   }
 
   .card-body{

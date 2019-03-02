@@ -19,6 +19,9 @@
                 Autor
                 =link_to @news.user.name, @news.user
               %p
+                Kategoria:
+                =link_to @news.news_category.name, @news.news_category
+              %p
                 Komentarze:
                 =@news.comments.count
 
@@ -33,8 +36,8 @@
     .row
       .col-md-12.text-center
         %h3 Inne aktualności w tej kategorii
-      #similar_news-content
-        = render 'similar_news'
+    #similar_news-content
+      = render 'similar_news'
 
 
 
