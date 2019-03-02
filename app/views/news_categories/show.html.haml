@@ -17,5 +17,6 @@
       .col-md-6.mx-auto
         .actions.text-center
           .btn-group
-            = link_to 'Edytuj kategorię', edit_news_category_path(@news_category), class: 'btn btn-do-vitru'
+            -if can?(:manage, NewsCategory)
+              = link_to 'Edytuj kategorię', edit_news_category_path(@news_category), class: 'btn btn-do-vitru'
             = link_to 'Wróć', :back, class: 'btn btn-do-vitru'
