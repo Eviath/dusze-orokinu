@@ -114,6 +114,7 @@
 
 .btn.btn-do {
 
+
   &:hover {
     text-decoration: none;
     color: #fff;
@@ -211,6 +212,7 @@
   color: #ffff;
   background-color: transparent;
 
+
   border: none;
   border-radius: 2px;
   -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
@@ -238,6 +240,8 @@
   &:hover {
     color: $vitru;
   }
+
+
 
 
 }
@@ -380,6 +384,11 @@
 
 //  Standard button vitruvian
 .btn-do-vitru {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $vitru-opa;
+  }
+
 
   &:hover{
     &:before{
