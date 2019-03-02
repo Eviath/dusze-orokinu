@@ -20,6 +20,12 @@ body.news-body {
 
 // News index pagination
 .news-index-pagination {
+  .page-link:focus {
+    z-index: 2;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $vitru-opa;
+  }
+
   //disabled page item
   .page-item.disabled .page-link {
     background: $darkbg;
