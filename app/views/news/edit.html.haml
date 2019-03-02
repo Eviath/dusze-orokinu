@@ -1,3 +1,5 @@
+-provide(:title, 'Edytuj aktualność')
+
 .page-wrapper
   .page-header
     .container
@@ -6,10 +8,8 @@
           .news-header.text-center
             = render 'form'
 
-            = link_to 'Zobacz', @news
+            = link_to 'Zobacz', @news, class: 'btn btn-do-vitru'
             \|
-            = link_to 'Wróć', news_index_path
+            = link_to 'Wróć', news_index_path, class: 'btn btn-do-vitru'
 
 
-
--# TODO Poprawić wygląd

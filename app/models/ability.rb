@@ -31,7 +31,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
     can :read, :all                 # allow everyone to read everything
-    cannot :manage, [Clan, Request, Comment, News]
+    cannot :manage, [Clan, Request, Comment, News, NewsCategory]
     if user.has_role? :admin
       can :manage, :all
       can :access, :rails_admin   # grant access to rails_admin
