@@ -3,7 +3,6 @@ class News < ApplicationRecord
   belongs_to :news_category
   resourcify
 
-
   belongs_to :user, :foreign_key => "user_id"
   has_many :comments, :as => :commentable, :dependent => :destroy
 
