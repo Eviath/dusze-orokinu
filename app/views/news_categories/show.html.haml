@@ -1,0 +1,21 @@
+%p#notice= notice
+
+-provide(:title, @news_category.name)
+
+.page-wrapper
+  .page-header
+    %h2= @news_category.name
+    %p= @news_category.desc
+
+
+  .col-lg-12.text-center.mx-auto
+    .card-deck
+      =render 'news'
+
+
+    .row
+      .col-md-6.mx-auto
+        .actions.text-center
+          .btn-group
+            = link_to 'Edytuj kategorię', edit_news_category_path(@news_category), class: 'btn btn-do-vitru'
+            = link_to 'Wróć', :back, class: 'btn btn-do-vitru'

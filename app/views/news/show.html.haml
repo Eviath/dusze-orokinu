@@ -28,23 +28,32 @@
   .news-content
     =raw @news.content
 
+.page-news-other
+  .news-other-container
+    .row
+      .col-md-12.text-center
+        %h3 Inne aktualności w tej kategorii
+      #similar_news-content
+        = render 'similar_news'
 
-  .news-comments
-    .news-comments-box
-      .news-comments-header
-        %h2 Komentarze
 
-      .news-comments-body
-        -if !nested_comments(@comments).blank?
-          = nested_comments(@comments)
-        -else
-          Nikt jeszcze nie skomentował! Bądź pierwszy.
 
-      .news-comments-form
-        -if user_signed_in?
-          = render "comments/form"
-        -else
-          %h2 Tylko zalogowani użytkownicy mogą komentować.
+.news-comments
+  .news-comments-box
+    .news-comments-header
+      %h2 Komentarze
+
+    .news-comments-body
+      -if !nested_comments(@comments).blank?
+        = nested_comments(@comments)
+      -else
+        Nikt jeszcze nie skomentował! Bądź pierwszy.
+
+    .news-comments-form
+      -if user_signed_in?
+        = render "comments/form"
+      -else
+        %h2 Tylko zalogowani użytkownicy mogą komentować.
 
 
 

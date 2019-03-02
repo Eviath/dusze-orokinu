@@ -5,13 +5,22 @@
   .container
 
     =image_tag(asset_pack_path('media/warframe-gold.png'), class: 'news-header-image')
+    .actions.text-center.mb-5
+      =active_link_to 'Wszystkie', news_index_path, class:'btn btn-do-vitru'
+      -NewsCategory.all.each do |category|
+        =link_to category.name, category, class:'btn btn-do-vitru'
+
     -if current_user && can?(:manage, News)
-      .actions
+      .actions.text-center
         = link_to 'Stwórz aktualność', new_news_path, class: 'btn btn-do-vitru'
+
+
+
 
 
     .row
       .col-md-8
+        = will_paginate(@news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center news-index-pagination', :previous_label => 'Poprzednia', :next_label => 'Następna')
 
         .card-deck
           - @news.each do |news|
@@ -31,6 +40,9 @@
                   %small.author.pull-right.text-muted
                     Autor:
                     =link_to news.user.name, news.user, class:'link-vitruvian'
+                  %small.news-category.text-muted
+                    Kategoria:
+                    =link_to NewsCategory.find(news.news_category_id).name, news_category_path(news.news_category_id), class:'link-vitruvian'
                   %small.author.pull-right.text-muted
                     %i.fas.fa-comments
                     =news.comments.count
@@ -42,7 +54,7 @@
                       = link_to 'Edytuj', edit_news_path(news), class: 'card-link btn btn-vitru-t'
                       = link_to 'Usuń', news, method: :delete, data: { 'confirm-swal': 'Jesteś pewny?' }, class: 'card-link btn btn-vitru-t'
 
-
+        = will_paginate(@news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
 
 
 
