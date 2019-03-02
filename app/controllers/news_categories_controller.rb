@@ -1,8 +1,6 @@
 class NewsCategoriesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   load_and_authorize_resource :except => [:show]
-
-  before_action
   before_action :set_news_category, only: [:show, :edit, :update, :destroy]
 
   # GET /news_categories
