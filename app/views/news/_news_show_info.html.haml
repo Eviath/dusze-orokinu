@@ -1,0 +1,43 @@
+
+.news-header.text-center
+  %h2= @news.title
+  .news-description.mt-5
+    .col-md-10.mx-auto.table-responsive
+
+      %table.table
+
+        %tbody
+          %tr
+            %td
+              %i.fas.fa-calendar-alt
+              Data utworzenia:
+            %td
+              %i.fas.fa-user-circle
+              Autor:
+            %td
+              %i.fas.fa-tags
+              Kategoria:
+            %td
+              %i.fas.fa-comments
+              Komentarze:
+            -if @news.updated_at.to_i != @news.created_at.to_i
+              %td
+                %i.fas.fa-calendar-alt
+                Ostatnia edycja:
+              -if !@news.last_edit_desc.blank?
+                %td
+                  %i.fas.fa-edit
+                  Powód edycji
+
+
+
+          %tr
+            %td=@news.created_at.strftime('%F  %T')
+            %td=link_to @news.user.name, @news.user
+            %td=link_to @news.news_category.name, @news.news_category
+            %td=@news.comments.count
+            -if @news.updated_at.to_i != @news.created_at.to_i
+              %td=@news.updated_at.strftime('%F  %T')
+              -if !@news.last_edit_desc.blank?
+                %td=@news.last_edit_desc
+

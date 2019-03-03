@@ -10,6 +10,8 @@
       - @news.each do |news|
         .col-xl-6.mt-5
           .card
+            - if object_updated_at_timestamp_in_days(news, 2)
+              .badge.badge-pill.badge-vitru Nowość
             - if news.thumbnail.attached?
               = image_tag url_for(news.thumbnail), class: 'card-img-top'
             .card-body
@@ -20,7 +22,7 @@
               .col-md-6.card-footer-col
                 %small.text-muted
                   %i.fas.fa-clock
-                  = time_ago_in_words(news.created_at)
+                  = time_ago_in_words(news.updated_at)
                   temu
                 %small.author.pull-right.text-muted
                   %i.fas.fa-user-circle
