@@ -2,80 +2,86 @@
 Rails.application.routes.draw do
 
 
+  devise_scope :user do
+    get "logowanie" => "devise/sessions#new", as: :new_user_session # custom path to login/sign_in
+    post 'logowanie', to: 'devise/sessions#create', as: :user_session
+    get "rejestracja" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
+    delete 'wyloguj', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
+  devise_for :users, skip: [:sessions], controllers: { confirmations: 'confirmations' }
 
-  devise_for :users, controllers: { confirmations: 'confirmations' }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'messages/index'
-  get 'comments/index'
-  get 'comments/new'
-  get 'conversations/index'
+
+  localized do
+    get 'messages/index'
+    get 'comments/index'
+    get 'comments/new'
+    get 'conversations/index'
 
 
-  get '/alliance',  to: 'alliance#index'
-  root 'alliance#index'
+    get '/alliance',  to: 'alliance#index'
+    root 'alliance#index'
 
-  get 'alliance/about'
-  get 'alliance/rules'
-  get 'alliance/info'
-
-
-
-  get '/clans',  to: 'clans#index'
-
-  get 'warframe/poe'
-  get 'warframe/newsfeed'
-  get 'warframe/missions'
-  get 'warframe/wfdrop'
-
-  get 'contact/index'
+    get 'alliance/about'
+    get 'alliance/rules'
+    get 'alliance/info'
 
 
+
+    get '/clans',  to: 'clans#index'
+
+    get 'warframe/poe'
+    get 'warframe/newsfeed'
+    get 'warframe/missions'
+    get 'warframe/wfdrop'
+
+    resources :contact
 
     resources :users
-  resources :news_categories
+    resources :news_categories
     resources :news do
       resources :comments
     end
 
 
 
-  resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
-        resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
-        resources :clans do
-            member do
-                get :decline
-                get :approve
-            end
+    resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
+    resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]
+    resources :clans do
+        member do
+            get :decline
+            get :approve
         end
-        resources :users do
-            member do
-                get :decline
-                get :approve
-            end
-        end
-        resources :requests do
-            member do
-                get :decline
-                get :approve
-                get :pend
-            end
-        end
-
-  get  '/panel',  to: 'users#panel'
-  get  '/pclan',  to: 'clans#panel'
-  get  '/request', to:'requests#podanie'
-
-  resources :conversations, only: [:index, :show, :destroy] do
-    member do
-      post :reply
-      post :restore
-      post :mark_as_read
     end
-    collection do
-        delete :empty_trash
+    resources :users do
+        member do
+            get :decline
+            get :approve
+        end
+    end
+    resources :requests do
+        member do
+            get :decline
+            get :approve
+            get :pend
+        end
+    end
+
+    get  '/panel',  to: 'users#panel'
+    get  '/pclan',  to: 'clans#panel'
+    get  '/request', to:'requests#podanie'
+
+    resources :conversations, only: [:index, :show, :destroy] do
+      member do
+        post :reply
+        post :restore
+        post :mark_as_read
       end
+      collection do
+          delete :empty_trash
+        end
+    end
+
+    resources :messages, only: [:new, :create], :path_names => {:new => "nowa"}
   end
-
-  resources :messages, only: [:new, :create]
-
 end

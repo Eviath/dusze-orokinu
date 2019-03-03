@@ -39,7 +39,7 @@
               .clan-content-buttons
 
                 %p
-                  = link_to truncate('Zobacz'), clan, class: "btn btn-do-vitru"
+                  = link_to 'Zobacz', clan, class: "btn btn-do-vitru"
                   - if current_user && can?(:destroy, clan)
                     |
                     = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-vitru", data: { turbolinks: false }

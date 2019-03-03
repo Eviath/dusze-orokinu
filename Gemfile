@@ -21,7 +21,11 @@ gem 'rails-i18n', '~> 5.1'
 
 gem "polish", ">= 0.1.0"
 
+# wysiwyg editor
 gem 'tinymce-rails'
+
+# translate routes
+gem 'route_translator'
 
 #messaging system rails
 gem 'mailboxer'

@@ -26,6 +26,10 @@ class Clan < ApplicationRecord
    validate :picture_validation
      resourcify
 
+     def to_param
+       "#{id}-#{name.parameterize}"
+     end
+
      def tier_enum
        # Do not select any value, or add any blank field. RailsAdmin will do it for you.
        ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
