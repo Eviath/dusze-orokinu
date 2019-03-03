@@ -463,7 +463,10 @@ background: $darkbg;
 
   @include md-d {
     .card-footer-col {
+      align-self: center;
       max-width: 90%;
+      text-align: center;
+
       small {
         padding: 5px 0;
       }
