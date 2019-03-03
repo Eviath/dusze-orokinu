@@ -53,8 +53,8 @@ end
   end
 
   # check for new news since last user login
-  def object_updated_at_timestamp_in_days(news, time)
-    news.updated_at > time.days.ago
+  def object_created_at_timestamp_in_days(news, time)
+    news.created_at > time.days.ago
   end
 
 end
