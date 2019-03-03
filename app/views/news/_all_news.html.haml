@@ -17,21 +17,23 @@
               %p.card-text=truncate(sanitize(news.content, tags: []), length: 200)
 
             .card-footer
-              %small.text-muted
-                Dodano
-                = time_ago_in_words(news.created_at)
-                temu
-              %small.author.pull-right.text-muted
-                Autor:
-                =link_to news.user.name, news.user, class:'link-vitruvian'
-              %small.news-category.text-muted
-                Kategoria:
-                =link_to NewsCategory.find(news.news_category_id).name, news_category_path(news.news_category_id), class:'link-vitruvian'
-              %small.author.pull-right.text-muted
-                %i.fas.fa-comments
-                =news.comments.count
+              .col-md-6.card-footer-col
+                %small.text-muted
+                  Dodano
+                  = time_ago_in_words(news.created_at)
+                  temu
+                %small.author.pull-right.text-muted
+                  Autor:
+                  =link_to news.user.name, news.user, class:'link-vitruvian'
+              .col-md-6.card-footer-col
+                %small.news-category.text-muted
+                  Kategoria:
+                  =link_to NewsCategory.find(news.news_category_id).name, news_category_path(news.news_category_id), class:'link-vitruvian'
+                %small.author.pull-right.text-muted
+                  %i.fas.fa-comments
+                  =news.comments.count
 
-            .card-body
+            .card-body.footer-card-body
               .btn-group.w-100
                 = link_to 'Zobacz', news, class: 'card-link btn btn-vitru-t'
                 -if current_user && can?(:manage, news)
@@ -41,7 +43,7 @@
     = will_paginate(@news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
 
 
-  .col-lg-4
+  .col-lg-4.mt-5
     %a.twitter-timeline{'data-lang':"pl", 'data-theme':"light", href:"https://twitter.com/Dusze_Orokinu?ref_src=twsrc%5Etfw"} Twitter Dusze Orokinu
 
 %script{src:"https://platform.twitter.com/widgets.js", charset:"utf-8"}

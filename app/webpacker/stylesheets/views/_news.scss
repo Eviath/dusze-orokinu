@@ -122,10 +122,49 @@ body.news-body {
 
 .news-wrapper {
 padding: 100px 0px 100px 0px;
+  @include md-d {
+    .pagination {
+      @include pagination-size(10px, 20px, 2em, 36px, 1px)
+    }
+  }
 
   .news-header-image{
     margin: 0 auto;
     display: flex;
+  }
+
+  // index actions - categories buttons
+  .actions {
+    @include md-d {
+      width: 50%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      .btn-do-vitru{
+        margin: 15px 0;
+        font-size: 2em;
+      }
+    }
+  }
+
+  .page-header {
+    h2 {
+      font-size: 5em;
+    }
+    p {
+      font-size: 1.5em;
+    }
+    @include md-d {
+      h2 {
+        font-size: 6em;
+      }
+      p {
+        font-size: 2em;
+      }
+    }
+
+
+
   }
 
   .container {
@@ -140,6 +179,9 @@ padding: 100px 0px 100px 0px;
 
 img.card-img-top {
   max-height: 295px;
+  @include md-d {
+    max-height: min-content;
+  }
 }
 
 p.card-text {
@@ -188,24 +230,58 @@ background: $darkbg;
     padding: 50px 0;
     width:90%;
     margin: 0 auto;
+
+    @include md-d {
+      h3 {
+        font-size: 4em;
+      }
+      .pagination {
+        @include pagination-size(10px, 20px, 2em, 36px, 1px)
+      }
+    }
+
+
+    .container {
+      max-width:100%;
+      @include md-d {
+        max-width: 80%;
+      }
+    }
   }
 }
 
 .news-show-card {
+  @include md-d {
+    padding: 20px;
+  }
   .news-show-img {
     min-height: auto;
     -o-object-fit: cover;
     max-height: 224px;
     object-fit: cover;
     max-width: 398px;
+
+    @include md-d {
+      max-height: initial;
+      max-width: initial;
+    }
   }
 
   .card-body{
     .card-title {
-      font-size: .9em;
+      font-size: 1.5em;
+      @include md-d {
+        font-size: 3em;
+      }
     }
-    .card-text {}
-    font-size: .9em;
+    .card-text {
+      font-size: 1.2em;
+    }
+  }
+  .card-btn {
+    @include md-d {
+      display: none;
+    }
   }
 
 }
@@ -311,20 +387,64 @@ background: $darkbg;
 
 
 
+
+
+
 .card-footer{
   background: $vitru-trans-bg;
   display: flex;
   justify-content: space-between;
+  .card-footer-col {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    small {
+      font-size: .9em;
+      padding: 5px 0;
+    }
+  }
+
+  @include md-d {
+    .card-footer-col {
+      max-width: 90%;
+      small {
+        padding: 5px 0;
+      }
+    }
+    font-size: 2em;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
 }
 
+//index news card
 .card-body {
+
+
+  // dont display button on mobile
+  &.footer-card-body {
+    @include md-d {
+      display: none;
+    }
+  }
 
   background: $darkbg;
 
   p {
+    font-size: 1.2em;
     color: $white;
+    @include md-d {
+      text-align: center;
+      font-size: 2em;
+    }
   }
 
+  .card-link {
+    @include md-d {
+      display: none;
+    }
+  }
 
     .author {
       float:right !important;
@@ -332,7 +452,14 @@ background: $darkbg;
 
 
   .card-title {
+    font-size: 2em;
+
     color: $vitru;
+
+    @include md-d {
+      text-align: center;
+      font-size: 3em;
+    }
   }
 
 }
