@@ -1,5 +1,25 @@
 
 pl:
+  routes:
+    alliance: sojusz
+    about: o-nas
+    rules: zasady
+    news: aktualnosci
+    clans: klany
+    missions: misje
+    contact: kontakt
+    info: informacje
+    users: uzytkownicy
+    pclan: panel-klanu
+    request: podanie
+    edit: edytuj
+    new: nowy
+    requests: podania
+    conversations: poczta
+    messages: wiadomosci
+    news_categories: aktualnosci-kategorie
+
+
   mailboxer:
     message_mailer:
       subject_new: 'Otrzymałeś nową wiadomość w serwisie Dusze Orokinu %{subject}'

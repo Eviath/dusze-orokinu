@@ -397,7 +397,18 @@ background: $darkbg;
   .card-footer-col {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    small {
+      font-size: .9em;
+      padding: 5px 0;
+    }
+  }
+
+  .card-footer-col-similar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
     small {
       font-size: .9em;
       padding: 5px 0;
