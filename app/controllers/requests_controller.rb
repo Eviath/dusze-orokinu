@@ -78,7 +78,7 @@ class RequestsController < ApplicationController
     if @request.save
       flash[:success] = "Podanie do sojuszu zostało zapisane! Otrzymasz powiadomienie e-mail jak tylko administracja sojuszu je rozpatrzy."
       RequestMailer.with(request: @request).created_request.deliver_now
-      redirect_to '/request'
+      redirect_to '/podanie'
     else
       render :new
     end
@@ -87,7 +87,7 @@ class RequestsController < ApplicationController
   def destroy
     @request.destroy
     flash[:success] = "Podanie do sojuszu usunięte."
-    redirect_to '/request'
+    redirect_to '/podanie'
   end
 
   private

@@ -13,8 +13,17 @@
           .card-body
             %h5.card-title=link_to news.title, news_path(news), class: 'link-vitruvian'
             %p.card-text=truncate(sanitize(news.content, tags: []), length: 150)
-            .card-btn.text-center
-              =link_to 'Zobacz', news_path(news), class: 'btn btn-sm btn-do-vitru'
+          .card-footer
+            .card-footer-col-similar
+              %small.text-muted
+                %i.fas.fa-clock
+                = time_ago_in_words(news.created_at)
+              %small.author.pull-right.text-muted
+                %i.fas.fa-user-circle
+                =link_to news.user.name, news.user, class:'link-vitruvian'
+              %small.author.pull-right.text-muted
+                %i.fas.fa-comments
+                =news.comments.count
 
 
 :javascript

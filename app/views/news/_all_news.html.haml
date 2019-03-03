@@ -19,15 +19,15 @@
             .card-footer
               .col-md-6.card-footer-col
                 %small.text-muted
-                  Dodano
+                  %i.fas.fa-clock
                   = time_ago_in_words(news.created_at)
                   temu
                 %small.author.pull-right.text-muted
-                  Autor:
+                  %i.fas.fa-user-circle
                   =link_to news.user.name, news.user, class:'link-vitruvian'
               .col-md-6.card-footer-col
                 %small.news-category.text-muted
-                  Kategoria:
+                  %i.fas.fa-tags
                   =link_to NewsCategory.find(news.news_category_id).name, news_category_path(news.news_category_id), class:'link-vitruvian'
                 %small.author.pull-right.text-muted
                   %i.fas.fa-comments
@@ -35,10 +35,17 @@
 
             .card-body.footer-card-body
               .btn-group.w-100
-                = link_to 'Zobacz', news, class: 'card-link btn btn-vitru-t'
+                = link_to news, class: 'card-link btn btn-vitru-t' do
+                  %i.fas.fa-eye
+                  Zobacz
                 -if current_user && can?(:manage, news)
-                  = link_to 'Edytuj', edit_news_path(news), class: 'card-link btn btn-vitru-t'
-                  = link_to 'Usuń', news, method: :delete, data: { 'confirm-swal': 'Jesteś pewny?' }, class: 'card-link btn btn-vitru-t'
+                  = link_to edit_news_path(news), class: 'card-link btn btn-vitru-t' do
+                    %i.fas.fa-edit
+                    Edytuj
+                  = link_to news, method: :delete, data: { 'confirm-swal': 'Jesteś pewny?' }, class: 'card-link btn btn-vitru-t' do
+                    %i.fas.fa-trash-alt
+                    Usuń
+
 
     = will_paginate(@news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
 
