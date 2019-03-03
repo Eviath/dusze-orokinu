@@ -4,17 +4,25 @@
   width: 100%;
   background: $darkt !important;
   text-align: center;
+  height: 100vh;
 
-  @include sm-d {
+  .footbar-content {
     height: 100vh;
-    .footbar-content {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .footbar-information {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .container {
+      align-self: unset;
+      margin-top: auto;
+      margin-bottom: auto;
     }
   }
+
 
   @include md-d {
   height: 100vh;
@@ -24,6 +32,9 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      .footbar-information {
+        width: 90%;
+      }
     }
   }
 
@@ -35,7 +46,7 @@
       font-size: 2em;
     }
     @include md-d{
-      padding-bottom: 40px;
+      padding-bottom: 80px;
       font-size: 2em;
     }
   }
@@ -63,20 +74,16 @@
   h2 {
     font-size: 4em;
     color: $white;
-    @include sm-d {
-      font-size: 8em;
-    }
+
     @include md-d {
-      font-size: 8em;
+      font-size: 6em;
     }
   }
 
   p {
     color: $vitru;
     font-size: 1.5em;
-    @include sm-d {
-      font-size: 2em;
-    }
+
     @include md-d {
       font-size: 2em;
     }
@@ -112,21 +119,14 @@ nav.foo-nav li {
 
 .stopka {
   padding: 10px;
-  @include sm-d {
-    position: absolute;
-    bottom: 0;
-    left:0;
-    right:0;
-    margin: 0 auto;
-    padding: 30px 30px 80px 30px;
-  }
+
   @include md-d{
     position: absolute;
     bottom: 0;
     left:0;
     right:0;
     margin: 0 auto;
-    padding: 30px 30px 80px 30px;
+    padding: 30px 30px 30px 30px;
   }
 
   h4 {
