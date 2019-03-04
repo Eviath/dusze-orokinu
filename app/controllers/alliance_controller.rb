@@ -28,7 +28,6 @@ class AllianceController < ApplicationController
   end
 
   def about
-    #   abouts
     @main_about = About.where(:assignment => 'MAIN')
     @about_column_two = About.where(:assignment => 'COLUMN_TWO')
     @about_column_one = About.where(:assignment => 'COLUMN_ONE')

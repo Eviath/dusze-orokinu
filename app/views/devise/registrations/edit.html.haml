@@ -10,13 +10,14 @@
       %h1
         Edytuj profil
 
-
     .container.form-container
       .row.justify-content-md-center
+
         .form-group.col-md-6
 
           = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
             = devise_error_messages!
+
 
 
             .form-group.p-2
@@ -61,12 +62,22 @@
               = f.label :password_confirmation, 'Potwierdź hasło'
               = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: '(Pozostaw puste, jeśli nie chcesz zmieniać)'
 
+
+            .form-group.pt-5.pb-5
+              .col-sm-12.text-center
+                %h5 Powiadomienia E-mail
+                = fields_for current_user.settings(:notification) do |settings_fields|
+                  = settings_fields.check_box :news
+                  = settings_fields.label :news, 'Chcę otrzymywać powiadomienia o nowych aktualnościach'
+
+
+
+
             .form-group.p-2
               = f.label :current_password, 'Aktualne hasło'
               %i (Zatwierdź zmiany aktualnym hasłem)
 
               = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
-
 
             .actions.mt-5.text-center
               = f.submit "Zaktualizuj", class: 'btn btn-do-vitru'

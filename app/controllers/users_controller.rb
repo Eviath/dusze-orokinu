@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user = User.find(params[:id] )
+      @user = User.find(params[:id])
       redirect_to root_url and return unless true
       @request = @user.request
       @news_comments = @user.news_comments

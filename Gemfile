@@ -24,6 +24,8 @@ gem "polish", ">= 0.1.0"
 # wysiwyg editor
 gem 'tinymce-rails'
 
+#  object settings
+gem 'ledermann-rails-settings'
 # translate routes
 gem 'route_translator'
 
