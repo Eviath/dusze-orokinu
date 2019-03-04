@@ -5,7 +5,7 @@ class ClanMailer < ApplicationMailer
   def new_clan
     gatheradmins = User.with_role(:admin)
     admins = gatheradmins.collect(&:email).join(',')
-    @url  = 'https://dusze-orokinu.pl/clans'
+    @url  = 'https://dusze-orokinu.pl/klany'
     mail(to: admins, subject: 'Dusze Orokinu - Nowe ogłoszenie klanu')
   end
 

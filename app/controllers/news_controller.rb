@@ -2,6 +2,8 @@ class NewsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_news, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource :except => [:index, :show]
+  # get all users with notification on
+  before_action :get_users_with_notification_on, only: :create
 
 
   include Comment::Commen
@@ -50,6 +52,9 @@ class NewsController < ApplicationController
     @news.news_category_id = params[:news_category_id]
     respond_to do |format|
       if @news.save
+        if !@users_with_notification_on.empty?
+          NewsMailer.with(news: @news, users: @users_with_notification_on).notify_about_created_news.deliver_now
+        end
         format.html { redirect_to @news, notice: 'News został zapisany.' }
         format.json { render :show, status: :created, location: @news }
       else
@@ -86,6 +91,17 @@ class NewsController < ApplicationController
   end
 
   private
+
+  def get_users_with_notification_on
+    @users_notify_setting_true = User.with_settings_for(:notification).includes(:news)
+    arr = []
+    @users_notify_setting_true.each do |user|
+      if user.settings(:notification).news == true
+        arr << user.email
+      end
+    end
+    @users_with_notification_on = arr
+  end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_news
