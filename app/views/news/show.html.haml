@@ -8,22 +8,13 @@
     .row
       .news
         .news-box
-          .news-header.text-center
-            %h2= @news.title
-          .news-description
-            .col-md-6.mx-auto
-              %p
-                Data dodania:
-                =@news.created_at.strftime('%F  %T')
-              %p
-                Autor
-                =link_to @news.user.name, @news.user
-              %p
-                Kategoria:
-                =link_to @news.news_category.name, @news.news_category
-              %p
-                Komentarze:
-                =@news.comments.count
+          =render 'news_show_info'
+
+  .scroll-downs
+    .mousey
+      .scroller
+
+
 
 
 

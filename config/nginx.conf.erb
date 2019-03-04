@@ -5,7 +5,7 @@ worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
 events {
 use epoll;
 accept_mutex on;
-worker_connections 1024;
+worker_connections <%= ENV['NGINX_WORKER_CONNECTIONS'] || 1024 %>;
 }
 
 http {
@@ -32,48 +32,10 @@ server unix:/tmp/nginx.socket fail_timeout=0;
 
 server {
 listen <%= ENV["PORT"] %>;
-server_name _;
+server_name dusze-orokinu.pl www.dusze-orokinu.pl;
 keepalive_timeout 5;
-
-add_header 'Access-Control-Allow-Origin' '*';
-add_header 'Access-Control-Allow_Credentials' 'true';
-add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
-add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH';
-
+client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 10 %>M;
 location / {
-
-if ($request_method = 'OPTIONS') {
-add_header 'Access-Control-Allow-Origin' '*';
-#
-# Om nom nom cookies
-#
-add_header 'Access-Control-Allow-Credentials' 'true';
-add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-#
-# Custom headers and headers various browsers *should* be OK with but aren't
-#
-add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
-#
-# Tell client that this pre-flight info is valid for 20 days
-#
-add_header 'Access-Control-Max-Age' 1728000;
-add_header 'Content-Type' 'text/plain charset=UTF-8';
-add_header 'Content-Length' 0;
-return 204;
-}
-if ($request_method = 'POST') {
-add_header 'Access-Control-Allow-Origin' '*';
-add_header 'Access-Control-Allow-Credentials' 'true';
-add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
-}
-if ($request_method = 'GET') {
-add_header 'Access-Control-Allow-Origin' '*';
-add_header 'Access-Control-Allow-Credentials' 'true';
-add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
-}
-
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 proxy_set_header Host $http_host;
 proxy_redirect off;
@@ -81,3 +43,5 @@ proxy_pass http://app_server;
 }
 }
 }
+
+

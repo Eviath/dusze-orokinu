@@ -25,6 +25,11 @@
     = f.label :content, "Opis aktualności"
     = f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120, id: 'uniq-news ', placeholder: "News"
 
+  - unless @news.new_record?
+    .field.mt-5
+      = f.label :last_edit_desc, 'Powód edycji (opcjonalny)'
+      = f.text_field :last_edit_desc, class:'form-control'
+
 
   .actions.text-center.mt-5.mb-5
     = f.submit 'Zapisz', class: 'btn btn-do-vitru'

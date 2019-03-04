@@ -9,6 +9,8 @@
   -@news_with_category.each do |news|
     .col-xl-4.mt-5
       .card
+        - if object_created_at_timestamp_in_days(news, 2)
+          .badge.badge-pill.badge-vitru Nowość
         - if news.thumbnail.attached?
           = image_tag url_for(news.thumbnail), class: 'card-img-top'
         .card-body
