@@ -374,6 +374,11 @@ background: $darkbg;
 }
 
 .news-content{
+
+  hr {
+    border-top: 1px solid $white;
+  }
+
   overflow-wrap: break-word;
   word-wrap: break-word;
 

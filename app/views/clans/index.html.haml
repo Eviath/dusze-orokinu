@@ -2,50 +2,12 @@
 
 .clan-index.parallax-users
   .container.mw-100.clan_index_container
+    =render 'clans_index_info'
+
     - if @clansapproved.any?
-      .row
+      .row.clans_row
         - @clansapproved.each do |clan|
-          .col-lg-4.clan-col
-            .clan-content
-              .clan-content-image
-                = image_tag clan.picture if clan.picture.attached?
-
-
-              .clan-content-text
-                %h1
-                  %span= clan.name
-
-                %h2
-                  Nick lidera:
-                  %span= clan.leader
-
-                %h2
-                  Tier klanu:
-                  %span= clan.tier
-
-                %h2
-                  Liczba klanowiczy:
-                  %span= clan.members
-
-                -if clan.recruitment_status
-                  .clan-recruitment-open
-                    Rekrutacja otwarta
-                -else
-                  .clan-recruitment-close
-                    Rekrutacja zamknięta
-
-
-
-              .clan-content-buttons
-
-                %p
-                  = link_to 'Zobacz', clan, class: "btn btn-do-vitru"
-                  - if current_user && can?(:destroy, clan)
-                    |
-                    = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-vitru", data: { turbolinks: false }
-                    |
-                    = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru"
-
+          =render 'single_clan_index', :clan => clan
 
     - else
       .row
@@ -62,33 +24,7 @@
 
             .row
               - @clanspending.each do |clan|
-                .col-lg-4.clan-col
-                  .clan-content
-                    .clan-content-image
-                      = image_tag clan.picture if clan.picture.attached?
-
-                    .clan-content-text
-                      %h2
-                        Nazwa klanu:
-                        %span= clan.name
-
-                      %h2
-                        Nick lidera:
-                        %span= clan.leader
-
-                      %h2
-                        Tier klanu:
-                        %span= clan.tier
-
-
-
-                    .clan-content-buttons
-                      %p
-                        = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small"
-                        - if can? :destroy, clan
-                          |
-                          = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
-                          = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small", data: { turbolinks: false }
+                =render 'single_clan_index', :clan => clan
 
 
         - else
@@ -105,35 +41,7 @@
 
             .row
               - @clansdeclined.each do |clan|
-                .col-lg-4.clan-col
-                  .clan-content
-                    .clan-content-image
-                      = image_tag clan.picture if clan.picture.attached?
-
-                    .clan-content-text
-                      %h2
-                        Nazwa klanu:
-                        %span= clan.name
-
-                      %h2
-                        Nick lidera:
-                        %span= clan.leader
-
-                      %h2
-                        Tier klanu:
-                        %span= clan.tier
-
-
-
-                    .clan-content-buttons
-                      %p
-                        = link_to truncate('Zobacz'), clan, class: "btn btn-do-bordered-small"
-                        - if can? :destroy, clan
-                          |
-                          = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
-                          = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-bordered-small", data: { turbolinks: false }
-
-
+                =render 'single_clan_index', :clan => clan
         -else
           .row.no-clans-pending
             .col-lg-4.mx-auto.text-center

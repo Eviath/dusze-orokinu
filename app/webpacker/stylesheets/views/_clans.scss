@@ -377,6 +377,34 @@ body {
   align-content: center;
   align-items: center;
 
+  .clan_index_container {
+    .clans_row {
+      margin-top: 100px;
+    }
+    .jumbotron {
+      @include container-shadow;
+      hr {
+        border-top: 1px solid $white;
+        width:70%;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 5em;
+      }
+      .lead {
+        font-size: 1.5em;
+      }
+      p {
+        font-size: 1.2em;
+      }
+      padding-bottom: 100px;
+      width:80%;
+      margin: 0 auto;
+      text-align: center;
+      background: $darkt;
+    }
+  }
+
   @include md-d {
     .clan_index_container {
      max-width: 80% !important;
