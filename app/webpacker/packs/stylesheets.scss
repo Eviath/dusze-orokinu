@@ -7,7 +7,61 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~bootstrap/scss/bootstrap';
 
 @import '../stylesheets/application';
+@import "~summernote/dist/summernote-bs4";
+@import "~codemirror/lib/codemirror";
+@import "~codemirror/theme/3024-day";
 @import '~sweetalert2/src/sweetalert2.scss';
+
+.note-group-select-from-files {
+  display: none;
+}
+// edit form summernote
+.note-popover.popover{
+  z-index: 9999999999 !important;
+}
+.note-editor {
+  z-index: 9999999999 !important;
+  .modal-dialog {
+    position:absolute;
+    top: 30%;
+    right:0;
+    left:0;
+  }
+  .modal-content {
+    color: $darkbg;
+  }
+
+  .modal-body {
+    text-align: left;
+  }
+  .note-editable{
+    min-height: 500px;
+    text-align:left;
+  }
+  .note-toolbar {
+    color: $darkt;
+    .dropdown-menu {
+      background: #fff;
+      .dropdown-item {
+        color: $darkbg;
+      }
+    }
+  }
+
+
+  .note-form-control {
+    background: #f4f4f4 !important;
+
+  }
+
+  .CodeMirror-code {
+    text-align: left;
+    word-break: break-all;
+  }
+}
+
+
+
 /* direct_uploads.css */
 
 .direct-upload {

@@ -25,12 +25,65 @@ import "./stylesheets"
 import "../javascripts/direct_upload.js"
 import "chosen-js"
 
-
-
 // fire up
 ActiveStorage.start();
 
+//summernote
+import "summernote/dist/summernote-bs4";
+import "summernote/dist/lang/summernote-pl-PL"
 
+$(document).on('ready turbolinks:load', function() {
+    jQuery('#summernote').summernote({
+        lang: 'pl-PL', // default: 'en-US'
+        prettifyHtml: false,
+        height: 500,   //set editable area's height
+        codemirror: { // codemirror options
+            theme: '3024-day'
+        },
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Marcellus SC'],
+        toolbar: [
+            ['style', ['style']],
+            ['fontsize', ['fontsize']],
+            ['font', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['picture', 'hr', 'link', 'video']],
+            ['table', ['table']],
+            ['misc', ['fullscreen', 'codeview']]
+        ],
+        fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
+    });
+});
+
+function sendFile(upload_path, file, toSummernote) {
+    var data;
+    data = new FormData;
+    data.append('upload[asset]', file);
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: upload_path,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+            console.log('file uploading...');
+            if (typeof data.errors !== 'undefined' && data.errors !== null) {
+                console.log('ops! errors...');
+                return $.each(data.errors, function(key, messages) {
+                    return $.each(messages, function(key, message) {
+                        return alert(message);
+                    });
+                });
+            } else {
+                console.log('inserting image in to editor...');
+                return toSummernote.summernote('insertImage', data.url);
+            }
+        }
+    });
+}
 
 import Swal from 'sweetalert2'
 const confirmed = (element, result) => {
@@ -141,6 +194,10 @@ $('.chosen-select').chosen({
     width: '200px'
 });
 });
+
+
+
+
 
 //shared links and navbar animation on scroll load with turbolinks
 $(document).on('turbolinks:load', function () {
