@@ -23,7 +23,7 @@
 
   .field.mt-5
     = f.label :content, "Opis aktualności"
-    = f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120, id: 'uniq-news ', placeholder: "News"
+    = f.text_area :content, id:"summernote", name:"editordata", placeholder: "News"
 
   - unless @news.new_record?
     .field.mt-5
@@ -34,8 +34,4 @@
   .actions.text-center.mt-5.mb-5
     = f.submit 'Zapisz', class: 'btn btn-do-vitru'
 
-
-
-
-= tinymce
 
