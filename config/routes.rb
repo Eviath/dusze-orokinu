@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get "rejestracja" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
     delete 'wyloguj', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
-  devise_for :users, skip: [:sessions], controllers: { confirmations: 'confirmations' }
+  devise_for :users, skip: [:sessions], controllers: { confirmations: 'confirmations', registrations: 'registrations' }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
