@@ -23,7 +23,7 @@
 
   .field.mt-5
     = f.label :content, "Opis aktualności"
-    = f.text_area :content, id:"summernote", name:"editordata", placeholder: "News"
+    = f.text_area :content, id:"summernote", placeholder: "News"
 
   - unless @news.new_record?
     .field.mt-5

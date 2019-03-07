@@ -16,15 +16,15 @@
       <IntrospectionStateNumber>518</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|74365|74367|1
+      <Relations>sequence|table|74451|74453|1
+sequence|table|74463|74465|1
+sequence|table|74477|74479|1
+sequence|table|74504|74506|1
+sequence|table|74365|74367|1
 sequence|table|74379|74381|1
 sequence|table|74400|74402|1
 sequence|table|74419|74421|1
 sequence|table|74427|74429|1
-sequence|table|74451|74453|1
-sequence|table|74463|74465|1
-sequence|table|74477|74479|1
-sequence|table|74504|74506|1
 </Relations>
     </database>
     <database id="4" parent="1" name="development_screenshotman">

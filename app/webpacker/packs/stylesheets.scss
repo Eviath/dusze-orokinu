@@ -12,7 +12,9 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import "~codemirror/theme/3024-day";
 @import '~sweetalert2/src/sweetalert2.scss';
 
-
+.note-group-select-from-files {
+  display: none;
+}
 // edit form summernote
 .note-popover.popover{
   z-index: 9999999999 !important;

@@ -54,28 +54,36 @@ $(document).on('ready turbolinks:load', function() {
             ['misc', ['fullscreen', 'codeview']]
         ],
         fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
-        onImageUpload: function(files, editor, welEditable) {
-            sendFile(files[0],editor,welEditable);
-        }
     });
 });
 
-function sendFile(file,editor,welEditable) {
-    data = new FormData();
-    data.append("file", file);
+function sendFile(upload_path, file, toSummernote) {
+    var data;
+    data = new FormData;
+    data.append('upload[asset]', file);
     $.ajax({
         data: data,
-        type: "POST",
-        url: "/ajax/saveimage",
+        type: 'POST',
+        url: upload_path,
         cache: false,
         contentType: false,
         processData: false,
-        success: function(url) {
-            editor.insertImage(welEditable, url);
+        success: function(data) {
+            console.log('file uploading...');
+            if (typeof data.errors !== 'undefined' && data.errors !== null) {
+                console.log('ops! errors...');
+                return $.each(data.errors, function(key, messages) {
+                    return $.each(messages, function(key, message) {
+                        return alert(message);
+                    });
+                });
+            } else {
+                console.log('inserting image in to editor...');
+                return toSummernote.summernote('insertImage', data.url);
+            }
         }
     });
 }
-
 
 import Swal from 'sweetalert2'
 const confirmed = (element, result) => {
