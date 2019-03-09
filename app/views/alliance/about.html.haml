@@ -4,8 +4,8 @@
     .container
       .about-us-text
         .images
-          =image_tag(asset_pack_path('media/all-gold.png'))
-          =image_tag(asset_pack_path('media/jedno-gold.png'))
+          =image_tag(asset_pack_path('media/images/all-gold.png'))
+          =image_tag(asset_pack_path('media/images/jedno-gold.png'))
         - if @main_about.any?
           - @main_about.each do |about|
             %h1=about.title

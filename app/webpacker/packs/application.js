@@ -19,9 +19,6 @@ import * as ActiveStorage from "activestorage";
 // app stylesheets
 
 import "./stylesheets"
-//bootstrap confirm modal
-// rails active storage
-//direct upload
 import "../javascripts/direct_upload.js"
 import "chosen-js"
 
@@ -31,6 +28,8 @@ ActiveStorage.start();
 //summernote
 import "summernote/dist/summernote-bs4";
 import "summernote/dist/lang/summernote-pl-PL"
+
+
 
 $(document).on('ready turbolinks:load', function() {
     jQuery('#summernote').summernote({

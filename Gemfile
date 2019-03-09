@@ -21,8 +21,7 @@ gem 'rails-i18n', '~> 5.1'
 
 gem "polish", ">= 0.1.0"
 
-# wysiwyg editor
-gem 'tinymce-rails'
+
 
 #  object settings
 gem 'ledermann-rails-settings'
@@ -61,9 +60,8 @@ gem 'bcrypt', '~> 3.1.11'
 gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
+gem 'bootsnap', require: false
 
-gem 'carrierwave',             '1.2.2'
-gem 'mini_magick',             '4.7.0'
 gem 'redis', '~> 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -77,12 +75,12 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'listen'
 end
 
 
 group :production do
   gem 'unicorn'
-  gem 'fog'
   gem 'fog-aws'
 end
 

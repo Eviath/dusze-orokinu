@@ -34,7 +34,7 @@
     "sweetalert2": "^8.2.5",
     "tinymce": "^5.0.0",
     "turbolinks": "^5.2.0",
-    "warframe-worldstate-data": "^0.1.28",
+    "warframe-worldstate-data": "git://github.com/wfcd/warframe-worldstate-data.git",
     "warframe-worldstate-parser": "^2.1.29"
   },
   "devDependencies": {
