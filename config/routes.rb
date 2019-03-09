@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     get 'alliance/rules'
     get 'alliance/info'
 
+    get '/cookies', to: 'cookies_eu#index'
+
 
 
     get '/clans',  to: 'clans#index'
