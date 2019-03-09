@@ -1,4 +1,4 @@
-/* eslint no-console:0 */
+
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -19,11 +19,9 @@ import * as ActiveStorage from "activestorage";
 // app stylesheets
 
 import "./stylesheets"
-//bootstrap confirm modal
-// rails active storage
-//direct upload
 import "../javascripts/direct_upload.js"
 import "chosen-js"
+
 
 // fire up
 ActiveStorage.start();
@@ -31,6 +29,8 @@ ActiveStorage.start();
 //summernote
 import "summernote/dist/summernote-bs4";
 import "summernote/dist/lang/summernote-pl-PL"
+
+
 
 $(document).on('ready turbolinks:load', function() {
     jQuery('#summernote').summernote({

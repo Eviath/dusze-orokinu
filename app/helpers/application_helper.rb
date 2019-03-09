@@ -32,7 +32,7 @@ end
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!")
     else
-      asset_pack_path('media/vitru-glyph.png')
+      asset_pack_path('media/images/vitru-glyph.png')
     end
   end
 

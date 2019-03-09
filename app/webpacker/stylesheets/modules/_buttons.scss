@@ -421,7 +421,44 @@
 
 }
 
+// hover effect all the time
+.btn-do-vitru-h {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $vitru-opa;
+  }
 
+
+  &:hover{
+    &:before{
+      background-color: $vitru-trans-bg;
+    }
+  }
+
+  &.active {
+    color: $vitru;
+    &:before{
+      background-color: $vitru-trans-bg;
+    }
+  }
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+
+  color: $vitru-light;
+  border: 1px solid $vitru-opa;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    background-color: $vitru-trans-bg;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+  }
+
+}
 // Transparent vitruvian button
 .btn-vitru-t {
 

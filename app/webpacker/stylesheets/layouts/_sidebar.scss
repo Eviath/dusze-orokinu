@@ -83,6 +83,7 @@ body {
   top:0;
   z-index: 999999;
   height: 100vh;
+
 }
 
 /*----------------toggeled sidebar----------------*/
@@ -96,6 +97,7 @@ body {
 
 
 .side-wrapper.toggled .sidebar-wrapper {
+
   right: 0px;
   @include md-d {
   width:100vw;
@@ -133,8 +135,12 @@ body {
   width: 260px;
   height: 100%;
   max-height: 100%;
+  border-bottom: 5px solid $vitru;
   position: fixed;
-  background: $darkbg;
+  @include container-shadow;
+  background-size: 100%;
+  background-color: $darkbg;
+  background-image: url('../images/vitru-flowers.png') !important;
   top: 0;
   right: -300px;
   z-index: 999;
