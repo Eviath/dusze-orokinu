@@ -7031,11 +7031,12 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-warframe-worldstate-data@^0.1.38, "warframe-worldstate-data@git://github.com/wfcd/warframe-worldstate-data.git":
+warframe-worldstate-data@^0.1.38:
   version "0.1.46"
-  resolved "git://github.com/wfcd/warframe-worldstate-data.git#aaeda1bf1a1618493faaac8e2dad67466f2c5a3e"
+  resolved "https://registry.yarnpkg.com/warframe-worldstate-data/-/warframe-worldstate-data-0.1.46.tgz#82fc6ec0aa67faa24f15b654d023a55b6c45a475"
+  integrity sha512-CMoxh6RZgOk3cd4h6VOmlydolO6wT14GXJkMOzGJjEoyJ21JEPZKqYvhCIs95HRzOMyCq9BEMXTYmBGQ0ShP7A==
 
-warframe-worldstate-parser@^2.1.29:
+warframe-worldstate-parser@^2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/warframe-worldstate-parser/-/warframe-worldstate-parser-2.3.4.tgz#23c313f8b3b529101802f970c644b58d76745a32"
   integrity sha512-KGEOnmjJb5mq2eHFMJnPPwpvwCPSPy+zZvjY3x4Q8r7vEYNXQW08YuyDygl0EI+DX5kenWlCeMLSfjckTBOL9g==
