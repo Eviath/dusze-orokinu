@@ -11,7 +11,59 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import "~codemirror/lib/codemirror";
 @import "~codemirror/theme/3024-day";
 @import '~sweetalert2/src/sweetalert2.scss';
+//cookies styles
 
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(80px);
+    opacity:0;
+  }
+  to {
+    transform: translateY(0);
+    opacity:1;
+  }
+}
+
+.js-cookies-eu {
+  animation: .5s ease-in 0s 1 forwards slideInFromTop;
+  animation-delay: 3s;
+}
+
+.cookies-info {
+  hr {
+    border-top: 1px solid $white;
+  }
+}
+
+.cookies-eu /* main div */ {
+  transform: translateY(80px);
+  opacity:0;
+  z-index: 9999999999;
+  position: fixed;
+  bottom: 0;
+  background: $darkbg;
+  width: 100%;
+  display: flex;
+  border-top: 10px solid #b6934e;
+  justify-content: center;
+  align-items: center;
+}
+.cookies-eu-content-holder /* content holder */ {
+ padding: 15px;
+}
+.cookies-eu-button-holder /* button holder */ {
+  background: transparent;
+  padding: 10px;
+
+}
+.cookies-eu-ok  /* button */      {
+
+}
+
+
+
+
+// Code editor summernote
 .note-group-select-from-files {
   display: none;
 }

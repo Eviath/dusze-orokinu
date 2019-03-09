@@ -1,2 +1,1 @@
 //= require sweetalert2
-
