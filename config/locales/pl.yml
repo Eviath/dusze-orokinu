@@ -1,11 +1,7 @@
 
 pl:
-  cookies_eu:
-    ok: Rozumiem
-    cookies_text: Stosujemy ciasteczka w celu świadczenia jak najlepszych usług. Korzystając z tej strony wyrażasz zgodę na ich używanie!
   routes:
     alliance: sojusz
-    cookies: ciasteczka
     about: o-nas
     rules: zasady
     news: aktualnosci

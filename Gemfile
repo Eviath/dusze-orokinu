@@ -20,8 +20,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-i18n', '~> 5.1'
 
 gem "polish", ">= 0.1.0"
-# cookies
-gem 'cookies_eu'
+
+# wysiwyg editor
+gem 'tinymce-rails'
+
 #  object settings
 gem 'ledermann-rails-settings'
 # translate routes

@@ -1,4 +1,4 @@
-
+/* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -10,8 +10,6 @@
 // core
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
-
-
 import 'jquery'
 import $ from 'jquery';
 global.$ = jQuery;
@@ -26,12 +24,9 @@ import "./stylesheets"
 //direct upload
 import "../javascripts/direct_upload.js"
 import "chosen-js"
-import '../javascripts/cookie_consent'
+
 // fire up
 ActiveStorage.start();
-
-
-
 
 //summernote
 import "summernote/dist/summernote-bs4";
@@ -133,9 +128,10 @@ function handleConfirm(element) {
 Rails.delegate(document, 'a[data-confirm-swal]', 'click', handleConfirm);
 
 
+
+
 Rails.start();
 Turbolinks.start();
-
 
 //import custom scripts
 import '../javascripts/sidebar'
@@ -145,6 +141,7 @@ function closeToast() {
     $('#toast').hide();
 }
 window.closeToast = closeToast;
+
 
 
 

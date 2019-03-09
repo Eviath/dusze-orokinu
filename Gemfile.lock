@@ -114,8 +114,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
-    cookies_eu (1.7.5)
-      js_cookie_rails (~> 2.2.0)
     crass (1.0.4)
     debug_inspector (0.0.3)
     declarative (0.0.10)
@@ -348,8 +346,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    js_cookie_rails (2.2.0)
-      railties (>= 3.1)
     json (2.1.0)
     jwt (2.1.0)
     kaminari (1.1.1)
@@ -532,6 +528,8 @@ GEM
     tilt (2.0.9)
     time_difference (0.7.0)
       activesupport (~> 5.1)
+    tinymce-rails (5.0.0)
+      railties (>= 3.1.1)
     trollop (2.9.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -574,7 +572,6 @@ DEPENDENCIES
   cancancan
   capybara (~> 2.13)
   carrierwave (= 1.2.2)
-  cookies_eu
   devise
   devise_lastseenable
   faker (= 1.7.3)
@@ -598,6 +595,7 @@ DEPENDENCIES
   selenium-webdriver
   sweetalert2
   time_difference
+  tinymce-rails
   tzinfo-data
   unicorn
   web-console (>= 3.3.0)
