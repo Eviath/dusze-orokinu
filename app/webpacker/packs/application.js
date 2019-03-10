@@ -21,7 +21,7 @@ import * as ActiveStorage from "activestorage";
 import "./stylesheets"
 import "../javascripts/direct_upload.js"
 import "chosen-js"
-
+import "../javascripts/cookie_consent.js"
 
 // fire up
 ActiveStorage.start();

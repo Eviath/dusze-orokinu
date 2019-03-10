@@ -20,7 +20,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-i18n', '~> 5.1'
 
 gem "polish", ">= 0.1.0"
-
+#  cookies gem
+gem 'cookies_eu'
 
 #  object settings
 gem 'ledermann-rails-settings'
