@@ -60,8 +60,6 @@ gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
 gem 'bootsnap', require: false
-gem 'carrierwave'
-gem 'mini_magick'
 gem 'redis', '~> 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -81,8 +79,7 @@ end
 
 
 group :production do
-  gem 'fog'
-  gem 'fog-aws'
+
   gem 'unicorn'
 end
 
