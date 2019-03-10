@@ -20,9 +20,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-i18n', '~> 5.1'
 
 gem "polish", ">= 0.1.0"
-#  cookies gem
-gem 'cookies_eu'
 
+gem 'cookies_eu'
 #  object settings
 gem 'ledermann-rails-settings'
 # translate routes
@@ -61,7 +60,8 @@ gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
 gem 'bootsnap', require: false
-
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'redis', '~> 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -78,6 +78,7 @@ group :development, :test do
   gem 'listen'
 end
 
+gem 'fog'
 
 group :production do
   gem 'unicorn'
