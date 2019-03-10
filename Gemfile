@@ -66,6 +66,7 @@ gem 'redis', '~> 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "aws-sdk-s3", require: false
+
 group :development, :test do
   gem "awesome_print"
   gem "better_errors"
@@ -78,11 +79,11 @@ group :development, :test do
   gem 'listen'
 end
 
-gem 'fog'
 
 group :production do
-  gem 'unicorn'
+  gem 'fog'
   gem 'fog-aws'
+  gem 'unicorn'
 end
 
 group :development do
