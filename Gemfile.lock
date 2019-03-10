@@ -115,6 +115,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
+    cookies_eu (1.7.5)
+      js_cookie_rails (~> 2.2.0)
     crass (1.0.4)
     debug_inspector (0.0.3)
     devise (4.6.1)
@@ -181,6 +183,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    js_cookie_rails (2.2.0)
+      railties (>= 3.1)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -373,6 +377,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13)
+  cookies_eu
   devise
   devise_lastseenable
   faker (= 1.7.3)
