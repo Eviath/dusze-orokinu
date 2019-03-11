@@ -4,10 +4,11 @@ class UsersController < ApplicationController
     load_and_authorize_resource :except => [:index, :show]
 
     def index
-      @users = User.without_role(:admin).without_role(:lider).without_role(:moderator).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
-      @admins = User.with_role(:admin)
-      @liderzy = User.with_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
-      @moderators = User.with_role(:moderator)
+      user = User.with_attached_avatar.includes(:clan)
+      @users = user.without_role(:admin).without_role(:lider).without_role(:moderator).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
+      @admins = user.with_role(:admin)
+      @liderzy = user.with_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
+      @moderators = user.with_role(:moderator)
     end
 
     def show

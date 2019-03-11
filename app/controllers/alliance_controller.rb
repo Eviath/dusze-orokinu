@@ -2,7 +2,7 @@ class AllianceController < ApplicationController
   before_action :get_discord_info, only: [:index, :info]
 
   def index
-    @news = News.limit(5).order('id asc')
+    @news = News.includes(:thumbnail_blob).all.limit(5).order('id asc')
 
     #   abouts
     @main_about = About.where(:assignment => 'MAIN')
@@ -38,7 +38,7 @@ class AllianceController < ApplicationController
 
   def rules
     @principles = Principle.all
-    @rule_category = RuleCategory.all
+    @rule_category = RuleCategory.includes(:rule).all
   end
 
   def info

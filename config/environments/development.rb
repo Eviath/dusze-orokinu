@@ -4,7 +4,25 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+
   config.cache_classes = false
+
+  # bullet
+  config.after_initialize do
+    require 'slack-notifier'
+
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.growl = true
+    Bullet.rails_logger = true
+    Bullet.add_footer = true
+    Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
+    Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware', ['my_file.rb', 'my_method'], ['my_file.rb', 16..20] ]
+    Bullet.slack = { webhook_url: 'https://hooks.slack.com/services/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', channel: '#dusze-orokinu', username: 'Bulletnotifier' }
+  end
+
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -59,4 +77,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+
+
 end
