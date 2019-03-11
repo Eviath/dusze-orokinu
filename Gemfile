@@ -9,7 +9,7 @@ end
 ruby '2.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use sqlite3 as the database for Active Record
+# Use postgres as Database
 gem 'pg'
 # Use Puma as the app server
 gem 'sweetalert2'
@@ -18,9 +18,9 @@ gem 'sass-rails', '~> 5.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'rails-i18n', '~> 5.1'
-
+# polish translation
 gem "polish", ">= 0.1.0"
-
+# cookies consent
 gem 'cookies_eu'
 #  object settings
 gem 'ledermann-rails-settings'
@@ -30,19 +30,23 @@ gem 'route_translator'
 #messaging system rails
 gem 'mailboxer'
 
+# webpacker 4.0 gem
 gem 'webpacker', github: 'rails/webpacker'
 
 # haml syntax
 gem "haml-rails"
 
+
 gem 'time_difference'
 
+# build trees database
 gem 'ancestry'
 
 # gem devise
 gem 'devise'
 gem 'devise_lastseenable'
 
+# permission gems
 gem 'cancancan'
 gem 'rolify'
 
@@ -56,7 +60,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
-gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
 gem 'bootsnap', require: false
@@ -78,6 +81,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'listen'
+  gem 'faker', '1.7.3'
 end
 
 
