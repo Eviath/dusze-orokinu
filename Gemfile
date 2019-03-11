@@ -66,7 +66,10 @@ gem 'redis', '~> 3.2'
 gem "aws-sdk-s3", require: false
 
 group :development, :test do
-  gem "awesome_print"
+  gem 'slack-notifier'
+  gem 'ruby-growl'
+  gem 'bullet'
+  gem 'pry-rails'
   gem "better_errors"
   gem "binding_of_caller"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

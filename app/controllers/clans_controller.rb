@@ -5,11 +5,11 @@ class ClansController < ApplicationController
   load_and_authorize_resource :except => [:index, :show]
 
   def index
-    @clansapproved = Clan.approved.order('updated_at DESC')
-    @clanspending = Clan.pending.newest
-    @clansdeclined = Clan.declined
+    @clansapproved = Clan.with_attached_picture.approved.order('updated_at DESC')
+    @clanspending = Clan.with_attached_picture.pending.newest
+    @clansdeclined = Clan.with_attached_picture.declined
 
-    @clans = Clan.all
+    @clans = Clan.with_attached_picture.all
   end
 
 

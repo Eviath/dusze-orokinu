@@ -11,6 +11,9 @@ cache:
 addons:
   postgresql: "9.6"
 
+notifications:
+  slack: eviathos:RrZueASUgelzesoarMQOFijE
+
 before_install:
   - "echo 'gem: --no-document' > ~/.gemrc"
   - "echo '--colour' > ~/.rspec"

@@ -2,12 +2,12 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
 
-  def new
-      @chosen_recipient = User.find_by(id: params[:to].to_i) if params[:to]
+    def new
+      @chosen_recipient = User.with_attached_avatar.find_by(id: params[:to].to_i) if params[:to]
     end
   
     def create
-      recipients = User.where(id: params['recipients'])
+      recipients = User.with_attached_avatar.where(id: params['recipients'])
       conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
       flash[:success] = "Wiadomość została wysłana!"
       redirect_to conversation_path(conversation)

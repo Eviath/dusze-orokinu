@@ -11,8 +11,8 @@
       .card
         - if object_created_at_timestamp_in_days(news, 2)
           .badge.badge-pill.badge-vitru Nowość
-        - if news.thumbnail.attached?
-          = image_tag url_for(news.thumbnail), class: 'card-img-top'
+        - if news.thumbnail_blob
+          = image_tag url_for(news.thumbnail_blob), class: 'card-img-top'
         .card-body
           %h5.card-title= link_to news.title, news
           %p.card-text=truncate(sanitize(news.content, tags: []), length: 200)

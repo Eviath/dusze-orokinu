@@ -7,7 +7,6 @@ class ConversationsController < ApplicationController
 
 
 
-
     def index
       if @box.eql? "poczta"
         @conversations = @mailbox.inbox
@@ -74,4 +73,5 @@ class ConversationsController < ApplicationController
       end
       @box = params[:box]
     end
+
   end

@@ -12,7 +12,7 @@ class NewsCategoriesController < ApplicationController
   # GET /news_categories/1
   # GET /news_categories/1.json
   def show
-    @news = News.where(news_category_id: @news_category.id)
+    @news = News.includes(:user, :thumbnail_blob).where(news_category_id: @news_category.id)
   end
 
   # GET /news_categories/new

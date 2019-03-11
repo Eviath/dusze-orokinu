@@ -9,7 +9,9 @@ class News < ApplicationRecord
   #     t.index ["user_id"], name: "index_news_on_user_id"
 
 
-  has_one_attached :thumbnail
+  has_one :thumbnail_attachment, -> { where(name: 'thumbnail') }, class_name: "ActiveStorage::Attachment", as: :record, inverse_of: :record, dependent: false
+  has_one :thumbnail_blob, through: :thumbnail_attachment, class_name: "ActiveStorage::Blob", source: :blob
+
   belongs_to :news_category
   resourcify
 
