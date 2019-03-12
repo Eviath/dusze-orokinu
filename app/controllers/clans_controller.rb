@@ -5,22 +5,19 @@ class ClansController < ApplicationController
   load_and_authorize_resource :except => [:index, :show]
 
   def index
-    @clansapproved = Clan.with_attached_picture.approved.order('updated_at DESC')
-    @clanspending = Clan.with_attached_picture.pending.newest
-    @clansdeclined = Clan.with_attached_picture.declined
-
-    @clans = Clan.with_attached_picture.all
+    @clansapproved = Clan.with_attached_picture.approved.order('updated_at DESC').decorate
+    @clanspending = Clan.with_attached_picture.pending.newest.decorate
+    @clansdeclined = Clan.with_attached_picture.declined.decorate
+    @clans = Clan.with_attached_picture.all.decorate
   end
 
-
-
   def approve
-      clan = Clan.find(params[:id])
-      clan.approval = !clan.approval # flop the status
-      clan.save
-      flash[:success] = "Ogłoszenie klanu zostało zaakceptowane"
-      redirect_to clan_path(clan)
-end
+    clan = Clan.find(params[:id])
+    clan.approval = !clan.approval # flop the status
+    clan.save
+    flash[:success] = "Ogłoszenie klanu zostało zaakceptowane"
+    redirect_to clan_path(clan)
+  end
 
 def decline
   clan = Clan.find(params[:id])
@@ -34,21 +31,19 @@ end
 
   def show
     @clansapproved = Clan.approved.newest.page(params[:page]).per_page(5)
-    @clan = Clan.find(params[:id])
+    @clan = Clan.find(params[:id]).decorate
   end
 
   def panel
     @user  = current_user
-    @clan = @user.clan
+    @clan = @user.clan.decorate if @user.clan.present?
   end
-
 
   def new
     @user = current_user
     @clan = current_user.build_clan if user_signed_in?
     @clan = @user.clan
   end
-
 
   def create
     @clan = current_user.build_clan(clan_params)
