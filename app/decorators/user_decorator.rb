@@ -1,6 +1,5 @@
 class UserDecorator < Draper::Decorator
   include Draper::LazyHelpers
-
   delegate_all
 
   def last_seen
@@ -19,29 +18,10 @@ class UserDecorator < Draper::Decorator
     link_to 'Napisz', new_message_path(to: object), class: 'btn btn-do-vitru' if current_user != object
   end
 
-  def action_roles
-    if current_user.has_role?(:admin)
-      roles_panel
-    end
-  end
-
 
   #
   # == Method/Helpers for Decorator
   #
-
-  def roles_panel
-
-  end
-
-  def checked_role(role)
-    # Turn role to symbol
-    rol= :"#{role}"
-
-    if object.has_role?(rol)
-      true
-    end
-  end
 
   def created_at
     content_tag(:span, "#{object.created_at.strftime("%F %T")}")

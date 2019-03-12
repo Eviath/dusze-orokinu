@@ -18,32 +18,8 @@ class UsersController < ApplicationController
       @news_comments = @user.news_comments
     end
 
-    def update_role
-        user = User.find(params[:id])
-
-          all_roles = Role.all
-        
-
-          if !params[:user].nil?
-            params[:user][:input_roles].each do |role|
-              user.add_role role unless user.has_role? role
-            end
-          else
-            roles = user.roles.pluck(:name)
-            roles.each do |role|
-              user.remove_role role
-            end
-          end
-
-
-        flash[:success] = "Rangi użytkownika zaktualizowane."
-        redirect_to request.referrer || requests_path
-    end
-
 
   private
-
-
 
 
 end

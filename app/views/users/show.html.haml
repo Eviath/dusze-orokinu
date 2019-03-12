@@ -1,9 +1,6 @@
 - provide(:title, @user.name)
 
-
 .user-page-wrapper
-
-
   .profile-container
     .container
       .row
@@ -25,16 +22,6 @@
 
             .message-user
               =@user.message_user
-
-          =form_for @user, :url => url_for(:controller => 'users', :action => 'update_role') do |f|
-            - Role.all.each do |role|
-              = check_box_tag "user[input_roles][]", role.name, @user.roles.include?(role)
-              = role.name
-            .input-group.text-center.justify-content-center.p-4
-              = f.submit "Aktualizuj role", class:'btn btn-do-vitru'
-
-
-
 
 
           .profil-show-img
