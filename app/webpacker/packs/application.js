@@ -1,4 +1,4 @@
-/* eslint no-console:0 */
+
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -11,31 +11,127 @@
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 import 'jquery'
-import 'bootstrap/dist/js/bootstrap';
-
-// app stylesheets
-import "./stylesheets"
-//bootstrap confirm modal
-import "data-confirm-modal"
-//better choose form input
-import "chosen-js"
-// rails active storage
-import * as ActiveStorage from "activestorage";
-//direct upload
-import "../javascripts/direct_upload.js"
-
-// set jquery as global for unobtrusive rails javascript
 import $ from 'jquery';
 global.$ = jQuery;
+global.jQuery = $;
+import 'bootstrap/dist/js/bootstrap';
+import * as ActiveStorage from "activestorage";
+// app stylesheets
+
+import "./stylesheets"
+import "../javascripts/direct_upload.js"
+import "chosen-js"
+import "../javascripts/cookie_consent.js"
 
 // fire up
 ActiveStorage.start();
+
+//summernote
+import "summernote/dist/summernote-bs4";
+import "summernote/dist/lang/summernote-pl-PL"
+
+
+
+$(document).on('ready turbolinks:load', function() {
+    jQuery('#summernote').summernote({
+        lang: 'pl-PL', // default: 'en-US'
+        prettifyHtml: false,
+        height: 500,   //set editable area's height
+        codemirror: { // codemirror options
+            theme: '3024-day'
+        },
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Marcellus SC'],
+        toolbar: [
+            ['style', ['style']],
+            ['fontsize', ['fontsize']],
+            ['font', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['picture', 'hr', 'link', 'video']],
+            ['table', ['table']],
+            ['misc', ['fullscreen', 'codeview']]
+        ],
+        fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
+    });
+});
+
+function sendFile(upload_path, file, toSummernote) {
+    var data;
+    data = new FormData;
+    data.append('upload[asset]', file);
+    $.ajax({
+        data: data,
+        type: 'POST',
+        url: upload_path,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+            console.log('file uploading...');
+            if (typeof data.errors !== 'undefined' && data.errors !== null) {
+                console.log('ops! errors...');
+                return $.each(data.errors, function(key, messages) {
+                    return $.each(messages, function(key, message) {
+                        return alert(message);
+                    });
+                });
+            } else {
+                console.log('inserting image in to editor...');
+                return toSummernote.summernote('insertImage', data.url);
+            }
+        }
+    });
+}
+
+import Swal from 'sweetalert2'
+const confirmed = (element, result) => {
+    if (result.value) {
+        // User clicked confirm button
+        element.removeAttribute('data-confirm-swal');
+        element.click()
+    }
+};
+
+// Display the confirmation dialog
+const showConfirmationDialog = (element) => {
+    const message = element.getAttribute('data-confirm-swal');
+    const text = element.getAttribute('data-text');
+
+    Swal.fire({
+        title: message || 'Jesteś pewny?',
+        text: text || '',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Tak',
+        cancelButtonText: 'Anuluj',
+    }).then(result => confirmed(element, result))
+};
+
+const allowAction = (element) => {
+    if (element.getAttribute('data-confirm-swal') === null) {
+        return true
+    }
+
+    showConfirmationDialog(element);
+    return false
+};
+
+function handleConfirm(element) {
+    if (!allowAction(this)) {
+        Rails.stopEverything(element)
+    }
+}
+
+
+Rails.delegate(document, 'a[data-confirm-swal]', 'click', handleConfirm);
+
+
+
+
 Rails.start();
 Turbolinks.start();
-
-
-
-
 
 //import custom scripts
 import '../javascripts/sidebar'
@@ -45,6 +141,7 @@ function closeToast() {
     $('#toast').hide();
 }
 window.closeToast = closeToast;
+
 
 
 
@@ -87,18 +184,19 @@ $(document).click(function (e) {
 
 
 // Bootstrap modal confirm setup
-dataConfirmModal.setDefaults({
-    title: 'Potwierdź swoją akcję',
-    commit: 'Potwierdź',
-    cancel: 'Anuluj'
-});
 
 
+
+$(document).ready(function() {
 $('.chosen-select').chosen({
     no_results_text: "Nie znaleziono",
     placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
     width: '200px'
 });
+});
+
+
+
 
 
 //shared links and navbar animation on scroll load with turbolinks
@@ -141,6 +239,7 @@ $(document).on('turbolinks:load', function () {
         elem.scrollTop = elem.scrollHeight
     }
 });
+
 
 
 

@@ -34,18 +34,34 @@ PROFILES
 // Profile container
 .profile-container {
   width: 100%;
-
-
   padding: 50px 0px 50px 0px;
+
+  @include md-d {
+    height: 100vh;
+    padding: 0;
+    align-items: center;
+    display: flex;
+
+  }
 }
 
 
 .user_details {
   padding-top: 40px;
 
+  @include md-d {
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
   p {
     color: $vitru;
     font-size: .4em;
+
+    @include md-d {
+      padding: 5px;
+    }
 
     span {
       padding-left: 10px;
@@ -117,6 +133,18 @@ $gray-medium-light: #eaeaea;
 }
 
 
+.field {
+
+  @include md-d {
+    padding: 20px 0;
+    input[type="checkbox"] {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+}
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -131,7 +159,6 @@ $gray-medium-light: #eaeaea;
 /* Users index */
 
 .users {
-
 
   padding: 50px 0;
 
@@ -149,8 +176,8 @@ $gray-medium-light: #eaeaea;
 
   li {
     overflow: auto;
-    padding: 10px 0;
-    width: fit-content;
+    padding: 10px 20px;
+    width: 100%;
 
   }
 
@@ -161,28 +188,33 @@ $gray-medium-light: #eaeaea;
   }
 }
 
-.user-profile {
-  min-width: 350px;
-}
 
-.options {
-  display: inline-flex;
-  margin-left: 20px;
-  border-left: solid $vitru 1px;
-  padding: 12px 0px 0px 12px;
 
-  input {
-    width: auto;
-  }
-}
+
 
 
 .form-container {
   padding: 50px 0px 0px 0px;
 
+  @include sm-d {
+    label {
+      font-size: 2em;
+    }
+  }
+  @include md-d {
+    label {
+      font-size: 2em;
+    }
+  }
+
   .user-actions {
     padding-bottom: 50px;
     text-align: center;
+    @include md-d {
+      a {
+        font-size: 2em;
+      }
+    }
   }
 }
 
@@ -204,6 +236,18 @@ input[type="radio"], input[type="checkbox"] {
   input {
     background-color: #141417;
     border: 0;
+  }
+
+  .user-avatar {
+    max-width: 120px;
+    max-height: 120px;
+  }
+  .form-group {
+    @include md-d {
+      width: 90%;
+      max-width: 90%;
+      flex: 90%;
+    }
   }
 }
 
@@ -227,11 +271,28 @@ input[type="radio"], input[type="checkbox"] {
 .login-page-cover {
   background: url('../images/operator-vit.png');
   background-position: left;
+
+  @include sm-d {
+    display: none;
+  }
+  @include md-d {
+    display: none;
+  }
 }
 
 .login-form-cover {
 
   display: flex;
+  @include sm-d {
+    width:100%;
+    max-width: 100%;
+    flex: 100%;
+  }
+  @include md-d {
+    width:100%;
+    max-width: 100%;
+    flex: 100%;
+  }
 }
 
 
@@ -282,9 +343,22 @@ input[type="radio"], input[type="checkbox"] {
   //container holding form in users/sing_in
   .form-container {
 
+    @include md-d {
+      .form-group {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+
+
     .actions {
       // space between button and remember-me feature
       padding-top: 30px;
+      @include md-d {
+        .btn{
+          font-size:2em;
+        }
+      }
     }
 
     .input-group {
@@ -292,6 +366,11 @@ input[type="radio"], input[type="checkbox"] {
       flex-direction: column;
       // padding between input groups
       padding: 25px;
+      @include md-d {
+        em {
+          font-size: 2em;
+        }
+      }
     }
 
 
@@ -301,6 +380,9 @@ input[type="radio"], input[type="checkbox"] {
 
       img {
         width: 30%;
+        @include md-d {
+          width: 50%;
+        }
       }
     }
 
@@ -312,6 +394,12 @@ input[type="radio"], input[type="checkbox"] {
       transition: .2s;
       width: 100%;
       background-color: $vitru-dark;
+
+      @include md-d {
+        width: 100%;
+        height: 100px;
+        font-size: 2em;
+      }
 
       &:focus {
         border-bottom: 5px solid $vitru;
@@ -337,19 +425,71 @@ input[type="radio"], input[type="checkbox"] {
 
 //user index
 
+
+.user-profile-box {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  background: $darkt;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  justify-content: space-around;
+
+  -webkit-box-shadow: 0px 0px 54px -7px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 54px -7px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 54px -7px rgba(0,0,0,0.5);
+
+
 #user_index_image {
-  padding: 5px;
-  padding-right: 15px;
+  margin-right: 15px;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    height: 80%;
+    bottom: 0;
+    top: 0;
+    right: -20px;
+    margin: auto;
+    background: $vitru;
+    width: 2px;
+  }
 }
 
-img.user_index_image {
-  box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  img.user_index_image {
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+    max-height: 60px;
+    max-width: 60px;
+  }
 
-  max-height: 60px;
-  max-width: 60px;
+  .user-profile-name  {
+    height: min-content;
+    margin-left: 30px;
+  }
 
+  .user-ranks {
+    height: min-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    .btn-do-profile {
+      margin: 0 10px;
+    }
+  }
+
+  .options {
+    position: relative;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+  }
 
 }
+
 
 .index-page-wrapper {
   width: 100%;
@@ -361,6 +501,8 @@ img.user_index_image {
   .index-content {
     padding-top: 150px;
     min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
@@ -375,12 +517,47 @@ img.user_index_image {
   height: 100vh;
   padding: 100px 0px 50px 0px;
 
+  @include md-d {
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+  }
 
+  // profile user show box 'armour style'
   .col-show-box {
+
+    @include md-d {
+      width: 100%;
+      margin: 0;
+      max-width: 100%;
+      min-width: 100%;
+      height: 40vh;
+    }
 
   }
 
   .show-profile-box {
+
+
+
+    @include md-d {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      a {
+        font-size: 2rem;
+      }
+
+    .btn-do-profile{
+      font-size: 1.2rem;
+    }
+
+      h1 {
+        font-size: 4rem;
+      }
+    }
 
     img {
       box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
@@ -415,6 +592,11 @@ img.user_index_image {
     padding: 10px;
     border: 2px solid $vitru-light;
 
+    @include md-d {
+      max-height: 180px;
+      max-width: 180px;
+    }
+
   }
 
 
@@ -424,6 +606,9 @@ img.user_index_image {
 .profil-show-img img {
   padding-top: 50px;
   width: 30%;
+  @include md-d {
+    width: 60%;
+  }
 }
 
 
@@ -439,6 +624,11 @@ img.user_index_image {
 
 .shared-links {
   padding-top: 50px;
+  @include md-d {
+    a {
+      font-size: 1.5em;
+    }
+  }
 }
 
 

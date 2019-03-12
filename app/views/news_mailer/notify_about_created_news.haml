@@ -1,0 +1,31 @@
+
+%html
+  %head
+    %meta{content:'text/html', charset:'UTF-8', 'http-equiv':'Content-Type'}
+    :css
+
+      h1 {font-size: 2em; text-transform: uppercase; padding: 15px}
+      p {padding: 15px}
+      a {text-decoration: none; color: #b6934e}
+      .col { width:80%; margin: 0 auto;}
+      .btn { padding: 10px; border: 1px solid #b6934e }
+
+
+  %body
+    .col
+      %h1 #{"Witaj!"}
+
+      %p Nowa aktualność na stronie Dusze Orokinu.
+
+      %p #{@news.title}
+
+      %p #{truncate(sanitize(@news.content, tags: []), length: 250)}
+      %p= link_to "Czytaj dalej", @news, class:'btn'
+
+
+
+      %small Jeśli chcesz zrezygnować z subskrypcji aktualności, przejdź na stronę Dusz Orokinu i zaktualizuj ustawienia swojego konta.
+
+
+
+

@@ -3,48 +3,51 @@
 
 
 
-.page-wrapper.news-background{style: "background-image: url(#{url_for(@news.thumbnail.attachment)})"}
+.page-wrapper.news-background{style: "background-image: url(#{url_for(@news.thumbnail_blob)})"}
   .page-header.news-show-header
     .row
       .news
         .news-box
-          .news-header.text-center
-            %h2= @news.title
-          .news-description
-            .col-md-6.mx-auto
-              %p
-                Data dodania:
-                =@news.created_at.strftime('%F  %T')
-              %p
-                Autor
-                =link_to @news.user.name, @news.user
-              %p
-                Komentarze:
-                =@news.comments.count
+          =render 'news_show_info'
+
+  .scroll-downs
+    .mousey
+      .scroller
+
+
 
 
 
 .page-news-content
   .news-content
-    =raw @news.content
+    = raw @news.content.html_safe
+
+.page-news-other
+  .news-other-container
+    .row
+      .col-md-12.text-center
+        %h3 Inne aktualności w tej kategorii
+    #similar_news-content
+      = render 'similar_news'
 
 
-  .news-comments
-    .news-comments-box
-      .news-comments-header
-        %h2 Komentarze
 
-      .news-comments-body
-        -if !nested_comments(@comments).blank?
-          = nested_comments(@comments)
-        -else
-          Nikt jeszcze nie skomentował! Bądź pierwszy.
+.news-comments
+  .news-comments-box
+    .news-comments-header
+      %h2 Komentarze
 
-      .news-comments-form
-        -if user_signed_in?
-          = render "comments/form"
-        -else
-          %h2 Tylko zalogowani użytkownicy mogą komentować.
+    .news-comments-body
+      -if !nested_comments(@comments).blank?
+        = nested_comments(@comments)
+      -else
+        Nikt jeszcze nie skomentował! Bądź pierwszy.
+
+    .news-comments-form
+      -if user_signed_in?
+        = render "comments/form"
+      -else
+        %h2 Tylko zalogowani użytkownicy mogą komentować.
 
 
 

@@ -9,36 +9,44 @@ end
 ruby '2.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use sqlite3 as the database for Active Record
+# Use postgres as Database
 gem 'pg'
 # Use Puma as the app server
-
+gem 'sweetalert2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'rails-i18n', '~> 5.1'
-
+# polish translation
 gem "polish", ">= 0.1.0"
-
-gem 'tinymce-rails'
+# cookies consent
+gem 'cookies_eu'
+#  object settings
+gem 'ledermann-rails-settings'
+# translate routes
+gem 'route_translator'
 
 #messaging system rails
 gem 'mailboxer'
 
+# webpacker 4.0 gem
 gem 'webpacker', github: 'rails/webpacker'
 
 # haml syntax
 gem "haml-rails"
 
+
 gem 'time_difference'
 
+# build trees database
 gem 'ancestry'
 
 # gem devise
 gem 'devise'
 gem 'devise_lastseenable'
 
+# permission gems
 gem 'cancancan'
 gem 'rolify'
 
@@ -52,18 +60,19 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
-gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate'
-
-gem 'carrierwave',             '1.2.2'
-gem 'mini_magick',             '4.7.0'
+gem 'bootsnap', require: false
 gem 'redis', '~> 3.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "aws-sdk-s3", require: false
+
 group :development, :test do
-  gem "awesome_print"
+  gem 'slack-notifier'
+  gem 'ruby-growl'
+  gem 'bullet'
+  gem 'pry-rails'
   gem "better_errors"
   gem "binding_of_caller"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,13 +80,14 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'listen'
+  gem 'faker', '1.7.3'
 end
 
 
 group :production do
   gem 'unicorn'
-  gem 'fog'
-  gem 'fog-aws'
+  gem 'unicorn-worker-killer'
 end
 
 group :development do

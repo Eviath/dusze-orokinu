@@ -38,9 +38,9 @@
 
             %p
               = link_to truncate('Zobacz'), request, class: "btn btn-do-bordered-small"
-              - if can? :destroy, @request
+              - if can? :destroy, request
                 |
-                = link_to "Usuń", request, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
+                = link_to "Usuń", request, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
 
 
       -# if theres no accepted alliance requests
@@ -79,9 +79,9 @@
 
             %p 
               = link_to truncate('Zobacz'), request, class: "btn btn-do-bordered-small"
-              - if can? :destroy, @request
+              - if can? :destroy, request
                 |
-                = link_to "Usuń", request, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
+                = link_to "Usuń", request, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
 
 
     - else 
@@ -120,9 +120,9 @@
             %p
 
               = link_to truncate('Zobacz'), request, class: "btn btn-do-bordered-small"
-              - if can? :destroy, @request
+              - if can? :destroy, request
                 |
-                = link_to "Usuń", request, method: :delete, data: { confirm: "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
+                = link_to "Usuń", request, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"
 
 
     - else

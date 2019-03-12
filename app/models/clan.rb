@@ -1,8 +1,9 @@
 class Clan < ApplicationRecord
      CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
      scope :approved, -> { where(:approval => true) }
+     scope :pending, -> { where(:approval => nil) }
+     scope :declined, -> { where(:approval => false) }
      has_one_attached :picture
-     scope :pending, -> { where(:approval => false) }
      belongs_to :user, :foreign_key => "user_id"
     scope :newest, -> { order(created_at: :desc) }
    #   validations
@@ -24,6 +25,10 @@ class Clan < ApplicationRecord
 
    validate :picture_validation
      resourcify
+
+     def to_param
+       "#{id}-#{name.parameterize}"
+     end
 
      def tier_enum
        # Do not select any value, or add any blank field. RailsAdmin will do it for you.

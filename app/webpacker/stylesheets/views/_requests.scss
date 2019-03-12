@@ -46,7 +46,7 @@ body {
   /* The image used */
   background-image: url('../images/vitru-flowers.png');
   height: 100%;
-
+  background-color: $darkbg;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -80,21 +80,20 @@ body {
   }
 
   &-wrapper {
-
     padding: 50px;
 
     h3 {
       font-size: 3em;
       color: $white;
-
       text-align: center;
+
     }
 
     h1 {
       font-size: 2em;
       color: $white;
-
       text-align: center;
+
     }
 
     h2 {
@@ -134,26 +133,36 @@ body {
   &-wrapper {
 
     padding: 50px;
+    @include md-d {
+      padding: 0;
+    }
 
     h3 {
       font-size: 3em;
       color: $white;
-
       text-align: center;
+      @include md-d {
+        font-size: 5em;
+      }
     }
 
     h1 {
       font-size: 2em;
       color: $white;
-
       text-align: center;
+      @include md-d {
+        font-size: 3em;
+      }
     }
 
     h2 {
       color: $vitru;
-
       text-align: center;
       font-size: 1.25em;
+      @include md-d {
+        font-size: 3em;
+        padding: 20px;
+      }
     }
   }
 
@@ -167,6 +176,11 @@ body {
 .request-button {
   padding-top: 25px;
   text-align: center;
+  a {
+    @include md-d {
+      font-size: 2em;
+    }
+  }
 }
 
 
@@ -209,6 +223,10 @@ body {
 
 .request_regulamin {
   padding-bottom: 50px;
+
+  .jumbotron {
+    background: $vitru-trans-bg;
+  }
 
   h1 {
 

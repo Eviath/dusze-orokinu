@@ -1,0 +1,26 @@
+<%
+
+ def param_check
+  if params[:id]
+    j render 'category_news'
+  else
+    j render 'all_news'
+  end
+end
+
+%>
+
+
+$('#category-content').html("<%= param_check %>")
+
+
+$('.pagination > a').attr('data-remote', 'true');
+
+
+$(".btn-do-vitru").on('click', function(e){
+    $(".btn-do-vitru.active").removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+});
+
+

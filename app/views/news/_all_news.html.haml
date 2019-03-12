@@ -1,0 +1,63 @@
+.page-header
+  %h2 Wszystkie
+  %p Wszystkie aktualności w jednym miejscu.
+
+.row
+  .col-lg-8
+    = will_paginate(@news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center news-index-pagination', :previous_label => 'Poprzednia', :next_label => 'Następna')
+
+    .card-deck
+      - @news.each do |news|
+        .col-xl-6.mt-5
+          .card
+            - if object_created_at_timestamp_in_days(news, 2)
+              .badge.badge-pill.badge-vitru Nowość
+            - if news.thumbnail_blob
+              = image_tag url_for(news.thumbnail_blob), class: 'card-img-top'
+            .card-body
+              %h5.card-title= link_to news.title, news
+              %p.card-text=truncate(sanitize(news.content, tags: []), length: 200)
+
+            .card-footer
+              .col-md-6.card-footer-col
+                %small.text-muted
+                  %i.fas.fa-clock
+                  = time_ago_in_words(news.created_at)
+                  temu
+                %small.author.pull-right.text-muted
+                  %i.fas.fa-user-circle
+                  =link_to news.user.name, news.user, class:'link-vitruvian'
+              .col-md-6.card-footer-col
+                %small.news-category.text-muted
+                  %i.fas.fa-tags
+                  =link_to NewsCategory.find(news.news_category_id).name, news_category_path(news.news_category_id), class:'link-vitruvian'
+                %small.author.pull-right.text-muted
+                  %i.fas.fa-comments
+                  =news.comments.count
+
+            .card-body.footer-card-body
+              .btn-group.w-100
+                = link_to news, class: 'card-link btn btn-vitru-t' do
+                  %i.fas.fa-eye
+                  Zobacz
+                -if current_user && can?(:manage, news)
+                  = link_to edit_news_path(news), class: 'card-link btn btn-vitru-t' do
+                    %i.fas.fa-edit
+                    Edytuj
+                  = link_to news, method: :delete, data: { 'confirm-swal': 'Jesteś pewny?' }, class: 'card-link btn btn-vitru-t' do
+                    %i.fas.fa-trash-alt
+                    Usuń
+
+
+    = will_paginate(@news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
+
+
+  .col-lg-4.mt-5
+    %a.twitter-timeline{'data-lang':"pl", 'data-theme':"light", href:"https://twitter.com/Dusze_Orokinu?ref_src=twsrc%5Etfw"} Twitter Dusze Orokinu
+
+%script{src:"https://platform.twitter.com/widgets.js", charset:"utf-8"}
+
+:javascript
+  $(function(){
+    $('.pagination a').attr('data-remote', 'true')
+  });

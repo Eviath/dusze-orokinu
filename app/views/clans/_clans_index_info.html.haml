@@ -1,0 +1,22 @@
+-if !user_signed_in?
+  .jumbotron.clans_jumbotron
+    %h1.display-4 Klany
+    %p.lead Tutaj możesz znaleźć klan dla siebie, może się tutaj też znaleźć ogłoszenie Twojego klanu!
+    %hr.my-4
+    %p Jeśli szukasz klanu, przyjrzyj się ogłoszeniom, z pewnością znajdziesz jakiś dla siebie.
+    %p Prowadzisz klan i chcesz, żeby się tu znalazł? Zaloguj się i dołącz do nas już teraz!
+    %p.lead
+      =link_to 'Zaloguj się', user_session_path, class:'btn btn-do-vitru'
+-elsif current_user.clan
+  .jumbotron.clans_jumbotron
+    %h1.display-4 Klany
+    %p.lead Lista klanów sojuszu
+-else
+  .jumbotron.clans_jumbotron
+    %h1.display-4 Klany
+    %p.lead Lista klanów sojuszu
+    %hr.my-4
+    %p Jeśli szukasz klanu, przyjrzyj się ogłoszeniom, z pewnością znajdziesz jakiś dla siebie.
+    %p Prowadzisz klan i chcesz, żeby się tu znalazł? Zaloguj się i dołącz do nas już teraz!
+    %p.lead
+      =link_to 'Stwórz ogłoszenie klanu ', pclan_path, class:'btn btn-do-vitru'

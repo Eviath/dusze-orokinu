@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   rolify
   after_create :assign_default_role
-  # before_create :assign_avatar
+
+  # settings for user
+  has_settings :notification, :defaults => { :news => false }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -16,7 +18,6 @@ class User < ApplicationRecord
   has_one :request, dependent: :destroy
   has_many :news
   has_many :news_comments, through: :news, source: :comments
-
   has_one_attached :avatar
 
 

@@ -11,6 +11,9 @@ module UsersHelper
                       content_tag :span, "Lider klanu #{check_if_clan_present}", :class => "link-vitruvian-light"
                     end
 
+    # moderator przycisk
+    moderator_button = content_tag(:button, content_tag(:span, "Moderator"), class: "btn btn-do-profile disabled")
+
     # administrator przycisk
     admin_button = content_tag(:button, content_tag(:span, "Administrator"), class: "btn btn-do-profile disabled")
 
@@ -19,22 +22,38 @@ module UsersHelper
 
     # if statement render buttons depending on user roles
     if user.has_role?(:admin) && user.has_role?(:lider)
-      content_tag :div do
-
+      content_tag(:div, class:'user-ranks') do
         concat admin_button
+        concat " "
+        concat lider_button
+      end
+    elsif user.has_role?(:moderator) && user.has_role?(:lider)
+      content_tag(:div, class:'user-ranks') do
+
+        concat moderator_button
         concat " "
         concat lider_button
       end
 
     elsif user.has_role?(:admin)
-      content_tag(:button, content_tag(:span, "Administrator"), class: "btn btn-do-profile disabled")
+      content_tag(:div, class:'user-ranks') do
+        admin_button
+      end
 
+    elsif user.has_role?(:moderator)
+      content_tag(:div, class:'user-ranks') do
+        moderator_button
+      end
 
     elsif user.has_role?(:lider)
-      lider_button
+      content_tag(:div, class:'user-ranks') do
+        lider_button
+      end
 
     else
-      user_button
+      content_tag(:div, class:'user-ranks') do
+        user_button
+      end
 
     end
   end
@@ -46,6 +65,8 @@ module UsersHelper
 
   if user.has_role?(:admin)
     "Administrator"
+  elsif user.has_role?(:moderator)
+    "Moderator"
   elsif user.has_role?(:lider)
     "Lider klanu"
   else

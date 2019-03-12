@@ -4,13 +4,13 @@ class RequestMailer < ApplicationMailer
 
   def accepted_request
     @user = params[:user]
-    @url  = 'https://dusze-orokinu.pl/request'
+    @url  = 'https://dusze-orokinu.pl/podanie'
     mail(to: @user.email, subject: 'Dusze Orokinu - Podanie zostało zaakceptowane.')
   end
 
   def declined_request
     @user = params[:user]
-    @url  = 'https://dusze-orokinu.pl/request'
+    @url  = 'https://dusze-orokinu.pl/podanie'
     mail(to: @user.email, subject: 'Dusze Orokinu - Podanie zostało odrzucone.')
   end
 
@@ -18,8 +18,9 @@ class RequestMailer < ApplicationMailer
     @gatheradmins = User.with_role(:admin)
     @admins = @gatheradmins.collect(&:email).join(',')
     @request = params[:request]
-    @url  = 'https://dusze-orokinu.pl/requests'
-    mail(to: @admins, subject: 'Dusze Orokinu - Pojawiło się nowe podanie do sojuszu klanu ')
+    @url  = 'https://dusze-orokinu.pl/podanie'
+    mail(to: @admins, subject: 'Dusze Orokinu - Pojawiło się nowe podanie do sojuszu klanu')
   end
+
 
 end

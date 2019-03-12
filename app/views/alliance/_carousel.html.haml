@@ -11,12 +11,12 @@
     - len = @news.length
     - @news.each_with_index do |news, index|
       .carousel-item{class: "#{index+1 == len ? 'active' : ''}"}
-        - if news.thumbnail.attached?
-          = image_tag url_for(news.thumbnail), class: 'd-block w-100'
+        - if news.thumbnail_blob
+          = image_tag url_for(news.thumbnail_blob), class: 'd-block w-100'
         .carousel-caption.d-none.d-md-block
           .carousel-text
             %h5=link_to news.title, news
-            =image_tag "#{asset_pack_path('media/veil-white.png')}", class: 'veil'
+            =image_tag "#{asset_pack_path('media/images/veil-white.png')}", class: 'veil'
             %p=truncate(sanitize(news.content, tags: []), length: 400)
 
           .actions

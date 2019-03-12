@@ -2,14 +2,14 @@ class ClansController < ApplicationController
   before_action :authenticate_user!, only: [:update, :panel, :create, :new, :destroy]
   before_action :load_clan,  only: [:edit, :update, :destroy]
   before_action :admin_or_author, only: [:edit, :update, :destroy]
-
   load_and_authorize_resource :except => [:index, :show]
 
   def index
-    @clansapproved = Clan.approved.order('id ASC')
-    @clanspending = Clan.pending.newest
+    @clansapproved = Clan.with_attached_picture.approved.order('updated_at DESC')
+    @clanspending = Clan.with_attached_picture.pending.newest
+    @clansdeclined = Clan.with_attached_picture.declined
 
-    @clans = Clan.all
+    @clans = Clan.with_attached_picture.all
   end
 
 
@@ -49,10 +49,12 @@ end
     @clan = @user.clan
   end
 
+
   def create
     @clan = current_user.build_clan(clan_params)
   if @clan.save
-    flash[:success] = "Ogłoszenie klanu zostało zapisane!"
+    flash[:success] = "Ogłoszenie klanu zostało zapisane! Stworzone po raz pierwszy, musi zostać rozpatrzone przez administrację sojuszu."
+    # RequestMailer.with(clan: @clan).new_clan.deliver_now
     redirect_to pclan_path
   else
     render 'clans/new'
@@ -103,7 +105,7 @@ def admin_or_author
 end
 
 def administrator?
-  current_user.has_role? :admin
+  user_signed_in? && current_user.has_role?(:admin)
 end
 
 def authorship?

@@ -1,0 +1,34 @@
+-if @similar_news.count > 4
+  .row
+    .col-md-6.mx-auto
+      = will_paginate(@similar_news, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, href:'#' ,class: 'pagination justify-content-center news-index-pagination mt-5', :previous_label => 'Poprzednia', :next_label => 'Następna')
+
+.container
+  .row
+    -@similar_news.each do |news|
+      .col-lg-3
+        .card.news-show-card.mt-5
+          - if object_created_at_timestamp_in_days(news, 2)
+            .badge.badge-pill.badge-vitru Nowość
+          - if news.thumbnail_blob
+            = image_tag url_for(news.thumbnail_blob), class: 'card-img-top news-show-img'
+          .card-body
+            %h5.card-title=link_to news.title, news_path(news), class: 'link-vitruvian'
+            %p.card-text=truncate(sanitize(news.content, tags: []), length: 150)
+          .card-footer
+            .card-footer-col-similar
+              %small.text-muted
+                %i.fas.fa-clock
+                = time_ago_in_words(news.created_at)
+              %small.author.pull-right.text-muted
+                %i.fas.fa-user-circle
+                =link_to news.user.name, news.user, class:'link-vitruvian'
+              %small.author.pull-right.text-muted
+                %i.fas.fa-comments
+                =news.comments.count
+
+
+:javascript
+  $(function(){
+    $('.pagination a').attr('data-remote', 'true')
+  });

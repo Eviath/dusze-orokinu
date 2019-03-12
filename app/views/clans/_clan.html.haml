@@ -4,18 +4,14 @@
 
       .clan_show_head
 
-        =image_tag(asset_pack_path('media/all-gold.png'))
+        =image_tag(asset_pack_path('media/images/all-gold.png'))
         %h2= clan.name 
 
 
       .row.clan_show-header
         .col-md-6
           .clan-logo-container
-            %p= image_tag clan.picture, class: 'clan-logo' if clan.picture.attached?
-
-          .clan-name
-            %h2= clan.name
-
+            = image_tag clan.picture, class: 'clan-logo' if clan.picture.attached?
         .col-md-6
 
 
@@ -67,10 +63,10 @@
     = time_ago_in_words(clan.updated_at) 
     temu.
 
-  - if current_user && can?(:destroy, @clan)
+  - if current_user && can?(:destroy, clan)
     = link_to "Edytuj", edit_clan_path(clan), class: 'btn btn-do-vitru', data: { turbolinks: false }
     |
-    = link_to "Usuń", clan, method: :delete, data: { confirm: "Jesteś pewny?" }, class: 'btn btn-do-vitru'
+    = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny?" }, class: 'btn btn-do-vitru'
 
   - if has_role?(:admin)
     - if @clan.approval == true

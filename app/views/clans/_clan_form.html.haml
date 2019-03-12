@@ -1,3 +1,4 @@
+
 .clan_form
 
   = form_for(@clan) do  |f|
@@ -20,9 +21,9 @@
       .col-md-8.mx-auto
         .form_header-tag
           %h2
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
             Informacje
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
  
         .form-group
           = f.label :name, "Nazwa klanu"
@@ -48,9 +49,9 @@
 
         .form_header-tag 
           %h2
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
             Logo
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
         .form-group
           .clan_logo
             - if @clan.picture.attached?
@@ -66,9 +67,9 @@
 
         .form_header-tag
           %h2
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
             Kontakt
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
 
  
         = f.label :website, "Strona internetowa klanu"  
@@ -81,12 +82,10 @@
       .col-md-12
         .form_header-tag
           %h2
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
             Opis
-            =image_tag(asset_pack_path('media/all-gold.png'))
+            =image_tag(asset_pack_path('media/images/all-gold.png'))
 
 
-        = f.text_area :about, :rows => 25, :cols => 120,id: 'uniq-tiny' ,:class => "tinymce", placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
+        = f.text_area :about, id:"summernote", placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"
 
-
-= tinymce :language => 'pl'

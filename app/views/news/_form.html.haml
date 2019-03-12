@@ -1,28 +1,37 @@
 = form_for @news do |f|
   - if @news.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
+      %h5= "#{pluralize(@news.errors.count, "błędów")} zapobiegło zapisaniu aktualności:"
       %ul
         - @news.errors.full_messages.each do |message|
           %li= message
 
 
-  .field
-    = f.label :title, 'Tytuł'
-    = f.text_field :title, class:'form-control'
-  .field
-    = f.label :content, "Nowy news"
-    = f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120, id: 'uniq-news ', placeholder: "News"
+  .col-md-6.mx-auto
+    .field.text-center.mb-5
+      = f.label :title, 'Tytuł aktualności'
+      = f.text_field :title, class:'form-control', placeholder: 'Tytuł aktualności'
+
+    .field.text-center.mb-5
+      =f.label :news_category, 'Kategoria aktualności'
+      =select_tag(:news_category_id, options_from_collection_for_select(NewsCategory.all, :id, :name, selected: @news.news_category_id), include_blank: "Wybierz kategorię", class:'form-control')
 
 
-  .field
-    = f.label :thumbnail, 'Tytułowy obraz'
-    = f.file_field :thumbnail, direct_upload: true, class:'form-control'
-  .actions
-    = f.submit 'Zapisz', class: 'btn btn-do'
+    .field.text-center
+      = f.label :thumbnail, 'Tytułowy obraz'
+      = f.file_field :thumbnail, class:'form-control'
+
+  .field.mt-5
+    = f.label :content, "Opis aktualności"
+    = f.text_area :content, id:"summernote", placeholder: "News"
+
+  - unless @news.new_record?
+    .field.mt-5
+      = f.label :last_edit_desc, 'Powód edycji (opcjonalny)'
+      = f.text_field :last_edit_desc, class:'form-control'
 
 
+  .actions.text-center.mt-5.mb-5
+    = f.submit 'Zapisz', class: 'btn btn-do-vitru'
 
-
-= tinymce
 

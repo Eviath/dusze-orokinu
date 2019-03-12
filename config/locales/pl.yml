@@ -1,5 +1,29 @@
 
 pl:
+  cookies_eu:
+    ok: Rozumiem
+    cookies_text: Stosujemy ciasteczka w celu świadczenia jak najlepszych usług. Korzystając z tej strony wyrażasz zgodę na ich używanie!
+  routes:
+    alliance: sojusz
+    cookies: ciasteczka
+    about: o-nas
+    rules: zasady
+    news: aktualnosci
+    clans: klany
+    missions: misje
+    contact: kontakt
+    info: informacje
+    users: uzytkownicy
+    pclan: panel-klanu
+    request: podanie
+    edit: edytuj
+    new: nowy
+    requests: podania
+    conversations: poczta
+    messages: wiadomosci
+    news_categories: aktualnosci-kategorie
+
+
   mailboxer:
     message_mailer:
       subject_new: 'Otrzymałeś nową wiadomość w serwisie Dusze Orokinu %{subject}'

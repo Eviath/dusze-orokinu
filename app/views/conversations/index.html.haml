@@ -18,7 +18,7 @@
       .col-sm-9
         - if @box == 'kosz' 
           %p
-            = link_to 'Wyczyść kosz', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete, data: {confirm: 'Jesteś pewny?'} 
+            = link_to 'Wyczyść kosz', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete, data: {'confirm-swal': 'Jesteś pewny?'}
 
         %ul.list-group
           = render partial: 'conversations/conversation', collection: @conversations 

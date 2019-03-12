@@ -32,7 +32,7 @@ end
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!")
     else
-      asset_pack_path('media/vitru-glyph.png')
+      asset_pack_path('media/images/vitru-glyph.png')
     end
   end
 
@@ -52,6 +52,9 @@ end
     Request.pending.where(updated_at: (user_last_login)..now).count
   end
 
-#   check for new messages since last user login
+  # check for new news since last user login
+  def object_created_at_timestamp_in_days(news, time)
+    news.created_at > time.days.ago
+  end
 
 end

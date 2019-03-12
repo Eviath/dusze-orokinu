@@ -33,8 +33,9 @@
                   %p.active
                     (Online #{time_ago_in_words(@user.last_seen)} temu)
 
-              .message-user
-                =link_to 'Napisz', new_message_path(to: @user), class: 'btn btn-do-vitru'
+              -if current_user != @user
+                .message-user
+                  =link_to 'Napisz', new_message_path(to: @user), class: 'btn btn-do-vitru'
 
           -if user_signed_in?
             - if current_user.has_role? :admin
@@ -47,7 +48,7 @@
 
 
           .profil-show-img
-            =image_tag(asset_pack_path('media/jedno-gold.png'))
+            =image_tag(asset_pack_path('media/images/jedno-gold.png'))
           -#
           -#%h2 Komentarze
           -#

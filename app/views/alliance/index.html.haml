@@ -1,6 +1,6 @@
 = provide(:title, 'Strona Główna')
 
-.share-buttons.d-none.d-md-flex
+.share-buttons
   %ul.share-ul
     %li
       %span.share-icon
@@ -28,9 +28,9 @@
     .header-body
       %h1 Dusze Orokinu
       %h3 Polski Sojusz Warframe 2019
-      =image_tag(asset_pack_path('media/veil-white.png'))
+      =image_tag(asset_pack_path('media/images/veil-white.png'))
       %br
-      =image_tag(asset_pack_path('media/warf.png'))
+      =image_tag(asset_pack_path('media/images/warf.png'))
 
 
 -# //// FEATURED /////
@@ -49,8 +49,9 @@
   .content-onas
     .container
       .about-us-text
-        =image_tag(asset_pack_path('media/all-gold.png'))
-        =image_tag(asset_pack_path('media/jedno-gold.png'))
+        .images
+          =image_tag(asset_pack_path('media/images/all-gold.png'))
+          =image_tag(asset_pack_path('media/images/jedno-gold.png'))
         - if @main_about.any?
           - @main_about.each do |about|
             %h1=about.title
@@ -73,7 +74,7 @@
         .container
           .row.tag
             - @about_column_two.each do |about|
-              .col
+              .col-lg-4.tag-col
                 .tag-header
                   %h2=about.title
                 .tag-text
@@ -83,8 +84,8 @@
       .dolacz
         .container
           .row
-            .col-md-8.mx-auto.text-center
-              =image_tag(asset_pack_path('media/warframe-gold.png'))
+            .col-md-8.mx-auto.text-center.d-flex.justify-content-center
+              =image_tag(asset_pack_path('media/images/warframe-gold.png'))
 
 
 

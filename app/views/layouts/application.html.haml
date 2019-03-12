@@ -9,9 +9,22 @@
     = csrf_meta_tags
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'stylesheets'
-    = favicon_link_tag asset_pack_path('media/favicon-32x32.png')
-    = tinymce_assets
+    = favicon_link_tag asset_pack_path('media/images/favicon-32x32.png')
     = javascript_pack_tag 'warframe_api'
+    %meta{property:"og:url"  ,          content:"#{request.original_url}"}
+    %meta{property:"og:type"  ,             content:"content"}
+    %meta{property:"og:title"  ,            content:"#{yield(:title)}"}
+    %meta{property:"og:description" ,       content:"Polski sojusz Warframe 2019, zrzeszamy Polskie klany gry Warframe."}
+    %meta{property:"og:image"     ,        content:"https://cdn.discordapp.com/attachments/468191500094799904/553712067018883082/duszkilogo3.png"}
+
+
+    -#meta data
+    %meta{property:"og:url"  ,          content:"#{request.original_url}"}
+    %meta{property:"og:type"  ,             content:"content"}
+    %meta{property:"og:title"  ,            content:"#{yield(:title)}"}
+    %meta{property:"og:description" ,       content:"Polski sojusz Warframe 2019, zrzeszamy Polskie klany gry Warframe."}
+    %meta{property:"og:image"     ,        content:"https://cdn.discordapp.com/attachments/468191500094799904/553712067018883082/duszkilogo3.png"}
+
 
     -#  Fonts 
     %link{href: "https://fonts.googleapis.com/css?family=Raleway:100,300,600", rel: "stylesheet", type: "text/css"}
@@ -36,3 +49,4 @@
 
     = yield
 
+    = render 'cookies_eu/consent_banner', link: '/cookies', target: '_blank'

@@ -7,15 +7,17 @@
     .row
       .col-md-12
         .discord-header
-          =image_tag(asset_pack_path('media/discord.svg'))
-          %h2=@api_name
-          %h1
-            Użytkownicy online:
-            =@api_users.count
+          .jumbotron.clans_jumbotron
+            %h1.display-4=image_tag(asset_pack_path('media/images/discord.svg'))
+            %p.lead=@api_name
+            %hr.my-4
+            %p Użytkownicy online: #{@api_users.count}
+            %p
+            %p.lead
+              Dołącz do nas
+              =link_to @api_invite, @api_invite, target: '_blank'
 
-          %h1
-            Dołącz do nas
-            =link_to @api_invite, @api_invite, target: '_blank'
+
         .discord-body
 
           -@api_users.each_with_index do |r|

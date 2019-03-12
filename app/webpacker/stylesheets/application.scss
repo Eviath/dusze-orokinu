@@ -10,12 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
-
+//fonts
 
 
 // modules
 @import 'modules/variables';
+@import "modules/mixins";
 @import 'modules/buttons';
+
+//mixins
 
 //  pages
 @import '/views/users';
@@ -35,7 +38,6 @@
 @import "/layouts/sidebar";
 @import 'layouts/footbar';
 @import 'layouts/navbar';
-
 
 
 

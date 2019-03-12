@@ -45,6 +45,18 @@
                     %li
                       = active_link_to "Lista klanów",clans_path, class: "nav-link"
 
+            -if current_user.has_role?(:admin) || current_user.has_role?(:moderator)
+              %li.sidebar-dropdown
+                %a
+                  %i.fas.fa-unlock-alt
+                  %span Moderator
+                .sidebar-submenu
+                  %ul
+                    -if current_user && can?(:manage, News)
+                      %li
+                        = link_to 'Stwórz aktualność', new_news_path, class: "nav-link"
+
+
 
             %li.sidebar-dropdown
               %a
@@ -54,7 +66,7 @@
               .sidebar-submenu
                 %ul
                   %li
-                    = active_link_to "Podanie do sojuszu", '/request', class:  "nav-link"
+                    = active_link_to "Podanie do sojuszu", '/podanie', class:  "nav-link"
                   %li
                     = active_link_to "Użytkownicy",users_path, class:  "nav-link"
 
@@ -69,7 +81,7 @@
                 %ul
                   %li
                     = active_link_to "Klan",pclan_path, class:  "nav-link"
-                  -if current_user.has_role?(:lider) && !current_user.clan.present?
+                  -if can?(:new, Clan) && !current_user.clan.present?
                     %li
                       = active_link_to "Stwórz ogłoszenie",new_clan_path, class:  "nav-link", data: { turbolinks: false }
 
