@@ -1,9 +1,37 @@
 class User < ApplicationRecord
-  rolify
+  # == Schema Information
+  #
+  # Table name: users
+  #
+  #  id                                 :integer
+  #  email                              :string     null: false
+  #  name                               :string
+  #  lider                              :boolean
+  #  encrypted_password                 :bigint     null: false
+  #  confirmation_token                 :string
+  #  confirmation_sent_at               :datetime
+  #  reset_password_token               :string
+  #  reset_password_sent_at             :datetime
+  #  remember_created_at                :datetime
+  #  sing_in_count                      :integer
+  #  current_sign_in_at                 :datetime
+  #  last_sign_in_at                    :datetime
+  #  current_sign_in_ip                 :string
+  #  last_sign_in_ip                    :string     default: false
+  #  last_seen                          :datetime
+  #  confirmed_at                       :datetime
+  #  created_at                         :datetime
+  #  updated_at                         :datetime
+  #
+
+  # Assign default role after user create action
   after_create :assign_default_role
 
-  # settings for user
+  # Settings for user
   has_settings :notification, :defaults => { :news => false }
+
+  # Has roles with rolify gem
+  rolify
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -21,7 +49,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
 
-  # mailboxer notifications
+  # Mailboxer notifications
   def mailboxer_email(object)
     email
   end
@@ -33,10 +61,8 @@ class User < ApplicationRecord
 
 
   private
-  # def assign_avatar
-  #   self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'vitru-glyph.png')), filename: 'default-image.png', content_type: 'image/png')
-  # end
 
+  #  Assign default role on user creation by rolify gem
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?
   end
@@ -44,7 +70,7 @@ class User < ApplicationRecord
   
   protected
 
-  # # no confirmation needed, for development
+  # = Turn off devise confirmation
   # def confirmation_required?
   #   false
   # end
