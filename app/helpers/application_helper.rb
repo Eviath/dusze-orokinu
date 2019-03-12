@@ -23,11 +23,6 @@ element.editor
 end
 
 
-  def is_lider
-    @user.has_role? :lider
-  end
-
-
   def user_avatar(user, size=120)
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}!")

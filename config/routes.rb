@@ -55,8 +55,7 @@ Rails.application.routes.draw do
     end
     resources :users do
         member do
-            get :decline
-            get :approve
+            patch :update_role
         end
     end
     resources :requests do

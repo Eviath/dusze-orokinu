@@ -26,16 +26,14 @@ gem 'cookies_eu'
 gem 'ledermann-rails-settings'
 # translate routes
 gem 'route_translator'
-
 #messaging system rails
 gem 'mailboxer'
-
 # webpacker 4.0 gem
 gem 'webpacker', github: 'rails/webpacker'
-
 # haml syntax
 gem "haml-rails"
-
+# Decorators for rails
+gem 'draper'
 
 gem 'time_difference'
 
@@ -82,6 +80,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'listen'
   gem 'faker', '1.7.3'
+  gem 'rubocop', require: false
 end
 
 

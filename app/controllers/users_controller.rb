@@ -12,35 +12,34 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user = User.find(params[:id])
+      @user = User.find(params[:id]).decorate
       redirect_to root_url and return unless true
       @request = @user.request
       @news_comments = @user.news_comments
     end
 
-    def approve
+    def update_role
         user = User.find(params[:id])
-        # old wat
-        # user.update_attribute(:lider, true)
 
-        # new way
-        user.add_role :lider
-        flash[:success] = "Użytkownik otrzymał rangę Lidera klanu."
+          all_roles = Role.all
+        
+
+          if !params[:user].nil?
+            params[:user][:input_roles].each do |role|
+              user.add_role role unless user.has_role? role
+            end
+          else
+            roles = user.roles.pluck(:name)
+            roles.each do |role|
+              user.remove_role role
+            end
+          end
+
+
+        flash[:success] = "Rangi użytkownika zaktualizowane."
         redirect_to request.referrer || requests_path
     end
 
-    def decline
-        user = User.find(params[:id])
-
-        # old way
-        # user.update_attribute(:lider, false)
-
-        # new way
-        user.remove_role :lider
-
-        flash[:success] = "Użytkownik został pozbawiony rangi Lidera klanu."
-        redirect_to request.referrer || requests_path
-    end
 
   private
 
