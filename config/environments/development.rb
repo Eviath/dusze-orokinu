@@ -20,7 +20,6 @@ Rails.application.configure do
     Bullet.add_footer = true
     Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
     Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware', ['my_file.rb', 'my_method'], ['my_file.rb', 16..20] ]
-    Bullet.slack = { webhook_url: 'https://hooks.slack.com/services/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', channel: '#dusze-orokinu', username: 'Bulletnotifier' }
   end
 
 
