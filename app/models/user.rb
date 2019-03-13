@@ -24,6 +24,7 @@ class User < ApplicationRecord
   #  updated_at                         :datetime
   #
 
+  attr_accessor :input_roles
   # Assign default role after user create action
   after_create :assign_default_role
 

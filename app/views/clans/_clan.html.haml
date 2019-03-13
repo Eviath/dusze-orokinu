@@ -13,8 +13,6 @@
           .clan-logo-container
             = image_tag clan.picture, class: 'clan-logo' if clan.picture.attached?
         .col-md-6
-
-
           .clan-leader
             %h1 Nick założyciela klanu:
             %p= clan.leader 
@@ -30,49 +28,23 @@
 
     .row.clan_show-contact
       .recruitment-status.text-center.w-100
-        -if clan.recruitment_status
-          %h5 Rekrutacja otwarta
-        -else
-          %h5 Rekrutacja zamknięta
+        =clan.recruitment_status
       .col-md-12.clan_show-contact-buttons
 
-        - if !clan.discord.empty? 
-          = link_to "Discord", clan.discord, target: '_blank', class: "btn btn-do-bordered-square btn-clan"
-
-        - if !clan.website.empty? 
-          = link_to "Strona internetowa", clan.website, target: '_blank', class: "btn btn-do-bordered-square btn-clan"
-
-        = link_to 'Napisz do lidera', new_message_path(to: clan.user), class: 'btn btn-do-bordered-square btn-clan'
-
-
+        =clan.discord_link
+        =clan.website_link
+        =clan.lider_msg_link
 
     .row.clan_show-about
-
       .col-md-12
         .clan-body-about
           = raw clan.about
 
+  %span.timestamp.w-100.d-flex.justify-content-between
+    %p Stworzone #{time_ago_in_words(clan.created_at)} temu.
+    %p Ostatnia aktualizacja #{time_ago_in_words(clan.updated_at)} temu.
 
-%span.timestamp
-  %p 
-    Ogłoszenie stworzone
-    = time_ago_in_words(clan.created_at) 
-    temu.
-  %p 
-    Ogłoszenie zaktualizowane
-    = time_ago_in_words(clan.updated_at) 
-    temu.
-
-  - if current_user && can?(:destroy, clan)
-    = link_to "Edytuj", edit_clan_path(clan), class: 'btn btn-do-vitru', data: { turbolinks: false }
-    |
-    = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny?" }, class: 'btn btn-do-vitru'
-
-  - if has_role?(:admin)
-    - if @clan.approval == true
-      |
-      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(@clan) , class: 'btn btn-do-vitru'
-    - else
-      |
-      = link_to (@clan.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(@clan) , class: 'btn btn-do-vitru'
+  .clan_actions.p-2.text-center.mt-4
+    =clan.actions
+    =clan.approval
 

@@ -3,7 +3,6 @@
     .clan-content-image
       = image_tag clan.picture if clan.picture.attached?
 
-
     .clan-content-text
       %h1
         %span= clan.name
@@ -20,22 +19,7 @@
         Liczba klanowiczy:
         %span= clan.members
 
-      -if clan.recruitment_status
-        .clan-recruitment-open
-          Rekrutacja otwarta
-      -else
-        .clan-recruitment-close
-          Rekrutacja zamknięta
-
-
+      =clan.recruitment_status
 
     .clan-content-buttons
-
-      %p
-        = link_to 'Zobacz', clan, class: "btn btn-do-vitru"
-        - if current_user && can?(:destroy, clan)
-          |
-          = link_to "Edytuj", edit_clan_path(clan), class: "btn btn-do-vitru", data: { turbolinks: false }
-          |
-          = link_to "Usuń", clan, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru"
-
+      %p=clan.actions

@@ -53,12 +53,6 @@ Rails.application.routes.draw do
             get :approve
         end
     end
-    resources :users do
-        member do
-            get :decline
-            get :approve
-        end
-    end
     resources :requests do
         member do
             get :decline

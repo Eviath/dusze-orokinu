@@ -4,45 +4,13 @@
   .container
     - if current_user.has_role? :lider
 
-      - if @user.clan
-
-        -if @user.clan.approval?
-          .clan_show_content-wrapper
-            .jumbotron
-              %h1.display-4 Ogłoszenie zostało zaakceptowane!
-              %hr.my-4
-              %p Możesz je edytować poniżej ile dusza zapragnie, edycja nie musi zostać zatwierdzona przez administrację, pamiętaj jednak, że jeśli w ogłoszeniu pojawią się treści łamiące regulamin strony, ogłoszenie zostanie wyrzucone.
-
-
-        -elsif @user.clan.approval.nil?
-          .clan_show_content-wrapper
-            .jumbotron
-              %h1.display-4 Stworzyłeś/aś ogłoszenie swojego klanu!
-              %hr.my-4
-              %p Ogłoszenie pojawi się na liście klanów, gdy zostanie zaakceptowane przez administrację sojuszu.
-              .request-button
-                %span= link_to "Lista klanów", clans_path, class: "btn btn-do-vitru"
-
-        -elsif !@user.clan.approval?
-
-          .clan_show_content-wrapper
-            .jumbotron
-              %h1.display-4 Ogłoszenie Twojego klanu zostało odrzucone.
-              %hr.my-4
-              %p Popraw ogłoszenie tak, by było zgodne z regulaminem i zgłoś się do Administracji o ponowne rozpatrzenie ogłoszenia.
-
-
-        -else
-          wtf
-
+      - if @clan
+        =@clan.clan_approval
         .request
           = render @clan
 
-
       - else
-
         .clan_show_content-wrapper
-
           .jumbotron
             %h1.display-4 #{'Witaj ' + current_user.name + '!'}
             %p.lead Twoje podanie do sojuszu zostało przyjęte!

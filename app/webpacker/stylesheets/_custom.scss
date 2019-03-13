@@ -26,6 +26,7 @@ html {
   height: 100%;
   font-size: 16px;
   margin: 0;
+  cursor: default;
 }
 
 textarea {
@@ -188,11 +189,14 @@ input {
 
 // clan post timestamp
 .timestamp {
+  background: $darkbg;
+  align-content: center;
   padding: 20px;
+  @include container-shadow;
 
   p {
-
-    color: $darkwhite;
+  margin-bottom: 0;
+    color: $vitru-light;
   }
 }
 

@@ -57,7 +57,7 @@ PROFILES
 
   p {
     color: $vitru;
-    font-size: .4em;
+    font-size: 1em;
 
     @include md-d {
       padding: 5px;
@@ -77,7 +77,7 @@ PROFILES
   p.active {
 
     color: $vitru-light;
-    font-size: .3em;
+    font-size: .8em;
     font-weight: 400;
     text-transform: uppercase;
   }

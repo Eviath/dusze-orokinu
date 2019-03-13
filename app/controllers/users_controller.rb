@@ -12,39 +12,14 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user = User.find(params[:id])
+      @user = User.find(params[:id]).decorate
       redirect_to root_url and return unless true
       @request = @user.request
       @news_comments = @user.news_comments
     end
 
-    def approve
-        user = User.find(params[:id])
-        # old wat
-        # user.update_attribute(:lider, true)
-
-        # new way
-        user.add_role :lider
-        flash[:success] = "Użytkownik otrzymał rangę Lidera klanu."
-        redirect_to request.referrer || requests_path
-    end
-
-    def decline
-        user = User.find(params[:id])
-
-        # old way
-        # user.update_attribute(:lider, false)
-
-        # new way
-        user.remove_role :lider
-
-        flash[:success] = "Użytkownik został pozbawiony rangi Lidera klanu."
-        redirect_to request.referrer || requests_path
-    end
 
   private
-
-
 
 
 end

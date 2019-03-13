@@ -9,8 +9,6 @@ Rails.application.configure do
 
   # bullet
   config.after_initialize do
-    require 'slack-notifier'
-
     Bullet.enable = true
     Bullet.alert = true
     Bullet.bullet_logger = true
