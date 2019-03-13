@@ -187,12 +187,11 @@ $(document).click(function (e) {
 
 
 
-
-$(document).ready(function() {
+$(document).on('ready turbolinks:load', function () {
 $('.chosen-select').chosen({
     no_results_text: "Nie znaleziono",
     placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
-    width: '200px'
+    width: '100%'
 });
 });
 

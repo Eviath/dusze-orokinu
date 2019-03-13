@@ -203,11 +203,20 @@ ul.chosen-choices {
   padding-top: 50px;
 
   textarea {
-    color: $white
+    color: $white;
+    border: 2px solid $vitru-opa;
+    height: 150px;
+    background: $darkbg;
+
   }
 
   textarea:focus {
     color: $white;
+    border: 2px solid $vitru-opa;
+    height: 150px;
+    background: $darkbg;
   }
+
+  input{ margin-top: 10px;}
 
 }
