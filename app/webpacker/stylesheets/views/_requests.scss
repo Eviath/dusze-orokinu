@@ -239,11 +239,6 @@ body {
 
 .request-index {
 
-  .col-md-8 {
-    padding: 150px 0px 150px 0px;
-  }
-
-  padding: 100px 0px 100px 0px;
 
   h1 {
 
@@ -272,6 +267,13 @@ body {
 
   .request-col {
     padding: 25px;
+
+    .request-inside-col {
+      background: $darkbg;
+      border: 2px solid $vitru-opa;
+      @include container-shadow;
+      padding: 25px;
+    }
 
   }
 

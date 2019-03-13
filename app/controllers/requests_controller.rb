@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
                   else
                     "all"
                   end
-    @requests = Request.includes(:user).send(@scope_name.to_sym)
+    @requests = Request.includes(:user).send(@scope_name.to_sym).decorate
     respond_to do |format|
       format.html
       format.js

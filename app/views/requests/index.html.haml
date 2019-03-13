@@ -3,12 +3,12 @@
 .page-wrapper
   .page-header
     = select_tag(:scope_name,
-                 options_for_select([['All Requests', 'all'], ['Approved Requests', 'approved'], ['Pending Requests', 'pending'], ['Declined Requests', 'declined']], {:selected => @scope_name.to_sym}),
-                 { data: {remote: true }, :class => 'chosen-select'})
-    #scope-title Wszystkie
-.request-index
+                 options_for_select([["#{t("all")}", 'all'], ["#{t("approved")}", 'approved'], ["#{t("pending")}", 'pending'], ["#{t("declined")}", 'declined']], {:selected => @scope_name.to_sym}),
+                 { data: {remote: true }})
+    #scope-title.p-5
+      %h2 Wszystkie
+  .request-index
 
-  .container
-    #request
+    .row#request{class: 'w-100 m-0 p-5'}
       -@requests.each do |r|
         =render 'single_request', request: r

@@ -46,6 +46,17 @@ class RequestDecorator < Draper::Decorator
   end
 
 
+  def approval_status
+    if object.approval
+      "Zaakceptowane"
+    elsif object.approval == nil
+      "Oczekujące"
+    else
+      "Odrzucone"
+    end
+
+  end
+
 
 
 
