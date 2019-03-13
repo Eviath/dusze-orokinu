@@ -117,7 +117,8 @@ body {
   background-size: cover;
 
   .container {
-    background: $darkt;
+    background: $darkbg;
+    @include container-shadow;
     padding: 50px;
   }
 
@@ -287,13 +288,26 @@ body {
 }
 
 
+
 .request-actions {
   text-align: center;
-  padding: 50px 0;
+  color: $white;
+  width: min-content;
+  display: flex;
+  margin: 50px auto;
+  flex-direction: row;
+  justify-content: center;
+  background:$darkbg;
+  height: min-content;
 }
 
 .request-body {
   text-align: center;
+
+  .table{
+    background: $darkt;
+    color: $white;
+  }
 
   &-about {
     h1 {

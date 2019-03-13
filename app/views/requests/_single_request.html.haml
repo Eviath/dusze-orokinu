@@ -1,0 +1,21 @@
+.col-md-4.request-col
+
+  %h1= link_to request.user.name, request.user
+
+  %h2
+    Nick gracza:
+    %span= request.nickname
+
+  %h2
+    Nick lidera:
+    %span= request.lider_nickname
+
+  %h2
+    Nazwa klanu:
+    %span= request.clan_name
+
+  %p
+    = link_to truncate('Zobacz'), request, class: "btn btn-do-bordered-small"
+    - if can? :destroy, request
+      |
+      = link_to "Usuń", request, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-bordered-small"

@@ -186,6 +186,14 @@ $(document).click(function (e) {
 // Bootstrap modal confirm setup
 
 
+$(function(){
+    $('#scope_name').change(function(){
+        window.location.replace('/podania?scope_name='+ $(this).val());
+    })});
+
+
+
+
 
 $(document).ready(function() {
 $('.chosen-select').chosen({
@@ -194,9 +202,6 @@ $('.chosen-select').chosen({
     width: '200px'
 });
 });
-
-
-
 
 
 //shared links and navbar animation on scroll load with turbolinks

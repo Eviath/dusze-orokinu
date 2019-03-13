@@ -73,6 +73,8 @@ class Request < ApplicationRecord
      clan_tier == 'Moon / Księżyca / 1000 osób'
    end
 
-
+  def decorated
+    RequestDecorator.new self
+  end
 
 end

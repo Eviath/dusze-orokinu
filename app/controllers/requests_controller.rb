@@ -5,16 +5,22 @@ class RequestsController < ApplicationController
   before_action :admin_user,   only: [:show, :index]
   load_and_authorize_resource
   def index
-
-    @requestsapproved = Request.approved.newest.page(params[:page]).per_page(5)
-    @requestspending = Request.pending.newest.page(params[:page]).per_page(5)
-    @requestsdeclined = Request.declined.newest.page(params[:page]).per_page(5)
+    @scope_name = if %w(all, approved, pending, declined).include?(params[:scope_name]) # taking care that proper
+                    params[:scope_name]
+                  else
+                    'all'
+                  end
+    @records = Request.send(@scope_name.to_sym)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def podanie
 
     @user = current_user
-    @request = @user.request
+    @request = @user.request.decorate
 
   end
 
@@ -69,7 +75,7 @@ class RequestsController < ApplicationController
   end
 
   def show
-    @request = Request.find(params[:id])
+    @request = Request.find(params[:id]).decorate
   end
 
 
