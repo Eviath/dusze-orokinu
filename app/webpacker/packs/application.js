@@ -186,13 +186,6 @@ $(document).click(function (e) {
 // Bootstrap modal confirm setup
 
 
-$(function(){
-    $('#scope_name').change(function(){
-        window.location.replace('/podania?scope_name='+ $(this).val());
-    })});
-
-
-
 
 
 $(document).ready(function() {

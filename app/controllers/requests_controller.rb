@@ -4,16 +4,17 @@ class RequestsController < ApplicationController
   before_action :admin_or_author, only: :destroy
   before_action :admin_user,   only: [:show, :index]
   load_and_authorize_resource
+
   def index
-    @scope_name = if %w(all, approved, pending, declined).include?(params[:scope_name]) # taking care that proper
+    @scope_name = if %w(all approved pending declined).include?(params[:scope_name]) # taking care that proper
                     params[:scope_name]
                   else
-                    'all'
+                    "all"
                   end
-    @records = Request.send(@scope_name.to_sym)
+    @requests = Request.includes(:user).send(@scope_name.to_sym)
     respond_to do |format|
-      format.js
       format.html
+      format.js
     end
   end
 

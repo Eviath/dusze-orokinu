@@ -2,11 +2,13 @@
 - provide(:title, 'Lista podań') 
 .page-wrapper
   .page-header
-    = select_tag(:scope_name, options_for_select([['All Requests', 'all'], ['Approved Requests', 'approved'], ['Pending Requests', 'pending'], ['Declined Requests', 'declined']]))
-
+    = select_tag(:scope_name,
+                 options_for_select([['All Requests', 'all'], ['Approved Requests', 'approved'], ['Pending Requests', 'pending'], ['Declined Requests', 'declined']], {:selected => @scope_name.to_sym}),
+                 { data: {remote: true }, :class => 'chosen-select'})
+    #scope-title Wszystkie
 .request-index
 
   .container
-    = @scope_name.titleize
-    - @records.each do |record|
-      =render 'single_request', :request => record
+    #request
+      -@requests.each do |r|
+        =render 'single_request', request: r
