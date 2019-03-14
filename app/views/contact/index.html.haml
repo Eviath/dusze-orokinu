@@ -16,18 +16,26 @@
               =link_to @api_invite, @api_invite, target: '_blank'
 
     .row
-      .col-md-8.mx-auto.mt-5
-        %h2 Klient discorda w przeglądarce.
+      .col-md-12.mx-auto.mt-5
+        %h2 Klient discorda w przeglądarce
         %p Zanim wyślesz wiadomość, wciśnij enter w polu pisania, aby ustawić nick, pod którym chcesz pisać na serwerze. Pamiętaj proszę, by pisać pod nickiem z gry.
         #discord
     .row
-      .col-md-8.mx-auto
+      .col-md-12.mx-auto
         .discord-body
-          %h4.p-4
-            Nasi użytkownicy online
-            #{@api_users.count}
+          -if @admins.any?
+            .administration
+              %h4 Administracja online
+              %p (Kliknij obrazek, by zagadać na discordzie)
+              -@admins.each do |r|
+                =link_to "https://discordapp.com/users/#{r['id']}/" do
+                  =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}##{r['discriminator']}"
 
-          -@api_users.each_with_index do |r|
+          .users.mt-2
+          %h4.p-2
+            Użytkownicy online -
+            %span.small=@api_users.count
+          -@api_users.each do |r|
             .discord-person-col
               .discord-person
                 =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}"

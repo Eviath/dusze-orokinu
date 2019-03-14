@@ -144,7 +144,6 @@ window.closeToast = closeToast;
 
 
 
-
 // Clan recruitment check status message under checkbox field
 $(document).ready(function() {
 
