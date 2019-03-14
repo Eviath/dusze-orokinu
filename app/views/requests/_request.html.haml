@@ -1,69 +1,34 @@
-
 .box{:id => "request-#{request.id}"}
-
   .clan_content-wrapper
-
     .container
-
       .request-body
-
-
         %table.table
           %thead
-            %tr
+            %td Nick składającego podanie:
+            %td Nick założyciela klanu:
+            %td Nazwa klanu:
+            %td Tier klanu:
+            %td Liczba członków klanu:
 
-
-
-
-        .nickname
-          %h1 Nick gracza składającego podanie:
-          %p= request.nickname
-
-        .lider_nickname
-          %h1 Nick założyciela klanu:
-          %p= request.lider_nickname
-
-        .clan_name
-          %h1 Nazwa klanu:
-          %p= request.clan_name
-
-        .clan_tier
-          %h1 Tier klanu:
-          %p= request.clan_tier
-
-        .clan_members
-          %h1 Aktualna liczba członków klanu:
-          %p= request.clan_members
-
+          %tbody
+            %td= request.nickname
+            %td= request.lider_nickname
+            %td= request.clan_name
+            %td= request.clan_tier
+            %td= request.clan_members
 
       .request-body-about
         %h1 Opis klanu:
         .fr-view
           = raw request.clan_about
 
-
-      %span.timestamp
+      %span.timestamp.w-100.justify-content-between.d-flex
         Podanie stworzone: #{request.created_at.strftime('%F %T')}
         (#{time_ago_in_words(request.created_at)} temu)
 
-      %span Przez użytkownika:
-      = link_to request.user.name, request.user
+        %span
+          Przez użytkownika:
+          = link_to request.user.name, request.user
 
-
-      .request-actions
-
-        -if can? :destroy, request
-
-          = link_to "Usuń", request_path(request), method: :delete, data: { 'confirm-swal': "Jesteś pewny?" }, :class => "btn btn-do-vitru"
-
-        -if can? :manage, request
-          - if request.approval? || request.approval.nil?
-            = link_to decline_request_path(request), :class => "btn btn-do-vitru" do
-              Odrzuć
-
-          - if !request.approval?
-            = link_to approve_request_path(request), :class => "btn btn-do-vitru" do
-              Zatwiedź
-          - if !request.approval.nil?
-            = link_to pend_request_path(request), :class => "btn btn-do-vitru" do
-              Dodaj do oczekujących
+    .request-actions
+      =request.actions

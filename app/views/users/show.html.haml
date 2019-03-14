@@ -1,9 +1,6 @@
 - provide(:title, @user.name)
 
-
 .user-page-wrapper
-
-
   .profile-container
     .container
       .row
@@ -12,39 +9,19 @@
             .user_image
               =image_tag user_avatar(@user, 120), class: 'rounded-circle user-image'
 
-            %h1
-              = @user.name
+            %h1= @user.name
 
-              .ranks
-                %p
-                  =user_ranks(@user)
+            .ranks
+              %p=user_ranks(@user)
 
+            .user_details
+              %p Zarejestrowany od: #{@user.created_at}
+              %p Ostatnio widziany: #{@user.last_seen}
 
-              .user_details
-                %p
-                  Zarejestrowany od:
-                  %span= @user.created_at.strftime("%F %T")
+              =@user.active_at
 
-                - if !@user.last_seen.blank?
-                  %p
-                    Ostatnio widziany:
-                    %span= @user.last_seen.strftime("%F %T")
-
-                  %p.active
-                    (Online #{time_ago_in_words(@user.last_seen)} temu)
-
-              -if current_user != @user
-                .message-user
-                  =link_to 'Napisz', new_message_path(to: @user), class: 'btn btn-do-vitru'
-
-          -if user_signed_in?
-            - if current_user.has_role? :admin
-
-              - if is_lider
-                = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), decline_user_path(@user)
-              - else
-                = link_to (is_lider ? "Odbierz rangę lidera klanu" : "Daj rangę lidera klanu"), approve_user_path(@user)
-
+            .message-user
+              =@user.message_user
 
 
           .profil-show-img

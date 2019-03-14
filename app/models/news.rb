@@ -1,25 +1,34 @@
 class News < ApplicationRecord
-  #####    news schema  #####
-  #     t.string "title"
-  #     t.text "content"
-  #     t.bigint "user_id"
-  #     t.datetime "created_at", null: false
-  #     t.datetime "updated_at", null: false
-  #     t.string "news_category_id"
-  #     t.index ["user_id"], name: "index_news_on_user_id"
+  # == Schema Information
+  #
+  # Table name: abouts
+  #
+  #  id                     :integer
+  #  title                  :string
+  #  content                :text
+  #  news_category_id       :string
+  #  last_edit_desc         :text
+  #  user_id                :bigint
+  #  created_at             :datetime
+  #  updated_at             :datetime
+  #
 
-
-  has_one :thumbnail_attachment, -> { where(name: 'thumbnail') }, class_name: "ActiveStorage::Attachment", as: :record, inverse_of: :record, dependent: false
-  has_one :thumbnail_blob, through: :thumbnail_attachment, class_name: "ActiveStorage::Blob", source: :blob
-
+  # Associations
+  has_one_attached :thumbnail
   belongs_to :news_category
-  resourcify
-
   belongs_to :user, :foreign_key => "user_id"
   has_many :comments, :as => :commentable, :dependent => :destroy
 
+  # Scopes
+  scope :newest, -> { order('created_at desc') }
+
+  # Validations
   validates :user_id, presence: true
   validates :news_category_id, presence: true
+
+  # Rolify gem, act as resource of roles
+  resourcify
+
 
   def to_param
     "#{id}-#{title.parameterize}"

@@ -4,45 +4,9 @@
   .container.mw-100.clan_index_container
     =render 'clans_index_info'
 
-    - if @clansapproved.any?
-      .row.clans_row
-        - @clansapproved.each do |clan|
-          =render 'single_clan_index', :clan => clan
-
-    - else
-      .row
-        .col-md-8.mx-auto.text-center
-          %h4 Brak klanów do wyświetlenia
+    =clans_with_status(@clansapproved, "approved")
 
     -if user_signed_in?
       - if current_user.has_role? :admin
-        - if @clanspending.any?
-          .clan-approval-pending
-            .row
-              .col-lg-4.mx-auto.text-center
-                %h2 Klany oczekujące na akceptację
-
-            .row
-              - @clanspending.each do |clan|
-                =render 'single_clan_index', :clan => clan
-
-
-        - else
-          .row.no-clans-pending
-            .col-lg-4.mx-auto.text-center
-              %h2 Brak klanów oczekujących na akceptację
-
-
-        - if @clansdeclined.any?
-          .clan-approval-pending
-            .row
-              .col-lg-4.mx-auto.text-center
-                %h2 Klany odrzucone
-
-            .row
-              - @clansdeclined.each do |clan|
-                =render 'single_clan_index', :clan => clan
-        -else
-          .row.no-clans-pending
-            .col-lg-4.mx-auto.text-center
-              %h2 Brak odrzuconych klanów.
+        =clans_with_status(@clanspending, "pending")
+        =clans_with_status(@clansdeclined, "declined")

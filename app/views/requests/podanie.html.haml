@@ -14,17 +14,17 @@
 
         - if @user.request.approval
           .request_show_content-wrapper
-
             %h1
               Podanie do sojuszu zostało
               %span zaakceptowane
+
             %h1
               Otrzymałeś rangę
               %span Lider Klanu
+
             %h2 Możesz teraz przejść do stworzenia ogłoszenia.
             .request-button
-              %span
-                = link_to "Panel klanu", pclan_path, class: "btn btn-do-bordered"
+              %span= link_to "Panel klanu", pclan_path, class: "btn btn-do-bordered"
 
         - else
 
@@ -36,11 +36,8 @@
 - else
 
   .request_show_content-no.parallax-request
-
     .container
-
       .request_show_content-wrapper
-
         %h1 Prowadzisz klan i chcesz dołączyć do naszego sojuszu?
         %h2 Skorzystaj z formularza!
 

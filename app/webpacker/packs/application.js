@@ -196,9 +196,6 @@ $('.chosen-select').chosen({
 });
 
 
-
-
-
 //shared links and navbar animation on scroll load with turbolinks
 $(document).on('turbolinks:load', function () {
 

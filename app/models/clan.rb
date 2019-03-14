@@ -1,30 +1,59 @@
 class Clan < ApplicationRecord
-     CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
-     scope :approved, -> { where(:approval => true) }
-     scope :pending, -> { where(:approval => nil) }
-     scope :declined, -> { where(:approval => false) }
-     has_one_attached :picture
-     belongs_to :user, :foreign_key => "user_id"
-    scope :newest, -> { order(created_at: :desc) }
-   #   validations
-   validates :user_id, presence: true
-   validates :about, presence: true, length: {minimum: 3, maximum: 3000}
-   validates :leader, presence: true, length: {minimum: 3, maximum: 30}
-   validates :tier, presence: true
-   validates :name, presence: true, length: {minimum: 3, maximum: 30}
-   validates :members, presence: true, length: { in: 1..4 }, numericality: true
 
-   #   validate members count
-   validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 10, if: :ghost_tier, :message => 'nie może przekraczać 10 przy wybranym tierze klanu.'
-   validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 30, if: :shadow_tier, :message => 'nie może przekraczać 30 przy wybranym tierze klanu.'
-   validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 100, if: :storm_tier, :message => 'nie może przekraczać 100 przy wybranym tierze klanu.'
-   validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 300, if: :mountain_tier, :message => 'nie może przekraczać 300 przy wybranym tierze klanu.'
-   validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 1000, if: :moon_tier, :message => 'nie może przekraczać 1000 przy wybranym tierze klanu.'
+  # == Schema Information
+  #
+  # Table name: abouts
+  #
+  #  id                     :integer
+  #  leader                 :string
+  #  name                   :string
+  #  about                  :text
+  #  members                :integer
+  #  tier                   :string
+  #  picture                :string
+  #  website                :string
+  #  discord                :string
+  #  approval               :boolean
+  #  recruitment_status     :boolean
+  #  user_id                :bigint
+  #  created_at             :datetime
+  #  updated_at             :datetime
+  #
 
-   validates :picture, presence: true
+  # String options for clan_tier select
+  CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
 
-   validate :picture_validation
-     resourcify
+  # Associations
+  has_one_attached :picture
+  belongs_to :user, :foreign_key => "user_id"
+
+  # Scopes
+  scope :approved, -> { where(:approval => true) }
+  scope :pending, -> { where(:approval => nil) }
+  scope :declined, -> { where(:approval => false) }
+  scope :newest, -> { order(created_at: :desc) }
+  scope :newest_updated, -> { order('updated_at desc') }
+
+  # Validations
+  validates :user_id, presence: true
+  validates :about, presence: true, length: {minimum: 3, maximum: 3000}
+  validates :leader, presence: true, length: {minimum: 3, maximum: 30}
+  validates :tier, presence: true
+  validates :name, presence: true, length: {minimum: 3, maximum: 30}
+  validates :members, presence: true, length: { in: 1..4 }, numericality: true
+  validates :picture, presence: true
+  validate :picture_validation
+
+  # Validate members count / clan_members column
+  validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 10, if: :ghost_tier, :message => 'nie może przekraczać 10 przy wybranym tierze klanu.'
+  validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 30, if: :shadow_tier, :message => 'nie może przekraczać 30 przy wybranym tierze klanu.'
+  validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 100, if: :storm_tier, :message => 'nie może przekraczać 100 przy wybranym tierze klanu.'
+  validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 300, if: :mountain_tier, :message => 'nie może przekraczać 300 przy wybranym tierze klanu.'
+  validates_numericality_of :members , greater_than_or_equal_to: 1, less_than_or_equal_to: 1000, if: :moon_tier, :message => 'nie może przekraczać 1000 przy wybranym tierze klanu.'
+
+   # Rolify gem, act as resource of roles
+   resourcify
+
 
      def to_param
        "#{id}-#{name.parameterize}"
@@ -38,8 +67,7 @@ class Clan < ApplicationRecord
        # [ %w(Green 0), %w(White 1)]
      end
 
-
-     # check for selected clan tier
+     # Check for selected clan tier
      def ghost_tier
        tier == 'Ghost / Duch'
      end
@@ -64,6 +92,7 @@ class Clan < ApplicationRecord
 
      private
 
+     # Validate picture "Clan Logo"
      def picture_validation
        if picture.attached?
          if picture.blob.byte_size > 2000000

@@ -1,53 +1,50 @@
 .request_form
+  .request_regulamin.text-center
+    .jumbotron.jumbotron-fluid
+      .container
+        %h1.display-4 Zanim złożysz podanie zapoznaj się z regulaminem!
+        %p.lead Składając podanie, akceptujesz regulamin sojuszu.
+        %span= link_to "Regulamin Sojuszu", alliance_rules_path, class: "btn btn-do-vitru btn-lg"
 
-    .request_regulamin.text-center
-        .jumbotron.jumbotron-fluid
-            .container
-                %h1.display-4 Zanim złożysz podanie zapoznaj się z regulaminem!
-                %p.lead Składając podanie, akceptujesz regulamin sojuszu.
-                %span= link_to "Regulamin Sojuszu", alliance_rules_path, class: "btn btn-do-vitru btn-lg"
+  %h2.text-center Stwórz podanie do sojuszu
 
+  = form_for(@request) do |f|
+    = render 'shared/error_messages', object: f.object
+    .col-md-8.mx-auto
+      .form-group
+        = f.label :nickname, "Nick składającego podanie"
+        = f.text_field :nickname, placeholder: "Twój nick", class: 'form-control'
+      .form-group
+        = f.label :lider_nickname, "Nick założyciela klanu"
+        = f.text_field :lider_nickname, placeholder: "Nick lidera Klanu", class: 'form-control'
+      .form-group
+        = f.label :clan_name, "Nazwa klanu"
+        = f.text_field :clan_name, placeholder: "Nazwa klanu", class: 'form-control'
+      .form-group
+        = f.label :clan_tier, "Tier klanu"
+        = f.select(:clan_tier, Request::CLANTIER, {selected: @request.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
+      .form-group
+        = f.label :clan_members, "Aktualna liczba członków klanu"
+        = f.text_field :clan_members, placeholder: "Liczba członków klanu (Zwróć uwagę na wybrany tier klanu)", :class => 'form-control'
 
+      .checkboxes
+        .row
+          .col-md-6
+            .input-group.d-flex.justify-content-center.align-content-center
+              .form-check
+                = f.label :discord_check, "Discord", class: 'discord_check'
+                = f.check_box :discord_check
 
-    %h2.text-center Stwórz podanie do sojuszu
+          .col-md-6
+            .input-group.d-flex.justify-content-center.align-content-center
+              .form-check
+                = f.label :rules_check, "Regulamin", class: 'rules_check'
+                = f.check_box :rules_check
 
-    = form_for(@request) do |f|
-        = render 'shared/error_messages', object: f.object
-        .col-md-8.mx-auto
-            .form-group
-                = f.label :nickname, "Nick składającego podanie"
-                = f.text_field :nickname, placeholder: "Twój nick", class: 'form-control'
-            .form-group
-                = f.label :lider_nickname, "Nick założyciela klanu"
-                = f.text_field :lider_nickname, placeholder: "Nick lidera Klanu", class: 'form-control'
-            .form-group
-                = f.label :clan_name, "Nazwa klanu"
-                = f.text_field :clan_name, placeholder: "Nazwa klanu", class: 'form-control'
-            .form-group
-                = f.label :clan_tier, "Tier klanu"
-                = f.select(:clan_tier, Request::CLANTIER, {selected: @request.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
-            .form-group
-                = f.label :clan_members, "Aktualna liczba członków klanu"
-                = f.text_field :clan_members, placeholder: "Liczba członków klanu (Zwróć uwagę na wybrany tier klanu)", :class => 'form-control'
+    .form-group
+      = f.label :clan_about, "Krótki opis klanu"
+      = f.text_area :clan_about, id:"summernote"
 
-            .checkboxes
-                .row
-                    .col-md-6
-                        .input-group.d-flex.justify-content-center.align-content-center
-                            .form-check
-                                = f.label :discord_check, "Discord", class: 'discord_check'
-                                = f.check_box :discord_check
-
-                    .col-md-6
-                        .input-group.d-flex.justify-content-center.align-content-center
-                            .form-check
-                                = f.label :rules_check, "Regulamin", class: 'rules_check'
-                                = f.check_box :rules_check
-
-        .form-group
-            = f.label :clan_about, "Krótki opis klanu"
-            = f.text_area :clan_about, id:"summernote"
-
-            .actions
-                = f.submit "Zapisz", class: "btn btn-do-vitru"
+      .actions
+        = f.submit "Zapisz", class: "btn btn-do-vitru"
 
