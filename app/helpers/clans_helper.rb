@@ -45,4 +45,6 @@ module ClansHelper
     end
   end
 
+
+
 end

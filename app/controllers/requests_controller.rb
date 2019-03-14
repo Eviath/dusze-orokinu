@@ -19,10 +19,8 @@ class RequestsController < ApplicationController
   end
 
   def podanie
-
     @user = current_user
-    @request = @user.request.decorate
-
+    @request = @user.request.decorate if @user.request.present?
   end
 
 

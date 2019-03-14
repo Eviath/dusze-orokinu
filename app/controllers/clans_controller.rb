@@ -37,6 +37,7 @@ end
   def panel
     @user  = current_user
     @clan = @user.clan.decorate if @user.clan.present?
+    @request = @user.request.decorate if @user.request.present?
   end
 
   def new

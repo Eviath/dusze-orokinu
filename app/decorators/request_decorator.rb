@@ -24,28 +24,7 @@ class RequestDecorator < Draper::Decorator
       end
   end
 
-  def request_show
-    content_tag(:div, class:'clan-approval-pending') do
-      content_tag(:div, class: 'row') do
-        content_tag(:div, class:'col-md-4 mx-auto text-center') do
-          content_tag(:h2, "Podania zaakceptowane.")
-        end
-      end
-      h.content_tag(:div, class: 'row') do
-          render 'single_request', :request => object
-      end
-    end
-  end
-
-  def request_nothing
-    content_tag(:div, class: 'row') do
-      content_tag(:div, class:'col-md-8 mx-auto text-center') do
-        content_tag(:h4, "Nie ma żadnych podań przyjętych do sojuszu!")
-      end
-    end
-  end
-
-
+  # Requests index approval status
   def approval_status
     if object.approval
       "Zaakceptowane"
@@ -54,10 +33,21 @@ class RequestDecorator < Draper::Decorator
     else
       "Odrzucone"
     end
-
   end
 
-
-
-
+  # Request status panel
+  def status
+    content_tag(:div, class:'clan_show_content-wrapper') do
+      content_tag(:div, class:'jumbotron') do
+        concat(content_tag(:h1, "#{'Witaj ' + current_user.name + '!'}", class:'display-4'))
+        concat(content_tag(:p, "Stan Twojego podania do sojuszu.", class:'lead'))
+        concat(content_tag(:hr, nil, class:'my-4'))
+        concat(content_tag(:p, "Wygląda na to, że Twoje podanie nie zostało jeszcze rozpatrzone, lub zostało odrzucone! O decyzji zostaniesz powiadomiony/a na adres e-mail podany przy rejestracji."))
+        concat(content_tag(:div, class:'request-button') do
+          link_to "Sprawdź podanie do sojuszu", '/podanie', class: "btn btn-do-vitru"
+        end)
+      end
+    end
   end
+
+end
