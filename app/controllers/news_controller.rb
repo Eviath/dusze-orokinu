@@ -5,13 +5,12 @@ class NewsController < ApplicationController
   # get all users with notification on
   before_action :get_users_with_notification_on, only: :create
 
-
   include Comment::Commen
 
   # GET /news
   # GET /news.json
   def index
-    @news = News.includes(:user, :thumbnail_blob).all.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @news = News.includes(:user, :thumbnail_blob).all.newest.paginate(page: params[:page], per_page: 10)
     @news_category = NewsCategory.find(params[:id]) if params[:id].present?
     @news_with_category = News.includes(:user, :thumbnail_blob).where(news_category_id: params[:id]).paginate(page: params[:page], per_page: 10)
     respond_to do |format|
@@ -24,7 +23,7 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
-    @news = News.includes(:user, :thumbnail_blob).find(params[:id])
+    @news = News.find(params[:id])
     @similar_news = News.includes(:user, :thumbnail_blob).where(news_category_id: @news.news_category_id).paginate(page: params[:page], per_page: 4)
     respond_to do |format|
       format.html # index.html.erb

@@ -1,8 +1,6 @@
 class ContactController < ApplicationController
 
   def index
-
-
     require 'net/http'
     require 'json'
 
@@ -18,6 +16,7 @@ class ContactController < ApplicationController
     @api_invite = api['instant_invite']
     @api_name = api['name']
 
+    admins = api['members']
   end
 
 end

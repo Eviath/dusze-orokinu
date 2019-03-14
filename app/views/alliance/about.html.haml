@@ -6,14 +6,14 @@
         .images
           =image_tag(asset_pack_path('media/images/all-gold.png'))
           =image_tag(asset_pack_path('media/images/jedno-gold.png'))
-        - if @main_about.any?
-          - @main_about.each do |about|
+        - if @abouts.main.any?
+          - @abouts.main.each do |about|
             %h1=about.title
             %h2=about.description
             %p=about.content
-      - if @about_column_two.any?
+      - if @abouts.column_two.any?
         .row.tag
-          - @about_column_two.each do |about|
+          - @abouts.column_two.each do |about|
             .col
               .tag-header
                 %h2=about.title
@@ -21,8 +21,8 @@
                 %p=about.content
 
 
-    - if @about_column_one.any?
-      - @about_column_one.each do |about|
+    - if @abouts.column_one.any?
+      - @abouts.column_one.each do |about|
         .content-mozliwosci
           .future
             .container
