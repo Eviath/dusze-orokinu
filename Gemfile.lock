@@ -123,8 +123,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commentable (0.1.0)
-      activerecord
     concurrent-ruby (1.1.5)
     cookies_eu (1.7.5)
       js_cookie_rails (~> 2.2.0)
@@ -414,7 +412,6 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13)
-  commentable
   cookies_eu
   devise
   devise_lastseenable
