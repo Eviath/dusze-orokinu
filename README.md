@@ -11,7 +11,8 @@
 # About Project
 
 > Core
-- Ruby on Rails 5.2.1
+- Ruby 2.6.1
+- Rails 5.2.2
 - Bootstrap 4.1
 - HAML Syntax
 - Sass
@@ -23,9 +24,11 @@
 - User register & login with e-mail activation and password resets
 - User Roles
 - Community groups requests
+- News
+- Featured
+- Commenting system
 - Admin Panel
 - User Panel
-- User Gravatar
 
 
 ---
@@ -38,4 +41,22 @@
 > License
 - All rights reserved.
 
+> Installation Guide
 
+- Clone repo `git clone git@github.com:Eviath/dusze-orokinu.git`
+- Bundle gems `bundle install`
+- Bundle npm packages `npm install`
+- Make sure packages are integrated with yarn `yarn install --check-files`
+- Create database, run migrations and seed database `rake db:setup`
+
+> FAQ
+
+##### You must use bundler 2.0 or greater with this lockfile
+- `gem update --system`
+- `gem install bundler`
+- `bundler update --bundler`
+
+
+##### ./bin/webpack-dev-server Permission denied
+- `chmod -R 777 ./bin`
+- `chmod -R 777 ./bin/webpack-dev-server`

@@ -6656,10 +6656,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2@^8.2.5:
-  version "8.2.6"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.6.tgz#1381739f164b807917f6054652fd173187a497c5"
-  integrity sha512-F14KlRBBJr7Hl+WWCYnBZR8heUNTBQY9nfhNWlrocnj5equ7lkWZC8BfxHXX699D8tb/LrHaEWtpIhWVMgoacA==
+sweetalert2@^8.5.0:
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.5.0.tgz#453ee0b3dd4ab5b8d89b1588c48ea90d74b16d63"
+  integrity sha512-cvGitYfnutaRIWuLJ+p+eLXieJyodWpB9F8AtD6Y5uNWN5OcQD1dDwN7VPDo4U7y4ni3rgK9gDYmkz9RCf4PSA==
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
@@ -7048,21 +7048,21 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-warframe-worldstate-data@^0.1.38:
-  version "0.1.46"
-  resolved "https://registry.yarnpkg.com/warframe-worldstate-data/-/warframe-worldstate-data-0.1.46.tgz#82fc6ec0aa67faa24f15b654d023a55b6c45a475"
-  integrity sha512-CMoxh6RZgOk3cd4h6VOmlydolO6wT14GXJkMOzGJjEoyJ21JEPZKqYvhCIs95HRzOMyCq9BEMXTYmBGQ0ShP7A==
+warframe-worldstate-data@^0.1.53:
+  version "0.1.56"
+  resolved "https://registry.yarnpkg.com/warframe-worldstate-data/-/warframe-worldstate-data-0.1.56.tgz#f515e5410516280f99015f420fa96b0de900f876"
+  integrity sha512-3zsBuHwpUbvlvDTwZPNCMt8n+vVyCYrm6uYV0X9g/uqG/AkQFyEV9Vo/x8iiGU4dv6iu6BYlhlZl3GFxOiCzrw==
 
-warframe-worldstate-parser@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/warframe-worldstate-parser/-/warframe-worldstate-parser-2.3.4.tgz#23c313f8b3b529101802f970c644b58d76745a32"
-  integrity sha512-KGEOnmjJb5mq2eHFMJnPPwpvwCPSPy+zZvjY3x4Q8r7vEYNXQW08YuyDygl0EI+DX5kenWlCeMLSfjckTBOL9g==
+warframe-worldstate-parser@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/warframe-worldstate-parser/-/warframe-worldstate-parser-2.4.2.tgz#b8c38badebb784f2362289d3a2bd844274cf793f"
+  integrity sha512-J0dON+LlDaaNQJIUucRKHbg6OtTEpRMqK6+ZqU+jzwsP0Cj10EELhk33LhepmjpRFEHeFQkb5fIjcnk6TSMBfg==
   dependencies:
     chai "^4.2.0"
     node-fetch "^2.3.0"
     node-md-config "^2.0.1"
     right-pad "^1.0.1"
-    warframe-worldstate-data "^0.1.38"
+    warframe-worldstate-data "^0.1.53"
 
 watchpack@^1.5.0:
   version "1.6.0"

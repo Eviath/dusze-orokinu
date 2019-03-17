@@ -24,4 +24,6 @@ class Comment < ApplicationRecord
 
   # Ancestry gem // Model act as tree structure
   has_ancestry
+
+
 end

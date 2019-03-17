@@ -9,17 +9,8 @@
               %h5.mb-1=link_to(comment.user.name, comment.user)
             .col-auto
               %small=l comment.created_at, format: :long
-              - pre_like = comment.likes.find { |like| like.user_id == current_user.id}
-              - if pre_like
-                %span#link_to_action_delete
-                  = link_to comment_like_path(comment, pre_like), method: :delete, remote: true do
-                    %i.far.fa-heart.justify-self-end.ml-3
-                    %span#likes_count_dislike= comment.likes.count
-              - else
-                %span#link_to_action_create
-                  = link_to comment_likes_path(comment), method: :post, remote: true do
-                    %i.far.fa-heart.justify-self-end.ml-3
-                    %span#likes_count_like= comment.likes.count
+              %span{id:"comment_#{comment.id}_likes"}
+                =render 'likes/like', comment: comment
 
           %p.mb-1= simple_format comment.content
 

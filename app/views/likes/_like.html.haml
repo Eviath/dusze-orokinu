@@ -1,0 +1,21 @@
+
+-if user_signed_in?
+  - pre_like = comment.likes.find { |like| like.user_id == current_user.id}
+  -if current_user != comment.user
+    - if pre_like
+      = link_to comment_like_path(comment, pre_like), method: :delete, remote: true do
+        %i.fas.fa-heart.justify-self-end.ml-3.scale-in-center
+        %span= comment.likes.count
+    - else
+      = link_to comment_likes_path(comment), method: :post, remote: true do
+        %i.far.fa-heart.justify-self-end.ml-3.scale-in-center
+        -if comment.likes.count > 0
+          %span= comment.likes.count
+  -else
+    %i.fas.fa-heart.justify-self-end.ml-3.scale-in-center
+    -if comment.likes.count > 0
+      %span=comment.likes.count
+-else
+  %i.far.fa-heart.justify-self-end.ml-3.scale-in-center
+  -if comment.likes.count > 0
+    %span= comment.likes.count

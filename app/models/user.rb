@@ -46,9 +46,9 @@ class User < ApplicationRecord
   has_one :clan, dependent: :destroy
   has_one :request, dependent: :destroy
   has_many :news
-  has_many :comments, through: :news, source: :comments
+  has_many :comments
   has_one_attached :avatar
-  has_many :likes, dependent: :destroy
+  has_many :likes, through: :comments, dependent: :destroy
 
   # Mailboxer notifications
   def mailboxer_email(object)

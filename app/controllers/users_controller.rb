@@ -18,7 +18,20 @@ class UsersController < ApplicationController
       @comments = @user.comments
     end
 
+    def user_comments
+      respond_to do |format|
+        format.html {}
+        format.js
+      end
+    end
 
+    def user_profile
+      @user = User.find(params[:id]).decorate
+      respond_to do |format|
+        format.html {}
+        format.js
+      end
+    end
   private
 
 

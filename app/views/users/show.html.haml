@@ -1,34 +1,10 @@
 - provide(:title, @user.name)
 
-.user-page-wrapper
+.user-page-wrapper.parallax-users
   .profile-container
     .container
       .row
-        .col-md-8.mx-auto.text-center.col-show-box
-          %section.show-profile-box
-            .user_image
-              =image_tag user_avatar(@user, 120), class: 'rounded-circle user-image'
+        #content.col-md-8.mx-auto.text-center.col-show-box
+          =render 'user_profile'
 
-            %h1= @user.name
-
-            .ranks
-              %p=user_ranks(@user)
-
-            .user_details
-              %p Zarejestrowany od: #{@user.created_at}
-              %p Ostatnio widziany: #{@user.last_seen}
-
-              =@user.active_at
-
-            .message-user
-              =@user.message_user
-
-
-          .profil-show-img
-            =image_tag(asset_pack_path('media/images/jedno-gold.png'))
-
-          %h2 Komentarze
-
-          -@comments.each do |c|
-            =c.content
 
