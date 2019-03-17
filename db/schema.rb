@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_152023) do
+ActiveRecord::Schema.define(version: 2019_03_17_104454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,9 +71,11 @@ ActiveRecord::Schema.define(version: 2019_03_04_152023) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "ancestry"
+    t.bigint "like_id"
     t.index ["ancestry"], name: "index_comments_on_ancestry"
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["like_id"], name: "index_comments_on_like_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -82,6 +84,17 @@ ActiveRecord::Schema.define(version: 2019_03_04_152023) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.bigint "news_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["news_id"], name: "index_likes_on_news_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|
@@ -264,6 +277,10 @@ ActiveRecord::Schema.define(version: 2019_03_04_152023) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clans", "users"
+  add_foreign_key "comments", "likes"
+  add_foreign_key "likes", "comments"
+  add_foreign_key "likes", "news"
+  add_foreign_key "likes", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"

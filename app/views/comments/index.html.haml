@@ -1,2 +1,32 @@
-%h1 Comments#index
-%p Find me in app/views/comments/index.html.haml
+.page-wrapper
+  .page-header
+    Top 10 komentatorów
+
+
+
+  .container
+    .row
+      .col-md-6
+        .header.text-center
+          Najwięcej komentarzy
+        =@top_commenters.each do |c|
+          =c.name
+          =c.comments.count
+
+      .col-md-6
+        .header.text-center
+          Najlepszy komentator
+        -@top_liked_commenters.each do |c|
+          =c.name
+          =c.likes.count
+
+
+    .row
+      .col-md-8.mx-auto
+        .header.text-center Najlepsze komentarze
+        -@top_liked_comments.each do |c|
+          =c.user.name
+          =c.content
+          =c.likes.count
+
+

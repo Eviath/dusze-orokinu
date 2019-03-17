@@ -26,9 +26,9 @@
 
           .profil-show-img
             =image_tag(asset_pack_path('media/images/jedno-gold.png'))
-          -#
-          -#%h2 Komentarze
-          -#
-          -#-@news_comments.each do |c|
-          -#  =c.content
-          -#
+
+          %h2 Komentarze
+
+          -@comments.each do |c|
+            =c.content
+

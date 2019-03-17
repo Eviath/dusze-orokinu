@@ -43,7 +43,9 @@ Rails.application.routes.draw do
       resources :comments
     end
 
-
+    resources :comments do
+      resources :likes
+    end
 
     resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
     resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]

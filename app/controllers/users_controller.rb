@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id]).decorate
       redirect_to root_url and return unless true
       @request = @user.request
-      @news_comments = @user.news_comments
+      @comments = @user.comments
     end
 
 

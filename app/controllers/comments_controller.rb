@@ -2,15 +2,20 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
+  def index
+    @top_commenters = top_commenters_by_comments
+    @top_liked_comments = top_liked_comments
+    @top_liked_commenters = top_commenters_by_likes
+  end
+
   def new
     @commentable = News.find(params[:news_id])
     @comment = @commentable.comments.new(:parent_id => params[:parent_id])
-
   end
 
   def create
     @commentable = News.find(params[:news_id])
-    @comment = @commentable.comments.new(comment_params)
+    @comment = @commentable.comment.new(comment_params)
     @comment.user = current_user
     respond_to do |format|
       if @comment.save
@@ -18,7 +23,7 @@ class CommentsController < ApplicationController
       else
         format.html  {
           redirect_to news_url(@commentable)
-          flash[:success] = 'Comment must be less than 140 characters'
+          flash[:success] = 'Komentarz nie może zawierać więcej niż 140 znaków'
         }
       end
     end
@@ -35,6 +40,29 @@ class CommentsController < ApplicationController
   end
 
   private
+
+
+  def top_liked_comments
+     Comment
+            .preload(:likes)
+            .joins(:likes)
+            .group('comments.id')
+            .order(Arel.sql('count(likes.id) desc'))
+            .limit(10)
+  end
+
+  def top_commenters_by_likes
+    User
+        .preload(:likes)
+        .joins(:likes)
+        .group('users.id')
+        .limit(10)
+  end
+
+  def top_commenters_by_comments
+    User.preload(:comments).joins(:comments).group('users.id').where('comments.created_at >= ?', 1.week.ago.utc).order(Arel.sql('count(comments.id) desc')).limit(10)
+  end
+
 
   def find_commentable
     params.each do |name, value|
