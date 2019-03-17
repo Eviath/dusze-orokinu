@@ -1,6 +1,13 @@
 .discord-img {
   width: 40px;
   height: 40px;
+  margin: 2px;
+  transition: .3s;
+  filter: grayscale(100%);
+  &:hover{
+    transition: .3s;
+    filter: grayscale(0%);
+  }
 }
 
 table.discord-table {
@@ -29,6 +36,15 @@ table.discord-table {
     padding: 0;
   }
 
+  #discord {
+    margin: 50px auto;
+
+    .discord-widget {
+      width:100%;
+      height: 500px;
+    }
+  }
+
   .discord-header {
     .jumbotron{
       width:70%;
@@ -49,13 +65,17 @@ table.discord-table {
   }
 
   .discord-body {
-    padding-top: 100px;
+    width:60%;
+    margin: 100px auto;
+    background: $darkbg;
+    border: 1px solid $vitru-opa;
+    padding: 50px;
   }
 }
 
 .discord-person-col {
-  width: 15%;
-  padding: 5px;
+  //width: 15%;
+  //padding: 5px;
   display: inline-block;
 
   p {
@@ -68,6 +88,5 @@ table.discord-table {
 }
 
 .discord-person {
-  padding: 10px;
-  background: $darkt;
+  //padding: 10px;
 }

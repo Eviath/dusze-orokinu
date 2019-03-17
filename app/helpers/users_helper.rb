@@ -62,7 +62,6 @@ module UsersHelper
 
   # user role in simple string
   def user_role(user)
-
   if user.has_role?(:admin)
     "Administrator"
   elsif user.has_role?(:moderator)
@@ -72,7 +71,6 @@ module UsersHelper
   else
     "Użytkownik"
   end
-
   end
 
 

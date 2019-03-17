@@ -1,13 +1,7 @@
-
 .box{:id => "request-#{request.id}"}
-
   .clan_content-wrapper
-
     .container
-
       .request-body
-
-
         %table.table
           %thead
             %td Nick składającego podanie:
@@ -28,7 +22,6 @@
         .fr-view
           = raw request.clan_about
 
-
       %span.timestamp.w-100.justify-content-between.d-flex
         Podanie stworzone: #{request.created_at.strftime('%F %T')}
         (#{time_ago_in_words(request.created_at)} temu)
@@ -36,7 +29,6 @@
         %span
           Przez użytkownika:
           = link_to request.user.name, request.user
-
 
     .request-actions
       =request.actions

@@ -61,6 +61,7 @@ body {
       }
 
       .jumbotron {
+        border: 5px solid $vitru-dark;
         background: $vitru-trans-bg;
         @include container-shadow;
       }

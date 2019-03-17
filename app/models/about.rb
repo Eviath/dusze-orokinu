@@ -12,6 +12,10 @@ class About < ApplicationRecord
 #  updated_at   :datetime
 #
 
+  scope :main, -> { where(:assignment => 'MAIN') }
+  scope :column_one, -> { where(:assignment => 'COLUMN_ONE')}
+  scope :column_two, -> { where(:assignment => 'COLUMN_TWO') }
+
   def assignment_enum
     # Do not select any value, or add any blank field. RailsAdmin will do it for you.
     ['MAIN', 'COLUMN_ONE', 'COLUMN_TWO']

@@ -9,6 +9,8 @@ import { Alerts } from "./components/warframe_alerts";
 import { Sortie } from "./components/warframe_sortie";
 import { VoidTrader } from "./components/warframe_baro";
 import { WarframeCetus } from "./components/warframe_cetus";
+import { Widget } from "./components/discord_widget";
+
 
 export class WarframeMissions extends React.Component{
   render(){
@@ -20,6 +22,8 @@ export class WarframeMissions extends React.Component{
   );
   }
 }
+
+
 
 export class Cetus extends React.Component{
     render(){
@@ -41,7 +45,11 @@ export class News extends React.Component{
     }
 }
 
+if (!Turbolinks) {
+    location.reload();
+}
 
+Turbolinks.dispatch("turbolinks:load");
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -63,6 +71,14 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
+document.addEventListener('turbolinks:load', () => {
+    if (document.getElementById('discord')) {
+        ReactDOM.render(
+            <Widget/>,
+            document.getElementById('discord'),
+        );
+    }
+});
 
 document.addEventListener('turbolinks:load', () => {
 

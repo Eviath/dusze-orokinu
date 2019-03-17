@@ -1,0 +1,11 @@
+.user-pic
+  =image_tag user_avatar(current_user), class: 'img-responsive img-rounded'
+.user-info
+  %span.user-name
+    %strong=current_user.name
+
+  %span.user-role
+    =user_role(current_user)
+  %span.user-status
+    %i.fa.fa-circle
+    %span Online

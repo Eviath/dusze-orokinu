@@ -14,11 +14,13 @@ class News < ApplicationRecord
   #
 
   # Associations
-  has_one :thumbnail_attachment, -> { where(name: 'thumbnail') }, class_name: "ActiveStorage::Attachment", as: :record, inverse_of: :record, dependent: false
-  has_one :thumbnail_blob, through: :thumbnail_attachment, class_name: "ActiveStorage::Blob", source: :blob
+  has_one_attached :thumbnail
   belongs_to :news_category
   belongs_to :user, :foreign_key => "user_id"
   has_many :comments, :as => :commentable, :dependent => :destroy
+
+  # Scopes
+  scope :newest, -> { order('created_at desc') }
 
   # Validations
   validates :user_id, presence: true

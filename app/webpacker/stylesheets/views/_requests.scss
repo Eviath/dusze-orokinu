@@ -28,6 +28,22 @@ body {
 
 }
 
+select.select-request {
+  padding: 5px;
+  background: $darkbg;
+  color: $white;
+  border: 2px solid $vitru-dark;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 1.2em;
+  &:focus {
+    outline: $vitru auto 5px;
+  }
+  option {
+    border: none;
+  }
+}
+
 
 .parallax-request {
   /* The image used */
@@ -239,11 +255,6 @@ body {
 
 .request-index {
 
-  .col-md-8 {
-    padding: 150px 0px 150px 0px;
-  }
-
-  padding: 100px 0px 100px 0px;
 
   h1 {
 
@@ -272,6 +283,13 @@ body {
 
   .request-col {
     padding: 25px;
+
+    .request-inside-col {
+      background: $darkbg;
+      border: 2px solid $vitru-opa;
+      @include container-shadow;
+      padding: 25px;
+    }
 
   }
 

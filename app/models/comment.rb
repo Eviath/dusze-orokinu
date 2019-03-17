@@ -18,6 +18,9 @@ class Comment < ApplicationRecord
   belongs_to :commentable, :polymorphic => true
   belongs_to :user
 
+  # Scopes
+  scope :newest, -> { order('created_at desc') }
+
   # Ancestry gem // Model act as tree structure
   has_ancestry
 end

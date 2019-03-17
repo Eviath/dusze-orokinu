@@ -2,14 +2,11 @@
 
 .clan_show_content
   .container
-    - if current_user.has_role? :lider
-
-      - if @clan
+    - if has_role?(:lider)
+      -if @clan
         =@clan.clan_approval
-        .request
-          = render @clan
-
-      - else
+        =render @clan
+      -else
         .clan_show_content-wrapper
           .jumbotron
             %h1.display-4 #{'Witaj ' + current_user.name + '!'}
@@ -19,25 +16,11 @@
             .request-button
               %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-vitru ", data: { turbolinks: false }
 
-
     - else
-
-      - if @user.request
-
+      - if @request
+        =@request.status
+      -else
         .clan_show_content-wrapper
-          .jumbotron
-            %h1.display-4 #{'Witaj ' + current_user.name + '!'}
-            %p.lead Stan Twojego podania do sojuszu.
-            %hr.my-4
-            %p Wygląda na to, że Twoje podanie nie zostało jeszcze rozpatrzone, lub zostało odrzucone! O decyzji zostaniesz powiadomiony/a na adres e-mail podany przy rejestracji.
-            .request-button
-              %span= link_to "Sprawdź podanie do sojuszu", '/podanie', class: "btn btn-do-vitru"
-
-
-      - else
-
-        .clan_show_content-wrapper
-
           .jumbotron
             %h1.display-4 Sojusz
             %p.lead Dołącz do sojuszu.
@@ -54,3 +37,6 @@
             %p Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
             .request-button
               %span= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-vitru"
+
+
+

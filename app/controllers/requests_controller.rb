@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
                   else
                     "all"
                   end
-    @requests = Request.includes(:user).send(@scope_name.to_sym)
+    @requests = Request.includes(:user).send(@scope_name.to_sym).decorate
     respond_to do |format|
       format.html
       format.js
@@ -19,10 +19,8 @@ class RequestsController < ApplicationController
   end
 
   def podanie
-
     @user = current_user
-    @request = @user.request.decorate
-
+    @request = @user.request.decorate if @user.request.present?
   end
 
 

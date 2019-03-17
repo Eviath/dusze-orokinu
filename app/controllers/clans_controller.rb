@@ -5,7 +5,7 @@ class ClansController < ApplicationController
   load_and_authorize_resource :except => [:index, :show]
 
   def index
-    @clansapproved = Clan.with_attached_picture.approved.order('updated_at DESC').decorate
+    @clansapproved = Clan.with_attached_picture.approved.newest_updated.decorate
     @clanspending = Clan.with_attached_picture.pending.newest.decorate
     @clansdeclined = Clan.with_attached_picture.declined.decorate
     @clans = Clan.with_attached_picture.all.decorate
@@ -37,6 +37,7 @@ end
   def panel
     @user  = current_user
     @clan = @user.clan.decorate if @user.clan.present?
+    @request = @user.request.decorate if @user.request.present?
   end
 
   def new

@@ -1,2 +1,2 @@
 $("#request").html("<%= escape_javascript(render partial: 'single_request', collection: @requests, as: :request) %>");
-$("#scope-title").html("<%= @scope_name.titleize %>");
+$("#scope-title").html(" <%= content_tag(:h2, "#{t(@scope_name)}" ) %>");

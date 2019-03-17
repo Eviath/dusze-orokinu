@@ -32,6 +32,7 @@ class Clan < ApplicationRecord
   scope :pending, -> { where(:approval => nil) }
   scope :declined, -> { where(:approval => false) }
   scope :newest, -> { order(created_at: :desc) }
+  scope :newest_updated, -> { order('updated_at desc') }
 
   # Validations
   validates :user_id, presence: true
