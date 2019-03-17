@@ -67,9 +67,11 @@ class CommentsController < ApplicationController
 
 
   # Users with highest comment count
+  # where('comments.created_at >= ?', 1.week.ago.utc)  possibility for future
   def highest_comment_count
-    User.preload(:comments).joins(:comments).group('users.id').where('comments.created_at >= ?', 1.week.ago.utc).order(Arel.sql('count(comments.id) desc')).limit(10)
+    User.preload(:comments).joins(:comments).group('users.id').order(Arel.sql('count(comments.id) desc')).limit(10)
   end
+
 
 
   def find_commentable
