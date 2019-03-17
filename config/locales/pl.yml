@@ -26,6 +26,7 @@ pl:
     conversations: poczta
     messages: wiadomosci
     news_categories: aktualnosci-kategorie
+    comments: komentarze
 
 
   mailboxer:
