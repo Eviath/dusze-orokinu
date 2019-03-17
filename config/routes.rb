@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     get 'comments/new'
     get 'conversations/index'
 
-
     get '/alliance',  to: 'alliance#index'
     root 'alliance#index'
 
@@ -37,13 +36,20 @@ Rails.application.routes.draw do
 
     resources :contact
 
-    resources :users
+    resources :users do
+      member do
+        get :user_comments
+        get :user_profile
+      end
+    end
     resources :news_categories
     resources :news do
       resources :comments
     end
 
-
+    resources :comments do
+      resources :likes
+    end
 
     resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
     resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]

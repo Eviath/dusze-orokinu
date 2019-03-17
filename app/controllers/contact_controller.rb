@@ -16,7 +16,12 @@ class ContactController < ApplicationController
     @api_invite = api['instant_invite']
     @api_name = api['name']
 
-    admins = api['members']
+    evid =  @api_users.find {|x| x['id'] == "259360162739912707"}
+    pimatron =  @api_users.find {|x| x['id'] == "267400113264001034"}
+    @admins = []
+    @admins << evid; pimatron
+
+
   end
 
 end

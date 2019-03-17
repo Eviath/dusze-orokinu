@@ -40,8 +40,10 @@ table.discord-table {
     margin: 50px auto;
 
     .discord-widget {
-      width:100%;
+      width:70%;
       height: 500px;
+
+
     }
   }
 
@@ -65,7 +67,7 @@ table.discord-table {
   }
 
   .discord-body {
-    width:60%;
+    width:70%;
     margin: 100px auto;
     background: $darkbg;
     border: 1px solid $vitru-opa;

@@ -17,10 +17,13 @@ class Comment < ApplicationRecord
   # Associations
   belongs_to :commentable, :polymorphic => true
   belongs_to :user
-
+  has_many :likes, dependent: :destroy
   # Scopes
   scope :newest, -> { order('created_at desc') }
 
+
   # Ancestry gem // Model act as tree structure
   has_ancestry
+
+
 end

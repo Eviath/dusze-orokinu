@@ -385,6 +385,21 @@ form input class
 
 // alerts
 
+#flash {
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  width:100%;
+}
+
+.ajax-alert {
+  background: $vitru-dark;
+  width:100%;
+  display: flex;
+  .fas.fa-times {
+    color: $white;
+  }
+}
 
 .toast {
   position: absolute;

@@ -33,10 +33,10 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "summernote": "^0.8.11",
-    "sweetalert2": "^8.2.5",
+    "sweetalert2": "^8.5.0",
     "tinymce": "^5.0.0",
     "turbolinks": "^5.2.0",
-    "warframe-worldstate-parser": "^2.3.4"
+    "warframe-worldstate-parser": "^2.4.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.1.14"
