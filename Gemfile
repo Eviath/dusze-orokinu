@@ -35,6 +35,8 @@ gem "haml-rails"
 # Decorators for rails
 gem 'draper'
 
+gem 'annotate'
+
 gem 'time_difference'
 
 # build trees database
