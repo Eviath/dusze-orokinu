@@ -4,9 +4,7 @@
 
 body {
   &.clans-body {
-
     height: auto !important;
-
   }
 }
 
@@ -20,13 +18,16 @@ body {
 
   .form-control {
     border: none;
-    background: $darkbg;
+    background: $vitru-dark;
+    border-bottom: 5px solid $vitru-dark;
   }
 
-  select option {
+  select, option {
     border: none;
-    background-color: rgba(23, 22, 26, 0.9) !important;
-    color: #fff !important;
+    background-color: $vitru-dark;
+    color: $vitru-text-shadow !important;
+    padding: 0;
+    padding-top: 5px;
   }
 
 }
@@ -186,11 +187,11 @@ body {
   }
 
   &-about {
-    background-color: $lightshadow;
+    background: transparent;
     padding: 40px;
 
     input {
-      background: $darkt;
+      background: $vitru-dark;
     }
   }
 

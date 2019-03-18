@@ -167,7 +167,6 @@ $(document).ready(function() {
 });
 
 
-
 // enable bootstrap tooltips
 $(document).on('turbolinks:load', function () {
     $('[data-toggle="tooltip"]').tooltip()

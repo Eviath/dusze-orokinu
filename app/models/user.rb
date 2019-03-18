@@ -24,6 +24,8 @@
 #
 
 class User < ApplicationRecord
+  # Destroy all likes associated with user before User destroy
+  before_destroy :destroy_likes
 
   # Assign default role after user create action
   after_create :assign_default_role
@@ -45,8 +47,8 @@ class User < ApplicationRecord
   # Associations
   has_one :clan, dependent: :destroy
   has_one :request, dependent: :destroy
-  has_many :news
-  has_many :comments
+  has_many :news,  dependent: :destroy
+  has_many :comments,  dependent: :destroy
   has_one_attached :avatar
   has_many :likes, through: :comments, dependent: :destroy
 
@@ -59,8 +61,6 @@ class User < ApplicationRecord
     Request.where("user_id = ?", id)
   end
 
-
-
   private
 
   #  Assign default role on user creation by rolify gem
@@ -68,6 +68,9 @@ class User < ApplicationRecord
     self.add_role(:newuser) if self.roles.blank?
   end
 
+  def destroy_likes
+    Like.where(user_id: self[:id]).delete_all
+  end
   
   protected
 
