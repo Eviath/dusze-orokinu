@@ -34,6 +34,11 @@
     background: $vitru-dark;
     box-shadow: none !important;
   }
+
+  @include md-d {
+    width: 60px;
+    height: 40px;
+  }
 }
 
 .input_wrapper input[type="checkbox"]:after{
@@ -48,6 +53,10 @@
   border-radius: 2px;
   transition: all .35s;
 
+  @include md-d {
+    width: 22px;
+    height: 32px;
+  }
 }
 
 
@@ -73,6 +82,9 @@
 .input_wrapper input[type="checkbox"]:checked:after{
   background: $white;
   left: calc(100% - 16px);
+  @include md-d {
+    left: calc(100% - 22px);
+  }
 }
 
 .input_wrapper input[type="checkbox"]:checked + .is_checked{

@@ -295,6 +295,20 @@ input[type="radio"], input[type="checkbox"] {
   justify-content: center;
   display: flex;
   align-items: center;
+
+
+
+  @include md-d {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    input[type="submit"] {
+      background: $vitru-dark;
+    }
+    #remember_me{
+      font-size: 2em;
+    }
+  }
 }
 
 .login-form-cover {
