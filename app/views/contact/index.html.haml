@@ -24,20 +24,21 @@
       .col-md-12.mx-auto
         .discord-body
           -if @admins.any?
-            .administration
+            .administration.mb-5
               %h4 Administracja online
               %p (Kliknij obrazek, by zagadać na discordzie)
               -@admins.each do |r|
-                =link_to "https://discordapp.com/users/#{r['id']}/" do
-                  =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}##{r['discriminator']}"
+                -unless r.nil?
+                  =link_to "https://discordapp.com/users/#{r['id']}/" do
+                    =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}##{r['discriminator']}"
 
-          .users.mt-2
           %h4.p-2
             Użytkownicy online -
             %span.small=@api_users.count
           -@api_users.each do |r|
-            .discord-person-col
-              .discord-person
-                =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}"
+            -unless r.nil?
+              .discord-person-col
+                .discord-person
+                  =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}"
 
 
