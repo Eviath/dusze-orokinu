@@ -36,7 +36,7 @@ class Clan < ApplicationRecord
 
   # Validations
   validates :user_id, presence: true
-  validates :about, presence: true, length: {minimum: 3, maximum: 3000}
+  validates :about, presence: true, length: {minimum: 3, maximum: 6000}
   validates :leader, presence: true, length: {minimum: 3, maximum: 30}
   validates :tier, presence: true
   validates :name, presence: true, length: {minimum: 3, maximum: 30}

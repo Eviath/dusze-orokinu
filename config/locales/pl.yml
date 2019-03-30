@@ -79,6 +79,7 @@ pl:
           one: "jest za długie (maksymalnie %{count} znak)"
           few: "jest za długie (maksymalnie %{count} znaki)"
           other: "jest za długie (maksymalnie %{count} znaków)"
+          many: "jest za długie (maksymalnie %{count} znaków)"
         too_short:
           one: "jest za krótkie (minimalnie %{count} znak)"
           few: "jest za krótkie (minimalnie %{count} znaki)"
