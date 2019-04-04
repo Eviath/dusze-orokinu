@@ -259,6 +259,15 @@ p.card-text {
 form.edit_news, .new_news {
   .form-control {
     background: $vitru-dark;
+    padding: 5px;
+    text-indent: initial;
+
+    &:focus {
+      border-top: transparent;
+      border-left: transparent;
+      border-right: transparent;
+      color: #fff;
+    }
   }
 }
 
@@ -430,14 +439,23 @@ background: $darkbg;
   border: 5px solid $vitru-trans-bg;
   background: transparent;
   border-bottom: 10px solid $vitru-trans-bg;
-
   -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
   -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
   box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+  transition: .4s;
+  &:hover{
+    transition: .4s;
+    transform: translateY(-10px);
+  }
 }
 
 
-
+.active-news {
+  -webkit-box-shadow: 0px 0px 34px -15px $vitru-opa;
+  -moz-box-shadow: 0px 0px 34px -15px $vitru-opa;
+  box-shadow: 0px 0px 34px -15px $vitru-opa;
+  border-bottom: 5px solid $vitru;
+}
 
 
 
@@ -455,6 +473,8 @@ background: $darkbg;
     }
   }
 
+
+
   .card-footer-col-similar {
     display: flex;
     width: 100%;
@@ -464,6 +484,9 @@ background: $darkbg;
       font-size: .9em;
       padding: 5px 0;
     }
+
+
+
   }
 
   @include md-d {

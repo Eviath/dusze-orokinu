@@ -132,9 +132,16 @@
   width:100%;
   padding: 10px;
   background: transparent;
-  border: 1px solid $vitru-dark;
+  border: 2px solid $vitru-dark;
   border-bottom: 5px solid $vitru;
   color: $white;
+  transition: .4s;
+  &:focus {
+    transition: .4s;
+    outline: none;
+    border: 2px solid $vitru-opa;
+    border-bottom: 5px solid $vitru;
+  }
 }
 
 .nested-comment {
