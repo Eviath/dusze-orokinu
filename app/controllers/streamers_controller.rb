@@ -1,7 +1,7 @@
 class StreamersController < ApplicationController
   before_action :find_streamer, only: :show
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :request_access_token unless :check_session
+  before_action :request_access_token, if: :check_session
 
   def show
     @client = Twitch::Client.new(access_token: session["access_token"])
@@ -27,7 +27,7 @@ class StreamersController < ApplicationController
     @redirect_uri = ''
     @url = "https://id.twitch.tv/oauth2/token?client_id=#{@client_id}&client_secret=#{@secret_key}&grant_type=client_credentials"
     @result = HTTParty.post(@url)
-
+    logger.debug "Result of http request: #{@result.inspect}"
     # set access token in session
     session['access_token'] = @result['access_token']
 

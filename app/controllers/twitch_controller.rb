@@ -1,6 +1,6 @@
 class TwitchController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :request_access_token unless :check_session
+  before_action :request_access_token,  if: :check_session
 
   def index
     require 'twitch-api'
@@ -21,7 +21,6 @@ class TwitchController < ApplicationController
 
   def show
   end
-
 
 
   protected
