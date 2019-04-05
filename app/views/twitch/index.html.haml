@@ -20,9 +20,9 @@
               =image_tag i.profile_image_url, class:"twitch-user-image align-self-start mr-3"
               .media-body
                 -if get_user_stream(i.id).first
-                  %h5.mt-0=link_to truncate(get_user_stream(i.id).first.try(:title), length: 25), streamer_path(Streamer.where(:name => i.login).first.id)
+                  %h5.mt-0=link_to truncate(get_user_stream(i.id).first.try(:title), length: 25), streamer_path(Streamer.where(:name => i.login).first)
                 -else
-                  %h5.mt-0=link_to i.display_name, streamer_path(Streamer.where(:name => i.login).first.id)
+                  %h5.mt-0=link_to i.display_name, streamer_path(Streamer.where(:name => i.login).first)
 
                 %small=i.display_name
                 -#%br

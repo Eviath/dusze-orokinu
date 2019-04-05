@@ -1,7 +1,6 @@
-= provide(:title, "Streamer #{@user.first.display_name}")
+= provide(:title, "Stream #{@user.first.display_name}")
 
 .page-wrapper
-
   -@user.each do |i|
     .streamer-box
       %div{class:'mx-auto', id: "twitch-embed", data: i.login.to_json}

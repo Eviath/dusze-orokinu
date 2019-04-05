@@ -13,7 +13,7 @@
           %ul.text-left
             -@user.each do |s|
               %li
-                =link_to s.display_name, streamer_path(Streamer.where(:name => s.login).first.id), class:'link-vitru'
+                =link_to s.display_name, streamer_path(Streamer.where(:name => s.login).first), class:'link-vitru'
                 -if user_streams(s.id).first
                   %small Gra w #{get_game_name(s.id)} dla #{get_stream_viewer_count(s.id)} widzów
                 -else
