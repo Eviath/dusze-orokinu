@@ -1,3 +1,5 @@
+= provide(:title, "Streamer #{@user.first.display_name}")
+
 .page-wrapper
 
   -@user.each do |i|
@@ -5,7 +7,7 @@
       %div{class:'mx-auto', id: "twitch-embed", data: i.login.to_json}
 
       .streamer-info.text-center.mb
-        %h2=i.login
+        %h2=i.display_name
         =image_tag i.profile_image_url, class:"twitch-user-image m-2"
         %p #{i.description}
         -if @client.get_games({id: @stream.map(&:game_id)}).data.first.try(:name)

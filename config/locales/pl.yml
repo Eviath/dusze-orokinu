@@ -27,6 +27,7 @@ pl:
     messages: wiadomosci
     news_categories: aktualnosci-kategorie
     comments: komentarze
+    streamers: streamer
 
 
   mailboxer:

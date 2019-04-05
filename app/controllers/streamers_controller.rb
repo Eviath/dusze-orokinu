@@ -9,6 +9,7 @@ class StreamersController < ApplicationController
     # get users from client
     @user = @client.get_users({login: @streamer.name}).data
     @stream = @client.get_streams({user_id: @user.map(&:id)}).data
+
   end
 
   protected

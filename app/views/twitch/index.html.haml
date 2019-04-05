@@ -1,3 +1,6 @@
+= provide(:title, 'Twitch')
+
+
 .page-wrapper
   .page-image
     =image_tag(asset_pack_path('media/images/twitch_white.png'), class:"twitch-logo")
@@ -19,9 +22,9 @@
                 -if get_user_stream(i.id).first
                   %h5.mt-0=link_to truncate(get_user_stream(i.id).first.try(:title), length: 25), streamer_path(Streamer.where(:name => i.login).first.id)
                 -else
-                  %h5.mt-0=link_to i.login, streamer_path(Streamer.where(:name => i.login).first.id)
+                  %h5.mt-0=link_to i.display_name, streamer_path(Streamer.where(:name => i.login).first.id)
 
-                %small=i.login
+                %small=i.display_name
                 -#%br
                 -#%small=i.description
                 %br
