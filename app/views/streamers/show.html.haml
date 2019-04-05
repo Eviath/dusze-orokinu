@@ -1,14 +1,22 @@
--@user.each do |i|
-  %p=i.login
-  %p=i.id
-  =image_tag i.profile_image_url, class:"twitch-user-image"
-  %p View Count #{i.view_count}
-  %p Description #{i.description}
-  %p=@client.get_games({id: @stream.map(&:game_id)}).data.first.try(:name)
+.page-wrapper
 
+  -@user.each do |i|
+    .streamer-box
+      %div{class:'mx-auto', id: "twitch-embed", data: i.login.to_json}
 
-  %iframe{  src:"https://player.twitch.tv/?channel=#{i.login}&autoplay=false",
-                  height:"400",
-                        width:"800",
-                        scrolling:"true",
-                        allowfullscreen:"true"}
+      .streamer-info.text-center.mb
+        %h2=i.login
+        =image_tag i.profile_image_url, class:"twitch-user-image m-2"
+        %p #{i.description}
+        -if @client.get_games({id: @stream.map(&:game_id)}).data.first.try(:name)
+          %p Aktualnie gra w #{@client.get_games({id: @stream.map(&:game_id)}).data.first.try(:name)}
+
+        .numbers.text-center.d-flex.justify-content-center
+          %p{'data-toggle':"tooltip", 'data-placement':"bottom", title:"Suma wyświetleń", class:'m-2 views-count text-center'}
+            %i.fas.fa-eye
+            #{number_with_delimiter(i.view_count)}
+
+          %p{'data-toggle':"tooltip", 'data-placement':"bottom", title:"Aktualnie oglądających", class:'m-2 views-count text-center'}
+            %i.fas.fa-user
+            %span{id:'twitch-views'}
+

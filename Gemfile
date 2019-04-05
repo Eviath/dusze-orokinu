@@ -45,6 +45,7 @@ gem 'ancestry'
 gem 'twitch-api'
 gem 'kappa'
 
+
 # gem devise
 gem 'devise'
 gem 'devise_lastseenable'
