@@ -4,6 +4,7 @@ class ContactController < ApplicationController
     require 'net/http'
     require 'json'
 
+
     url = 'https://discordapp.com/api/guilds/144454098748571648/widget.json'
     uri = URI(url)
     response = Net::HTTP.get(uri)

@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     get 'warframe/wfdrop'
 
     resources :contact
+    resources :streamers
+
+    resources :twitch
 
     resources :users do
       member do

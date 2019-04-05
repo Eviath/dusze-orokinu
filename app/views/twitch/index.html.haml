@@ -1,0 +1,26 @@
+.page-wrapper
+  .container
+    .row
+      -@user.each do |i|
+        .col-md-3
+          %p=i.login
+          %p=i.id
+          =image_tag i.profile_image_url, class:"twitch-user-image"
+          %p View Count #{i.view_count}
+          %p Description #{i.description}
+          %p Streams #{get_game_name(i.id)}
+
+          =link_to 'Oglądaj', streamer_path(Streamer.where(:name => i.login).first.id)
+
+          -#%iframe{  src:"https://player.twitch.tv/?channel=#{i.login}&autoplay=false",
+          -#              height:"400",
+          -#              width:"800",
+          -#              scrolling:"true",
+          -#              allowfullscreen:"true"}
+
+        -#
+        -#=@user.inspect
+        -#
+        -#=@streams.inspect
+        -#=@game.inspect
+

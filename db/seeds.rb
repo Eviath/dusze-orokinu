@@ -33,8 +33,9 @@ main_about = 'MAIN'
 column_two = 'COLUMN_TWO'
 column_one = 'COLUMN_ONE'
 
-
-
+Streamer.create!(name: 'swetru')
+Streamer.create!(name: 'niklaus')
+Streamer.create!(name: 'grabagra')
 # abouts seed
 
 
