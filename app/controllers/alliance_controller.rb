@@ -73,8 +73,8 @@ class AllianceController < ApplicationController
   end
 
   def request_access_token
-    @client_id =  Rails.env.development? ? Rails.application.credentials.TWITCH_CLIENT_ID : ENV['TWITCH_CLIENT_ID']
-    @secret_key =  Rails.env.development? ? Rails.application.credentials.TWITCH_CLIENT_SECRET : ENV['TWITCH_CLIENT_SECRET']
+    @client_id = ENV['TWITCH_CLIENT_ID']
+    @secret_key = ENV['TWITCH_CLIENT_SECRET']
     @redirect_uri = ''
     @url = "https://id.twitch.tv/oauth2/token?client_id=#{@client_id}&client_secret=#{@secret_key}&grant_type=client_credentials"
     @result = HTTParty.post(@url)
