@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  # error pages
+  %w( 404 422 500 503 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
+
   localized do
     get 'messages/index'
     get 'comments/index'
