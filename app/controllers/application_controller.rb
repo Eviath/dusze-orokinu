@@ -3,8 +3,14 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   layout :layout_by_resource
   helper_method :mailbox
+  before_action :last_page
+
 
   private
+
+  def last_page
+    session[:last_page] = request.env['HTTP_REFERER']
+  end
 
   def mailbox
     @mailbox ||= current_user.mailbox
