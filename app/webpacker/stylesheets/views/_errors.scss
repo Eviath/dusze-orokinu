@@ -47,7 +47,6 @@ body.errors-body{
     transition: .4s;
     &::before{
       transition: .4s;
-
       opacity: .1;
       content: '';
       z-index: -10;
