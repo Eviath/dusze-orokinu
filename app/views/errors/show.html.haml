@@ -6,11 +6,11 @@
 
   .page-message
     .status-code.mb-5.text-center
-      %h1=params[:code]
+      %h1.bounce-in-top=params[:code]
       -if params[:code] == '404'
         %p Żaden z naszych pracowitych duszków nie odnalazł podanej strony.
     .message.text-center
-      %h2.duszek-message Ojej! Co tu się odduszkowuje, wystapił błąd!
+      %h2.duszek-message Ojej! Co tu się odduszkowuje, wystąpił błąd!
 
       %p Możesz zgłosić ten błąd Administracji na discordzie lub wiadomości prywatnej!
 

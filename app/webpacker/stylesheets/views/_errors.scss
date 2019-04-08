@@ -16,6 +16,24 @@ body.errors-body{
   .status-code {
     h1 {
       font-size: 6em;
+      text-shadow: 0 1px 0 #ffffff, 0 2px 0 #3c3c3c, 0 3px 0 #3c3c3c, 0 4px 0 #3c3c3c, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .duszek-message {
+    color:  #01FEA3;
+    &::before{
+      transition: .4s;
+      top:0;
+      left:0;
+      filter: blur(10%);
+      opacity: .1;
+      content: '';
+      z-index: -10;
+      position: absolute;
+      width:100%;
+      height: 100%;
+      background: #01FEA3;
     }
   }
 
