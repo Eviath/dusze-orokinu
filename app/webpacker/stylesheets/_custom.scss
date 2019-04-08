@@ -18,8 +18,9 @@ body.alliance-body {
 
 body,
 html {
-  background: url('../images/vitru-flowers.png');
+  @include ghostie-bg;
   background-color: $darkbg;
+  background-size: cover;
   color: $white;
   font-family: 'Marcellus SC', serif;
   font-weight: 400;
@@ -89,7 +90,7 @@ header {
   padding: 3px 8px;
   color: #fff;
   text-align: center;
-  background-color: $vitru;
+  background-color: $ghostie;
   border-radius: .25rem;
 }
 
@@ -97,7 +98,7 @@ header {
   margin-left: -3px;
   content: "";
   border-width: 5px 5px 0;
-  border-top-color: $vitru;
+  border-top-color: $ghostie;
 }
 
 // TINY MCE WYSIWYG EDITOR
@@ -108,7 +109,7 @@ header {
 
 //custom file upload button
 .custom-file-upload {
-  border: 1px solid $vitru-opa;
+  border: 1px solid $ghostie-opacity;
   display: inline-block;
   cursor: pointer;
   height: 100%;
@@ -136,17 +137,17 @@ header {
     height: 38px;
     display: flex;
     align-content: center;
-    background: $vitru-dark;
+    background: $ghostie-dark;
   }
 }
 
 
 // default page links
 a {
-  color: $vitru;
+  color: $ghostie;
 
   &:hover {
-    color: $yell-hov;
+    color: $ghostie-hover;
     text-decoration: underline;
   }
 }
@@ -171,17 +172,17 @@ input {
 
 //custom link vitruvian style
 .link-vitruvian {
-  color: $vitru;
+  color: $ghostie;
 
   &:hover {
-    color: $vitru-light;
+    color: $ghostie-light;
   }
 
   &-light {
-    color: $vitru-dark;
+    color: $ghostie-dark;
 
     &:hover {
-      color: $vitru-light;
+      color: $ghostie-light;
     }
   }
 }
@@ -196,7 +197,7 @@ input {
 
   p {
   margin-bottom: 0;
-    color: $vitru-light;
+    color: $ghostie-light;
   }
 }
 
@@ -346,7 +347,7 @@ form input class
     margin: auto;
     z-index: 9999;
     position: absolute;
-    color: $vitru-text-shadow;
+    color: $ghostie-shadow;
   }
 }
 
@@ -368,11 +369,11 @@ form input class
   color: #fff;
   margin: 0 auto;
   transition: .2s;
-  border: 2px solid $vitru-dark;
-  border-bottom: 5px solid $vitru-dark;
+  border: 2px solid $ghostie-dark;
+  border-bottom: 5px solid $ghostie-dark;
   border-radius: 5px;
   width: 100%;
-  background-color: $vitru-dark;
+  background-color: $ghostie-dark;
   text-indent: 30px;
   padding: 20px;
 
@@ -383,7 +384,7 @@ form input class
   }
 
   &:focus {
-    border-bottom: 5px solid $vitru;
+    border-bottom: 5px solid $ghostie;
     transition: .2s;
 
     -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48);
@@ -395,7 +396,7 @@ form input class
 // custom bootstrap nav-pills
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   background-color: transparent;
-  color: $vitru;
+  color: $ghostie;
 }
 
 
@@ -430,7 +431,7 @@ form input class
 }
 
 .ajax-alert {
-  background: $vitru-dark;
+  background: $ghostie-dark;
   width:100%;
   display: flex;
   .fas.fa-times {
@@ -443,12 +444,42 @@ form input class
   left: 100px;
   top: 150px;
   z-index: 9999999999;
-  background: $vitru-dark;
+  background: $ghostie-dark;
   font-size: 1em;
-  border-bottom: 5px solid $vitru;
-  border-left:15px solid transparent;
-  border-right:15px solid transparent;
   transform: skew(20deg);
+  width:600px;
+  height: 150px;
+
+  &::after{
+    content: '';
+    height: 10px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-image: linear-gradient($ghostie, $darkbg);
+  }
+
+  .toast-body {
+    font-size: 1em;
+    text-align: center;
+
+    .ghostie-col {
+      &::before {
+        width: 200px;
+        height: 400px;
+        bottom: -330px;
+        margin: auto;
+        position: absolute;
+        content: '';
+        background-repeat: no-repeat;
+        left: -50px;
+        background-image: url('../images/duszeknotif.svg') !important;
+      }
+    }
+
+
+  }
+
 
   @include md-d {
     max-width: 80%;
@@ -463,6 +494,8 @@ form input class
       font-size: 3em;
     }
     .toast-body {
+
+
 
       font-size: 2.5em;
     }
@@ -482,7 +515,7 @@ form input class
 
   &-header{
     color: $white;
-    background: $vitru-dark;
+    background: $ghostie-dark;
   }
 }
 
@@ -497,20 +530,20 @@ form input class
   z-index: 9999999999;
   margin-bottom: 0;
   border: none;
-  border-bottom: 2px solid $vitru;
+  border-bottom: 2px solid $ghostie;
 
   position: absolute;
 }
 
 .alert-success {
-  color: $vitru;
+  color: $ghostie;
 }
 
 
 // form errors
 
 #error_explanation {
-  border: 2px solid $vitru;
+  border: 2px solid $ghostie;
   padding: 50px 10px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -522,9 +555,9 @@ form input class
 
 //swall modal confirm
 .swal2-confirm {
-  border-left-color: $vitru-dark;
-  border-right-color: $vitru-dark;
-  background-color: $vitru !important;
+  border-left-color: $ghostie-dark;
+  border-right-color: $ghostie-dark;
+  background-color: $ghostie !important;
 }
 
 

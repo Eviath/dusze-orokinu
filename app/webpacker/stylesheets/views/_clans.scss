@@ -9,6 +9,19 @@ body {
 }
 
 
+.parallax-ghostie {
+  /* The image used */
+  background-image: url('../images/ghostie-back.svg');
+  height: 100%;
+  background-color: $darkbg;
+  min-height: 100vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .clan_form {
 
   textarea {
@@ -18,14 +31,14 @@ body {
 
   .form-control {
     border: none;
-    background: $vitru-dark;
-    border-bottom: 5px solid $vitru-dark;
+    background: $ghostie-dark;
+    border-bottom: 5px solid $ghostie-dark;
   }
 
   select, option {
     border: none;
-    background-color: $vitru-dark;
-    color: $vitru-text-shadow !important;
+    background-color: $ghostie-dark;
+    color: $ghostie-shadow !important;
     padding: 0;
     padding-top: 5px;
   }
@@ -43,7 +56,7 @@ body {
       color: $white;
       font-size: 2em;
 
-      span {color: $vitru;}
+      span {color: $ghostie;}
     }
 
     &-wrapper {
@@ -57,13 +70,13 @@ body {
       }
 
       h2 {
-        color: $vitru;
+        color: $ghostie;
         font-size: 1.25em;
       }
 
       .jumbotron {
-        border: 5px solid $vitru-dark;
-        background: $vitru-trans-bg;
+        border: 5px solid $ghostie-dark;
+        background: $ghostie-trans-bg;
         @include container-shadow;
       }
     }
@@ -94,7 +107,7 @@ body {
     background-color: $darkt;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom: 2px solid $vitru;
+    border-bottom: 2px solid $ghostie;
 
     .clan-logo {
       max-width: 120px;
@@ -114,21 +127,21 @@ body {
   &-contact {
     text-align: center;
     background-color: $darkt;
-    border-bottom: 2px solid $vitru;
+    border-bottom: 2px solid $ghostie;
 
     .recruitment-status {
       padding: 10px 0px;
-      border-bottom:  2px solid $vitru;
+      border-bottom:  2px solid $ghostie;
       h5 {
         padding: 0;
         margin: 0;
-        color: $vitru;
+        color: $ghostie;
       }
     }
 
     .btn-clan {
       &:before {
-        color: $vitru;
+        color: $ghostie;
         margin: 0;
         border-bottom: none !important;
         border-top: none !important;
@@ -147,7 +160,7 @@ body {
   }
 
   label {
-    color: $vitru;
+    color: $ghostie;
   }
 
   input, textarea, select {
@@ -172,7 +185,7 @@ body {
     background-color: $darkbg;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom: 2px solid $yell;
+    border-bottom: 2px solid $ghostie-hover;
 
     h1 {
       font-size: 1.5em;
@@ -183,7 +196,7 @@ body {
     transition: 1s;
     padding: 45px;
     background-color: $darkbg;
-    border-bottom: 2px solid $yell;
+    border-bottom: 2px solid $ghostie-hover;
   }
 
   &-about {
@@ -191,7 +204,7 @@ body {
     padding: 40px;
 
     input {
-      background: $vitru-dark;
+      background: $ghostie-dark;
     }
   }
 
@@ -230,7 +243,7 @@ body {
   h1 {
     font-size: 18px;
     font-weight: 700;
-    color: $vitru;
+    color: $ghostie;
 
   }
 }
@@ -255,7 +268,7 @@ body {
     right: 0;
     bottom: 0;
     margin: auto;
-    border: 2px solid $vitru-dark;
+    border: 2px solid $ghostie-dark;
     left: 0;
     width: 95%;
     height: 95%;
@@ -341,7 +354,7 @@ body {
     }
 
     h2 {
-      color: $vitru;
+      color: $ghostie;
     }
 
     span {
@@ -451,7 +464,7 @@ body {
     box-shadow: 10px 10px 44px -14px rgba(0, 0, 0, 0.51);
 
     h2 {
-      color: $vitru;
+      color: $ghostie;
       font-size: 15px;
       font-weight: 400;
     }

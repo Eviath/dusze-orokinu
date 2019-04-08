@@ -44,7 +44,7 @@
   h2.sortie-header{
     text-transform: uppercase;
     font-size: 2em;
-    color: $vitru;
+    color: $ghostie;
   }
 
   .sortie-box{
@@ -130,7 +130,7 @@
           right: 0;
           margin: auto;
           width:8px;
-          background: $vitru;
+          background: $ghostie;
           height: 8px;
           border-radius: 50%;
         }
@@ -154,14 +154,14 @@
               padding: 0;
             }
           &.type{
-            color: $vitru;
+            color: $ghostie;
           }
           &.modifier {
-            color: $vitru;
+            color: $ghostie;
           }
           &.help {
             svg {
-              color: $vitru;
+              color: $ghostie;
               font-size: 1.5em;
             }
           }
@@ -183,7 +183,7 @@
     h2.alerts-header{
       text-transform: uppercase;
       font-size: 2em;
-      color: $vitru;
+      color: $ghostie;
     }
 
     .alerts-list {
@@ -198,7 +198,7 @@
 
         .item-body {
           padding: 10px;
-          background: $vitru-trans-bg;
+          background: $ghostie-trans-bg;
 
           .alert-timer {
             font-family: 'Poppins', sans-serif;

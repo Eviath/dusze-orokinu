@@ -1,3 +1,22 @@
+body {
+  &.contact-body {
+    height: auto !important;
+  }
+}
+
+.parallax-contact {
+  /* The image used */
+  background-image: url('../images/ghostie-back.svg');
+  height: 100%;
+  min-height: 100vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 .discord-img {
   width: 40px;
   height: 40px;
@@ -51,7 +70,7 @@ table.discord-table {
     .jumbotron{
       width:70%;
       margin: 0 auto;
-      background: $vitru-trans-bg;
+      background: $ghostie-trans-bg;
       @include container-shadow;
     }
 
@@ -70,7 +89,7 @@ table.discord-table {
     width:70%;
     margin: 100px auto;
     background: $darkbg;
-    border: 1px solid $vitru-opa;
+    border: 1px solid $ghostie-opacity;
     padding: 50px;
   }
 }

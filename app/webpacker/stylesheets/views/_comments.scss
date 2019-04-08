@@ -73,10 +73,10 @@
 .comments-index {
   table {
     @include container-shadow;
-    border: 1px solid $vitru-dark;
+    border: 1px solid $ghostie-dark;
     color: $white;
     th{
-      border-bottom: 5px solid $vitru-dark !important;;
+      border-bottom: 5px solid $ghostie-dark !important;;
     }
   }
 
@@ -98,7 +98,7 @@
 
   .media-body {
     .far.fa-heart {
-      color: $vitru;
+      color: $ghostie;
     }
   }
 
@@ -112,7 +112,7 @@
   }
 
   .list-group-item {
-    border: 1px solid $vitru-opa;
+    border: 1px solid $ghostie-opacity;
     background: transparent;
 
   }
@@ -132,15 +132,15 @@
   width:100%;
   padding: 10px;
   background: transparent;
-  border: 2px solid $vitru-dark;
-  border-bottom: 5px solid $vitru;
+  border: 2px solid $ghostie-dark;
+  border-bottom: 5px solid $ghostie;
   color: $white;
   transition: .4s;
   &:focus {
     transition: .4s;
     outline: none;
-    border: 2px solid $vitru-opa;
-    border-bottom: 5px solid $vitru;
+    border: 2px solid $ghostie-opacity;
+    border-bottom: 5px solid $ghostie;
   }
 }
 

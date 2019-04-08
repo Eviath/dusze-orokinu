@@ -342,7 +342,7 @@ header.navbar {
       content: '';
       width: 100%;
       height: 2px;
-      background-color: $vitru-opa;
+      background-color: $ghostie-opacity;
       bottom: 0;
       left: 0;
       right: 0;
@@ -382,7 +382,7 @@ header.navbar {
 // dropdown-Navbar background coolor
 .dropdown-menu {
   background-color: #17161a;
-  border-bottom: 2px solid $vitru;
+  border-bottom: 2px solid $ghostie;
 }
 
 // dropdown-Navbar link color
@@ -428,7 +428,7 @@ a.dropdown-item {
   font-size: 14px;
 
   &.active, &:focus {
-    background-color: $vitru;
+    background-color: $ghostie;
   }
 }
 

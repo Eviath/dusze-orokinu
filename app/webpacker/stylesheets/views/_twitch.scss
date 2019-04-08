@@ -1,3 +1,10 @@
+body {
+  &.twitch-body {
+    height: auto !important;
+  }
+}
+
+
 .twitch-user-image {
   width: 50px ;
   height: 50px;
@@ -14,7 +21,7 @@
 }
 
 .streamer-box {
-  background: $vitru-dark;
+  background: $ghostie-dark;
   #twitch-embed {
     iframe {
       width: 100%;
@@ -29,7 +36,7 @@
   transition: .4s;
   .streamer-card {
     @include container-shadow;
-    background: $vitru-dark;
+    background: $ghostie-dark;
     padding: 10px;
     height: 100%;
     transition: .4s;
@@ -38,7 +45,7 @@
       content: '';
       position: absolute;
       bottom: 0;
-      background: $vitru;
+      background: $ghostie;
       width: 0;
       height: 0;
       left: 0;
@@ -51,7 +58,7 @@
         content: '';
         position: absolute;
         bottom: 0;
-        background: $vitru;
+        background: $ghostie;
         width: 100%;
         height: 5px;
         left: 0;
@@ -93,7 +100,7 @@
     position: relative;
     &:before{
       content: '';
-      background-color: $vitru-text-shadow;
+      background-color: $ghostie-shadow;
       position: absolute;
       left: -15px;
       bottom: 0;

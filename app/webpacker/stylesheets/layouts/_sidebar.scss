@@ -135,7 +135,7 @@ body {
   width: 260px;
   height: 100%;
   max-height: 100%;
-  border-bottom: 5px solid $vitru;
+  border-bottom: 5px solid $ghostie;
   position: fixed;
   @include container-shadow;
   background-size: 100%;
@@ -174,7 +174,7 @@ body {
 
 
   @include md-d {
-    background: $vitru-dark;
+    background: $ghostie-dark;
 
     height: 90%;
     position: relative;

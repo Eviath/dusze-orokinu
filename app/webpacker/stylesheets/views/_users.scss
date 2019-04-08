@@ -14,7 +14,7 @@ body {
 
 .parallax-users {
   /* The image used */
-  background-image: url('../images/vitru-bg.jpg');
+  background-image: url('../images/ghostie-back.svg');
   height: 100%;
   min-height: 100vh;
   /* Create the parallax scrolling effect */
@@ -53,7 +53,7 @@ PROFILES
       text-align: left;
     }
     th{
-      border-bottom: 5px solid $vitru-dark;
+      border-bottom: 5px solid $ghostie-dark;
     }
   }
 }
@@ -68,7 +68,7 @@ PROFILES
   }
 
   p {
-    color: $vitru;
+    color: $ghostie;
     font-size: 1em;
 
     @include md-d {
@@ -81,14 +81,14 @@ PROFILES
       font-weight: 400;
       font-size: .9em;
       letter-spacing: .5px;
-      color: $vitru;
+      color: $ghostie;
     }
 
   }
 
   p.active {
 
-    color: $vitru-light;
+    color: $ghostie-light;
     font-size: .8em;
     font-weight: 400;
     text-transform: uppercase;
@@ -246,12 +246,12 @@ input[type="radio"], input[type="checkbox"] {
 
 .user-edit-page {
   input {
-    background-color: $vitru-dark;
+    background-color: $ghostie-dark;
     border: 0;
   }
 
   .form-control {
-    border-bottom: 5px solid $vitru-dark;
+    border-bottom: 5px solid $ghostie-dark;
   }
 
   .file-upload-input {
@@ -303,7 +303,7 @@ input[type="radio"], input[type="checkbox"] {
     background-size: cover;
     background-position: center;
     input[type="submit"] {
-      background: $vitru-dark;
+      background: $ghostie-dark;
     }
     #remember_me{
       font-size: 2em;
@@ -361,7 +361,7 @@ input[type="radio"], input[type="checkbox"] {
       font-size: .8rem;
     }
 
-    border: 2px solid $vitru;
+    border: 2px solid $ghostie;
     padding: 10px 10px;
     margin-bottom: 20px;
     background-color: $darkt;
@@ -404,8 +404,8 @@ input[type="radio"], input[type="checkbox"] {
     }
 
     #user_remember_me {
-      background: $vitru-dark !important;
-      border: 2px solid $vitru;
+      background: $ghostie-dark !important;
+      border: 2px solid $ghostie;
     }
 
 
@@ -419,7 +419,7 @@ input[type="radio"], input[type="checkbox"] {
         margin: auto;
         z-index: 9999;
         position: absolute;
-        color: $vitru-text-shadow;
+        color: $ghostie-shadow;
       }
     }
 
@@ -442,11 +442,11 @@ input[type="radio"], input[type="checkbox"] {
       color: #fff;
       margin: 0 auto;
       transition: .2s;
-      border: 2px solid $vitru-dark;
-      border-bottom: 5px solid $vitru-dark;
+      border: 2px solid $ghostie-dark;
+      border-bottom: 5px solid $ghostie-dark;
       border-radius: 5px;
       width: 100%;
-      background-color: $vitru-dark;
+      background-color: $ghostie-dark;
       text-indent: 30px;
       padding: 20px;
 
@@ -457,7 +457,7 @@ input[type="radio"], input[type="checkbox"] {
       }
 
       &:focus {
-        border-bottom: 5px solid $vitru-text-shadow;
+        border-bottom: 5px solid $ghostie-shadow;
         transition: .2s;
 
         -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48);
@@ -507,7 +507,7 @@ input[type="radio"], input[type="checkbox"] {
     top: 0;
     right: -20px;
     margin: auto;
-    background: $vitru;
+    background: $ghostie;
     width: 2px;
   }
 }
@@ -646,7 +646,7 @@ input[type="radio"], input[type="checkbox"] {
     max-height: 120px;
     max-width: 120px;
     padding: 10px;
-    border: 2px solid $vitru-light;
+    border: 2px solid $ghostie-light;
 
     @include md-d {
       max-height: 180px;
@@ -679,13 +679,13 @@ input[type="radio"], input[type="checkbox"] {
 
 
 .shared-links {
-  background: $vitru-dark;
+  background: $ghostie-dark;
   @include button-shadow;
   padding: 15px;
   border-radius: 5px;
   text-align: left;
   a {
-    color: $vitru-text-shadow;
+    color: $ghostie-shadow;
     &:hover{
       text-decoration: none;
       transition: .3s;

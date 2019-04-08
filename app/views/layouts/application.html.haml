@@ -38,12 +38,16 @@
     - flash.each do |message_type, message|
       .div{role:"alert", 'aria-live':"assertive", 'aria-atomic':"true", 'data-autohide':"false", class: "toast slide-in-top alert-#{message_type}", id:"toast"}
         .toast-header
-          %strong.mr-auto Dusze Orokinu
+          %strong.mr-auto
           %button.ml-2.mb-1.close{type:"button",  'data-dismiss':"toast", 'aria-label':"Close", id:'close-alert', onclick:"closeToast()"}
             %span{'aria-hidden':"true"}
               %i.fas.fa-times
         .toast-body
-          =message
+          .row
+            .col-md-6.ghostie-col
+
+            .col-md-6
+              =message
 
 
     = yield

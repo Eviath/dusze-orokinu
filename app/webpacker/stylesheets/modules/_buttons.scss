@@ -24,14 +24,14 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: $vitru-dark;
+  background: $ghostie-dark;
   border-radius: 2px;
   position: relative;
   outline: 0;
   -webkit-transition: all .2s;
   transition: all .2s;
   &:focus {
-    background: $vitru-dark;
+    background: $ghostie-dark;
     box-shadow: none !important;
   }
 
@@ -76,7 +76,7 @@
 
 /* Checked State */
 .input_wrapper input[type="checkbox"]:checked{
-  background: $vitru-dark;
+  background: $ghostie-dark;
 }
 
 .input_wrapper input[type="checkbox"]:checked:after{
@@ -101,7 +101,7 @@
 // buttons
 
 .btn.btn-do-bordered.active {
-  color: $vitru !important;
+  color: $ghostie !important;
 
   background-color: transparent;
 }
@@ -113,12 +113,12 @@
 
 .btn-danger {
   color: #fff;
-  background-color: $vitru;
-  border-color: $vitru;
+  background-color: $ghostie;
+  border-color: $ghostie;
 
   &:hover {
-    background-color: $vitru;
-    border-color: $vitru;
+    background-color: $ghostie;
+    border-color: $ghostie;
   }
 }
 
@@ -154,7 +154,7 @@
 
 .btn-do {
   color: #fff;
-  background-color: $vitru !important;
+  background-color: $ghostie !important;
 }
 
 
@@ -203,7 +203,7 @@
 
 
   &:hover {
-    color: $vitru;
+    color: $ghostie;
   }
 
 
@@ -256,7 +256,7 @@
 
 
   &:hover {
-    color: $vitru;
+    color: $ghostie;
   }
 
 
@@ -307,17 +307,17 @@
   }
 
   &:hover {
-    color: $vitru;
+    color: $ghostie;
   }
 
 }
 
 
 .btn-do-profile-opt {
-  background-color: $vitru;
+  background-color: $ghostie;
   padding: 0px 5px;
   font-size: 14px;
-  color: $vitru-dark;
+  color: $ghostie-dark;
   opacity: 0.65;
 
   &:hover {
@@ -328,7 +328,7 @@
 
 .btn-do-profile {
   color: #212529;
-  background-color: $vitru;
+  background-color: $ghostie;
   padding: 0px 5px;
   font-size: 14px;
   box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
@@ -394,7 +394,7 @@
   }
 
   &:hover {
-    color: $vitru;
+    color: $ghostie;
     box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
   }
 }
@@ -404,34 +404,34 @@
 .btn-do-vitru {
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.1rem $vitru-opa;
+    box-shadow: 0 0 0 0.1rem $ghostie-opacity;
   }
 
 
   &:hover{
     &:before{
-      background-color: $vitru-trans-bg;
+      background-color: $ghostie-trans-bg;
     }
   }
 
   &.active {
-    color: $vitru;
+    color: $ghostie;
     &:before{
-      background-color: $vitru-trans-bg;
+      background-color: $ghostie-trans-bg;
     }
   }
 
   // Extend shared vitruvian button style
   @extend %btn-vitruvian;
 
-  color: $vitru-light;
-  border: 1px solid $vitru-opa;
+  color: $ghostie-light;
+  border: 1px solid $ghostie-opacity;
   -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
   -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
   transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
 
   &::before {
-    background-color: $vitru-opa;
+    background-color: $ghostie-opacity;
     -webkit-transition: .3s background-color, .3s border-color;
     -o-transition: .3s background-color, .3s border-color;
     transition: .3s background-color, .3s border-color;
@@ -443,34 +443,34 @@
 .btn-do-vitru-h {
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.1rem $vitru-opa;
+    box-shadow: 0 0 0 0.1rem $ghostie-opacity;
   }
 
 
   &:hover{
     &:before{
-      background-color: $vitru-trans-bg;
+      background-color: $ghostie-trans-bg;
     }
   }
 
   &.active {
-    color: $vitru;
+    color: $ghostie;
     &:before{
-      background-color: $vitru-trans-bg;
+      background-color: $ghostie-trans-bg;
     }
   }
 
   // Extend shared vitruvian button style
   @extend %btn-vitruvian;
 
-  color: $vitru-light;
-  border: 1px solid $vitru-opa;
+  color: $ghostie-light;
+  border: 1px solid $ghostie-opacity;
   -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
   -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
   transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
 
   &::before {
-    background-color: $vitru-trans-bg;
+    background-color: $ghostie-trans-bg;
     -webkit-transition: .3s background-color, .3s border-color;
     -o-transition: .3s background-color, .3s border-color;
     transition: .3s background-color, .3s border-color;
@@ -480,28 +480,28 @@
 .btn-do-vitru-dark {
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.1rem $vitru-opa;
+    box-shadow: 0 0 0 0.1rem $ghostie-opacity;
   }
 
 
   &:hover{
     &:before{
-      background-color: $vitru-trans-bg;
+      background-color: $ghostie-trans-bg;
     }
   }
 
   &.active {
-    color: $vitru;
+    color: $ghostie;
     &:before{
-      background-color: $vitru-dark;
+      background-color: $ghostie-dark;
     }
   }
 
   // Extend shared vitruvian button style
   @extend %btn-vitruvian;
   z-index: 99999;
-  color: $vitru-text-shadow;
-  border: 1px solid $vitru-dark;
+  color: $ghostie-shadow;
+  border: 1px solid $ghostie-dark;
   border-radius: 5px;
   -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
   -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
@@ -510,7 +510,7 @@
 
   &::before {
     z-index: -10;
-    background-color: $vitru-dark;
+    background-color: $ghostie-dark;
     -webkit-transition: .3s background-color, .3s border-color;
     -o-transition: .3s background-color, .3s border-color;
     transition: .3s background-color, .3s border-color;
@@ -525,12 +525,12 @@
   @extend %btn-vitruvian;
 
   color: #6c757d;
-  border: 1px solid $vitru-trans-bg;
+  border: 1px solid $ghostie-trans-bg;
   transition: .3s;
 
   &::before {
     transition: .3s;
-    background-color: $vitru-trans-bg;
+    background-color: $ghostie-trans-bg;
   }
 
   &:hover {
@@ -540,7 +540,7 @@
       transition: .3s;
       top: 4px;
       background: transparent;
-      border: 1px $vitru-trans-bg;
+      border: 1px $ghostie-trans-bg;
       right: 4px;
       bottom: 4px;
       left: 4px;
@@ -553,13 +553,13 @@
   // Extend shared vitruvian button style
   @extend %btn-vitruvian;
 
-  color: $vitru;
-  border: 1px solid $vitru-opa;
+  color: $ghostie;
+  border: 1px solid $ghostie-opacity;
   transition: .3s;
 
   &::before {
     transition: .3s;
-    background-color: $vitru-trans-bg;
+    background-color: $ghostie-trans-bg;
   }
 
   &:hover {
@@ -569,7 +569,7 @@
       transition: .3s;
       top: 4px;
       background: transparent;
-      border: 1px $vitru-trans-bg;
+      border: 1px $ghostie-trans-bg;
       right: 4px;
       bottom: 4px;
       left: 4px;

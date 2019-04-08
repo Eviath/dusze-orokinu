@@ -2,9 +2,12 @@
   position: relative;
   margin: 0;
   width: 100%;
-  background: $darkt !important;
   text-align: center;
   height: 100vh;
+  background: url('../images/ghostie-footer-no.svg');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: bottom;
 
   .footbar-content {
     height: 100vh;
@@ -66,6 +69,9 @@
 
 .footbar-body {
 
+  .ghostie-logo {
+    width:10%;
+  }
 
 
   text-align: center;
@@ -81,7 +87,7 @@
   }
 
   p {
-    color: $vitru;
+    color: $ghostie;
     font-size: 1.5em;
 
     @include md-d {

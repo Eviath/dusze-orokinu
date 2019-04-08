@@ -1,6 +1,6 @@
 li.list-group-item {
   background: $darkbg;
-  border-bottom: 2px solid $yellow;
+  border-bottom: 2px solid $ghostie-hover;
 }
 
 
@@ -16,7 +16,7 @@ li.list-group-item {
       color: $white;
     }
 
-    background-color: $yell !important;
+    background-color: $ghostie-hover !important;
   }
 }
 
@@ -62,7 +62,7 @@ ul.chosen-choices {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 1px solid $yell !important;
+  border-bottom: 1px solid $ghostie-hover !important;
 }
 
 
@@ -96,7 +96,7 @@ ul.chosen-choices {
 .message-sender {
 
   width: 50%;
-  background-color: $vitru-dark !important;
+  background-color: $ghostie-dark !important;
 
   .media-body {
     /* These are technically the same, but use both */
@@ -139,7 +139,7 @@ ul.chosen-choices {
 
 .media-user-heading a {
   font-size: 1.3em;
-  color: $yell-hov;
+  color: $ghostie-hover;
 }
 
 .message-receiver {
@@ -204,7 +204,7 @@ ul.chosen-choices {
 
   textarea {
     color: $white;
-    border: 2px solid $vitru-opa;
+    border: 2px solid $ghostie-opacity;
     height: 150px;
     background: $darkbg;
 
@@ -212,7 +212,7 @@ ul.chosen-choices {
 
   textarea:focus {
     color: $white;
-    border: 2px solid $vitru-opa;
+    border: 2px solid $ghostie-opacity;
     height: 150px;
     background: $darkbg;
   }

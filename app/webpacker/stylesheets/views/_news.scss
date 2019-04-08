@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.news-body {
-  height: 80vh;
+  height: 100% !important;
 @include md-d {
   height: 100%;
 }
@@ -61,31 +61,31 @@ body.news-body {
   .page-link:focus {
     z-index: 2;
     outline: 0;
-    box-shadow: 0 0 0 0.1rem $vitru-opa;
+    box-shadow: 0 0 0 0.1rem $ghostie-opacity;
   }
 
   //disabled page item
   .page-item.disabled .page-link {
     background: $darkbg;
-    border-color: $vitru-dark;
+    border-color: $ghostie-dark;
   }
   //active page item
   .page-item.active .page-link {
-    color: $vitru;
-    background: $vitru-dark;
-    border-color:  $vitru-trans-bg;
+    color: $ghostie;
+    background: $ghostie-dark;
+    border-color:  $ghostie-trans-bg;
   }
 
  // normal page link
  .page-link {
    background: $darkbg;
-   color: $vitru;
-   border-color: $vitru-dark;
+   color: $ghostie;
+   border-color: $ghostie-dark;
 
    &:hover{
-     background: $vitru-dark;
+     background: $ghostie-dark;
      color: $white;
-     border-color:  $vitru-opa;
+     border-color:  $ghostie-opacity;
    }
  }
 }
@@ -258,7 +258,7 @@ p.card-text {
 //
 form.edit_news, .new_news {
   .form-control {
-    background: $vitru-dark;
+    background: $ghostie-dark;
     padding: 5px;
     text-indent: initial;
 
@@ -436,9 +436,9 @@ background: $darkbg;
 
 
 .card {
-  border: 5px solid $vitru-trans-bg;
+  border: 5px solid $ghostie-trans-bg;
   background: transparent;
-  border-bottom: 10px solid $vitru-trans-bg;
+  border-bottom: 10px solid $ghostie-trans-bg;
   -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
   -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
   box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
@@ -451,16 +451,16 @@ background: $darkbg;
 
 
 .active-news {
-  -webkit-box-shadow: 0px 0px 34px -15px $vitru-opa;
-  -moz-box-shadow: 0px 0px 34px -15px $vitru-opa;
-  box-shadow: 0px 0px 34px -15px $vitru-opa;
-  border-bottom: 5px solid $vitru;
+  -webkit-box-shadow: 0px 0px 34px -15px $ghostie-opacity;
+  -moz-box-shadow: 0px 0px 34px -15px $ghostie-opacity;
+  box-shadow: 0px 0px 34px -15px $ghostie-opacity;
+  border-bottom: 5px solid $ghostie;
 }
 
 
 
 .card-footer{
-  background: $vitru-trans-bg;
+  background: $ghostie-trans-bg;
   display: flex;
   justify-content: space-between;
   .card-footer-col {
@@ -508,7 +508,7 @@ background: $darkbg;
 
 //index news card
 .badge-vitru {
-  background: $vitru-trans-bg;
+  background: $ghostie-trans-bg;
   border-radius: 0;
   font-weight: 300;
   padding-bottom: 5px;
@@ -550,7 +550,7 @@ background: $darkbg;
   .card-title {
     font-size: 2em;
 
-    color: $vitru;
+    color: $ghostie;
 
     @include md-d {
       text-align: center;
