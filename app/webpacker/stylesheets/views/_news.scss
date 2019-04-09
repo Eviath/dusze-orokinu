@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.news-body {
-  height: 100% !important;
+  height: auto !important;
 @include md-d {
   height: 100%;
 }
   font-family: 'Marcellus SC', serif;
-  background: $darkbg;
+  background: $ghostie-dark;
   background-image: none;
 }
 
@@ -182,7 +182,7 @@ padding: 100px 0px 100px 0px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      .btn-do-vitru{
+      .btn-do-ghostie{
         margin: 15px 0;
         font-size: 2em;
       }

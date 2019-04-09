@@ -9,19 +9,6 @@ body {
 }
 
 
-.parallax-ghostie {
-  /* The image used */
-  background-image: url('../images/ghostie-back.svg');
-  height: 100%;
-  background-color: $darkbg;
-  min-height: 100vh;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .clan_form {
 
   textarea {

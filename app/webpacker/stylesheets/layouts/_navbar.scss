@@ -357,7 +357,7 @@ header.navbar {
       left: 0;
       top: 0;
       transition: .4s;
-      background-color: #17161a;
+      background-color: $ghostie-shadowy;
       box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
       -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
       width: 100%;
@@ -373,7 +373,7 @@ header.navbar {
 
 .header-dark {
   padding: 10px 80px !important;
-  background-color: #17161a;
+  background-color: $ghostie-dark;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
   -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
 }

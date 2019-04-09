@@ -306,7 +306,7 @@ $def-h3: 1rem;
 // PARALLAX SCROLLING
 .parallax {
   /* The image used */
-  background-color: $darkbg;
+  background-color: $ghostie-dark;
 
   height: 100%;
 
@@ -343,7 +343,6 @@ $def-h3: 1rem;
   width: 100%;
   position: relative;
   height: 100%;
-  background-color: #0e0e0e;
   opacity: .9999;
   overflow: hidden;
 
@@ -381,7 +380,7 @@ $def-h3: 1rem;
   height: 100%;
   display: flex;
   width: 100%;
-  background-color: #17161a;
+  background-color: $ghostie-dark;
 }
 
 // HEADER BODY
@@ -393,7 +392,9 @@ div.header-body {
   font-family: 'Marcellus SC', serif;
   font-weight: 100;
 
-
+.ghostie-logo {
+  width:10%;
+}
   h1 {
     @include h1-font-mediaQ;
     color: $ghostie;
@@ -429,12 +430,12 @@ div.header-body {
   padding-bottom: 150px;
   width: 100%;
 
-  background: $darkbg;
+  background: $ghostie-dark;
 }
 
 .content-onas {
   z-index: 10;
-  background: $darkbg;
+  background-color: $ghostie-dark;
 }
 
 
@@ -472,6 +473,13 @@ div.header-body {
 
 
 // about-us-text
+
+body {
+  &#ONas {
+    background-color: $ghostie-dark !important;
+    @include ghostie-bg;
+  }
+}
 
 .ghostie-about-image {
   width:50%;
@@ -682,6 +690,10 @@ div.header-body {
 }
 
 
+#Informacje {
+  background: url('../images/ghostie-flames.svg');
+  background-color: $ghostie-dark;
+}
 
 // Informacje
 .informacje-container {
@@ -689,7 +701,7 @@ div.header-body {
   .jumbotron {
     width:80%;
     margin: 0 auto;
-    background: $ghostie-trans-bg;
+    background: $ghostie-shadowy;
     @include container-shadow;
 
   }
@@ -699,7 +711,7 @@ div.header-body {
 .jumbotron-content {
   width:100%;
   @include container-shadow;
-  background: $gradient;
+  background: $ghostie-shadowy;
   color: $white;
   hr {
     border-color: rgba(204, 204, 204, 0.41);

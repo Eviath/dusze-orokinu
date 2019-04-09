@@ -5,13 +5,13 @@
 
   .btn-group-vertical.pull-right
     - if conversation.is_trashed?(current_user) 
-      = link_to 'Przywróć', restore_conversation_path(conversation), class: 'btn btn-do-vitru', method: :post
+      = link_to 'Przywróć', restore_conversation_path(conversation), class: 'btn btn-do-ghostie', method: :post
       
     - else 
-      = link_to 'Przenieś do kosza', conversation_path(conversation), class: 'btn btn-do-vitru', method: :delete, data: {'confirm-swal': 'Jesteś pewny?'}
+      = link_to 'Przenieś do kosza', conversation_path(conversation), class: 'btn btn-do-ghostie', method: :delete, data: {'confirm-swal': 'Jesteś pewny?'}
 
     - if conversation.is_unread?(current_user) 
-      = link_to 'Oznacz jako przeczytane', mark_as_read_conversation_path(conversation), class: 'btn btn-do-vitru', method: :post
+      = link_to 'Oznacz jako przeczytane', mark_as_read_conversation_path(conversation), class: 'btn btn-do-ghostie', method: :post
 
   %p
     = render 'conversations/participants', conversation: conversation 

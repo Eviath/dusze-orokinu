@@ -75,7 +75,13 @@ $lg-width: 1200px;
 
 
 @mixin ghostie-bg {
-  background: url('../images/octopus-ghostie.svg');
+  background: url('../images/ghostie-flames.svg');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+}
+
+@mixin ghostie-back {
+  background: url('../images/long-ghostie-back.svg');
   background-repeat: no-repeat;
   background-size: cover !important;
   background-position: bottom;

@@ -6,10 +6,10 @@
 
     =image_tag(asset_pack_path('media/images/jednosc-duszki.png'), class: 'news-header-image')
     .actions.text-center.mb-5
-      =active_link_to "Wszystkie", { controller: :news, action: :index, id: nil}, remote:true, class: 'btn btn-do-vitru'
+      =active_link_to "Wszystkie", { controller: :news, action: :index, id: nil}, remote:true, class: 'btn btn-do-ghostie'
       -if NewsCategory.any?
         -NewsCategory.all.each do |category|
-          =active_link_to category.name, { controller: :news, action: :index, id: category.id},  remote:true, class: 'btn btn-do-vitru'
+          =active_link_to category.name, { controller: :news, action: :index, id: category.id},  remote:true, class: 'btn btn-do-ghostie'
 
 
     #category-content

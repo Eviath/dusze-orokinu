@@ -6,7 +6,7 @@ body {
 
 .parallax-contact {
   /* The image used */
-  background-image: url('../images/ghostie-back.svg');
+
   height: 100%;
   min-height: 100vh;
   /* Create the parallax scrolling effect */
@@ -70,7 +70,7 @@ table.discord-table {
     .jumbotron{
       width:70%;
       margin: 0 auto;
-      background: $ghostie-trans-bg;
+      background: $ghostie-dark;
       @include container-shadow;
     }
 
@@ -88,9 +88,10 @@ table.discord-table {
   .discord-body {
     width:70%;
     margin: 100px auto;
-    background: $darkbg;
+    background: #8686860a;
     border: 1px solid $ghostie-opacity;
     padding: 50px;
+    @include container-shadow;
   }
 }
 

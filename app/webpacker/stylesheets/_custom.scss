@@ -18,8 +18,8 @@ body.alliance-body {
 
 body,
 html {
-  @include ghostie-bg;
-  background-color: $darkbg;
+  @include ghostie-back;
+  background-color: $ghostie-dark;
   background-size: cover;
   color: $white;
   font-family: 'Marcellus SC', serif;
@@ -157,9 +157,9 @@ input {
   font-family: 'Marcellus', serif;
 
   &:focus {
-    -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
-    -moz-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28);
-    box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.28) !important;
+    -webkit-box-shadow: inset -1px -27px 103px -56px rgba(3, 252, 161, 0.28);
+    -moz-box-shadow: inset -1px -27px 103px -56px rgba(3, 252, 161, 0.28);
+    box-shadow: inset -1px -27px 103px -56px rgba(3, 252, 161, 0.28) !important;
   }
 
 }
@@ -227,7 +227,7 @@ input {
 
   -webkit-clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
   clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
-  background: $gradient;
+  background: #0b1e24 linear-gradient(90deg,#010d0b 0,#0b1e24 25%,#0b1e24 75%,#010d0b) repeat-y;
   transition: 1s;
 
   &:hover {
@@ -447,8 +447,7 @@ form input class
   background: $ghostie-dark;
   font-size: 1em;
   transform: skew(20deg);
-  width:600px;
-  height: 150px;
+  width:700px;
 
   &::after{
     content: '';
@@ -456,7 +455,7 @@ form input class
     width: 100%;
     bottom: 0;
     position: absolute;
-    background-image: linear-gradient($ghostie, $darkbg);
+    background-image: $ghostie;
   }
 
   .toast-body {
@@ -473,7 +472,7 @@ form input class
         content: '';
         background-repeat: no-repeat;
         left: -50px;
-        background-image: url('../images/duszeknotif.svg') !important;
+        background-image: url('../images/duszek-awesome.svg') !important;
       }
     }
 

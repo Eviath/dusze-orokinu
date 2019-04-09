@@ -9,8 +9,8 @@
         .login-page-content
           .container.form-container
             .user-actions
-              = active_link_to "Logowanie",new_user_session_path, class: "btn btn-do-vitru-dark"
-              = active_link_to "Rejestracja",new_user_registration_path, class: "btn btn-do-vitru-dark"
+              = active_link_to "Logowanie",new_user_session_path, class: "btn btn-do-ghostie-dark"
+              = active_link_to "Rejestracja",new_user_registration_path, class: "btn btn-do-ghostie-dark"
             .img
               =image_tag(asset_pack_path('media/images/veil-white.png'))
             .row.justify-content-md-center
@@ -32,5 +32,5 @@
 
 
                   .actions
-                    = f.submit "Zaloguj", class: 'btn btn-do-vitru-dark'
+                    = f.submit "Zaloguj", class: 'btn btn-do-ghostie-dark'
                 = render "devise/shared/links"

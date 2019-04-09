@@ -34,8 +34,11 @@
             %span{'aria-hidden':"true"}
               %i.fas.fa-times
         .toast-body
-          =message
+          .row
+            .col-md-5.ghostie-col
 
+            .col-md-7
+              =message
 
     = yield
 
