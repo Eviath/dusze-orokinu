@@ -18,7 +18,7 @@ import 'bootstrap/dist/js/bootstrap';
 import * as ActiveStorage from "activestorage";
 // app stylesheets
 
-import "./ghostie_styles.scss"
+import "./vitruvian_styles"
 import "../javascripts/direct_upload.js"
 import "chosen-js"
 import "../javascripts/cookie_consent.js"
@@ -152,7 +152,7 @@ $(document).ready(function() {
         $('#recruitment-check-status').html('Klan prowadzi rekrutację.').css('color', 'green'); //checked by default
     }else {
         $('#recruitment-check-status').html('Klan nie prowadzi obecnie rekrutacji.').css('color', 'red'); //not checked
-        }
+    }
 
 
     // on change
@@ -190,11 +190,11 @@ $(document).click(function (e) {
 
 
 $(document).on('ready turbolinks:load', function () {
-$('.chosen-select').chosen({
-    no_results_text: "Nie znaleziono",
-    placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
-    width: '100%'
-});
+    $('.chosen-select').chosen({
+        no_results_text: "Nie znaleziono",
+        placeholder_text_multiple: 'Wybierz odbiorców wiadomości.',
+        width: '100%'
+    });
 });
 
 
@@ -202,7 +202,7 @@ $('.chosen-select').chosen({
 
 
 //shared links and navbar animation on scroll load with turbolinks
-$(document).on('turbolinks:load', function () {
+$(document).ready(function() {
 
     let c, currentScrollTop = 0,
         navbar = $('header');

@@ -8,12 +8,15 @@ class ApplicationController < ActionController::Base
 
   def vitruvian
     cookies[:layout] = "vitruvian"
-    redirect_to request.referrer || root_path
+        redirect_to request.referrer || root_path
+
   end
 
   def application
     cookies[:layout] = "application"
-    redirect_to request.referrer || root_path
+
+        redirect_to request.referrer || root_path
+
   end
 
 
@@ -32,6 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
 
   def last_page
     session[:last_page] = request.env['HTTP_REFERER']

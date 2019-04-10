@@ -7,8 +7,14 @@
       | Dusze Orokinu
 
     = csrf_meta_tags
-    = javascript_pack_tag 'application'
-    = stylesheet_pack_tag 'stylesheets'
+    -if cookies[:layout] == 'application' || cookies[:layout].nil?
+      = javascript_pack_tag 'application'
+      = stylesheet_pack_tag 'stylesheets'
+    -else
+      = javascript_pack_tag 'vitruvian'
+      = stylesheet_pack_tag 'vitruvian'
+
+
     = favicon_link_tag asset_pack_path('media/images/favicon-32x32.png')
 
     -#meta data

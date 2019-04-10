@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def application_logo(classes)
+    if cookies[:layout] == 'application' || cookies[:layout].nil?
+      image_tag(asset_pack_path('media/images/duszek-awesome.svg'), class:"#{classes}")
+    else
+      image_tag(asset_pack_path('media/images/duszki.png'), class:"#{classes}")
+    end
+  end
+
   def active_link_to(name = nil, options = nil, html_options = nil, &block)
     active_class = html_options[:active] || "active"
     html_options.delete(:active)

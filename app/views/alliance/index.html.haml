@@ -26,7 +26,7 @@
   .header-image
   .header-body-wrapper
     .header-body
-      =image_tag(asset_pack_path('media/images/duszek-awesome.svg'), class:'ghostie-logo')
+      =application_logo('application-logo') if cookies[:layout] == 'application' || cookies[:layout].nil?
       %h1 Dusze Orokinu
       %h3 Polski Sojusz Warframe 2019
       =image_tag(asset_pack_path('media/images/veil-white.png'))

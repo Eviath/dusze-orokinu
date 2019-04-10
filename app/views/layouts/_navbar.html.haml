@@ -11,9 +11,8 @@
             %i.fas.fa-user
 
   = link_to alliance_path, class: "navbar-brand" do
-    =image_tag(asset_pack_path('media/images/duszek-awesome.svg'), class:'brand-image d-inline-block align-top')
+    =application_logo('brand-image d-inline-block align-top')
     %span Dusze Orokinu
-
 
 
   %button.navbar-toggler{type: "button", 'data-toggle': "collapse", 'data-target': "#navbarNavDropdown", 'aria-controls': "navbarNavDropdown", 'aria-expanded': "false", 'aria-label': "Toggle navigation"}
@@ -55,8 +54,6 @@
       %li.nav-item
         = active_link_to "Informacje",alliance_info_path, class: "nav-link"
 
-
-
         -if user_signed_in?
           %li.nav-item.sidebar-nav-item.lg-sidebar
             %a.show-sidebar
@@ -68,11 +65,9 @@
 
       %li.nav-item
         -if cookies[:layout] == 'application' || cookies[:layout].nil?
-          = link_to url_for(controller: :application, action: :vitruvian), class: "nav-link" do
-            Vitruvian
+          = link_to "Vitruvian", url_for(controller: '/application', action: :vitruvian), class: "nav-link" , data: { turbolinks: false }
         -else
-          = link_to url_for(controller: :application, action: :application), class: "nav-link" do
-            Ghostie
+          = link_to "Ghostie", url_for(controller: '/application', action: :application), class: "nav-link", data: { turbolinks: false }
 
 
 

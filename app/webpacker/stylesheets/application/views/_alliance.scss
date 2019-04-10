@@ -12,7 +12,16 @@ $def-h3: 1rem;
 // MEDIA QUARRIES MIXINS
 // Extra small devices (phones, less than 479px)
 
+body {
+  &#o-nas {
+    background-color: $dark-color !important;
+    @include ghostie-flames-bg;
+  }
 
+  &.alliance-body {
+    background: #0b1b25;
+  }
+}
 
 
 
@@ -392,7 +401,7 @@ div.header-body {
   font-family: 'Marcellus SC', serif;
   font-weight: 100;
 
-.ghostie-logo {
+.application-logo {
   width:10%;
 }
   h1 {
@@ -474,12 +483,7 @@ div.header-body {
 
 // about-us-text
 
-body {
-  &#ONas {
-    background-color: $dark-color !important;
-    @include ghostie-flames-bg;
-  }
-}
+
 
 .ghostie-about-image {
   width:50%;

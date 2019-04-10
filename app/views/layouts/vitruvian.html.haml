@@ -8,8 +8,8 @@
       | Dusze Orokinu
 
     = csrf_meta_tags
-    = javascript_pack_tag 'application'
-    = stylesheet_pack_tag 'vitruvian'
+    = javascript_pack_tag 'vitruvian', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'vitruvian_styles', 'data-turbolinks-track': 'reload'
     = favicon_link_tag asset_pack_path('media/images/favicon-32x32.png')
     = javascript_pack_tag 'warframe_api'
     = javascript_pack_tag 'twitch_api'
@@ -33,7 +33,7 @@
     %link{href: "https://fonts.googleapis.com/css?family=Marcellus+SC", rel: "stylesheet"}
     %link{href: "https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&amp;subset=latin-ext", rel: "stylesheet"}
 
-  %body{class:"#{controller.controller_name}-body",id:"#{sanitize(yield(:title)).delete(" \t\r\n")}"}
+  %body{class:"#{controller.controller_name}-body",id:"#{sanitize(yield(:title)).parameterize}"}
     = render "layouts/navbar"
     =render "layouts/sidebar"
     - flash.each do |message_type, message|
