@@ -6,6 +6,31 @@ class ApplicationController < ActionController::Base
   before_action :last_page
 
 
+  def vitruvian
+    cookies[:layout] = "vitruvian"
+    redirect_to request.referrer || root_path
+  end
+
+  def application
+    cookies[:layout] = "application"
+    redirect_to request.referrer || root_path
+  end
+
+
+  protected
+
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    elsif cookies[:layout] == "application"
+      "application"
+    elsif cookies[:layout] == "vitruvian"
+      "vitruvian"
+    else
+      "application"
+    end
+  end
+
   private
 
   def last_page
@@ -15,16 +40,6 @@ class ApplicationController < ActionController::Base
   def mailbox
     @mailbox ||= current_user.mailbox
   end
-
-
-  def layout_by_resource
-    if devise_controller?
-      "devise"
-    else
-      "application"
-    end
-  end
-
 
 
   rescue_from ActiveRecord::RecordNotFound do

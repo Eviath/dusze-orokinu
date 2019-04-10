@@ -6,7 +6,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 @import '~bootstrap/scss/bootstrap';
 
-@import '../stylesheets/application';
+@import '../stylesheets/application/application';
 @import "~summernote/dist/summernote-bs4";
 @import "~codemirror/lib/codemirror";
 @import "~codemirror/theme/3024-day";
@@ -94,7 +94,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   .note-editable{
     min-height: 500px;
     text-align:left;
-    background-color: $ghostie-dark !important;
+    background-color: $dark-color !important;
     color: #d9d9d9 !important;
   }
   .note-toolbar {

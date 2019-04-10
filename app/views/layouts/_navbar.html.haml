@@ -66,5 +66,13 @@
             = link_to new_user_session_path, class: "nav-link" do
               %i.fas.fa-user
 
+      %li.nav-item
+        -if cookies[:layout] == 'application' || cookies[:layout].nil?
+          = link_to url_for(controller: :application, action: :vitruvian), class: "nav-link" do
+            Vitruvian
+        -else
+          = link_to url_for(controller: :application, action: :application), class: "nav-link" do
+            Ghostie
+
 
 
