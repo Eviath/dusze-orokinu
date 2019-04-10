@@ -8,9 +8,12 @@ body.news-body {
   height: 100%;
 }
   font-family: 'Marcellus SC', serif;
-  background: $ghostie-dark;
-  background-image: none;
 }
+
+body.news_categories-body {
+  height: auto !important;
+}
+
 
 
 //scrolling mouse
@@ -525,7 +528,7 @@ background: $darkbg;
     }
   }
 
-  background: $darkbg;
+  background: $ghostie-dark;
 
   p {
     font-size: 1.2em;

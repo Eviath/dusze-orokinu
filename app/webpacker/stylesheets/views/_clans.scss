@@ -15,11 +15,13 @@ body {
     color: #fff;
   }
 
+  .form-check{padding:0;}
+
 
   .form-control {
     border: none;
-    background: $ghostie-dark;
-    border-bottom: 5px solid $ghostie-dark;
+    background: $ghostie-shadowy;
+    border-bottom: 5px solid $ghostie-opacity;
   }
 
   select, option {
@@ -72,11 +74,15 @@ body {
 
 
   &-about {
-    background-color: $darkt;
+    background-color: transparent;
     padding: 40px;
   }
 
   &_head {
+    img {
+      width:50%;
+    }
+
     padding: 0 0 50px 0;
 
     h2 {
@@ -91,10 +97,10 @@ body {
     box-shadow: 0 0 96px -21px rgba(0, 0, 0, 0.75);
 
     padding: 45px;
-    background-color: $darkt;
+    background-color: $ghostie-shadowy;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom: 2px solid $ghostie;
+    border-bottom: 5px solid $ghostie;
 
     .clan-logo {
       max-width: 120px;
@@ -113,7 +119,7 @@ body {
 
   &-contact {
     text-align: center;
-    background-color: $darkt;
+    background-color: $ghostie-trans-bg;
     border-bottom: 2px solid $ghostie;
 
     .recruitment-status {
@@ -169,10 +175,10 @@ body {
 
   &-header {
     padding: 45px;
-    background-color: $darkbg;
+    background-color: $ghostie-shadowy;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border-bottom: 2px solid $ghostie-hover;
+    border-bottom: 5px solid $ghostie;
 
     h1 {
       font-size: 1.5em;
@@ -189,6 +195,12 @@ body {
   &-about {
     background: transparent;
     padding: 40px;
+
+    .card {
+      &:hover{
+        transform: translateY(0) ;
+      }
+    }
 
     input {
       background: $ghostie-dark;
@@ -208,6 +220,7 @@ body {
   }
 
   h2 {
+    width: 100%;
     text-align: center;
     font-size: 1.5em;
     padding: 20px 0 20px 0;

@@ -181,6 +181,10 @@ $(document).click(function (e) {
 });
 
 
+
+
+
+
 // Bootstrap modal confirm setup
 
 
@@ -192,6 +196,9 @@ $('.chosen-select').chosen({
     width: '100%'
 });
 });
+
+
+
 
 
 //shared links and navbar animation on scroll load with turbolinks

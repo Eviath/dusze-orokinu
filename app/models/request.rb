@@ -37,7 +37,7 @@ class Request < ApplicationRecord
   validates :lider_nickname, presence: true, length: {minimum: 3, maximum: 30}
   validates :clan_name, presence: true, length: {minimum: 3, maximum: 30}
   validates :clan_tier, presence: true
-  validates :clan_about, presence: true, length: {minimum: 3, maximum: 1500}
+  validates :clan_about, presence: true, length: {minimum: 3, maximum: 3000}
   validates :discord_check, acceptance: true
   validates :rules_check, acceptance: true
   validates :clan_members, presence: true, length: { in: 1..4 }, numericality: true

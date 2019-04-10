@@ -20,6 +20,7 @@ body,
 html {
   @include ghostie-back;
   background-color: $ghostie-dark;
+  min-height: 100%;
   background-size: cover;
   color: $white;
   font-family: 'Marcellus SC', serif;
@@ -28,6 +29,13 @@ html {
   font-size: 16px;
   margin: 0;
   cursor: default;
+
+  @include md-d {
+    background-size: contain !important; ;
+  }
+  @include sm-d {
+    background-size: contain !important; ;
+  }
 }
 
 textarea {
@@ -88,7 +96,7 @@ header {
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
-  color: #fff;
+  color: $ghostie-dark;
   text-align: center;
   background-color: $ghostie;
   border-radius: .25rem;
@@ -182,7 +190,8 @@ input {
     color: $ghostie-dark;
 
     &:hover {
-      color: $ghostie-light;
+      border-radius: 5px;
+      color: $white;
     }
   }
 }
@@ -190,10 +199,13 @@ input {
 
 // clan post timestamp
 .timestamp {
-  background: $darkbg;
+  background: $ghostie-trans-bg;
   align-content: center;
   padding: 20px;
-  @include container-shadow;
+  -webkit-box-shadow: 10px 14px 19px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 14px 19px -15px rgba(0,0,0,0.75);
+  box-shadow: 10px 14px 19px -15px rgba(0,0,0,0.75);
+  border-bottom: 5px solid $ghostie;
 
   p {
   margin-bottom: 0;
@@ -553,9 +565,18 @@ form input class
 //  custom bootstrap modal
 
 //swall modal confirm
+
+.swal2-popup {
+  background: $ghostie-dark !important;
+  h2.swal2-title{
+    color: $white;
+  }
+}
+
 .swal2-confirm {
   border-left-color: $ghostie-dark;
   border-right-color: $ghostie-dark;
+  color: $ghostie-dark !important;
   background-color: $ghostie !important;
 }
 

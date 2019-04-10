@@ -8,7 +8,7 @@
 }
 
 .request_form label {
-  color: #b6934e;
+  color: $ghostie;
 }
 
 
@@ -23,6 +23,7 @@ body {
 
   &.requests-body {
     height: auto !important;
+    min-height: 100vh;
 
   }
 
@@ -45,30 +46,7 @@ select.select-request {
 }
 
 
-.parallax-request {
-  /* The image used */
-  background-image: url('../images/vitruvian-bg.png');
-  height: 100%;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-.parallax-request-new {
-  /* The image used */
-  background-image: url('../images/vitru-flowers.png');
-  height: 100%;
-  background-color: $darkbg;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 
 .request_show_content-no {
@@ -133,7 +111,7 @@ select.select-request {
   background-size: cover;
 
   .container {
-    background: $darkbg;
+    background: $ghostie-shadowy;
     @include container-shadow;
     padding: 50px;
   }
@@ -231,7 +209,7 @@ select.select-request {
 
   .form-control {
     color: #d9d9d9;
-    border-bottom: 5px solid $ghostie-dark;
+    border-bottom: 5px solid $ghostie-opacity;
     text-indent: initial
 
   }
@@ -246,7 +224,7 @@ select.select-request {
   padding-bottom: 50px;
 
   .jumbotron {
-    background: $ghostie-trans-bg;
+    background: $ghostie-shadowy;
   }
 
   h1 {
@@ -327,7 +305,8 @@ select.select-request {
   text-align: center;
 
   .table{
-    background: $darkt;
+    background: $ghostie-trans-bg;
+    @include bottom-shadow;
     color: $white;
   }
 

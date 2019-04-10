@@ -211,6 +211,7 @@
 
   // navbar ul with links on mobile
   @include sm-d {
+    background: $ghostie-dark;
     ul.nav {
       padding-top: 50px;
       .nav-item {
@@ -224,6 +225,7 @@
   }
 
   @include md-d {
+    background: $ghostie-dark;
     ul.nav {
       align-content: center;
       padding-top: 50px;

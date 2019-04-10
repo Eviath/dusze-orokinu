@@ -33,6 +33,9 @@ class User < ApplicationRecord
   # Settings for user
   has_settings :notification, :defaults => { :news => false }
 
+  # scopes
+  scope :confirmed, -> { where.not(confirmed_at: nil) }
+
   # Has roles with rolify gem
   rolify
 

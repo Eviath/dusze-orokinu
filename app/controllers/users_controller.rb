@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     load_and_authorize_resource :except => [:index, :show]
 
     def index
-      user = User.with_attached_avatar.includes(:clan)
+      user = User.confirmed.with_attached_avatar.includes(:clan)
       @users = user.without_role(:admin).without_role(:lider).without_role(:moderator).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)
       @admins = user.with_role(:admin)
       @liderzy = user.with_role(:lider).order(created_at: :ASC).paginate(page: params[:page], per_page: 10)

@@ -21,7 +21,7 @@ class ClanDecorator < Draper::Decorator
         concat " | " if current_page?(action: 'index')
         concat(link_to "Edytuj", edit_clan_path(object), class: "btn btn-do-ghostie", data: { turbolinks: false })
         concat " | "
-        concat(link_to "Usuń", object, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru")
+        concat(link_to "Usuń", object, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-ghostie")
       end
     end
   end

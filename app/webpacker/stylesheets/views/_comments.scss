@@ -4,6 +4,10 @@
 
 // single comment div /_comment
 
+body.comments-body {
+  height: auto;
+}
+
 .news-comments-body {
   -webkit-box-shadow: 10px 10px 31px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 31px -18px rgba(0,0,0,0.75);

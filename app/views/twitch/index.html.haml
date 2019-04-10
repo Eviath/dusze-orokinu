@@ -1,7 +1,7 @@
 = provide(:title, 'Twitch')
 
 
-.page-wrapper.parallax-ghostie
+.page-wrapper
   .page-image
     =image_tag(asset_pack_path('media/images/twitch_white.png'), class:"twitch-logo")
 
@@ -10,7 +10,7 @@
   .container
     .row
       -@user.each do |i|
-        .col-md-4.twitch-streamer-box
+        .col-md-6.twitch-streamer-box
           .streamer-card
             -if get_user_stream(i.id).first
               =image_tag get_stream_thumbnail(i.id), class:"streamer-card-thumb"
@@ -38,6 +38,11 @@
     .row
       .col-md-4.mx-auto.mt-5.text-center
         %small We are not in any way affilated with twitch.tv
+
+
+
+= render "layouts/footbar"
+
 
 
 

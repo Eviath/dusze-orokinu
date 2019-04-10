@@ -1,3 +1,11 @@
+
+body.conversations-body {
+background-image: none;
+  background-color: $ghostie-dark;
+  height: auto;
+}
+
+
 li.list-group-item {
   background: $darkbg;
   border-bottom: 2px solid $ghostie-hover;
@@ -96,7 +104,7 @@ ul.chosen-choices {
 .message-sender {
 
   width: 50%;
-  background-color: $ghostie-dark !important;
+  background-color: $ghostie-trans-bg !important;
 
   .media-body {
     /* These are technically the same, but use both */
@@ -148,7 +156,7 @@ ul.chosen-choices {
 
   float: right;
   width: 50%;
-  background-color: $darkwhite !important;
+  background-color: $ghostie-shadowy !important;
 
   .media-heading {
     text-align: left;

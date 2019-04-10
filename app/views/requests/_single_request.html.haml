@@ -19,7 +19,7 @@
       %span= request.clan_name
 
     .actions
-      = link_to truncate('Zobacz'), request, class: "btn btn-do-vitru"
+      = link_to truncate('Zobacz'), request, class: "btn btn-do-ghostie"
       - if can? :destroy, request
         |
-        = link_to "Usuń", request, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru-h"
+        = link_to "Usuń", request, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-ghostie-dark"

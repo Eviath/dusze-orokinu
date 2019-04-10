@@ -7,7 +7,7 @@ class RequestDecorator < Draper::Decorator
   # Request show actions
   def actions
     if can?(:destroy, object)
-      concat(link_to "Usuń", request_path(request), method: :delete, data: { 'confirm-swal': "Jesteś pewny?" }, :class => "btn btn-do-vitru")
+      concat(link_to "Usuń", request_path(request), method: :delete, data: { 'confirm-swal': "Jesteś pewny?" }, :class => "btn btn-do-ghostie")
     end
     if can?(:manage, object)
       h.capture do

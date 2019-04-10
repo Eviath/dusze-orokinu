@@ -7,11 +7,15 @@
   z-index: 99999;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+
+
 }
 .overlay.active {
+
   display: block;
   opacity: 1;
 }
+
 
 
 @keyframes swing {
@@ -129,6 +133,49 @@ body {
 .side-wrapper.toggled #show-sidebar {
   right: -40px;
 }
+
+.side-wrapper {
+  transition: .4s;
+  &::before {
+    display: block;
+    transition: .1s;
+    transition-delay: initial;
+    width: 200px;
+    height: 400px;
+    bottom: -330px;
+    right:0;
+    opacity:0;
+    margin: auto;
+    position: fixed;
+    transform: translateY(50px);
+    filter: blur(20%);
+    content: '';
+    background-repeat: no-repeat;
+    background-image: url('../images/duszek-awesome-reverse.svg') !important;
+  }
+}
+
+.side-wrapper.toggled {
+  transition: .4s;
+  &::before {
+    display: block;
+    opacity:1;
+    transition: 2s;
+    transition-delay: .5s;
+    width: 200px;
+    height: 400px;
+    bottom: -130px;
+    right:200px;
+    margin: auto;
+    position: fixed;
+    transform: translateY(0);
+    filter: blur(0);
+    content: '';
+    background-repeat: no-repeat;
+    background-image: url('../images/duszek-awesome-reverse.svg') !important;
+    @extend .ghostie-effect;
+  }
+}
 /*----------------sidebar-wrapper----------------*/
 
 .sidebar-wrapper {
@@ -138,9 +185,13 @@ body {
   border-bottom: 5px solid $ghostie;
   position: fixed;
   @include container-shadow;
-  background-size: 100%;
-  background-color: $darkbg;
-  background-image: url('../images/vitru-flowers.png') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $ghostie-dark !important;
+  background-position: right;
+  background: url('../images/ghostie-flames.svg');
+
+
   top: 0;
   right: -300px;
   z-index: 999;
@@ -182,7 +233,7 @@ body {
     margin: auto;
     display: flex;
     padding: 40px 30px;
-    border-bottom: 15px solid #b6934e;
+    border-bottom: 15px solid $ghostie;
     flex-direction: column;
     -webkit-box-shadow: 0px 0px 34px -5px rgba(0,0,0,1);
     -moz-box-shadow: 0px 0px 34px -5px rgba(0,0,0,1);
