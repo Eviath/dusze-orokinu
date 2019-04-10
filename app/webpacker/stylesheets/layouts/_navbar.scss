@@ -383,7 +383,7 @@ header.navbar {
 
 // dropdown-Navbar background coolor
 .dropdown-menu {
-  background-color: #17161a;
+  background-color: $ghostie-dark;
   border-bottom: 2px solid $ghostie;
 }
 
@@ -430,7 +430,7 @@ a.dropdown-item {
   font-size: 14px;
 
   &.active, &:focus {
-    background-color: $ghostie;
+    background-color: $ghostie-opacity;
   }
 }
 

@@ -78,7 +78,7 @@
                 .tag-text
                   %p=about.content
           .button-about
-            %a.btn.btn-do-bordered{:href  => "/alliance/about"} Dowiedz się więcej
+            =link_to 'Dowiedz się więcej', alliance_about_path, class:"btn btn-do-ghostie"
       .dolacz
         .container
           .row
