@@ -48,8 +48,8 @@
     .container
       .about-us-text
         .images
-          =image_tag(asset_pack_path('media/images/jedno-ghostie.svg'), class:'ghostie-about-image')
-          =image_tag(asset_pack_path('media/images/jedno-ghostie.svg'), class:'ghostie-about-image')
+          =styled_image('warframe-lang.svg', 'warframe-lang-about-img')
+          =styled_image('warframe-lang.svg', 'warframe-lang-about-img')
         - if @abouts.main.any?
           - @abouts.main.each do |about|
             %h1=about.title
@@ -83,7 +83,8 @@
         .container
           .row
             .col-md-8.mx-auto.text-center.d-flex.justify-content-center
-              =image_tag(asset_pack_path('media/images/jednosc-duszki.png'))
+              -#=image_tag(asset_pack_path('media/images/jednosc-duszki.png'))
+              =styled_image('warframe-lang-jednosc.png')
 
 
 

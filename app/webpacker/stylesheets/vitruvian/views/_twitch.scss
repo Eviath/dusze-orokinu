@@ -1,8 +1,7 @@
 body {
   &.twitch-body {
     height: 100%;
-    @include ghostie-flames-bg;
-    background-color: $dark-color;
+    background-color: $darkbg;
   }
 }
 

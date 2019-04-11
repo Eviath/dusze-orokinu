@@ -449,7 +449,7 @@ input[type="radio"], input[type="checkbox"] {
 
 
     .form-control {
-      @include button-shadow;
+      @include bottom_shadow;
       text-align:left;
       color: #fff;
       margin: 0 auto;
@@ -688,7 +688,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .shared-links {
   background: $shadowy-color;
-  @include button-shadow;
+  @include bottom_shadow;
   padding: 15px;
   border-bottom: 5px solid $main-color;
   border-radius: 5px;

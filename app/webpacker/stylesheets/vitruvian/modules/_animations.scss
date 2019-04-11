@@ -229,7 +229,6 @@
  * animation bg-pan-tl
  * ----------------------------------------
  */
-
 @mixin bg-pan-tl {
   -webkit-animation: bg-pan-tl 15s both infinite;
   animation: bg-pan-tl 15s both infinite;
@@ -237,40 +236,34 @@
 
 @-webkit-keyframes bg-pan-tl {
   0% {
-    background-size: 150%;
-    background-repeat: no-repeat;
     background-position: center;
+    background-size: 150%;
   }
 
   50% {
-    background-size: 150%;
-    background-repeat: no-repeat;
-    background-position: left bottom;
+    background-size: 50%;
+    background-position: center;
   }
 
   100% {
-    background-size: 150%;
-    background-repeat: no-repeat;
     background-position: center;
+    background-size: 150%;
   }
 }
 @keyframes bg-pan-tl {
   0% {
-    background-size: 150%;
-    background-repeat: no-repeat;
     background-position: center;
+    background-size: 150%;
   }
 
   50% {
-    background-size: 150%;
-    background-repeat: no-repeat;
-    background-position: left bottom;
+    background-position: center;
+    background-size: 50%;
   }
 
   100% {
-    background-size: 100%;
-    background-repeat: no-repeat;
     background-position: center;
+    background-size: 150%;
   }
 }
 .kenburns-top {

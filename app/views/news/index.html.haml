@@ -4,7 +4,7 @@
 .news-wrapper.parallax-ghostie
   .container
 
-    =image_tag(asset_pack_path('media/images/jednosc-duszki.png'), class: 'news-header-image')
+    =styled_image('warframe-lang.svg', 'news-header-image')
     .actions.text-center.mb-5
       =active_link_to "Wszystkie", { controller: :news, action: :index, id: nil}, remote:true, class: 'btn btn-do-ghostie'
       -if NewsCategory.any?

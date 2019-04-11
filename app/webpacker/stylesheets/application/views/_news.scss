@@ -176,8 +176,8 @@ padding: 100px 0px 100px 0px;
   .news-header-image{
     margin: 0 auto;
     display: flex;
+    width:30%;
   }
-
   // index actions - categories buttons
   .actions {
     @include md-d {

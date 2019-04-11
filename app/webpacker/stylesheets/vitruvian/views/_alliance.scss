@@ -34,22 +34,29 @@ $def-h3: 1rem;
     }
   }
 
-&::before{
-  content: "";
-  position: absolute;
-  width:100%;
-  height:100%;
-  left:0;
-  bottom:0;
-  right:0;
-  top:0;
-  background-position: bottom;
-  background: url('../images/banner-ghostie2.svg');
-  background-repeat: no-repeat;
-  background-size: cover !important;
-  background-position: bottom;
-}
+  &::before{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    bottom:0;
+    right:0;
+    top:0;
+    background-position: bottom;
+    background-image: url('../images/vitru-bg.jpg') !important;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-box-shadow: inset 0px 15px 112px -23px rgba(230,208,163,0.38);
+    -moz-box-shadow: inset 0px 15px 112px -23px rgba(230,208,163,0.38);
+    box-shadow: inset 0px 15px 112px -23px rgba(230,208,163,0.38);
 
+
+
+  }
   .row {
     margin: 0;
     padding: 0;
@@ -68,50 +75,52 @@ $def-h3: 1rem;
       transition: .3s;
       transform: translateY(0);
 
-      &:hover {
-        transition: .3s;
-        transform: translateY(10px);
+
+        &:hover {
+          transition: .3s;
+          transform: translateY(10px);
+
+          .featured-body {
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
+            box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
+            padding: 30px;
+            transition: .3s;
+            background: rgba(48, 49, 56, 0);
+            border-color: $main-light-color;
+            @include bg-pan-tl;
+
+          }
+        }
+
+        height: 400px;
 
         .featured-body {
-          border-radius: 5px;
-          -webkit-box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
-          -moz-box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
-          box-shadow: 0px 30px 97px -9px rgba(0, 0, 0, 1);
-          padding: 30px;
+
           transition: .3s;
-          background: rgba(48, 49, 56, 0);
-          border-color: $main-light-color;
-          @include bg-pan-tl;
+          border: 1px solid $main-opacity-color;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: $main-color-bg;
+          background-position: center;
+          background-size: 150%;
+          transition: background-position 6s;
+          background-image: url('../images/vitruvian-flower-transparent.png') !important;
+          padding: 20px;
+          width: 100%;
+          height: 100%;
+          -webkit-box-shadow: 0px 0px 91px -11px rgba(0, 0, 0, 1);
+          -moz-box-shadow: 0px 0px 91px -11px rgba(0, 0, 0, 1);
+          box-shadow: 0px 0px 91px -11px rgba(0, 0, 0, 1);
 
-        }
-      }
-
-      height: 400px;
-
-      .featured-body {
-        border: 1px solid $main-opacity-color;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: $main-color-bg;
-        background-position: center;
-        background-size: 150%;
-        transition: background-position 6s;
-        background-image: url('../images/sm-banner-ghostie.svg') !important;
-        background-repeat: no-repeat;
-        padding: 20px;
-        width: 100%;
-        height: 100%;
-        -webkit-box-shadow: 0px 0px 91px -11px rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0px 0px 91px -11px rgba(0, 0, 0, 1);
-        box-shadow: 0px 0px 91px -11px rgba(0, 0, 0, 1);
-
-        @include sm-d {
-          padding: 50px 30px;
-        }
-        @include md-d{
-          padding: 50px 30px;
-        }
+          @include sm-d {
+            padding: 50px 30px;
+          }
+          @include md-d{
+            padding: 50px 30px;
+          }
 
 
         .featured-header {
@@ -201,7 +210,7 @@ $def-h3: 1rem;
 }
 
 .carousel-caption {
-  background: rgba(31, 53, 58, 0.54);
+  background: rgba(23, 22, 26, 0.71);
   left: 0;
   right: 0;
   width: 100%;
@@ -306,7 +315,7 @@ $def-h3: 1rem;
 // PARALLAX SCROLLING
 .parallax {
   /* The image used */
-  background-color: $dark-color;
+  background-color: $darkbg;
 
   height: 100%;
 
@@ -316,7 +325,6 @@ $def-h3: 1rem;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 // Sojusz index.html
 .full-height {
@@ -447,12 +455,12 @@ div.header-body {
   padding-bottom: 150px;
   width: 100%;
 
-  background: $dark-color;
+  background: $darkbg;
 }
 
 .content-onas {
   z-index: 10;
-  background-color: $dark-color;
+  background-color: $darkbg;
 }
 
 
@@ -493,12 +501,11 @@ div.header-body {
 
 body {
   &#ONas {
-    background-color: $dark-color !important;
-    @include ghostie-flames-bg;
+    background-color: $darkbg !important;
   }
 }
 
-.ghostie-about-image {
+.warframe-lang-about-img {
   width:50%;
 }
 

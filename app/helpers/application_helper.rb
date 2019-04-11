@@ -1,5 +1,18 @@
 module ApplicationHelper
 
+  # return image with proper style and classes
+  def styled_image(image, classes = '')
+    # determine style of image
+    if cookies[:layout] == 'vitruvian'
+      style = cookies[:layout]
+      image_tag(asset_pack_path("media/images/#{style}/#{image}"), class:"#{classes}")
+    else
+      style = 'ghostie'
+      image_tag(asset_pack_path("media/images/#{style}/#{image}"), class:"#{classes}")
+    end
+  end
+
+  # return proper logo depending on chosen style
   def application_logo(classes)
     if cookies[:layout] == 'application' || cookies[:layout].nil?
       image_tag(asset_pack_path('media/images/duszek-awesome.svg'), class:"#{classes}")
