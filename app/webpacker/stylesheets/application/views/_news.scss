@@ -55,7 +55,7 @@ body.news_categories-body {
 
 
 .page-news-content{
-  background: $darkbg;
+  background: $dark-color;
 }
 
 
@@ -149,7 +149,7 @@ body.news_categories-body {
   &::after {
     position: absolute;
 
-    background-image: linear-gradient(0deg, #17161a 0%, #17161a 47%, rgba(23, 22, 26, 0) 100%, rgba(0, 0, 0, 0) 100%);
+    background-image: linear-gradient(0deg, $dark-color 0%, $dark-color 47%, rgba(23, 22, 26, 0) 100%, rgba(0, 0, 0, 0) 100%);
     top:0;
     height:100%;
     width: 100%;
@@ -279,7 +279,7 @@ form.edit_news, .new_news {
 // SHOW NEWS
 //
 .page-news-other {
-background: $darkbg;
+background: $dark-color;
   .news-other-container {
     padding: 50px 0;
     width:90%;
@@ -400,7 +400,7 @@ background: $darkbg;
   /* Instead use this non-standard one: */
   word-break: break-word;
 
-  background: $darkbg;
+  background: $dark-color;
   background-image: none;
   width:80%;
   margin: 0 auto;
@@ -420,7 +420,7 @@ background: $darkbg;
   -moz-box-shadow: 0px 6px 49px 6px rgba(0,0,0,0.25);
   box-shadow: 0px 6px 49px 6px rgba(0,0,0,0.25);
 
-  background: $darkbg;
+  background: $dark-color;
   width: 100%;
   margin: 0 auto;
   text-align: left;
