@@ -9,7 +9,7 @@
     %h2 Poznaj naszych twórców
   .container
     .row
-      -unless @user.nil?
+      -if @streamers.any?
         -@user.each do |i|
           .col-md-6.twitch-streamer-box
             .streamer-card
