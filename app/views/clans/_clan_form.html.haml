@@ -10,7 +10,7 @@
           ogłoszenie klanu
 
       .col-md-2.d-flex.align-items-center
-        = f.submit "Zapisz", class: "btn btn-do-vitru"
+        = f.submit "Zapisz", class: "btn btn-do-vitru-dark"
 
     .row.form-errors
       .col-md-12
@@ -25,16 +25,16 @@
             Informacje
             =image_tag(asset_pack_path('media/images/all-gold.png'))
  
-        .form-group
+        .form-group.vitruvian-input
           = f.label :name, "Nazwa klanu"
           = f.text_field :name, class: 'form-control'
-        .form-group
+        .form-group.vitruvian-input
           = f.label :leader, "Nick założyciela klanu"
           = f.text_field :leader, class: 'form-control'
-        .form-group
+        .form-group.vitruvian-input
           = f.label :tier, "Tier klanu"
           = f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
-        .form-group
+        .form-group.vitruvian-input
           = f.label :members, "Aktualna liczba członków klanu"
           = f.text_field :members, :class => 'form-control'
 

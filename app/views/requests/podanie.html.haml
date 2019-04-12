@@ -33,7 +33,18 @@
 
 
 
-- else
+- elsif @user.has_role?(:lider)
+
+  .request_show_content-no.parallax-request
+    .container
+      .request_show_content-wrapper
+        %h1 Otrzymałeś/aś rangę lidera klanu, bez stworzenia podania do sojuszu.
+        %h2 Możesz przejść do stworzenia ogłoszenia klanu.
+
+        .request-button
+          %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-bordered", data: { turbolinks: false }
+
+-else
 
   .request_show_content-no.parallax-request
     .container

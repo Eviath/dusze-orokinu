@@ -15,10 +15,23 @@ class UsersController < ApplicationController
       @user = User.find(params[:id]).decorate
       redirect_to root_url and return unless true
       @request = @user.request
-      @news_comments = @user.news_comments
+      @comments = @user.comments
     end
 
+    def user_comments
+      respond_to do |format|
+        format.html {}
+        format.js
+      end
+    end
 
+    def user_profile
+      @user = User.find(params[:id]).decorate
+      respond_to do |format|
+        format.html {}
+        format.js
+      end
+    end
   private
 
 

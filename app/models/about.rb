@@ -1,16 +1,17 @@
-class About < ApplicationRecord
 # == Schema Information
 #
 # Table name: abouts
 #
-#  id           :integer
-#  title        :string
-#  content      :text
-#  description  :string
-#  assignment   :string
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id          :bigint(8)        not null, primary key
+#  title       :string
+#  description :string
+#  assignment  :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  content     :text
 #
+
+class About < ApplicationRecord
 
   scope :main, -> { where(:assignment => 'MAIN') }
   scope :column_one, -> { where(:assignment => 'COLUMN_ONE')}

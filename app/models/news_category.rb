@@ -1,14 +1,15 @@
+# == Schema Information
+#
+# Table name: news_categories
+#
+#  id         :bigint(8)        not null, primary key
+#  name       :string
+#  desc       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class NewsCategory < ApplicationRecord
-  # == Schema Information
-  #
-  # Table name: abouts
-  #
-  #  id                     :integer
-  #  name                   :string
-  #  description            :text
-  #  created_at             :datetime
-  #  updated_at             :datetime
-  #
 
   # Associations
   has_many :news

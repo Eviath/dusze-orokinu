@@ -144,7 +144,6 @@ window.closeToast = closeToast;
 
 
 
-
 // Clan recruitment check status message under checkbox field
 $(document).ready(function() {
 
@@ -166,7 +165,6 @@ $(document).ready(function() {
         }
     });
 });
-
 
 
 // enable bootstrap tooltips

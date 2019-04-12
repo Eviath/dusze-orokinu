@@ -7,4 +7,5 @@ module AllianceHelper
             "użytkowniku"
         end
     end
+
 end

@@ -7,10 +7,14 @@
 
 .box_4{
   background:transparent;
+
 }
 
 .input_wrapper{
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .input_wrapper input[type="checkbox"]{
@@ -20,14 +24,20 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background:#17161a;
+  background: $vitru-dark;
   border-radius: 2px;
   position: relative;
   outline: 0;
   -webkit-transition: all .2s;
   transition: all .2s;
   &:focus {
-    background: #17161a;
+    background: $vitru-dark;
+    box-shadow: none !important;
+  }
+
+  @include md-d {
+    width: 60px;
+    height: 40px;
   }
 }
 
@@ -38,11 +48,15 @@
   left: 3px;
   width: 16px;
   height: 16px;
-  background: #dfeaec;
+  background: $darkbg;
   z-index: 2;
   border-radius: 2px;
   transition: all .35s;
 
+  @include md-d {
+    width: 22px;
+    height: 32px;
+  }
 }
 
 
@@ -62,11 +76,15 @@
 
 /* Checked State */
 .input_wrapper input[type="checkbox"]:checked{
-  background: $vitru;
+  background: $vitru-dark;
 }
 
 .input_wrapper input[type="checkbox"]:checked:after{
+  background: $white;
   left: calc(100% - 16px);
+  @include md-d {
+    left: calc(100% - 22px);
+  }
 }
 
 .input_wrapper input[type="checkbox"]:checked + .is_checked{
@@ -457,8 +475,49 @@
     -o-transition: .3s background-color, .3s border-color;
     transition: .3s background-color, .3s border-color;
   }
+}
+
+.btn-do-vitru-dark {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $vitru-opa;
+  }
+
+
+  &:hover{
+    &:before{
+      background-color: $vitru-trans-bg;
+    }
+  }
+
+  &.active {
+    color: $vitru;
+    &:before{
+      background-color: $vitru-dark;
+    }
+  }
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+  z-index: 99999;
+  color: $vitru-text-shadow;
+  border: 1px solid $vitru-dark;
+  border-radius: 5px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  @include button-shadow;
+
+  &::before {
+    z-index: -10;
+    background-color: $vitru-dark;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+  }
 
 }
+
 // Transparent vitruvian button
 .btn-vitru-t {
 

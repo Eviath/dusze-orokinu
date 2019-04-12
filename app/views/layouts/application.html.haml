@@ -11,6 +11,7 @@
     = stylesheet_pack_tag 'stylesheets'
     = favicon_link_tag asset_pack_path('media/images/favicon-32x32.png')
     = javascript_pack_tag 'warframe_api'
+    = javascript_pack_tag 'twitch_api'
     %meta{property:"og:url"  ,          content:"#{request.original_url}"}
     %meta{property:"og:type"  ,             content:"content"}
     %meta{property:"og:title"  ,            content:"#{yield(:title)}"}
@@ -43,8 +44,6 @@
               %i.fas.fa-times
         .toast-body
           =message
-
-
 
 
     = yield

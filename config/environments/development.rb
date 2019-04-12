@@ -8,24 +8,24 @@ Rails.application.configure do
   config.cache_classes = false
 
   # bullet
-  config.after_initialize do
-    Bullet.enable = true
-    Bullet.alert = true
-    Bullet.bullet_logger = true
-    Bullet.console = true
-    Bullet.growl = true
-    Bullet.rails_logger = true
-    Bullet.add_footer = true
-    Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
-    Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware', ['my_file.rb', 'my_method'], ['my_file.rb', 16..20] ]
-  end
+  # config.after_initialize do
+  #   Bullet.enable = true
+  #   Bullet.alert = true
+  #   Bullet.bullet_logger = true
+  #   Bullet.console = true
+  #   Bullet.growl = true
+  #   Bullet.rails_logger = true
+  #   Bullet.add_footer = true
+  #   Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
+  #   Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware', ['my_file.rb', 'my_method'], ['my_file.rb', 16..20] ]
+  # end
 
 
   # Do not eager load code on boot.
   config.eager_load = false
 
   # Show full error reports.
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

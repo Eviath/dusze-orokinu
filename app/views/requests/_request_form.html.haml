@@ -11,19 +11,19 @@
   = form_for(@request) do |f|
     = render 'shared/error_messages', object: f.object
     .col-md-8.mx-auto
-      .form-group
+      .form-group.vitruvian-input
         = f.label :nickname, "Nick składającego podanie"
         = f.text_field :nickname, placeholder: "Twój nick", class: 'form-control'
-      .form-group
+      .form-group.vitruvian-input
         = f.label :lider_nickname, "Nick założyciela klanu"
         = f.text_field :lider_nickname, placeholder: "Nick lidera Klanu", class: 'form-control'
-      .form-group
+      .form-group.vitruvian-input
         = f.label :clan_name, "Nazwa klanu"
         = f.text_field :clan_name, placeholder: "Nazwa klanu", class: 'form-control'
-      .form-group
+      .form-group.vitruvian-input
         = f.label :clan_tier, "Tier klanu"
         = f.select(:clan_tier, Request::CLANTIER, {selected: @request.clan_tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
-      .form-group
+      .form-group.vitruvian-input
         = f.label :clan_members, "Aktualna liczba członków klanu"
         = f.text_field :clan_members, placeholder: "Liczba członków klanu (Zwróć uwagę na wybrany tier klanu)", :class => 'form-control'
 
