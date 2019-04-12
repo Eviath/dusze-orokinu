@@ -9,10 +9,10 @@
     = csrf_meta_tags
     -if cookies[:layout] == 'application' || cookies[:layout].nil?
       = javascript_pack_tag 'application'
-      = stylesheet_pack_tag 'stylesheets'
+      = stylesheet_pack_tag 'ghostie_styles'
     -else
       = javascript_pack_tag 'vitruvian'
-      = stylesheet_pack_tag 'vitruvian'
+      = stylesheet_pack_tag 'vitruvian_styles'
 
 
     = favicon_link_tag asset_pack_path('media/images/favicon-32x32.png')
