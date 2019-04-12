@@ -10,10 +10,10 @@ class TwitchController < ApplicationController
     @client = Twitch::Client.new(access_token: session["access_token"]) if @streamers.any?
 
     # get users from client
-    @user = @client.get_users({login: @streamers.map(&:name)}).data unless @client.nil? || @streamers.any?
-    @streams = @client.get_streams({user_id: @user.map(&:id)}).data unless @client.nil? || @user.nil?
+    @user = @client.get_users({login: @streamers.map(&:name)}).data if @streamers.any?
+    @streams = @client.get_streams({user_id: @user.map(&:id)}).data if @streamers.any?
     @videos = []
-    unless @user.nil?
+    if @streamers.any?
       @user.each do |v|
         @user_videos = @client.get_videos({user_id: v.id}).data
         @videos << @user_videos
