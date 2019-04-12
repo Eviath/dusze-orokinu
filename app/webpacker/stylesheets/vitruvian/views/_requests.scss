@@ -111,7 +111,7 @@ select.select-request {
   background-size: cover;
 
   .container {
-    background: $shadowy-color;
+    background: $darkbg;
     @include container-shadow;
     padding: 50px;
   }

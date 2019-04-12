@@ -54,6 +54,16 @@
       %li.nav-item
         = active_link_to "Informacje",alliance_info_path, class: "nav-link"
 
+      %li.nav-item.dropdown
+        %a.nav-link.dropdown-toggle{href: "#", 'id': "navbarDropdownMenuLink", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false"}
+          %i.fas.fa-palette
+
+        .dropdown-menu{'aria-labelledby': "navbarDropdownMenuLink"}
+          -if cookies[:layout] == 'application' || cookies[:layout].nil?
+            = link_to "Styl Vitruvian", url_for(controller: '/application', action: :vitruvian), class: "dropdown-item" , data: { turbolinks: false }
+          -else
+            = link_to "Styl Dusz Orokinu", url_for(controller: '/application', action: :application), class: "dropdown-item", data: { turbolinks: false }
+
         -if user_signed_in?
           %li.nav-item.sidebar-nav-item.lg-sidebar
             %a.show-sidebar
@@ -62,12 +72,4 @@
           %li.nav-item.lg-sidebar
             = link_to new_user_session_path, class: "nav-link" do
               %i.fas.fa-user
-
-      %li.nav-item
-        -if cookies[:layout] == 'application' || cookies[:layout].nil?
-          = link_to "Vitruvian", url_for(controller: '/application', action: :vitruvian), class: "nav-link" , data: { turbolinks: false }
-        -else
-          = link_to "Ghostie", url_for(controller: '/application', action: :application), class: "nav-link", data: { turbolinks: false }
-
-
 

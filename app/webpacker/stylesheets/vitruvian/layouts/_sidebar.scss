@@ -7,15 +7,11 @@
   z-index: 99999;
   opacity: 0;
   transition: all 0.5s ease-in-out;
-
-
 }
 .overlay.active {
-
   display: block;
   opacity: 1;
 }
-
 
 
 @keyframes swing {
@@ -104,7 +100,7 @@ body {
 
   right: 0px;
   @include md-d {
-  width:100vw;
+    width:100vw;
     right: 0px;
     display: flex;
 
@@ -133,49 +129,6 @@ body {
 .side-wrapper.toggled #show-sidebar {
   right: -40px;
 }
-
-.side-wrapper {
-  transition: .4s;
-  &::before {
-    display: block;
-    transition: .1s;
-    transition-delay: initial;
-    width: 200px;
-    height: 400px;
-    bottom: -330px;
-    right:0;
-    opacity:0;
-    margin: auto;
-    position: fixed;
-    transform: translateY(50px);
-    filter: blur(20%);
-    content: '';
-    background-repeat: no-repeat;
-    background-image: url('../images/duszek-awesome-reverse.svg') !important;
-  }
-}
-
-.side-wrapper.toggled {
-  transition: .4s;
-  &::before {
-    display: block;
-    opacity:1;
-    transition: 2s;
-    transition-delay: .5s;
-    width: 200px;
-    height: 400px;
-    bottom: -130px;
-    right:200px;
-    margin: auto;
-    position: fixed;
-    transform: translateY(0);
-    filter: blur(0);
-    content: '';
-    background-repeat: no-repeat;
-    background-image: url('../images/duszek-awesome-reverse.svg') !important;
-    @extend .ghostie-effect;
-  }
-}
 /*----------------sidebar-wrapper----------------*/
 
 .sidebar-wrapper {
@@ -185,13 +138,9 @@ body {
   border-bottom: 5px solid $main-color;
   position: fixed;
   @include container-shadow;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: $dark-color !important;
-  background-position: right;
-  background: url('../images/ghostie-flames.svg');
-
-
+  background-size: 100%;
+  background-color: $darkbg;
+  background-image: url('../images/vitru-flowers.png') !important;
   top: 0;
   right: -300px;
   z-index: 999;
@@ -225,7 +174,7 @@ body {
 
 
   @include md-d {
-    background: $dark-color;
+    background: $main-color-dark;
 
     height: 90%;
     position: relative;
@@ -233,7 +182,7 @@ body {
     margin: auto;
     display: flex;
     padding: 40px 30px;
-    border-bottom: 15px solid $main-color;
+    border-bottom: 15px solid #b6934e;
     flex-direction: column;
     -webkit-box-shadow: 0px 0px 34px -5px rgba(0,0,0,1);
     -moz-box-shadow: 0px 0px 34px -5px rgba(0,0,0,1);
@@ -402,10 +351,10 @@ body {
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown {
- @include md-d {
-   width: 90%;
-   margin: 0 auto;
- }
+  @include md-d {
+    width: 90%;
+    margin: 0 auto;
+  }
 
 }
 
@@ -436,7 +385,7 @@ body {
   font-size: 13px;
   @include md-d {
     a{
-        font-size: 2rem;
+      font-size: 2rem;
     }
   }
 }
@@ -543,4 +492,3 @@ body {
   height: 100%;
   animation: sonar 1.5s infinite;
 }
-

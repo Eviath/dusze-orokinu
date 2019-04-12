@@ -185,7 +185,7 @@ padding: 100px 0px 100px 0px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      .btn-do-ghostie{
+      .btn-do-main{
         margin: 15px 0;
         font-size: 2em;
       }
@@ -438,26 +438,28 @@ background: $darkbg;
 }
 
 
-.card {
-  border: 5px solid $opacity-color;
-  background: transparent;
-  border-bottom: 10px solid $opacity-color;
-  -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
-  -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
-  box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
-  transition: .4s;
-  &:hover{
+.card-deck, .page-news-other {
+  .card {
+    border: 5px solid $opacity-color;
+    background: transparent;
+    border-bottom: 10px solid $opacity-color;
+    -webkit-box-shadow: 0px 0px 29px -1px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0px 0px 29px -1px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 0px 29px -1px rgba(0, 0, 0, 0.32);
     transition: .4s;
-    transform: translateY(-10px);
+
+    &:hover {
+      transition: .4s;
+      transform: translateY(-10px);
+    }
   }
 }
 
-
 .active-news {
-  -webkit-box-shadow: 0px 0px 34px -15px $main-opacity-color;
-  -moz-box-shadow: 0px 0px 34px -15px $main-opacity-color;
-  box-shadow: 0px 0px 34px -15px $main-opacity-color;
-  border-bottom: 5px solid $main-color;
+  -webkit-box-shadow: 0px 0px 34px -15px $main-opacity-color!important;
+  -moz-box-shadow: 0px 0px 34px -15px $main-opacity-color!important;
+  box-shadow: 0px 0px 34px -15px $main-opacity-color!important;
+  border-bottom: 5px solid $main-color !important;
 }
 
 

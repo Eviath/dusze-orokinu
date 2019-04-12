@@ -18,10 +18,10 @@ body.alliance-body {
 
 body,
 html {
-  @include ghostie-tentacles-bg;
+  @include ghostie-flames-bg;
   background-color: $dark-color;
   min-height: 100%;
-  background-size: cover;
+  background-size: 100% !important;
 
   color: $white;
   font-family: 'Marcellus SC', serif;

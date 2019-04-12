@@ -97,7 +97,7 @@ header {
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
-  color: $dark-color;
+  color: #fff;
   text-align: center;
   background-color: $main-color;
   border-radius: .25rem;
@@ -146,7 +146,7 @@ header {
     height: 38px;
     display: flex;
     align-content: center;
-    background: $dark-color;
+    background: rgba(134, 133, 133, 0.09);
   }
 }
 
@@ -166,9 +166,9 @@ input {
   font-family: 'Marcellus', serif;
 
   &:focus {
-    -webkit-box-shadow: inset -1px -27px 103px -56px rgba(3, 252, 161, 0.28);
-    -moz-box-shadow: inset -1px -27px 103px -56px rgba(3, 252, 161, 0.28);
-    box-shadow: inset -1px -27px 103px -56px rgba(3, 252, 161, 0.28) !important;
+    -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48) !important;
+    -moz-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48) !important;
+    box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48) !important;
   }
 
 }
@@ -398,7 +398,6 @@ form input class
   &:focus {
     border-bottom: 5px solid $main-color;
     transition: .2s;
-
     -webkit-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48);
     -moz-box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48);
     box-shadow: inset -1px -27px 103px -56px rgba(191, 141, 67, 0.48);

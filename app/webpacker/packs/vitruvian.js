@@ -202,7 +202,7 @@ $(document).on('ready turbolinks:load', function () {
 
 
 //shared links and navbar animation on scroll load with turbolinks
-$(document).ready(function() {
+$(document).on('turbolinks:load', function () {
 
     let c, currentScrollTop = 0,
         navbar = $('header');

@@ -26,7 +26,7 @@ body {
 
   select, option {
     border: none;
-    background-color: $dark-color;
+    background-color: $darkbg;
     color: $main-shadow !important;
     padding: 0;
     padding-top: 5px;
@@ -38,6 +38,8 @@ body {
 .clan_show {
 
   &_content {
+
+    @include parallax-effect;
     min-height: 100vh;
     padding: 150px 0 50px 0;
 
@@ -175,7 +177,7 @@ body {
 
   &-header {
     padding: 45px;
-    background-color: $shadowy-color;
+    background-color: $darkbg;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom: 5px solid $main-color;
@@ -203,7 +205,7 @@ body {
     }
 
     input {
-      background: $dark-color;
+      background: transparent;
     }
   }
 
@@ -234,6 +236,7 @@ body {
 
 
 .clan_content-wrapper {
+
 
 
   p {
@@ -391,6 +394,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
+  @include parallax-effect;
 
   .clan_index_container {
     .clans_row {

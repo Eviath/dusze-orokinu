@@ -9,31 +9,32 @@
     %h2 Poznaj naszych twórców
   .container
     .row
-      -@user.each do |i|
-        .col-md-6.twitch-streamer-box
-          .streamer-card
-            -if get_user_stream(i.id).first
-              =image_tag get_stream_thumbnail(i.id), class:"streamer-card-thumb"
-            -else
-              =image_tag i.offline_image_url, class:"streamer-card-thumb"
-            .media
-              =image_tag i.profile_image_url, class:"twitch-user-image align-self-start mr-3"
-              .media-body
-                -if get_user_stream(i.id).first
-                  %h5.mt-0=link_to truncate(get_user_stream(i.id).first.try(:title), length: 25), streamer_path(Streamer.where(:name => i.login).first)
-                -else
-                  %h5.mt-0=link_to i.display_name, streamer_path(Streamer.where(:name => i.login).first)
+      -unless @user.nil?
+        -@user.each do |i|
+          .col-md-6.twitch-streamer-box
+            .streamer-card
+              -if get_user_stream(i.id).first
+                =image_tag get_stream_thumbnail(i.id), class:"streamer-card-thumb"
+              -else
+                =image_tag i.offline_image_url, class:"streamer-card-thumb"
+              .media
+                =image_tag i.profile_image_url, class:"twitch-user-image align-self-start mr-3"
+                .media-body
+                  -if get_user_stream(i.id).first
+                    %h5.mt-0=link_to truncate(get_user_stream(i.id).first.try(:title), length: 25), streamer_path(Streamer.where(:name => i.login).first)
+                  -else
+                    %h5.mt-0=link_to i.display_name, streamer_path(Streamer.where(:name => i.login).first)
 
-                %small=i.display_name
-                -#%br
-                -#%small=i.description
-                %br
-                -if get_user_stream(i.id).first
-                  %small.ml-3.stream-status-online Na żywo
-                  %p.badge.badge-secondary=get_stream_viewer_count(i.id)
-                  %small | #{get_game_name(i.id)}
-                -else
-                  %small.ml-3.stream-status-offline Stream offline
+                  %small=i.display_name
+                  -#%br
+                  -#%small=i.description
+                  %br
+                  -if get_user_stream(i.id).first
+                    %small.ml-3.stream-status-online Na żywo
+                    %p.badge.badge-secondary=get_stream_viewer_count(i.id)
+                    %small | #{get_game_name(i.id)}
+                  -else
+                    %small.ml-3.stream-status-offline Stream offline
 
     .row
       .col-md-4.mx-auto.mt-5.text-center

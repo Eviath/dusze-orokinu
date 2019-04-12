@@ -46,9 +46,11 @@ export class TwitchViews extends Component {
 }
 
 document.addEventListener('turbolinks:load', () => {
-    const node = document.getElementById('twitch-embed');
-    const data = JSON.parse(node.getAttribute('data'));
-    TwitchViews.defaultProps = {
-        user: data
-    };
+    if (document.getElementById('twitch-embed')) {
+        const node = document.getElementById('twitch-embed');
+        const data = JSON.parse(node.getAttribute('data'));
+        TwitchViews.defaultProps = {
+            user: data
+        };
+    }
 })

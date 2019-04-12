@@ -398,7 +398,7 @@
 
 
 //  Standard button vitruvian
-.btn-do-ghostie {
+.btn-do-main {
   &:focus {
     outline: 0;
     box-shadow: 0 0 0 0.1rem $main-opacity-color;
@@ -437,7 +437,7 @@
 }
 
 // hover effect all the time
-.btn-do-ghostie-h {
+.btn-do-main-h {
   &:focus {
     outline: 0;
     box-shadow: 0 0 0 0.1rem $main-opacity-color;
@@ -474,7 +474,7 @@
   }
 }
 
-.btn-do-ghostie-dark {
+.btn-do-main-dark {
   &:focus {
     outline: 0;
     box-shadow: 0 0 0 0.1rem $main-opacity-color;
@@ -520,27 +520,28 @@
 
   // Extend shared vitruvian button style
   @extend %btn-vitruvian;
+@include bottom_shadow;
 
   color: #6c757d;
   border: 1px solid $opacity-color;
+  border-bottom: 5px solid $opacity-color;
   transition: .3s;
-
+  z-index: 20;
   &::before {
     transition: .3s;
-    background-color: $opacity-color;
+    z-index: -2;
+    background-color: $shadowy-color;
   }
 
   &:hover {
     transition: .3s;
-
+    transform: translateY(4px);
+    @include bottom_shadow;
+    border-bottom: 1px solid $opacity-color;
     &::before {
       transition: .3s;
-      top: 4px;
-      background: transparent;
-      border: 1px $opacity-color;
-      right: 4px;
-      bottom: 4px;
-      left: 4px;
+      background-color: $shadowy-color;
+      border: none;
     }
   }
 }

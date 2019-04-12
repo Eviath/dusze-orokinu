@@ -186,7 +186,7 @@ padding: 100px 0px 100px 0px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      .btn-do-ghostie{
+      .btn-do-main{
         margin: 15px 0;
         font-size: 2em;
       }
@@ -438,35 +438,41 @@ background: $darkbg;
   }
 }
 
+.card-deck, .page-news-other {
+  .card {
+    border: 5px solid $opacity-color;
 
-.card {
-  border: 5px solid $opacity-color;
-  border-bottom: 10px solid $opacity-color;
-  background: transparent;
-  -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
-  -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
-  box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
-  transition: .4s;
-  &:hover{
+    background: $dark-color;
+    @include bottom_shadow;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
+    box-shadow: 0px 0px 29px -1px rgba(0,0,0,0.32);
     transition: .4s;
-    transform: translateY(-10px);
+    &:hover{
+      transition: .4s;
+      transform: translateY(-10px);
+    }
   }
+
 }
 
 
 .active-news {
-  -webkit-box-shadow: 0px 0px 34px -15px $main-opacity-color;
-  -moz-box-shadow: 0px 0px 34px -15px $main-opacity-color;
-  box-shadow: 0px 0px 34px -15px $main-opacity-color;
-  border-bottom: 5px solid $main-color;
+  -webkit-box-shadow: 0px 0px 34px -15px $main-opacity-color !important;
+  -moz-box-shadow: 0px 0px 34px -15px $main-opacity-color !important;
+  box-shadow: 0px 0px 34px -15px $main-opacity-color !important;
+  border-bottom: 5px solid $main-color !important;
 }
 
 
 
 .card-footer{
-  background: $opacity-color;
+  background: #00000029;
   display: flex;
   justify-content: space-between;
+  transition: .4s;
+  position: relative;
   .card-footer-col {
     display: flex;
     flex-direction: column;
@@ -519,17 +525,18 @@ background: $darkbg;
   font-size: 1em;
 }
 
+//card body on index page
 .card-body {
+  background: $dark-color;
 
 
   // dont display button on mobile
   &.footer-card-body {
+    height: 90px;
     @include md-d {
       display: none;
     }
   }
-
-  background: $darkbg;
 
   p {
     font-size: 1.2em;

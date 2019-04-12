@@ -66,6 +66,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 
 
+
 // Code editor summernote
 .note-group-select-from-files {
   display: none;
@@ -94,7 +95,7 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
   .note-editable{
     min-height: 500px;
     text-align:left;
-    background-color: $main-color-dark !important;
+    background-color: $darkbg !important;
     color: #d9d9d9 !important;
   }
   .note-toolbar {

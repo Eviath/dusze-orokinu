@@ -14,7 +14,7 @@
             %hr.my-4
             %p Nie stworzyłeś/aś jeszcze ogłoszenia klanu, możesz to zrobić teraz, po kliknięciu w przycisk poniżej.
             .request-button
-              %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-ghostie ", data: { turbolinks: false }
+              %span= link_to "Stwórz ogłoszenie klanu", new_clan_path, class: "btn btn-do-main ", data: { turbolinks: false }
 
     - else
       - if @request
@@ -27,7 +27,7 @@
             %hr.my-4
             %p Jeśli jesteś liderem klanu i chcesz do nas dołączyć, złóż podanie do sojuszu. Formularz znajdziesz klikając przycisk poniżej.
             .request-button
-              %span= link_to "Podanie do sojuszu", '/podanie', class: "btn btn-do-ghostie"
+              %span= link_to "Podanie do sojuszu", '/podanie', class: "btn btn-do-main"
 
         .clan_show_content-wrapper
           .jumbotron
@@ -36,7 +36,7 @@
             %hr.my-4
             %p Nie masz klanu? Zajrzyj na listę klanów w naszym sojuszu!
             .request-button
-              %span= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-ghostie"
+              %span= link_to "Lista klanów w sojuszu", clans_path, class: "btn btn-do-main"
 
 
 

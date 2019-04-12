@@ -92,3 +92,15 @@ $lg-width: 1200px;
   background-size: cover !important;
   background-position: bottom;
 }
+
+@mixin parallax-effect{
+  /* The image used */
+  background: url('../images/ghostie-flames.svg');
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

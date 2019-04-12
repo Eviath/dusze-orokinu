@@ -292,15 +292,16 @@ input[type="radio"], input[type="checkbox"] {
     padding: 0;
   }
 }
-
 .login-page-cover {
-  @include ghostie-flames-bg;
-  background-color: $dark-color;
+  background: url('../images/nidus-black.png');
+  background-position: right;
   width:100%;
   height: 100vh;
   justify-content: center;
   display: flex;
   align-items: center;
+
+
 
 
 
@@ -458,7 +459,7 @@ input[type="radio"], input[type="checkbox"] {
       border-bottom: 5px solid $main-opacity-color;
       border-radius: 5px;
       width: 100%;
-      background-color: $shadowy-color;
+      background-color: $main-color-dark;
       text-indent: 30px;
       padding: 20px;
 
@@ -470,6 +471,7 @@ input[type="radio"], input[type="checkbox"] {
 
       &:focus {
         border-bottom: 5px solid $main-color;
+        transition: .2s;
         transition: .2s;
       }
     }
@@ -559,6 +561,7 @@ input[type="radio"], input[type="checkbox"] {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  @include parallax-effect;
 
 
   .index-content {
@@ -574,6 +577,7 @@ input[type="radio"], input[type="checkbox"] {
 
 // Pages content
 .user-page-wrapper {
+  @include parallax-effect;
 
   width: 100%;
   display: flex;
@@ -687,7 +691,7 @@ input[type="radio"], input[type="checkbox"] {
 
 
 .shared-links {
-  background: $shadowy-color;
+  background: $main-color-dark;
   @include bottom_shadow;
   padding: 15px;
   border-bottom: 5px solid $main-color;

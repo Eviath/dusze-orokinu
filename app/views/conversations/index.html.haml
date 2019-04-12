@@ -11,14 +11,14 @@
     .row
       .col-sm-3
         %ul.nav.nav-pills.nav-stacked
-          = mailbox_section 'poczta', @box 
-          = mailbox_section 'wysłane', @box 
-          = mailbox_section 'kosz', @box 
+          = mailbox_section 'poczta', @box
+          = mailbox_section 'wysłane', @box
+          = mailbox_section 'kosz', @box
 
       .col-sm-9
         - if @box == 'kosz' 
           %p
-            = link_to 'Wyczyść kosz', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete, data: {'confirm-swal': 'Jesteś pewny?'}
+            = link_to 'Wyczyść kosz', empty_trash_conversations_path, class: 'btn btn-do-main', method: :delete, data: {'confirm-swal': 'Jesteś pewny?'}
 
         %ul.list-group
           = render partial: 'conversations/conversation', collection: @conversations 

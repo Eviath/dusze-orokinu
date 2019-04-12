@@ -51,19 +51,22 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 document.addEventListener('turbolinks:load', () => {
-    const node = document.getElementById('twitch-embed');
-    const data = JSON.parse(node.getAttribute('data'));
-    Hello.defaultProps = {
-        targetID: 'twitch-embed',
-        channel: data,
-    };
-    TwitchViews.defaultProps = {
-        user: data
-    };
-    ReactDOM.render(
-        <Hello data={data} />,
-        document.getElementById('twitch-embed')
-    )
-})
+    if (document.getElementById('twitch-embed')) {
+        const node = document.getElementById('twitch-embed');
+        const data = JSON.parse(node.getAttribute('data'));
+        Hello.defaultProps = {
+            targetID: 'twitch-embed',
+            channel: data,
+        };
+        TwitchViews.defaultProps = {
+            user: data
+        };
+
+        ReactDOM.render(
+            <Hello data={data}/>,
+            document.getElementById('twitch-embed')
+        )
+    }
+});
 
 
