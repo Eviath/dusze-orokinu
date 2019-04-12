@@ -7,15 +7,17 @@ class TwitchController < ApplicationController
     #  users we want to fetch
     @streamers = Streamer.all
 
-    @client = Twitch::Client.new(access_token: session["access_token"])
+    @client = Twitch::Client.new(access_token: session["access_token"]) if @streamers.any?
 
     # get users from client
-    @user = @client.get_users({login: @streamers.map(&:name)}).data
-    @streams = @client.get_streams({user_id: @user.map(&:id)}).data
+    @user = @client.get_users({login: @streamers.map(&:name)}).data unless @client.nil? || @streamers.any?
+    @streams = @client.get_streams({user_id: @user.map(&:id)}).data unless @client.nil? || @user.nil?
     @videos = []
-    @user.each do |v|
-      @user_videos = @client.get_videos({user_id: v.id}).data
-      @videos << @user_videos
+    unless @user.nil?
+      @user.each do |v|
+        @user_videos = @client.get_videos({user_id: v.id}).data
+        @videos << @user_videos
+      end
     end
   end
 

@@ -1,9 +1,8 @@
 - provide(:title, 'Klan')
 
-.clan_show_content.parallax-users
+.clan_show_content
 
   .container
-
 
 
     .request
@@ -12,9 +11,9 @@
 
     .request-button.text-center
       - if @clan.previous
-        = link_to 'Poprzedni', @clan.previous, class: "btn btn-do-vitru"
+        = link_to 'Poprzedni', @clan.previous, class: "btn btn-do-main"
   
-      = link_to "Lista Klanów", clans_path, class: "btn btn-do-vitru"
+      = link_to "Lista Klanów", clans_path, class: "btn btn-do-main"
 
       - if @clan.next
-        = link_to 'Następny', @clan.next, class: "btn btn-do-vitru"
+        = link_to 'Następny', @clan.next, class: "btn btn-do-main"

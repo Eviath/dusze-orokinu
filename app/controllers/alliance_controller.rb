@@ -18,8 +18,8 @@ class AllianceController < ApplicationController
     @streamers = Streamer.all
     @client = Twitch::Client.new(access_token: session["access_token"])
     # get users from client
-    @user = @client.get_users({login: @streamers.map(&:name)}).data
-    @streams = @client.get_streams({user_id: @user.map(&:id)}).data
+    @user = @client.get_users({login: @streamers.map(&:name)}).data if @streamers.any?
+    @streams = @client.get_streams({user_id: @user.map(&:id)}).data unless @client.nil? || @user.nil?
 
 
   end

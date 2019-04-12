@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
 
+  get 'application', to: 'application#application', as: :application
+  get 'vitruvian', to: 'application#vitruvian', as: :vitruvian
 
   devise_scope :user do
     get "logowanie" => "devise/sessions#new", as: :new_user_session # custom path to login/sign_in

@@ -17,8 +17,8 @@ $('#category-content').html("<%= param_check %>")
 $('.pagination > a').attr('data-remote', 'true');
 
 
-$(".btn-do-vitru").on('click', function(e){
-    $(".btn-do-vitru.active").removeClass('active');
+$(".btn-do-main").on('click', function(e){
+    $(".btn-do-main.active").removeClass('active');
     $(this).addClass('active');
     e.preventDefault();
 });

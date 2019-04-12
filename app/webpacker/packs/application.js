@@ -18,7 +18,7 @@ import 'bootstrap/dist/js/bootstrap';
 import * as ActiveStorage from "activestorage";
 // app stylesheets
 
-import "./stylesheets"
+import "./ghostie_styles.scss"
 import "../javascripts/direct_upload.js"
 import "chosen-js"
 import "../javascripts/cookie_consent.js"
@@ -181,6 +181,10 @@ $(document).click(function (e) {
 });
 
 
+
+
+
+
 // Bootstrap modal confirm setup
 
 
@@ -192,6 +196,9 @@ $('.chosen-select').chosen({
     width: '100%'
 });
 });
+
+
+
 
 
 //shared links and navbar animation on scroll load with turbolinks

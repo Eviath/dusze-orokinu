@@ -1,4 +1,3 @@
-%p#notice= notice
 
 -provide(:title, @news_category.name)
 
@@ -17,5 +16,5 @@
         .actions.text-center
           .btn-group
             -if can?(:manage, NewsCategory)
-              = link_to 'Edytuj kategorię', edit_news_category_path(@news_category), class: 'btn btn-do-vitru'
-            = link_to 'Wróć', :back, class: 'btn btn-do-vitru'
+              = link_to 'Edytuj kategorię', edit_news_category_path(@news_category), class: 'btn btn-do-main'
+            = link_to 'Wróć', :back, class: 'btn btn-do-main'

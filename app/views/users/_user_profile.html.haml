@@ -17,7 +17,7 @@
       =@user.message_user
 
 .profil-show-img
-  =image_tag(asset_pack_path('media/images/jedno-gold.png'))
+  =styled_image('warframe-lang.svg')
 
 .actions
-  =link_to "Komentarze użytkownika", user_comments_user_path, class: 'btn btn-do-vitru', remote: true
+  =link_to "Komentarze użytkownika", user_comments_user_path, class: 'btn btn-do-main', remote: true

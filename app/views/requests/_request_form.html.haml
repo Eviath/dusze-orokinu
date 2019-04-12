@@ -4,7 +4,7 @@
       .container
         %h1.display-4 Zanim złożysz podanie zapoznaj się z regulaminem!
         %p.lead Składając podanie, akceptujesz regulamin sojuszu.
-        %span= link_to "Regulamin Sojuszu", alliance_rules_path, class: "btn btn-do-vitru btn-lg"
+        %span= link_to "Regulamin Sojuszu", alliance_rules_path, class: "btn btn-do-main btn-lg"
 
   %h2.text-center Stwórz podanie do sojuszu
 
@@ -46,5 +46,5 @@
       = f.text_area :clan_about, id:"summernote"
 
       .actions
-        = f.submit "Zapisz", class: "btn btn-do-vitru"
+        = f.submit "Zapisz", class: "btn btn-do-main"
 

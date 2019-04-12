@@ -73,6 +73,8 @@ gem 'redis', '~> 3.2'
 gem "aws-sdk-s3", require: false
 
 group :development, :test do
+
+
   gem 'slack-notifier'
   gem 'ruby-growl'
   gem 'bullet'

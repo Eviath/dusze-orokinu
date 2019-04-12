@@ -1,0 +1,158 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// single comment div /_comment
+
+body.comments-body {
+  height: auto;
+}
+
+.news-comments-body {
+  -webkit-box-shadow: 10px 10px 31px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 31px -18px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 31px -18px rgba(0,0,0,0.75);
+}
+
+.show-from-top {
+  -webkit-animation: show-from-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: show-from-top  0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes show-from-top{
+  0% {
+    -webkit-transform: translateZ(100px);
+    transform: translateZ(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes show-from-top{
+  0% {
+    -webkit-transform: translateZ(100px);
+    transform: translateZ(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.scale-in-center {
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.comments-index {
+  table {
+    @include container-shadow;
+    border: 1px solid $dark-color;
+    color: $white;
+    th{
+      border-bottom: 5px solid $dark-color !important;;
+    }
+  }
+
+  .comments-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
+
+.comment{
+  width:100%;
+
+  textarea {
+    color: $white;
+  }
+
+
+  .media-body {
+    .far.fa-heart {
+      color: $main-color;
+    }
+  }
+
+  .media {
+    align-items: top;
+
+    .user_comment_image {
+      max-width: 60px;
+      margin-right: 20px;
+    }
+  }
+
+  .list-group-item {
+    border: 1px solid $main-opacity-color;
+    background: transparent;
+
+  }
+  // submit button comment /_form
+  .actions {
+    padding-top: 0;
+  }
+
+  p {
+    color: $white;
+    font-family: 'Marcellus', serif;
+  }
+}
+
+// text area comment /_form
+.comment-form-control {
+  width:100%;
+  padding: 10px;
+  background: transparent;
+  border: 2px solid $dark-color;
+  border-bottom: 5px solid $main-color;
+  color: $white;
+  transition: .4s;
+  &:focus {
+    transition: .4s;
+    outline: none;
+    border: 2px solid $main-opacity-color;
+    border-bottom: 5px solid $main-color;
+  }
+}
+
+.nested-comment {
+  margin: 25px;
+}
+
+// submit button comment /_form
+.actions {
+padding-top: 25px;
+}
