@@ -1,0 +1,44 @@
+// app colors
+$darkblue: #012945;
+$darky: #0e0e0e;
+$white: #d9d9d9;
+$darkbg: #17161a;
+$lightshadow: #24262D;
+$darkwhite: #7a7a7a;
+$darkt: rgba(23, 22, 26, 0.5);
+$yell: #ab8d39;
+$yell-hov: #ddb445;
+
+
+// $dark-color
+
+
+
+
+//Ghostie colours
+$main-color:  #01FEA3;
+$second-color: #0dc592;
+$main-opacity-color: rgba(1, 254, 163, 0.21);
+$dark-color: #0b1b25;
+$main-color-dark: #212529;
+$shadowy-color: #4a4a4a38;
+$main-light-color: rgba(3, 252, 161, 0.55);
+$main-trans-color: rgba(182, 147, 78, 0.21);
+$opacity-color: rgba(3, 252, 161, 0.08);
+$main-shadow: #6c757d;
+$main-color-bg: rgba(27, 30, 107, 0.14);
+
+
+
+
+//bg gradient
+$gradient: linear-gradient(to right, #17161a, #242124 50%, #17161a);
+
+
+
+//webfonts path for fontawesome
+$fa-font-path: "../webfonts";
+
+
+//font-family: 'Marcellus', serif;
+@import url('https://fonts.googleapis.com/css?family=Marcellus&subset=latin-ext');

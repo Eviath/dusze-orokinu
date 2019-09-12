@@ -1,22 +1,23 @@
+# == Schema Information
+#
+# Table name: requests
+#
+#  id             :bigint(8)        not null, primary key
+#  nickname       :string
+#  lider_nickname :string
+#  clan_name      :string
+#  clan_members   :integer
+#  clan_tier      :string
+#  clan_about     :text
+#  discord_check  :boolean          default(FALSE)
+#  rules_check    :boolean          default(FALSE)
+#  user_id        :bigint(8)
+#  approval       :boolean
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 class Request < ApplicationRecord
-  # == Schema Information
-  #
-  # Table name: requests
-  #
-  #  id                     :integer
-  #  nickname               :string
-  #  lider_nickname         :string
-  #  clan_name              :string
-  #  clan_members           :integer
-  #  clan_tier              :string
-  #  clan_about             :text
-  #  discord_check          :boolean
-  #  rules_check            :boolean
-  #  approval               :boolean
-  #  user_id                :bigint
-  #  created_at             :datetime
-  #  updated_at             :datetime
-  #
 
   # String options for clan_tier select
   CLANTIER = ['Ghost / Duch / 10 osób', 'Shadow / Cień / 30 osób', 'Storm / Burzy / 100 osób', 'Mountain / Góry / 300 osób', 'Moon / Księżyca / 1000 osób']
@@ -36,7 +37,7 @@ class Request < ApplicationRecord
   validates :lider_nickname, presence: true, length: {minimum: 3, maximum: 30}
   validates :clan_name, presence: true, length: {minimum: 3, maximum: 30}
   validates :clan_tier, presence: true
-  validates :clan_about, presence: true, length: {minimum: 3, maximum: 1500}
+  validates :clan_about, presence: true, length: {minimum: 3, maximum: 3000}
   validates :discord_check, acceptance: true
   validates :rules_check, acceptance: true
   validates :clan_members, presence: true, length: { in: 1..4 }, numericality: true

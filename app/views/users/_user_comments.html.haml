@@ -1,0 +1,20 @@
+.user_comments
+  %table.table.table-borderless
+    %thead
+      %tr
+        %th #
+        %th Komentarz
+        %th Aktualność
+        %th Data komentarza
+
+    -@user.comments.each_with_index do |c, index|
+      %tbody{class:"user_comment_#{index}"}
+        %td=index + 1
+        %td=c.content
+        %td=link_to c.commentable.title, c.commentable
+        %td=l c.created_at, format: :long
+
+
+
+.actions.mt-5
+  =link_to "Profil użytkownika", user_profile_user_path, class: 'btn btn-do-main',  remote: true

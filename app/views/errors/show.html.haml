@@ -1,0 +1,25 @@
+
+.page-wrapper
+  %h2{id: 'duszek-bu', class:'ghostie-effect comein'} Buu...
+  =image_tag(asset_pack_path('media/images/duszek4.svg'), id: 'duszek', class:'ghostie-effect')
+
+
+  .page-message
+    .status-code.mb-5.text-center
+      %h1.bounce-in-top=params[:code]
+      -if params[:code] == '404'
+        %p Żaden z naszych pracowitych duszków nie odnalazł podanej strony.
+    .message.text-center
+      %h2.duszek-message Ojej! Co tu się odduszkowuje, wystąpił błąd!
+
+      %p Możesz zgłosić ten błąd Administracji na discordzie lub wiadomości prywatnej!
+
+      .duszki-btn.mt-5
+        %p Spróbuj odświeżyć stronę lub przejdź na jedną z poniższych!
+        =link_to 'Kontakt', contact_index_path, class:'duszek-link btn m-2'
+        =link_to 'Strona główna', root_path, class:'duszek-link btn m-2'
+        - if session[:last_page]
+          =link_to 'Powrót', session[:last_page], class:'duszek-link btn m-2'
+
+
+

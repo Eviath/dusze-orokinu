@@ -1,17 +1,18 @@
+# == Schema Information
+#
+# Table name: news
+#
+#  id               :bigint(8)        not null, primary key
+#  title            :string
+#  content          :text
+#  user_id          :bigint(8)
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  news_category_id :string
+#  last_edit_desc   :text
+#
+
 class News < ApplicationRecord
-  # == Schema Information
-  #
-  # Table name: abouts
-  #
-  #  id                     :integer
-  #  title                  :string
-  #  content                :text
-  #  news_category_id       :string
-  #  last_edit_desc         :text
-  #  user_id                :bigint
-  #  created_at             :datetime
-  #  updated_at             :datetime
-  #
 
   # Associations
   has_one_attached :thumbnail
@@ -33,4 +34,5 @@ class News < ApplicationRecord
   def to_param
     "#{id}-#{title.parameterize}"
   end
+
 end

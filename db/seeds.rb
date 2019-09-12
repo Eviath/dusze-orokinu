@@ -28,13 +28,15 @@
 #                user_id:              1,
 #                created_at: Time.zone.now)
 # end
-
+logger.info "Creating rules columns"
 main_about = 'MAIN'
 column_two = 'COLUMN_TWO'
 column_one = 'COLUMN_ONE'
 
-
-
+logger.info "Creating streamers"
+Streamer.create!(name: 'swetru')
+Streamer.create!(name: 'niklaus')
+Streamer.create!(name: 'grabagra')
 # abouts seed
 
 

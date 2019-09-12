@@ -1,5 +1,5 @@
 
-.clan_form
+.clan_form.w-100
 
   = form_for(@clan) do  |f|
 
@@ -10,7 +10,7 @@
           ogłoszenie klanu
 
       .col-md-2.d-flex.align-items-center
-        = f.submit "Zapisz", class: "btn btn-do-vitru"
+        = f.submit "Zapisz", class: "btn btn-do-main"
 
     .row.form-errors
       .col-md-12
@@ -21,20 +21,20 @@
       .col-md-8.mx-auto
         .form_header-tag
           %h2
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
             Informacje
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
  
-        .form-group
+        .form-group.vitruvian-input
           = f.label :name, "Nazwa klanu"
           = f.text_field :name, class: 'form-control'
-        .form-group
+        .form-group.vitruvian-input
           = f.label :leader, "Nick założyciela klanu"
           = f.text_field :leader, class: 'form-control'
-        .form-group
+        .form-group.vitruvian-input
           = f.label :tier, "Tier klanu"
           = f.select(:tier, Clan::CLANTIER, {selected: @clan.tier, prompt: 'Wybierz tier'}, { :class => 'form-control' })
-        .form-group
+        .form-group.vitruvian-input
           = f.label :members, "Aktualna liczba członków klanu"
           = f.text_field :members, :class => 'form-control'
 
@@ -49,9 +49,9 @@
 
         .form_header-tag 
           %h2
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
             Logo
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
         .form-group
           .clan_logo
             - if @clan.picture.attached?
@@ -67,9 +67,9 @@
 
         .form_header-tag
           %h2
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
             Kontakt
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
 
  
         = f.label :website, "Strona internetowa klanu"  
@@ -82,9 +82,9 @@
       .col-md-12
         .form_header-tag
           %h2
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
             Opis
-            =image_tag(asset_pack_path('media/images/all-gold.png'))
+            =styled_image('warframe-lang.svg')
 
 
         = f.text_area :about, id:"summernote", placeholder: "Napisz coś o klanie. (Historia klanu, motywy do powstania klanu, motto klanowe, cele do osiągniecia.)"

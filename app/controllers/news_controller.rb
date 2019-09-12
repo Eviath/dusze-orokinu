@@ -24,7 +24,7 @@ class NewsController < ApplicationController
   # GET /news/1.json
   def show
     @news = News.find(params[:id])
-    @similar_news = News.includes(:user, :thumbnail_blob).where(news_category_id: @news.news_category_id).paginate(page: params[:page], per_page: 4)
+    @similar_news = News.includes(:user, :thumbnail_blob).where(news_category_id: @news.news_category_id).order('created_at DESC').paginate(page: params[:page], per_page: 4)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @news }

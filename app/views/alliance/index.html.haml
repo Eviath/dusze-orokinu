@@ -23,9 +23,10 @@
 
 
 .header-wrapper 
-  .header-image.kenburns-top
+  .header-image
   .header-body-wrapper
     .header-body
+      =application_logo('application-logo') if cookies[:layout] == 'application' || cookies[:layout].nil?
       %h1 Dusze Orokinu
       %h3 Polski Sojusz Warframe 2019
       =image_tag(asset_pack_path('media/images/veil-white.png'))
@@ -47,8 +48,8 @@
     .container
       .about-us-text
         .images
-          =image_tag(asset_pack_path('media/images/all-gold.png'))
-          =image_tag(asset_pack_path('media/images/jedno-gold.png'))
+          =styled_image('warframe-lang.svg', 'warframe-lang-about-img')
+          =styled_image('warframe-lang.svg', 'warframe-lang-about-img')
         - if @abouts.main.any?
           - @abouts.main.each do |about|
             %h1=about.title
@@ -77,12 +78,13 @@
                 .tag-text
                   %p=about.content
           .button-about
-            %a.btn.btn-do-bordered{:href  => "/alliance/about"} Dowiedz się więcej
+            =link_to 'Dowiedz się więcej', alliance_about_path, class:"btn btn-do-main"
       .dolacz
         .container
           .row
             .col-md-8.mx-auto.text-center.d-flex.justify-content-center
-              =image_tag(asset_pack_path('media/images/warframe-gold.png'))
+              -#=image_tag(asset_pack_path('media/images/jednosc-duszki.png'))
+              =styled_image('warframe-lang-jednosc.png')
 
 
 

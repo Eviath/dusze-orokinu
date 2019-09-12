@@ -1,2 +1,60 @@
-%h1 Comments#index
-%p Find me in app/views/comments/index.html.haml
+- provide(:title, 'Komentarze')
+
+.page-wrapper.comments-index
+  .page-header
+    %h1 Top 10 komentarzy
+
+  .comments-container
+    .row
+      .col-md-5.offset-1
+        .header.text-center.pt-5.pb-5
+          %h3 Najwięcej komentarzy
+        %table.table.table-borderless
+          %thead
+            %tr
+              %th #
+              %th Użytkownik
+              %th Komentarze
+          -@highest_comment_count.each_with_index do |user, index|
+            %tbody
+              %td=index + 1
+              %td=link_to user.name, user, class:'vitru-link'
+              %td=user.comments.count
+
+
+      .col-md-5
+        .header.text-center.pt-5.pb-5
+          %h3 Największa ilość otrzymanych polubień
+        %table.table.table-borderless
+          %thead
+            %tr
+              %th #
+              %th Użytkownik
+              %th Komentarze
+              %th Polubienia
+          -@users_with_most_liked_comments.each_with_index do |user, index|
+            %tbody
+              %td=index + 1
+              %td=link_to user.name, user, class:'vitru-link'
+              %td=user.comments.count
+              %td=user.likes.count
+
+
+    .row
+      .col-md-10.mx-auto
+        .header.text-center.pt-5.pb-5
+          %h3 Najpopularniejsze komentarze
+        %table.table.table-borderless
+          %thead
+            %tr
+              %th #
+              %th Użytkownik
+              %th Komentarz
+              %th Polubienia
+          -@most_liked_comments.each_with_index do |comment, index|
+            %tbody
+              %td= index + 1
+              %td=link_to comment.user.name, comment.user, class:'vitru-link'
+              %td=comment.content
+              %td=comment.likes.count
+

@@ -1,13 +1,14 @@
+# == Schema Information
+#
+# Table name: principles
+#
+#  id         :bigint(8)        not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  title      :string
+#
+
 class Principle < ApplicationRecord
-  # == Schema Information
-  #
-  # Table name: principles
-  #
-  #  id                     :integer
-  #  title                  :text
-  #  created_at             :datetime
-  #  updated_at             :datetime
-  #
 
   # Associations
   has_many :rule, dependent: :destroy

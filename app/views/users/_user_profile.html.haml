@@ -1,0 +1,23 @@
+.show-profile-box
+  .user_image
+    =image_tag user_avatar(@user, 120), class: 'rounded-circle user-image'
+
+    %h1= @user.name
+
+    .ranks
+      %p=user_ranks(@user)
+
+    .user_details
+      %p Zarejestrowany od: #{@user.created_at}
+      %p Ostatnio widziany: #{@user.last_seen}
+
+      =@user.active_at
+
+    .message-user
+      =@user.message_user
+
+.profil-show-img
+  =styled_image('warframe-lang.svg')
+
+.actions
+  =link_to "Komentarze użytkownika", user_comments_user_path, class: 'btn btn-do-main', remote: true

@@ -15,13 +15,13 @@ class ClanDecorator < Draper::Decorator
 
   # Clan index actions
   def actions
-    concat(link_to 'Zobacz', object, class: "btn btn-do-vitru") if current_page?(action: 'index')
+    concat(link_to 'Zobacz', object, class: "btn btn-do-main") if current_page?(action: 'index')
     if can?(:manage, object)
       h.capture do
         concat " | " if current_page?(action: 'index')
-        concat(link_to "Edytuj", edit_clan_path(object), class: "btn btn-do-vitru", data: { turbolinks: false })
+        concat(link_to "Edytuj", edit_clan_path(object), class: "btn btn-do-main", data: { turbolinks: false })
         concat " | "
-        concat(link_to "Usuń", object, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-vitru")
+        concat(link_to "Usuń", object, method: :delete, data: { 'confirm-swal': "Jesteś pewny, że chcesz to usunąć?" }, class: "btn btn-do-main")
       end
     end
   end
@@ -32,9 +32,9 @@ class ClanDecorator < Draper::Decorator
     if has_role?(:admin)
       content_tag(:div, class:'clan_actions p-2 text-center mt-4') do
         if object.approval
-          link_to (object.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(object) , class: 'btn btn-do-vitru'
+          link_to (object.approval ? "Odrzuć" : "Zatwierdź"), decline_clan_path(object) , class: 'btn btn-do-main'
         else
-          link_to (object.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(object) , class: 'btn btn-do-vitru'
+          link_to (object.approval ? "Odrzuć" : "Zatwierdź"), approve_clan_path(object) , class: 'btn btn-do-main'
         end
       end
     end
@@ -114,7 +114,7 @@ class ClanDecorator < Draper::Decorator
 
   # Link to clans page for clan approval
   def link_to_clan_list
-    link_to "Lista klanów", clans_path, class: "btn btn-do-vitru"
+    link_to "Lista klanów", clans_path, class: "btn btn-do-main"
   end
 
 

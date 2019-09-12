@@ -15,7 +15,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def message_user
-    link_to 'Napisz', new_message_path(to: object), class: 'btn btn-do-vitru' if current_user != object
+    link_to 'Napisz', new_message_path(to: object), class: 'btn btn-do-main' if current_user != object
   end
 
 

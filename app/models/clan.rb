@@ -1,24 +1,24 @@
-class Clan < ApplicationRecord
+# == Schema Information
+#
+# Table name: clans
+#
+#  id                 :bigint(8)        not null, primary key
+#  leader             :string
+#  name               :string
+#  about              :text
+#  members            :integer
+#  tier               :string
+#  picture            :string
+#  website            :string
+#  discord            :string
+#  user_id            :bigint(8)
+#  approval           :boolean
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  recruitment_status :boolean          default(TRUE)
+#
 
-  # == Schema Information
-  #
-  # Table name: abouts
-  #
-  #  id                     :integer
-  #  leader                 :string
-  #  name                   :string
-  #  about                  :text
-  #  members                :integer
-  #  tier                   :string
-  #  picture                :string
-  #  website                :string
-  #  discord                :string
-  #  approval               :boolean
-  #  recruitment_status     :boolean
-  #  user_id                :bigint
-  #  created_at             :datetime
-  #  updated_at             :datetime
-  #
+class Clan < ApplicationRecord
 
   # String options for clan_tier select
   CLANTIER = ['Ghost / Duch', 'Shadow / Cień', 'Storm / Burzy', 'Mountain / Góry', 'Moon / Księżyca']
@@ -36,7 +36,7 @@ class Clan < ApplicationRecord
 
   # Validations
   validates :user_id, presence: true
-  validates :about, presence: true, length: {minimum: 3, maximum: 3000}
+  validates :about, presence: true, length: {minimum: 3, maximum: 6000}
   validates :leader, presence: true, length: {minimum: 3, maximum: 30}
   validates :tier, presence: true
   validates :name, presence: true, length: {minimum: 3, maximum: 30}

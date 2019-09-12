@@ -1,0 +1,578 @@
+
+
+/* Switch 4 Specific Style Start */
+
+.box_4{
+  background:transparent;
+
+}
+
+.input_wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.input_wrapper input[type="checkbox"]{
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $shadowy-color;
+  border-radius: 2px;
+  position: relative;
+  outline: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  &:focus {
+    background: $shadowy-color;
+    box-shadow: none !important;
+  }
+
+  @include md-d {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+.input_wrapper input[type="checkbox"]:after{
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: $main-opacity-color;
+  z-index: 2;
+  border-radius: 2px;
+  transition: all .35s;
+
+  @include md-d {
+    width: 22px;
+    height: 32px;
+  }
+}
+
+
+.input_wrapper .is_checked{
+  width: 18px;
+  left: 18%;
+  -webkit-transform: translateX(190%) translateY(-30%) scale(0);
+  transform: translateX(190%) translateY(-30%) scale(0);
+}
+
+.input_wrapper .is_unchecked{
+  width: 15px;
+  right: 10%;
+  -webkit-transform: translateX(0) translateY(-30%) scale(1);
+  transform: translateX(0) translateY(-30%) scale(1);
+}
+
+/* Checked State */
+.input_wrapper input[type="checkbox"]:checked{
+  background: $dark-color;
+}
+
+.input_wrapper input[type="checkbox"]:checked:after{
+  background: $main-color;
+  left: calc(100% - 16px);
+  @include md-d {
+    left: calc(100% - 22px);
+  }
+}
+
+.input_wrapper input[type="checkbox"]:checked + .is_checked{
+  -webkit-transform: translateX(0) translateY(-30%) scale(1);
+  transform: translateX(0) translateY(-30%) scale(1);
+}
+
+.input_wrapper input[type="checkbox"]:checked ~ .is_unchecked{
+  -webkit-transform: translateX(-190%) translateY(-30%) scale(0);
+  transform: translateX(-190%) translateY(-30%) scale(0);
+}
+
+
+// buttons
+
+.btn.btn-do-bordered.active {
+  color: $main-color !important;
+
+  background-color: transparent;
+}
+
+
+.btn-away {
+  margin-top: 30px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: $main-color;
+  border-color: $main-color;
+
+  &:hover {
+    background-color: $main-color;
+    border-color: $main-color;
+  }
+}
+
+.btn-small {
+  font-size: 0.75em;
+}
+
+.btn-do-profile-opt {
+  margin: 5px;
+}
+
+.btn.btn-do {
+
+
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.button-about {
+  padding-top: 50px;
+  text-align: center;
+
+  @include sm-d{
+    a{font-size: 3em;}
+  }
+  @include md-d {
+    a{font-size: 3em;}
+  }
+
+}
+
+.btn-do {
+  color: #fff;
+  background-color: $main-color !important;
+}
+
+
+.btn-do-bordered-square {
+  position: relative;
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: "Marcellus SC", serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #ffff;
+  color: #ffff;
+  background-color: transparent;
+
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border-color: #ffff;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 0px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+
+  &:hover {
+    color: $main-color;
+  }
+
+
+}
+
+
+.btn-do-bordered {
+  position: relative;
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: "Marcellus SC", serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #ffff;
+  color: #ffff;
+  background-color: transparent;
+
+
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border-color: #ffff;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 25px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+
+  &:hover {
+    color: $main-color;
+  }
+
+
+
+
+}
+
+.btn-do-bordered-small {
+  position: relative;
+  display: inline-block;
+  padding: 10px 22px;
+  font-family: "Marcellus SC", serif;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-color: #ffff;
+  color: #ffff;
+  background-color: #17161a;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    border-color: #ffff;
+    content: "";
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    border: 1px solid;
+    border-radius: 2px;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+    z-index: 1;
+  }
+
+  &:hover {
+    color: $main-color;
+  }
+
+}
+
+
+.btn-do-profile-opt {
+  background-color: $main-color;
+  padding: 0px 5px;
+  font-size: 14px;
+  color: $dark-color;
+  opacity: 0.65;
+
+  &:hover {
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+    color: $white;
+  }
+}
+
+.btn-do-profile {
+  color: #212529;
+  background-color: $main-color;
+  padding: 0px 5px;
+  font-size: 14px;
+  box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  opacity: 0.65;
+
+  &:hover {
+
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.btn-profile {
+  padding: 0px 5px;
+  font-size: 14px;
+
+  &:hover {
+
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+}
+
+
+// Vitruvian shared style button
+%btn-vitruvian {
+  position: relative;
+  display: inline-block;
+  padding: 10px 22px;
+  font-family: "Marcellus SC", serif;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 2px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 2px;
+    z-index: 1;
+    border: none;
+  }
+
+  &:hover {
+    color: $main-color;
+    box-shadow: 0 0 0 0.2rem rgba(9, 9, 9, 0.25);
+  }
+}
+
+
+//  Standard button vitruvian
+.btn-do-main {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $main-opacity-color;
+  }
+
+
+  &:hover{
+    &:before{
+      background-color: $opacity-color;
+    }
+  }
+
+  &.active {
+    color: $main-color;
+    &:before{
+      background-color: $opacity-color;
+    }
+  }
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+
+  color: $main-light-color;
+  border: 1px solid $main-opacity-color;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    background-color: $main-opacity-color;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+  }
+
+}
+
+// hover effect all the time
+.btn-do-main-h {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $main-opacity-color;
+  }
+
+
+  &:hover{
+    &:before{
+      background-color: $opacity-color;
+    }
+  }
+
+  &.active {
+    color: $main-color;
+    &:before{
+      background-color: $opacity-color;
+    }
+  }
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+
+  color: $main-light-color;
+  border: 1px solid $main-opacity-color;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+
+  &::before {
+    background-color: $opacity-color;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+  }
+}
+
+.btn-do-main-dark {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $main-opacity-color;
+  }
+
+
+  &:hover{
+    &:before{
+      background-color: $opacity-color;
+    }
+  }
+
+  &.active {
+    color: $main-color;
+    &:before{
+      background-color: $dark-color;
+    }
+  }
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+  z-index: 99999;
+  color: $main-shadow;
+  border: 1px solid $dark-color;
+  border-radius: 5px;
+  -webkit-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  -o-transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  transition: .2s box-shadow, .2s background-color, .2s color, .2s transform;
+  @include button-shadow;
+
+  &::before {
+    z-index: -10;
+    background-color: $shadowy-color;
+    -webkit-transition: .3s background-color, .3s border-color;
+    -o-transition: .3s background-color, .3s border-color;
+    transition: .3s background-color, .3s border-color;
+  }
+
+}
+
+// Transparent vitruvian button
+.btn-vitru-t {
+
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+
+  color: #6c757d;
+  border: 1px solid $opacity-color;
+  transition: .3s;
+
+  &::before {
+    transition: .3s;
+    background-color: $opacity-color;
+  }
+
+  &:hover {
+    transition: .3s;
+
+    &::before {
+      transition: .3s;
+      top: 4px;
+      background: transparent;
+      border: 1px $opacity-color;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+    }
+  }
+}
+
+// Transparent light vitruvian button
+.btn-vitru-t-light {
+  // Extend shared vitruvian button style
+  @extend %btn-vitruvian;
+
+  color: $main-color;
+  border: 1px solid $main-opacity-color;
+  transition: .3s;
+
+  &::before {
+    transition: .3s;
+    background-color: $opacity-color;
+  }
+
+  &:hover {
+    transition: .3s;
+
+    &::before {
+      transition: .3s;
+      top: 4px;
+      background: transparent;
+      border: 1px $opacity-color;
+      right: 4px;
+      bottom: 4px;
+      left: 4px;
+    }
+  }
+}
+
+
+

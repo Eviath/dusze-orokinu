@@ -5,37 +5,32 @@
 .login-page-wrapper
   .login-page
     .row
-      .col-md-6.login-page-cover
-
-      .col-md-6.login-form-cover
-
+      .login-page-cover
         .login-page-content
           .container.form-container
             .user-actions
-              = active_link_to "Logowanie",new_user_session_path, class: "btn btn-do-bordered"
-              = active_link_to "Rejestracja",new_user_registration_path, class: "btn btn-do-bordered"
+              = active_link_to "Logowanie",new_user_session_path, class: "btn btn-do-main-dark"
+              = active_link_to "Rejestracja",new_user_registration_path, class: "btn btn-do-main-dark"
             .img
               =image_tag(asset_pack_path('media/images/veil-white.png'))
             .row.justify-content-md-center
               .form-group.col-md-6
                 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-                  .input-group
-                    = f.label :email, 'E-mail'
-                    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-
-
-
-                  .input-group
-                    = f.label :password, 'Hasło'
-                    = f.password_field :password, autocomplete: "current-password", class: 'form-control'
+                  .input-group.vitruvian-input
+                    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'E-mail'
+                    %i.fas.fa-at
+                  .input-group.vitruvian-input
+                    = f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Hasło'
+                    %i.fas.fa-lock
 
 
                   - if devise_mapping.rememberable?
-                    .field
-                      = f.check_box :remember_me
-                      = f.label :remember_me, 'Zapamiętaj mnie'
+                    .input_wrapper
+                      =f.check_box :remember_me, id: 'remember-check', class:"switch_4"
+                      %span{id: 'remember_me', class:'ml-3'} Zapamiętaj mnie
+
 
 
                   .actions
-                    = f.submit "Zaloguj", class: 'btn btn-do-vitru'
+                    = f.submit "Zaloguj", class: 'btn btn-do-main-dark'
                 = render "devise/shared/links"

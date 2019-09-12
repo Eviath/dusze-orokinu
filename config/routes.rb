@@ -1,6 +1,8 @@
 
 Rails.application.routes.draw do
 
+  get 'application', to: 'application#application', as: :application
+  get 'vitruvian', to: 'application#vitruvian', as: :vitruvian
 
   devise_scope :user do
     get "logowanie" => "devise/sessions#new", as: :new_user_session # custom path to login/sign_in
@@ -12,12 +14,16 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  # error pages
+  %w( 404 422 500 503 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
+
   localized do
     get 'messages/index'
     get 'comments/index'
     get 'comments/new'
     get 'conversations/index'
-
 
     get '/alliance',  to: 'alliance#index'
     root 'alliance#index'
@@ -36,14 +42,24 @@ Rails.application.routes.draw do
     get 'warframe/wfdrop'
 
     resources :contact
+    resources :streamers
 
-    resources :users
+    resources :twitch
+
+    resources :users do
+      member do
+        get :user_comments
+        get :user_profile
+      end
+    end
     resources :news_categories
     resources :news do
       resources :comments
     end
 
-
+    resources :comments do
+      resources :likes
+    end
 
     resources :requests, only: [:index, :podanie, :show, :new, :create, :destroy]
     resources :clans, only: [:index, :panel, :show, :new, :create, :edit, :update, :destroy]

@@ -1,0 +1,230 @@
+
+body.conversations-body {
+background-image: none;
+  background-color: transparent;;
+  height: auto;
+}
+
+
+li.list-group-item {
+  background: $darkbg;
+  border-bottom: 2px solid $second-color;
+}
+
+
+.conversation-user-image {
+  width: 60px;
+  height: 60px;
+}
+
+.conversations {
+
+  .active {
+    a {
+      color: $white;
+    }
+
+    background-color: $second-color !important;
+  }
+}
+
+.message-control {
+  color: #fff;
+}
+
+.btn-group-vertical {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.partial-user-conversation {
+
+  .conversation-body {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+  }
+
+}
+
+
+ul.chosen-choices {
+  padding: 15px 10px !important;
+  background-image: none !important;
+  background-color: $darkt !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid $second-color !important;
+}
+
+
+.conversation-index .form-control {
+  background: $darkt;
+
+
+  color: #fff !important;
+
+}
+
+
+.conversation-subject {
+  font-size: 1.5em;
+  padding: 15px;
+  display: flex;
+  padding-bottom: 30px;
+
+}
+
+.messages .media {
+  padding: 10px;
+  margin: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  word-break: break-all;
+  flex-direction: column;
+}
+
+.message-sender {
+
+  width: 50%;
+  background-color: $opacity-color !important;
+
+  .media-body {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    p {
+      font-family: 'Marcellus', serif;
+      padding: 15px;
+    }
+
+    padding: 10px;
+
+  }
+
+  .media-heading {
+    text-align: left;
+  }
+
+  .media-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+  }
+}
+
+.media-user-heading a {
+  font-size: 1.3em;
+  color: $second-color;
+}
+
+.message-receiver {
+
+  flex-direction: row-reverse;
+
+  float: right;
+  width: 50%;
+  background-color: $shadowy-color !important;
+
+  .media-heading {
+    text-align: left;
+  }
+
+  .media-body {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    p {
+      font-family: 'Marcellus', serif;
+      padding: 15px;
+    }
+
+    padding: 10px;
+
+  }
+
+  .media-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+  }
+}
+
+.messages {
+
+
+  overflow: hidden;
+  height: 700px;
+  overflow-y: scroll;
+
+}
+
+
+.conversation-submit-body {
+  padding-top: 50px;
+
+  textarea {
+    color: $white;
+    border: 2px solid $main-opacity-color;
+    height: 150px;
+    background: $darkbg;
+
+  }
+
+  textarea:focus {
+    color: $white;
+    border: 2px solid $main-opacity-color;
+    height: 150px;
+    background: $darkbg;
+  }
+
+  input{ margin-top: 10px;}
+
+}

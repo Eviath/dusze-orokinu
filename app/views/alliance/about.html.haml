@@ -4,8 +4,8 @@
     .container
       .about-us-text
         .images
-          =image_tag(asset_pack_path('media/images/all-gold.png'))
-          =image_tag(asset_pack_path('media/images/jedno-gold.png'))
+          =styled_image('warframe-lang.svg', 'warframe-lang-about-img')
+          =styled_image('warframe-lang.svg', 'warframe-lang-about-img')
         - if @abouts.main.any?
           - @abouts.main.each do |about|
             %h1=about.title
@@ -31,3 +31,4 @@
                 %h2=about.description
                 %p=about.content
 
+= render "layouts/footbar"

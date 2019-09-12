@@ -1,35 +1,43 @@
 = provide(:title, 'Kontakt')
+.page-wrapper.parallax-contact
+  .page-header
+    .discord-page
+      .row
+        .col-md-12
+          .discord-header
+            .jumbotron.clans_jumbotron
+              %h1.display-4=image_tag(asset_pack_path('media/images/discord.svg'))
+              %p.lead=@api_name
+              %hr.my-4
+              %p
+              %p.lead
+                Dołącz do nas
+                =link_to @api_invite, @api_invite, target: '_blank'
 
-.page-header
-  .discord-page
+      .row
+        .col-md-12.mx-auto.mt-5
+          %h2 Klient discorda w przeglądarce
+          %p Zanim wyślesz wiadomość, wciśnij enter w polu pisania, aby ustawić nick, pod którym chcesz pisać na serwerze. Pamiętaj proszę, by pisać pod nickiem z gry.
+          #discord
+      .row
+        .col-md-12.mx-auto
+          .discord-body
+            -if @admins.any?
+              .administration.mb-5
+                %h4 Administracja online
+                %p (Kliknij obrazek, by zagadać na discordzie)
+                -@admins.each do |r|
+                  -unless r.nil?
+                    =link_to "https://discordapp.com/users/#{r['id']}/" do
+                      =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}##{r['discriminator']}"
 
-    .row
-      .col-md-12
-        .discord-header
-          .jumbotron.clans_jumbotron
-            %h1.display-4=image_tag(asset_pack_path('media/images/discord.svg'))
-            %p.lead=@api_name
-            %hr.my-4
-            %p
-            %p.lead
-              Dołącz do nas
-              =link_to @api_invite, @api_invite, target: '_blank'
-
-    .row
-      .col-md-8.mx-auto.mt-5
-        %h2 Klient discorda w przeglądarce.
-        %p Zanim wyślesz wiadomość, wciśnij enter w polu pisania, aby ustawić nick, pod którym chcesz pisać na serwerze. Pamiętaj proszę, by pisać pod nickiem z gry.
-        #discord
-    .row
-      .col-md-8.mx-auto
-        .discord-body
-          %h4.p-4
-            Nasi użytkownicy online
-            #{@api_users.count}
-
-          -@api_users.each_with_index do |r|
-            .discord-person-col
-              .discord-person
-                =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}"
+            %h4.p-2
+              Użytkownicy online -
+              %span.small=@api_users.count
+            -@api_users.each do |r|
+              -unless r.nil?
+                .discord-person-col
+                  .discord-person
+                    =image_tag r['avatar_url'], class: 'discord-img', 'data-toggle':"tooltip", 'data-placement':"top", title:"#{r['username']}"
 
 
