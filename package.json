@@ -34,7 +34,7 @@
     "request-promise": "^4.2.4",
     "summernote": "^0.8.11",
     "sweetalert2": "^8.5.0",
-    "tinymce": "^5.0.0",
+    "tinymce": "^5.2.2",
     "turbolinks": "^5.2.0",
     "twitch-api-v5": "^2.0.4",
     "warframe-worldstate-parser": "^2.4.2"
