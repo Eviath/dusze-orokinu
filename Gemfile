@@ -98,7 +98,7 @@ group :production do
 end
 
 group :development do
-  gem 'puma', '~> 3.7'
+  gem 'puma', '~> 5.5'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
